@@ -1,0 +1,70 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Hospital.checkPatientsAssess(LVillage;)LList;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0  Create O3_1                               \l" [ ]
+   "BB2\n2  < Application, LList, <init>()V >( O3_1 ) \l" [ ]
+   "BB3\n5  GetOSSAInstruction:	O4_1= O1_1< assess>   \l" [ ]
+   "BB4\n6  O5_1 = < Application, LList, elements()Ljava/util/Enumeration; >( O4_1 )\l" [ ]
+   "BB5\n" [ ]
+   "BB6\n9  O6_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O5_1 )\l" [ ]
+   "BB7\n11   conditional branch(eq) v10,v11:#0       \l" [ ]
+   "BB8\n13  O7_1 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O5_1 )\l" [ ]
+   "BB9\n14   v14 = checkcast <Application,LPatient>v13\l" [ ]
+   "BB10\n18  nonreference field get instrctn: 15 = getfield < Application, LPatient, timeLeft, <Primordial,I> > 14\l" [ ]
+   "BB11\n20   v17 = binaryop(sub) v15 , v16:#1        \l21   putfield v14 = v17 < Application, LPatient, timeLeft, <Primordial,I> >\l" [ ]
+   "BB12\n23  nonreference field get instrctn: 18 = getfield < Application, LPatient, timeLeft, <Primordial,I> > 14\l" [ ]
+   "BB13\n25   conditional branch(ne) v18,v11:#0       \l" [ ]
+   "BB14\n27  O6_2 = < Application, LVillage, staysHere()Z >( O2_1 )\l" [ ]
+   "BB15\n29   conditional branch(eq) v20,v11:#0       \l" [ ]
+   "BB16\n31  GetOSSAInstruction:	O4_1= O1_1< assess>  \l" [ ]
+   "BB17\n33  < Application, LList, delete(Ljava/lang/Object;)V >( O4_1, O7_1 )\l" [ ]
+   "BB18\n35  GetOSSAInstruction:	O8_1= O1_1< inside>  \l" [ ]
+   "BB19\n37  < Application, LList, add(LPatient;)V >( O8_1, O7_1 )\l" [ ]
+   "BB20\n40   putfield v14 = v25:#10 < Application, LPatient, timeLeft, <Primordial,I> >\l" [ ]
+   "BB21\n43  nonreference field get instrctn: 26 = getfield < Application, LPatient, time, <Primordial,I> > 14\l" [ ]
+   "BB22\n45   v27 = binaryop(add) v26 , v25:#10       \l46   putfield v14 = v27 < Application, LPatient, time, <Primordial,I> >\l" [ ]
+   "BB23\n47   goto                                    \l" [ ]
+   "BB24\n50  GetOSSAInstruction:	28= O1_1< freePersonnel>\l" [ ]
+   "BB25\n52   v29 = binaryop(add) v28 , v16:#1        \l53  PutOSSAInstruction:	O1_2< freePersonnel > = O1_1<V29>\l" [ ]
+   "BB26\n55  GetOSSAInstruction:	O4_1= O1_2< assess>  \l" [ ]
+   "BB27\n57  < Application, LList, delete(Ljava/lang/Object;)V >( O4_1, O7_1 )\l" [ ]
+   "BB28\n60  < Application, LList, add(LPatient;)V >( O3_1, O7_1 )\l" [ ]
+   "BB29\n           O1_3 = Object-Phi(O1_1, O1_2 )\l61   goto                                    \l" [ ]
+   "BB30\n63  Return O3_1                              \l" [ ]
+   "BB31 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0  Create O3_1                               \l" 
+ "BB1\n0  Create O3_1                               \l" -> "BB2\n2  < Application, LList, <init>()V >( O3_1 ) \l" 
+ "BB2\n2  < Application, LList, <init>()V >( O3_1 ) \l" -> "BB3\n5  GetOSSAInstruction:	O4_1= O1_1< assess>   \l" 
+ "BB3\n5  GetOSSAInstruction:	O4_1= O1_1< assess>   \l" -> "BB4\n6  O5_1 = < Application, LList, elements()Ljava/util/Enumeration; >( O4_1 )\l" 
+ "BB4\n6  O5_1 = < Application, LList, elements()Ljava/util/Enumeration; >( O4_1 )\l" -> "BB5\n" 
+ "BB5\n" -> "BB6\n9  O6_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O5_1 )\l" 
+ "BB6\n9  O6_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O5_1 )\l" -> "BB7\n11   conditional branch(eq) v10,v11:#0       \l" 
+ "BB7\n11   conditional branch(eq) v10,v11:#0       \l" -> "BB8\n13  O7_1 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O5_1 )\l" 
+ "BB7\n11   conditional branch(eq) v10,v11:#0       \l" -> "BB30\n63  Return O3_1                              \l" 
+ "BB8\n13  O7_1 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O5_1 )\l" -> "BB9\n14   v14 = checkcast <Application,LPatient>v13\l" 
+ "BB9\n14   v14 = checkcast <Application,LPatient>v13\l" -> "BB10\n18  nonreference field get instrctn: 15 = getfield < Application, LPatient, timeLeft, <Primordial,I> > 14\l" 
+ "BB10\n18  nonreference field get instrctn: 15 = getfield < Application, LPatient, timeLeft, <Primordial,I> > 14\l" -> "BB11\n20   v17 = binaryop(sub) v15 , v16:#1        \l21   putfield v14 = v17 < Application, LPatient, timeLeft, <Primordial,I> >\l" 
+ "BB11\n20   v17 = binaryop(sub) v15 , v16:#1        \l21   putfield v14 = v17 < Application, LPatient, timeLeft, <Primordial,I> >\l" -> "BB12\n23  nonreference field get instrctn: 18 = getfield < Application, LPatient, timeLeft, <Primordial,I> > 14\l" 
+ "BB12\n23  nonreference field get instrctn: 18 = getfield < Application, LPatient, timeLeft, <Primordial,I> > 14\l" -> "BB13\n25   conditional branch(ne) v18,v11:#0       \l" 
+ "BB13\n25   conditional branch(ne) v18,v11:#0       \l" -> "BB14\n27  O6_2 = < Application, LVillage, staysHere()Z >( O2_1 )\l" 
+ "BB13\n25   conditional branch(ne) v18,v11:#0       \l" -> "BB29\n           O1_3 = Object-Phi(O1_1, O1_2 )\l61   goto                                    \l" 
+ "BB14\n27  O6_2 = < Application, LVillage, staysHere()Z >( O2_1 )\l" -> "BB15\n29   conditional branch(eq) v20,v11:#0       \l" 
+ "BB15\n29   conditional branch(eq) v20,v11:#0       \l" -> "BB16\n31  GetOSSAInstruction:	O4_1= O1_1< assess>  \l" 
+ "BB15\n29   conditional branch(eq) v20,v11:#0       \l" -> "BB24\n50  GetOSSAInstruction:	28= O1_1< freePersonnel>\l" 
+ "BB16\n31  GetOSSAInstruction:	O4_1= O1_1< assess>  \l" -> "BB17\n33  < Application, LList, delete(Ljava/lang/Object;)V >( O4_1, O7_1 )\l" 
+ "BB17\n33  < Application, LList, delete(Ljava/lang/Object;)V >( O4_1, O7_1 )\l" -> "BB18\n35  GetOSSAInstruction:	O8_1= O1_1< inside>  \l" 
+ "BB18\n35  GetOSSAInstruction:	O8_1= O1_1< inside>  \l" -> "BB19\n37  < Application, LList, add(LPatient;)V >( O8_1, O7_1 )\l" 
+ "BB19\n37  < Application, LList, add(LPatient;)V >( O8_1, O7_1 )\l" -> "BB20\n40   putfield v14 = v25:#10 < Application, LPatient, timeLeft, <Primordial,I> >\l" 
+ "BB20\n40   putfield v14 = v25:#10 < Application, LPatient, timeLeft, <Primordial,I> >\l" -> "BB21\n43  nonreference field get instrctn: 26 = getfield < Application, LPatient, time, <Primordial,I> > 14\l" 
+ "BB21\n43  nonreference field get instrctn: 26 = getfield < Application, LPatient, time, <Primordial,I> > 14\l" -> "BB22\n45   v27 = binaryop(add) v26 , v25:#10       \l46   putfield v14 = v27 < Application, LPatient, time, <Primordial,I> >\l" 
+ "BB22\n45   v27 = binaryop(add) v26 , v25:#10       \l46   putfield v14 = v27 < Application, LPatient, time, <Primordial,I> >\l" -> "BB23\n47   goto                                    \l" 
+ "BB23\n47   goto                                    \l" -> "BB29\n           O1_3 = Object-Phi(O1_1, O1_2 )\l61   goto                                    \l" 
+ "BB24\n50  GetOSSAInstruction:	28= O1_1< freePersonnel>\l" -> "BB25\n52   v29 = binaryop(add) v28 , v16:#1        \l53  PutOSSAInstruction:	O1_2< freePersonnel > = O1_1<V29>\l" 
+ "BB25\n52   v29 = binaryop(add) v28 , v16:#1        \l53  PutOSSAInstruction:	O1_2< freePersonnel > = O1_1<V29>\l" -> "BB26\n55  GetOSSAInstruction:	O4_1= O1_2< assess>  \l" 
+ "BB26\n55  GetOSSAInstruction:	O4_1= O1_2< assess>  \l" -> "BB27\n57  < Application, LList, delete(Ljava/lang/Object;)V >( O4_1, O7_1 )\l" 
+ "BB27\n57  < Application, LList, delete(Ljava/lang/Object;)V >( O4_1, O7_1 )\l" -> "BB28\n60  < Application, LList, add(LPatient;)V >( O3_1, O7_1 )\l" 
+ "BB28\n60  < Application, LList, add(LPatient;)V >( O3_1, O7_1 )\l" -> "BB29\n           O1_3 = Object-Phi(O1_1, O1_2 )\l61   goto                                    \l" 
+ "BB29\n           O1_3 = Object-Phi(O1_1, O1_2 )\l61   goto                                    \l" -> "BB6\n9  O6_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O5_1 )\l" 
+ "BB30\n63  Return O3_1                              \l" -> "BB31 (ex)\n\n" 
+
+}

@@ -1,0 +1,45 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v4 = getfield < Application, LQuadTreeNode, parent, <Application,LQuadTreeNode> > v1\l" [ ]
+   "BB2\n3   conditional branch(eq) v4,v5:#null\l" [ ]
+   "BB3\n5   v6 = getfield < Application, LQuadTreeNode, quadrant, <Application,LQuadrant> > v1\l" [ ]
+   "BB4\n7   v8 = invokeinterface < Application, LQuadrant, adjacent(I)Z > v6,v2 @12 exception:v7\l" [ ]
+   "BB5\n9   conditional branch(eq) v8,v9:#0\l" [ ]
+   "BB6\n11   v11 = getfield < Application, LQuadTreeNode, parent, <Application,LQuadTreeNode> > v1\l" [ ]
+   "BB7\n13   v13 = invokevirtual < Application, LQuadTreeNode, gtEqualAdjNeighbor(I)LQuadTreeNode; > v11,v2 @25 exception:v12\l" [ ]
+   "BB8\n15   goto                          \l" [ ]
+   "BB9\n17   v10 = getfield < Application, LQuadTreeNode, parent, <Application,LQuadTreeNode> > v1\l" [ ]
+   "BB10\n" [ ]
+   "BB11\n           v14 = phi  v13,v10\l21   conditional branch(eq) v14,v5:#null\l" [ ]
+   "BB12\n23   v15 = instanceof v14 <Application,LGreyNode>\l25   conditional branch(eq) v15,v9:#0\l" [ ]
+   "BB13\n27   v16 = getfield < Application, LQuadTreeNode, quadrant, <Application,LQuadrant> > v1\l" [ ]
+   "BB14\n29   v18 = invokeinterface < Application, LQuadrant, reflect(I)LQuadrant; > v16,v2 @53 exception:v17\l" [ ]
+   "BB15\n31   v20 = invokeinterface < Application, LQuadrant, child(LQuadTreeNode;)LQuadTreeNode; > v18,v14 @59 exception:v19\l" [ ]
+   "BB16\n32   return v20                    \l" [ ]
+   "BB17\n34   return v14                    \l" [ ]
+   "BB18 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v4 = getfield < Application, LQuadTreeNode, parent, <Application,LQuadTreeNode> > v1\l" 
+ "BB1\n1   v4 = getfield < Application, LQuadTreeNode, parent, <Application,LQuadTreeNode> > v1\l" -> "BB2\n3   conditional branch(eq) v4,v5:#null\l" 
+ "BB2\n3   conditional branch(eq) v4,v5:#null\l" -> "BB3\n5   v6 = getfield < Application, LQuadTreeNode, quadrant, <Application,LQuadrant> > v1\l" 
+ "BB2\n3   conditional branch(eq) v4,v5:#null\l" -> "BB9\n17   v10 = getfield < Application, LQuadTreeNode, parent, <Application,LQuadTreeNode> > v1\l" 
+ "BB3\n5   v6 = getfield < Application, LQuadTreeNode, quadrant, <Application,LQuadrant> > v1\l" -> "BB4\n7   v8 = invokeinterface < Application, LQuadrant, adjacent(I)Z > v6,v2 @12 exception:v7\l" 
+ "BB4\n7   v8 = invokeinterface < Application, LQuadrant, adjacent(I)Z > v6,v2 @12 exception:v7\l" -> "BB5\n9   conditional branch(eq) v8,v9:#0\l" 
+ "BB5\n9   conditional branch(eq) v8,v9:#0\l" -> "BB6\n11   v11 = getfield < Application, LQuadTreeNode, parent, <Application,LQuadTreeNode> > v1\l" 
+ "BB5\n9   conditional branch(eq) v8,v9:#0\l" -> "BB9\n17   v10 = getfield < Application, LQuadTreeNode, parent, <Application,LQuadTreeNode> > v1\l" 
+ "BB6\n11   v11 = getfield < Application, LQuadTreeNode, parent, <Application,LQuadTreeNode> > v1\l" -> "BB7\n13   v13 = invokevirtual < Application, LQuadTreeNode, gtEqualAdjNeighbor(I)LQuadTreeNode; > v11,v2 @25 exception:v12\l" 
+ "BB7\n13   v13 = invokevirtual < Application, LQuadTreeNode, gtEqualAdjNeighbor(I)LQuadTreeNode; > v11,v2 @25 exception:v12\l" -> "BB8\n15   goto                          \l" 
+ "BB8\n15   goto                          \l" -> "BB11\n           v14 = phi  v13,v10\l21   conditional branch(eq) v14,v5:#null\l" 
+ "BB9\n17   v10 = getfield < Application, LQuadTreeNode, parent, <Application,LQuadTreeNode> > v1\l" -> "BB10\n" 
+ "BB10\n" -> "BB11\n           v14 = phi  v13,v10\l21   conditional branch(eq) v14,v5:#null\l" 
+ "BB11\n           v14 = phi  v13,v10\l21   conditional branch(eq) v14,v5:#null\l" -> "BB12\n23   v15 = instanceof v14 <Application,LGreyNode>\l25   conditional branch(eq) v15,v9:#0\l" 
+ "BB11\n           v14 = phi  v13,v10\l21   conditional branch(eq) v14,v5:#null\l" -> "BB17\n34   return v14                    \l" 
+ "BB12\n23   v15 = instanceof v14 <Application,LGreyNode>\l25   conditional branch(eq) v15,v9:#0\l" -> "BB13\n27   v16 = getfield < Application, LQuadTreeNode, quadrant, <Application,LQuadrant> > v1\l" 
+ "BB12\n23   v15 = instanceof v14 <Application,LGreyNode>\l25   conditional branch(eq) v15,v9:#0\l" -> "BB17\n34   return v14                    \l" 
+ "BB13\n27   v16 = getfield < Application, LQuadTreeNode, quadrant, <Application,LQuadrant> > v1\l" -> "BB14\n29   v18 = invokeinterface < Application, LQuadrant, reflect(I)LQuadrant; > v16,v2 @53 exception:v17\l" 
+ "BB14\n29   v18 = invokeinterface < Application, LQuadrant, reflect(I)LQuadrant; > v16,v2 @53 exception:v17\l" -> "BB15\n31   v20 = invokeinterface < Application, LQuadrant, child(LQuadTreeNode;)LQuadTreeNode; > v18,v14 @59 exception:v19\l" 
+ "BB15\n31   v20 = invokeinterface < Application, LQuadrant, child(LQuadTreeNode;)LQuadTreeNode; > v18,v14 @59 exception:v19\l" -> "BB16\n32   return v20                    \l" 
+ "BB16\n32   return v20                    \l" -> "BB18 (ex)\n\n" 
+ "BB17\n34   return v14                    \l" -> "BB18 (ex)\n\n" 
+
+}

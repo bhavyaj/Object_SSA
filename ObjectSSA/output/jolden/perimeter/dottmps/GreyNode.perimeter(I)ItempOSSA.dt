@@ -1,0 +1,27 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for GreyNode.perimeter(I)I", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2   v5 = binaryop(div) v2 , v4:#2            \l" [ ]
+   "BB2\n5  GetOSSAInstruction:	O2_1= O1_1< sw>       \l" [ ]
+   "BB3\n7  O3_1 = < Application, LQuadTreeNode, perimeter(I)I >( O2_1, V5 )\l" [ ]
+   "BB4\n11  GetOSSAInstruction:	O2_1= O1_1< se>      \l" [ ]
+   "BB5\n13  O3_2 = < Application, LQuadTreeNode, perimeter(I)I >( O2_1, V5 )\l" [ ]
+   "BB6\n14   v12 = binaryop(add) v8 , v11            \l18  GetOSSAInstruction:	O2_1= O1_1< ne>      \l" [ ]
+   "BB7\n20  O3_3 = < Application, LQuadTreeNode, perimeter(I)I >( O2_1, V5 )\l" [ ]
+   "BB8\n21   v16 = binaryop(add) v12 , v15           \l25  GetOSSAInstruction:	O2_1= O1_1< nw>      \l" [ ]
+   "BB9\n27  O3_4 = < Application, LQuadTreeNode, perimeter(I)I >( O2_1, V5 )\l" [ ]
+   "BB10\n28   v20 = binaryop(add) v16 , v19           \l31  Return O3_4                              \l" [ ]
+   "BB11 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2   v5 = binaryop(div) v2 , v4:#2            \l" 
+ "BB1\n2   v5 = binaryop(div) v2 , v4:#2            \l" -> "BB2\n5  GetOSSAInstruction:	O2_1= O1_1< sw>       \l" 
+ "BB2\n5  GetOSSAInstruction:	O2_1= O1_1< sw>       \l" -> "BB3\n7  O3_1 = < Application, LQuadTreeNode, perimeter(I)I >( O2_1, V5 )\l" 
+ "BB3\n7  O3_1 = < Application, LQuadTreeNode, perimeter(I)I >( O2_1, V5 )\l" -> "BB4\n11  GetOSSAInstruction:	O2_1= O1_1< se>      \l" 
+ "BB4\n11  GetOSSAInstruction:	O2_1= O1_1< se>      \l" -> "BB5\n13  O3_2 = < Application, LQuadTreeNode, perimeter(I)I >( O2_1, V5 )\l" 
+ "BB5\n13  O3_2 = < Application, LQuadTreeNode, perimeter(I)I >( O2_1, V5 )\l" -> "BB6\n14   v12 = binaryop(add) v8 , v11            \l18  GetOSSAInstruction:	O2_1= O1_1< ne>      \l" 
+ "BB6\n14   v12 = binaryop(add) v8 , v11            \l18  GetOSSAInstruction:	O2_1= O1_1< ne>      \l" -> "BB7\n20  O3_3 = < Application, LQuadTreeNode, perimeter(I)I >( O2_1, V5 )\l" 
+ "BB7\n20  O3_3 = < Application, LQuadTreeNode, perimeter(I)I >( O2_1, V5 )\l" -> "BB8\n21   v16 = binaryop(add) v12 , v15           \l25  GetOSSAInstruction:	O2_1= O1_1< nw>      \l" 
+ "BB8\n21   v16 = binaryop(add) v12 , v15           \l25  GetOSSAInstruction:	O2_1= O1_1< nw>      \l" -> "BB9\n27  O3_4 = < Application, LQuadTreeNode, perimeter(I)I >( O2_1, V5 )\l" 
+ "BB9\n27  O3_4 = < Application, LQuadTreeNode, perimeter(I)I >( O2_1, V5 )\l" -> "BB10\n28   v20 = binaryop(add) v16 , v19           \l31  Return O3_4                              \l" 
+ "BB10\n28   v20 = binaryop(add) v16 , v19           \l31  Return O3_4                              \l" -> "BB11 (ex)\n\n" 
+
+}

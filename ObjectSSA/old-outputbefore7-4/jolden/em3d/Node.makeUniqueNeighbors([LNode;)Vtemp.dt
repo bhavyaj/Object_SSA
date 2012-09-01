@@ -1,0 +1,60 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n" [ ]
+   "BB2\n           v24 = phi  v23,v4:#0\l4   v5 = getfield < Application, LNode, toNodes, <Application,[LNode> > v1\l" [ ]
+   "BB3\n5   v6 = arraylength v5            \l" [ ]
+   "BB4\n6   conditional branch(ge) v24,v6  \l" [ ]
+   "BB5\n           v25 = phi  v26,v24\l7   v7 = getstatic < Application, LNode, rand, <Application,Ljava/util/Random> >\l8   v9 = invokevirtual < Application, Ljava/util/Random, nextInt()I > v7 @14 exception:v8\l" [ ]
+   "BB6\n12   conditional branch(ge) v9,v4:#0\l" [ ]
+   "BB7\n14   v10 = neg v9                  \l" [ ]
+   "BB8\n           v11 = phi  v9,v10\l18   v12 = arraylength v2          \l" [ ]
+   "BB9\n19   v13 = binaryop(rem) v11 , v12 \l" [ ]
+   "BB10\n23   v14 = arrayload v2[v13]       \l" [ ]
+   "BB11\n" [ ]
+   "BB12\n           v26 = phi  v26,v25\l           v19 = phi  v18,v4:#0\l29   conditional branch(ge) v19,v26\l" [ ]
+   "BB13\n32   v15 = getfield < Application, LNode, toNodes, <Application,[LNode> > v1\l" [ ]
+   "BB14\n34   v16 = arrayload v15[v26]      \l" [ ]
+   "BB15\n35   conditional branch(ne) v14,v16\l" [ ]
+   "BB16\n36   goto                          \l" [ ]
+   "BB17\n39   v18 = binaryop(add) v19 , v17:#1\l41   goto                          \l" [ ]
+   "BB18\n44   conditional branch(lt) v19,v26\l" [ ]
+   "BB19\n46   v20 = getfield < Application, LNode, toNodes, <Application,[LNode> > v1\l" [ ]
+   "BB20\n49   arraystore v20[v26] = v14     \l" [ ]
+   "BB21\n52   v21 = getfield < Application, LNode, fromCount, <Primordial,I> > v14\l" [ ]
+   "BB22\n54   v22 = binaryop(add) v21 , v17:#1\l55   putfield v14 = v22 < Application, LNode, fromCount, <Primordial,I> >\l" [ ]
+   "BB23\n58   v23 = binaryop(add) v26 , v17:#1\l60   goto                          \l" [ ]
+   "BB24\n61   return                        \l" [ ]
+   "BB25 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n" 
+ "BB1\n" -> "BB2\n           v24 = phi  v23,v4:#0\l4   v5 = getfield < Application, LNode, toNodes, <Application,[LNode> > v1\l" 
+ "BB2\n           v24 = phi  v23,v4:#0\l4   v5 = getfield < Application, LNode, toNodes, <Application,[LNode> > v1\l" -> "BB3\n5   v6 = arraylength v5            \l" 
+ "BB3\n5   v6 = arraylength v5            \l" -> "BB4\n6   conditional branch(ge) v24,v6  \l" 
+ "BB4\n6   conditional branch(ge) v24,v6  \l" -> "BB5\n           v25 = phi  v26,v24\l7   v7 = getstatic < Application, LNode, rand, <Application,Ljava/util/Random> >\l8   v9 = invokevirtual < Application, Ljava/util/Random, nextInt()I > v7 @14 exception:v8\l" 
+ "BB4\n6   conditional branch(ge) v24,v6  \l" -> "BB24\n61   return                        \l" 
+ "BB5\n           v25 = phi  v26,v24\l7   v7 = getstatic < Application, LNode, rand, <Application,Ljava/util/Random> >\l8   v9 = invokevirtual < Application, Ljava/util/Random, nextInt()I > v7 @14 exception:v8\l" -> "BB6\n12   conditional branch(ge) v9,v4:#0\l" 
+ "BB6\n12   conditional branch(ge) v9,v4:#0\l" -> "BB7\n14   v10 = neg v9                  \l" 
+ "BB6\n12   conditional branch(ge) v9,v4:#0\l" -> "BB8\n           v11 = phi  v9,v10\l18   v12 = arraylength v2          \l" 
+ "BB7\n14   v10 = neg v9                  \l" -> "BB8\n           v11 = phi  v9,v10\l18   v12 = arraylength v2          \l" 
+ "BB8\n           v11 = phi  v9,v10\l18   v12 = arraylength v2          \l" -> "BB9\n19   v13 = binaryop(rem) v11 , v12 \l" 
+ "BB9\n19   v13 = binaryop(rem) v11 , v12 \l" -> "BB10\n23   v14 = arrayload v2[v13]       \l" 
+ "BB10\n23   v14 = arrayload v2[v13]       \l" -> "BB11\n" 
+ "BB11\n" -> "BB12\n           v26 = phi  v26,v25\l           v19 = phi  v18,v4:#0\l29   conditional branch(ge) v19,v26\l" 
+ "BB12\n           v26 = phi  v26,v25\l           v19 = phi  v18,v4:#0\l29   conditional branch(ge) v19,v26\l" -> "BB13\n32   v15 = getfield < Application, LNode, toNodes, <Application,[LNode> > v1\l" 
+ "BB12\n           v26 = phi  v26,v25\l           v19 = phi  v18,v4:#0\l29   conditional branch(ge) v19,v26\l" -> "BB18\n44   conditional branch(lt) v19,v26\l" 
+ "BB13\n32   v15 = getfield < Application, LNode, toNodes, <Application,[LNode> > v1\l" -> "BB14\n34   v16 = arrayload v15[v26]      \l" 
+ "BB14\n34   v16 = arrayload v15[v26]      \l" -> "BB15\n35   conditional branch(ne) v14,v16\l" 
+ "BB15\n35   conditional branch(ne) v14,v16\l" -> "BB16\n36   goto                          \l" 
+ "BB15\n35   conditional branch(ne) v14,v16\l" -> "BB17\n39   v18 = binaryop(add) v19 , v17:#1\l41   goto                          \l" 
+ "BB16\n36   goto                          \l" -> "BB18\n44   conditional branch(lt) v19,v26\l" 
+ "BB17\n39   v18 = binaryop(add) v19 , v17:#1\l41   goto                          \l" -> "BB12\n           v26 = phi  v26,v25\l           v19 = phi  v18,v4:#0\l29   conditional branch(ge) v19,v26\l" 
+ "BB18\n44   conditional branch(lt) v19,v26\l" -> "BB5\n           v25 = phi  v26,v24\l7   v7 = getstatic < Application, LNode, rand, <Application,Ljava/util/Random> >\l8   v9 = invokevirtual < Application, Ljava/util/Random, nextInt()I > v7 @14 exception:v8\l" 
+ "BB18\n44   conditional branch(lt) v19,v26\l" -> "BB19\n46   v20 = getfield < Application, LNode, toNodes, <Application,[LNode> > v1\l" 
+ "BB19\n46   v20 = getfield < Application, LNode, toNodes, <Application,[LNode> > v1\l" -> "BB20\n49   arraystore v20[v26] = v14     \l" 
+ "BB20\n49   arraystore v20[v26] = v14     \l" -> "BB21\n52   v21 = getfield < Application, LNode, fromCount, <Primordial,I> > v14\l" 
+ "BB21\n52   v21 = getfield < Application, LNode, fromCount, <Primordial,I> > v14\l" -> "BB22\n54   v22 = binaryop(add) v21 , v17:#1\l55   putfield v14 = v22 < Application, LNode, fromCount, <Primordial,I> >\l" 
+ "BB22\n54   v22 = binaryop(add) v21 , v17:#1\l55   putfield v14 = v22 < Application, LNode, fromCount, <Primordial,I> >\l" -> "BB23\n58   v23 = binaryop(add) v26 , v17:#1\l60   goto                          \l" 
+ "BB23\n58   v23 = binaryop(add) v26 , v17:#1\l60   goto                          \l" -> "BB2\n           v24 = phi  v23,v4:#0\l4   v5 = getfield < Application, LNode, toNodes, <Application,[LNode> > v1\l" 
+ "BB24\n61   return                        \l" -> "BB25 (ex)\n\n" 
+
+}

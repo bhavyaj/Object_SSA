@@ -1,0 +1,36 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Hashtable.get(Ljava-lang-Object;)Ljava-lang-Object;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2  O3_1 = < Application, LHashtable, hashMap(Ljava/lang/Object;)I >( O1_1, O2_1 )\l" [ ]
+   "BB2\n7  GetOSSAInstruction:	O4_1= O1_1< array>    \l" [ ]
+   "BB3\n9   v8 = arrayload v7[v5]                    \l" [ ]
+   "BB4\n" [ ]
+   "BB5\n           O5_1 = diff-Object-Phi(O5_1, O5_2 )\l           v13 = phi  v12,v8\l13   conditional branch(eq) v13,v6:#null     \l" [ ]
+   "BB6\n15  O2_2 = < Application, LHashEntry, key()Ljava/lang/Object; >( O5_1 )\l" [ ]
+   "BB7\n17   conditional branch(eq) v10,v2           \l" [ ]
+   "BB8\n19  O5_2 = < Application, LHashEntry, next()LHashEntry; >( O5_1 )\l" [ ]
+   "BB9\n21   goto                                    \l" [ ]
+   "BB10\n24   conditional branch(eq) v13,v6:#null     \l" [ ]
+   "BB11\n26  O6_1 = < Application, LHashEntry, entry()Ljava/lang/Object; >( O5_1 )\l" [ ]
+   "BB12\n27  Return O6_1                              \l" [ ]
+   "BB13\n29  Return O3_1                              \l" [ ]
+   "BB14 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2  O3_1 = < Application, LHashtable, hashMap(Ljava/lang/Object;)I >( O1_1, O2_1 )\l" 
+ "BB1\n2  O3_1 = < Application, LHashtable, hashMap(Ljava/lang/Object;)I >( O1_1, O2_1 )\l" -> "BB2\n7  GetOSSAInstruction:	O4_1= O1_1< array>    \l" 
+ "BB2\n7  GetOSSAInstruction:	O4_1= O1_1< array>    \l" -> "BB3\n9   v8 = arrayload v7[v5]                    \l" 
+ "BB3\n9   v8 = arrayload v7[v5]                    \l" -> "BB4\n" 
+ "BB4\n" -> "BB5\n           O5_1 = diff-Object-Phi(O5_1, O5_2 )\l           v13 = phi  v12,v8\l13   conditional branch(eq) v13,v6:#null     \l" 
+ "BB5\n           O5_1 = diff-Object-Phi(O5_1, O5_2 )\l           v13 = phi  v12,v8\l13   conditional branch(eq) v13,v6:#null     \l" -> "BB6\n15  O2_2 = < Application, LHashEntry, key()Ljava/lang/Object; >( O5_1 )\l" 
+ "BB5\n           O5_1 = diff-Object-Phi(O5_1, O5_2 )\l           v13 = phi  v12,v8\l13   conditional branch(eq) v13,v6:#null     \l" -> "BB10\n24   conditional branch(eq) v13,v6:#null     \l" 
+ "BB6\n15  O2_2 = < Application, LHashEntry, key()Ljava/lang/Object; >( O5_1 )\l" -> "BB7\n17   conditional branch(eq) v10,v2           \l" 
+ "BB7\n17   conditional branch(eq) v10,v2           \l" -> "BB8\n19  O5_2 = < Application, LHashEntry, next()LHashEntry; >( O5_1 )\l" 
+ "BB7\n17   conditional branch(eq) v10,v2           \l" -> "BB10\n24   conditional branch(eq) v13,v6:#null     \l" 
+ "BB8\n19  O5_2 = < Application, LHashEntry, next()LHashEntry; >( O5_1 )\l" -> "BB9\n21   goto                                    \l" 
+ "BB9\n21   goto                                    \l" -> "BB5\n           O5_1 = diff-Object-Phi(O5_1, O5_2 )\l           v13 = phi  v12,v8\l13   conditional branch(eq) v13,v6:#null     \l" 
+ "BB10\n24   conditional branch(eq) v13,v6:#null     \l" -> "BB11\n26  O6_1 = < Application, LHashEntry, entry()Ljava/lang/Object; >( O5_1 )\l" 
+ "BB10\n24   conditional branch(eq) v13,v6:#null     \l" -> "BB13\n29  Return O3_1                              \l" 
+ "BB11\n26  O6_1 = < Application, LHashEntry, entry()Ljava/lang/Object; >( O5_1 )\l" -> "BB12\n27  Return O6_1                              \l" 
+ "BB12\n27  Return O6_1                              \l" -> "BB14 (ex)\n\n" 
+ "BB13\n29  Return O3_1                              \l" -> "BB14 (ex)\n\n" 
+
+}

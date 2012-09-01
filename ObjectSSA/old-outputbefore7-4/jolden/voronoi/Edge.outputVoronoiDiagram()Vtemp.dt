@@ -1,0 +1,212 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n" [ ]
+   "BB2\n           v57 = phi  v56,v1\l3   v4 = invokevirtual < Application, LEdge, dest()LVertex; > v57 @3 exception:v3\l" [ ]
+   "BB3\n6   v6 = invokevirtual < Application, LEdge, orig()LVertex; > v57 @8 exception:v5\l" [ ]
+   "BB4\n9   v8 = invokevirtual < Application, LEdge, oNext()LEdge; > v57 @13 exception:v7\l" [ ]
+   "BB5\n12   v10 = invokevirtual < Application, LEdge, dest()LVertex; > v8 @20 exception:v9\l" [ ]
+   "BB6\n16   v12 = invokevirtual < Application, LVec2, sub(LVec2;)LVec2; > v4,v6 @27 exception:v11\l" [ ]
+   "BB7\n21   v14 = invokevirtual < Application, LVec2, circle_center(LVec2;LVec2;)LVec2; > v6,v4,v10 @36 exception:v13\l" [ ]
+   "BB8\n25   v16 = invokevirtual < Application, LVec2, sum(LVec2;)LVec2; > v6,v6 @43 exception:v15\l" [ ]
+   "BB9\n29   v19 = invokevirtual < Application, LVec2, times(D)LVec2; > v16,v17:#0.5 @53 exception:v18\l" [ ]
+   "BB10\n33   v21 = invokevirtual < Application, LVec2, sub(LVec2;)LVec2; > v14,v19 @62 exception:v20\l" [ ]
+   "BB11\n37   v24 = invokevirtual < Application, LVec2, magn()D > v21 @70 exception:v23\l" [ ]
+   "BB12\n38   v25 = binaryop(add) v22:#1.0 , v24\l42   v27 = invokevirtual < Application, LVec2, magn()D > v12 @80 exception:v26\l" [ ]
+   "BB13\n43   v28 = binaryop(div) v25 , v27 \l46   v30 = invokevirtual < Application, LVec2, cross()LVec2; > v12 @88 exception:v29\l" [ ]
+   "BB14\n50   v32 = invokevirtual < Application, LVec2, times(D)LVec2; > v30,v28 @97 exception:v31\l" [ ]
+   "BB15\n54   v34 = invokevirtual < Application, LVec2, sum(LVec2;)LVec2; > v14,v32 @106 exception:v33\l" [ ]
+   "BB16\n56   v35 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l57   v36 = new <Application,Ljava/lang/StringBuilder>@114\l" [ ]
+   "BB17\n59   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v36 @118 exception:v37\l" [ ]
+   "BB18\n61   v40 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v36,v38:#Vedge  @123 exception:v39\l" [ ]
+   "BB19\n63   v42 = invokevirtual < Application, LVec2, toString()Ljava/lang/String; > v14 @128 exception:v41\l" [ ]
+   "BB20\n64   v44 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v40,v42 @131 exception:v43\l" [ ]
+   "BB21\n66   v47 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v44,v45:#  @136 exception:v46\l" [ ]
+   "BB22\n68   v49 = invokevirtual < Application, LVec2, toString()Ljava/lang/String; > v34 @141 exception:v48\l" [ ]
+   "BB23\n69   v51 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v47,v49 @144 exception:v50\l" [ ]
+   "BB24\n70   v53 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v51 @147 exception:v52\l" [ ]
+   "BB25\n71   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v35,v53 @150 exception:v54\l" [ ]
+   "BB26\n73   v56 = invokevirtual < Application, LEdge, rNext()LEdge; > v57 @154 exception:v55\l" [ ]
+   "BB27\n77   conditional branch(ne) v56,v1 \l" [ ]
+   "BB28\n78   v58 = new <Application,Ljava/util/Stack>@163\l" [ ]
+   "BB29\n80   invokespecial < Application, Ljava/util/Stack, <init>()V > v58 @167 exception:v59\l" [ ]
+   "BB30\n82   v60 = new <Application,Ljava/util/Hashtable>@171\l" [ ]
+   "BB31\n84   invokespecial < Application, Ljava/util/Hashtable, <init>()V > v60 @175 exception:v61\l" [ ]
+   "BB32\n89   invokevirtual < Application, LEdge, pushRing(Ljava/util/Stack;Ljava/util/Hashtable;)V > v1,v58,v60 @182 exception:v62\l" [ ]
+   "BB33\n90   v63 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l91   v64 = new <Application,Ljava/lang/StringBuilder>@188\l" [ ]
+   "BB34\n93   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v64 @192 exception:v65\l" [ ]
+   "BB35\n95   v68 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v64,v66:#no. of edges =  @197 exception:v67\l" [ ]
+   "BB36\n97   v70 = invokevirtual < Application, Ljava/util/Stack, size()I > v58 @201 exception:v69\l" [ ]
+   "BB37\n98   v72 = invokevirtual < Application, Ljava/lang/StringBuilder, append(I)Ljava/lang/StringBuilder; > v68,v70 @204 exception:v71\l" [ ]
+   "BB38\n99   v74 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v72 @207 exception:v73\l" [ ]
+   "BB39\n100   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v63,v74 @210 exception:v75\l" [ ]
+   "BB40\n102   v77 = invokevirtual < Application, Ljava/util/Stack, empty()Z > v58 @214 exception:v76\l" [ ]
+   "BB41\n104   conditional branch(ne) v77,v78:#0\l" [ ]
+   "BB42\n106   v80 = invokevirtual < Application, Ljava/util/Stack, pop()Ljava/lang/Object; > v58 @221 exception:v79\l" [ ]
+   "BB43\n107   v81 = checkcast <Application,LEdge>v80\l" [ ]
+   "BB44\n111   v83 = invokevirtual < Application, Ljava/util/Hashtable, get(Ljava/lang/Object;)Ljava/lang/Object; > v60,v81 @232 exception:v82\l" [ ]
+   "BB45\n112   v84 = checkcast <Application,Ljava/lang/Boolean>v83\l" [ ]
+   "BB46\n116   conditional branch(eq) v84,v85:#null\l" [ ]
+   "BB47\n118   v87 = invokevirtual < Application, Ljava/lang/Boolean, booleanValue()Z > v84 @247 exception:v86\l" [ ]
+   "BB48\n120   conditional branch(eq) v87,v78:#0\l" [ ]
+   "BB49\n124   v89 = invokevirtual < Application, LEdge, oNext()LEdge; > v81 @259 exception:v88\l" [ ]
+   "BB50\n" [ ]
+   "BB51\n           v173 = phi  v172,v89\l           v174 = phi  v173,v81\l127   v91 = invokevirtual < Application, LEdge, orig()LVertex; > v174 @265 exception:v90\l" [ ]
+   "BB52\n130   v93 = invokevirtual < Application, LVertex, X()D > v91 @272 exception:v92\l" [ ]
+   "BB53\n133   v95 = invokevirtual < Application, LEdge, dest()LVertex; > v174 @279 exception:v94\l" [ ]
+   "BB54\n136   v97 = invokevirtual < Application, LVertex, X()D > v95 @286 exception:v96\l" [ ]
+   "BB55\n140   v98 = compare v93,v97 opcode=cmpl\l142   conditional branch(lt) v98,v78:#0\l" [ ]
+   "BB56\n143   v99 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l144   v100 = new <Application,Ljava/lang/StringBuilder>@302\l" [ ]
+   "BB57\n146   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v100 @306 exception:v101\l" [ ]
+   "BB58\n148   v104 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v100,v102:#Dedge  @311 exception:v103\l" [ ]
+   "BB59\n150   v106 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/Object;)Ljava/lang/StringBuilder; > v104,v91 @316 exception:v105\l" [ ]
+   "BB60\n152   v108 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v106,v45:#  @321 exception:v107\l" [ ]
+   "BB61\n154   v110 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/Object;)Ljava/lang/StringBuilder; > v108,v95 @326 exception:v109\l" [ ]
+   "BB62\n155   v112 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v110 @329 exception:v111\l" [ ]
+   "BB63\n156   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v99,v112 @332 exception:v113\l" [ ]
+   "BB64\n158   v115 = invokevirtual < Application, LEdge, symmetric()LEdge; > v174 @337 exception:v114\l" [ ]
+   "BB65\n161   v117 = invokevirtual < Application, LEdge, oNext()LEdge; > v115 @344 exception:v116\l" [ ]
+   "BB66\n164   v119 = invokevirtual < Application, LEdge, orig()LVertex; > v174 @351 exception:v118\l" [ ]
+   "BB67\n167   v121 = invokevirtual < Application, LEdge, dest()LVertex; > v174 @358 exception:v120\l" [ ]
+   "BB68\n170   v123 = invokevirtual < Application, LEdge, dest()LVertex; > v173 @364 exception:v122\l" [ ]
+   "BB69\n173   v125 = invokevirtual < Application, LEdge, dest()LVertex; > v117 @371 exception:v124\l" [ ]
+   "BB70\n178   v127 = invokevirtual < Application, LVertex, ccw(LVertex;LVertex;)Z > v119,v121,v123 @382 exception:v126\l" [ ]
+   "BB71\n182   v129 = invokevirtual < Application, LVertex, ccw(LVertex;LVertex;)Z > v119,v121,v125 @391 exception:v128\l" [ ]
+   "BB72\n183   conditional branch(eq) v127,v129\l" [ ]
+   "BB73\n185   v131 = invokevirtual < Application, LEdge, orig()LVertex; > v174 @399 exception:v130\l" [ ]
+   "BB74\n188   v133 = invokevirtual < Application, LEdge, dest()LVertex; > v174 @406 exception:v132\l" [ ]
+   "BB75\n191   v135 = invokevirtual < Application, LEdge, dest()LVertex; > v173 @412 exception:v134\l" [ ]
+   "BB76\n196   v137 = invokevirtual < Application, LVec2, circle_center(LVec2;LVec2;)LVec2; > v131,v133,v135 @423 exception:v136\l" [ ]
+   "BB77\n199   v139 = invokevirtual < Application, LEdge, orig()LVertex; > v115 @430 exception:v138\l" [ ]
+   "BB78\n202   v141 = invokevirtual < Application, LEdge, dest()LVertex; > v115 @437 exception:v140\l" [ ]
+   "BB79\n205   v143 = invokevirtual < Application, LEdge, dest()LVertex; > v117 @444 exception:v142\l" [ ]
+   "BB80\n210   v145 = invokevirtual < Application, LVec2, circle_center(LVec2;LVec2;)LVec2; > v139,v141,v143 @455 exception:v144\l" [ ]
+   "BB81\n212   v146 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l213   v147 = new <Application,Ljava/lang/StringBuilder>@463\l" [ ]
+   "BB82\n215   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v147 @467 exception:v148\l" [ ]
+   "BB83\n217   v150 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v147,v38:#Vedge  @472 exception:v149\l" [ ]
+   "BB84\n219   v152 = invokevirtual < Application, LVec2, toString()Ljava/lang/String; > v137 @477 exception:v151\l" [ ]
+   "BB85\n220   v154 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v150,v152 @480 exception:v153\l" [ ]
+   "BB86\n222   v156 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v154,v45:#  @485 exception:v155\l" [ ]
+   "BB87\n224   v158 = invokevirtual < Application, LVec2, toString()Ljava/lang/String; > v145 @490 exception:v157\l" [ ]
+   "BB88\n225   v160 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v156,v158 @493 exception:v159\l" [ ]
+   "BB89\n226   v162 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v160 @496 exception:v161\l" [ ]
+   "BB90\n227   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v146,v162 @499 exception:v163\l" [ ]
+   "BB91\n230   v167 = new <Application,Ljava/lang/Boolean>@505\l" [ ]
+   "BB92\n233   invokespecial < Application, Ljava/lang/Boolean, <init>(Z)V > v167,v78:#0 @510 exception:v168\l" [ ]
+   "BB93\n234   v170 = invokevirtual < Application, Ljava/util/Hashtable, put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; > v60,v174,v167 @513 exception:v169\l" [ ]
+   "BB94\n239   v172 = invokevirtual < Application, LEdge, oNext()LEdge; > v173 @521 exception:v171\l" [ ]
+   "BB95\n243   conditional branch(ne) v173,v81\l" [ ]
+   "BB96\n245   v188 = invokevirtual < Application, LEdge, symmetric()LEdge; > v81 @534 exception:v187\l" [ ]
+   "BB97\n248   invokevirtual < Application, LEdge, pushRing(Ljava/util/Stack;Ljava/util/Hashtable;)V > v188,v58,v60 @539 exception:v189\l" [ ]
+   "BB98\n249   goto                         \l" [ ]
+   "BB99\n250   return                       \l" [ ]
+   "BB100 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n" 
+ "BB1\n" -> "BB2\n           v57 = phi  v56,v1\l3   v4 = invokevirtual < Application, LEdge, dest()LVertex; > v57 @3 exception:v3\l" 
+ "BB2\n           v57 = phi  v56,v1\l3   v4 = invokevirtual < Application, LEdge, dest()LVertex; > v57 @3 exception:v3\l" -> "BB3\n6   v6 = invokevirtual < Application, LEdge, orig()LVertex; > v57 @8 exception:v5\l" 
+ "BB3\n6   v6 = invokevirtual < Application, LEdge, orig()LVertex; > v57 @8 exception:v5\l" -> "BB4\n9   v8 = invokevirtual < Application, LEdge, oNext()LEdge; > v57 @13 exception:v7\l" 
+ "BB4\n9   v8 = invokevirtual < Application, LEdge, oNext()LEdge; > v57 @13 exception:v7\l" -> "BB5\n12   v10 = invokevirtual < Application, LEdge, dest()LVertex; > v8 @20 exception:v9\l" 
+ "BB5\n12   v10 = invokevirtual < Application, LEdge, dest()LVertex; > v8 @20 exception:v9\l" -> "BB6\n16   v12 = invokevirtual < Application, LVec2, sub(LVec2;)LVec2; > v4,v6 @27 exception:v11\l" 
+ "BB6\n16   v12 = invokevirtual < Application, LVec2, sub(LVec2;)LVec2; > v4,v6 @27 exception:v11\l" -> "BB7\n21   v14 = invokevirtual < Application, LVec2, circle_center(LVec2;LVec2;)LVec2; > v6,v4,v10 @36 exception:v13\l" 
+ "BB7\n21   v14 = invokevirtual < Application, LVec2, circle_center(LVec2;LVec2;)LVec2; > v6,v4,v10 @36 exception:v13\l" -> "BB8\n25   v16 = invokevirtual < Application, LVec2, sum(LVec2;)LVec2; > v6,v6 @43 exception:v15\l" 
+ "BB8\n25   v16 = invokevirtual < Application, LVec2, sum(LVec2;)LVec2; > v6,v6 @43 exception:v15\l" -> "BB9\n29   v19 = invokevirtual < Application, LVec2, times(D)LVec2; > v16,v17:#0.5 @53 exception:v18\l" 
+ "BB9\n29   v19 = invokevirtual < Application, LVec2, times(D)LVec2; > v16,v17:#0.5 @53 exception:v18\l" -> "BB10\n33   v21 = invokevirtual < Application, LVec2, sub(LVec2;)LVec2; > v14,v19 @62 exception:v20\l" 
+ "BB10\n33   v21 = invokevirtual < Application, LVec2, sub(LVec2;)LVec2; > v14,v19 @62 exception:v20\l" -> "BB11\n37   v24 = invokevirtual < Application, LVec2, magn()D > v21 @70 exception:v23\l" 
+ "BB11\n37   v24 = invokevirtual < Application, LVec2, magn()D > v21 @70 exception:v23\l" -> "BB12\n38   v25 = binaryop(add) v22:#1.0 , v24\l42   v27 = invokevirtual < Application, LVec2, magn()D > v12 @80 exception:v26\l" 
+ "BB12\n38   v25 = binaryop(add) v22:#1.0 , v24\l42   v27 = invokevirtual < Application, LVec2, magn()D > v12 @80 exception:v26\l" -> "BB13\n43   v28 = binaryop(div) v25 , v27 \l46   v30 = invokevirtual < Application, LVec2, cross()LVec2; > v12 @88 exception:v29\l" 
+ "BB13\n43   v28 = binaryop(div) v25 , v27 \l46   v30 = invokevirtual < Application, LVec2, cross()LVec2; > v12 @88 exception:v29\l" -> "BB14\n50   v32 = invokevirtual < Application, LVec2, times(D)LVec2; > v30,v28 @97 exception:v31\l" 
+ "BB14\n50   v32 = invokevirtual < Application, LVec2, times(D)LVec2; > v30,v28 @97 exception:v31\l" -> "BB15\n54   v34 = invokevirtual < Application, LVec2, sum(LVec2;)LVec2; > v14,v32 @106 exception:v33\l" 
+ "BB15\n54   v34 = invokevirtual < Application, LVec2, sum(LVec2;)LVec2; > v14,v32 @106 exception:v33\l" -> "BB16\n56   v35 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l57   v36 = new <Application,Ljava/lang/StringBuilder>@114\l" 
+ "BB16\n56   v35 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l57   v36 = new <Application,Ljava/lang/StringBuilder>@114\l" -> "BB17\n59   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v36 @118 exception:v37\l" 
+ "BB17\n59   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v36 @118 exception:v37\l" -> "BB18\n61   v40 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v36,v38:#Vedge  @123 exception:v39\l" 
+ "BB18\n61   v40 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v36,v38:#Vedge  @123 exception:v39\l" -> "BB19\n63   v42 = invokevirtual < Application, LVec2, toString()Ljava/lang/String; > v14 @128 exception:v41\l" 
+ "BB19\n63   v42 = invokevirtual < Application, LVec2, toString()Ljava/lang/String; > v14 @128 exception:v41\l" -> "BB20\n64   v44 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v40,v42 @131 exception:v43\l" 
+ "BB20\n64   v44 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v40,v42 @131 exception:v43\l" -> "BB21\n66   v47 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v44,v45:#  @136 exception:v46\l" 
+ "BB21\n66   v47 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v44,v45:#  @136 exception:v46\l" -> "BB22\n68   v49 = invokevirtual < Application, LVec2, toString()Ljava/lang/String; > v34 @141 exception:v48\l" 
+ "BB22\n68   v49 = invokevirtual < Application, LVec2, toString()Ljava/lang/String; > v34 @141 exception:v48\l" -> "BB23\n69   v51 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v47,v49 @144 exception:v50\l" 
+ "BB23\n69   v51 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v47,v49 @144 exception:v50\l" -> "BB24\n70   v53 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v51 @147 exception:v52\l" 
+ "BB24\n70   v53 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v51 @147 exception:v52\l" -> "BB25\n71   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v35,v53 @150 exception:v54\l" 
+ "BB25\n71   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v35,v53 @150 exception:v54\l" -> "BB26\n73   v56 = invokevirtual < Application, LEdge, rNext()LEdge; > v57 @154 exception:v55\l" 
+ "BB26\n73   v56 = invokevirtual < Application, LEdge, rNext()LEdge; > v57 @154 exception:v55\l" -> "BB27\n77   conditional branch(ne) v56,v1 \l" 
+ "BB27\n77   conditional branch(ne) v56,v1 \l" -> "BB2\n           v57 = phi  v56,v1\l3   v4 = invokevirtual < Application, LEdge, dest()LVertex; > v57 @3 exception:v3\l" 
+ "BB27\n77   conditional branch(ne) v56,v1 \l" -> "BB28\n78   v58 = new <Application,Ljava/util/Stack>@163\l" 
+ "BB28\n78   v58 = new <Application,Ljava/util/Stack>@163\l" -> "BB29\n80   invokespecial < Application, Ljava/util/Stack, <init>()V > v58 @167 exception:v59\l" 
+ "BB29\n80   invokespecial < Application, Ljava/util/Stack, <init>()V > v58 @167 exception:v59\l" -> "BB30\n82   v60 = new <Application,Ljava/util/Hashtable>@171\l" 
+ "BB30\n82   v60 = new <Application,Ljava/util/Hashtable>@171\l" -> "BB31\n84   invokespecial < Application, Ljava/util/Hashtable, <init>()V > v60 @175 exception:v61\l" 
+ "BB31\n84   invokespecial < Application, Ljava/util/Hashtable, <init>()V > v60 @175 exception:v61\l" -> "BB32\n89   invokevirtual < Application, LEdge, pushRing(Ljava/util/Stack;Ljava/util/Hashtable;)V > v1,v58,v60 @182 exception:v62\l" 
+ "BB32\n89   invokevirtual < Application, LEdge, pushRing(Ljava/util/Stack;Ljava/util/Hashtable;)V > v1,v58,v60 @182 exception:v62\l" -> "BB33\n90   v63 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l91   v64 = new <Application,Ljava/lang/StringBuilder>@188\l" 
+ "BB33\n90   v63 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l91   v64 = new <Application,Ljava/lang/StringBuilder>@188\l" -> "BB34\n93   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v64 @192 exception:v65\l" 
+ "BB34\n93   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v64 @192 exception:v65\l" -> "BB35\n95   v68 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v64,v66:#no. of edges =  @197 exception:v67\l" 
+ "BB35\n95   v68 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v64,v66:#no. of edges =  @197 exception:v67\l" -> "BB36\n97   v70 = invokevirtual < Application, Ljava/util/Stack, size()I > v58 @201 exception:v69\l" 
+ "BB36\n97   v70 = invokevirtual < Application, Ljava/util/Stack, size()I > v58 @201 exception:v69\l" -> "BB37\n98   v72 = invokevirtual < Application, Ljava/lang/StringBuilder, append(I)Ljava/lang/StringBuilder; > v68,v70 @204 exception:v71\l" 
+ "BB37\n98   v72 = invokevirtual < Application, Ljava/lang/StringBuilder, append(I)Ljava/lang/StringBuilder; > v68,v70 @204 exception:v71\l" -> "BB38\n99   v74 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v72 @207 exception:v73\l" 
+ "BB38\n99   v74 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v72 @207 exception:v73\l" -> "BB39\n100   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v63,v74 @210 exception:v75\l" 
+ "BB39\n100   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v63,v74 @210 exception:v75\l" -> "BB40\n102   v77 = invokevirtual < Application, Ljava/util/Stack, empty()Z > v58 @214 exception:v76\l" 
+ "BB40\n102   v77 = invokevirtual < Application, Ljava/util/Stack, empty()Z > v58 @214 exception:v76\l" -> "BB41\n104   conditional branch(ne) v77,v78:#0\l" 
+ "BB41\n104   conditional branch(ne) v77,v78:#0\l" -> "BB42\n106   v80 = invokevirtual < Application, Ljava/util/Stack, pop()Ljava/lang/Object; > v58 @221 exception:v79\l" 
+ "BB41\n104   conditional branch(ne) v77,v78:#0\l" -> "BB99\n250   return                       \l" 
+ "BB42\n106   v80 = invokevirtual < Application, Ljava/util/Stack, pop()Ljava/lang/Object; > v58 @221 exception:v79\l" -> "BB43\n107   v81 = checkcast <Application,LEdge>v80\l" 
+ "BB43\n107   v81 = checkcast <Application,LEdge>v80\l" -> "BB44\n111   v83 = invokevirtual < Application, Ljava/util/Hashtable, get(Ljava/lang/Object;)Ljava/lang/Object; > v60,v81 @232 exception:v82\l" 
+ "BB44\n111   v83 = invokevirtual < Application, Ljava/util/Hashtable, get(Ljava/lang/Object;)Ljava/lang/Object; > v60,v81 @232 exception:v82\l" -> "BB45\n112   v84 = checkcast <Application,Ljava/lang/Boolean>v83\l" 
+ "BB45\n112   v84 = checkcast <Application,Ljava/lang/Boolean>v83\l" -> "BB46\n116   conditional branch(eq) v84,v85:#null\l" 
+ "BB46\n116   conditional branch(eq) v84,v85:#null\l" -> "BB47\n118   v87 = invokevirtual < Application, Ljava/lang/Boolean, booleanValue()Z > v84 @247 exception:v86\l" 
+ "BB46\n116   conditional branch(eq) v84,v85:#null\l" -> "BB96\n245   v188 = invokevirtual < Application, LEdge, symmetric()LEdge; > v81 @534 exception:v187\l" 
+ "BB47\n118   v87 = invokevirtual < Application, Ljava/lang/Boolean, booleanValue()Z > v84 @247 exception:v86\l" -> "BB48\n120   conditional branch(eq) v87,v78:#0\l" 
+ "BB48\n120   conditional branch(eq) v87,v78:#0\l" -> "BB49\n124   v89 = invokevirtual < Application, LEdge, oNext()LEdge; > v81 @259 exception:v88\l" 
+ "BB48\n120   conditional branch(eq) v87,v78:#0\l" -> "BB96\n245   v188 = invokevirtual < Application, LEdge, symmetric()LEdge; > v81 @534 exception:v187\l" 
+ "BB49\n124   v89 = invokevirtual < Application, LEdge, oNext()LEdge; > v81 @259 exception:v88\l" -> "BB50\n" 
+ "BB50\n" -> "BB51\n           v173 = phi  v172,v89\l           v174 = phi  v173,v81\l127   v91 = invokevirtual < Application, LEdge, orig()LVertex; > v174 @265 exception:v90\l" 
+ "BB51\n           v173 = phi  v172,v89\l           v174 = phi  v173,v81\l127   v91 = invokevirtual < Application, LEdge, orig()LVertex; > v174 @265 exception:v90\l" -> "BB52\n130   v93 = invokevirtual < Application, LVertex, X()D > v91 @272 exception:v92\l" 
+ "BB52\n130   v93 = invokevirtual < Application, LVertex, X()D > v91 @272 exception:v92\l" -> "BB53\n133   v95 = invokevirtual < Application, LEdge, dest()LVertex; > v174 @279 exception:v94\l" 
+ "BB53\n133   v95 = invokevirtual < Application, LEdge, dest()LVertex; > v174 @279 exception:v94\l" -> "BB54\n136   v97 = invokevirtual < Application, LVertex, X()D > v95 @286 exception:v96\l" 
+ "BB54\n136   v97 = invokevirtual < Application, LVertex, X()D > v95 @286 exception:v96\l" -> "BB55\n140   v98 = compare v93,v97 opcode=cmpl\l142   conditional branch(lt) v98,v78:#0\l" 
+ "BB55\n140   v98 = compare v93,v97 opcode=cmpl\l142   conditional branch(lt) v98,v78:#0\l" -> "BB56\n143   v99 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l144   v100 = new <Application,Ljava/lang/StringBuilder>@302\l" 
+ "BB55\n140   v98 = compare v93,v97 opcode=cmpl\l142   conditional branch(lt) v98,v78:#0\l" -> "BB91\n230   v167 = new <Application,Ljava/lang/Boolean>@505\l" 
+ "BB56\n143   v99 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l144   v100 = new <Application,Ljava/lang/StringBuilder>@302\l" -> "BB57\n146   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v100 @306 exception:v101\l" 
+ "BB57\n146   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v100 @306 exception:v101\l" -> "BB58\n148   v104 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v100,v102:#Dedge  @311 exception:v103\l" 
+ "BB58\n148   v104 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v100,v102:#Dedge  @311 exception:v103\l" -> "BB59\n150   v106 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/Object;)Ljava/lang/StringBuilder; > v104,v91 @316 exception:v105\l" 
+ "BB59\n150   v106 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/Object;)Ljava/lang/StringBuilder; > v104,v91 @316 exception:v105\l" -> "BB60\n152   v108 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v106,v45:#  @321 exception:v107\l" 
+ "BB60\n152   v108 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v106,v45:#  @321 exception:v107\l" -> "BB61\n154   v110 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/Object;)Ljava/lang/StringBuilder; > v108,v95 @326 exception:v109\l" 
+ "BB61\n154   v110 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/Object;)Ljava/lang/StringBuilder; > v108,v95 @326 exception:v109\l" -> "BB62\n155   v112 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v110 @329 exception:v111\l" 
+ "BB62\n155   v112 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v110 @329 exception:v111\l" -> "BB63\n156   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v99,v112 @332 exception:v113\l" 
+ "BB63\n156   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v99,v112 @332 exception:v113\l" -> "BB64\n158   v115 = invokevirtual < Application, LEdge, symmetric()LEdge; > v174 @337 exception:v114\l" 
+ "BB64\n158   v115 = invokevirtual < Application, LEdge, symmetric()LEdge; > v174 @337 exception:v114\l" -> "BB65\n161   v117 = invokevirtual < Application, LEdge, oNext()LEdge; > v115 @344 exception:v116\l" 
+ "BB65\n161   v117 = invokevirtual < Application, LEdge, oNext()LEdge; > v115 @344 exception:v116\l" -> "BB66\n164   v119 = invokevirtual < Application, LEdge, orig()LVertex; > v174 @351 exception:v118\l" 
+ "BB66\n164   v119 = invokevirtual < Application, LEdge, orig()LVertex; > v174 @351 exception:v118\l" -> "BB67\n167   v121 = invokevirtual < Application, LEdge, dest()LVertex; > v174 @358 exception:v120\l" 
+ "BB67\n167   v121 = invokevirtual < Application, LEdge, dest()LVertex; > v174 @358 exception:v120\l" -> "BB68\n170   v123 = invokevirtual < Application, LEdge, dest()LVertex; > v173 @364 exception:v122\l" 
+ "BB68\n170   v123 = invokevirtual < Application, LEdge, dest()LVertex; > v173 @364 exception:v122\l" -> "BB69\n173   v125 = invokevirtual < Application, LEdge, dest()LVertex; > v117 @371 exception:v124\l" 
+ "BB69\n173   v125 = invokevirtual < Application, LEdge, dest()LVertex; > v117 @371 exception:v124\l" -> "BB70\n178   v127 = invokevirtual < Application, LVertex, ccw(LVertex;LVertex;)Z > v119,v121,v123 @382 exception:v126\l" 
+ "BB70\n178   v127 = invokevirtual < Application, LVertex, ccw(LVertex;LVertex;)Z > v119,v121,v123 @382 exception:v126\l" -> "BB71\n182   v129 = invokevirtual < Application, LVertex, ccw(LVertex;LVertex;)Z > v119,v121,v125 @391 exception:v128\l" 
+ "BB71\n182   v129 = invokevirtual < Application, LVertex, ccw(LVertex;LVertex;)Z > v119,v121,v125 @391 exception:v128\l" -> "BB72\n183   conditional branch(eq) v127,v129\l" 
+ "BB72\n183   conditional branch(eq) v127,v129\l" -> "BB73\n185   v131 = invokevirtual < Application, LEdge, orig()LVertex; > v174 @399 exception:v130\l" 
+ "BB72\n183   conditional branch(eq) v127,v129\l" -> "BB91\n230   v167 = new <Application,Ljava/lang/Boolean>@505\l" 
+ "BB73\n185   v131 = invokevirtual < Application, LEdge, orig()LVertex; > v174 @399 exception:v130\l" -> "BB74\n188   v133 = invokevirtual < Application, LEdge, dest()LVertex; > v174 @406 exception:v132\l" 
+ "BB74\n188   v133 = invokevirtual < Application, LEdge, dest()LVertex; > v174 @406 exception:v132\l" -> "BB75\n191   v135 = invokevirtual < Application, LEdge, dest()LVertex; > v173 @412 exception:v134\l" 
+ "BB75\n191   v135 = invokevirtual < Application, LEdge, dest()LVertex; > v173 @412 exception:v134\l" -> "BB76\n196   v137 = invokevirtual < Application, LVec2, circle_center(LVec2;LVec2;)LVec2; > v131,v133,v135 @423 exception:v136\l" 
+ "BB76\n196   v137 = invokevirtual < Application, LVec2, circle_center(LVec2;LVec2;)LVec2; > v131,v133,v135 @423 exception:v136\l" -> "BB77\n199   v139 = invokevirtual < Application, LEdge, orig()LVertex; > v115 @430 exception:v138\l" 
+ "BB77\n199   v139 = invokevirtual < Application, LEdge, orig()LVertex; > v115 @430 exception:v138\l" -> "BB78\n202   v141 = invokevirtual < Application, LEdge, dest()LVertex; > v115 @437 exception:v140\l" 
+ "BB78\n202   v141 = invokevirtual < Application, LEdge, dest()LVertex; > v115 @437 exception:v140\l" -> "BB79\n205   v143 = invokevirtual < Application, LEdge, dest()LVertex; > v117 @444 exception:v142\l" 
+ "BB79\n205   v143 = invokevirtual < Application, LEdge, dest()LVertex; > v117 @444 exception:v142\l" -> "BB80\n210   v145 = invokevirtual < Application, LVec2, circle_center(LVec2;LVec2;)LVec2; > v139,v141,v143 @455 exception:v144\l" 
+ "BB80\n210   v145 = invokevirtual < Application, LVec2, circle_center(LVec2;LVec2;)LVec2; > v139,v141,v143 @455 exception:v144\l" -> "BB81\n212   v146 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l213   v147 = new <Application,Ljava/lang/StringBuilder>@463\l" 
+ "BB81\n212   v146 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l213   v147 = new <Application,Ljava/lang/StringBuilder>@463\l" -> "BB82\n215   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v147 @467 exception:v148\l" 
+ "BB82\n215   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v147 @467 exception:v148\l" -> "BB83\n217   v150 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v147,v38:#Vedge  @472 exception:v149\l" 
+ "BB83\n217   v150 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v147,v38:#Vedge  @472 exception:v149\l" -> "BB84\n219   v152 = invokevirtual < Application, LVec2, toString()Ljava/lang/String; > v137 @477 exception:v151\l" 
+ "BB84\n219   v152 = invokevirtual < Application, LVec2, toString()Ljava/lang/String; > v137 @477 exception:v151\l" -> "BB85\n220   v154 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v150,v152 @480 exception:v153\l" 
+ "BB85\n220   v154 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v150,v152 @480 exception:v153\l" -> "BB86\n222   v156 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v154,v45:#  @485 exception:v155\l" 
+ "BB86\n222   v156 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v154,v45:#  @485 exception:v155\l" -> "BB87\n224   v158 = invokevirtual < Application, LVec2, toString()Ljava/lang/String; > v145 @490 exception:v157\l" 
+ "BB87\n224   v158 = invokevirtual < Application, LVec2, toString()Ljava/lang/String; > v145 @490 exception:v157\l" -> "BB88\n225   v160 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v156,v158 @493 exception:v159\l" 
+ "BB88\n225   v160 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v156,v158 @493 exception:v159\l" -> "BB89\n226   v162 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v160 @496 exception:v161\l" 
+ "BB89\n226   v162 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v160 @496 exception:v161\l" -> "BB90\n227   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v146,v162 @499 exception:v163\l" 
+ "BB90\n227   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v146,v162 @499 exception:v163\l" -> "BB91\n230   v167 = new <Application,Ljava/lang/Boolean>@505\l" 
+ "BB91\n230   v167 = new <Application,Ljava/lang/Boolean>@505\l" -> "BB92\n233   invokespecial < Application, Ljava/lang/Boolean, <init>(Z)V > v167,v78:#0 @510 exception:v168\l" 
+ "BB92\n233   invokespecial < Application, Ljava/lang/Boolean, <init>(Z)V > v167,v78:#0 @510 exception:v168\l" -> "BB93\n234   v170 = invokevirtual < Application, Ljava/util/Hashtable, put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; > v60,v174,v167 @513 exception:v169\l" 
+ "BB93\n234   v170 = invokevirtual < Application, Ljava/util/Hashtable, put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; > v60,v174,v167 @513 exception:v169\l" -> "BB94\n239   v172 = invokevirtual < Application, LEdge, oNext()LEdge; > v173 @521 exception:v171\l" 
+ "BB94\n239   v172 = invokevirtual < Application, LEdge, oNext()LEdge; > v173 @521 exception:v171\l" -> "BB95\n243   conditional branch(ne) v173,v81\l" 
+ "BB95\n243   conditional branch(ne) v173,v81\l" -> "BB51\n           v173 = phi  v172,v89\l           v174 = phi  v173,v81\l127   v91 = invokevirtual < Application, LEdge, orig()LVertex; > v174 @265 exception:v90\l" 
+ "BB95\n243   conditional branch(ne) v173,v81\l" -> "BB96\n245   v188 = invokevirtual < Application, LEdge, symmetric()LEdge; > v81 @534 exception:v187\l" 
+ "BB96\n245   v188 = invokevirtual < Application, LEdge, symmetric()LEdge; > v81 @534 exception:v187\l" -> "BB97\n248   invokevirtual < Application, LEdge, pushRing(Ljava/util/Stack;Ljava/util/Hashtable;)V > v188,v58,v60 @539 exception:v189\l" 
+ "BB97\n248   invokevirtual < Application, LEdge, pushRing(Ljava/util/Stack;Ljava/util/Hashtable;)V > v188,v58,v60 @539 exception:v189\l" -> "BB98\n249   goto                         \l" 
+ "BB98\n249   goto                         \l" -> "BB40\n102   v77 = invokevirtual < Application, Ljava/util/Stack, empty()Z > v58 @214 exception:v76\l" 
+ "BB99\n250   return                       \l" -> "BB100 (ex)\n\n" 
+
+}

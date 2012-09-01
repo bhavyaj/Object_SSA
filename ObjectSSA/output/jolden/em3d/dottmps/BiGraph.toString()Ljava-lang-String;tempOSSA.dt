@@ -1,0 +1,77 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for BiGraph.toString()Ljava-lang-String;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0  Create O2_1                               \l" [ ]
+   "BB2\n2  < Application, Ljava/lang/StringBuffer, <init>()V >( O2_1 )\l" [ ]
+   "BB3\n5  GetOSSAInstruction:	O3_1= O1_1< eNodes>   \l" [ ]
+   "BB4\n6  O4_1 = < Application, LNode, elements()Ljava/util/Enumeration; >( O3_1 )\l" [ ]
+   "BB5\n" [ ]
+   "BB6\n9  O5_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O4_1 )\l" [ ]
+   "BB7\n11   conditional branch(eq) v9,v10:#0        \l" [ ]
+   "BB8\n13  O3_1 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O4_1 )\l" [ ]
+   "BB9\n14   v13 = checkcast <Application,LNode>v12  \l" [ ]
+   "BB10\n17  Create O6_1                              \l" [ ]
+   "BB11\n19  < Application, Ljava/lang/StringBuilder, <init>()V >( O6_1 )\l" [ ]
+   "BB12\n21  O7_1 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O6_1, V16 )\l" [ ]
+   "BB13\n23  O7_2 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/Object;)Ljava/lang/StringBuilder; >( O7_1, O3_1 )\l" [ ]
+   "BB14\n25  O7_3 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O7_2, V21 )\l" [ ]
+   "BB15\n26  O8_1 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O7_3 )\l" [ ]
+   "BB16\n27  O2_2 = < Application, Ljava/lang/StringBuffer, append(Ljava/lang/String;)Ljava/lang/StringBuffer; >( O2_1, O8_1 )\l" [ ]
+   "BB17\n29   goto                                    \l" [ ]
+   "BB18\n31  GetOSSAInstruction:	O3_1= O1_1< hNodes>  \l" [ ]
+   "BB19\n32  O4_2 = < Application, LNode, elements()Ljava/util/Enumeration; >( O3_1 )\l" [ ]
+   "BB20\n" [ ]
+   "BB21\n35  O5_2 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O4_2 )\l" [ ]
+   "BB22\n37   conditional branch(eq) v32,v10:#0       \l" [ ]
+   "BB23\n39  O3_2 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O4_2 )\l" [ ]
+   "BB24\n40   v35 = checkcast <Application,LNode>v34  \l" [ ]
+   "BB25\n43  Create O9_1                              \l" [ ]
+   "BB26\n45  < Application, Ljava/lang/StringBuilder, <init>()V >( O9_1 )\l" [ ]
+   "BB27\n47  O7_4 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O9_1, V38 )\l" [ ]
+   "BB28\n49  O7_5 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/Object;)Ljava/lang/StringBuilder; >( O7_4, O3_2 )\l" [ ]
+   "BB29\n51  O7_6 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O7_5, V21 )\l" [ ]
+   "BB30\n52  O8_2 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O7_6 )\l" [ ]
+   "BB31\n53  O2_3 = < Application, Ljava/lang/StringBuffer, append(Ljava/lang/String;)Ljava/lang/StringBuffer; >( O2_1, O8_2 )\l" [ ]
+   "BB32\n55   goto                                    \l" [ ]
+   "BB33\n57  O10_1 = < Application, Ljava/lang/StringBuffer, toString()Ljava/lang/String; >( O2_1 )\l" [ ]
+   "BB34\n58  Return O10_1                             \l" [ ]
+   "BB35 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0  Create O2_1                               \l" 
+ "BB1\n0  Create O2_1                               \l" -> "BB2\n2  < Application, Ljava/lang/StringBuffer, <init>()V >( O2_1 )\l" 
+ "BB2\n2  < Application, Ljava/lang/StringBuffer, <init>()V >( O2_1 )\l" -> "BB3\n5  GetOSSAInstruction:	O3_1= O1_1< eNodes>   \l" 
+ "BB3\n5  GetOSSAInstruction:	O3_1= O1_1< eNodes>   \l" -> "BB4\n6  O4_1 = < Application, LNode, elements()Ljava/util/Enumeration; >( O3_1 )\l" 
+ "BB4\n6  O4_1 = < Application, LNode, elements()Ljava/util/Enumeration; >( O3_1 )\l" -> "BB5\n" 
+ "BB5\n" -> "BB6\n9  O5_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O4_1 )\l" 
+ "BB6\n9  O5_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O4_1 )\l" -> "BB7\n11   conditional branch(eq) v9,v10:#0        \l" 
+ "BB7\n11   conditional branch(eq) v9,v10:#0        \l" -> "BB8\n13  O3_1 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O4_1 )\l" 
+ "BB7\n11   conditional branch(eq) v9,v10:#0        \l" -> "BB18\n31  GetOSSAInstruction:	O3_1= O1_1< hNodes>  \l" 
+ "BB8\n13  O3_1 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O4_1 )\l" -> "BB9\n14   v13 = checkcast <Application,LNode>v12  \l" 
+ "BB9\n14   v13 = checkcast <Application,LNode>v12  \l" -> "BB10\n17  Create O6_1                              \l" 
+ "BB10\n17  Create O6_1                              \l" -> "BB11\n19  < Application, Ljava/lang/StringBuilder, <init>()V >( O6_1 )\l" 
+ "BB11\n19  < Application, Ljava/lang/StringBuilder, <init>()V >( O6_1 )\l" -> "BB12\n21  O7_1 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O6_1, V16 )\l" 
+ "BB12\n21  O7_1 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O6_1, V16 )\l" -> "BB13\n23  O7_2 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/Object;)Ljava/lang/StringBuilder; >( O7_1, O3_1 )\l" 
+ "BB13\n23  O7_2 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/Object;)Ljava/lang/StringBuilder; >( O7_1, O3_1 )\l" -> "BB14\n25  O7_3 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O7_2, V21 )\l" 
+ "BB14\n25  O7_3 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O7_2, V21 )\l" -> "BB15\n26  O8_1 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O7_3 )\l" 
+ "BB15\n26  O8_1 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O7_3 )\l" -> "BB16\n27  O2_2 = < Application, Ljava/lang/StringBuffer, append(Ljava/lang/String;)Ljava/lang/StringBuffer; >( O2_1, O8_1 )\l" 
+ "BB16\n27  O2_2 = < Application, Ljava/lang/StringBuffer, append(Ljava/lang/String;)Ljava/lang/StringBuffer; >( O2_1, O8_1 )\l" -> "BB17\n29   goto                                    \l" 
+ "BB17\n29   goto                                    \l" -> "BB6\n9  O5_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O4_1 )\l" 
+ "BB18\n31  GetOSSAInstruction:	O3_1= O1_1< hNodes>  \l" -> "BB19\n32  O4_2 = < Application, LNode, elements()Ljava/util/Enumeration; >( O3_1 )\l" 
+ "BB19\n32  O4_2 = < Application, LNode, elements()Ljava/util/Enumeration; >( O3_1 )\l" -> "BB20\n" 
+ "BB20\n" -> "BB21\n35  O5_2 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O4_2 )\l" 
+ "BB21\n35  O5_2 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O4_2 )\l" -> "BB22\n37   conditional branch(eq) v32,v10:#0       \l" 
+ "BB22\n37   conditional branch(eq) v32,v10:#0       \l" -> "BB23\n39  O3_2 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O4_2 )\l" 
+ "BB22\n37   conditional branch(eq) v32,v10:#0       \l" -> "BB33\n57  O10_1 = < Application, Ljava/lang/StringBuffer, toString()Ljava/lang/String; >( O2_1 )\l" 
+ "BB23\n39  O3_2 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O4_2 )\l" -> "BB24\n40   v35 = checkcast <Application,LNode>v34  \l" 
+ "BB24\n40   v35 = checkcast <Application,LNode>v34  \l" -> "BB25\n43  Create O9_1                              \l" 
+ "BB25\n43  Create O9_1                              \l" -> "BB26\n45  < Application, Ljava/lang/StringBuilder, <init>()V >( O9_1 )\l" 
+ "BB26\n45  < Application, Ljava/lang/StringBuilder, <init>()V >( O9_1 )\l" -> "BB27\n47  O7_4 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O9_1, V38 )\l" 
+ "BB27\n47  O7_4 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O9_1, V38 )\l" -> "BB28\n49  O7_5 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/Object;)Ljava/lang/StringBuilder; >( O7_4, O3_2 )\l" 
+ "BB28\n49  O7_5 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/Object;)Ljava/lang/StringBuilder; >( O7_4, O3_2 )\l" -> "BB29\n51  O7_6 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O7_5, V21 )\l" 
+ "BB29\n51  O7_6 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O7_5, V21 )\l" -> "BB30\n52  O8_2 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O7_6 )\l" 
+ "BB30\n52  O8_2 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O7_6 )\l" -> "BB31\n53  O2_3 = < Application, Ljava/lang/StringBuffer, append(Ljava/lang/String;)Ljava/lang/StringBuffer; >( O2_1, O8_2 )\l" 
+ "BB31\n53  O2_3 = < Application, Ljava/lang/StringBuffer, append(Ljava/lang/String;)Ljava/lang/StringBuffer; >( O2_1, O8_2 )\l" -> "BB32\n55   goto                                    \l" 
+ "BB32\n55   goto                                    \l" -> "BB21\n35  O5_2 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O4_2 )\l" 
+ "BB33\n57  O10_1 = < Application, Ljava/lang/StringBuffer, toString()Ljava/lang/String; >( O2_1 )\l" -> "BB34\n58  Return O10_1                             \l" 
+ "BB34\n58  Return O10_1                             \l" -> "BB35 (ex)\n\n" 
+
+}

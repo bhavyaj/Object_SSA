@@ -1,0 +1,26 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for MST.computeMST(LGraph;I)I", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n3  O2_1 = < Application, LGraph, firstNode()LVertex; >( O1_1 )\l" [ ]
+   "BB2\n6  O2_2 = < Application, LVertex, next()LVertex; >( O2_1 )\l" [ ]
+   "BB3\n9   putstatic v8 < Application, LMST, MyVertexList, <Application,LVertex> >\l12   v10 = binaryop(add) v2 , v9:#-1         \l" [ ]
+   "BB4\n           v19 = phi  v17,v10\l           v20 = phi  v18,v4:#0\l           v21 = phi  v14,v6\l16   conditional branch(eq) v19,v4:#0        \l" [ ]
+   "BB5\n18  O3_1 = < Application, LMST, doAllBlueRule(LVertex;)LBlueReturn; >( O2_2 )\l" [ ]
+   "BB6\n21  O2_3 = < Application, LBlueReturn, vert()LVertex; >( O3_1 )\l" [ ]
+   "BB7\n24  O4_1 = < Application, LBlueReturn, dist()I >( O3_1 )\l" [ ]
+   "BB8\n28   v17 = binaryop(add) v19 , v9:#-1        \l32   v18 = binaryop(add) v20 , v16           \l34   goto                                    \l" [ ]
+   "BB9\n36  Return O4_1                              \l" [ ]
+   "BB10 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n3  O2_1 = < Application, LGraph, firstNode()LVertex; >( O1_1 )\l" 
+ "BB1\n3  O2_1 = < Application, LGraph, firstNode()LVertex; >( O1_1 )\l" -> "BB2\n6  O2_2 = < Application, LVertex, next()LVertex; >( O2_1 )\l" 
+ "BB2\n6  O2_2 = < Application, LVertex, next()LVertex; >( O2_1 )\l" -> "BB3\n9   putstatic v8 < Application, LMST, MyVertexList, <Application,LVertex> >\l12   v10 = binaryop(add) v2 , v9:#-1         \l" 
+ "BB3\n9   putstatic v8 < Application, LMST, MyVertexList, <Application,LVertex> >\l12   v10 = binaryop(add) v2 , v9:#-1         \l" -> "BB4\n           v19 = phi  v17,v10\l           v20 = phi  v18,v4:#0\l           v21 = phi  v14,v6\l16   conditional branch(eq) v19,v4:#0        \l" 
+ "BB4\n           v19 = phi  v17,v10\l           v20 = phi  v18,v4:#0\l           v21 = phi  v14,v6\l16   conditional branch(eq) v19,v4:#0        \l" -> "BB5\n18  O3_1 = < Application, LMST, doAllBlueRule(LVertex;)LBlueReturn; >( O2_2 )\l" 
+ "BB4\n           v19 = phi  v17,v10\l           v20 = phi  v18,v4:#0\l           v21 = phi  v14,v6\l16   conditional branch(eq) v19,v4:#0        \l" -> "BB9\n36  Return O4_1                              \l" 
+ "BB5\n18  O3_1 = < Application, LMST, doAllBlueRule(LVertex;)LBlueReturn; >( O2_2 )\l" -> "BB6\n21  O2_3 = < Application, LBlueReturn, vert()LVertex; >( O3_1 )\l" 
+ "BB6\n21  O2_3 = < Application, LBlueReturn, vert()LVertex; >( O3_1 )\l" -> "BB7\n24  O4_1 = < Application, LBlueReturn, dist()I >( O3_1 )\l" 
+ "BB7\n24  O4_1 = < Application, LBlueReturn, dist()I >( O3_1 )\l" -> "BB8\n28   v17 = binaryop(add) v19 , v9:#-1        \l32   v18 = binaryop(add) v20 , v16           \l34   goto                                    \l" 
+ "BB8\n28   v17 = binaryop(add) v19 , v9:#-1        \l32   v18 = binaryop(add) v20 , v16           \l34   goto                                    \l" -> "BB4\n           v19 = phi  v17,v10\l           v20 = phi  v18,v4:#0\l           v21 = phi  v14,v6\l16   conditional branch(eq) v19,v4:#0        \l" 
+ "BB9\n36  Return O4_1                              \l" -> "BB10 (ex)\n\n" 
+
+}

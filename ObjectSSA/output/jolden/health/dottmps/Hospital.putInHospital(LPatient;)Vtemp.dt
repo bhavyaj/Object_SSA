@@ -1,0 +1,40 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v4 = getfield < Application, LPatient, hospitalsVisited, <Primordial,I> > v2\l" [ ]
+   "BB2\n5   v5 = getfield < Application, LPatient, hospitalsVisited, <Primordial,I> > v2\l" [ ]
+   "BB3\n7   v7 = binaryop(add) v5 , v6:#1  \l8   putfield v2 = v7 < Application, LPatient, hospitalsVisited, <Primordial,I> >\l" [ ]
+   "BB4\n10   v8 = getfield < Application, LHospital, freePersonnel, <Primordial,I> > v1\l" [ ]
+   "BB5\n12   conditional branch(le) v8,v9:#0\l" [ ]
+   "BB6\n15   v12 = getfield < Application, LHospital, freePersonnel, <Primordial,I> > v1\l" [ ]
+   "BB7\n17   v13 = binaryop(sub) v12 , v6:#1\l18   putfield v1 = v13 < Application, LHospital, freePersonnel, <Primordial,I> >\l" [ ]
+   "BB8\n20   v14 = getfield < Application, LHospital, assess, <Application,LList> > v1\l" [ ]
+   "BB9\n22   invokevirtual < Application, LList, add(LPatient;)V > v14,v2 @37 exception:v15\l" [ ]
+   "BB10\n25   putfield v2 = v16:#3 < Application, LPatient, timeLeft, <Primordial,I> >\l" [ ]
+   "BB11\n28   v17 = getfield < Application, LPatient, time, <Primordial,I> > v2\l" [ ]
+   "BB12\n30   v18 = binaryop(add) v17 , v16:#3\l31   putfield v2 = v18 < Application, LPatient, time, <Primordial,I> >\l" [ ]
+   "BB13\n32   goto                          \l" [ ]
+   "BB14\n34   v10 = getfield < Application, LHospital, waiting, <Application,LList> > v1\l" [ ]
+   "BB15\n36   invokevirtual < Application, LList, add(LPatient;)V > v10,v2 @63 exception:v11\l" [ ]
+   "BB16\n37   return                        \l" [ ]
+   "BB17 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v4 = getfield < Application, LPatient, hospitalsVisited, <Primordial,I> > v2\l" 
+ "BB1\n1   v4 = getfield < Application, LPatient, hospitalsVisited, <Primordial,I> > v2\l" -> "BB2\n5   v5 = getfield < Application, LPatient, hospitalsVisited, <Primordial,I> > v2\l" 
+ "BB2\n5   v5 = getfield < Application, LPatient, hospitalsVisited, <Primordial,I> > v2\l" -> "BB3\n7   v7 = binaryop(add) v5 , v6:#1  \l8   putfield v2 = v7 < Application, LPatient, hospitalsVisited, <Primordial,I> >\l" 
+ "BB3\n7   v7 = binaryop(add) v5 , v6:#1  \l8   putfield v2 = v7 < Application, LPatient, hospitalsVisited, <Primordial,I> >\l" -> "BB4\n10   v8 = getfield < Application, LHospital, freePersonnel, <Primordial,I> > v1\l" 
+ "BB4\n10   v8 = getfield < Application, LHospital, freePersonnel, <Primordial,I> > v1\l" -> "BB5\n12   conditional branch(le) v8,v9:#0\l" 
+ "BB5\n12   conditional branch(le) v8,v9:#0\l" -> "BB6\n15   v12 = getfield < Application, LHospital, freePersonnel, <Primordial,I> > v1\l" 
+ "BB5\n12   conditional branch(le) v8,v9:#0\l" -> "BB14\n34   v10 = getfield < Application, LHospital, waiting, <Application,LList> > v1\l" 
+ "BB6\n15   v12 = getfield < Application, LHospital, freePersonnel, <Primordial,I> > v1\l" -> "BB7\n17   v13 = binaryop(sub) v12 , v6:#1\l18   putfield v1 = v13 < Application, LHospital, freePersonnel, <Primordial,I> >\l" 
+ "BB7\n17   v13 = binaryop(sub) v12 , v6:#1\l18   putfield v1 = v13 < Application, LHospital, freePersonnel, <Primordial,I> >\l" -> "BB8\n20   v14 = getfield < Application, LHospital, assess, <Application,LList> > v1\l" 
+ "BB8\n20   v14 = getfield < Application, LHospital, assess, <Application,LList> > v1\l" -> "BB9\n22   invokevirtual < Application, LList, add(LPatient;)V > v14,v2 @37 exception:v15\l" 
+ "BB9\n22   invokevirtual < Application, LList, add(LPatient;)V > v14,v2 @37 exception:v15\l" -> "BB10\n25   putfield v2 = v16:#3 < Application, LPatient, timeLeft, <Primordial,I> >\l" 
+ "BB10\n25   putfield v2 = v16:#3 < Application, LPatient, timeLeft, <Primordial,I> >\l" -> "BB11\n28   v17 = getfield < Application, LPatient, time, <Primordial,I> > v2\l" 
+ "BB11\n28   v17 = getfield < Application, LPatient, time, <Primordial,I> > v2\l" -> "BB12\n30   v18 = binaryop(add) v17 , v16:#3\l31   putfield v2 = v18 < Application, LPatient, time, <Primordial,I> >\l" 
+ "BB12\n30   v18 = binaryop(add) v17 , v16:#3\l31   putfield v2 = v18 < Application, LPatient, time, <Primordial,I> >\l" -> "BB13\n32   goto                          \l" 
+ "BB13\n32   goto                          \l" -> "BB16\n37   return                        \l" 
+ "BB14\n34   v10 = getfield < Application, LHospital, waiting, <Application,LList> > v1\l" -> "BB15\n36   invokevirtual < Application, LList, add(LPatient;)V > v10,v2 @63 exception:v11\l" 
+ "BB15\n36   invokevirtual < Application, LList, add(LPatient;)V > v10,v2 @63 exception:v11\l" -> "BB16\n37   return                        \l" 
+ "BB16\n37   return                        \l" -> "BB17 (ex)\n\n" 
+
+}

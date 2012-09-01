@@ -1,0 +1,37 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Tree.<init>()V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  < Application, Ljava/lang/Object, <init>()V >( O1_1 )\l" [ ]
+   "BB2\n3  Create O2_1                               \l" [ ]
+   "BB3\n5  < Application, LMathVector, <init>()V >( O2_1 )\l" [ ]
+   "BB4\n6  PutOSSAInstruction:	O1_2< rmin > = O1_1<refO2_1>\l" [ ]
+   "BB5\n9  PutOSSAInstruction:	O1_3< rsize > = O1_2<V6>\l" [ ]
+   "BB6\n12  PutOSSAInstruction:	O1_4< root > = O1_3<V7>\l" [ ]
+   "BB7\n15  PutOSSAInstruction:	O1_5< bodyTab > = O1_4<V7>\l" [ ]
+   "BB8\n18  PutOSSAInstruction:	O1_6< bodyTabRev > = O1_5<V7>\l" [ ]
+   "BB9\n20  GetOSSAInstruction:	O2_1= O1_6< rmin>    \l" [ ]
+   "BB10\n23  < Application, LMathVector, value(ID)V >( O2_1, V9, V10 )\l" [ ]
+   "BB11\n25  GetOSSAInstruction:	O2_1= O1_6< rmin>    \l" [ ]
+   "BB12\n28  < Application, LMathVector, value(ID)V >( O2_1, V13, V10 )\l" [ ]
+   "BB13\n30  GetOSSAInstruction:	O2_1= O1_6< rmin>    \l" [ ]
+   "BB14\n33  < Application, LMathVector, value(ID)V >( O2_1, V16, V10 )\l" [ ]
+   "BB15\n34  return                                   \l" [ ]
+   "BB16 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  < Application, Ljava/lang/Object, <init>()V >( O1_1 )\l" 
+ "BB1\n1  < Application, Ljava/lang/Object, <init>()V >( O1_1 )\l" -> "BB2\n3  Create O2_1                               \l" 
+ "BB2\n3  Create O2_1                               \l" -> "BB3\n5  < Application, LMathVector, <init>()V >( O2_1 )\l" 
+ "BB3\n5  < Application, LMathVector, <init>()V >( O2_1 )\l" -> "BB4\n6  PutOSSAInstruction:	O1_2< rmin > = O1_1<refO2_1>\l" 
+ "BB4\n6  PutOSSAInstruction:	O1_2< rmin > = O1_1<refO2_1>\l" -> "BB5\n9  PutOSSAInstruction:	O1_3< rsize > = O1_2<V6>\l" 
+ "BB5\n9  PutOSSAInstruction:	O1_3< rsize > = O1_2<V6>\l" -> "BB6\n12  PutOSSAInstruction:	O1_4< root > = O1_3<V7>\l" 
+ "BB6\n12  PutOSSAInstruction:	O1_4< root > = O1_3<V7>\l" -> "BB7\n15  PutOSSAInstruction:	O1_5< bodyTab > = O1_4<V7>\l" 
+ "BB7\n15  PutOSSAInstruction:	O1_5< bodyTab > = O1_4<V7>\l" -> "BB8\n18  PutOSSAInstruction:	O1_6< bodyTabRev > = O1_5<V7>\l" 
+ "BB8\n18  PutOSSAInstruction:	O1_6< bodyTabRev > = O1_5<V7>\l" -> "BB9\n20  GetOSSAInstruction:	O2_1= O1_6< rmin>    \l" 
+ "BB9\n20  GetOSSAInstruction:	O2_1= O1_6< rmin>    \l" -> "BB10\n23  < Application, LMathVector, value(ID)V >( O2_1, V9, V10 )\l" 
+ "BB10\n23  < Application, LMathVector, value(ID)V >( O2_1, V9, V10 )\l" -> "BB11\n25  GetOSSAInstruction:	O2_1= O1_6< rmin>    \l" 
+ "BB11\n25  GetOSSAInstruction:	O2_1= O1_6< rmin>    \l" -> "BB12\n28  < Application, LMathVector, value(ID)V >( O2_1, V13, V10 )\l" 
+ "BB12\n28  < Application, LMathVector, value(ID)V >( O2_1, V13, V10 )\l" -> "BB13\n30  GetOSSAInstruction:	O2_1= O1_6< rmin>    \l" 
+ "BB13\n30  GetOSSAInstruction:	O2_1= O1_6< rmin>    \l" -> "BB14\n33  < Application, LMathVector, value(ID)V >( O2_1, V16, V10 )\l" 
+ "BB14\n33  < Application, LMathVector, value(ID)V >( O2_1, V16, V10 )\l" -> "BB15\n34  return                                   \l" 
+ "BB15\n34  return                                   \l" -> "BB16 (ex)\n\n" 
+
+}

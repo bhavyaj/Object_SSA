@@ -1,0 +1,23 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Hashtable.put(Ljava-lang-Object;Ljava-lang-Object;)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2  O4_1 = < Application, LHashtable, hashMap(Ljava/lang/Object;)I >( O1_1, O2_1 )\l" [ ]
+   "BB2\n4  Create O5_1                               \l" [ ]
+   "BB3\n9  GetOSSAInstruction:	O6_1= O1_1< array>    \l" [ ]
+   "BB4\n11   v9 = arrayload v8[v6]                   \l" [ ]
+   "BB5\n12  < Application, LHashEntry, <init>(Ljava/lang/Object;Ljava/lang/Object;LHashEntry;)V >( O5_1, O2_1, O3_1, O5_1 )\l" [ ]
+   "BB6\n15  GetOSSAInstruction:	O6_1= O1_1< array>   \l" [ ]
+   "BB7\n18   arraystore v11[v6] = v7                 \l" [ ]
+   "BB8\n19  return                                   \l" [ ]
+   "BB9 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2  O4_1 = < Application, LHashtable, hashMap(Ljava/lang/Object;)I >( O1_1, O2_1 )\l" 
+ "BB1\n2  O4_1 = < Application, LHashtable, hashMap(Ljava/lang/Object;)I >( O1_1, O2_1 )\l" -> "BB2\n4  Create O5_1                               \l" 
+ "BB2\n4  Create O5_1                               \l" -> "BB3\n9  GetOSSAInstruction:	O6_1= O1_1< array>    \l" 
+ "BB3\n9  GetOSSAInstruction:	O6_1= O1_1< array>    \l" -> "BB4\n11   v9 = arrayload v8[v6]                   \l" 
+ "BB4\n11   v9 = arrayload v8[v6]                   \l" -> "BB5\n12  < Application, LHashEntry, <init>(Ljava/lang/Object;Ljava/lang/Object;LHashEntry;)V >( O5_1, O2_1, O3_1, O5_1 )\l" 
+ "BB5\n12  < Application, LHashEntry, <init>(Ljava/lang/Object;Ljava/lang/Object;LHashEntry;)V >( O5_1, O2_1, O3_1, O5_1 )\l" -> "BB6\n15  GetOSSAInstruction:	O6_1= O1_1< array>   \l" 
+ "BB6\n15  GetOSSAInstruction:	O6_1= O1_1< array>   \l" -> "BB7\n18   arraystore v11[v6] = v7                 \l" 
+ "BB7\n18   arraystore v11[v6] = v7                 \l" -> "BB8\n19  return                                   \l" 
+ "BB8\n19  return                                   \l" -> "BB9 (ex)\n\n" 
+
+}

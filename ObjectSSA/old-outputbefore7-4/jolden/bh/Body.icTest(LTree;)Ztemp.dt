@@ -1,0 +1,63 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v4 = getfield < Application, LBody, pos, <Application,LMathVector> > v1\l" [ ]
+   "BB2\n3   v7 = invokevirtual < Application, LMathVector, value(I)D > v4,v5:#0 @5 exception:v6\l" [ ]
+   "BB3\n6   v8 = getfield < Application, LBody, pos, <Application,LMathVector> > v1\l" [ ]
+   "BB4\n8   v11 = invokevirtual < Application, LMathVector, value(I)D > v8,v9:#1 @14 exception:v10\l" [ ]
+   "BB5\n11   v12 = getfield < Application, LBody, pos, <Application,LMathVector> > v1\l" [ ]
+   "BB6\n13   v15 = invokevirtual < Application, LMathVector, value(I)D > v12,v13:#2 @24 exception:v14\l" [ ]
+   "BB7\n19   v16 = getfield < Application, LTree, rmin, <Application,LMathVector> > v2\l" [ ]
+   "BB8\n21   v18 = invokevirtual < Application, LMathVector, value(I)D > v16,v5:#0 @38 exception:v17\l" [ ]
+   "BB9\n22   v19 = binaryop(sub) v7 , v18  \l24   v20 = getfield < Application, LTree, rsize, <Primordial,D> > v2\l" [ ]
+   "BB10\n25   v21 = binaryop(div) v19 , v20 \l29   v23 = compare v22:#0.0,v21 opcode=cmpg\l31   conditional branch(ge) v23,v5:#0\l" [ ]
+   "BB11\n34   v25 = compare v21,v24:#1.0 opcode=cmpg\l36   conditional branch(lt) v25,v5:#0\l" [ ]
+   "BB12\n" [ ]
+   "BB13\n           v26 = phi  v9:#1,v5:#0\l41   v27 = getfield < Application, LTree, rmin, <Application,LMathVector> > v2\l" [ ]
+   "BB14\n43   v29 = invokevirtual < Application, LMathVector, value(I)D > v27,v9:#1 @73 exception:v28\l" [ ]
+   "BB15\n44   v30 = binaryop(sub) v11 , v29 \l46   v31 = getfield < Application, LTree, rsize, <Primordial,D> > v2\l" [ ]
+   "BB16\n47   v32 = binaryop(div) v30 , v31 \l51   v33 = compare v22:#0.0,v32 opcode=cmpg\l53   conditional branch(ge) v33,v5:#0\l" [ ]
+   "BB17\n56   v34 = compare v32,v24:#1.0 opcode=cmpg\l58   conditional branch(lt) v34,v5:#0\l" [ ]
+   "BB18\n" [ ]
+   "BB19\n           v35 = phi  v26,v5:#0\l63   v36 = getfield < Application, LTree, rmin, <Application,LMathVector> > v2\l" [ ]
+   "BB20\n65   v38 = invokevirtual < Application, LMathVector, value(I)D > v36,v13:#2 @108 exception:v37\l" [ ]
+   "BB21\n66   v39 = binaryop(sub) v15 , v38 \l68   v40 = getfield < Application, LTree, rsize, <Primordial,D> > v2\l" [ ]
+   "BB22\n69   v41 = binaryop(div) v39 , v40 \l73   v42 = compare v22:#0.0,v41 opcode=cmpg\l75   conditional branch(ge) v42,v5:#0\l" [ ]
+   "BB23\n78   v43 = compare v41,v24:#1.0 opcode=cmpg\l80   conditional branch(lt) v43,v5:#0\l" [ ]
+   "BB24\n" [ ]
+   "BB25\n           v44 = phi  v35,v5:#0\l84   return v44                    \l" [ ]
+   "BB26 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v4 = getfield < Application, LBody, pos, <Application,LMathVector> > v1\l" 
+ "BB1\n1   v4 = getfield < Application, LBody, pos, <Application,LMathVector> > v1\l" -> "BB2\n3   v7 = invokevirtual < Application, LMathVector, value(I)D > v4,v5:#0 @5 exception:v6\l" 
+ "BB2\n3   v7 = invokevirtual < Application, LMathVector, value(I)D > v4,v5:#0 @5 exception:v6\l" -> "BB3\n6   v8 = getfield < Application, LBody, pos, <Application,LMathVector> > v1\l" 
+ "BB3\n6   v8 = getfield < Application, LBody, pos, <Application,LMathVector> > v1\l" -> "BB4\n8   v11 = invokevirtual < Application, LMathVector, value(I)D > v8,v9:#1 @14 exception:v10\l" 
+ "BB4\n8   v11 = invokevirtual < Application, LMathVector, value(I)D > v8,v9:#1 @14 exception:v10\l" -> "BB5\n11   v12 = getfield < Application, LBody, pos, <Application,LMathVector> > v1\l" 
+ "BB5\n11   v12 = getfield < Application, LBody, pos, <Application,LMathVector> > v1\l" -> "BB6\n13   v15 = invokevirtual < Application, LMathVector, value(I)D > v12,v13:#2 @24 exception:v14\l" 
+ "BB6\n13   v15 = invokevirtual < Application, LMathVector, value(I)D > v12,v13:#2 @24 exception:v14\l" -> "BB7\n19   v16 = getfield < Application, LTree, rmin, <Application,LMathVector> > v2\l" 
+ "BB7\n19   v16 = getfield < Application, LTree, rmin, <Application,LMathVector> > v2\l" -> "BB8\n21   v18 = invokevirtual < Application, LMathVector, value(I)D > v16,v5:#0 @38 exception:v17\l" 
+ "BB8\n21   v18 = invokevirtual < Application, LMathVector, value(I)D > v16,v5:#0 @38 exception:v17\l" -> "BB9\n22   v19 = binaryop(sub) v7 , v18  \l24   v20 = getfield < Application, LTree, rsize, <Primordial,D> > v2\l" 
+ "BB9\n22   v19 = binaryop(sub) v7 , v18  \l24   v20 = getfield < Application, LTree, rsize, <Primordial,D> > v2\l" -> "BB10\n25   v21 = binaryop(div) v19 , v20 \l29   v23 = compare v22:#0.0,v21 opcode=cmpg\l31   conditional branch(ge) v23,v5:#0\l" 
+ "BB10\n25   v21 = binaryop(div) v19 , v20 \l29   v23 = compare v22:#0.0,v21 opcode=cmpg\l31   conditional branch(ge) v23,v5:#0\l" -> "BB11\n34   v25 = compare v21,v24:#1.0 opcode=cmpg\l36   conditional branch(lt) v25,v5:#0\l" 
+ "BB10\n25   v21 = binaryop(div) v19 , v20 \l29   v23 = compare v22:#0.0,v21 opcode=cmpg\l31   conditional branch(ge) v23,v5:#0\l" -> "BB12\n" 
+ "BB11\n34   v25 = compare v21,v24:#1.0 opcode=cmpg\l36   conditional branch(lt) v25,v5:#0\l" -> "BB12\n" 
+ "BB11\n34   v25 = compare v21,v24:#1.0 opcode=cmpg\l36   conditional branch(lt) v25,v5:#0\l" -> "BB13\n           v26 = phi  v9:#1,v5:#0\l41   v27 = getfield < Application, LTree, rmin, <Application,LMathVector> > v2\l" 
+ "BB12\n" -> "BB13\n           v26 = phi  v9:#1,v5:#0\l41   v27 = getfield < Application, LTree, rmin, <Application,LMathVector> > v2\l" 
+ "BB13\n           v26 = phi  v9:#1,v5:#0\l41   v27 = getfield < Application, LTree, rmin, <Application,LMathVector> > v2\l" -> "BB14\n43   v29 = invokevirtual < Application, LMathVector, value(I)D > v27,v9:#1 @73 exception:v28\l" 
+ "BB14\n43   v29 = invokevirtual < Application, LMathVector, value(I)D > v27,v9:#1 @73 exception:v28\l" -> "BB15\n44   v30 = binaryop(sub) v11 , v29 \l46   v31 = getfield < Application, LTree, rsize, <Primordial,D> > v2\l" 
+ "BB15\n44   v30 = binaryop(sub) v11 , v29 \l46   v31 = getfield < Application, LTree, rsize, <Primordial,D> > v2\l" -> "BB16\n47   v32 = binaryop(div) v30 , v31 \l51   v33 = compare v22:#0.0,v32 opcode=cmpg\l53   conditional branch(ge) v33,v5:#0\l" 
+ "BB16\n47   v32 = binaryop(div) v30 , v31 \l51   v33 = compare v22:#0.0,v32 opcode=cmpg\l53   conditional branch(ge) v33,v5:#0\l" -> "BB17\n56   v34 = compare v32,v24:#1.0 opcode=cmpg\l58   conditional branch(lt) v34,v5:#0\l" 
+ "BB16\n47   v32 = binaryop(div) v30 , v31 \l51   v33 = compare v22:#0.0,v32 opcode=cmpg\l53   conditional branch(ge) v33,v5:#0\l" -> "BB18\n" 
+ "BB17\n56   v34 = compare v32,v24:#1.0 opcode=cmpg\l58   conditional branch(lt) v34,v5:#0\l" -> "BB18\n" 
+ "BB17\n56   v34 = compare v32,v24:#1.0 opcode=cmpg\l58   conditional branch(lt) v34,v5:#0\l" -> "BB19\n           v35 = phi  v26,v5:#0\l63   v36 = getfield < Application, LTree, rmin, <Application,LMathVector> > v2\l" 
+ "BB18\n" -> "BB19\n           v35 = phi  v26,v5:#0\l63   v36 = getfield < Application, LTree, rmin, <Application,LMathVector> > v2\l" 
+ "BB19\n           v35 = phi  v26,v5:#0\l63   v36 = getfield < Application, LTree, rmin, <Application,LMathVector> > v2\l" -> "BB20\n65   v38 = invokevirtual < Application, LMathVector, value(I)D > v36,v13:#2 @108 exception:v37\l" 
+ "BB20\n65   v38 = invokevirtual < Application, LMathVector, value(I)D > v36,v13:#2 @108 exception:v37\l" -> "BB21\n66   v39 = binaryop(sub) v15 , v38 \l68   v40 = getfield < Application, LTree, rsize, <Primordial,D> > v2\l" 
+ "BB21\n66   v39 = binaryop(sub) v15 , v38 \l68   v40 = getfield < Application, LTree, rsize, <Primordial,D> > v2\l" -> "BB22\n69   v41 = binaryop(div) v39 , v40 \l73   v42 = compare v22:#0.0,v41 opcode=cmpg\l75   conditional branch(ge) v42,v5:#0\l" 
+ "BB22\n69   v41 = binaryop(div) v39 , v40 \l73   v42 = compare v22:#0.0,v41 opcode=cmpg\l75   conditional branch(ge) v42,v5:#0\l" -> "BB23\n78   v43 = compare v41,v24:#1.0 opcode=cmpg\l80   conditional branch(lt) v43,v5:#0\l" 
+ "BB22\n69   v41 = binaryop(div) v39 , v40 \l73   v42 = compare v22:#0.0,v41 opcode=cmpg\l75   conditional branch(ge) v42,v5:#0\l" -> "BB24\n" 
+ "BB23\n78   v43 = compare v41,v24:#1.0 opcode=cmpg\l80   conditional branch(lt) v43,v5:#0\l" -> "BB24\n" 
+ "BB23\n78   v43 = compare v41,v24:#1.0 opcode=cmpg\l80   conditional branch(lt) v43,v5:#0\l" -> "BB25\n           v44 = phi  v35,v5:#0\l84   return v44                    \l" 
+ "BB24\n" -> "BB25\n           v44 = phi  v35,v5:#0\l84   return v44                    \l" 
+ "BB25\n           v44 = phi  v35,v5:#0\l84   return v44                    \l" -> "BB26 (ex)\n\n" 
+
+}

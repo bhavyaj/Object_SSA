@@ -1,0 +1,79 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Tree.intcoord(LMathVector;)LMathVector;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0  Create O3_1                               \l" [ ]
+   "BB2\n2   invokespecial < Application, LMathVector, <init>()V > v4 @4 exception:v5\l" [ ]
+   "BB3\n6   v8 = invokevirtual < Application, LMathVector, value(I)D > v2,v6:#0 @10 exception:v7\l" [ ]
+   "BB4\n8  GetOSSAInstruction:	O4_1= O1_1< rmin>     \l" [ ]
+   "BB5\n10   v11 = invokevirtual < Application, LMathVector, value(I)D > v9,v6:#0 @18 exception:v10\l" [ ]
+   "BB6\n11   v12 = binaryop(sub) v8 , v11            \l13  GetOSSAInstruction:	13= O1_1< rsize>     \l" [ ]
+   "BB7\n14   v14 = binaryop(div) v12 , v13           \l18   v16 = compare v15:#0.0,v14 opcode=cmpg  \l20   conditional branch(gt) v16,v6:#0        \l" [ ]
+   "BB8\n23   v18 = compare v14,v17:#1.0 opcode=cmpg  \l25   conditional branch(ge) v18,v6:#0        \l" [ ]
+   "BB9\n30   v21 = binaryop(mul) v20:#1.073741824E9 , v14\l31   v23 = invokestatic < Application, Ljava/lang/Math, floor(D)D > v21 @47 exception:v22\l" [ ]
+   "BB10\n32   invokevirtual < Application, LMathVector, value(ID)V > v4,v6:#0,v23 @50 exception:v24\l" [ ]
+   "BB11\n33   goto                                    \l" [ ]
+   "BB12\n35   return v19:#null                        \l" [ ]
+   "BB13\n38   v27 = invokevirtual < Application, LMathVector, value(I)D > v2,v25:#1 @60 exception:v26\l" [ ]
+   "BB14\n40  GetOSSAInstruction:	O4_1= O1_1< rmin>    \l" [ ]
+   "BB15\n42   v30 = invokevirtual < Application, LMathVector, value(I)D > v28,v25:#1 @68 exception:v29\l" [ ]
+   "BB16\n43   v31 = binaryop(sub) v27 , v30           \l45  GetOSSAInstruction:	32= O1_1< rsize>     \l" [ ]
+   "BB17\n46   v33 = binaryop(div) v31 , v32           \l50   v34 = compare v15:#0.0,v33 opcode=cmpg  \l52   conditional branch(gt) v34,v6:#0        \l" [ ]
+   "BB18\n55   v35 = compare v33,v17:#1.0 opcode=cmpg  \l57   conditional branch(ge) v35,v6:#0        \l" [ ]
+   "BB19\n62   v36 = binaryop(mul) v20:#1.073741824E9 , v33\l63   v38 = invokestatic < Application, Ljava/lang/Math, floor(D)D > v36 @97 exception:v37\l" [ ]
+   "BB20\n64   invokevirtual < Application, LMathVector, value(ID)V > v4,v25:#1,v38 @100 exception:v39\l" [ ]
+   "BB21\n65   goto                                    \l" [ ]
+   "BB22\n67   return v19:#null                        \l" [ ]
+   "BB23\n70   v42 = invokevirtual < Application, LMathVector, value(I)D > v2,v40:#2 @110 exception:v41\l" [ ]
+   "BB24\n72  GetOSSAInstruction:	O4_1= O1_1< rmin>    \l" [ ]
+   "BB25\n74   v45 = invokevirtual < Application, LMathVector, value(I)D > v43,v40:#2 @118 exception:v44\l" [ ]
+   "BB26\n75   v46 = binaryop(sub) v42 , v45           \l77  GetOSSAInstruction:	47= O1_1< rsize>     \l" [ ]
+   "BB27\n78   v48 = binaryop(div) v46 , v47           \l82   v49 = compare v15:#0.0,v48 opcode=cmpg  \l84   conditional branch(gt) v49,v6:#0        \l" [ ]
+   "BB28\n87   v50 = compare v48,v17:#1.0 opcode=cmpg  \l89   conditional branch(ge) v50,v6:#0        \l" [ ]
+   "BB29\n94   v51 = binaryop(mul) v20:#1.073741824E9 , v48\l95   v53 = invokestatic < Application, Ljava/lang/Math, floor(D)D > v51 @147 exception:v52\l" [ ]
+   "BB30\n96   invokevirtual < Application, LMathVector, value(ID)V > v4,v40:#2,v53 @150 exception:v54\l" [ ]
+   "BB31\n97   goto                                    \l" [ ]
+   "BB32\n99   return v19:#null                        \l" [ ]
+   "BB33\n101   return v4                              \l" [ ]
+   "BB34 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0  Create O3_1                               \l" 
+ "BB1\n0  Create O3_1                               \l" -> "BB2\n2   invokespecial < Application, LMathVector, <init>()V > v4 @4 exception:v5\l" 
+ "BB2\n2   invokespecial < Application, LMathVector, <init>()V > v4 @4 exception:v5\l" -> "BB3\n6   v8 = invokevirtual < Application, LMathVector, value(I)D > v2,v6:#0 @10 exception:v7\l" 
+ "BB3\n6   v8 = invokevirtual < Application, LMathVector, value(I)D > v2,v6:#0 @10 exception:v7\l" -> "BB4\n8  GetOSSAInstruction:	O4_1= O1_1< rmin>     \l" 
+ "BB4\n8  GetOSSAInstruction:	O4_1= O1_1< rmin>     \l" -> "BB5\n10   v11 = invokevirtual < Application, LMathVector, value(I)D > v9,v6:#0 @18 exception:v10\l" 
+ "BB5\n10   v11 = invokevirtual < Application, LMathVector, value(I)D > v9,v6:#0 @18 exception:v10\l" -> "BB6\n11   v12 = binaryop(sub) v8 , v11            \l13  GetOSSAInstruction:	13= O1_1< rsize>     \l" 
+ "BB6\n11   v12 = binaryop(sub) v8 , v11            \l13  GetOSSAInstruction:	13= O1_1< rsize>     \l" -> "BB7\n14   v14 = binaryop(div) v12 , v13           \l18   v16 = compare v15:#0.0,v14 opcode=cmpg  \l20   conditional branch(gt) v16,v6:#0        \l" 
+ "BB7\n14   v14 = binaryop(div) v12 , v13           \l18   v16 = compare v15:#0.0,v14 opcode=cmpg  \l20   conditional branch(gt) v16,v6:#0        \l" -> "BB8\n23   v18 = compare v14,v17:#1.0 opcode=cmpg  \l25   conditional branch(ge) v18,v6:#0        \l" 
+ "BB7\n14   v14 = binaryop(div) v12 , v13           \l18   v16 = compare v15:#0.0,v14 opcode=cmpg  \l20   conditional branch(gt) v16,v6:#0        \l" -> "BB12\n35   return v19:#null                        \l" 
+ "BB8\n23   v18 = compare v14,v17:#1.0 opcode=cmpg  \l25   conditional branch(ge) v18,v6:#0        \l" -> "BB9\n30   v21 = binaryop(mul) v20:#1.073741824E9 , v14\l31   v23 = invokestatic < Application, Ljava/lang/Math, floor(D)D > v21 @47 exception:v22\l" 
+ "BB8\n23   v18 = compare v14,v17:#1.0 opcode=cmpg  \l25   conditional branch(ge) v18,v6:#0        \l" -> "BB12\n35   return v19:#null                        \l" 
+ "BB9\n30   v21 = binaryop(mul) v20:#1.073741824E9 , v14\l31   v23 = invokestatic < Application, Ljava/lang/Math, floor(D)D > v21 @47 exception:v22\l" -> "BB10\n32   invokevirtual < Application, LMathVector, value(ID)V > v4,v6:#0,v23 @50 exception:v24\l" 
+ "BB10\n32   invokevirtual < Application, LMathVector, value(ID)V > v4,v6:#0,v23 @50 exception:v24\l" -> "BB11\n33   goto                                    \l" 
+ "BB11\n33   goto                                    \l" -> "BB13\n38   v27 = invokevirtual < Application, LMathVector, value(I)D > v2,v25:#1 @60 exception:v26\l" 
+ "BB12\n35   return v19:#null                        \l" -> "BB34 (ex)\n\n" 
+ "BB13\n38   v27 = invokevirtual < Application, LMathVector, value(I)D > v2,v25:#1 @60 exception:v26\l" -> "BB14\n40  GetOSSAInstruction:	O4_1= O1_1< rmin>    \l" 
+ "BB14\n40  GetOSSAInstruction:	O4_1= O1_1< rmin>    \l" -> "BB15\n42   v30 = invokevirtual < Application, LMathVector, value(I)D > v28,v25:#1 @68 exception:v29\l" 
+ "BB15\n42   v30 = invokevirtual < Application, LMathVector, value(I)D > v28,v25:#1 @68 exception:v29\l" -> "BB16\n43   v31 = binaryop(sub) v27 , v30           \l45  GetOSSAInstruction:	32= O1_1< rsize>     \l" 
+ "BB16\n43   v31 = binaryop(sub) v27 , v30           \l45  GetOSSAInstruction:	32= O1_1< rsize>     \l" -> "BB17\n46   v33 = binaryop(div) v31 , v32           \l50   v34 = compare v15:#0.0,v33 opcode=cmpg  \l52   conditional branch(gt) v34,v6:#0        \l" 
+ "BB17\n46   v33 = binaryop(div) v31 , v32           \l50   v34 = compare v15:#0.0,v33 opcode=cmpg  \l52   conditional branch(gt) v34,v6:#0        \l" -> "BB18\n55   v35 = compare v33,v17:#1.0 opcode=cmpg  \l57   conditional branch(ge) v35,v6:#0        \l" 
+ "BB17\n46   v33 = binaryop(div) v31 , v32           \l50   v34 = compare v15:#0.0,v33 opcode=cmpg  \l52   conditional branch(gt) v34,v6:#0        \l" -> "BB22\n67   return v19:#null                        \l" 
+ "BB18\n55   v35 = compare v33,v17:#1.0 opcode=cmpg  \l57   conditional branch(ge) v35,v6:#0        \l" -> "BB19\n62   v36 = binaryop(mul) v20:#1.073741824E9 , v33\l63   v38 = invokestatic < Application, Ljava/lang/Math, floor(D)D > v36 @97 exception:v37\l" 
+ "BB18\n55   v35 = compare v33,v17:#1.0 opcode=cmpg  \l57   conditional branch(ge) v35,v6:#0        \l" -> "BB22\n67   return v19:#null                        \l" 
+ "BB19\n62   v36 = binaryop(mul) v20:#1.073741824E9 , v33\l63   v38 = invokestatic < Application, Ljava/lang/Math, floor(D)D > v36 @97 exception:v37\l" -> "BB20\n64   invokevirtual < Application, LMathVector, value(ID)V > v4,v25:#1,v38 @100 exception:v39\l" 
+ "BB20\n64   invokevirtual < Application, LMathVector, value(ID)V > v4,v25:#1,v38 @100 exception:v39\l" -> "BB21\n65   goto                                    \l" 
+ "BB21\n65   goto                                    \l" -> "BB23\n70   v42 = invokevirtual < Application, LMathVector, value(I)D > v2,v40:#2 @110 exception:v41\l" 
+ "BB22\n67   return v19:#null                        \l" -> "BB34 (ex)\n\n" 
+ "BB23\n70   v42 = invokevirtual < Application, LMathVector, value(I)D > v2,v40:#2 @110 exception:v41\l" -> "BB24\n72  GetOSSAInstruction:	O4_1= O1_1< rmin>    \l" 
+ "BB24\n72  GetOSSAInstruction:	O4_1= O1_1< rmin>    \l" -> "BB25\n74   v45 = invokevirtual < Application, LMathVector, value(I)D > v43,v40:#2 @118 exception:v44\l" 
+ "BB25\n74   v45 = invokevirtual < Application, LMathVector, value(I)D > v43,v40:#2 @118 exception:v44\l" -> "BB26\n75   v46 = binaryop(sub) v42 , v45           \l77  GetOSSAInstruction:	47= O1_1< rsize>     \l" 
+ "BB26\n75   v46 = binaryop(sub) v42 , v45           \l77  GetOSSAInstruction:	47= O1_1< rsize>     \l" -> "BB27\n78   v48 = binaryop(div) v46 , v47           \l82   v49 = compare v15:#0.0,v48 opcode=cmpg  \l84   conditional branch(gt) v49,v6:#0        \l" 
+ "BB27\n78   v48 = binaryop(div) v46 , v47           \l82   v49 = compare v15:#0.0,v48 opcode=cmpg  \l84   conditional branch(gt) v49,v6:#0        \l" -> "BB28\n87   v50 = compare v48,v17:#1.0 opcode=cmpg  \l89   conditional branch(ge) v50,v6:#0        \l" 
+ "BB27\n78   v48 = binaryop(div) v46 , v47           \l82   v49 = compare v15:#0.0,v48 opcode=cmpg  \l84   conditional branch(gt) v49,v6:#0        \l" -> "BB32\n99   return v19:#null                        \l" 
+ "BB28\n87   v50 = compare v48,v17:#1.0 opcode=cmpg  \l89   conditional branch(ge) v50,v6:#0        \l" -> "BB29\n94   v51 = binaryop(mul) v20:#1.073741824E9 , v48\l95   v53 = invokestatic < Application, Ljava/lang/Math, floor(D)D > v51 @147 exception:v52\l" 
+ "BB28\n87   v50 = compare v48,v17:#1.0 opcode=cmpg  \l89   conditional branch(ge) v50,v6:#0        \l" -> "BB32\n99   return v19:#null                        \l" 
+ "BB29\n94   v51 = binaryop(mul) v20:#1.073741824E9 , v48\l95   v53 = invokestatic < Application, Ljava/lang/Math, floor(D)D > v51 @147 exception:v52\l" -> "BB30\n96   invokevirtual < Application, LMathVector, value(ID)V > v4,v40:#2,v53 @150 exception:v54\l" 
+ "BB30\n96   invokevirtual < Application, LMathVector, value(ID)V > v4,v40:#2,v53 @150 exception:v54\l" -> "BB31\n97   goto                                    \l" 
+ "BB31\n97   goto                                    \l" -> "BB33\n101   return v4                              \l" 
+ "BB32\n99   return v19:#null                        \l" -> "BB34 (ex)\n\n" 
+ "BB33\n101   return v4                              \l" -> "BB34 (ex)\n\n" 
+
+}

@@ -1,0 +1,40 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n3   v7 = invokevirtual < Application, LVertex, X()D > v4 @5 exception:v6\l" [ ]
+   "BB2\n6   v9 = invokevirtual < Application, LVertex, Y()D > v4 @12 exception:v8\l" [ ]
+   "BB3\n9   v11 = invokevirtual < Application, LVertex, Norm()D > v4 @19 exception:v10\l" [ ]
+   "BB4\n14   v13 = invokevirtual < Application, LVertex, X()D > v1 @29 exception:v12\l" [ ]
+   "BB5\n16   v14 = binaryop(sub) v13 , v7  \l19   v16 = invokevirtual < Application, LVertex, Y()D > v1 @39 exception:v15\l" [ ]
+   "BB6\n21   v17 = binaryop(sub) v16 , v9  \l24   v19 = invokevirtual < Application, LVertex, Norm()D > v1 @49 exception:v18\l" [ ]
+   "BB7\n29   v21 = invokevirtual < Application, LVertex, X()D > v2 @59 exception:v20\l" [ ]
+   "BB8\n31   v22 = binaryop(sub) v21 , v7  \l34   v24 = invokevirtual < Application, LVertex, Y()D > v2 @69 exception:v23\l" [ ]
+   "BB9\n36   v25 = binaryop(sub) v24 , v9  \l39   v27 = invokevirtual < Application, LVertex, Norm()D > v2 @79 exception:v26\l" [ ]
+   "BB10\n44   v29 = invokevirtual < Application, LVertex, X()D > v3 @89 exception:v28\l" [ ]
+   "BB11\n46   v30 = binaryop(sub) v29 , v7  \l49   v32 = invokevirtual < Application, LVertex, Y()D > v3 @99 exception:v31\l" [ ]
+   "BB12\n51   v33 = binaryop(sub) v32 , v9  \l54   v35 = invokevirtual < Application, LVertex, Norm()D > v3 @109 exception:v34\l" [ ]
+   "BB13\n58   v36 = binaryop(sub) v19 , v11 \l61   v37 = binaryop(mul) v22 , v33 \l64   v38 = binaryop(mul) v25 , v30 \l65   v39 = binaryop(sub) v37 , v38 \l66   v40 = binaryop(mul) v36 , v39 \l71   v41 = binaryop(sub) v27 , v11 \l74   v42 = binaryop(mul) v30 , v17 \l77   v43 = binaryop(mul) v33 , v14 \l78   v44 = binaryop(sub) v42 , v43 \l79   v45 = binaryop(mul) v41 , v44 \l80   v46 = binaryop(add) v40 , v45 \l85   v47 = binaryop(sub) v35 , v11 \l88   v48 = binaryop(mul) v14 , v25 \l91   v49 = binaryop(mul) v17 , v22 \l92   v50 = binaryop(sub) v48 , v49 \l93   v51 = binaryop(mul) v47 , v50 \l94   v52 = binaryop(add) v46 , v51 \l98   v54 = compare v53:#0.0,v52 opcode=cmpg\l100   conditional branch(ge) v54,v55:#0\l" [ ]
+   "BB14\n102   goto                         \l" [ ]
+   "BB15\n" [ ]
+   "BB16\n           v57 = phi  v56:#1,v55:#0\l104   return v57                   \l" [ ]
+   "BB17 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n3   v7 = invokevirtual < Application, LVertex, X()D > v4 @5 exception:v6\l" 
+ "BB1\n3   v7 = invokevirtual < Application, LVertex, X()D > v4 @5 exception:v6\l" -> "BB2\n6   v9 = invokevirtual < Application, LVertex, Y()D > v4 @12 exception:v8\l" 
+ "BB2\n6   v9 = invokevirtual < Application, LVertex, Y()D > v4 @12 exception:v8\l" -> "BB3\n9   v11 = invokevirtual < Application, LVertex, Norm()D > v4 @19 exception:v10\l" 
+ "BB3\n9   v11 = invokevirtual < Application, LVertex, Norm()D > v4 @19 exception:v10\l" -> "BB4\n14   v13 = invokevirtual < Application, LVertex, X()D > v1 @29 exception:v12\l" 
+ "BB4\n14   v13 = invokevirtual < Application, LVertex, X()D > v1 @29 exception:v12\l" -> "BB5\n16   v14 = binaryop(sub) v13 , v7  \l19   v16 = invokevirtual < Application, LVertex, Y()D > v1 @39 exception:v15\l" 
+ "BB5\n16   v14 = binaryop(sub) v13 , v7  \l19   v16 = invokevirtual < Application, LVertex, Y()D > v1 @39 exception:v15\l" -> "BB6\n21   v17 = binaryop(sub) v16 , v9  \l24   v19 = invokevirtual < Application, LVertex, Norm()D > v1 @49 exception:v18\l" 
+ "BB6\n21   v17 = binaryop(sub) v16 , v9  \l24   v19 = invokevirtual < Application, LVertex, Norm()D > v1 @49 exception:v18\l" -> "BB7\n29   v21 = invokevirtual < Application, LVertex, X()D > v2 @59 exception:v20\l" 
+ "BB7\n29   v21 = invokevirtual < Application, LVertex, X()D > v2 @59 exception:v20\l" -> "BB8\n31   v22 = binaryop(sub) v21 , v7  \l34   v24 = invokevirtual < Application, LVertex, Y()D > v2 @69 exception:v23\l" 
+ "BB8\n31   v22 = binaryop(sub) v21 , v7  \l34   v24 = invokevirtual < Application, LVertex, Y()D > v2 @69 exception:v23\l" -> "BB9\n36   v25 = binaryop(sub) v24 , v9  \l39   v27 = invokevirtual < Application, LVertex, Norm()D > v2 @79 exception:v26\l" 
+ "BB9\n36   v25 = binaryop(sub) v24 , v9  \l39   v27 = invokevirtual < Application, LVertex, Norm()D > v2 @79 exception:v26\l" -> "BB10\n44   v29 = invokevirtual < Application, LVertex, X()D > v3 @89 exception:v28\l" 
+ "BB10\n44   v29 = invokevirtual < Application, LVertex, X()D > v3 @89 exception:v28\l" -> "BB11\n46   v30 = binaryop(sub) v29 , v7  \l49   v32 = invokevirtual < Application, LVertex, Y()D > v3 @99 exception:v31\l" 
+ "BB11\n46   v30 = binaryop(sub) v29 , v7  \l49   v32 = invokevirtual < Application, LVertex, Y()D > v3 @99 exception:v31\l" -> "BB12\n51   v33 = binaryop(sub) v32 , v9  \l54   v35 = invokevirtual < Application, LVertex, Norm()D > v3 @109 exception:v34\l" 
+ "BB12\n51   v33 = binaryop(sub) v32 , v9  \l54   v35 = invokevirtual < Application, LVertex, Norm()D > v3 @109 exception:v34\l" -> "BB13\n58   v36 = binaryop(sub) v19 , v11 \l61   v37 = binaryop(mul) v22 , v33 \l64   v38 = binaryop(mul) v25 , v30 \l65   v39 = binaryop(sub) v37 , v38 \l66   v40 = binaryop(mul) v36 , v39 \l71   v41 = binaryop(sub) v27 , v11 \l74   v42 = binaryop(mul) v30 , v17 \l77   v43 = binaryop(mul) v33 , v14 \l78   v44 = binaryop(sub) v42 , v43 \l79   v45 = binaryop(mul) v41 , v44 \l80   v46 = binaryop(add) v40 , v45 \l85   v47 = binaryop(sub) v35 , v11 \l88   v48 = binaryop(mul) v14 , v25 \l91   v49 = binaryop(mul) v17 , v22 \l92   v50 = binaryop(sub) v48 , v49 \l93   v51 = binaryop(mul) v47 , v50 \l94   v52 = binaryop(add) v46 , v51 \l98   v54 = compare v53:#0.0,v52 opcode=cmpg\l100   conditional branch(ge) v54,v55:#0\l" 
+ "BB13\n58   v36 = binaryop(sub) v19 , v11 \l61   v37 = binaryop(mul) v22 , v33 \l64   v38 = binaryop(mul) v25 , v30 \l65   v39 = binaryop(sub) v37 , v38 \l66   v40 = binaryop(mul) v36 , v39 \l71   v41 = binaryop(sub) v27 , v11 \l74   v42 = binaryop(mul) v30 , v17 \l77   v43 = binaryop(mul) v33 , v14 \l78   v44 = binaryop(sub) v42 , v43 \l79   v45 = binaryop(mul) v41 , v44 \l80   v46 = binaryop(add) v40 , v45 \l85   v47 = binaryop(sub) v35 , v11 \l88   v48 = binaryop(mul) v14 , v25 \l91   v49 = binaryop(mul) v17 , v22 \l92   v50 = binaryop(sub) v48 , v49 \l93   v51 = binaryop(mul) v47 , v50 \l94   v52 = binaryop(add) v46 , v51 \l98   v54 = compare v53:#0.0,v52 opcode=cmpg\l100   conditional branch(ge) v54,v55:#0\l" -> "BB14\n102   goto                         \l" 
+ "BB13\n58   v36 = binaryop(sub) v19 , v11 \l61   v37 = binaryop(mul) v22 , v33 \l64   v38 = binaryop(mul) v25 , v30 \l65   v39 = binaryop(sub) v37 , v38 \l66   v40 = binaryop(mul) v36 , v39 \l71   v41 = binaryop(sub) v27 , v11 \l74   v42 = binaryop(mul) v30 , v17 \l77   v43 = binaryop(mul) v33 , v14 \l78   v44 = binaryop(sub) v42 , v43 \l79   v45 = binaryop(mul) v41 , v44 \l80   v46 = binaryop(add) v40 , v45 \l85   v47 = binaryop(sub) v35 , v11 \l88   v48 = binaryop(mul) v14 , v25 \l91   v49 = binaryop(mul) v17 , v22 \l92   v50 = binaryop(sub) v48 , v49 \l93   v51 = binaryop(mul) v47 , v50 \l94   v52 = binaryop(add) v46 , v51 \l98   v54 = compare v53:#0.0,v52 opcode=cmpg\l100   conditional branch(ge) v54,v55:#0\l" -> "BB15\n" 
+ "BB14\n102   goto                         \l" -> "BB16\n           v57 = phi  v56:#1,v55:#0\l104   return v57                   \l" 
+ "BB15\n" -> "BB16\n           v57 = phi  v56:#1,v55:#0\l104   return v57                   \l" 
+ "BB16\n           v57 = phi  v56:#1,v55:#0\l104   return v57                   \l" -> "BB17 (ex)\n\n" 
+
+}

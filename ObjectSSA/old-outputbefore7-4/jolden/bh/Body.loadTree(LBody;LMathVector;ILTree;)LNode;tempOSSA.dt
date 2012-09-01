@@ -1,0 +1,40 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Body.loadTree(LBody;LMathVector;ILTree;)LNode;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0  Create O5_1                               \l" [ ]
+   "BB2\n2   invokespecial < Application, LCell, <init>()V > v7 @4 exception:v8\l" [ ]
+   "BB3\n7   v10 = invokevirtual < Application, LBody, subindex(LTree;I)I > v1,v5,v4 @13 exception:v9\l" [ ]
+   "BB4\n10  GetOSSAInstruction:	O6_1= O5_1< subp>    \l" [ ]
+   "BB5\n13   arraystore v11[v10] = v1                \l" [ ]
+   "BB6\n16   v13 = invokestatic < Application, LBody, oldSubindex(LMathVector;I)I > v3,v4 @29 exception:v12\l" [ ]
+   "BB7\n19  GetOSSAInstruction:	O6_1= O5_1< subp>    \l" [ ]
+   "BB8\n21   v15 = arrayload v14[v13]                \l" [ ]
+   "BB9\n25   conditional branch(eq) v15,v16:#null    \l" [ ]
+   "BB10\n27  GetOSSAInstruction:	O6_1= O5_1< subp>    \l" [ ]
+   "BB11\n34   v20 = binaryop(SHR) v4 , v19:#1         \l36   v22 = invokevirtual < Application, LNode, loadTree(LBody;LMathVector;ILTree;)LNode; > v15,v2,v3,v20,v5 @65 exception:v21\l" [ ]
+   "BB12\n37   arraystore v18[v13] = v22               \l" [ ]
+   "BB13\n38   goto                                    \l" [ ]
+   "BB14\n40  GetOSSAInstruction:	O6_1= O5_1< subp>    \l" [ ]
+   "BB15\n43   arraystore v17[v13] = v2                \l" [ ]
+   "BB16\n45   return v7                               \l" [ ]
+   "BB17 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0  Create O5_1                               \l" 
+ "BB1\n0  Create O5_1                               \l" -> "BB2\n2   invokespecial < Application, LCell, <init>()V > v7 @4 exception:v8\l" 
+ "BB2\n2   invokespecial < Application, LCell, <init>()V > v7 @4 exception:v8\l" -> "BB3\n7   v10 = invokevirtual < Application, LBody, subindex(LTree;I)I > v1,v5,v4 @13 exception:v9\l" 
+ "BB3\n7   v10 = invokevirtual < Application, LBody, subindex(LTree;I)I > v1,v5,v4 @13 exception:v9\l" -> "BB4\n10  GetOSSAInstruction:	O6_1= O5_1< subp>    \l" 
+ "BB4\n10  GetOSSAInstruction:	O6_1= O5_1< subp>    \l" -> "BB5\n13   arraystore v11[v10] = v1                \l" 
+ "BB5\n13   arraystore v11[v10] = v1                \l" -> "BB6\n16   v13 = invokestatic < Application, LBody, oldSubindex(LMathVector;I)I > v3,v4 @29 exception:v12\l" 
+ "BB6\n16   v13 = invokestatic < Application, LBody, oldSubindex(LMathVector;I)I > v3,v4 @29 exception:v12\l" -> "BB7\n19  GetOSSAInstruction:	O6_1= O5_1< subp>    \l" 
+ "BB7\n19  GetOSSAInstruction:	O6_1= O5_1< subp>    \l" -> "BB8\n21   v15 = arrayload v14[v13]                \l" 
+ "BB8\n21   v15 = arrayload v14[v13]                \l" -> "BB9\n25   conditional branch(eq) v15,v16:#null    \l" 
+ "BB9\n25   conditional branch(eq) v15,v16:#null    \l" -> "BB10\n27  GetOSSAInstruction:	O6_1= O5_1< subp>    \l" 
+ "BB9\n25   conditional branch(eq) v15,v16:#null    \l" -> "BB14\n40  GetOSSAInstruction:	O6_1= O5_1< subp>    \l" 
+ "BB10\n27  GetOSSAInstruction:	O6_1= O5_1< subp>    \l" -> "BB11\n34   v20 = binaryop(SHR) v4 , v19:#1         \l36   v22 = invokevirtual < Application, LNode, loadTree(LBody;LMathVector;ILTree;)LNode; > v15,v2,v3,v20,v5 @65 exception:v21\l" 
+ "BB11\n34   v20 = binaryop(SHR) v4 , v19:#1         \l36   v22 = invokevirtual < Application, LNode, loadTree(LBody;LMathVector;ILTree;)LNode; > v15,v2,v3,v20,v5 @65 exception:v21\l" -> "BB12\n37   arraystore v18[v13] = v22               \l" 
+ "BB12\n37   arraystore v18[v13] = v22               \l" -> "BB13\n38   goto                                    \l" 
+ "BB13\n38   goto                                    \l" -> "BB16\n45   return v7                               \l" 
+ "BB14\n40  GetOSSAInstruction:	O6_1= O5_1< subp>    \l" -> "BB15\n43   arraystore v17[v13] = v2                \l" 
+ "BB15\n43   arraystore v17[v13] = v2                \l" -> "BB16\n45   return v7                               \l" 
+ "BB16\n45   return v7                               \l" -> "BB17 (ex)\n\n" 
+
+}

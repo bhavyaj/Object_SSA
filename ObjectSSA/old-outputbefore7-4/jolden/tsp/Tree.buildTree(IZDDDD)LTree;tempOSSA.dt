@@ -1,0 +1,63 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Tree.buildTree(IZDDDD)LTree;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2   conditional branch(ne) v1,v8:#0          \l" [ ]
+   "BB2\n4   return v41:#null                         \l" [ ]
+   "BB3\n7   conditional branch(eq) v2,v8:#0          \l" [ ]
+   "BB4\n10   conditional branch(ne) v2,v8:#0         \l" [ ]
+   "BB5\n12   goto                                    \l" [ ]
+   "BB6\n" [ ]
+   "BB7\n           v22 = phi  v9:#1,v8:#0\l18   v24 = invokestatic < Application, LTree, median(DDI)D > v3,v4,v1 @24 exception:v23\l" [ ]
+   "BB8\n22   v25 = binaryop(div) v1 , v13:#2         \l" [ ]
+   "BB9\n28   v27 = invokestatic < Application, LTree, buildTree(IZDDDD)LTree; > v25,v22,v3,v24,v5,v6 @40 exception:v26\l" [ ]
+   "BB10\n32   v28 = binaryop(div) v1 , v13:#2         \l" [ ]
+   "BB11\n38   v30 = invokestatic < Application, LTree, buildTree(IZDDDD)LTree; > v28,v22,v24,v4,v5,v6 @57 exception:v29\l" [ ]
+   "BB12\n44   v32 = invokestatic < Application, LTree, uniform(DD)D > v5,v6 @70 exception:v31\l" [ ]
+   "BB13\n46   goto                                    \l" [ ]
+   "BB14\n49   conditional branch(ne) v2,v8:#0         \l" [ ]
+   "BB15\n51   goto                                    \l" [ ]
+   "BB16\n" [ ]
+   "BB17\n           v10 = phi  v9:#1,v8:#0\l57   v12 = invokestatic < Application, LTree, median(DDI)D > v5,v6,v1 @93 exception:v11\l" [ ]
+   "BB18\n61   v14 = binaryop(div) v1 , v13:#2         \l" [ ]
+   "BB19\n67   v16 = invokestatic < Application, LTree, buildTree(IZDDDD)LTree; > v14,v10,v3,v4,v5,v12 @109 exception:v15\l" [ ]
+   "BB20\n71   v17 = binaryop(div) v1 , v13:#2         \l" [ ]
+   "BB21\n77   v19 = invokestatic < Application, LTree, buildTree(IZDDDD)LTree; > v17,v10,v3,v4,v12,v6 @125 exception:v18\l" [ ]
+   "BB22\n83   v21 = invokestatic < Application, LTree, uniform(DD)D > v3,v4 @137 exception:v20\l" [ ]
+   "BB23\n" [ ]
+   "BB24\n           O2_1 = diff-Object-Phi(nullobject_30, nullobject_19 )\l           O1_1 = diff-Object-Phi(nullobject_27, nullobject_16 )\l           v34 = phi  v27,v16\l           v35 = phi  v30,v19\l           v36 = phi  v24,v21\l           v37 = phi  v32,v12\l85  Create O3_1                              \l" [ ]
+   "BB25\n92   invokespecial < Application, LTree, <init>(IDDLTree;LTree;)V > v39,v1,v36,v37,v34,v35 @155 exception:v40\l" [ ]
+   "BB26\n93   return v39                              \l" [ ]
+   "BB27 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2   conditional branch(ne) v1,v8:#0          \l" 
+ "BB1\n2   conditional branch(ne) v1,v8:#0          \l" -> "BB2\n4   return v41:#null                         \l" 
+ "BB1\n2   conditional branch(ne) v1,v8:#0          \l" -> "BB3\n7   conditional branch(eq) v2,v8:#0          \l" 
+ "BB2\n4   return v41:#null                         \l" -> "BB27 (ex)\n\n" 
+ "BB3\n7   conditional branch(eq) v2,v8:#0          \l" -> "BB4\n10   conditional branch(ne) v2,v8:#0         \l" 
+ "BB3\n7   conditional branch(eq) v2,v8:#0          \l" -> "BB14\n49   conditional branch(ne) v2,v8:#0         \l" 
+ "BB4\n10   conditional branch(ne) v2,v8:#0         \l" -> "BB5\n12   goto                                    \l" 
+ "BB4\n10   conditional branch(ne) v2,v8:#0         \l" -> "BB6\n" 
+ "BB5\n12   goto                                    \l" -> "BB7\n           v22 = phi  v9:#1,v8:#0\l18   v24 = invokestatic < Application, LTree, median(DDI)D > v3,v4,v1 @24 exception:v23\l" 
+ "BB6\n" -> "BB7\n           v22 = phi  v9:#1,v8:#0\l18   v24 = invokestatic < Application, LTree, median(DDI)D > v3,v4,v1 @24 exception:v23\l" 
+ "BB7\n           v22 = phi  v9:#1,v8:#0\l18   v24 = invokestatic < Application, LTree, median(DDI)D > v3,v4,v1 @24 exception:v23\l" -> "BB8\n22   v25 = binaryop(div) v1 , v13:#2         \l" 
+ "BB8\n22   v25 = binaryop(div) v1 , v13:#2         \l" -> "BB9\n28   v27 = invokestatic < Application, LTree, buildTree(IZDDDD)LTree; > v25,v22,v3,v24,v5,v6 @40 exception:v26\l" 
+ "BB9\n28   v27 = invokestatic < Application, LTree, buildTree(IZDDDD)LTree; > v25,v22,v3,v24,v5,v6 @40 exception:v26\l" -> "BB10\n32   v28 = binaryop(div) v1 , v13:#2         \l" 
+ "BB10\n32   v28 = binaryop(div) v1 , v13:#2         \l" -> "BB11\n38   v30 = invokestatic < Application, LTree, buildTree(IZDDDD)LTree; > v28,v22,v24,v4,v5,v6 @57 exception:v29\l" 
+ "BB11\n38   v30 = invokestatic < Application, LTree, buildTree(IZDDDD)LTree; > v28,v22,v24,v4,v5,v6 @57 exception:v29\l" -> "BB12\n44   v32 = invokestatic < Application, LTree, uniform(DD)D > v5,v6 @70 exception:v31\l" 
+ "BB12\n44   v32 = invokestatic < Application, LTree, uniform(DD)D > v5,v6 @70 exception:v31\l" -> "BB13\n46   goto                                    \l" 
+ "BB13\n46   goto                                    \l" -> "BB24\n           O2_1 = diff-Object-Phi(nullobject_30, nullobject_19 )\l           O1_1 = diff-Object-Phi(nullobject_27, nullobject_16 )\l           v34 = phi  v27,v16\l           v35 = phi  v30,v19\l           v36 = phi  v24,v21\l           v37 = phi  v32,v12\l85  Create O3_1                              \l" 
+ "BB14\n49   conditional branch(ne) v2,v8:#0         \l" -> "BB15\n51   goto                                    \l" 
+ "BB14\n49   conditional branch(ne) v2,v8:#0         \l" -> "BB16\n" 
+ "BB15\n51   goto                                    \l" -> "BB17\n           v10 = phi  v9:#1,v8:#0\l57   v12 = invokestatic < Application, LTree, median(DDI)D > v5,v6,v1 @93 exception:v11\l" 
+ "BB16\n" -> "BB17\n           v10 = phi  v9:#1,v8:#0\l57   v12 = invokestatic < Application, LTree, median(DDI)D > v5,v6,v1 @93 exception:v11\l" 
+ "BB17\n           v10 = phi  v9:#1,v8:#0\l57   v12 = invokestatic < Application, LTree, median(DDI)D > v5,v6,v1 @93 exception:v11\l" -> "BB18\n61   v14 = binaryop(div) v1 , v13:#2         \l" 
+ "BB18\n61   v14 = binaryop(div) v1 , v13:#2         \l" -> "BB19\n67   v16 = invokestatic < Application, LTree, buildTree(IZDDDD)LTree; > v14,v10,v3,v4,v5,v12 @109 exception:v15\l" 
+ "BB19\n67   v16 = invokestatic < Application, LTree, buildTree(IZDDDD)LTree; > v14,v10,v3,v4,v5,v12 @109 exception:v15\l" -> "BB20\n71   v17 = binaryop(div) v1 , v13:#2         \l" 
+ "BB20\n71   v17 = binaryop(div) v1 , v13:#2         \l" -> "BB21\n77   v19 = invokestatic < Application, LTree, buildTree(IZDDDD)LTree; > v17,v10,v3,v4,v12,v6 @125 exception:v18\l" 
+ "BB21\n77   v19 = invokestatic < Application, LTree, buildTree(IZDDDD)LTree; > v17,v10,v3,v4,v12,v6 @125 exception:v18\l" -> "BB22\n83   v21 = invokestatic < Application, LTree, uniform(DD)D > v3,v4 @137 exception:v20\l" 
+ "BB22\n83   v21 = invokestatic < Application, LTree, uniform(DD)D > v3,v4 @137 exception:v20\l" -> "BB23\n" 
+ "BB23\n" -> "BB24\n           O2_1 = diff-Object-Phi(nullobject_30, nullobject_19 )\l           O1_1 = diff-Object-Phi(nullobject_27, nullobject_16 )\l           v34 = phi  v27,v16\l           v35 = phi  v30,v19\l           v36 = phi  v24,v21\l           v37 = phi  v32,v12\l85  Create O3_1                              \l" 
+ "BB24\n           O2_1 = diff-Object-Phi(nullobject_30, nullobject_19 )\l           O1_1 = diff-Object-Phi(nullobject_27, nullobject_16 )\l           v34 = phi  v27,v16\l           v35 = phi  v30,v19\l           v36 = phi  v24,v21\l           v37 = phi  v32,v12\l85  Create O3_1                              \l" -> "BB25\n92   invokespecial < Application, LTree, <init>(IDDLTree;LTree;)V > v39,v1,v36,v37,v34,v35 @155 exception:v40\l" 
+ "BB25\n92   invokespecial < Application, LTree, <init>(IDDLTree;LTree;)V > v39,v1,v36,v37,v34,v35 @155 exception:v40\l" -> "BB26\n93   return v39                              \l" 
+ "BB26\n93   return v39                              \l" -> "BB27 (ex)\n\n" 
+
+}

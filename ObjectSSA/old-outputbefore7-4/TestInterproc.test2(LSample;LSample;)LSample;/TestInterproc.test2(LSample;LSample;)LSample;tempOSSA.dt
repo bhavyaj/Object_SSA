@@ -1,0 +1,15 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for TestInterproc.test2(LSample;LSample;)LSample;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  GetOSSAInstruction:	O3_1= O1_1< next>     \l" [ ]
+   "BB2\n5  PutOSSAInstruction:	O2_1< next > = O2_1<refO1_1>\l" [ ]
+   "BB3\n7  GetOSSAInstruction:	O3_1= O2_1< next>     \l" [ ]
+   "BB4\n10   return v5                               \l" [ ]
+   "BB5 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  GetOSSAInstruction:	O3_1= O1_1< next>     \l" 
+ "BB1\n1  GetOSSAInstruction:	O3_1= O1_1< next>     \l" -> "BB2\n5  PutOSSAInstruction:	O2_1< next > = O2_1<refO1_1>\l" 
+ "BB2\n5  PutOSSAInstruction:	O2_1< next > = O2_1<refO1_1>\l" -> "BB3\n7  GetOSSAInstruction:	O3_1= O2_1< next>     \l" 
+ "BB3\n7  GetOSSAInstruction:	O3_1= O2_1< next>     \l" -> "BB4\n10   return v5                               \l" 
+ "BB4\n10   return v5                               \l" -> "BB5 (ex)\n\n" 
+
+}

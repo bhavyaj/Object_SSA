@@ -1,0 +1,65 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Edge.makeEdge(LVertex;LVertex;)LEdge;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  Create O3_1                               \l" [ ]
+   "BB2\n5  Create O4_1                               \l" [ ]
+   "BB3\n9   invokespecial < Application, LEdge, <init>([LEdge;I)V > v7,v5,v6:#0 @13 exception:v8\l" [ ]
+   "BB4\n10   arraystore v5[v6:#0] = v7               \l" [ ]
+   "BB5\n13  Create O5_1                              \l" [ ]
+   "BB6\n17   invokespecial < Application, LEdge, <init>([LEdge;I)V > v10,v5,v9:#1 @25 exception:v11\l" [ ]
+   "BB7\n18   arraystore v5[v9:#1] = v10              \l" [ ]
+   "BB8\n21  Create O6_1                              \l" [ ]
+   "BB9\n25   invokespecial < Application, LEdge, <init>([LEdge;I)V > v13,v5,v12:#2 @37 exception:v14\l" [ ]
+   "BB10\n26   arraystore v5[v12:#2] = v13             \l" [ ]
+   "BB11\n29  Create O7_1                              \l" [ ]
+   "BB12\n33   invokespecial < Application, LEdge, <init>([LEdge;I)V > v16,v5,v15:#3 @49 exception:v17\l" [ ]
+   "BB13\n34   arraystore v5[v15:#3] = v16             \l" [ ]
+   "BB14\n37   v18 = arrayload v5[v6:#0]               \l" [ ]
+   "BB15\n40   v19 = arrayload v5[v6:#0]               \l" [ ]
+   "BB16\n41   putfield v18 = v19 < Application, LEdge, next, <Application,LEdge> >\l" [ ]
+   "BB17\n44   v20 = arrayload v5[v9:#1]               \l" [ ]
+   "BB18\n47   v21 = arrayload v5[v15:#3]              \l" [ ]
+   "BB19\n48   putfield v20 = v21 < Application, LEdge, next, <Application,LEdge> >\l" [ ]
+   "BB20\n51   v22 = arrayload v5[v12:#2]              \l" [ ]
+   "BB21\n54   v23 = arrayload v5[v12:#2]              \l" [ ]
+   "BB22\n55   putfield v22 = v23 < Application, LEdge, next, <Application,LEdge> >\l" [ ]
+   "BB23\n58   v24 = arrayload v5[v15:#3]              \l" [ ]
+   "BB24\n61   v25 = arrayload v5[v9:#1]               \l" [ ]
+   "BB25\n62   putfield v24 = v25 < Application, LEdge, next, <Application,LEdge> >\l" [ ]
+   "BB26\n65   v26 = arrayload v5[v6:#0]               \l" [ ]
+   "BB27\n69   invokevirtual < Application, LEdge, setOrig(LVertex;)V > v26,v1 @95 exception:v27\l" [ ]
+   "BB28\n72   invokevirtual < Application, LEdge, setDest(LVertex;)V > v26,v2 @100 exception:v28\l" [ ]
+   "BB29\n74   return v26                              \l" [ ]
+   "BB30 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  Create O3_1                               \l" 
+ "BB1\n1  Create O3_1                               \l" -> "BB2\n5  Create O4_1                               \l" 
+ "BB2\n5  Create O4_1                               \l" -> "BB3\n9   invokespecial < Application, LEdge, <init>([LEdge;I)V > v7,v5,v6:#0 @13 exception:v8\l" 
+ "BB3\n9   invokespecial < Application, LEdge, <init>([LEdge;I)V > v7,v5,v6:#0 @13 exception:v8\l" -> "BB4\n10   arraystore v5[v6:#0] = v7               \l" 
+ "BB4\n10   arraystore v5[v6:#0] = v7               \l" -> "BB5\n13  Create O5_1                              \l" 
+ "BB5\n13  Create O5_1                              \l" -> "BB6\n17   invokespecial < Application, LEdge, <init>([LEdge;I)V > v10,v5,v9:#1 @25 exception:v11\l" 
+ "BB6\n17   invokespecial < Application, LEdge, <init>([LEdge;I)V > v10,v5,v9:#1 @25 exception:v11\l" -> "BB7\n18   arraystore v5[v9:#1] = v10              \l" 
+ "BB7\n18   arraystore v5[v9:#1] = v10              \l" -> "BB8\n21  Create O6_1                              \l" 
+ "BB8\n21  Create O6_1                              \l" -> "BB9\n25   invokespecial < Application, LEdge, <init>([LEdge;I)V > v13,v5,v12:#2 @37 exception:v14\l" 
+ "BB9\n25   invokespecial < Application, LEdge, <init>([LEdge;I)V > v13,v5,v12:#2 @37 exception:v14\l" -> "BB10\n26   arraystore v5[v12:#2] = v13             \l" 
+ "BB10\n26   arraystore v5[v12:#2] = v13             \l" -> "BB11\n29  Create O7_1                              \l" 
+ "BB11\n29  Create O7_1                              \l" -> "BB12\n33   invokespecial < Application, LEdge, <init>([LEdge;I)V > v16,v5,v15:#3 @49 exception:v17\l" 
+ "BB12\n33   invokespecial < Application, LEdge, <init>([LEdge;I)V > v16,v5,v15:#3 @49 exception:v17\l" -> "BB13\n34   arraystore v5[v15:#3] = v16             \l" 
+ "BB13\n34   arraystore v5[v15:#3] = v16             \l" -> "BB14\n37   v18 = arrayload v5[v6:#0]               \l" 
+ "BB14\n37   v18 = arrayload v5[v6:#0]               \l" -> "BB15\n40   v19 = arrayload v5[v6:#0]               \l" 
+ "BB15\n40   v19 = arrayload v5[v6:#0]               \l" -> "BB16\n41   putfield v18 = v19 < Application, LEdge, next, <Application,LEdge> >\l" 
+ "BB16\n41   putfield v18 = v19 < Application, LEdge, next, <Application,LEdge> >\l" -> "BB17\n44   v20 = arrayload v5[v9:#1]               \l" 
+ "BB17\n44   v20 = arrayload v5[v9:#1]               \l" -> "BB18\n47   v21 = arrayload v5[v15:#3]              \l" 
+ "BB18\n47   v21 = arrayload v5[v15:#3]              \l" -> "BB19\n48   putfield v20 = v21 < Application, LEdge, next, <Application,LEdge> >\l" 
+ "BB19\n48   putfield v20 = v21 < Application, LEdge, next, <Application,LEdge> >\l" -> "BB20\n51   v22 = arrayload v5[v12:#2]              \l" 
+ "BB20\n51   v22 = arrayload v5[v12:#2]              \l" -> "BB21\n54   v23 = arrayload v5[v12:#2]              \l" 
+ "BB21\n54   v23 = arrayload v5[v12:#2]              \l" -> "BB22\n55   putfield v22 = v23 < Application, LEdge, next, <Application,LEdge> >\l" 
+ "BB22\n55   putfield v22 = v23 < Application, LEdge, next, <Application,LEdge> >\l" -> "BB23\n58   v24 = arrayload v5[v15:#3]              \l" 
+ "BB23\n58   v24 = arrayload v5[v15:#3]              \l" -> "BB24\n61   v25 = arrayload v5[v9:#1]               \l" 
+ "BB24\n61   v25 = arrayload v5[v9:#1]               \l" -> "BB25\n62   putfield v24 = v25 < Application, LEdge, next, <Application,LEdge> >\l" 
+ "BB25\n62   putfield v24 = v25 < Application, LEdge, next, <Application,LEdge> >\l" -> "BB26\n65   v26 = arrayload v5[v6:#0]               \l" 
+ "BB26\n65   v26 = arrayload v5[v6:#0]               \l" -> "BB27\n69   invokevirtual < Application, LEdge, setOrig(LVertex;)V > v26,v1 @95 exception:v27\l" 
+ "BB27\n69   invokevirtual < Application, LEdge, setOrig(LVertex;)V > v26,v1 @95 exception:v27\l" -> "BB28\n72   invokevirtual < Application, LEdge, setDest(LVertex;)V > v26,v2 @100 exception:v28\l" 
+ "BB28\n72   invokevirtual < Application, LEdge, setDest(LVertex;)V > v26,v2 @100 exception:v28\l" -> "BB29\n74   return v26                              \l" 
+ "BB29\n74   return v26                              \l" -> "BB30 (ex)\n\n" 
+
+}

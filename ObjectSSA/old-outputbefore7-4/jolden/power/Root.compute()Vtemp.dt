@@ -1,0 +1,46 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v3 = getfield < Application, LRoot, D, <Application,LDemand> > v1\l" [ ]
+   "BB2\n3   putfield v3 = v4:#0.0 < Application, LDemand, P, <Primordial,D> >\l" [ ]
+   "BB3\n5   v5 = getfield < Application, LRoot, D, <Application,LDemand> > v1\l" [ ]
+   "BB4\n7   putfield v5 = v4:#0.0 < Application, LDemand, Q, <Primordial,D> >\l" [ ]
+   "BB5\n" [ ]
+   "BB6\n           v21 = phi  v20,v6:#0\l12   v7 = getfield < Application, LRoot, feeders, <Application,[LLateral> > v1\l" [ ]
+   "BB7\n13   v8 = arraylength v7           \l" [ ]
+   "BB8\n14   conditional branch(ge) v21,v8 \l" [ ]
+   "BB9\n16   v9 = getfield < Application, LRoot, D, <Application,LDemand> > v1\l" [ ]
+   "BB10\n18   v10 = getfield < Application, LRoot, feeders, <Application,[LLateral> > v1\l" [ ]
+   "BB11\n20   v11 = arrayload v10[v21]      \l" [ ]
+   "BB12\n22   v12 = getfield < Application, LRoot, theta_R, <Primordial,D> > v1\l" [ ]
+   "BB13\n24   v13 = getfield < Application, LRoot, theta_I, <Primordial,D> > v1\l" [ ]
+   "BB14\n26   v14 = getfield < Application, LRoot, theta_R, <Primordial,D> > v1\l" [ ]
+   "BB15\n28   v15 = getfield < Application, LRoot, theta_I, <Primordial,D> > v1\l" [ ]
+   "BB16\n29   v17 = invokevirtual < Application, LLateral, compute(DDDD)LDemand; > v11,v12,v13,v14,v15 @53 exception:v16\l" [ ]
+   "BB17\n30   invokevirtual < Application, LDemand, increment(LDemand;)V > v9,v17 @56 exception:v18\l" [ ]
+   "BB18\n33   v20 = binaryop(add) v21 , v19:#1\l35   goto                          \l" [ ]
+   "BB19\n36   return                        \l" [ ]
+   "BB20 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v3 = getfield < Application, LRoot, D, <Application,LDemand> > v1\l" 
+ "BB1\n1   v3 = getfield < Application, LRoot, D, <Application,LDemand> > v1\l" -> "BB2\n3   putfield v3 = v4:#0.0 < Application, LDemand, P, <Primordial,D> >\l" 
+ "BB2\n3   putfield v3 = v4:#0.0 < Application, LDemand, P, <Primordial,D> >\l" -> "BB3\n5   v5 = getfield < Application, LRoot, D, <Application,LDemand> > v1\l" 
+ "BB3\n5   v5 = getfield < Application, LRoot, D, <Application,LDemand> > v1\l" -> "BB4\n7   putfield v5 = v4:#0.0 < Application, LDemand, Q, <Primordial,D> >\l" 
+ "BB4\n7   putfield v5 = v4:#0.0 < Application, LDemand, Q, <Primordial,D> >\l" -> "BB5\n" 
+ "BB5\n" -> "BB6\n           v21 = phi  v20,v6:#0\l12   v7 = getfield < Application, LRoot, feeders, <Application,[LLateral> > v1\l" 
+ "BB6\n           v21 = phi  v20,v6:#0\l12   v7 = getfield < Application, LRoot, feeders, <Application,[LLateral> > v1\l" -> "BB7\n13   v8 = arraylength v7           \l" 
+ "BB7\n13   v8 = arraylength v7           \l" -> "BB8\n14   conditional branch(ge) v21,v8 \l" 
+ "BB8\n14   conditional branch(ge) v21,v8 \l" -> "BB9\n16   v9 = getfield < Application, LRoot, D, <Application,LDemand> > v1\l" 
+ "BB8\n14   conditional branch(ge) v21,v8 \l" -> "BB19\n36   return                        \l" 
+ "BB9\n16   v9 = getfield < Application, LRoot, D, <Application,LDemand> > v1\l" -> "BB10\n18   v10 = getfield < Application, LRoot, feeders, <Application,[LLateral> > v1\l" 
+ "BB10\n18   v10 = getfield < Application, LRoot, feeders, <Application,[LLateral> > v1\l" -> "BB11\n20   v11 = arrayload v10[v21]      \l" 
+ "BB11\n20   v11 = arrayload v10[v21]      \l" -> "BB12\n22   v12 = getfield < Application, LRoot, theta_R, <Primordial,D> > v1\l" 
+ "BB12\n22   v12 = getfield < Application, LRoot, theta_R, <Primordial,D> > v1\l" -> "BB13\n24   v13 = getfield < Application, LRoot, theta_I, <Primordial,D> > v1\l" 
+ "BB13\n24   v13 = getfield < Application, LRoot, theta_I, <Primordial,D> > v1\l" -> "BB14\n26   v14 = getfield < Application, LRoot, theta_R, <Primordial,D> > v1\l" 
+ "BB14\n26   v14 = getfield < Application, LRoot, theta_R, <Primordial,D> > v1\l" -> "BB15\n28   v15 = getfield < Application, LRoot, theta_I, <Primordial,D> > v1\l" 
+ "BB15\n28   v15 = getfield < Application, LRoot, theta_I, <Primordial,D> > v1\l" -> "BB16\n29   v17 = invokevirtual < Application, LLateral, compute(DDDD)LDemand; > v11,v12,v13,v14,v15 @53 exception:v16\l" 
+ "BB16\n29   v17 = invokevirtual < Application, LLateral, compute(DDDD)LDemand; > v11,v12,v13,v14,v15 @53 exception:v16\l" -> "BB17\n30   invokevirtual < Application, LDemand, increment(LDemand;)V > v9,v17 @56 exception:v18\l" 
+ "BB17\n30   invokevirtual < Application, LDemand, increment(LDemand;)V > v9,v17 @56 exception:v18\l" -> "BB18\n33   v20 = binaryop(add) v21 , v19:#1\l35   goto                          \l" 
+ "BB18\n33   v20 = binaryop(add) v21 , v19:#1\l35   goto                          \l" -> "BB6\n           v21 = phi  v20,v6:#0\l12   v7 = getfield < Application, LRoot, feeders, <Application,[LLateral> > v1\l" 
+ "BB19\n36   return                        \l" -> "BB20 (ex)\n\n" 
+
+}

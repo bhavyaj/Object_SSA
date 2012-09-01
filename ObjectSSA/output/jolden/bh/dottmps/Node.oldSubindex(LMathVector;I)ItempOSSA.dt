@@ -1,0 +1,23 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Node.oldSubindex(LMathVector;I)I", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n" [ ]
+   "BB2\n           v17 = phi  v15,v4:#0\l           v18 = phi  v16,v4:#0\l6   conditional branch(ge) v18,v5:#3         \l" [ ]
+   "BB3\n9  O2_1 = < Application, LMathVector, value(I)D >( O1_1, V18 )\l" [ ]
+   "BB4\n10   v8 = conversion(I) v7                   \l12   v9 = binaryop(and) v8 , v2              \l14   conditional branch(eq) v9,v4:#0         \l" [ ]
+   "BB5\n19   v12 = binaryop(add) v18 , v11:#1        \l20   v13 = binaryop(SHR) v10:#8 , v12        \l21   v14 = binaryop(add) v17 , v13           \l" [ ]
+   "BB6\n           v15 = phi  v17,v14\l25   v16 = binaryop(add) v18 , v11:#1        \l27   goto                                    \l" [ ]
+   "BB7\n29  Return O2_1                              \l" [ ]
+   "BB8 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n" 
+ "BB1\n" -> "BB2\n           v17 = phi  v15,v4:#0\l           v18 = phi  v16,v4:#0\l6   conditional branch(ge) v18,v5:#3         \l" 
+ "BB2\n           v17 = phi  v15,v4:#0\l           v18 = phi  v16,v4:#0\l6   conditional branch(ge) v18,v5:#3         \l" -> "BB3\n9  O2_1 = < Application, LMathVector, value(I)D >( O1_1, V18 )\l" 
+ "BB2\n           v17 = phi  v15,v4:#0\l           v18 = phi  v16,v4:#0\l6   conditional branch(ge) v18,v5:#3         \l" -> "BB7\n29  Return O2_1                              \l" 
+ "BB3\n9  O2_1 = < Application, LMathVector, value(I)D >( O1_1, V18 )\l" -> "BB4\n10   v8 = conversion(I) v7                   \l12   v9 = binaryop(and) v8 , v2              \l14   conditional branch(eq) v9,v4:#0         \l" 
+ "BB4\n10   v8 = conversion(I) v7                   \l12   v9 = binaryop(and) v8 , v2              \l14   conditional branch(eq) v9,v4:#0         \l" -> "BB5\n19   v12 = binaryop(add) v18 , v11:#1        \l20   v13 = binaryop(SHR) v10:#8 , v12        \l21   v14 = binaryop(add) v17 , v13           \l" 
+ "BB4\n10   v8 = conversion(I) v7                   \l12   v9 = binaryop(and) v8 , v2              \l14   conditional branch(eq) v9,v4:#0         \l" -> "BB6\n           v15 = phi  v17,v14\l25   v16 = binaryop(add) v18 , v11:#1        \l27   goto                                    \l" 
+ "BB5\n19   v12 = binaryop(add) v18 , v11:#1        \l20   v13 = binaryop(SHR) v10:#8 , v12        \l21   v14 = binaryop(add) v17 , v13           \l" -> "BB6\n           v15 = phi  v17,v14\l25   v16 = binaryop(add) v18 , v11:#1        \l27   goto                                    \l" 
+ "BB6\n           v15 = phi  v17,v14\l25   v16 = binaryop(add) v18 , v11:#1        \l27   goto                                    \l" -> "BB2\n           v17 = phi  v15,v4:#0\l           v18 = phi  v16,v4:#0\l6   conditional branch(ge) v18,v5:#3         \l" 
+ "BB7\n29  Return O2_1                              \l" -> "BB8 (ex)\n\n" 
+
+}

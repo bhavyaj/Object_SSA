@@ -1,0 +1,28 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for TestLinkedList.test()V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0  Create O1_1                               \l" [ ]
+   "BB2\n2   invokespecial < Application, LSample, <init>()V > v2 @4 exception:v3\l" [ ]
+   "BB3\n8   goto                                     \l" [ ]
+   "BB4\n10  Create O2_1                              \l" [ ]
+   "BB5\n12   invokespecial < Application, LSample, <init>()V > v6 @20 exception:v7\l" [ ]
+   "BB6\n13   putfield v10 = v6 < Application, LSample, next, <Application,LSample> >\l" [ ]
+   "BB7\n15  nonreference field get instrctn: 8 = getfield < Application, LSample, next, <Application,LSample> > 10\l" [ ]
+   "BB8\n19   v9 = binaryop(add) v11 , v4:#1          \l" [ ]
+   "BB9\n           O3_1 = diff-Object-Phi(O1_1, O2_1 )\l           v10 = phi  v2,v8\l           v11 = phi  v4:#1,v9\l23   conditional branch(lt) v11,v5:#10       \l" [ ]
+   "BB10\n24  return                                   \l" [ ]
+   "BB11 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0  Create O1_1                               \l" 
+ "BB1\n0  Create O1_1                               \l" -> "BB2\n2   invokespecial < Application, LSample, <init>()V > v2 @4 exception:v3\l" 
+ "BB2\n2   invokespecial < Application, LSample, <init>()V > v2 @4 exception:v3\l" -> "BB3\n8   goto                                     \l" 
+ "BB3\n8   goto                                     \l" -> "BB9\n           O3_1 = diff-Object-Phi(O1_1, O2_1 )\l           v10 = phi  v2,v8\l           v11 = phi  v4:#1,v9\l23   conditional branch(lt) v11,v5:#10       \l" 
+ "BB4\n10  Create O2_1                              \l" -> "BB5\n12   invokespecial < Application, LSample, <init>()V > v6 @20 exception:v7\l" 
+ "BB5\n12   invokespecial < Application, LSample, <init>()V > v6 @20 exception:v7\l" -> "BB6\n13   putfield v10 = v6 < Application, LSample, next, <Application,LSample> >\l" 
+ "BB6\n13   putfield v10 = v6 < Application, LSample, next, <Application,LSample> >\l" -> "BB7\n15  nonreference field get instrctn: 8 = getfield < Application, LSample, next, <Application,LSample> > 10\l" 
+ "BB7\n15  nonreference field get instrctn: 8 = getfield < Application, LSample, next, <Application,LSample> > 10\l" -> "BB8\n19   v9 = binaryop(add) v11 , v4:#1          \l" 
+ "BB8\n19   v9 = binaryop(add) v11 , v4:#1          \l" -> "BB9\n           O3_1 = diff-Object-Phi(O1_1, O2_1 )\l           v10 = phi  v2,v8\l           v11 = phi  v4:#1,v9\l23   conditional branch(lt) v11,v5:#10       \l" 
+ "BB9\n           O3_1 = diff-Object-Phi(O1_1, O2_1 )\l           v10 = phi  v2,v8\l           v11 = phi  v4:#1,v9\l23   conditional branch(lt) v11,v5:#10       \l" -> "BB4\n10  Create O2_1                              \l" 
+ "BB9\n           O3_1 = diff-Object-Phi(O1_1, O2_1 )\l           v10 = phi  v2,v8\l           v11 = phi  v4:#1,v9\l23   conditional branch(lt) v11,v5:#10       \l" -> "BB10\n24  return                                   \l" 
+ "BB10\n24  return                                   \l" -> "BB11 (ex)\n\n" 
+
+}

@@ -1,0 +1,25 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Quadrant.<clinit>()V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0  Create O1_1                               \l" [ ]
+   "BB2\n2  < Application, LNorthWest, <init>()V >( O1_1 )\l" [ ]
+   "BB3\n3  PutOSSAInstruction:	O1_2< cNorthWest > = O1_1<refO1_1>\l4  Create O2_1                               \l" [ ]
+   "BB4\n6  < Application, LNorthEast, <init>()V >( O2_1 )\l" [ ]
+   "BB5\n7  PutOSSAInstruction:	O2_2< cNorthEast > = O2_1<refO2_1>\l8  Create O3_1                               \l" [ ]
+   "BB6\n10  < Application, LSouthWest, <init>()V >( O3_1 )\l" [ ]
+   "BB7\n11  PutOSSAInstruction:	O3_2< cSouthWest > = O3_1<refO3_1>\l12  Create O4_1                              \l" [ ]
+   "BB8\n14  < Application, LSouthEast, <init>()V >( O4_1 )\l" [ ]
+   "BB9\n15  PutOSSAInstruction:	O4_2< cSouthEast > = O4_1<refO4_1>\l16  return                                   \l" [ ]
+   "BB10 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0  Create O1_1                               \l" 
+ "BB1\n0  Create O1_1                               \l" -> "BB2\n2  < Application, LNorthWest, <init>()V >( O1_1 )\l" 
+ "BB2\n2  < Application, LNorthWest, <init>()V >( O1_1 )\l" -> "BB3\n3  PutOSSAInstruction:	O1_2< cNorthWest > = O1_1<refO1_1>\l4  Create O2_1                               \l" 
+ "BB3\n3  PutOSSAInstruction:	O1_2< cNorthWest > = O1_1<refO1_1>\l4  Create O2_1                               \l" -> "BB4\n6  < Application, LNorthEast, <init>()V >( O2_1 )\l" 
+ "BB4\n6  < Application, LNorthEast, <init>()V >( O2_1 )\l" -> "BB5\n7  PutOSSAInstruction:	O2_2< cNorthEast > = O2_1<refO2_1>\l8  Create O3_1                               \l" 
+ "BB5\n7  PutOSSAInstruction:	O2_2< cNorthEast > = O2_1<refO2_1>\l8  Create O3_1                               \l" -> "BB6\n10  < Application, LSouthWest, <init>()V >( O3_1 )\l" 
+ "BB6\n10  < Application, LSouthWest, <init>()V >( O3_1 )\l" -> "BB7\n11  PutOSSAInstruction:	O3_2< cSouthWest > = O3_1<refO3_1>\l12  Create O4_1                              \l" 
+ "BB7\n11  PutOSSAInstruction:	O3_2< cSouthWest > = O3_1<refO3_1>\l12  Create O4_1                              \l" -> "BB8\n14  < Application, LSouthEast, <init>()V >( O4_1 )\l" 
+ "BB8\n14  < Application, LSouthEast, <init>()V >( O4_1 )\l" -> "BB9\n15  PutOSSAInstruction:	O4_2< cSouthEast > = O4_1<refO4_1>\l16  return                                   \l" 
+ "BB9\n15  PutOSSAInstruction:	O4_2< cSouthEast > = O4_1<refO4_1>\l16  return                                   \l" -> "BB10 (ex)\n\n" 
+
+}

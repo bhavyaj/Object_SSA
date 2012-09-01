@@ -1,0 +1,79 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for TreeAdd.parseCmdLine([Ljava-lang-String;)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n" [ ]
+   "BB2\n           v22 = phi  v17,v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1                      \l" [ ]
+   "BB3\n5   conditional branch(ge) v22,v4            \l" [ ]
+   "BB4\n8   v5 = arrayload v1[v22]                   \l" [ ]
+   "BB5\n10  O2_1 = < Application, Ljava/lang/String, startsWith(Ljava/lang/String;)Z >( V5, V6 )\l" [ ]
+   "BB6\n12   conditional branch(eq) v8,v3:#0         \l" [ ]
+   "BB7\n17   v10 = binaryop(add) v22 , v9:#1         \l19   v11 = arrayload v1[v22]                 \l" [ ]
+   "BB8\n23  O2_2 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V12 )\l" [ ]
+   "BB9\n25   conditional branch(eq) v14,v3:#0        \l" [ ]
+   "BB10\n28   v15 = arraylength v1                    \l" [ ]
+   "BB11\n29   conditional branch(ge) v10,v15          \l" [ ]
+   "BB12\n30  Create O3_1                              \l" [ ]
+   "BB13\n36   v17 = binaryop(add) v10 , v9:#1         \l38   v18 = arrayload v1[v10]                 \l" [ ]
+   "BB14\n39  < Application, Ljava/lang/Integer, <init>(Ljava/lang/String;)V >( O3_1, V18 )\l" [ ]
+   "BB15\n40  O2_3 = < Application, Ljava/lang/Integer, intValue()I >( O3_1 )\l" [ ]
+   "BB16\n41   putstatic v21 < Application, LTreeAdd, levels, <Primordial,I> >\l42   goto                                    \l" [ ]
+   "BB17\n43  Create O4_1                              \l" [ ]
+   "BB18\n46  < Application, Ljava/lang/RuntimeException, <init>(Ljava/lang/String;)V >( O4_1, V36 )\l" [ ]
+   "BB19\n47   throw v35                               \l" [ ]
+   "BB20\n50  O2_4 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V23 )\l" [ ]
+   "BB21\n52   conditional branch(eq) v25,v3:#0        \l" [ ]
+   "BB22\n54   putstatic v9:#1 < Application, LTreeAdd, printResult, <Primordial,Z> >\l55   goto                                    \l" [ ]
+   "BB23\n58  O2_5 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V26 )\l" [ ]
+   "BB24\n60   conditional branch(eq) v28,v3:#0        \l" [ ]
+   "BB25\n62   putstatic v9:#1 < Application, LTreeAdd, printMsgs, <Primordial,Z> >\l63   goto                                    \l" [ ]
+   "BB26\n66  O2_6 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V29 )\l" [ ]
+   "BB27\n68   conditional branch(eq) v31,v3:#0        \l" [ ]
+   "BB28\n69  < Application, LTreeAdd, usage()V > )    \l" [ ]
+   "BB29\n70   goto                                    \l" [ ]
+   "BB30\n71  nonreference field get instrctn: 33 = getstatic < Application, LTreeAdd, levels, <Primordial,I> >\l73   conditional branch(ne) v33,v3:#0        \l" [ ]
+   "BB31\n74  < Application, LTreeAdd, usage()V > )    \l" [ ]
+   "BB32\n75  return                                   \l" [ ]
+   "BB33 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n" 
+ "BB1\n" -> "BB2\n           v22 = phi  v17,v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1                      \l" 
+ "BB2\n           v22 = phi  v17,v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1                      \l" -> "BB3\n5   conditional branch(ge) v22,v4            \l" 
+ "BB3\n5   conditional branch(ge) v22,v4            \l" -> "BB4\n8   v5 = arrayload v1[v22]                   \l" 
+ "BB3\n5   conditional branch(ge) v22,v4            \l" -> "BB30\n71  nonreference field get instrctn: 33 = getstatic < Application, LTreeAdd, levels, <Primordial,I> >\l73   conditional branch(ne) v33,v3:#0        \l" 
+ "BB4\n8   v5 = arrayload v1[v22]                   \l" -> "BB5\n10  O2_1 = < Application, Ljava/lang/String, startsWith(Ljava/lang/String;)Z >( V5, V6 )\l" 
+ "BB5\n10  O2_1 = < Application, Ljava/lang/String, startsWith(Ljava/lang/String;)Z >( V5, V6 )\l" -> "BB6\n12   conditional branch(eq) v8,v3:#0         \l" 
+ "BB6\n12   conditional branch(eq) v8,v3:#0         \l" -> "BB7\n17   v10 = binaryop(add) v22 , v9:#1         \l19   v11 = arrayload v1[v22]                 \l" 
+ "BB6\n12   conditional branch(eq) v8,v3:#0         \l" -> "BB30\n71  nonreference field get instrctn: 33 = getstatic < Application, LTreeAdd, levels, <Primordial,I> >\l73   conditional branch(ne) v33,v3:#0        \l" 
+ "BB7\n17   v10 = binaryop(add) v22 , v9:#1         \l19   v11 = arrayload v1[v22]                 \l" -> "BB8\n23  O2_2 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V12 )\l" 
+ "BB8\n23  O2_2 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V12 )\l" -> "BB9\n25   conditional branch(eq) v14,v3:#0        \l" 
+ "BB9\n25   conditional branch(eq) v14,v3:#0        \l" -> "BB10\n28   v15 = arraylength v1                    \l" 
+ "BB9\n25   conditional branch(eq) v14,v3:#0        \l" -> "BB20\n50  O2_4 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V23 )\l" 
+ "BB10\n28   v15 = arraylength v1                    \l" -> "BB11\n29   conditional branch(ge) v10,v15          \l" 
+ "BB11\n29   conditional branch(ge) v10,v15          \l" -> "BB12\n30  Create O3_1                              \l" 
+ "BB11\n29   conditional branch(ge) v10,v15          \l" -> "BB17\n43  Create O4_1                              \l" 
+ "BB12\n30  Create O3_1                              \l" -> "BB13\n36   v17 = binaryop(add) v10 , v9:#1         \l38   v18 = arrayload v1[v10]                 \l" 
+ "BB13\n36   v17 = binaryop(add) v10 , v9:#1         \l38   v18 = arrayload v1[v10]                 \l" -> "BB14\n39  < Application, Ljava/lang/Integer, <init>(Ljava/lang/String;)V >( O3_1, V18 )\l" 
+ "BB14\n39  < Application, Ljava/lang/Integer, <init>(Ljava/lang/String;)V >( O3_1, V18 )\l" -> "BB15\n40  O2_3 = < Application, Ljava/lang/Integer, intValue()I >( O3_1 )\l" 
+ "BB15\n40  O2_3 = < Application, Ljava/lang/Integer, intValue()I >( O3_1 )\l" -> "BB16\n41   putstatic v21 < Application, LTreeAdd, levels, <Primordial,I> >\l42   goto                                    \l" 
+ "BB16\n41   putstatic v21 < Application, LTreeAdd, levels, <Primordial,I> >\l42   goto                                    \l" -> "BB2\n           v22 = phi  v17,v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1                      \l" 
+ "BB17\n43  Create O4_1                              \l" -> "BB18\n46  < Application, Ljava/lang/RuntimeException, <init>(Ljava/lang/String;)V >( O4_1, V36 )\l" 
+ "BB18\n46  < Application, Ljava/lang/RuntimeException, <init>(Ljava/lang/String;)V >( O4_1, V36 )\l" -> "BB19\n47   throw v35                               \l" 
+ "BB19\n47   throw v35                               \l" -> "BB33 (ex)\n\n" 
+ "BB20\n50  O2_4 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V23 )\l" -> "BB21\n52   conditional branch(eq) v25,v3:#0        \l" 
+ "BB21\n52   conditional branch(eq) v25,v3:#0        \l" -> "BB22\n54   putstatic v9:#1 < Application, LTreeAdd, printResult, <Primordial,Z> >\l55   goto                                    \l" 
+ "BB21\n52   conditional branch(eq) v25,v3:#0        \l" -> "BB23\n58  O2_5 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V26 )\l" 
+ "BB22\n54   putstatic v9:#1 < Application, LTreeAdd, printResult, <Primordial,Z> >\l55   goto                                    \l" -> "BB2\n           v22 = phi  v17,v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1                      \l" 
+ "BB23\n58  O2_5 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V26 )\l" -> "BB24\n60   conditional branch(eq) v28,v3:#0        \l" 
+ "BB24\n60   conditional branch(eq) v28,v3:#0        \l" -> "BB25\n62   putstatic v9:#1 < Application, LTreeAdd, printMsgs, <Primordial,Z> >\l63   goto                                    \l" 
+ "BB24\n60   conditional branch(eq) v28,v3:#0        \l" -> "BB26\n66  O2_6 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V29 )\l" 
+ "BB25\n62   putstatic v9:#1 < Application, LTreeAdd, printMsgs, <Primordial,Z> >\l63   goto                                    \l" -> "BB2\n           v22 = phi  v17,v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1                      \l" 
+ "BB26\n66  O2_6 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V29 )\l" -> "BB27\n68   conditional branch(eq) v31,v3:#0        \l" 
+ "BB27\n68   conditional branch(eq) v31,v3:#0        \l" -> "BB2\n           v22 = phi  v17,v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1                      \l" 
+ "BB27\n68   conditional branch(eq) v31,v3:#0        \l" -> "BB28\n69  < Application, LTreeAdd, usage()V > )    \l" 
+ "BB28\n69  < Application, LTreeAdd, usage()V > )    \l" -> "BB29\n70   goto                                    \l" 
+ "BB29\n70   goto                                    \l" -> "BB2\n           v22 = phi  v17,v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1                      \l" 
+ "BB30\n71  nonreference field get instrctn: 33 = getstatic < Application, LTreeAdd, levels, <Primordial,I> >\l73   conditional branch(ne) v33,v3:#0        \l" -> "BB31\n74  < Application, LTreeAdd, usage()V > )    \l" 
+ "BB30\n71  nonreference field get instrctn: 33 = getstatic < Application, LTreeAdd, levels, <Primordial,I> >\l73   conditional branch(ne) v33,v3:#0        \l" -> "BB32\n75  return                                   \l" 
+ "BB31\n74  < Application, LTreeAdd, usage()V > )    \l" -> "BB32\n75  return                                   \l" 
+ "BB32\n75  return                                   \l" -> "BB33 (ex)\n\n" 
+
+}

@@ -1,0 +1,31 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for TestProg3.test()V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0  Create O1_1                               \l" [ ]
+   "BB2\n2  < Application, LSample, <init>()V >( O1_1 )\l" [ ]
+   "BB3\n4  Create O2_1                               \l" [ ]
+   "BB4\n6  < Application, LSample, <init>()V >( O2_1 )\l" [ ]
+   "BB5\n10  PutOSSAInstruction:	O1_2< next > = O1_1<refO2_1>\l" [ ]
+   "BB6\n12  GetOSSAInstruction:	O2_1= O1_2< next>    \l" [ ]
+   "BB7\n16  PutOSSAInstruction:	O2_2< x > = O2_1<V7> \l" [ ]
+   "BB8\n20  < Application, LSample, check(I)V >( O1_2 )\l" [ ]
+   "BB9\n22  GetOSSAInstruction:	O3_1= O2_2< next>    \l" [ ]
+   "BB10\n24  PutOSSAInstruction:	O3_1< x > = O3_1<V11>\l" [ ]
+   "BB11\n27  < Application, LTestProg3, test1(LSample;LSample;)V >( O2_2, O2_2 )\l" [ ]
+   "BB12\n28  return                                   \l" [ ]
+   "BB13 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0  Create O1_1                               \l" 
+ "BB1\n0  Create O1_1                               \l" -> "BB2\n2  < Application, LSample, <init>()V >( O1_1 )\l" 
+ "BB2\n2  < Application, LSample, <init>()V >( O1_1 )\l" -> "BB3\n4  Create O2_1                               \l" 
+ "BB3\n4  Create O2_1                               \l" -> "BB4\n6  < Application, LSample, <init>()V >( O2_1 )\l" 
+ "BB4\n6  < Application, LSample, <init>()V >( O2_1 )\l" -> "BB5\n10  PutOSSAInstruction:	O1_2< next > = O1_1<refO2_1>\l" 
+ "BB5\n10  PutOSSAInstruction:	O1_2< next > = O1_1<refO2_1>\l" -> "BB6\n12  GetOSSAInstruction:	O2_1= O1_2< next>    \l" 
+ "BB6\n12  GetOSSAInstruction:	O2_1= O1_2< next>    \l" -> "BB7\n16  PutOSSAInstruction:	O2_2< x > = O2_1<V7> \l" 
+ "BB7\n16  PutOSSAInstruction:	O2_2< x > = O2_1<V7> \l" -> "BB8\n20  < Application, LSample, check(I)V >( O1_2 )\l" 
+ "BB8\n20  < Application, LSample, check(I)V >( O1_2 )\l" -> "BB9\n22  GetOSSAInstruction:	O3_1= O2_2< next>    \l" 
+ "BB9\n22  GetOSSAInstruction:	O3_1= O2_2< next>    \l" -> "BB10\n24  PutOSSAInstruction:	O3_1< x > = O3_1<V11>\l" 
+ "BB10\n24  PutOSSAInstruction:	O3_1< x > = O3_1<V11>\l" -> "BB11\n27  < Application, LTestProg3, test1(LSample;LSample;)V >( O2_2, O2_2 )\l" 
+ "BB11\n27  < Application, LTestProg3, test1(LSample;LSample;)V >( O2_2, O2_2 )\l" -> "BB12\n28  return                                   \l" 
+ "BB12\n28  return                                   \l" -> "BB13 (ex)\n\n" 
+
+}

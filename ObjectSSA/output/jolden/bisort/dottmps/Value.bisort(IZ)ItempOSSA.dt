@@ -1,0 +1,55 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Value.bisort(IZ)I", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  GetOSSAInstruction:	O1_1= O1_1< left>     \l" [ ]
+   "BB2\n3   conditional branch(ne) v5,v6:#null       \l" [ ]
+   "BB3\n5  GetOSSAInstruction:	19= O1_1< value>      \l" [ ]
+   "BB4\n7   conditional branch(le) v19,v2            \l" [ ]
+   "BB5\n9   goto                                     \l" [ ]
+   "BB6\n" [ ]
+   "BB7\n           v20 = phi  v12:#1,v11:#0\l12   v21 = binaryop(xor) v20 , v3            \l14   conditional branch(eq) v21,v11:#0       \l" [ ]
+   "BB8\n18  GetOSSAInstruction:	22= O1_1< value>     \l" [ ]
+   "BB9\n22  PutOSSAInstruction:	O1_2< value > = O1_1<V2>\l" [ ]
+   "BB10\n23   goto                                    \l" [ ]
+   "BB11\n25  GetOSSAInstruction:	7= O1_1< value>      \l" [ ]
+   "BB12\n29  GetOSSAInstruction:	O1_1= O1_1< left>    \l" [ ]
+   "BB13\n32  O2_1 = < Application, LValue, bisort(IZ)I >( O1_1, V7, V3 )\l" [ ]
+   "BB14\n33  PutOSSAInstruction:	O1_3< value > = O1_1<refO2_1>\l" [ ]
+   "BB15\n36   conditional branch(ne) v3,v11:#0        \l" [ ]
+   "BB16\n38   goto                                    \l" [ ]
+   "BB17\n" [ ]
+   "BB18\n           v13 = phi  v12:#1,v11:#0\l42  GetOSSAInstruction:	O1_3= O1_3< right>   \l" [ ]
+   "BB19\n45  O2_2 = < Application, LValue, bisort(IZ)I >( O1_3, V2, V13 )\l" [ ]
+   "BB20\n50  O2_3 = < Application, LValue, bimerge(IZ)I >( O1_3, V16, V3 )\l" [ ]
+   "BB21\n" [ ]
+   "BB22\n           O1_4 = Object-Phi(O1_1, O1_2, O1_3 )\l           v23 = phi  v2,v22,v18\l53  Return O2_1                              \l" [ ]
+   "BB23 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  GetOSSAInstruction:	O1_1= O1_1< left>     \l" 
+ "BB1\n1  GetOSSAInstruction:	O1_1= O1_1< left>     \l" -> "BB2\n3   conditional branch(ne) v5,v6:#null       \l" 
+ "BB2\n3   conditional branch(ne) v5,v6:#null       \l" -> "BB3\n5  GetOSSAInstruction:	19= O1_1< value>      \l" 
+ "BB2\n3   conditional branch(ne) v5,v6:#null       \l" -> "BB11\n25  GetOSSAInstruction:	7= O1_1< value>      \l" 
+ "BB3\n5  GetOSSAInstruction:	19= O1_1< value>      \l" -> "BB4\n7   conditional branch(le) v19,v2            \l" 
+ "BB4\n7   conditional branch(le) v19,v2            \l" -> "BB5\n9   goto                                     \l" 
+ "BB4\n7   conditional branch(le) v19,v2            \l" -> "BB6\n" 
+ "BB5\n9   goto                                     \l" -> "BB7\n           v20 = phi  v12:#1,v11:#0\l12   v21 = binaryop(xor) v20 , v3            \l14   conditional branch(eq) v21,v11:#0       \l" 
+ "BB6\n" -> "BB7\n           v20 = phi  v12:#1,v11:#0\l12   v21 = binaryop(xor) v20 , v3            \l14   conditional branch(eq) v21,v11:#0       \l" 
+ "BB7\n           v20 = phi  v12:#1,v11:#0\l12   v21 = binaryop(xor) v20 , v3            \l14   conditional branch(eq) v21,v11:#0       \l" -> "BB8\n18  GetOSSAInstruction:	22= O1_1< value>     \l" 
+ "BB7\n           v20 = phi  v12:#1,v11:#0\l12   v21 = binaryop(xor) v20 , v3            \l14   conditional branch(eq) v21,v11:#0       \l" -> "BB22\n           O1_4 = Object-Phi(O1_1, O1_2, O1_3 )\l           v23 = phi  v2,v22,v18\l53  Return O2_1                              \l" 
+ "BB8\n18  GetOSSAInstruction:	22= O1_1< value>     \l" -> "BB9\n22  PutOSSAInstruction:	O1_2< value > = O1_1<V2>\l" 
+ "BB9\n22  PutOSSAInstruction:	O1_2< value > = O1_1<V2>\l" -> "BB10\n23   goto                                    \l" 
+ "BB10\n23   goto                                    \l" -> "BB22\n           O1_4 = Object-Phi(O1_1, O1_2, O1_3 )\l           v23 = phi  v2,v22,v18\l53  Return O2_1                              \l" 
+ "BB11\n25  GetOSSAInstruction:	7= O1_1< value>      \l" -> "BB12\n29  GetOSSAInstruction:	O1_1= O1_1< left>    \l" 
+ "BB12\n29  GetOSSAInstruction:	O1_1= O1_1< left>    \l" -> "BB13\n32  O2_1 = < Application, LValue, bisort(IZ)I >( O1_1, V7, V3 )\l" 
+ "BB13\n32  O2_1 = < Application, LValue, bisort(IZ)I >( O1_1, V7, V3 )\l" -> "BB14\n33  PutOSSAInstruction:	O1_3< value > = O1_1<refO2_1>\l" 
+ "BB14\n33  PutOSSAInstruction:	O1_3< value > = O1_1<refO2_1>\l" -> "BB15\n36   conditional branch(ne) v3,v11:#0        \l" 
+ "BB15\n36   conditional branch(ne) v3,v11:#0        \l" -> "BB16\n38   goto                                    \l" 
+ "BB15\n36   conditional branch(ne) v3,v11:#0        \l" -> "BB17\n" 
+ "BB16\n38   goto                                    \l" -> "BB18\n           v13 = phi  v12:#1,v11:#0\l42  GetOSSAInstruction:	O1_3= O1_3< right>   \l" 
+ "BB17\n" -> "BB18\n           v13 = phi  v12:#1,v11:#0\l42  GetOSSAInstruction:	O1_3= O1_3< right>   \l" 
+ "BB18\n           v13 = phi  v12:#1,v11:#0\l42  GetOSSAInstruction:	O1_3= O1_3< right>   \l" -> "BB19\n45  O2_2 = < Application, LValue, bisort(IZ)I >( O1_3, V2, V13 )\l" 
+ "BB19\n45  O2_2 = < Application, LValue, bisort(IZ)I >( O1_3, V2, V13 )\l" -> "BB20\n50  O2_3 = < Application, LValue, bimerge(IZ)I >( O1_3, V16, V3 )\l" 
+ "BB20\n50  O2_3 = < Application, LValue, bimerge(IZ)I >( O1_3, V16, V3 )\l" -> "BB21\n" 
+ "BB21\n" -> "BB22\n           O1_4 = Object-Phi(O1_1, O1_2, O1_3 )\l           v23 = phi  v2,v22,v18\l53  Return O2_1                              \l" 
+ "BB22\n           O1_4 = Object-Phi(O1_1, O1_2, O1_3 )\l           v23 = phi  v2,v22,v18\l53  Return O2_1                              \l" -> "BB23 (ex)\n\n" 
+
+}

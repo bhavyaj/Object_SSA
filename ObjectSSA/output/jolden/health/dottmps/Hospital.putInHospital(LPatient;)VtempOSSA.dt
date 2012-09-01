@@ -1,0 +1,40 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Hospital.putInHospital(LPatient;)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  GetOSSAInstruction:	4= O2_1< hospitalsVisited>\l" [ ]
+   "BB2\n5  GetOSSAInstruction:	5= O2_1< hospitalsVisited>\l" [ ]
+   "BB3\n7   v7 = binaryop(add) v5 , v6:#1            \l8  PutOSSAInstruction:	O2_2< hospitalsVisited > = O2_1<V7>\l" [ ]
+   "BB4\n10  GetOSSAInstruction:	8= O1_1< freePersonnel>\l" [ ]
+   "BB5\n12   conditional branch(le) v8,v9:#0         \l" [ ]
+   "BB6\n15  GetOSSAInstruction:	12= O1_1< freePersonnel>\l" [ ]
+   "BB7\n17   v13 = binaryop(sub) v12 , v6:#1         \l18  PutOSSAInstruction:	O1_2< freePersonnel > = O1_1<V13>\l" [ ]
+   "BB8\n20  GetOSSAInstruction:	O3_1= O1_2< assess>  \l" [ ]
+   "BB9\n22  < Application, LList, add(LPatient;)V >( O3_1, O2_2 )\l" [ ]
+   "BB10\n25  PutOSSAInstruction:	O2_3< timeLeft > = O2_2<V16>\l" [ ]
+   "BB11\n28  GetOSSAInstruction:	17= O2_3< time>      \l" [ ]
+   "BB12\n30   v18 = binaryop(add) v17 , v16:#3        \l31  PutOSSAInstruction:	O2_4< time > = O2_3<V18>\l" [ ]
+   "BB13\n32   goto                                    \l" [ ]
+   "BB14\n34  GetOSSAInstruction:	O4_1= O1_1< waiting> \l" [ ]
+   "BB15\n36  < Application, LList, add(LPatient;)V >( O4_1, O2_2 )\l" [ ]
+   "BB16\n           O2_5 = Object-Phi(O2_2, O2_4 )\l           O1_3 = Object-Phi(O1_1, O1_2 )\l37  return                                   \l" [ ]
+   "BB17 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  GetOSSAInstruction:	4= O2_1< hospitalsVisited>\l" 
+ "BB1\n1  GetOSSAInstruction:	4= O2_1< hospitalsVisited>\l" -> "BB2\n5  GetOSSAInstruction:	5= O2_1< hospitalsVisited>\l" 
+ "BB2\n5  GetOSSAInstruction:	5= O2_1< hospitalsVisited>\l" -> "BB3\n7   v7 = binaryop(add) v5 , v6:#1            \l8  PutOSSAInstruction:	O2_2< hospitalsVisited > = O2_1<V7>\l" 
+ "BB3\n7   v7 = binaryop(add) v5 , v6:#1            \l8  PutOSSAInstruction:	O2_2< hospitalsVisited > = O2_1<V7>\l" -> "BB4\n10  GetOSSAInstruction:	8= O1_1< freePersonnel>\l" 
+ "BB4\n10  GetOSSAInstruction:	8= O1_1< freePersonnel>\l" -> "BB5\n12   conditional branch(le) v8,v9:#0         \l" 
+ "BB5\n12   conditional branch(le) v8,v9:#0         \l" -> "BB6\n15  GetOSSAInstruction:	12= O1_1< freePersonnel>\l" 
+ "BB5\n12   conditional branch(le) v8,v9:#0         \l" -> "BB14\n34  GetOSSAInstruction:	O4_1= O1_1< waiting> \l" 
+ "BB6\n15  GetOSSAInstruction:	12= O1_1< freePersonnel>\l" -> "BB7\n17   v13 = binaryop(sub) v12 , v6:#1         \l18  PutOSSAInstruction:	O1_2< freePersonnel > = O1_1<V13>\l" 
+ "BB7\n17   v13 = binaryop(sub) v12 , v6:#1         \l18  PutOSSAInstruction:	O1_2< freePersonnel > = O1_1<V13>\l" -> "BB8\n20  GetOSSAInstruction:	O3_1= O1_2< assess>  \l" 
+ "BB8\n20  GetOSSAInstruction:	O3_1= O1_2< assess>  \l" -> "BB9\n22  < Application, LList, add(LPatient;)V >( O3_1, O2_2 )\l" 
+ "BB9\n22  < Application, LList, add(LPatient;)V >( O3_1, O2_2 )\l" -> "BB10\n25  PutOSSAInstruction:	O2_3< timeLeft > = O2_2<V16>\l" 
+ "BB10\n25  PutOSSAInstruction:	O2_3< timeLeft > = O2_2<V16>\l" -> "BB11\n28  GetOSSAInstruction:	17= O2_3< time>      \l" 
+ "BB11\n28  GetOSSAInstruction:	17= O2_3< time>      \l" -> "BB12\n30   v18 = binaryop(add) v17 , v16:#3        \l31  PutOSSAInstruction:	O2_4< time > = O2_3<V18>\l" 
+ "BB12\n30   v18 = binaryop(add) v17 , v16:#3        \l31  PutOSSAInstruction:	O2_4< time > = O2_3<V18>\l" -> "BB13\n32   goto                                    \l" 
+ "BB13\n32   goto                                    \l" -> "BB16\n           O2_5 = Object-Phi(O2_2, O2_4 )\l           O1_3 = Object-Phi(O1_1, O1_2 )\l37  return                                   \l" 
+ "BB14\n34  GetOSSAInstruction:	O4_1= O1_1< waiting> \l" -> "BB15\n36  < Application, LList, add(LPatient;)V >( O4_1, O2_2 )\l" 
+ "BB15\n36  < Application, LList, add(LPatient;)V >( O4_1, O2_2 )\l" -> "BB16\n           O2_5 = Object-Phi(O2_2, O2_4 )\l           O1_3 = Object-Phi(O1_1, O1_2 )\l37  return                                   \l" 
+ "BB16\n           O2_5 = Object-Phi(O2_2, O2_4 )\l           O1_3 = Object-Phi(O1_1, O1_2 )\l37  return                                   \l" -> "BB17 (ex)\n\n" 
+
+}

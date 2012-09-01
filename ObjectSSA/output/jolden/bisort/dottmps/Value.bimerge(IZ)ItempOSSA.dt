@@ -1,0 +1,93 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Value.bimerge(IZ)I", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  GetOSSAInstruction:	5= O1_1< value>       \l" [ ]
+   "BB2\n4  GetOSSAInstruction:	O1_1= O1_1< left>     \l" [ ]
+   "BB3\n7  GetOSSAInstruction:	O1_1= O1_1< right>    \l" [ ]
+   "BB4\n11   conditional branch(le) v5,v2            \l" [ ]
+   "BB5\n13   goto                                    \l" [ ]
+   "BB6\n" [ ]
+   "BB7\n           v10 = phi  v9:#1,v8:#0\l16   v11 = binaryop(xor) v10 , v3            \l20   conditional branch(eq) v11,v8:#0        \l" [ ]
+   "BB8\n23  PutOSSAInstruction:	O1_2< value > = O1_1<V2>\l" [ ]
+   "BB9\n" [ ]
+   "BB10\n           O1_3 = Object-Phi(O1_1, O1_2, O1_3 )\l           v12 = phi  v2,v12,v5\l           v27 = phi  v6,v24,v6\l           v28 = phi  v7,v25,v7\l28   conditional branch(eq) v27,v13:#null    \l" [ ]
+   "BB11\n30  GetOSSAInstruction:	14= O1_3< value>     \l" [ ]
+   "BB12\n33  GetOSSAInstruction:	O1_3= O1_3< left>    \l" [ ]
+   "BB13\n36  GetOSSAInstruction:	O1_3= O1_3< right>   \l" [ ]
+   "BB14\n39  GetOSSAInstruction:	17= O1_3< value>     \l" [ ]
+   "BB15\n42  GetOSSAInstruction:	O1_3= O1_3< left>    \l" [ ]
+   "BB16\n45  GetOSSAInstruction:	O1_3= O1_3< right>   \l" [ ]
+   "BB17\n49   conditional branch(le) v14,v17          \l" [ ]
+   "BB18\n51   goto                                    \l" [ ]
+   "BB19\n" [ ]
+   "BB20\n           v20 = phi  v9:#1,v8:#0\l54   v21 = binaryop(xor) v20 , v3            \l58   conditional branch(eq) v11,v8:#0        \l" [ ]
+   "BB21\n61   conditional branch(eq) v21,v8:#0        \l" [ ]
+   "BB22\n64  < Application, LValue, swapValRight(LValue;)V >( O1_3, O1_3 )\l" [ ]
+   "BB23\n69   goto                                    \l" [ ]
+   "BB24\n74   goto                                    \l" [ ]
+   "BB25\n77   conditional branch(eq) v21,v8:#0        \l" [ ]
+   "BB26\n80  < Application, LValue, swapValLeft(LValue;)V >( O1_3, O1_3 )\l" [ ]
+   "BB27\n85   goto                                    \l" [ ]
+   "BB28\n" [ ]
+   "BB29\n           v24 = phi  v15,v16,v16,v15\l           v25 = phi  v18,v19,v19,v18\l90   goto                                    \l" [ ]
+   "BB30\n92  GetOSSAInstruction:	O1_3= O1_3< left>    \l" [ ]
+   "BB31\n94   conditional branch(eq) v29,v13:#null    \l" [ ]
+   "BB32\n97  GetOSSAInstruction:	O1_3= O1_3< left>    \l" [ ]
+   "BB33\n99  GetOSSAInstruction:	31= O1_3< value>     \l" [ ]
+   "BB34\n101  O2_1 = < Application, LValue, bimerge(IZ)I >( O1_3, V31, V3 )\l" [ ]
+   "BB35\n102  PutOSSAInstruction:	O1_4< value > = O1_3<refO2_1>\l" [ ]
+   "BB36\n104  GetOSSAInstruction:	O1_4= O1_4< right>  \l" [ ]
+   "BB37\n107  O2_2 = < Application, LValue, bimerge(IZ)I >( O1_4, V12, V3 )\l" [ ]
+   "BB38\n" [ ]
+   "BB39\n           O1_5 = Object-Phi(O1_3, O1_4 )\l           v37 = phi  v12,v36\l110  Return O2_1                             \l" [ ]
+   "BB40 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  GetOSSAInstruction:	5= O1_1< value>       \l" 
+ "BB1\n1  GetOSSAInstruction:	5= O1_1< value>       \l" -> "BB2\n4  GetOSSAInstruction:	O1_1= O1_1< left>     \l" 
+ "BB2\n4  GetOSSAInstruction:	O1_1= O1_1< left>     \l" -> "BB3\n7  GetOSSAInstruction:	O1_1= O1_1< right>    \l" 
+ "BB3\n7  GetOSSAInstruction:	O1_1= O1_1< right>    \l" -> "BB4\n11   conditional branch(le) v5,v2            \l" 
+ "BB4\n11   conditional branch(le) v5,v2            \l" -> "BB5\n13   goto                                    \l" 
+ "BB4\n11   conditional branch(le) v5,v2            \l" -> "BB6\n" 
+ "BB5\n13   goto                                    \l" -> "BB7\n           v10 = phi  v9:#1,v8:#0\l16   v11 = binaryop(xor) v10 , v3            \l20   conditional branch(eq) v11,v8:#0        \l" 
+ "BB6\n" -> "BB7\n           v10 = phi  v9:#1,v8:#0\l16   v11 = binaryop(xor) v10 , v3            \l20   conditional branch(eq) v11,v8:#0        \l" 
+ "BB7\n           v10 = phi  v9:#1,v8:#0\l16   v11 = binaryop(xor) v10 , v3            \l20   conditional branch(eq) v11,v8:#0        \l" -> "BB8\n23  PutOSSAInstruction:	O1_2< value > = O1_1<V2>\l" 
+ "BB7\n           v10 = phi  v9:#1,v8:#0\l16   v11 = binaryop(xor) v10 , v3            \l20   conditional branch(eq) v11,v8:#0        \l" -> "BB10\n           O1_3 = Object-Phi(O1_1, O1_2, O1_3 )\l           v12 = phi  v2,v12,v5\l           v27 = phi  v6,v24,v6\l           v28 = phi  v7,v25,v7\l28   conditional branch(eq) v27,v13:#null    \l" 
+ "BB8\n23  PutOSSAInstruction:	O1_2< value > = O1_1<V2>\l" -> "BB9\n" 
+ "BB9\n" -> "BB10\n           O1_3 = Object-Phi(O1_1, O1_2, O1_3 )\l           v12 = phi  v2,v12,v5\l           v27 = phi  v6,v24,v6\l           v28 = phi  v7,v25,v7\l28   conditional branch(eq) v27,v13:#null    \l" 
+ "BB10\n           O1_3 = Object-Phi(O1_1, O1_2, O1_3 )\l           v12 = phi  v2,v12,v5\l           v27 = phi  v6,v24,v6\l           v28 = phi  v7,v25,v7\l28   conditional branch(eq) v27,v13:#null    \l" -> "BB11\n30  GetOSSAInstruction:	14= O1_3< value>     \l" 
+ "BB10\n           O1_3 = Object-Phi(O1_1, O1_2, O1_3 )\l           v12 = phi  v2,v12,v5\l           v27 = phi  v6,v24,v6\l           v28 = phi  v7,v25,v7\l28   conditional branch(eq) v27,v13:#null    \l" -> "BB30\n92  GetOSSAInstruction:	O1_3= O1_3< left>    \l" 
+ "BB11\n30  GetOSSAInstruction:	14= O1_3< value>     \l" -> "BB12\n33  GetOSSAInstruction:	O1_3= O1_3< left>    \l" 
+ "BB12\n33  GetOSSAInstruction:	O1_3= O1_3< left>    \l" -> "BB13\n36  GetOSSAInstruction:	O1_3= O1_3< right>   \l" 
+ "BB13\n36  GetOSSAInstruction:	O1_3= O1_3< right>   \l" -> "BB14\n39  GetOSSAInstruction:	17= O1_3< value>     \l" 
+ "BB14\n39  GetOSSAInstruction:	17= O1_3< value>     \l" -> "BB15\n42  GetOSSAInstruction:	O1_3= O1_3< left>    \l" 
+ "BB15\n42  GetOSSAInstruction:	O1_3= O1_3< left>    \l" -> "BB16\n45  GetOSSAInstruction:	O1_3= O1_3< right>   \l" 
+ "BB16\n45  GetOSSAInstruction:	O1_3= O1_3< right>   \l" -> "BB17\n49   conditional branch(le) v14,v17          \l" 
+ "BB17\n49   conditional branch(le) v14,v17          \l" -> "BB18\n51   goto                                    \l" 
+ "BB17\n49   conditional branch(le) v14,v17          \l" -> "BB19\n" 
+ "BB18\n51   goto                                    \l" -> "BB20\n           v20 = phi  v9:#1,v8:#0\l54   v21 = binaryop(xor) v20 , v3            \l58   conditional branch(eq) v11,v8:#0        \l" 
+ "BB19\n" -> "BB20\n           v20 = phi  v9:#1,v8:#0\l54   v21 = binaryop(xor) v20 , v3            \l58   conditional branch(eq) v11,v8:#0        \l" 
+ "BB20\n           v20 = phi  v9:#1,v8:#0\l54   v21 = binaryop(xor) v20 , v3            \l58   conditional branch(eq) v11,v8:#0        \l" -> "BB21\n61   conditional branch(eq) v21,v8:#0        \l" 
+ "BB20\n           v20 = phi  v9:#1,v8:#0\l54   v21 = binaryop(xor) v20 , v3            \l58   conditional branch(eq) v11,v8:#0        \l" -> "BB25\n77   conditional branch(eq) v21,v8:#0        \l" 
+ "BB21\n61   conditional branch(eq) v21,v8:#0        \l" -> "BB22\n64  < Application, LValue, swapValRight(LValue;)V >( O1_3, O1_3 )\l" 
+ "BB21\n61   conditional branch(eq) v21,v8:#0        \l" -> "BB24\n74   goto                                    \l" 
+ "BB22\n64  < Application, LValue, swapValRight(LValue;)V >( O1_3, O1_3 )\l" -> "BB23\n69   goto                                    \l" 
+ "BB23\n69   goto                                    \l" -> "BB29\n           v24 = phi  v15,v16,v16,v15\l           v25 = phi  v18,v19,v19,v18\l90   goto                                    \l" 
+ "BB24\n74   goto                                    \l" -> "BB29\n           v24 = phi  v15,v16,v16,v15\l           v25 = phi  v18,v19,v19,v18\l90   goto                                    \l" 
+ "BB25\n77   conditional branch(eq) v21,v8:#0        \l" -> "BB26\n80  < Application, LValue, swapValLeft(LValue;)V >( O1_3, O1_3 )\l" 
+ "BB25\n77   conditional branch(eq) v21,v8:#0        \l" -> "BB28\n" 
+ "BB26\n80  < Application, LValue, swapValLeft(LValue;)V >( O1_3, O1_3 )\l" -> "BB27\n85   goto                                    \l" 
+ "BB27\n85   goto                                    \l" -> "BB29\n           v24 = phi  v15,v16,v16,v15\l           v25 = phi  v18,v19,v19,v18\l90   goto                                    \l" 
+ "BB28\n" -> "BB29\n           v24 = phi  v15,v16,v16,v15\l           v25 = phi  v18,v19,v19,v18\l90   goto                                    \l" 
+ "BB29\n           v24 = phi  v15,v16,v16,v15\l           v25 = phi  v18,v19,v19,v18\l90   goto                                    \l" -> "BB10\n           O1_3 = Object-Phi(O1_1, O1_2, O1_3 )\l           v12 = phi  v2,v12,v5\l           v27 = phi  v6,v24,v6\l           v28 = phi  v7,v25,v7\l28   conditional branch(eq) v27,v13:#null    \l" 
+ "BB30\n92  GetOSSAInstruction:	O1_3= O1_3< left>    \l" -> "BB31\n94   conditional branch(eq) v29,v13:#null    \l" 
+ "BB31\n94   conditional branch(eq) v29,v13:#null    \l" -> "BB32\n97  GetOSSAInstruction:	O1_3= O1_3< left>    \l" 
+ "BB31\n94   conditional branch(eq) v29,v13:#null    \l" -> "BB39\n           O1_5 = Object-Phi(O1_3, O1_4 )\l           v37 = phi  v12,v36\l110  Return O2_1                             \l" 
+ "BB32\n97  GetOSSAInstruction:	O1_3= O1_3< left>    \l" -> "BB33\n99  GetOSSAInstruction:	31= O1_3< value>     \l" 
+ "BB33\n99  GetOSSAInstruction:	31= O1_3< value>     \l" -> "BB34\n101  O2_1 = < Application, LValue, bimerge(IZ)I >( O1_3, V31, V3 )\l" 
+ "BB34\n101  O2_1 = < Application, LValue, bimerge(IZ)I >( O1_3, V31, V3 )\l" -> "BB35\n102  PutOSSAInstruction:	O1_4< value > = O1_3<refO2_1>\l" 
+ "BB35\n102  PutOSSAInstruction:	O1_4< value > = O1_3<refO2_1>\l" -> "BB36\n104  GetOSSAInstruction:	O1_4= O1_4< right>  \l" 
+ "BB36\n104  GetOSSAInstruction:	O1_4= O1_4< right>  \l" -> "BB37\n107  O2_2 = < Application, LValue, bimerge(IZ)I >( O1_4, V12, V3 )\l" 
+ "BB37\n107  O2_2 = < Application, LValue, bimerge(IZ)I >( O1_4, V12, V3 )\l" -> "BB38\n" 
+ "BB38\n" -> "BB39\n           O1_5 = Object-Phi(O1_3, O1_4 )\l           v37 = phi  v12,v36\l110  Return O2_1                             \l" 
+ "BB39\n           O1_5 = Object-Phi(O1_3, O1_4 )\l           v37 = phi  v12,v36\l110  Return O2_1                             \l" -> "BB40 (ex)\n\n" 
+
+}

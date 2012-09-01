@@ -1,0 +1,88 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Body.expandBox(LTree;I)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0  Create O3_1                               \l" [ ]
+   "BB2\n2   invokespecial < Application, LMathVector, <init>()V > v5 @4 exception:v6\l" [ ]
+   "BB3\n6   v8 = invokevirtual < Application, LBody, icTest(LTree;)Z > v1,v2 @10 exception:v7\l" [ ]
+   "BB4\n" [ ]
+   "BB5\n           O2_1 = Object-Phi(O2_1, O2_4 )\l           v48 = phi  v46,v8\l10   conditional branch(ne) v48,v9:#0        \l" [ ]
+   "BB6\n12  GetOSSAInstruction:	10= O2_1< rsize>     \l" [ ]
+   "BB7\n16  GetOSSAInstruction:	O4_1= O2_1< rmin>    \l" [ ]
+   "BB8\n19   v13 = binaryop(mul) v12:#0.5 , v10      \l20   invokevirtual < Application, LMathVector, addScalar(LMathVector;D)V > v5,v11,v13 @37 exception:v14\l" [ ]
+   "BB9\n" [ ]
+   "BB10\n           v49 = phi  v49,v48\l           v30 = phi  v29,v9:#0\l25   conditional branch(ge) v30,v15:#3       \l" [ ]
+   "BB11\n27  GetOSSAInstruction:	O5_1= O1_1< pos>     \l" [ ]
+   "BB12\n29   v18 = invokevirtual < Application, LMathVector, value(I)D > v16,v30 @55 exception:v17\l" [ ]
+   "BB13\n32   v20 = invokevirtual < Application, LMathVector, value(I)D > v5,v30 @61 exception:v19\l" [ ]
+   "BB14\n33   v21 = compare v18,v20 opcode=cmpg       \l35   conditional branch(ge) v21,v9:#0        \l" [ ]
+   "BB15\n37  GetOSSAInstruction:	O4_1= O2_1< rmin>    \l" [ ]
+   "BB16\n39   v24 = invokevirtual < Application, LMathVector, value(I)D > v22,v30 @74 exception:v23\l" [ ]
+   "BB17\n42  GetOSSAInstruction:	O4_1= O2_1< rmin>    \l" [ ]
+   "BB18\n46   v26 = binaryop(sub) v24 , v10           \l47   invokevirtual < Application, LMathVector, value(ID)V > v25,v30,v26 @90 exception:v27\l" [ ]
+   "BB19\n50   v29 = binaryop(add) v30 , v28:#1        \l52   goto                                    \l" [ ]
+   "BB20\n56   v32 = binaryop(mul) v31:#2.0 , v10      \l57  PutOSSAInstruction:	O2_2< rsize > = O2_1<V32>\l" [ ]
+   "BB21\n59  GetOSSAInstruction:	O6_1= O2_2< root>    \l" [ ]
+   "BB22\n61   conditional branch(eq) v33,v34:#null    \l" [ ]
+   "BB23\n64   v36 = invokevirtual < Application, LTree, intcoord(LMathVector;)LMathVector; > v2,v5 @118 exception:v35\l" [ ]
+   "BB24\n68   conditional branch(ne) v36,v34:#null    \l" [ ]
+   "BB25\n69  Create O7_1                              \l" [ ]
+   "BB26\n72   invokespecial < Application, Ljava/lang/Error, <init>(Ljava/lang/String;)V > v50,v51:#Value is out of bounds @134 exception:v52\l" [ ]
+   "BB27\n73   throw v50                               \l" [ ]
+   "BB28\n76   v39 = invokestatic < Application, LBody, oldSubindex(LMathVector;I)I > v36,v37:#536870912 @142 exception:v38\l" [ ]
+   "BB29\n78  Create O8_1                              \l" [ ]
+   "BB30\n80   invokespecial < Application, LCell, <init>()V > v40 @151 exception:v41\l" [ ]
+   "BB31\n83  GetOSSAInstruction:	O9_1= O8_1< subp>    \l" [ ]
+   "BB32\n86  GetOSSAInstruction:	O6_1= O2_2< root>    \l" [ ]
+   "BB33\n87   arraystore v42[v39] = v43               \l" [ ]
+   "BB34\n90  PutOSSAInstruction:	O2_3< root > = O2_2<refO8_1>\l" [ ]
+   "BB35\n93   v45 = invokevirtual < Application, LBody, icTest(LTree;)Z > v1,v2 @176 exception:v44\l" [ ]
+   "BB36\n" [ ]
+   "BB37\n           O2_4 = Object-Phi(O2_2, O2_3 )\l           v46 = phi  v49,v45\l95   goto                                    \l" [ ]
+   "BB38\n96  return                                   \l" [ ]
+   "BB39 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0  Create O3_1                               \l" 
+ "BB1\n0  Create O3_1                               \l" -> "BB2\n2   invokespecial < Application, LMathVector, <init>()V > v5 @4 exception:v6\l" 
+ "BB2\n2   invokespecial < Application, LMathVector, <init>()V > v5 @4 exception:v6\l" -> "BB3\n6   v8 = invokevirtual < Application, LBody, icTest(LTree;)Z > v1,v2 @10 exception:v7\l" 
+ "BB3\n6   v8 = invokevirtual < Application, LBody, icTest(LTree;)Z > v1,v2 @10 exception:v7\l" -> "BB4\n" 
+ "BB4\n" -> "BB5\n           O2_1 = Object-Phi(O2_1, O2_4 )\l           v48 = phi  v46,v8\l10   conditional branch(ne) v48,v9:#0        \l" 
+ "BB5\n           O2_1 = Object-Phi(O2_1, O2_4 )\l           v48 = phi  v46,v8\l10   conditional branch(ne) v48,v9:#0        \l" -> "BB6\n12  GetOSSAInstruction:	10= O2_1< rsize>     \l" 
+ "BB5\n           O2_1 = Object-Phi(O2_1, O2_4 )\l           v48 = phi  v46,v8\l10   conditional branch(ne) v48,v9:#0        \l" -> "BB38\n96  return                                   \l" 
+ "BB6\n12  GetOSSAInstruction:	10= O2_1< rsize>     \l" -> "BB7\n16  GetOSSAInstruction:	O4_1= O2_1< rmin>    \l" 
+ "BB7\n16  GetOSSAInstruction:	O4_1= O2_1< rmin>    \l" -> "BB8\n19   v13 = binaryop(mul) v12:#0.5 , v10      \l20   invokevirtual < Application, LMathVector, addScalar(LMathVector;D)V > v5,v11,v13 @37 exception:v14\l" 
+ "BB8\n19   v13 = binaryop(mul) v12:#0.5 , v10      \l20   invokevirtual < Application, LMathVector, addScalar(LMathVector;D)V > v5,v11,v13 @37 exception:v14\l" -> "BB9\n" 
+ "BB9\n" -> "BB10\n           v49 = phi  v49,v48\l           v30 = phi  v29,v9:#0\l25   conditional branch(ge) v30,v15:#3       \l" 
+ "BB10\n           v49 = phi  v49,v48\l           v30 = phi  v29,v9:#0\l25   conditional branch(ge) v30,v15:#3       \l" -> "BB11\n27  GetOSSAInstruction:	O5_1= O1_1< pos>     \l" 
+ "BB10\n           v49 = phi  v49,v48\l           v30 = phi  v29,v9:#0\l25   conditional branch(ge) v30,v15:#3       \l" -> "BB20\n56   v32 = binaryop(mul) v31:#2.0 , v10      \l57  PutOSSAInstruction:	O2_2< rsize > = O2_1<V32>\l" 
+ "BB11\n27  GetOSSAInstruction:	O5_1= O1_1< pos>     \l" -> "BB12\n29   v18 = invokevirtual < Application, LMathVector, value(I)D > v16,v30 @55 exception:v17\l" 
+ "BB12\n29   v18 = invokevirtual < Application, LMathVector, value(I)D > v16,v30 @55 exception:v17\l" -> "BB13\n32   v20 = invokevirtual < Application, LMathVector, value(I)D > v5,v30 @61 exception:v19\l" 
+ "BB13\n32   v20 = invokevirtual < Application, LMathVector, value(I)D > v5,v30 @61 exception:v19\l" -> "BB14\n33   v21 = compare v18,v20 opcode=cmpg       \l35   conditional branch(ge) v21,v9:#0        \l" 
+ "BB14\n33   v21 = compare v18,v20 opcode=cmpg       \l35   conditional branch(ge) v21,v9:#0        \l" -> "BB15\n37  GetOSSAInstruction:	O4_1= O2_1< rmin>    \l" 
+ "BB14\n33   v21 = compare v18,v20 opcode=cmpg       \l35   conditional branch(ge) v21,v9:#0        \l" -> "BB19\n50   v29 = binaryop(add) v30 , v28:#1        \l52   goto                                    \l" 
+ "BB15\n37  GetOSSAInstruction:	O4_1= O2_1< rmin>    \l" -> "BB16\n39   v24 = invokevirtual < Application, LMathVector, value(I)D > v22,v30 @74 exception:v23\l" 
+ "BB16\n39   v24 = invokevirtual < Application, LMathVector, value(I)D > v22,v30 @74 exception:v23\l" -> "BB17\n42  GetOSSAInstruction:	O4_1= O2_1< rmin>    \l" 
+ "BB17\n42  GetOSSAInstruction:	O4_1= O2_1< rmin>    \l" -> "BB18\n46   v26 = binaryop(sub) v24 , v10           \l47   invokevirtual < Application, LMathVector, value(ID)V > v25,v30,v26 @90 exception:v27\l" 
+ "BB18\n46   v26 = binaryop(sub) v24 , v10           \l47   invokevirtual < Application, LMathVector, value(ID)V > v25,v30,v26 @90 exception:v27\l" -> "BB19\n50   v29 = binaryop(add) v30 , v28:#1        \l52   goto                                    \l" 
+ "BB19\n50   v29 = binaryop(add) v30 , v28:#1        \l52   goto                                    \l" -> "BB10\n           v49 = phi  v49,v48\l           v30 = phi  v29,v9:#0\l25   conditional branch(ge) v30,v15:#3       \l" 
+ "BB20\n56   v32 = binaryop(mul) v31:#2.0 , v10      \l57  PutOSSAInstruction:	O2_2< rsize > = O2_1<V32>\l" -> "BB21\n59  GetOSSAInstruction:	O6_1= O2_2< root>    \l" 
+ "BB21\n59  GetOSSAInstruction:	O6_1= O2_2< root>    \l" -> "BB22\n61   conditional branch(eq) v33,v34:#null    \l" 
+ "BB22\n61   conditional branch(eq) v33,v34:#null    \l" -> "BB23\n64   v36 = invokevirtual < Application, LTree, intcoord(LMathVector;)LMathVector; > v2,v5 @118 exception:v35\l" 
+ "BB22\n61   conditional branch(eq) v33,v34:#null    \l" -> "BB37\n           O2_4 = Object-Phi(O2_2, O2_3 )\l           v46 = phi  v49,v45\l95   goto                                    \l" 
+ "BB23\n64   v36 = invokevirtual < Application, LTree, intcoord(LMathVector;)LMathVector; > v2,v5 @118 exception:v35\l" -> "BB24\n68   conditional branch(ne) v36,v34:#null    \l" 
+ "BB24\n68   conditional branch(ne) v36,v34:#null    \l" -> "BB25\n69  Create O7_1                              \l" 
+ "BB24\n68   conditional branch(ne) v36,v34:#null    \l" -> "BB28\n76   v39 = invokestatic < Application, LBody, oldSubindex(LMathVector;I)I > v36,v37:#536870912 @142 exception:v38\l" 
+ "BB25\n69  Create O7_1                              \l" -> "BB26\n72   invokespecial < Application, Ljava/lang/Error, <init>(Ljava/lang/String;)V > v50,v51:#Value is out of bounds @134 exception:v52\l" 
+ "BB26\n72   invokespecial < Application, Ljava/lang/Error, <init>(Ljava/lang/String;)V > v50,v51:#Value is out of bounds @134 exception:v52\l" -> "BB27\n73   throw v50                               \l" 
+ "BB27\n73   throw v50                               \l" -> "BB39 (ex)\n\n" 
+ "BB28\n76   v39 = invokestatic < Application, LBody, oldSubindex(LMathVector;I)I > v36,v37:#536870912 @142 exception:v38\l" -> "BB29\n78  Create O8_1                              \l" 
+ "BB29\n78  Create O8_1                              \l" -> "BB30\n80   invokespecial < Application, LCell, <init>()V > v40 @151 exception:v41\l" 
+ "BB30\n80   invokespecial < Application, LCell, <init>()V > v40 @151 exception:v41\l" -> "BB31\n83  GetOSSAInstruction:	O9_1= O8_1< subp>    \l" 
+ "BB31\n83  GetOSSAInstruction:	O9_1= O8_1< subp>    \l" -> "BB32\n86  GetOSSAInstruction:	O6_1= O2_2< root>    \l" 
+ "BB32\n86  GetOSSAInstruction:	O6_1= O2_2< root>    \l" -> "BB33\n87   arraystore v42[v39] = v43               \l" 
+ "BB33\n87   arraystore v42[v39] = v43               \l" -> "BB34\n90  PutOSSAInstruction:	O2_3< root > = O2_2<refO8_1>\l" 
+ "BB34\n90  PutOSSAInstruction:	O2_3< root > = O2_2<refO8_1>\l" -> "BB35\n93   v45 = invokevirtual < Application, LBody, icTest(LTree;)Z > v1,v2 @176 exception:v44\l" 
+ "BB35\n93   v45 = invokevirtual < Application, LBody, icTest(LTree;)Z > v1,v2 @176 exception:v44\l" -> "BB36\n" 
+ "BB36\n" -> "BB37\n           O2_4 = Object-Phi(O2_2, O2_3 )\l           v46 = phi  v49,v45\l95   goto                                    \l" 
+ "BB37\n           O2_4 = Object-Phi(O2_2, O2_3 )\l           v46 = phi  v49,v45\l95   goto                                    \l" -> "BB5\n           O2_1 = Object-Phi(O2_1, O2_4 )\l           v48 = phi  v46,v8\l10   conditional branch(ne) v48,v9:#0        \l" 
+ "BB38\n96  return                                   \l" -> "BB39 (ex)\n\n" 
+
+}

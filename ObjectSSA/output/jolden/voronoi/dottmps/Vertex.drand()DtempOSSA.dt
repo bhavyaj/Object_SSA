@@ -1,0 +1,11 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Vertex.drand()D", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0  nonreference field get instrctn: 2 = getstatic < Application, LVertex, seed, <Primordial,I> >\l1  O1_1 = < Application, LVertex, random(I)I >( V2 )\l" [ ]
+   "BB2\n3  PutOSSAInstruction:	O1_2< seed > = O1_1<refO1_1>\l4   v5 = conversion(D) v4                    \l6   v7 = binaryop(div) v5 , v6:#2.147483647E9\l9  Return O1_2                               \l" [ ]
+   "BB3 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0  nonreference field get instrctn: 2 = getstatic < Application, LVertex, seed, <Primordial,I> >\l1  O1_1 = < Application, LVertex, random(I)I >( V2 )\l" 
+ "BB1\n0  nonreference field get instrctn: 2 = getstatic < Application, LVertex, seed, <Primordial,I> >\l1  O1_1 = < Application, LVertex, random(I)I >( V2 )\l" -> "BB2\n3  PutOSSAInstruction:	O1_2< seed > = O1_1<refO1_1>\l4   v5 = conversion(D) v4                    \l6   v7 = binaryop(div) v5 , v6:#2.147483647E9\l9  Return O1_2                               \l" 
+ "BB2\n3  PutOSSAInstruction:	O1_2< seed > = O1_1<refO1_1>\l4   v5 = conversion(D) v4                    \l6   v7 = binaryop(div) v5 , v6:#2.147483647E9\l9  Return O1_2                               \l" -> "BB3 (ex)\n\n" 
+
+}

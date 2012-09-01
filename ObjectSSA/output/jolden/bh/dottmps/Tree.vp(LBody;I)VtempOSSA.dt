@@ -1,0 +1,99 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Tree.vp(LBody;I)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0  Create O2_1                               \l" [ ]
+   "BB2\n2  < Application, LMathVector, <init>()V >( O2_1 )\l" [ ]
+   "BB3\n4  Create O3_1                               \l" [ ]
+   "BB4\n6  < Application, LMathVector, <init>()V >( O3_1 )\l" [ ]
+   "BB5\n9  nonreference field get instrctn: 9 = getstatic < Application, LBH, DTIME, <Primordial,D> >\l10   v10 = binaryop(mul) v8:#0.5 , v9        \l13  O4_1 = < Application, LBody, elementsRev()Ljava/util/Enumeration; >( O1_1 )\l" [ ]
+   "BB6\n" [ ]
+   "BB7\n16  O5_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O4_1 )\l" [ ]
+   "BB8\n18   conditional branch(eq) v14,v15:#0       \l" [ ]
+   "BB9\n20  O1_2 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O4_1 )\l" [ ]
+   "BB10\n21   v18 = checkcast <Application,LBody>v17  \l" [ ]
+   "BB11\n24  nonreference field get instrctn: 19 = getfield < Application, LBody, newAcc, <Application,LMathVector> > 18\l" [ ]
+   "BB12\n25  O7_1 = < Application, LMathVector, clone()Ljava/lang/Object; >( O6_1 )\l" [ ]
+   "BB13\n26   v22 = checkcast <Application,LMathVector>v21\l" [ ]
+   "BB14\n30   conditional branch(le) v2,v15:#0        \l" [ ]
+   "BB15\n34  nonreference field get instrctn: 23 = getfield < Application, LBody, acc, <Application,LMathVector> > 18\l" [ ]
+   "BB16\n35  < Application, LMathVector, subtraction(LMathVector;LMathVector;)V >( O2_1, O7_1, O8_1 )\l" [ ]
+   "BB17\n39  < Application, LMathVector, multScalar(LMathVector;D)V >( O3_1, O2_1, V10 )\l" [ ]
+   "BB18\n42  nonreference field get instrctn: 26 = getfield < Application, LBody, vel, <Application,LMathVector> > 18\l" [ ]
+   "BB19\n43  < Application, LMathVector, addition(LMathVector;)V >( O3_1, O9_1 )\l" [ ]
+   "BB20\n46  O7_2 = < Application, LMathVector, clone()Ljava/lang/Object; >( O3_1 )\l" [ ]
+   "BB21\n47   v30 = checkcast <Application,LMathVector>v29\l" [ ]
+   "BB22\n48   putfield v18 = v30 < Application, LBody, vel, <Application,LMathVector> >\l" [ ]
+   "BB23\n51  O7_3 = < Application, LMathVector, clone()Ljava/lang/Object; >( O7_1 )\l" [ ]
+   "BB24\n52   v33 = checkcast <Application,LMathVector>v32\l" [ ]
+   "BB25\n53   putfield v18 = v33 < Application, LBody, acc, <Application,LMathVector> >\l" [ ]
+   "BB26\n56  nonreference field get instrctn: 34 = getfield < Application, LBody, acc, <Application,LMathVector> > 18\l" [ ]
+   "BB27\n58  < Application, LMathVector, multScalar(LMathVector;D)V >( O3_1, O8_1, V10 )\l" [ ]
+   "BB28\n60  nonreference field get instrctn: 36 = getfield < Application, LBody, vel, <Application,LMathVector> > 18\l" [ ]
+   "BB29\n61  O7_4 = < Application, LMathVector, clone()Ljava/lang/Object; >( O9_1 )\l" [ ]
+   "BB30\n62   v39 = checkcast <Application,LMathVector>v38\l" [ ]
+   "BB31\n66  < Application, LMathVector, addition(LMathVector;)V >( O7_4, O3_1 )\l" [ ]
+   "BB32\n68  O7_5 = < Application, LMathVector, clone()Ljava/lang/Object; >( O7_4 )\l" [ ]
+   "BB33\n69   v43 = checkcast <Application,LMathVector>v42\l" [ ]
+   "BB34\n72  nonreference field get instrctn: 44 = getstatic < Application, LBH, DTIME, <Primordial,D> >\l73  < Application, LMathVector, multScalar(D)V >( O7_5, V44 )\l" [ ]
+   "BB35\n76  nonreference field get instrctn: 46 = getfield < Application, LBody, pos, <Application,LMathVector> > 18\l" [ ]
+   "BB36\n77  < Application, LMathVector, addition(LMathVector;)V >( O7_5, O10_1 )\l" [ ]
+   "BB37\n80  O7_6 = < Application, LMathVector, clone()Ljava/lang/Object; >( O7_5 )\l" [ ]
+   "BB38\n81   v50 = checkcast <Application,LMathVector>v49\l" [ ]
+   "BB39\n82   putfield v18 = v50 < Application, LBody, pos, <Application,LMathVector> >\l" [ ]
+   "BB40\n85  < Application, LMathVector, addition(LMathVector;)V >( O7_6, O3_1 )\l" [ ]
+   "BB41\n88  O7_7 = < Application, LMathVector, clone()Ljava/lang/Object; >( O7_6 )\l" [ ]
+   "BB42\n89   v54 = checkcast <Application,LMathVector>v53\l" [ ]
+   "BB43\n90   putfield v18 = v54 < Application, LBody, vel, <Application,LMathVector> >\l" [ ]
+   "BB44\n91   goto                                    \l" [ ]
+   "BB45\n92  return                                   \l" [ ]
+   "BB46 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0  Create O2_1                               \l" 
+ "BB1\n0  Create O2_1                               \l" -> "BB2\n2  < Application, LMathVector, <init>()V >( O2_1 )\l" 
+ "BB2\n2  < Application, LMathVector, <init>()V >( O2_1 )\l" -> "BB3\n4  Create O3_1                               \l" 
+ "BB3\n4  Create O3_1                               \l" -> "BB4\n6  < Application, LMathVector, <init>()V >( O3_1 )\l" 
+ "BB4\n6  < Application, LMathVector, <init>()V >( O3_1 )\l" -> "BB5\n9  nonreference field get instrctn: 9 = getstatic < Application, LBH, DTIME, <Primordial,D> >\l10   v10 = binaryop(mul) v8:#0.5 , v9        \l13  O4_1 = < Application, LBody, elementsRev()Ljava/util/Enumeration; >( O1_1 )\l" 
+ "BB5\n9  nonreference field get instrctn: 9 = getstatic < Application, LBH, DTIME, <Primordial,D> >\l10   v10 = binaryop(mul) v8:#0.5 , v9        \l13  O4_1 = < Application, LBody, elementsRev()Ljava/util/Enumeration; >( O1_1 )\l" -> "BB6\n" 
+ "BB6\n" -> "BB7\n16  O5_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O4_1 )\l" 
+ "BB7\n16  O5_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O4_1 )\l" -> "BB8\n18   conditional branch(eq) v14,v15:#0       \l" 
+ "BB8\n18   conditional branch(eq) v14,v15:#0       \l" -> "BB9\n20  O1_2 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O4_1 )\l" 
+ "BB8\n18   conditional branch(eq) v14,v15:#0       \l" -> "BB45\n92  return                                   \l" 
+ "BB9\n20  O1_2 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O4_1 )\l" -> "BB10\n21   v18 = checkcast <Application,LBody>v17  \l" 
+ "BB10\n21   v18 = checkcast <Application,LBody>v17  \l" -> "BB11\n24  nonreference field get instrctn: 19 = getfield < Application, LBody, newAcc, <Application,LMathVector> > 18\l" 
+ "BB11\n24  nonreference field get instrctn: 19 = getfield < Application, LBody, newAcc, <Application,LMathVector> > 18\l" -> "BB12\n25  O7_1 = < Application, LMathVector, clone()Ljava/lang/Object; >( O6_1 )\l" 
+ "BB12\n25  O7_1 = < Application, LMathVector, clone()Ljava/lang/Object; >( O6_1 )\l" -> "BB13\n26   v22 = checkcast <Application,LMathVector>v21\l" 
+ "BB13\n26   v22 = checkcast <Application,LMathVector>v21\l" -> "BB14\n30   conditional branch(le) v2,v15:#0        \l" 
+ "BB14\n30   conditional branch(le) v2,v15:#0        \l" -> "BB15\n34  nonreference field get instrctn: 23 = getfield < Application, LBody, acc, <Application,LMathVector> > 18\l" 
+ "BB14\n30   conditional branch(le) v2,v15:#0        \l" -> "BB23\n51  O7_3 = < Application, LMathVector, clone()Ljava/lang/Object; >( O7_1 )\l" 
+ "BB15\n34  nonreference field get instrctn: 23 = getfield < Application, LBody, acc, <Application,LMathVector> > 18\l" -> "BB16\n35  < Application, LMathVector, subtraction(LMathVector;LMathVector;)V >( O2_1, O7_1, O8_1 )\l" 
+ "BB16\n35  < Application, LMathVector, subtraction(LMathVector;LMathVector;)V >( O2_1, O7_1, O8_1 )\l" -> "BB17\n39  < Application, LMathVector, multScalar(LMathVector;D)V >( O3_1, O2_1, V10 )\l" 
+ "BB17\n39  < Application, LMathVector, multScalar(LMathVector;D)V >( O3_1, O2_1, V10 )\l" -> "BB18\n42  nonreference field get instrctn: 26 = getfield < Application, LBody, vel, <Application,LMathVector> > 18\l" 
+ "BB18\n42  nonreference field get instrctn: 26 = getfield < Application, LBody, vel, <Application,LMathVector> > 18\l" -> "BB19\n43  < Application, LMathVector, addition(LMathVector;)V >( O3_1, O9_1 )\l" 
+ "BB19\n43  < Application, LMathVector, addition(LMathVector;)V >( O3_1, O9_1 )\l" -> "BB20\n46  O7_2 = < Application, LMathVector, clone()Ljava/lang/Object; >( O3_1 )\l" 
+ "BB20\n46  O7_2 = < Application, LMathVector, clone()Ljava/lang/Object; >( O3_1 )\l" -> "BB21\n47   v30 = checkcast <Application,LMathVector>v29\l" 
+ "BB21\n47   v30 = checkcast <Application,LMathVector>v29\l" -> "BB22\n48   putfield v18 = v30 < Application, LBody, vel, <Application,LMathVector> >\l" 
+ "BB22\n48   putfield v18 = v30 < Application, LBody, vel, <Application,LMathVector> >\l" -> "BB23\n51  O7_3 = < Application, LMathVector, clone()Ljava/lang/Object; >( O7_1 )\l" 
+ "BB23\n51  O7_3 = < Application, LMathVector, clone()Ljava/lang/Object; >( O7_1 )\l" -> "BB24\n52   v33 = checkcast <Application,LMathVector>v32\l" 
+ "BB24\n52   v33 = checkcast <Application,LMathVector>v32\l" -> "BB25\n53   putfield v18 = v33 < Application, LBody, acc, <Application,LMathVector> >\l" 
+ "BB25\n53   putfield v18 = v33 < Application, LBody, acc, <Application,LMathVector> >\l" -> "BB26\n56  nonreference field get instrctn: 34 = getfield < Application, LBody, acc, <Application,LMathVector> > 18\l" 
+ "BB26\n56  nonreference field get instrctn: 34 = getfield < Application, LBody, acc, <Application,LMathVector> > 18\l" -> "BB27\n58  < Application, LMathVector, multScalar(LMathVector;D)V >( O3_1, O8_1, V10 )\l" 
+ "BB27\n58  < Application, LMathVector, multScalar(LMathVector;D)V >( O3_1, O8_1, V10 )\l" -> "BB28\n60  nonreference field get instrctn: 36 = getfield < Application, LBody, vel, <Application,LMathVector> > 18\l" 
+ "BB28\n60  nonreference field get instrctn: 36 = getfield < Application, LBody, vel, <Application,LMathVector> > 18\l" -> "BB29\n61  O7_4 = < Application, LMathVector, clone()Ljava/lang/Object; >( O9_1 )\l" 
+ "BB29\n61  O7_4 = < Application, LMathVector, clone()Ljava/lang/Object; >( O9_1 )\l" -> "BB30\n62   v39 = checkcast <Application,LMathVector>v38\l" 
+ "BB30\n62   v39 = checkcast <Application,LMathVector>v38\l" -> "BB31\n66  < Application, LMathVector, addition(LMathVector;)V >( O7_4, O3_1 )\l" 
+ "BB31\n66  < Application, LMathVector, addition(LMathVector;)V >( O7_4, O3_1 )\l" -> "BB32\n68  O7_5 = < Application, LMathVector, clone()Ljava/lang/Object; >( O7_4 )\l" 
+ "BB32\n68  O7_5 = < Application, LMathVector, clone()Ljava/lang/Object; >( O7_4 )\l" -> "BB33\n69   v43 = checkcast <Application,LMathVector>v42\l" 
+ "BB33\n69   v43 = checkcast <Application,LMathVector>v42\l" -> "BB34\n72  nonreference field get instrctn: 44 = getstatic < Application, LBH, DTIME, <Primordial,D> >\l73  < Application, LMathVector, multScalar(D)V >( O7_5, V44 )\l" 
+ "BB34\n72  nonreference field get instrctn: 44 = getstatic < Application, LBH, DTIME, <Primordial,D> >\l73  < Application, LMathVector, multScalar(D)V >( O7_5, V44 )\l" -> "BB35\n76  nonreference field get instrctn: 46 = getfield < Application, LBody, pos, <Application,LMathVector> > 18\l" 
+ "BB35\n76  nonreference field get instrctn: 46 = getfield < Application, LBody, pos, <Application,LMathVector> > 18\l" -> "BB36\n77  < Application, LMathVector, addition(LMathVector;)V >( O7_5, O10_1 )\l" 
+ "BB36\n77  < Application, LMathVector, addition(LMathVector;)V >( O7_5, O10_1 )\l" -> "BB37\n80  O7_6 = < Application, LMathVector, clone()Ljava/lang/Object; >( O7_5 )\l" 
+ "BB37\n80  O7_6 = < Application, LMathVector, clone()Ljava/lang/Object; >( O7_5 )\l" -> "BB38\n81   v50 = checkcast <Application,LMathVector>v49\l" 
+ "BB38\n81   v50 = checkcast <Application,LMathVector>v49\l" -> "BB39\n82   putfield v18 = v50 < Application, LBody, pos, <Application,LMathVector> >\l" 
+ "BB39\n82   putfield v18 = v50 < Application, LBody, pos, <Application,LMathVector> >\l" -> "BB40\n85  < Application, LMathVector, addition(LMathVector;)V >( O7_6, O3_1 )\l" 
+ "BB40\n85  < Application, LMathVector, addition(LMathVector;)V >( O7_6, O3_1 )\l" -> "BB41\n88  O7_7 = < Application, LMathVector, clone()Ljava/lang/Object; >( O7_6 )\l" 
+ "BB41\n88  O7_7 = < Application, LMathVector, clone()Ljava/lang/Object; >( O7_6 )\l" -> "BB42\n89   v54 = checkcast <Application,LMathVector>v53\l" 
+ "BB42\n89   v54 = checkcast <Application,LMathVector>v53\l" -> "BB43\n90   putfield v18 = v54 < Application, LBody, vel, <Application,LMathVector> >\l" 
+ "BB43\n90   putfield v18 = v54 < Application, LBody, vel, <Application,LMathVector> >\l" -> "BB44\n91   goto                                    \l" 
+ "BB44\n91   goto                                    \l" -> "BB7\n16  O5_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O4_1 )\l" 
+ "BB45\n92  return                                   \l" -> "BB46 (ex)\n\n" 
+
+}

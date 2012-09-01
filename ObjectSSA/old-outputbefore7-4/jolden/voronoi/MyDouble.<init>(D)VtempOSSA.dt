@@ -1,0 +1,13 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for MyDouble.<init>(D)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v4\l" [ ]
+   "BB2\n4  PutOSSAInstruction:	O1_1< value > = O1_1<V2>\l" [ ]
+   "BB3\n5  return                                    \l" [ ]
+   "BB4 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v4\l" 
+ "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v4\l" -> "BB2\n4  PutOSSAInstruction:	O1_1< value > = O1_1<V2>\l" 
+ "BB2\n4  PutOSSAInstruction:	O1_1< value > = O1_1<V2>\l" -> "BB3\n5  return                                    \l" 
+ "BB3\n5  return                                    \l" -> "BB4 (ex)\n\n" 
+
+}

@@ -1,0 +1,34 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Tree.reverse()V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  GetOSSAInstruction:	O1_1= O1_1< prev>     \l" [ ]
+   "BB2\n5  PutOSSAInstruction:	O1_2< next > = O1_1<V4>\l" [ ]
+   "BB3\n8  PutOSSAInstruction:	O1_3< prev > = O1_2<V4>\l" [ ]
+   "BB4\n14  GetOSSAInstruction:	O1_3= O1_3< next>    \l" [ ]
+   "BB5\n" [ ]
+   "BB6\n           O1_4 = Object-Phi(O1_3, O1_6 )\l           v7 = phi  v8,v1\l           v8 = phi  v6,v5\l18   conditional branch(eq) v8,v4:#null      \l" [ ]
+   "BB7\n20  GetOSSAInstruction:	O1_4= O1_4< next>    \l" [ ]
+   "BB8\n24  PutOSSAInstruction:	O1_5< next > = O1_4<refO1_4>\l" [ ]
+   "BB9\n27  PutOSSAInstruction:	O1_6< prev > = O1_5<refO1_5>\l" [ ]
+   "BB10\n32   goto                                    \l" [ ]
+   "BB11\n35  PutOSSAInstruction:	O1_7< next > = O1_4<refO1_4>\l" [ ]
+   "BB12\n38  PutOSSAInstruction:	O1_8< prev > = O1_7<refO1_7>\l" [ ]
+   "BB13\n39  return                                   \l" [ ]
+   "BB14 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  GetOSSAInstruction:	O1_1= O1_1< prev>     \l" 
+ "BB1\n1  GetOSSAInstruction:	O1_1= O1_1< prev>     \l" -> "BB2\n5  PutOSSAInstruction:	O1_2< next > = O1_1<V4>\l" 
+ "BB2\n5  PutOSSAInstruction:	O1_2< next > = O1_1<V4>\l" -> "BB3\n8  PutOSSAInstruction:	O1_3< prev > = O1_2<V4>\l" 
+ "BB3\n8  PutOSSAInstruction:	O1_3< prev > = O1_2<V4>\l" -> "BB4\n14  GetOSSAInstruction:	O1_3= O1_3< next>    \l" 
+ "BB4\n14  GetOSSAInstruction:	O1_3= O1_3< next>    \l" -> "BB5\n" 
+ "BB5\n" -> "BB6\n           O1_4 = Object-Phi(O1_3, O1_6 )\l           v7 = phi  v8,v1\l           v8 = phi  v6,v5\l18   conditional branch(eq) v8,v4:#null      \l" 
+ "BB6\n           O1_4 = Object-Phi(O1_3, O1_6 )\l           v7 = phi  v8,v1\l           v8 = phi  v6,v5\l18   conditional branch(eq) v8,v4:#null      \l" -> "BB7\n20  GetOSSAInstruction:	O1_4= O1_4< next>    \l" 
+ "BB6\n           O1_4 = Object-Phi(O1_3, O1_6 )\l           v7 = phi  v8,v1\l           v8 = phi  v6,v5\l18   conditional branch(eq) v8,v4:#null      \l" -> "BB11\n35  PutOSSAInstruction:	O1_7< next > = O1_4<refO1_4>\l" 
+ "BB7\n20  GetOSSAInstruction:	O1_4= O1_4< next>    \l" -> "BB8\n24  PutOSSAInstruction:	O1_5< next > = O1_4<refO1_4>\l" 
+ "BB8\n24  PutOSSAInstruction:	O1_5< next > = O1_4<refO1_4>\l" -> "BB9\n27  PutOSSAInstruction:	O1_6< prev > = O1_5<refO1_5>\l" 
+ "BB9\n27  PutOSSAInstruction:	O1_6< prev > = O1_5<refO1_5>\l" -> "BB10\n32   goto                                    \l" 
+ "BB10\n32   goto                                    \l" -> "BB6\n           O1_4 = Object-Phi(O1_3, O1_6 )\l           v7 = phi  v8,v1\l           v8 = phi  v6,v5\l18   conditional branch(eq) v8,v4:#null      \l" 
+ "BB11\n35  PutOSSAInstruction:	O1_7< next > = O1_4<refO1_4>\l" -> "BB12\n38  PutOSSAInstruction:	O1_8< prev > = O1_7<refO1_7>\l" 
+ "BB12\n38  PutOSSAInstruction:	O1_8< prev > = O1_7<refO1_7>\l" -> "BB13\n39  return                                   \l" 
+ "BB13\n39  return                                   \l" -> "BB14 (ex)\n\n" 
+
+}

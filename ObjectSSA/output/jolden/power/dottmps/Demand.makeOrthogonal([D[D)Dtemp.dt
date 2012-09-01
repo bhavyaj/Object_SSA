@@ -1,0 +1,57 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n" [ ]
+   "BB2\n           v14 = phi  v11,v5:#0.0\l           v15 = phi  v13,v6:#0\l6   conditional branch(ge) v15,v7:#2\l" [ ]
+   "BB3\n10   v8 = arrayload v2[v15]        \l" [ ]
+   "BB4\n13   v9 = arrayload v3[v15]        \l" [ ]
+   "BB5\n14   v10 = binaryop(mul) v8 , v9   \l15   v11 = binaryop(add) v14 , v10 \l19   v13 = binaryop(add) v15 , v12:#1\l21   goto                          \l" [ ]
+   "BB6\n" [ ]
+   "BB7\n           v25 = phi  v23,v5:#0.0\l           v26 = phi  v24,v6:#0\l28   conditional branch(ge) v26,v7:#2\l" [ ]
+   "BB8\n32   v16 = arrayload v2[v26]       \l" [ ]
+   "BB9\n36   v17 = arrayload v3[v26]       \l" [ ]
+   "BB10\n37   v18 = binaryop(mul) v14 , v17 \l38   v19 = binaryop(sub) v16 , v18 \l39   arraystore v2[v26] = v19      \l" [ ]
+   "BB11\n43   v20 = arrayload v2[v26]       \l" [ ]
+   "BB12\n46   v21 = arrayload v2[v26]       \l" [ ]
+   "BB13\n47   v22 = binaryop(mul) v20 , v21 \l48   v23 = binaryop(add) v25 , v22 \l52   v24 = binaryop(add) v26 , v12:#1\l54   goto                          \l" [ ]
+   "BB14\n56   v28 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v25 @76 exception:v27\l" [ ]
+   "BB15\n" [ ]
+   "BB16\n           v32 = phi  v31,v6:#0\l62   conditional branch(ge) v32,v7:#2\l" [ ]
+   "BB17\n66   v29 = arrayload v2[v32]       \l" [ ]
+   "BB18\n68   v30 = binaryop(div) v29 , v28 \l69   arraystore v2[v32] = v30      \l" [ ]
+   "BB19\n72   v31 = binaryop(add) v32 , v12:#1\l74   goto                          \l" [ ]
+   "BB20\n78   v34 = binaryop(mul) v14 , v14 \l79   v35 = binaryop(sub) v33:#1.0 , v34\l81   v36 = compare v35,v5:#0.0 opcode=cmpg\l83   conditional branch(ge) v36,v6:#0\l" [ ]
+   "BB21\n85   return v5:#0.0                \l" [ ]
+   "BB22\n89   v37 = binaryop(mul) v14 , v14 \l90   v38 = binaryop(sub) v33:#1.0 , v37\l91   v40 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v38 @122 exception:v39\l" [ ]
+   "BB23\n92   return v40                    \l" [ ]
+   "BB24 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n" 
+ "BB1\n" -> "BB2\n           v14 = phi  v11,v5:#0.0\l           v15 = phi  v13,v6:#0\l6   conditional branch(ge) v15,v7:#2\l" 
+ "BB2\n           v14 = phi  v11,v5:#0.0\l           v15 = phi  v13,v6:#0\l6   conditional branch(ge) v15,v7:#2\l" -> "BB3\n10   v8 = arrayload v2[v15]        \l" 
+ "BB2\n           v14 = phi  v11,v5:#0.0\l           v15 = phi  v13,v6:#0\l6   conditional branch(ge) v15,v7:#2\l" -> "BB6\n" 
+ "BB3\n10   v8 = arrayload v2[v15]        \l" -> "BB4\n13   v9 = arrayload v3[v15]        \l" 
+ "BB4\n13   v9 = arrayload v3[v15]        \l" -> "BB5\n14   v10 = binaryop(mul) v8 , v9   \l15   v11 = binaryop(add) v14 , v10 \l19   v13 = binaryop(add) v15 , v12:#1\l21   goto                          \l" 
+ "BB5\n14   v10 = binaryop(mul) v8 , v9   \l15   v11 = binaryop(add) v14 , v10 \l19   v13 = binaryop(add) v15 , v12:#1\l21   goto                          \l" -> "BB2\n           v14 = phi  v11,v5:#0.0\l           v15 = phi  v13,v6:#0\l6   conditional branch(ge) v15,v7:#2\l" 
+ "BB6\n" -> "BB7\n           v25 = phi  v23,v5:#0.0\l           v26 = phi  v24,v6:#0\l28   conditional branch(ge) v26,v7:#2\l" 
+ "BB7\n           v25 = phi  v23,v5:#0.0\l           v26 = phi  v24,v6:#0\l28   conditional branch(ge) v26,v7:#2\l" -> "BB8\n32   v16 = arrayload v2[v26]       \l" 
+ "BB7\n           v25 = phi  v23,v5:#0.0\l           v26 = phi  v24,v6:#0\l28   conditional branch(ge) v26,v7:#2\l" -> "BB14\n56   v28 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v25 @76 exception:v27\l" 
+ "BB8\n32   v16 = arrayload v2[v26]       \l" -> "BB9\n36   v17 = arrayload v3[v26]       \l" 
+ "BB9\n36   v17 = arrayload v3[v26]       \l" -> "BB10\n37   v18 = binaryop(mul) v14 , v17 \l38   v19 = binaryop(sub) v16 , v18 \l39   arraystore v2[v26] = v19      \l" 
+ "BB10\n37   v18 = binaryop(mul) v14 , v17 \l38   v19 = binaryop(sub) v16 , v18 \l39   arraystore v2[v26] = v19      \l" -> "BB11\n43   v20 = arrayload v2[v26]       \l" 
+ "BB11\n43   v20 = arrayload v2[v26]       \l" -> "BB12\n46   v21 = arrayload v2[v26]       \l" 
+ "BB12\n46   v21 = arrayload v2[v26]       \l" -> "BB13\n47   v22 = binaryop(mul) v20 , v21 \l48   v23 = binaryop(add) v25 , v22 \l52   v24 = binaryop(add) v26 , v12:#1\l54   goto                          \l" 
+ "BB13\n47   v22 = binaryop(mul) v20 , v21 \l48   v23 = binaryop(add) v25 , v22 \l52   v24 = binaryop(add) v26 , v12:#1\l54   goto                          \l" -> "BB7\n           v25 = phi  v23,v5:#0.0\l           v26 = phi  v24,v6:#0\l28   conditional branch(ge) v26,v7:#2\l" 
+ "BB14\n56   v28 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v25 @76 exception:v27\l" -> "BB15\n" 
+ "BB15\n" -> "BB16\n           v32 = phi  v31,v6:#0\l62   conditional branch(ge) v32,v7:#2\l" 
+ "BB16\n           v32 = phi  v31,v6:#0\l62   conditional branch(ge) v32,v7:#2\l" -> "BB17\n66   v29 = arrayload v2[v32]       \l" 
+ "BB16\n           v32 = phi  v31,v6:#0\l62   conditional branch(ge) v32,v7:#2\l" -> "BB20\n78   v34 = binaryop(mul) v14 , v14 \l79   v35 = binaryop(sub) v33:#1.0 , v34\l81   v36 = compare v35,v5:#0.0 opcode=cmpg\l83   conditional branch(ge) v36,v6:#0\l" 
+ "BB17\n66   v29 = arrayload v2[v32]       \l" -> "BB18\n68   v30 = binaryop(div) v29 , v28 \l69   arraystore v2[v32] = v30      \l" 
+ "BB18\n68   v30 = binaryop(div) v29 , v28 \l69   arraystore v2[v32] = v30      \l" -> "BB19\n72   v31 = binaryop(add) v32 , v12:#1\l74   goto                          \l" 
+ "BB19\n72   v31 = binaryop(add) v32 , v12:#1\l74   goto                          \l" -> "BB16\n           v32 = phi  v31,v6:#0\l62   conditional branch(ge) v32,v7:#2\l" 
+ "BB20\n78   v34 = binaryop(mul) v14 , v14 \l79   v35 = binaryop(sub) v33:#1.0 , v34\l81   v36 = compare v35,v5:#0.0 opcode=cmpg\l83   conditional branch(ge) v36,v6:#0\l" -> "BB21\n85   return v5:#0.0                \l" 
+ "BB20\n78   v34 = binaryop(mul) v14 , v14 \l79   v35 = binaryop(sub) v33:#1.0 , v34\l81   v36 = compare v35,v5:#0.0 opcode=cmpg\l83   conditional branch(ge) v36,v6:#0\l" -> "BB22\n89   v37 = binaryop(mul) v14 , v14 \l90   v38 = binaryop(sub) v33:#1.0 , v37\l91   v40 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v38 @122 exception:v39\l" 
+ "BB21\n85   return v5:#0.0                \l" -> "BB24 (ex)\n\n" 
+ "BB22\n89   v37 = binaryop(mul) v14 , v14 \l90   v38 = binaryop(sub) v33:#1.0 , v37\l91   v40 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v38 @122 exception:v39\l" -> "BB23\n92   return v40                    \l" 
+ "BB23\n92   return v40                    \l" -> "BB24 (ex)\n\n" 
+
+}

@@ -1,0 +1,40 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Vertex.incircle(LVertex;LVertex;LVertex;)Z", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n3  O5_1 = < Application, LVertex, X()D >( O3_1 )\l" [ ]
+   "BB2\n6  O5_2 = < Application, LVertex, Y()D >( O3_1 )\l" [ ]
+   "BB3\n9  O5_3 = < Application, LVertex, Norm()D >( O3_1 )\l" [ ]
+   "BB4\n14  O5_4 = < Application, LVertex, X()D >( O3_1 )\l" [ ]
+   "BB5\n16   v14 = binaryop(sub) v13 , v7            \l19  O5_5 = < Application, LVertex, Y()D >( O3_1 )\l" [ ]
+   "BB6\n21   v17 = binaryop(sub) v16 , v9            \l24  O5_6 = < Application, LVertex, Norm()D >( O3_1 )\l" [ ]
+   "BB7\n29  O5_7 = < Application, LVertex, X()D >( O3_1 )\l" [ ]
+   "BB8\n31   v22 = binaryop(sub) v21 , v7            \l34  O5_8 = < Application, LVertex, Y()D >( O3_1 )\l" [ ]
+   "BB9\n36   v25 = binaryop(sub) v24 , v9            \l39  O5_9 = < Application, LVertex, Norm()D >( O3_1 )\l" [ ]
+   "BB10\n44  O5_10 = < Application, LVertex, X()D >( O3_1 )\l" [ ]
+   "BB11\n46   v30 = binaryop(sub) v29 , v7            \l49  O5_11 = < Application, LVertex, Y()D >( O3_1 )\l" [ ]
+   "BB12\n51   v33 = binaryop(sub) v32 , v9            \l54  O5_12 = < Application, LVertex, Norm()D >( O3_1 )\l" [ ]
+   "BB13\n58   v36 = binaryop(sub) v19 , v11           \l61   v37 = binaryop(mul) v22 , v33           \l64   v38 = binaryop(mul) v25 , v30           \l65   v39 = binaryop(sub) v37 , v38           \l66   v40 = binaryop(mul) v36 , v39           \l71   v41 = binaryop(sub) v27 , v11           \l74   v42 = binaryop(mul) v30 , v17           \l77   v43 = binaryop(mul) v33 , v14           \l78   v44 = binaryop(sub) v42 , v43           \l79   v45 = binaryop(mul) v41 , v44           \l80   v46 = binaryop(add) v40 , v45           \l85   v47 = binaryop(sub) v35 , v11           \l88   v48 = binaryop(mul) v14 , v25           \l91   v49 = binaryop(mul) v17 , v22           \l92   v50 = binaryop(sub) v48 , v49           \l93   v51 = binaryop(mul) v47 , v50           \l94   v52 = binaryop(add) v46 , v51           \l98   v54 = compare v53:#0.0,v52 opcode=cmpg  \l100   conditional branch(ge) v54,v55:#0      \l" [ ]
+   "BB14\n102   goto                                   \l" [ ]
+   "BB15\n" [ ]
+   "BB16\n           v57 = phi  v56:#1,v55:#0\l104  Return O5_12                            \l" [ ]
+   "BB17 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n3  O5_1 = < Application, LVertex, X()D >( O3_1 )\l" 
+ "BB1\n3  O5_1 = < Application, LVertex, X()D >( O3_1 )\l" -> "BB2\n6  O5_2 = < Application, LVertex, Y()D >( O3_1 )\l" 
+ "BB2\n6  O5_2 = < Application, LVertex, Y()D >( O3_1 )\l" -> "BB3\n9  O5_3 = < Application, LVertex, Norm()D >( O3_1 )\l" 
+ "BB3\n9  O5_3 = < Application, LVertex, Norm()D >( O3_1 )\l" -> "BB4\n14  O5_4 = < Application, LVertex, X()D >( O3_1 )\l" 
+ "BB4\n14  O5_4 = < Application, LVertex, X()D >( O3_1 )\l" -> "BB5\n16   v14 = binaryop(sub) v13 , v7            \l19  O5_5 = < Application, LVertex, Y()D >( O3_1 )\l" 
+ "BB5\n16   v14 = binaryop(sub) v13 , v7            \l19  O5_5 = < Application, LVertex, Y()D >( O3_1 )\l" -> "BB6\n21   v17 = binaryop(sub) v16 , v9            \l24  O5_6 = < Application, LVertex, Norm()D >( O3_1 )\l" 
+ "BB6\n21   v17 = binaryop(sub) v16 , v9            \l24  O5_6 = < Application, LVertex, Norm()D >( O3_1 )\l" -> "BB7\n29  O5_7 = < Application, LVertex, X()D >( O3_1 )\l" 
+ "BB7\n29  O5_7 = < Application, LVertex, X()D >( O3_1 )\l" -> "BB8\n31   v22 = binaryop(sub) v21 , v7            \l34  O5_8 = < Application, LVertex, Y()D >( O3_1 )\l" 
+ "BB8\n31   v22 = binaryop(sub) v21 , v7            \l34  O5_8 = < Application, LVertex, Y()D >( O3_1 )\l" -> "BB9\n36   v25 = binaryop(sub) v24 , v9            \l39  O5_9 = < Application, LVertex, Norm()D >( O3_1 )\l" 
+ "BB9\n36   v25 = binaryop(sub) v24 , v9            \l39  O5_9 = < Application, LVertex, Norm()D >( O3_1 )\l" -> "BB10\n44  O5_10 = < Application, LVertex, X()D >( O3_1 )\l" 
+ "BB10\n44  O5_10 = < Application, LVertex, X()D >( O3_1 )\l" -> "BB11\n46   v30 = binaryop(sub) v29 , v7            \l49  O5_11 = < Application, LVertex, Y()D >( O3_1 )\l" 
+ "BB11\n46   v30 = binaryop(sub) v29 , v7            \l49  O5_11 = < Application, LVertex, Y()D >( O3_1 )\l" -> "BB12\n51   v33 = binaryop(sub) v32 , v9            \l54  O5_12 = < Application, LVertex, Norm()D >( O3_1 )\l" 
+ "BB12\n51   v33 = binaryop(sub) v32 , v9            \l54  O5_12 = < Application, LVertex, Norm()D >( O3_1 )\l" -> "BB13\n58   v36 = binaryop(sub) v19 , v11           \l61   v37 = binaryop(mul) v22 , v33           \l64   v38 = binaryop(mul) v25 , v30           \l65   v39 = binaryop(sub) v37 , v38           \l66   v40 = binaryop(mul) v36 , v39           \l71   v41 = binaryop(sub) v27 , v11           \l74   v42 = binaryop(mul) v30 , v17           \l77   v43 = binaryop(mul) v33 , v14           \l78   v44 = binaryop(sub) v42 , v43           \l79   v45 = binaryop(mul) v41 , v44           \l80   v46 = binaryop(add) v40 , v45           \l85   v47 = binaryop(sub) v35 , v11           \l88   v48 = binaryop(mul) v14 , v25           \l91   v49 = binaryop(mul) v17 , v22           \l92   v50 = binaryop(sub) v48 , v49           \l93   v51 = binaryop(mul) v47 , v50           \l94   v52 = binaryop(add) v46 , v51           \l98   v54 = compare v53:#0.0,v52 opcode=cmpg  \l100   conditional branch(ge) v54,v55:#0      \l" 
+ "BB13\n58   v36 = binaryop(sub) v19 , v11           \l61   v37 = binaryop(mul) v22 , v33           \l64   v38 = binaryop(mul) v25 , v30           \l65   v39 = binaryop(sub) v37 , v38           \l66   v40 = binaryop(mul) v36 , v39           \l71   v41 = binaryop(sub) v27 , v11           \l74   v42 = binaryop(mul) v30 , v17           \l77   v43 = binaryop(mul) v33 , v14           \l78   v44 = binaryop(sub) v42 , v43           \l79   v45 = binaryop(mul) v41 , v44           \l80   v46 = binaryop(add) v40 , v45           \l85   v47 = binaryop(sub) v35 , v11           \l88   v48 = binaryop(mul) v14 , v25           \l91   v49 = binaryop(mul) v17 , v22           \l92   v50 = binaryop(sub) v48 , v49           \l93   v51 = binaryop(mul) v47 , v50           \l94   v52 = binaryop(add) v46 , v51           \l98   v54 = compare v53:#0.0,v52 opcode=cmpg  \l100   conditional branch(ge) v54,v55:#0      \l" -> "BB14\n102   goto                                   \l" 
+ "BB13\n58   v36 = binaryop(sub) v19 , v11           \l61   v37 = binaryop(mul) v22 , v33           \l64   v38 = binaryop(mul) v25 , v30           \l65   v39 = binaryop(sub) v37 , v38           \l66   v40 = binaryop(mul) v36 , v39           \l71   v41 = binaryop(sub) v27 , v11           \l74   v42 = binaryop(mul) v30 , v17           \l77   v43 = binaryop(mul) v33 , v14           \l78   v44 = binaryop(sub) v42 , v43           \l79   v45 = binaryop(mul) v41 , v44           \l80   v46 = binaryop(add) v40 , v45           \l85   v47 = binaryop(sub) v35 , v11           \l88   v48 = binaryop(mul) v14 , v25           \l91   v49 = binaryop(mul) v17 , v22           \l92   v50 = binaryop(sub) v48 , v49           \l93   v51 = binaryop(mul) v47 , v50           \l94   v52 = binaryop(add) v46 , v51           \l98   v54 = compare v53:#0.0,v52 opcode=cmpg  \l100   conditional branch(ge) v54,v55:#0      \l" -> "BB15\n" 
+ "BB14\n102   goto                                   \l" -> "BB16\n           v57 = phi  v56:#1,v55:#0\l104  Return O5_12                            \l" 
+ "BB15\n" -> "BB16\n           v57 = phi  v56:#1,v55:#0\l104  Return O5_12                            \l" 
+ "BB16\n           v57 = phi  v56:#1,v55:#0\l104  Return O5_12                            \l" -> "BB17 (ex)\n\n" 
+
+}

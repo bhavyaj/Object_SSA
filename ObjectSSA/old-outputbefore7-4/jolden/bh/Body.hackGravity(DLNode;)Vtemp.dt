@@ -1,0 +1,31 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v5 = getfield < Application, LBody, pos, <Application,LMathVector> > v1\l" [ ]
+   "BB2\n2   v7 = invokevirtual < Application, LMathVector, clone()Ljava/lang/Object; > v5 @4 exception:v6\l" [ ]
+   "BB3\n3   v8 = checkcast <Application,LMathVector>v7\l" [ ]
+   "BB4\n5   v9 = new <Application,LNode$HG>@12\l" [ ]
+   "BB5\n10   v10 = getfield < Application, LBody, pos, <Application,LMathVector> > v1\l" [ ]
+   "BB6\n11   invokespecial < Application, LNode$HG, <init>(LNode;LBody;LMathVector;)V > v9,v1,v1,v10 @22 exception:v11\l" [ ]
+   "BB7\n16   v12 = binaryop(mul) v2 , v2   \l18   v14 = invokevirtual < Application, LNode, walkSubTree(DLNode$HG;)LNode$HG; > v3,v12,v9 @33 exception:v13\l" [ ]
+   "BB8\n22   v15 = getfield < Application, LNode$HG, phi0, <Primordial,D> > v14\l" [ ]
+   "BB9\n23   putfield v1 = v15 < Application, LBody, phi, <Primordial,D> >\l" [ ]
+   "BB10\n26   v16 = getfield < Application, LNode$HG, acc0, <Application,LMathVector> > v14\l" [ ]
+   "BB11\n27   putfield v1 = v16 < Application, LBody, newAcc, <Application,LMathVector> >\l" [ ]
+   "BB12\n28   return                        \l" [ ]
+   "BB13 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v5 = getfield < Application, LBody, pos, <Application,LMathVector> > v1\l" 
+ "BB1\n1   v5 = getfield < Application, LBody, pos, <Application,LMathVector> > v1\l" -> "BB2\n2   v7 = invokevirtual < Application, LMathVector, clone()Ljava/lang/Object; > v5 @4 exception:v6\l" 
+ "BB2\n2   v7 = invokevirtual < Application, LMathVector, clone()Ljava/lang/Object; > v5 @4 exception:v6\l" -> "BB3\n3   v8 = checkcast <Application,LMathVector>v7\l" 
+ "BB3\n3   v8 = checkcast <Application,LMathVector>v7\l" -> "BB4\n5   v9 = new <Application,LNode$HG>@12\l" 
+ "BB4\n5   v9 = new <Application,LNode$HG>@12\l" -> "BB5\n10   v10 = getfield < Application, LBody, pos, <Application,LMathVector> > v1\l" 
+ "BB5\n10   v10 = getfield < Application, LBody, pos, <Application,LMathVector> > v1\l" -> "BB6\n11   invokespecial < Application, LNode$HG, <init>(LNode;LBody;LMathVector;)V > v9,v1,v1,v10 @22 exception:v11\l" 
+ "BB6\n11   invokespecial < Application, LNode$HG, <init>(LNode;LBody;LMathVector;)V > v9,v1,v1,v10 @22 exception:v11\l" -> "BB7\n16   v12 = binaryop(mul) v2 , v2   \l18   v14 = invokevirtual < Application, LNode, walkSubTree(DLNode$HG;)LNode$HG; > v3,v12,v9 @33 exception:v13\l" 
+ "BB7\n16   v12 = binaryop(mul) v2 , v2   \l18   v14 = invokevirtual < Application, LNode, walkSubTree(DLNode$HG;)LNode$HG; > v3,v12,v9 @33 exception:v13\l" -> "BB8\n22   v15 = getfield < Application, LNode$HG, phi0, <Primordial,D> > v14\l" 
+ "BB8\n22   v15 = getfield < Application, LNode$HG, phi0, <Primordial,D> > v14\l" -> "BB9\n23   putfield v1 = v15 < Application, LBody, phi, <Primordial,D> >\l" 
+ "BB9\n23   putfield v1 = v15 < Application, LBody, phi, <Primordial,D> >\l" -> "BB10\n26   v16 = getfield < Application, LNode$HG, acc0, <Application,LMathVector> > v14\l" 
+ "BB10\n26   v16 = getfield < Application, LNode$HG, acc0, <Application,LMathVector> > v14\l" -> "BB11\n27   putfield v1 = v16 < Application, LBody, newAcc, <Application,LMathVector> >\l" 
+ "BB11\n27   putfield v1 = v16 < Application, LBody, newAcc, <Application,LMathVector> >\l" -> "BB12\n28   return                        \l" 
+ "BB12\n28   return                        \l" -> "BB13 (ex)\n\n" 
+
+}

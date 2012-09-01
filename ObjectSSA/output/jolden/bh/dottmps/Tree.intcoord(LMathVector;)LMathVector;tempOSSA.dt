@@ -1,0 +1,79 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Tree.intcoord(LMathVector;)LMathVector;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0  Create O3_1                               \l" [ ]
+   "BB2\n2  < Application, LMathVector, <init>()V >( O3_1 )\l" [ ]
+   "BB3\n6  O4_1 = < Application, LMathVector, value(I)D >( O2_1, V6 )\l" [ ]
+   "BB4\n8  GetOSSAInstruction:	O5_1= O1_1< rmin>     \l" [ ]
+   "BB5\n10  O4_2 = < Application, LMathVector, value(I)D >( O5_1, V6 )\l" [ ]
+   "BB6\n11   v12 = binaryop(sub) v8 , v11            \l13  GetOSSAInstruction:	13= O1_1< rsize>     \l" [ ]
+   "BB7\n14   v14 = binaryop(div) v12 , v13           \l18   v16 = compare v15:#0.0,v14 opcode=cmpg  \l20   conditional branch(gt) v16,v6:#0        \l" [ ]
+   "BB8\n23   v18 = compare v14,v17:#1.0 opcode=cmpg  \l25   conditional branch(ge) v18,v6:#0        \l" [ ]
+   "BB9\n30   v21 = binaryop(mul) v20:#1.073741824E9 , v14\l31  O4_3 = < Application, Ljava/lang/Math, floor(D)D >( V21 )\l" [ ]
+   "BB10\n32  < Application, LMathVector, value(ID)V >( O3_1, V6, V23 )\l" [ ]
+   "BB11\n33   goto                                    \l" [ ]
+   "BB12\n35  Return O4_2                              \l" [ ]
+   "BB13\n38  O4_4 = < Application, LMathVector, value(I)D >( O2_1, V25 )\l" [ ]
+   "BB14\n40  GetOSSAInstruction:	O5_1= O1_1< rmin>    \l" [ ]
+   "BB15\n42  O4_5 = < Application, LMathVector, value(I)D >( O5_1, V25 )\l" [ ]
+   "BB16\n43   v31 = binaryop(sub) v27 , v30           \l45  GetOSSAInstruction:	32= O1_1< rsize>     \l" [ ]
+   "BB17\n46   v33 = binaryop(div) v31 , v32           \l50   v34 = compare v15:#0.0,v33 opcode=cmpg  \l52   conditional branch(gt) v34,v6:#0        \l" [ ]
+   "BB18\n55   v35 = compare v33,v17:#1.0 opcode=cmpg  \l57   conditional branch(ge) v35,v6:#0        \l" [ ]
+   "BB19\n62   v36 = binaryop(mul) v20:#1.073741824E9 , v33\l63  O4_6 = < Application, Ljava/lang/Math, floor(D)D >( V36 )\l" [ ]
+   "BB20\n64  < Application, LMathVector, value(ID)V >( O3_1, V25, V38 )\l" [ ]
+   "BB21\n65   goto                                    \l" [ ]
+   "BB22\n67  Return O4_5                              \l" [ ]
+   "BB23\n70  O4_7 = < Application, LMathVector, value(I)D >( O2_1, V40 )\l" [ ]
+   "BB24\n72  GetOSSAInstruction:	O5_1= O1_1< rmin>    \l" [ ]
+   "BB25\n74  O4_8 = < Application, LMathVector, value(I)D >( O5_1, V40 )\l" [ ]
+   "BB26\n75   v46 = binaryop(sub) v42 , v45           \l77  GetOSSAInstruction:	47= O1_1< rsize>     \l" [ ]
+   "BB27\n78   v48 = binaryop(div) v46 , v47           \l82   v49 = compare v15:#0.0,v48 opcode=cmpg  \l84   conditional branch(gt) v49,v6:#0        \l" [ ]
+   "BB28\n87   v50 = compare v48,v17:#1.0 opcode=cmpg  \l89   conditional branch(ge) v50,v6:#0        \l" [ ]
+   "BB29\n94   v51 = binaryop(mul) v20:#1.073741824E9 , v48\l95  O4_9 = < Application, Ljava/lang/Math, floor(D)D >( V51 )\l" [ ]
+   "BB30\n96  < Application, LMathVector, value(ID)V >( O3_1, V40, V53 )\l" [ ]
+   "BB31\n97   goto                                    \l" [ ]
+   "BB32\n99  Return O4_8                              \l" [ ]
+   "BB33\n101  Return O3_1                             \l" [ ]
+   "BB34 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0  Create O3_1                               \l" 
+ "BB1\n0  Create O3_1                               \l" -> "BB2\n2  < Application, LMathVector, <init>()V >( O3_1 )\l" 
+ "BB2\n2  < Application, LMathVector, <init>()V >( O3_1 )\l" -> "BB3\n6  O4_1 = < Application, LMathVector, value(I)D >( O2_1, V6 )\l" 
+ "BB3\n6  O4_1 = < Application, LMathVector, value(I)D >( O2_1, V6 )\l" -> "BB4\n8  GetOSSAInstruction:	O5_1= O1_1< rmin>     \l" 
+ "BB4\n8  GetOSSAInstruction:	O5_1= O1_1< rmin>     \l" -> "BB5\n10  O4_2 = < Application, LMathVector, value(I)D >( O5_1, V6 )\l" 
+ "BB5\n10  O4_2 = < Application, LMathVector, value(I)D >( O5_1, V6 )\l" -> "BB6\n11   v12 = binaryop(sub) v8 , v11            \l13  GetOSSAInstruction:	13= O1_1< rsize>     \l" 
+ "BB6\n11   v12 = binaryop(sub) v8 , v11            \l13  GetOSSAInstruction:	13= O1_1< rsize>     \l" -> "BB7\n14   v14 = binaryop(div) v12 , v13           \l18   v16 = compare v15:#0.0,v14 opcode=cmpg  \l20   conditional branch(gt) v16,v6:#0        \l" 
+ "BB7\n14   v14 = binaryop(div) v12 , v13           \l18   v16 = compare v15:#0.0,v14 opcode=cmpg  \l20   conditional branch(gt) v16,v6:#0        \l" -> "BB8\n23   v18 = compare v14,v17:#1.0 opcode=cmpg  \l25   conditional branch(ge) v18,v6:#0        \l" 
+ "BB7\n14   v14 = binaryop(div) v12 , v13           \l18   v16 = compare v15:#0.0,v14 opcode=cmpg  \l20   conditional branch(gt) v16,v6:#0        \l" -> "BB12\n35  Return O4_2                              \l" 
+ "BB8\n23   v18 = compare v14,v17:#1.0 opcode=cmpg  \l25   conditional branch(ge) v18,v6:#0        \l" -> "BB9\n30   v21 = binaryop(mul) v20:#1.073741824E9 , v14\l31  O4_3 = < Application, Ljava/lang/Math, floor(D)D >( V21 )\l" 
+ "BB8\n23   v18 = compare v14,v17:#1.0 opcode=cmpg  \l25   conditional branch(ge) v18,v6:#0        \l" -> "BB12\n35  Return O4_2                              \l" 
+ "BB9\n30   v21 = binaryop(mul) v20:#1.073741824E9 , v14\l31  O4_3 = < Application, Ljava/lang/Math, floor(D)D >( V21 )\l" -> "BB10\n32  < Application, LMathVector, value(ID)V >( O3_1, V6, V23 )\l" 
+ "BB10\n32  < Application, LMathVector, value(ID)V >( O3_1, V6, V23 )\l" -> "BB11\n33   goto                                    \l" 
+ "BB11\n33   goto                                    \l" -> "BB13\n38  O4_4 = < Application, LMathVector, value(I)D >( O2_1, V25 )\l" 
+ "BB12\n35  Return O4_2                              \l" -> "BB34 (ex)\n\n" 
+ "BB13\n38  O4_4 = < Application, LMathVector, value(I)D >( O2_1, V25 )\l" -> "BB14\n40  GetOSSAInstruction:	O5_1= O1_1< rmin>    \l" 
+ "BB14\n40  GetOSSAInstruction:	O5_1= O1_1< rmin>    \l" -> "BB15\n42  O4_5 = < Application, LMathVector, value(I)D >( O5_1, V25 )\l" 
+ "BB15\n42  O4_5 = < Application, LMathVector, value(I)D >( O5_1, V25 )\l" -> "BB16\n43   v31 = binaryop(sub) v27 , v30           \l45  GetOSSAInstruction:	32= O1_1< rsize>     \l" 
+ "BB16\n43   v31 = binaryop(sub) v27 , v30           \l45  GetOSSAInstruction:	32= O1_1< rsize>     \l" -> "BB17\n46   v33 = binaryop(div) v31 , v32           \l50   v34 = compare v15:#0.0,v33 opcode=cmpg  \l52   conditional branch(gt) v34,v6:#0        \l" 
+ "BB17\n46   v33 = binaryop(div) v31 , v32           \l50   v34 = compare v15:#0.0,v33 opcode=cmpg  \l52   conditional branch(gt) v34,v6:#0        \l" -> "BB18\n55   v35 = compare v33,v17:#1.0 opcode=cmpg  \l57   conditional branch(ge) v35,v6:#0        \l" 
+ "BB17\n46   v33 = binaryop(div) v31 , v32           \l50   v34 = compare v15:#0.0,v33 opcode=cmpg  \l52   conditional branch(gt) v34,v6:#0        \l" -> "BB22\n67  Return O4_5                              \l" 
+ "BB18\n55   v35 = compare v33,v17:#1.0 opcode=cmpg  \l57   conditional branch(ge) v35,v6:#0        \l" -> "BB19\n62   v36 = binaryop(mul) v20:#1.073741824E9 , v33\l63  O4_6 = < Application, Ljava/lang/Math, floor(D)D >( V36 )\l" 
+ "BB18\n55   v35 = compare v33,v17:#1.0 opcode=cmpg  \l57   conditional branch(ge) v35,v6:#0        \l" -> "BB22\n67  Return O4_5                              \l" 
+ "BB19\n62   v36 = binaryop(mul) v20:#1.073741824E9 , v33\l63  O4_6 = < Application, Ljava/lang/Math, floor(D)D >( V36 )\l" -> "BB20\n64  < Application, LMathVector, value(ID)V >( O3_1, V25, V38 )\l" 
+ "BB20\n64  < Application, LMathVector, value(ID)V >( O3_1, V25, V38 )\l" -> "BB21\n65   goto                                    \l" 
+ "BB21\n65   goto                                    \l" -> "BB23\n70  O4_7 = < Application, LMathVector, value(I)D >( O2_1, V40 )\l" 
+ "BB22\n67  Return O4_5                              \l" -> "BB34 (ex)\n\n" 
+ "BB23\n70  O4_7 = < Application, LMathVector, value(I)D >( O2_1, V40 )\l" -> "BB24\n72  GetOSSAInstruction:	O5_1= O1_1< rmin>    \l" 
+ "BB24\n72  GetOSSAInstruction:	O5_1= O1_1< rmin>    \l" -> "BB25\n74  O4_8 = < Application, LMathVector, value(I)D >( O5_1, V40 )\l" 
+ "BB25\n74  O4_8 = < Application, LMathVector, value(I)D >( O5_1, V40 )\l" -> "BB26\n75   v46 = binaryop(sub) v42 , v45           \l77  GetOSSAInstruction:	47= O1_1< rsize>     \l" 
+ "BB26\n75   v46 = binaryop(sub) v42 , v45           \l77  GetOSSAInstruction:	47= O1_1< rsize>     \l" -> "BB27\n78   v48 = binaryop(div) v46 , v47           \l82   v49 = compare v15:#0.0,v48 opcode=cmpg  \l84   conditional branch(gt) v49,v6:#0        \l" 
+ "BB27\n78   v48 = binaryop(div) v46 , v47           \l82   v49 = compare v15:#0.0,v48 opcode=cmpg  \l84   conditional branch(gt) v49,v6:#0        \l" -> "BB28\n87   v50 = compare v48,v17:#1.0 opcode=cmpg  \l89   conditional branch(ge) v50,v6:#0        \l" 
+ "BB27\n78   v48 = binaryop(div) v46 , v47           \l82   v49 = compare v15:#0.0,v48 opcode=cmpg  \l84   conditional branch(gt) v49,v6:#0        \l" -> "BB32\n99  Return O4_8                              \l" 
+ "BB28\n87   v50 = compare v48,v17:#1.0 opcode=cmpg  \l89   conditional branch(ge) v50,v6:#0        \l" -> "BB29\n94   v51 = binaryop(mul) v20:#1.073741824E9 , v48\l95  O4_9 = < Application, Ljava/lang/Math, floor(D)D >( V51 )\l" 
+ "BB28\n87   v50 = compare v48,v17:#1.0 opcode=cmpg  \l89   conditional branch(ge) v50,v6:#0        \l" -> "BB32\n99  Return O4_8                              \l" 
+ "BB29\n94   v51 = binaryop(mul) v20:#1.073741824E9 , v48\l95  O4_9 = < Application, Ljava/lang/Math, floor(D)D >( V51 )\l" -> "BB30\n96  < Application, LMathVector, value(ID)V >( O3_1, V40, V53 )\l" 
+ "BB30\n96  < Application, LMathVector, value(ID)V >( O3_1, V40, V53 )\l" -> "BB31\n97   goto                                    \l" 
+ "BB31\n97   goto                                    \l" -> "BB33\n101  Return O3_1                             \l" 
+ "BB32\n99  Return O4_8                              \l" -> "BB34 (ex)\n\n" 
+ "BB33\n101  Return O3_1                             \l" -> "BB34 (ex)\n\n" 
+
+}

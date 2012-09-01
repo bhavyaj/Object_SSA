@@ -1,0 +1,43 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v4\l" [ ]
+   "BB2\n6   v6 = binaryop(sub) v2 , v5:#1  \l7   v7 = binaryop(SHL) v5:#1 , v6  \l8   putfield v1 = v7 < Application, LHospital, personnel, <Primordial,I> >\l" [ ]
+   "BB3\n11   v8 = getfield < Application, LHospital, personnel, <Primordial,I> > v1\l" [ ]
+   "BB4\n12   putfield v1 = v8 < Application, LHospital, freePersonnel, <Primordial,I> >\l" [ ]
+   "BB5\n15   putfield v1 = v9:#0 < Application, LHospital, numWaitingPatients, <Primordial,I> >\l" [ ]
+   "BB6\n17   v10 = new <Application,LList>@27\l" [ ]
+   "BB7\n19   invokespecial < Application, LList, <init>()V > v10 @31 exception:v11\l" [ ]
+   "BB8\n20   putfield v1 = v10 < Application, LHospital, waiting, <Application,LList> >\l" [ ]
+   "BB9\n22   v12 = new <Application,LList>@38\l" [ ]
+   "BB10\n24   invokespecial < Application, LList, <init>()V > v12 @42 exception:v13\l" [ ]
+   "BB11\n25   putfield v1 = v12 < Application, LHospital, assess, <Application,LList> >\l" [ ]
+   "BB12\n27   v14 = new <Application,LList>@49\l" [ ]
+   "BB13\n29   invokespecial < Application, LList, <init>()V > v14 @53 exception:v15\l" [ ]
+   "BB14\n30   putfield v1 = v14 < Application, LHospital, inside, <Application,LList> >\l" [ ]
+   "BB15\n32   v16 = new <Application,LList>@60\l" [ ]
+   "BB16\n34   invokespecial < Application, LList, <init>()V > v16 @64 exception:v17\l" [ ]
+   "BB17\n35   putfield v1 = v16 < Application, LHospital, up, <Application,LList> >\l" [ ]
+   "BB18\n36   return                        \l" [ ]
+   "BB19 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v4\l" 
+ "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v4\l" -> "BB2\n6   v6 = binaryop(sub) v2 , v5:#1  \l7   v7 = binaryop(SHL) v5:#1 , v6  \l8   putfield v1 = v7 < Application, LHospital, personnel, <Primordial,I> >\l" 
+ "BB2\n6   v6 = binaryop(sub) v2 , v5:#1  \l7   v7 = binaryop(SHL) v5:#1 , v6  \l8   putfield v1 = v7 < Application, LHospital, personnel, <Primordial,I> >\l" -> "BB3\n11   v8 = getfield < Application, LHospital, personnel, <Primordial,I> > v1\l" 
+ "BB3\n11   v8 = getfield < Application, LHospital, personnel, <Primordial,I> > v1\l" -> "BB4\n12   putfield v1 = v8 < Application, LHospital, freePersonnel, <Primordial,I> >\l" 
+ "BB4\n12   putfield v1 = v8 < Application, LHospital, freePersonnel, <Primordial,I> >\l" -> "BB5\n15   putfield v1 = v9:#0 < Application, LHospital, numWaitingPatients, <Primordial,I> >\l" 
+ "BB5\n15   putfield v1 = v9:#0 < Application, LHospital, numWaitingPatients, <Primordial,I> >\l" -> "BB6\n17   v10 = new <Application,LList>@27\l" 
+ "BB6\n17   v10 = new <Application,LList>@27\l" -> "BB7\n19   invokespecial < Application, LList, <init>()V > v10 @31 exception:v11\l" 
+ "BB7\n19   invokespecial < Application, LList, <init>()V > v10 @31 exception:v11\l" -> "BB8\n20   putfield v1 = v10 < Application, LHospital, waiting, <Application,LList> >\l" 
+ "BB8\n20   putfield v1 = v10 < Application, LHospital, waiting, <Application,LList> >\l" -> "BB9\n22   v12 = new <Application,LList>@38\l" 
+ "BB9\n22   v12 = new <Application,LList>@38\l" -> "BB10\n24   invokespecial < Application, LList, <init>()V > v12 @42 exception:v13\l" 
+ "BB10\n24   invokespecial < Application, LList, <init>()V > v12 @42 exception:v13\l" -> "BB11\n25   putfield v1 = v12 < Application, LHospital, assess, <Application,LList> >\l" 
+ "BB11\n25   putfield v1 = v12 < Application, LHospital, assess, <Application,LList> >\l" -> "BB12\n27   v14 = new <Application,LList>@49\l" 
+ "BB12\n27   v14 = new <Application,LList>@49\l" -> "BB13\n29   invokespecial < Application, LList, <init>()V > v14 @53 exception:v15\l" 
+ "BB13\n29   invokespecial < Application, LList, <init>()V > v14 @53 exception:v15\l" -> "BB14\n30   putfield v1 = v14 < Application, LHospital, inside, <Application,LList> >\l" 
+ "BB14\n30   putfield v1 = v14 < Application, LHospital, inside, <Application,LList> >\l" -> "BB15\n32   v16 = new <Application,LList>@60\l" 
+ "BB15\n32   v16 = new <Application,LList>@60\l" -> "BB16\n34   invokespecial < Application, LList, <init>()V > v16 @64 exception:v17\l" 
+ "BB16\n34   invokespecial < Application, LList, <init>()V > v16 @64 exception:v17\l" -> "BB17\n35   putfield v1 = v16 < Application, LHospital, up, <Application,LList> >\l" 
+ "BB17\n35   putfield v1 = v16 < Application, LHospital, up, <Application,LList> >\l" -> "BB18\n36   return                        \l" 
+ "BB18\n36   return                        \l" -> "BB19 (ex)\n\n" 
+
+}

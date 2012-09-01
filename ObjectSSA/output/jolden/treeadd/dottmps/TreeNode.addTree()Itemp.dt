@@ -1,0 +1,33 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v3 = getfield < Application, LTreeNode, value, <Primordial,I> > v1\l" [ ]
+   "BB2\n4   v4 = getfield < Application, LTreeNode, left, <Application,LTreeNode> > v1\l" [ ]
+   "BB3\n6   conditional branch(eq) v4,v5:#null\l" [ ]
+   "BB4\n9   v6 = getfield < Application, LTreeNode, left, <Application,LTreeNode> > v1\l" [ ]
+   "BB5\n10   v8 = invokevirtual < Application, LTreeNode, addTree()I > v6 @17 exception:v7\l" [ ]
+   "BB6\n11   v9 = binaryop(add) v3 , v8    \l" [ ]
+   "BB7\n           v10 = phi  v3,v9\l14   v11 = getfield < Application, LTreeNode, right, <Application,LTreeNode> > v1\l" [ ]
+   "BB8\n16   conditional branch(eq) v11,v5:#null\l" [ ]
+   "BB9\n19   v12 = getfield < Application, LTreeNode, right, <Application,LTreeNode> > v1\l" [ ]
+   "BB10\n20   v14 = invokevirtual < Application, LTreeNode, addTree()I > v12 @34 exception:v13\l" [ ]
+   "BB11\n21   v15 = binaryop(add) v10 , v14 \l" [ ]
+   "BB12\n           v16 = phi  v10,v15\l24   return v16                    \l" [ ]
+   "BB13 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v3 = getfield < Application, LTreeNode, value, <Primordial,I> > v1\l" 
+ "BB1\n1   v3 = getfield < Application, LTreeNode, value, <Primordial,I> > v1\l" -> "BB2\n4   v4 = getfield < Application, LTreeNode, left, <Application,LTreeNode> > v1\l" 
+ "BB2\n4   v4 = getfield < Application, LTreeNode, left, <Application,LTreeNode> > v1\l" -> "BB3\n6   conditional branch(eq) v4,v5:#null\l" 
+ "BB3\n6   conditional branch(eq) v4,v5:#null\l" -> "BB4\n9   v6 = getfield < Application, LTreeNode, left, <Application,LTreeNode> > v1\l" 
+ "BB3\n6   conditional branch(eq) v4,v5:#null\l" -> "BB7\n           v10 = phi  v3,v9\l14   v11 = getfield < Application, LTreeNode, right, <Application,LTreeNode> > v1\l" 
+ "BB4\n9   v6 = getfield < Application, LTreeNode, left, <Application,LTreeNode> > v1\l" -> "BB5\n10   v8 = invokevirtual < Application, LTreeNode, addTree()I > v6 @17 exception:v7\l" 
+ "BB5\n10   v8 = invokevirtual < Application, LTreeNode, addTree()I > v6 @17 exception:v7\l" -> "BB6\n11   v9 = binaryop(add) v3 , v8    \l" 
+ "BB6\n11   v9 = binaryop(add) v3 , v8    \l" -> "BB7\n           v10 = phi  v3,v9\l14   v11 = getfield < Application, LTreeNode, right, <Application,LTreeNode> > v1\l" 
+ "BB7\n           v10 = phi  v3,v9\l14   v11 = getfield < Application, LTreeNode, right, <Application,LTreeNode> > v1\l" -> "BB8\n16   conditional branch(eq) v11,v5:#null\l" 
+ "BB8\n16   conditional branch(eq) v11,v5:#null\l" -> "BB9\n19   v12 = getfield < Application, LTreeNode, right, <Application,LTreeNode> > v1\l" 
+ "BB8\n16   conditional branch(eq) v11,v5:#null\l" -> "BB12\n           v16 = phi  v10,v15\l24   return v16                    \l" 
+ "BB9\n19   v12 = getfield < Application, LTreeNode, right, <Application,LTreeNode> > v1\l" -> "BB10\n20   v14 = invokevirtual < Application, LTreeNode, addTree()I > v12 @34 exception:v13\l" 
+ "BB10\n20   v14 = invokevirtual < Application, LTreeNode, addTree()I > v12 @34 exception:v13\l" -> "BB11\n21   v15 = binaryop(add) v10 , v14 \l" 
+ "BB11\n21   v15 = binaryop(add) v10 , v14 \l" -> "BB12\n           v16 = phi  v10,v15\l24   return v16                    \l" 
+ "BB12\n           v16 = phi  v10,v15\l24   return v16                    \l" -> "BB13 (ex)\n\n" 
+
+}

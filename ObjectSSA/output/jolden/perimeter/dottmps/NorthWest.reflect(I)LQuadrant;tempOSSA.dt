@@ -1,0 +1,17 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for NorthWest.reflect(I)LQuadrant;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2   conditional branch(eq) v2,v4:#3          \l" [ ]
+   "BB2\n5   conditional branch(ne) v2,v5:#1          \l" [ ]
+   "BB3\n6  nonreference field get instrctn: 7 = getstatic < Application, LNorthWest, cNorthEast, <Application,LQuadrant> >\l7  Return O2_1                               \l" [ ]
+   "BB4\n8  nonreference field get instrctn: 6 = getstatic < Application, LNorthWest, cSouthWest, <Application,LQuadrant> >\l9  Return O3_1                               \l" [ ]
+   "BB5 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2   conditional branch(eq) v2,v4:#3          \l" 
+ "BB1\n2   conditional branch(eq) v2,v4:#3          \l" -> "BB2\n5   conditional branch(ne) v2,v5:#1          \l" 
+ "BB1\n2   conditional branch(eq) v2,v4:#3          \l" -> "BB3\n6  nonreference field get instrctn: 7 = getstatic < Application, LNorthWest, cNorthEast, <Application,LQuadrant> >\l7  Return O2_1                               \l" 
+ "BB2\n5   conditional branch(ne) v2,v5:#1          \l" -> "BB3\n6  nonreference field get instrctn: 7 = getstatic < Application, LNorthWest, cNorthEast, <Application,LQuadrant> >\l7  Return O2_1                               \l" 
+ "BB2\n5   conditional branch(ne) v2,v5:#1          \l" -> "BB4\n8  nonreference field get instrctn: 6 = getstatic < Application, LNorthWest, cSouthWest, <Application,LQuadrant> >\l9  Return O3_1                               \l" 
+ "BB3\n6  nonreference field get instrctn: 7 = getstatic < Application, LNorthWest, cNorthEast, <Application,LQuadrant> >\l7  Return O2_1                               \l" -> "BB5 (ex)\n\n" 
+ "BB4\n8  nonreference field get instrctn: 6 = getstatic < Application, LNorthWest, cSouthWest, <Application,LQuadrant> >\l9  Return O3_1                               \l" -> "BB5 (ex)\n\n" 
+
+}

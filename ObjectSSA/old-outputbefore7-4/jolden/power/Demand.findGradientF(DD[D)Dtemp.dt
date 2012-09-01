@@ -1,0 +1,41 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n5   v8 = getfield < Application, LDemand, P, <Primordial,D> > v1\l" [ ]
+   "BB2\n6   v9 = binaryop(add) v7:#1.0 , v8\l7   v10 = binaryop(div) v7:#1.0 , v9\l9   v11 = binaryop(sub) v10 , v2   \l10   arraystore v4[v6:#0] = v11    \l" [ ]
+   "BB3\n16   v13 = getfield < Application, LDemand, Q, <Primordial,D> > v1\l" [ ]
+   "BB4\n17   v14 = binaryop(add) v7:#1.0 , v13\l18   v15 = binaryop(div) v7:#1.0 , v14\l20   v16 = binaryop(sub) v15 , v3  \l21   arraystore v4[v12:#1] = v16   \l" [ ]
+   "BB5\n" [ ]
+   "BB6\n           v24 = phi  v22,v17:#0.0\l           v25 = phi  v23,v6:#0\l28   conditional branch(ge) v25,v18:#2\l" [ ]
+   "BB7\n32   v19 = arrayload v4[v25]       \l" [ ]
+   "BB8\n35   v20 = arrayload v4[v25]       \l" [ ]
+   "BB9\n36   v21 = binaryop(mul) v19 , v20 \l37   v22 = binaryop(add) v24 , v21 \l41   v23 = binaryop(add) v25 , v12:#1\l43   goto                          \l" [ ]
+   "BB10\n45   v27 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v24 @64 exception:v26\l" [ ]
+   "BB11\n" [ ]
+   "BB12\n           v31 = phi  v30,v6:#0\l51   conditional branch(ge) v31,v18:#2\l" [ ]
+   "BB13\n55   v28 = arrayload v4[v31]       \l" [ ]
+   "BB14\n57   v29 = binaryop(div) v28 , v27 \l58   arraystore v4[v31] = v29      \l" [ ]
+   "BB15\n61   v30 = binaryop(add) v31 , v12:#1\l63   goto                          \l" [ ]
+   "BB16\n65   return v27                    \l" [ ]
+   "BB17 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n5   v8 = getfield < Application, LDemand, P, <Primordial,D> > v1\l" 
+ "BB1\n5   v8 = getfield < Application, LDemand, P, <Primordial,D> > v1\l" -> "BB2\n6   v9 = binaryop(add) v7:#1.0 , v8\l7   v10 = binaryop(div) v7:#1.0 , v9\l9   v11 = binaryop(sub) v10 , v2   \l10   arraystore v4[v6:#0] = v11    \l" 
+ "BB2\n6   v9 = binaryop(add) v7:#1.0 , v8\l7   v10 = binaryop(div) v7:#1.0 , v9\l9   v11 = binaryop(sub) v10 , v2   \l10   arraystore v4[v6:#0] = v11    \l" -> "BB3\n16   v13 = getfield < Application, LDemand, Q, <Primordial,D> > v1\l" 
+ "BB3\n16   v13 = getfield < Application, LDemand, Q, <Primordial,D> > v1\l" -> "BB4\n17   v14 = binaryop(add) v7:#1.0 , v13\l18   v15 = binaryop(div) v7:#1.0 , v14\l20   v16 = binaryop(sub) v15 , v3  \l21   arraystore v4[v12:#1] = v16   \l" 
+ "BB4\n17   v14 = binaryop(add) v7:#1.0 , v13\l18   v15 = binaryop(div) v7:#1.0 , v14\l20   v16 = binaryop(sub) v15 , v3  \l21   arraystore v4[v12:#1] = v16   \l" -> "BB5\n" 
+ "BB5\n" -> "BB6\n           v24 = phi  v22,v17:#0.0\l           v25 = phi  v23,v6:#0\l28   conditional branch(ge) v25,v18:#2\l" 
+ "BB6\n           v24 = phi  v22,v17:#0.0\l           v25 = phi  v23,v6:#0\l28   conditional branch(ge) v25,v18:#2\l" -> "BB7\n32   v19 = arrayload v4[v25]       \l" 
+ "BB6\n           v24 = phi  v22,v17:#0.0\l           v25 = phi  v23,v6:#0\l28   conditional branch(ge) v25,v18:#2\l" -> "BB10\n45   v27 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v24 @64 exception:v26\l" 
+ "BB7\n32   v19 = arrayload v4[v25]       \l" -> "BB8\n35   v20 = arrayload v4[v25]       \l" 
+ "BB8\n35   v20 = arrayload v4[v25]       \l" -> "BB9\n36   v21 = binaryop(mul) v19 , v20 \l37   v22 = binaryop(add) v24 , v21 \l41   v23 = binaryop(add) v25 , v12:#1\l43   goto                          \l" 
+ "BB9\n36   v21 = binaryop(mul) v19 , v20 \l37   v22 = binaryop(add) v24 , v21 \l41   v23 = binaryop(add) v25 , v12:#1\l43   goto                          \l" -> "BB6\n           v24 = phi  v22,v17:#0.0\l           v25 = phi  v23,v6:#0\l28   conditional branch(ge) v25,v18:#2\l" 
+ "BB10\n45   v27 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v24 @64 exception:v26\l" -> "BB11\n" 
+ "BB11\n" -> "BB12\n           v31 = phi  v30,v6:#0\l51   conditional branch(ge) v31,v18:#2\l" 
+ "BB12\n           v31 = phi  v30,v6:#0\l51   conditional branch(ge) v31,v18:#2\l" -> "BB13\n55   v28 = arrayload v4[v31]       \l" 
+ "BB12\n           v31 = phi  v30,v6:#0\l51   conditional branch(ge) v31,v18:#2\l" -> "BB16\n65   return v27                    \l" 
+ "BB13\n55   v28 = arrayload v4[v31]       \l" -> "BB14\n57   v29 = binaryop(div) v28 , v27 \l58   arraystore v4[v31] = v29      \l" 
+ "BB14\n57   v29 = binaryop(div) v28 , v27 \l58   arraystore v4[v31] = v29      \l" -> "BB15\n61   v30 = binaryop(add) v31 , v12:#1\l63   goto                          \l" 
+ "BB15\n61   v30 = binaryop(add) v31 , v12:#1\l63   goto                          \l" -> "BB12\n           v31 = phi  v30,v6:#0\l51   conditional branch(ge) v31,v18:#2\l" 
+ "BB16\n65   return v27                    \l" -> "BB17 (ex)\n\n" 
+
+}

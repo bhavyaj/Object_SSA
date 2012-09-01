@@ -1,0 +1,53 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v6\l" [ ]
+   "BB2\n4   putfield v1 = v7:#0.0 < Application, LLateral, alpha, <Primordial,D> >\l" [ ]
+   "BB3\n7   putfield v1 = v7:#0.0 < Application, LLateral, beta, <Primordial,D> >\l" [ ]
+   "BB4\n10   putfield v1 = v8:#3.3333333333333333E-6 < Application, LLateral, R, <Primordial,D> >\l" [ ]
+   "BB5\n13   putfield v1 = v9:#1.0E-6 < Application, LLateral, X, <Primordial,D> >\l" [ ]
+   "BB6\n15   v10 = new <Application,LDemand>@29\l" [ ]
+   "BB7\n17   invokespecial < Application, LDemand, <init>()V > v10 @33 exception:v11\l" [ ]
+   "BB8\n18   putfield v1 = v10 < Application, LLateral, D, <Application,LDemand> >\l" [ ]
+   "BB9\n21   conditional branch(gt) v2,v12:#1\l" [ ]
+   "BB10\n24   conditional branch(gt) v2,v16:#0\l" [ ]
+   "BB11\n25   v20 = new <Application,Ljava/lang/RuntimeException>@48\l" [ ]
+   "BB12\n28   invokespecial < Application, Ljava/lang/RuntimeException, <init>(Ljava/lang/String;)V > v20,v21:#Lateral constructor with zero num @54 exception:v22\l" [ ]
+   "BB13\n29   throw v20                     \l" [ ]
+   "BB14\n32   putfield v1 = v17:#null < Application, LLateral, next_lateral, <Application,LLateral> >\l" [ ]
+   "BB15\n33   goto                          \l" [ ]
+   "BB16\n35   v13 = new <Application,LLateral>@67\l" [ ]
+   "BB17\n39   v14 = binaryop(sub) v2 , v12:#1\l42   invokespecial < Application, LLateral, <init>(III)V > v13,v14,v3,v4 @76 exception:v15\l" [ ]
+   "BB18\n43   putfield v1 = v13 < Application, LLateral, next_lateral, <Application,LLateral> >\l" [ ]
+   "BB19\n45   v18 = new <Application,LBranch>@83\l" [ ]
+   "BB20\n49   invokespecial < Application, LBranch, <init>(II)V > v18,v3,v4 @89 exception:v19\l" [ ]
+   "BB21\n50   putfield v1 = v18 < Application, LLateral, branch, <Application,LBranch> >\l" [ ]
+   "BB22\n51   return                        \l" [ ]
+   "BB23 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v6\l" 
+ "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v6\l" -> "BB2\n4   putfield v1 = v7:#0.0 < Application, LLateral, alpha, <Primordial,D> >\l" 
+ "BB2\n4   putfield v1 = v7:#0.0 < Application, LLateral, alpha, <Primordial,D> >\l" -> "BB3\n7   putfield v1 = v7:#0.0 < Application, LLateral, beta, <Primordial,D> >\l" 
+ "BB3\n7   putfield v1 = v7:#0.0 < Application, LLateral, beta, <Primordial,D> >\l" -> "BB4\n10   putfield v1 = v8:#3.3333333333333333E-6 < Application, LLateral, R, <Primordial,D> >\l" 
+ "BB4\n10   putfield v1 = v8:#3.3333333333333333E-6 < Application, LLateral, R, <Primordial,D> >\l" -> "BB5\n13   putfield v1 = v9:#1.0E-6 < Application, LLateral, X, <Primordial,D> >\l" 
+ "BB5\n13   putfield v1 = v9:#1.0E-6 < Application, LLateral, X, <Primordial,D> >\l" -> "BB6\n15   v10 = new <Application,LDemand>@29\l" 
+ "BB6\n15   v10 = new <Application,LDemand>@29\l" -> "BB7\n17   invokespecial < Application, LDemand, <init>()V > v10 @33 exception:v11\l" 
+ "BB7\n17   invokespecial < Application, LDemand, <init>()V > v10 @33 exception:v11\l" -> "BB8\n18   putfield v1 = v10 < Application, LLateral, D, <Application,LDemand> >\l" 
+ "BB8\n18   putfield v1 = v10 < Application, LLateral, D, <Application,LDemand> >\l" -> "BB9\n21   conditional branch(gt) v2,v12:#1\l" 
+ "BB9\n21   conditional branch(gt) v2,v12:#1\l" -> "BB10\n24   conditional branch(gt) v2,v16:#0\l" 
+ "BB9\n21   conditional branch(gt) v2,v12:#1\l" -> "BB16\n35   v13 = new <Application,LLateral>@67\l" 
+ "BB10\n24   conditional branch(gt) v2,v16:#0\l" -> "BB11\n25   v20 = new <Application,Ljava/lang/RuntimeException>@48\l" 
+ "BB10\n24   conditional branch(gt) v2,v16:#0\l" -> "BB14\n32   putfield v1 = v17:#null < Application, LLateral, next_lateral, <Application,LLateral> >\l" 
+ "BB11\n25   v20 = new <Application,Ljava/lang/RuntimeException>@48\l" -> "BB12\n28   invokespecial < Application, Ljava/lang/RuntimeException, <init>(Ljava/lang/String;)V > v20,v21:#Lateral constructor with zero num @54 exception:v22\l" 
+ "BB12\n28   invokespecial < Application, Ljava/lang/RuntimeException, <init>(Ljava/lang/String;)V > v20,v21:#Lateral constructor with zero num @54 exception:v22\l" -> "BB13\n29   throw v20                     \l" 
+ "BB13\n29   throw v20                     \l" -> "BB23 (ex)\n\n" 
+ "BB14\n32   putfield v1 = v17:#null < Application, LLateral, next_lateral, <Application,LLateral> >\l" -> "BB15\n33   goto                          \l" 
+ "BB15\n33   goto                          \l" -> "BB19\n45   v18 = new <Application,LBranch>@83\l" 
+ "BB16\n35   v13 = new <Application,LLateral>@67\l" -> "BB17\n39   v14 = binaryop(sub) v2 , v12:#1\l42   invokespecial < Application, LLateral, <init>(III)V > v13,v14,v3,v4 @76 exception:v15\l" 
+ "BB17\n39   v14 = binaryop(sub) v2 , v12:#1\l42   invokespecial < Application, LLateral, <init>(III)V > v13,v14,v3,v4 @76 exception:v15\l" -> "BB18\n43   putfield v1 = v13 < Application, LLateral, next_lateral, <Application,LLateral> >\l" 
+ "BB18\n43   putfield v1 = v13 < Application, LLateral, next_lateral, <Application,LLateral> >\l" -> "BB19\n45   v18 = new <Application,LBranch>@83\l" 
+ "BB19\n45   v18 = new <Application,LBranch>@83\l" -> "BB20\n49   invokespecial < Application, LBranch, <init>(II)V > v18,v3,v4 @89 exception:v19\l" 
+ "BB20\n49   invokespecial < Application, LBranch, <init>(II)V > v18,v3,v4 @89 exception:v19\l" -> "BB21\n50   putfield v1 = v18 < Application, LLateral, branch, <Application,LBranch> >\l" 
+ "BB21\n50   putfield v1 = v18 < Application, LLateral, branch, <Application,LBranch> >\l" -> "BB22\n51   return                        \l" 
+ "BB22\n51   return                        \l" -> "BB23 (ex)\n\n" 
+
+}

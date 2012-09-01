@@ -1,0 +1,60 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Tree.makeList()LTree;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n3  GetOSSAInstruction:	O1_1= O1_1< left>     \l" [ ]
+   "BB2\n5   conditional branch(eq) v3,v4:#null       \l" [ ]
+   "BB3\n7  GetOSSAInstruction:	O1_1= O1_1< left>     \l" [ ]
+   "BB4\n8  O1_2 = < Application, LTree, makeList()LTree; >( O1_1 )\l" [ ]
+   "BB5\n10   goto                                    \l" [ ]
+   "BB6\n" [ ]
+   "BB7\n           v8 = phi  v7,v4:#null\l14  GetOSSAInstruction:	O1_1= O1_1< right>   \l" [ ]
+   "BB8\n16   conditional branch(eq) v9,v4:#null      \l" [ ]
+   "BB9\n18  GetOSSAInstruction:	O1_1= O1_1< right>   \l" [ ]
+   "BB10\n19  O1_3 = < Application, LTree, makeList()LTree; >( O1_1 )\l" [ ]
+   "BB11\n21   goto                                    \l" [ ]
+   "BB12\n" [ ]
+   "BB13\n           v13 = phi  v12,v4:#null\l26   conditional branch(eq) v13,v4:#null     \l" [ ]
+   "BB14\n30  GetOSSAInstruction:	O1_1= O1_1< right>   \l" [ ]
+   "BB15\n32  PutOSSAInstruction:	O1_4< next > = O1_1<refO1_1>\l" [ ]
+   "BB16\n           O1_5 = Object-Phi(O1_1, O1_4 )\l           v15 = phi  v1,v13\l35   conditional branch(eq) v8,v4:#null      \l" [ ]
+   "BB17\n40   conditional branch(eq) v13,v4:#null     \l" [ ]
+   "BB18\n42  GetOSSAInstruction:	O1_5= O1_5< left>    \l" [ ]
+   "BB19\n44  PutOSSAInstruction:	O1_6< next > = O1_5<refO1_5>\l" [ ]
+   "BB20\n45   goto                                    \l" [ ]
+   "BB21\n47  GetOSSAInstruction:	O1_5= O1_5< left>    \l" [ ]
+   "BB22\n49  PutOSSAInstruction:	O1_7< next > = O1_5<refO1_5>\l" [ ]
+   "BB23\n           O1_8 = Object-Phi(O1_5, O1_6, O1_7 )\l           v18 = phi  v15,v8,v8\l52  PutOSSAInstruction:	O1_9< next > = O1_8<V4>\l" [ ]
+   "BB24\n54  Return O1_9                              \l" [ ]
+   "BB25 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n3  GetOSSAInstruction:	O1_1= O1_1< left>     \l" 
+ "BB1\n3  GetOSSAInstruction:	O1_1= O1_1< left>     \l" -> "BB2\n5   conditional branch(eq) v3,v4:#null       \l" 
+ "BB2\n5   conditional branch(eq) v3,v4:#null       \l" -> "BB3\n7  GetOSSAInstruction:	O1_1= O1_1< left>     \l" 
+ "BB2\n5   conditional branch(eq) v3,v4:#null       \l" -> "BB6\n" 
+ "BB3\n7  GetOSSAInstruction:	O1_1= O1_1< left>     \l" -> "BB4\n8  O1_2 = < Application, LTree, makeList()LTree; >( O1_1 )\l" 
+ "BB4\n8  O1_2 = < Application, LTree, makeList()LTree; >( O1_1 )\l" -> "BB5\n10   goto                                    \l" 
+ "BB5\n10   goto                                    \l" -> "BB7\n           v8 = phi  v7,v4:#null\l14  GetOSSAInstruction:	O1_1= O1_1< right>   \l" 
+ "BB6\n" -> "BB7\n           v8 = phi  v7,v4:#null\l14  GetOSSAInstruction:	O1_1= O1_1< right>   \l" 
+ "BB7\n           v8 = phi  v7,v4:#null\l14  GetOSSAInstruction:	O1_1= O1_1< right>   \l" -> "BB8\n16   conditional branch(eq) v9,v4:#null      \l" 
+ "BB8\n16   conditional branch(eq) v9,v4:#null      \l" -> "BB9\n18  GetOSSAInstruction:	O1_1= O1_1< right>   \l" 
+ "BB8\n16   conditional branch(eq) v9,v4:#null      \l" -> "BB12\n" 
+ "BB9\n18  GetOSSAInstruction:	O1_1= O1_1< right>   \l" -> "BB10\n19  O1_3 = < Application, LTree, makeList()LTree; >( O1_1 )\l" 
+ "BB10\n19  O1_3 = < Application, LTree, makeList()LTree; >( O1_1 )\l" -> "BB11\n21   goto                                    \l" 
+ "BB11\n21   goto                                    \l" -> "BB13\n           v13 = phi  v12,v4:#null\l26   conditional branch(eq) v13,v4:#null     \l" 
+ "BB12\n" -> "BB13\n           v13 = phi  v12,v4:#null\l26   conditional branch(eq) v13,v4:#null     \l" 
+ "BB13\n           v13 = phi  v12,v4:#null\l26   conditional branch(eq) v13,v4:#null     \l" -> "BB14\n30  GetOSSAInstruction:	O1_1= O1_1< right>   \l" 
+ "BB13\n           v13 = phi  v12,v4:#null\l26   conditional branch(eq) v13,v4:#null     \l" -> "BB16\n           O1_5 = Object-Phi(O1_1, O1_4 )\l           v15 = phi  v1,v13\l35   conditional branch(eq) v8,v4:#null      \l" 
+ "BB14\n30  GetOSSAInstruction:	O1_1= O1_1< right>   \l" -> "BB15\n32  PutOSSAInstruction:	O1_4< next > = O1_1<refO1_1>\l" 
+ "BB15\n32  PutOSSAInstruction:	O1_4< next > = O1_1<refO1_1>\l" -> "BB16\n           O1_5 = Object-Phi(O1_1, O1_4 )\l           v15 = phi  v1,v13\l35   conditional branch(eq) v8,v4:#null      \l" 
+ "BB16\n           O1_5 = Object-Phi(O1_1, O1_4 )\l           v15 = phi  v1,v13\l35   conditional branch(eq) v8,v4:#null      \l" -> "BB17\n40   conditional branch(eq) v13,v4:#null     \l" 
+ "BB16\n           O1_5 = Object-Phi(O1_1, O1_4 )\l           v15 = phi  v1,v13\l35   conditional branch(eq) v8,v4:#null      \l" -> "BB23\n           O1_8 = Object-Phi(O1_5, O1_6, O1_7 )\l           v18 = phi  v15,v8,v8\l52  PutOSSAInstruction:	O1_9< next > = O1_8<V4>\l" 
+ "BB17\n40   conditional branch(eq) v13,v4:#null     \l" -> "BB18\n42  GetOSSAInstruction:	O1_5= O1_5< left>    \l" 
+ "BB17\n40   conditional branch(eq) v13,v4:#null     \l" -> "BB21\n47  GetOSSAInstruction:	O1_5= O1_5< left>    \l" 
+ "BB18\n42  GetOSSAInstruction:	O1_5= O1_5< left>    \l" -> "BB19\n44  PutOSSAInstruction:	O1_6< next > = O1_5<refO1_5>\l" 
+ "BB19\n44  PutOSSAInstruction:	O1_6< next > = O1_5<refO1_5>\l" -> "BB20\n45   goto                                    \l" 
+ "BB20\n45   goto                                    \l" -> "BB23\n           O1_8 = Object-Phi(O1_5, O1_6, O1_7 )\l           v18 = phi  v15,v8,v8\l52  PutOSSAInstruction:	O1_9< next > = O1_8<V4>\l" 
+ "BB21\n47  GetOSSAInstruction:	O1_5= O1_5< left>    \l" -> "BB22\n49  PutOSSAInstruction:	O1_7< next > = O1_5<refO1_5>\l" 
+ "BB22\n49  PutOSSAInstruction:	O1_7< next > = O1_5<refO1_5>\l" -> "BB23\n           O1_8 = Object-Phi(O1_5, O1_6, O1_7 )\l           v18 = phi  v15,v8,v8\l52  PutOSSAInstruction:	O1_9< next > = O1_8<V4>\l" 
+ "BB23\n           O1_8 = Object-Phi(O1_5, O1_6, O1_7 )\l           v18 = phi  v15,v8,v8\l52  PutOSSAInstruction:	O1_9< next > = O1_8<V4>\l" -> "BB24\n54  Return O1_9                              \l" 
+ "BB24\n54  Return O1_9                              \l" -> "BB25 (ex)\n\n" 
+
+}

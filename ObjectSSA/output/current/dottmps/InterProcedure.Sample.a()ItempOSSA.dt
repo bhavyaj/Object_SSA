@@ -1,0 +1,37 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for InterProcedure.Sample.a()I", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n4  Create O1_1                               \l" [ ]
+   "BB2\n6  < Application, LInterProcedure/Sample, <init>()V >( O1_1 )\l" [ ]
+   "BB3\n8  Create O2_1                               \l" [ ]
+   "BB4\n10  < Application, LInterProcedure/Sample, <init>()V >( O2_1 )\l" [ ]
+   "BB5\n14   conditional branch(le) v2:#10,v3:#5     \l" [ ]
+   "BB6\n19   v12 = binaryop(add) v9:#4 , v3:#5       \l21   goto                                    \l" [ ]
+   "BB7\n" [ ]
+   "BB8\n           v13 = phi  v12,v9:#4\l           v14 = phi  v3:#5,v10:#2\l           v15 = phi  v11:#6,v8:#7\l30   goto                                    \l" [ ]
+   "BB9\n33   v18 = binaryop(add) v21 , v17:#-2       \l37   v20 = binaryop(add) v22 , v19:#-1       \l" [ ]
+   "BB10\n           v21 = phi  v13,v18\l           v22 = phi  v8:#7,v20\l41   conditional branch(gt) v22,v16:#1       \l" [ ]
+   "BB11\n44   v23 = binaryop(add) v15 , v14           \l46   v24 = binaryop(sub) v23 , v21           \l49  Create O3_1                              \l" [ ]
+   "BB12\n54   arraystore v25[v26:#0] = v3:#5          \l" [ ]
+   "BB13\n57   v27 = arrayload v25[v26:#0]             \l" [ ]
+   "BB14\n60  Return                                   \l" [ ]
+   "BB15 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n4  Create O1_1                               \l" 
+ "BB1\n4  Create O1_1                               \l" -> "BB2\n6  < Application, LInterProcedure/Sample, <init>()V >( O1_1 )\l" 
+ "BB2\n6  < Application, LInterProcedure/Sample, <init>()V >( O1_1 )\l" -> "BB3\n8  Create O2_1                               \l" 
+ "BB3\n8  Create O2_1                               \l" -> "BB4\n10  < Application, LInterProcedure/Sample, <init>()V >( O2_1 )\l" 
+ "BB4\n10  < Application, LInterProcedure/Sample, <init>()V >( O2_1 )\l" -> "BB5\n14   conditional branch(le) v2:#10,v3:#5     \l" 
+ "BB5\n14   conditional branch(le) v2:#10,v3:#5     \l" -> "BB6\n19   v12 = binaryop(add) v9:#4 , v3:#5       \l21   goto                                    \l" 
+ "BB5\n14   conditional branch(le) v2:#10,v3:#5     \l" -> "BB7\n" 
+ "BB6\n19   v12 = binaryop(add) v9:#4 , v3:#5       \l21   goto                                    \l" -> "BB8\n           v13 = phi  v12,v9:#4\l           v14 = phi  v3:#5,v10:#2\l           v15 = phi  v11:#6,v8:#7\l30   goto                                    \l" 
+ "BB7\n" -> "BB8\n           v13 = phi  v12,v9:#4\l           v14 = phi  v3:#5,v10:#2\l           v15 = phi  v11:#6,v8:#7\l30   goto                                    \l" 
+ "BB8\n           v13 = phi  v12,v9:#4\l           v14 = phi  v3:#5,v10:#2\l           v15 = phi  v11:#6,v8:#7\l30   goto                                    \l" -> "BB10\n           v21 = phi  v13,v18\l           v22 = phi  v8:#7,v20\l41   conditional branch(gt) v22,v16:#1       \l" 
+ "BB9\n33   v18 = binaryop(add) v21 , v17:#-2       \l37   v20 = binaryop(add) v22 , v19:#-1       \l" -> "BB10\n           v21 = phi  v13,v18\l           v22 = phi  v8:#7,v20\l41   conditional branch(gt) v22,v16:#1       \l" 
+ "BB10\n           v21 = phi  v13,v18\l           v22 = phi  v8:#7,v20\l41   conditional branch(gt) v22,v16:#1       \l" -> "BB9\n33   v18 = binaryop(add) v21 , v17:#-2       \l37   v20 = binaryop(add) v22 , v19:#-1       \l" 
+ "BB10\n           v21 = phi  v13,v18\l           v22 = phi  v8:#7,v20\l41   conditional branch(gt) v22,v16:#1       \l" -> "BB11\n44   v23 = binaryop(add) v15 , v14           \l46   v24 = binaryop(sub) v23 , v21           \l49  Create O3_1                              \l" 
+ "BB11\n44   v23 = binaryop(add) v15 , v14           \l46   v24 = binaryop(sub) v23 , v21           \l49  Create O3_1                              \l" -> "BB12\n54   arraystore v25[v26:#0] = v3:#5          \l" 
+ "BB12\n54   arraystore v25[v26:#0] = v3:#5          \l" -> "BB13\n57   v27 = arrayload v25[v26:#0]             \l" 
+ "BB13\n57   v27 = arrayload v25[v26:#0]             \l" -> "BB14\n60  Return                                   \l" 
+ "BB14\n60  Return                                   \l" -> "BB15 (ex)\n\n" 
+
+}

@@ -1,0 +1,190 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n           v30 = phi  v21,v2\l           v31 = phi  v29,v3\l1   v7 = invokevirtual < Application, LEdge, orig()LVertex; > v31 @1 exception:v6\l" [ ]
+   "BB2\n4   v9 = invokevirtual < Application, LEdge, orig()LVertex; > v30 @7 exception:v8\l" [ ]
+   "BB3\n7   v11 = invokevirtual < Application, LEdge, dest()LVertex; > v30 @13 exception:v10\l" [ ]
+   "BB4\n" [ ]
+   "BB5\n           v21 = phi  v16,v30\l           v32 = phi  v32,v31\l           v22 = phi  v18,v9\l           v23 = phi  v20,v11\l12   v13 = invokevirtual < Application, LVertex, ccw(LVertex;LVertex;)Z > v22,v23,v7 @24 exception:v12\l" [ ]
+   "BB6\n14   conditional branch(eq) v13,v14:#0\l" [ ]
+   "BB7\n16   v16 = invokevirtual < Application, LEdge, lNext()LEdge; > v21 @31 exception:v15\l" [ ]
+   "BB8\n19   v18 = invokevirtual < Application, LEdge, orig()LVertex; > v16 @36 exception:v17\l" [ ]
+   "BB9\n22   v20 = invokevirtual < Application, LEdge, dest()LVertex; > v16 @42 exception:v19\l" [ ]
+   "BB10\n24   goto                          \l" [ ]
+   "BB11\n26   v25 = invokevirtual < Application, LEdge, dest()LVertex; > v32 @51 exception:v24\l" [ ]
+   "BB12\n31   v27 = invokevirtual < Application, LVertex, ccw(LVertex;LVertex;)Z > v25,v7,v22 @62 exception:v26\l" [ ]
+   "BB13\n33   conditional branch(eq) v27,v14:#0\l" [ ]
+   "BB14\n35   v29 = invokevirtual < Application, LEdge, rPrev()LEdge; > v32 @69 exception:v28\l" [ ]
+   "BB15\n37   goto                          \l" [ ]
+   "BB16\n39   v34 = invokevirtual < Application, LEdge, symmetric()LEdge; > v32 @77 exception:v33\l" [ ]
+   "BB17\n41   v36 = invokevirtual < Application, LEdge, connectLeft(LEdge;)LEdge; > v34,v21 @81 exception:v35\l" [ ]
+   "BB18\n44   v38 = invokevirtual < Application, LEdge, rPrev()LEdge; > v36 @88 exception:v37\l" [ ]
+   "BB19\n47   v40 = invokevirtual < Application, LEdge, oPrev()LEdge; > v36 @95 exception:v39\l" [ ]
+   "BB20\n50   v42 = invokevirtual < Application, LEdge, orig()LVertex; > v36 @102 exception:v41\l" [ ]
+   "BB21\n53   v44 = invokevirtual < Application, LEdge, dest()LVertex; > v36 @109 exception:v43\l" [ ]
+   "BB22\n57   v46 = invokevirtual < Application, LEdge, orig()LVertex; > v4 @117 exception:v45\l" [ ]
+   "BB23\n58   conditional branch(ne) v42,v46\l" [ ]
+   "BB24\n" [ ]
+   "BB25\n           v47 = phi  v4,v36\l63   v49 = invokevirtual < Application, LEdge, orig()LVertex; > v1 @129 exception:v48\l" [ ]
+   "BB26\n64   conditional branch(ne) v44,v49\l" [ ]
+   "BB27\n66   v51 = invokevirtual < Application, LEdge, symmetric()LEdge; > v36 @137 exception:v50\l" [ ]
+   "BB28\n" [ ]
+   "BB29\n           v52 = phi  v1,v52,v51\l           v144 = phi  v36,v141,v36\l           v145 = phi  v38,v142,v38\l           v146 = phi  v40,v143,v40\l69   v54 = invokevirtual < Application, LEdge, oNext()LEdge; > v145 @143 exception:v53\l" [ ]
+   "BB30\n73   v56 = invokevirtual < Application, LEdge, valid(LEdge;)Z > v54,v144 @152 exception:v55\l" [ ]
+   "BB31\n75   conditional branch(eq) v56,v14:#0\l" [ ]
+   "BB32\n77   v58 = invokevirtual < Application, LEdge, orig()LVertex; > v144 @160 exception:v57\l" [ ]
+   "BB33\n80   v60 = invokevirtual < Application, LEdge, dest()LVertex; > v145 @167 exception:v59\l" [ ]
+   "BB34\n83   v62 = invokevirtual < Application, LEdge, orig()LVertex; > v145 @174 exception:v61\l" [ ]
+   "BB35\n86   v64 = invokevirtual < Application, LEdge, dest()LVertex; > v54 @181 exception:v63\l" [ ]
+   "BB36\n" [ ]
+   "BB37\n           v147 = phi  v147,v144\l           v76 = phi  v77,v145\l           v148 = phi  v148,v146\l           v77 = phi  v69,v54\l           v78 = phi  v71,v60\l           v79 = phi  v73,v62\l           v80 = phi  v75,v64\l92   v66 = invokevirtual < Application, LVertex, incircle(LVertex;LVertex;LVertex;)Z > v78,v80,v79,v58 @194 exception:v65\l" [ ]
+   "BB38\n94   conditional branch(eq) v66,v14:#0\l" [ ]
+   "BB39\n96   invokevirtual < Application, LEdge, deleteEdge()V > v76 @202 exception:v67\l" [ ]
+   "BB40\n100   v69 = invokevirtual < Application, LEdge, oNext()LEdge; > v77 @211 exception:v68\l" [ ]
+   "BB41\n103   v71 = invokevirtual < Application, LEdge, dest()LVertex; > v77 @218 exception:v70\l" [ ]
+   "BB42\n106   v73 = invokevirtual < Application, LEdge, orig()LVertex; > v77 @225 exception:v72\l" [ ]
+   "BB43\n109   v75 = invokevirtual < Application, LEdge, dest()LVertex; > v69 @232 exception:v74\l" [ ]
+   "BB44\n111   goto                         \l" [ ]
+   "BB45\n           v149 = phi  v144,v147\l           v81 = phi  v145,v76\l           v150 = phi  v146,v148\l113   v84 = invokevirtual < Application, LEdge, oPrev()LEdge; > v150 @242 exception:v83\l" [ ]
+   "BB46\n117   v86 = invokevirtual < Application, LEdge, valid(LEdge;)Z > v84,v149 @251 exception:v85\l" [ ]
+   "BB47\n119   conditional branch(eq) v86,v14:#0\l" [ ]
+   "BB48\n121   v88 = invokevirtual < Application, LEdge, dest()LVertex; > v149 @259 exception:v87\l" [ ]
+   "BB49\n124   v90 = invokevirtual < Application, LEdge, dest()LVertex; > v84 @266 exception:v89\l" [ ]
+   "BB50\n127   v92 = invokevirtual < Application, LEdge, dest()LVertex; > v150 @273 exception:v91\l" [ ]
+   "BB51\n130   v94 = invokevirtual < Application, LEdge, orig()LVertex; > v150 @280 exception:v93\l" [ ]
+   "BB52\n" [ ]
+   "BB53\n           v151 = phi  v151,v149\l           v106 = phi  v107,v150\l           v107 = phi  v99,v84\l           v108 = phi  v105,v90\l           v109 = phi  v101,v92\l           v110 = phi  v103,v94\l136   v96 = invokevirtual < Application, LVertex, incircle(LVertex;LVertex;LVertex;)Z > v108,v109,v110,v88 @293 exception:v95\l" [ ]
+   "BB54\n138   conditional branch(eq) v96,v14:#0\l" [ ]
+   "BB55\n140   invokevirtual < Application, LEdge, deleteEdge()V > v106 @301 exception:v97\l" [ ]
+   "BB56\n144   v99 = invokevirtual < Application, LEdge, oPrev()LEdge; > v107 @310 exception:v98\l" [ ]
+   "BB57\n147   v101 = invokevirtual < Application, LEdge, dest()LVertex; > v107 @317 exception:v100\l" [ ]
+   "BB58\n150   v103 = invokevirtual < Application, LEdge, orig()LVertex; > v107 @324 exception:v102\l" [ ]
+   "BB59\n153   v105 = invokevirtual < Application, LEdge, dest()LVertex; > v99 @331 exception:v104\l" [ ]
+   "BB60\n155   goto                         \l" [ ]
+   "BB61\n           v152 = phi  v149,v151\l           v111 = phi  v150,v106\l158   v114 = invokevirtual < Application, LEdge, valid(LEdge;)Z > v81,v152 @343 exception:v113\l" [ ]
+   "BB62\n162   v116 = invokevirtual < Application, LEdge, valid(LEdge;)Z > v111,v152 @352 exception:v115\l" [ ]
+   "BB63\n166   conditional branch(ne) v114,v14:#0\l" [ ]
+   "BB64\n169   conditional branch(ne) v116,v14:#0\l" [ ]
+   "BB65\n170   v153 = new <Application,LEdgePair>@367\l" [ ]
+   "BB66\n174   invokespecial < Application, LEdgePair, <init>(LEdge;LEdge;)V > v153,v52,v47 @373 exception:v154\l" [ ]
+   "BB67\n175   return v153                  \l" [ ]
+   "BB68\n177   v118 = invokevirtual < Application, LEdge, dest()LVertex; > v81 @379 exception:v117\l" [ ]
+   "BB69\n180   v120 = invokevirtual < Application, LEdge, orig()LVertex; > v81 @386 exception:v119\l" [ ]
+   "BB70\n183   v122 = invokevirtual < Application, LEdge, orig()LVertex; > v111 @393 exception:v121\l" [ ]
+   "BB71\n186   v124 = invokevirtual < Application, LEdge, dest()LVertex; > v111 @400 exception:v123\l" [ ]
+   "BB72\n190   conditional branch(eq) v114,v14:#0\l" [ ]
+   "BB73\n193   conditional branch(eq) v116,v14:#0\l" [ ]
+   "BB74\n198   v126 = invokevirtual < Application, LVertex, incircle(LVertex;LVertex;LVertex;)Z > v118,v120,v122,v124 @423 exception:v125\l" [ ]
+   "BB75\n200   conditional branch(eq) v126,v14:#0\l" [ ]
+   "BB76\n203   v128 = invokevirtual < Application, LEdge, symmetric()LEdge; > v152 @433 exception:v127\l" [ ]
+   "BB77\n204   v130 = invokevirtual < Application, LEdge, connectLeft(LEdge;)LEdge; > v111,v128 @436 exception:v129\l" [ ]
+   "BB78\n207   v132 = invokevirtual < Application, LEdge, symmetric()LEdge; > v130 @443 exception:v131\l" [ ]
+   "BB79\n208   v134 = invokevirtual < Application, LEdge, lNext()LEdge; > v132 @446 exception:v133\l" [ ]
+   "BB80\n210   goto                         \l" [ ]
+   "BB81\n213   v136 = invokevirtual < Application, LEdge, connectRight(LEdge;)LEdge; > v81,v152 @458 exception:v135\l" [ ]
+   "BB82\n214   v138 = invokevirtual < Application, LEdge, symmetric()LEdge; > v136 @461 exception:v137\l" [ ]
+   "BB83\n217   v140 = invokevirtual < Application, LEdge, rPrev()LEdge; > v138 @468 exception:v139\l" [ ]
+   "BB84\n" [ ]
+   "BB85\n           v141 = phi  v130,v138\l           v142 = phi  v81,v140\l           v143 = phi  v134,v111\l219   goto                         \l" [ ]
+   "BB86 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n           v30 = phi  v21,v2\l           v31 = phi  v29,v3\l1   v7 = invokevirtual < Application, LEdge, orig()LVertex; > v31 @1 exception:v6\l" 
+ "BB1\n           v30 = phi  v21,v2\l           v31 = phi  v29,v3\l1   v7 = invokevirtual < Application, LEdge, orig()LVertex; > v31 @1 exception:v6\l" -> "BB2\n4   v9 = invokevirtual < Application, LEdge, orig()LVertex; > v30 @7 exception:v8\l" 
+ "BB2\n4   v9 = invokevirtual < Application, LEdge, orig()LVertex; > v30 @7 exception:v8\l" -> "BB3\n7   v11 = invokevirtual < Application, LEdge, dest()LVertex; > v30 @13 exception:v10\l" 
+ "BB3\n7   v11 = invokevirtual < Application, LEdge, dest()LVertex; > v30 @13 exception:v10\l" -> "BB4\n" 
+ "BB4\n" -> "BB5\n           v21 = phi  v16,v30\l           v32 = phi  v32,v31\l           v22 = phi  v18,v9\l           v23 = phi  v20,v11\l12   v13 = invokevirtual < Application, LVertex, ccw(LVertex;LVertex;)Z > v22,v23,v7 @24 exception:v12\l" 
+ "BB5\n           v21 = phi  v16,v30\l           v32 = phi  v32,v31\l           v22 = phi  v18,v9\l           v23 = phi  v20,v11\l12   v13 = invokevirtual < Application, LVertex, ccw(LVertex;LVertex;)Z > v22,v23,v7 @24 exception:v12\l" -> "BB6\n14   conditional branch(eq) v13,v14:#0\l" 
+ "BB6\n14   conditional branch(eq) v13,v14:#0\l" -> "BB7\n16   v16 = invokevirtual < Application, LEdge, lNext()LEdge; > v21 @31 exception:v15\l" 
+ "BB6\n14   conditional branch(eq) v13,v14:#0\l" -> "BB11\n26   v25 = invokevirtual < Application, LEdge, dest()LVertex; > v32 @51 exception:v24\l" 
+ "BB7\n16   v16 = invokevirtual < Application, LEdge, lNext()LEdge; > v21 @31 exception:v15\l" -> "BB8\n19   v18 = invokevirtual < Application, LEdge, orig()LVertex; > v16 @36 exception:v17\l" 
+ "BB8\n19   v18 = invokevirtual < Application, LEdge, orig()LVertex; > v16 @36 exception:v17\l" -> "BB9\n22   v20 = invokevirtual < Application, LEdge, dest()LVertex; > v16 @42 exception:v19\l" 
+ "BB9\n22   v20 = invokevirtual < Application, LEdge, dest()LVertex; > v16 @42 exception:v19\l" -> "BB10\n24   goto                          \l" 
+ "BB10\n24   goto                          \l" -> "BB5\n           v21 = phi  v16,v30\l           v32 = phi  v32,v31\l           v22 = phi  v18,v9\l           v23 = phi  v20,v11\l12   v13 = invokevirtual < Application, LVertex, ccw(LVertex;LVertex;)Z > v22,v23,v7 @24 exception:v12\l" 
+ "BB11\n26   v25 = invokevirtual < Application, LEdge, dest()LVertex; > v32 @51 exception:v24\l" -> "BB12\n31   v27 = invokevirtual < Application, LVertex, ccw(LVertex;LVertex;)Z > v25,v7,v22 @62 exception:v26\l" 
+ "BB12\n31   v27 = invokevirtual < Application, LVertex, ccw(LVertex;LVertex;)Z > v25,v7,v22 @62 exception:v26\l" -> "BB13\n33   conditional branch(eq) v27,v14:#0\l" 
+ "BB13\n33   conditional branch(eq) v27,v14:#0\l" -> "BB14\n35   v29 = invokevirtual < Application, LEdge, rPrev()LEdge; > v32 @69 exception:v28\l" 
+ "BB13\n33   conditional branch(eq) v27,v14:#0\l" -> "BB16\n39   v34 = invokevirtual < Application, LEdge, symmetric()LEdge; > v32 @77 exception:v33\l" 
+ "BB14\n35   v29 = invokevirtual < Application, LEdge, rPrev()LEdge; > v32 @69 exception:v28\l" -> "BB15\n37   goto                          \l" 
+ "BB15\n37   goto                          \l" -> "BB1\n           v30 = phi  v21,v2\l           v31 = phi  v29,v3\l1   v7 = invokevirtual < Application, LEdge, orig()LVertex; > v31 @1 exception:v6\l" 
+ "BB16\n39   v34 = invokevirtual < Application, LEdge, symmetric()LEdge; > v32 @77 exception:v33\l" -> "BB17\n41   v36 = invokevirtual < Application, LEdge, connectLeft(LEdge;)LEdge; > v34,v21 @81 exception:v35\l" 
+ "BB17\n41   v36 = invokevirtual < Application, LEdge, connectLeft(LEdge;)LEdge; > v34,v21 @81 exception:v35\l" -> "BB18\n44   v38 = invokevirtual < Application, LEdge, rPrev()LEdge; > v36 @88 exception:v37\l" 
+ "BB18\n44   v38 = invokevirtual < Application, LEdge, rPrev()LEdge; > v36 @88 exception:v37\l" -> "BB19\n47   v40 = invokevirtual < Application, LEdge, oPrev()LEdge; > v36 @95 exception:v39\l" 
+ "BB19\n47   v40 = invokevirtual < Application, LEdge, oPrev()LEdge; > v36 @95 exception:v39\l" -> "BB20\n50   v42 = invokevirtual < Application, LEdge, orig()LVertex; > v36 @102 exception:v41\l" 
+ "BB20\n50   v42 = invokevirtual < Application, LEdge, orig()LVertex; > v36 @102 exception:v41\l" -> "BB21\n53   v44 = invokevirtual < Application, LEdge, dest()LVertex; > v36 @109 exception:v43\l" 
+ "BB21\n53   v44 = invokevirtual < Application, LEdge, dest()LVertex; > v36 @109 exception:v43\l" -> "BB22\n57   v46 = invokevirtual < Application, LEdge, orig()LVertex; > v4 @117 exception:v45\l" 
+ "BB22\n57   v46 = invokevirtual < Application, LEdge, orig()LVertex; > v4 @117 exception:v45\l" -> "BB23\n58   conditional branch(ne) v42,v46\l" 
+ "BB23\n58   conditional branch(ne) v42,v46\l" -> "BB24\n" 
+ "BB23\n58   conditional branch(ne) v42,v46\l" -> "BB25\n           v47 = phi  v4,v36\l63   v49 = invokevirtual < Application, LEdge, orig()LVertex; > v1 @129 exception:v48\l" 
+ "BB24\n" -> "BB25\n           v47 = phi  v4,v36\l63   v49 = invokevirtual < Application, LEdge, orig()LVertex; > v1 @129 exception:v48\l" 
+ "BB25\n           v47 = phi  v4,v36\l63   v49 = invokevirtual < Application, LEdge, orig()LVertex; > v1 @129 exception:v48\l" -> "BB26\n64   conditional branch(ne) v44,v49\l" 
+ "BB26\n64   conditional branch(ne) v44,v49\l" -> "BB27\n66   v51 = invokevirtual < Application, LEdge, symmetric()LEdge; > v36 @137 exception:v50\l" 
+ "BB26\n64   conditional branch(ne) v44,v49\l" -> "BB29\n           v52 = phi  v1,v52,v51\l           v144 = phi  v36,v141,v36\l           v145 = phi  v38,v142,v38\l           v146 = phi  v40,v143,v40\l69   v54 = invokevirtual < Application, LEdge, oNext()LEdge; > v145 @143 exception:v53\l" 
+ "BB27\n66   v51 = invokevirtual < Application, LEdge, symmetric()LEdge; > v36 @137 exception:v50\l" -> "BB28\n" 
+ "BB28\n" -> "BB29\n           v52 = phi  v1,v52,v51\l           v144 = phi  v36,v141,v36\l           v145 = phi  v38,v142,v38\l           v146 = phi  v40,v143,v40\l69   v54 = invokevirtual < Application, LEdge, oNext()LEdge; > v145 @143 exception:v53\l" 
+ "BB29\n           v52 = phi  v1,v52,v51\l           v144 = phi  v36,v141,v36\l           v145 = phi  v38,v142,v38\l           v146 = phi  v40,v143,v40\l69   v54 = invokevirtual < Application, LEdge, oNext()LEdge; > v145 @143 exception:v53\l" -> "BB30\n73   v56 = invokevirtual < Application, LEdge, valid(LEdge;)Z > v54,v144 @152 exception:v55\l" 
+ "BB30\n73   v56 = invokevirtual < Application, LEdge, valid(LEdge;)Z > v54,v144 @152 exception:v55\l" -> "BB31\n75   conditional branch(eq) v56,v14:#0\l" 
+ "BB31\n75   conditional branch(eq) v56,v14:#0\l" -> "BB32\n77   v58 = invokevirtual < Application, LEdge, orig()LVertex; > v144 @160 exception:v57\l" 
+ "BB31\n75   conditional branch(eq) v56,v14:#0\l" -> "BB45\n           v149 = phi  v144,v147\l           v81 = phi  v145,v76\l           v150 = phi  v146,v148\l113   v84 = invokevirtual < Application, LEdge, oPrev()LEdge; > v150 @242 exception:v83\l" 
+ "BB32\n77   v58 = invokevirtual < Application, LEdge, orig()LVertex; > v144 @160 exception:v57\l" -> "BB33\n80   v60 = invokevirtual < Application, LEdge, dest()LVertex; > v145 @167 exception:v59\l" 
+ "BB33\n80   v60 = invokevirtual < Application, LEdge, dest()LVertex; > v145 @167 exception:v59\l" -> "BB34\n83   v62 = invokevirtual < Application, LEdge, orig()LVertex; > v145 @174 exception:v61\l" 
+ "BB34\n83   v62 = invokevirtual < Application, LEdge, orig()LVertex; > v145 @174 exception:v61\l" -> "BB35\n86   v64 = invokevirtual < Application, LEdge, dest()LVertex; > v54 @181 exception:v63\l" 
+ "BB35\n86   v64 = invokevirtual < Application, LEdge, dest()LVertex; > v54 @181 exception:v63\l" -> "BB36\n" 
+ "BB36\n" -> "BB37\n           v147 = phi  v147,v144\l           v76 = phi  v77,v145\l           v148 = phi  v148,v146\l           v77 = phi  v69,v54\l           v78 = phi  v71,v60\l           v79 = phi  v73,v62\l           v80 = phi  v75,v64\l92   v66 = invokevirtual < Application, LVertex, incircle(LVertex;LVertex;LVertex;)Z > v78,v80,v79,v58 @194 exception:v65\l" 
+ "BB37\n           v147 = phi  v147,v144\l           v76 = phi  v77,v145\l           v148 = phi  v148,v146\l           v77 = phi  v69,v54\l           v78 = phi  v71,v60\l           v79 = phi  v73,v62\l           v80 = phi  v75,v64\l92   v66 = invokevirtual < Application, LVertex, incircle(LVertex;LVertex;LVertex;)Z > v78,v80,v79,v58 @194 exception:v65\l" -> "BB38\n94   conditional branch(eq) v66,v14:#0\l" 
+ "BB38\n94   conditional branch(eq) v66,v14:#0\l" -> "BB39\n96   invokevirtual < Application, LEdge, deleteEdge()V > v76 @202 exception:v67\l" 
+ "BB38\n94   conditional branch(eq) v66,v14:#0\l" -> "BB45\n           v149 = phi  v144,v147\l           v81 = phi  v145,v76\l           v150 = phi  v146,v148\l113   v84 = invokevirtual < Application, LEdge, oPrev()LEdge; > v150 @242 exception:v83\l" 
+ "BB39\n96   invokevirtual < Application, LEdge, deleteEdge()V > v76 @202 exception:v67\l" -> "BB40\n100   v69 = invokevirtual < Application, LEdge, oNext()LEdge; > v77 @211 exception:v68\l" 
+ "BB40\n100   v69 = invokevirtual < Application, LEdge, oNext()LEdge; > v77 @211 exception:v68\l" -> "BB41\n103   v71 = invokevirtual < Application, LEdge, dest()LVertex; > v77 @218 exception:v70\l" 
+ "BB41\n103   v71 = invokevirtual < Application, LEdge, dest()LVertex; > v77 @218 exception:v70\l" -> "BB42\n106   v73 = invokevirtual < Application, LEdge, orig()LVertex; > v77 @225 exception:v72\l" 
+ "BB42\n106   v73 = invokevirtual < Application, LEdge, orig()LVertex; > v77 @225 exception:v72\l" -> "BB43\n109   v75 = invokevirtual < Application, LEdge, dest()LVertex; > v69 @232 exception:v74\l" 
+ "BB43\n109   v75 = invokevirtual < Application, LEdge, dest()LVertex; > v69 @232 exception:v74\l" -> "BB44\n111   goto                         \l" 
+ "BB44\n111   goto                         \l" -> "BB37\n           v147 = phi  v147,v144\l           v76 = phi  v77,v145\l           v148 = phi  v148,v146\l           v77 = phi  v69,v54\l           v78 = phi  v71,v60\l           v79 = phi  v73,v62\l           v80 = phi  v75,v64\l92   v66 = invokevirtual < Application, LVertex, incircle(LVertex;LVertex;LVertex;)Z > v78,v80,v79,v58 @194 exception:v65\l" 
+ "BB45\n           v149 = phi  v144,v147\l           v81 = phi  v145,v76\l           v150 = phi  v146,v148\l113   v84 = invokevirtual < Application, LEdge, oPrev()LEdge; > v150 @242 exception:v83\l" -> "BB46\n117   v86 = invokevirtual < Application, LEdge, valid(LEdge;)Z > v84,v149 @251 exception:v85\l" 
+ "BB46\n117   v86 = invokevirtual < Application, LEdge, valid(LEdge;)Z > v84,v149 @251 exception:v85\l" -> "BB47\n119   conditional branch(eq) v86,v14:#0\l" 
+ "BB47\n119   conditional branch(eq) v86,v14:#0\l" -> "BB48\n121   v88 = invokevirtual < Application, LEdge, dest()LVertex; > v149 @259 exception:v87\l" 
+ "BB47\n119   conditional branch(eq) v86,v14:#0\l" -> "BB61\n           v152 = phi  v149,v151\l           v111 = phi  v150,v106\l158   v114 = invokevirtual < Application, LEdge, valid(LEdge;)Z > v81,v152 @343 exception:v113\l" 
+ "BB48\n121   v88 = invokevirtual < Application, LEdge, dest()LVertex; > v149 @259 exception:v87\l" -> "BB49\n124   v90 = invokevirtual < Application, LEdge, dest()LVertex; > v84 @266 exception:v89\l" 
+ "BB49\n124   v90 = invokevirtual < Application, LEdge, dest()LVertex; > v84 @266 exception:v89\l" -> "BB50\n127   v92 = invokevirtual < Application, LEdge, dest()LVertex; > v150 @273 exception:v91\l" 
+ "BB50\n127   v92 = invokevirtual < Application, LEdge, dest()LVertex; > v150 @273 exception:v91\l" -> "BB51\n130   v94 = invokevirtual < Application, LEdge, orig()LVertex; > v150 @280 exception:v93\l" 
+ "BB51\n130   v94 = invokevirtual < Application, LEdge, orig()LVertex; > v150 @280 exception:v93\l" -> "BB52\n" 
+ "BB52\n" -> "BB53\n           v151 = phi  v151,v149\l           v106 = phi  v107,v150\l           v107 = phi  v99,v84\l           v108 = phi  v105,v90\l           v109 = phi  v101,v92\l           v110 = phi  v103,v94\l136   v96 = invokevirtual < Application, LVertex, incircle(LVertex;LVertex;LVertex;)Z > v108,v109,v110,v88 @293 exception:v95\l" 
+ "BB53\n           v151 = phi  v151,v149\l           v106 = phi  v107,v150\l           v107 = phi  v99,v84\l           v108 = phi  v105,v90\l           v109 = phi  v101,v92\l           v110 = phi  v103,v94\l136   v96 = invokevirtual < Application, LVertex, incircle(LVertex;LVertex;LVertex;)Z > v108,v109,v110,v88 @293 exception:v95\l" -> "BB54\n138   conditional branch(eq) v96,v14:#0\l" 
+ "BB54\n138   conditional branch(eq) v96,v14:#0\l" -> "BB55\n140   invokevirtual < Application, LEdge, deleteEdge()V > v106 @301 exception:v97\l" 
+ "BB54\n138   conditional branch(eq) v96,v14:#0\l" -> "BB61\n           v152 = phi  v149,v151\l           v111 = phi  v150,v106\l158   v114 = invokevirtual < Application, LEdge, valid(LEdge;)Z > v81,v152 @343 exception:v113\l" 
+ "BB55\n140   invokevirtual < Application, LEdge, deleteEdge()V > v106 @301 exception:v97\l" -> "BB56\n144   v99 = invokevirtual < Application, LEdge, oPrev()LEdge; > v107 @310 exception:v98\l" 
+ "BB56\n144   v99 = invokevirtual < Application, LEdge, oPrev()LEdge; > v107 @310 exception:v98\l" -> "BB57\n147   v101 = invokevirtual < Application, LEdge, dest()LVertex; > v107 @317 exception:v100\l" 
+ "BB57\n147   v101 = invokevirtual < Application, LEdge, dest()LVertex; > v107 @317 exception:v100\l" -> "BB58\n150   v103 = invokevirtual < Application, LEdge, orig()LVertex; > v107 @324 exception:v102\l" 
+ "BB58\n150   v103 = invokevirtual < Application, LEdge, orig()LVertex; > v107 @324 exception:v102\l" -> "BB59\n153   v105 = invokevirtual < Application, LEdge, dest()LVertex; > v99 @331 exception:v104\l" 
+ "BB59\n153   v105 = invokevirtual < Application, LEdge, dest()LVertex; > v99 @331 exception:v104\l" -> "BB60\n155   goto                         \l" 
+ "BB60\n155   goto                         \l" -> "BB53\n           v151 = phi  v151,v149\l           v106 = phi  v107,v150\l           v107 = phi  v99,v84\l           v108 = phi  v105,v90\l           v109 = phi  v101,v92\l           v110 = phi  v103,v94\l136   v96 = invokevirtual < Application, LVertex, incircle(LVertex;LVertex;LVertex;)Z > v108,v109,v110,v88 @293 exception:v95\l" 
+ "BB61\n           v152 = phi  v149,v151\l           v111 = phi  v150,v106\l158   v114 = invokevirtual < Application, LEdge, valid(LEdge;)Z > v81,v152 @343 exception:v113\l" -> "BB62\n162   v116 = invokevirtual < Application, LEdge, valid(LEdge;)Z > v111,v152 @352 exception:v115\l" 
+ "BB62\n162   v116 = invokevirtual < Application, LEdge, valid(LEdge;)Z > v111,v152 @352 exception:v115\l" -> "BB63\n166   conditional branch(ne) v114,v14:#0\l" 
+ "BB63\n166   conditional branch(ne) v114,v14:#0\l" -> "BB64\n169   conditional branch(ne) v116,v14:#0\l" 
+ "BB63\n166   conditional branch(ne) v114,v14:#0\l" -> "BB68\n177   v118 = invokevirtual < Application, LEdge, dest()LVertex; > v81 @379 exception:v117\l" 
+ "BB64\n169   conditional branch(ne) v116,v14:#0\l" -> "BB65\n170   v153 = new <Application,LEdgePair>@367\l" 
+ "BB64\n169   conditional branch(ne) v116,v14:#0\l" -> "BB68\n177   v118 = invokevirtual < Application, LEdge, dest()LVertex; > v81 @379 exception:v117\l" 
+ "BB65\n170   v153 = new <Application,LEdgePair>@367\l" -> "BB66\n174   invokespecial < Application, LEdgePair, <init>(LEdge;LEdge;)V > v153,v52,v47 @373 exception:v154\l" 
+ "BB66\n174   invokespecial < Application, LEdgePair, <init>(LEdge;LEdge;)V > v153,v52,v47 @373 exception:v154\l" -> "BB67\n175   return v153                  \l" 
+ "BB67\n175   return v153                  \l" -> "BB86 (ex)\n\n" 
+ "BB68\n177   v118 = invokevirtual < Application, LEdge, dest()LVertex; > v81 @379 exception:v117\l" -> "BB69\n180   v120 = invokevirtual < Application, LEdge, orig()LVertex; > v81 @386 exception:v119\l" 
+ "BB69\n180   v120 = invokevirtual < Application, LEdge, orig()LVertex; > v81 @386 exception:v119\l" -> "BB70\n183   v122 = invokevirtual < Application, LEdge, orig()LVertex; > v111 @393 exception:v121\l" 
+ "BB70\n183   v122 = invokevirtual < Application, LEdge, orig()LVertex; > v111 @393 exception:v121\l" -> "BB71\n186   v124 = invokevirtual < Application, LEdge, dest()LVertex; > v111 @400 exception:v123\l" 
+ "BB71\n186   v124 = invokevirtual < Application, LEdge, dest()LVertex; > v111 @400 exception:v123\l" -> "BB72\n190   conditional branch(eq) v114,v14:#0\l" 
+ "BB72\n190   conditional branch(eq) v114,v14:#0\l" -> "BB73\n193   conditional branch(eq) v116,v14:#0\l" 
+ "BB72\n190   conditional branch(eq) v114,v14:#0\l" -> "BB76\n203   v128 = invokevirtual < Application, LEdge, symmetric()LEdge; > v152 @433 exception:v127\l" 
+ "BB73\n193   conditional branch(eq) v116,v14:#0\l" -> "BB74\n198   v126 = invokevirtual < Application, LVertex, incircle(LVertex;LVertex;LVertex;)Z > v118,v120,v122,v124 @423 exception:v125\l" 
+ "BB73\n193   conditional branch(eq) v116,v14:#0\l" -> "BB81\n213   v136 = invokevirtual < Application, LEdge, connectRight(LEdge;)LEdge; > v81,v152 @458 exception:v135\l" 
+ "BB74\n198   v126 = invokevirtual < Application, LVertex, incircle(LVertex;LVertex;LVertex;)Z > v118,v120,v122,v124 @423 exception:v125\l" -> "BB75\n200   conditional branch(eq) v126,v14:#0\l" 
+ "BB75\n200   conditional branch(eq) v126,v14:#0\l" -> "BB76\n203   v128 = invokevirtual < Application, LEdge, symmetric()LEdge; > v152 @433 exception:v127\l" 
+ "BB75\n200   conditional branch(eq) v126,v14:#0\l" -> "BB81\n213   v136 = invokevirtual < Application, LEdge, connectRight(LEdge;)LEdge; > v81,v152 @458 exception:v135\l" 
+ "BB76\n203   v128 = invokevirtual < Application, LEdge, symmetric()LEdge; > v152 @433 exception:v127\l" -> "BB77\n204   v130 = invokevirtual < Application, LEdge, connectLeft(LEdge;)LEdge; > v111,v128 @436 exception:v129\l" 
+ "BB77\n204   v130 = invokevirtual < Application, LEdge, connectLeft(LEdge;)LEdge; > v111,v128 @436 exception:v129\l" -> "BB78\n207   v132 = invokevirtual < Application, LEdge, symmetric()LEdge; > v130 @443 exception:v131\l" 
+ "BB78\n207   v132 = invokevirtual < Application, LEdge, symmetric()LEdge; > v130 @443 exception:v131\l" -> "BB79\n208   v134 = invokevirtual < Application, LEdge, lNext()LEdge; > v132 @446 exception:v133\l" 
+ "BB79\n208   v134 = invokevirtual < Application, LEdge, lNext()LEdge; > v132 @446 exception:v133\l" -> "BB80\n210   goto                         \l" 
+ "BB80\n210   goto                         \l" -> "BB85\n           v141 = phi  v130,v138\l           v142 = phi  v81,v140\l           v143 = phi  v134,v111\l219   goto                         \l" 
+ "BB81\n213   v136 = invokevirtual < Application, LEdge, connectRight(LEdge;)LEdge; > v81,v152 @458 exception:v135\l" -> "BB82\n214   v138 = invokevirtual < Application, LEdge, symmetric()LEdge; > v136 @461 exception:v137\l" 
+ "BB82\n214   v138 = invokevirtual < Application, LEdge, symmetric()LEdge; > v136 @461 exception:v137\l" -> "BB83\n217   v140 = invokevirtual < Application, LEdge, rPrev()LEdge; > v138 @468 exception:v139\l" 
+ "BB83\n217   v140 = invokevirtual < Application, LEdge, rPrev()LEdge; > v138 @468 exception:v139\l" -> "BB84\n" 
+ "BB84\n" -> "BB85\n           v141 = phi  v130,v138\l           v142 = phi  v81,v140\l           v143 = phi  v134,v111\l219   goto                         \l" 
+ "BB85\n           v141 = phi  v130,v138\l           v142 = phi  v81,v140\l           v143 = phi  v134,v111\l219   goto                         \l" -> "BB29\n           v52 = phi  v1,v52,v51\l           v144 = phi  v36,v141,v36\l           v145 = phi  v38,v142,v38\l           v146 = phi  v40,v143,v40\l69   v54 = invokevirtual < Application, LEdge, oNext()LEdge; > v145 @143 exception:v53\l" 
+
+}

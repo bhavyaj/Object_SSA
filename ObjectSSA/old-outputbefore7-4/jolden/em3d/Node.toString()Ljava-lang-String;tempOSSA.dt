@@ -1,0 +1,27 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Node.toString()Ljava-lang-String;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0  Create O2_1                               \l" [ ]
+   "BB2\n2   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v3 @4 exception:v4\l" [ ]
+   "BB3\n4   v7 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v3,v5:#value  @9 exception:v6\l" [ ]
+   "BB4\n6  GetOSSAInstruction:	8= O1_1< value>       \l" [ ]
+   "BB5\n7   v10 = invokevirtual < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; > v7,v8 @16 exception:v9\l" [ ]
+   "BB6\n9   v13 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v10,v11:#, from_count  @21 exception:v12\l" [ ]
+   "BB7\n11  GetOSSAInstruction:	14= O1_1< fromCount> \l" [ ]
+   "BB8\n12   v16 = invokevirtual < Application, Ljava/lang/StringBuilder, append(I)Ljava/lang/StringBuilder; > v13,v14 @28 exception:v15\l" [ ]
+   "BB9\n13   v18 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v16 @31 exception:v17\l" [ ]
+   "BB10\n14   return v18                              \l" [ ]
+   "BB11 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0  Create O2_1                               \l" 
+ "BB1\n0  Create O2_1                               \l" -> "BB2\n2   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v3 @4 exception:v4\l" 
+ "BB2\n2   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v3 @4 exception:v4\l" -> "BB3\n4   v7 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v3,v5:#value  @9 exception:v6\l" 
+ "BB3\n4   v7 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v3,v5:#value  @9 exception:v6\l" -> "BB4\n6  GetOSSAInstruction:	8= O1_1< value>       \l" 
+ "BB4\n6  GetOSSAInstruction:	8= O1_1< value>       \l" -> "BB5\n7   v10 = invokevirtual < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; > v7,v8 @16 exception:v9\l" 
+ "BB5\n7   v10 = invokevirtual < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; > v7,v8 @16 exception:v9\l" -> "BB6\n9   v13 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v10,v11:#, from_count  @21 exception:v12\l" 
+ "BB6\n9   v13 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v10,v11:#, from_count  @21 exception:v12\l" -> "BB7\n11  GetOSSAInstruction:	14= O1_1< fromCount> \l" 
+ "BB7\n11  GetOSSAInstruction:	14= O1_1< fromCount> \l" -> "BB8\n12   v16 = invokevirtual < Application, Ljava/lang/StringBuilder, append(I)Ljava/lang/StringBuilder; > v13,v14 @28 exception:v15\l" 
+ "BB8\n12   v16 = invokevirtual < Application, Ljava/lang/StringBuilder, append(I)Ljava/lang/StringBuilder; > v13,v14 @28 exception:v15\l" -> "BB9\n13   v18 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v16 @31 exception:v17\l" 
+ "BB9\n13   v18 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v16 @31 exception:v17\l" -> "BB10\n14   return v18                              \l" 
+ "BB10\n14   return v18                              \l" -> "BB11 (ex)\n\n" 
+
+}

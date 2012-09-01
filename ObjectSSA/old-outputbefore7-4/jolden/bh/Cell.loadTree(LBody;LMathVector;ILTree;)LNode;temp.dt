@@ -1,0 +1,30 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2   v8 = invokestatic < Application, LCell, oldSubindex(LMathVector;I)I > v3,v4 @2 exception:v7\l" [ ]
+   "BB2\n5   v9 = getfield < Application, LCell, subp, <Application,[LNode> > v1\l" [ ]
+   "BB3\n7   v10 = arrayload v9[v8]         \l" [ ]
+   "BB4\n11   conditional branch(eq) v10,v11:#null\l" [ ]
+   "BB5\n13   v13 = getfield < Application, LCell, subp, <Application,[LNode> > v1\l" [ ]
+   "BB6\n20   v15 = binaryop(SHR) v4 , v14:#1\l22   v17 = invokevirtual < Application, LNode, loadTree(LBody;LMathVector;ILTree;)LNode; > v10,v2,v3,v15,v5 @36 exception:v16\l" [ ]
+   "BB7\n23   arraystore v13[v8] = v17      \l" [ ]
+   "BB8\n24   goto                          \l" [ ]
+   "BB9\n26   v12 = getfield < Application, LCell, subp, <Application,[LNode> > v1\l" [ ]
+   "BB10\n29   arraystore v12[v8] = v2       \l" [ ]
+   "BB11\n31   return v1                     \l" [ ]
+   "BB12 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2   v8 = invokestatic < Application, LCell, oldSubindex(LMathVector;I)I > v3,v4 @2 exception:v7\l" 
+ "BB1\n2   v8 = invokestatic < Application, LCell, oldSubindex(LMathVector;I)I > v3,v4 @2 exception:v7\l" -> "BB2\n5   v9 = getfield < Application, LCell, subp, <Application,[LNode> > v1\l" 
+ "BB2\n5   v9 = getfield < Application, LCell, subp, <Application,[LNode> > v1\l" -> "BB3\n7   v10 = arrayload v9[v8]         \l" 
+ "BB3\n7   v10 = arrayload v9[v8]         \l" -> "BB4\n11   conditional branch(eq) v10,v11:#null\l" 
+ "BB4\n11   conditional branch(eq) v10,v11:#null\l" -> "BB5\n13   v13 = getfield < Application, LCell, subp, <Application,[LNode> > v1\l" 
+ "BB4\n11   conditional branch(eq) v10,v11:#null\l" -> "BB9\n26   v12 = getfield < Application, LCell, subp, <Application,[LNode> > v1\l" 
+ "BB5\n13   v13 = getfield < Application, LCell, subp, <Application,[LNode> > v1\l" -> "BB6\n20   v15 = binaryop(SHR) v4 , v14:#1\l22   v17 = invokevirtual < Application, LNode, loadTree(LBody;LMathVector;ILTree;)LNode; > v10,v2,v3,v15,v5 @36 exception:v16\l" 
+ "BB6\n20   v15 = binaryop(SHR) v4 , v14:#1\l22   v17 = invokevirtual < Application, LNode, loadTree(LBody;LMathVector;ILTree;)LNode; > v10,v2,v3,v15,v5 @36 exception:v16\l" -> "BB7\n23   arraystore v13[v8] = v17      \l" 
+ "BB7\n23   arraystore v13[v8] = v17      \l" -> "BB8\n24   goto                          \l" 
+ "BB8\n24   goto                          \l" -> "BB11\n31   return v1                     \l" 
+ "BB9\n26   v12 = getfield < Application, LCell, subp, <Application,[LNode> > v1\l" -> "BB10\n29   arraystore v12[v8] = v2       \l" 
+ "BB10\n29   arraystore v12[v8] = v2       \l" -> "BB11\n31   return v1                     \l" 
+ "BB11\n31   return v1                     \l" -> "BB12 (ex)\n\n" 
+
+}

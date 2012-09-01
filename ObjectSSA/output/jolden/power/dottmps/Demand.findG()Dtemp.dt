@@ -1,0 +1,17 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v3 = getfield < Application, LDemand, P, <Primordial,D> > v1\l" [ ]
+   "BB2\n3   v4 = getfield < Application, LDemand, P, <Primordial,D> > v1\l" [ ]
+   "BB3\n4   v5 = binaryop(mul) v3 , v4     \l6   v6 = getfield < Application, LDemand, Q, <Primordial,D> > v1\l" [ ]
+   "BB4\n8   v7 = getfield < Application, LDemand, Q, <Primordial,D> > v1\l" [ ]
+   "BB5\n9   v8 = binaryop(mul) v6 , v7     \l10   v9 = binaryop(add) v5 , v8    \l12   v11 = binaryop(sub) v9 , v10:#0.8\l13   return v11                    \l" [ ]
+   "BB6 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v3 = getfield < Application, LDemand, P, <Primordial,D> > v1\l" 
+ "BB1\n1   v3 = getfield < Application, LDemand, P, <Primordial,D> > v1\l" -> "BB2\n3   v4 = getfield < Application, LDemand, P, <Primordial,D> > v1\l" 
+ "BB2\n3   v4 = getfield < Application, LDemand, P, <Primordial,D> > v1\l" -> "BB3\n4   v5 = binaryop(mul) v3 , v4     \l6   v6 = getfield < Application, LDemand, Q, <Primordial,D> > v1\l" 
+ "BB3\n4   v5 = binaryop(mul) v3 , v4     \l6   v6 = getfield < Application, LDemand, Q, <Primordial,D> > v1\l" -> "BB4\n8   v7 = getfield < Application, LDemand, Q, <Primordial,D> > v1\l" 
+ "BB4\n8   v7 = getfield < Application, LDemand, Q, <Primordial,D> > v1\l" -> "BB5\n9   v8 = binaryop(mul) v6 , v7     \l10   v9 = binaryop(add) v5 , v8    \l12   v11 = binaryop(sub) v9 , v10:#0.8\l13   return v11                    \l" 
+ "BB5\n9   v8 = binaryop(mul) v6 , v7     \l10   v9 = binaryop(add) v5 , v8    \l12   v11 = binaryop(sub) v9 , v10:#0.8\l13   return v11                    \l" -> "BB6 (ex)\n\n" 
+
+}

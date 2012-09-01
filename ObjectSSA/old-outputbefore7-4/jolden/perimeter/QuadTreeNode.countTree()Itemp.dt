@@ -1,0 +1,47 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v3 = getfield < Application, LQuadTreeNode, nw, <Application,LQuadTreeNode> > v1\l" [ ]
+   "BB2\n3   conditional branch(ne) v3,v4:#null\l" [ ]
+   "BB3\n5   v5 = getfield < Application, LQuadTreeNode, ne, <Application,LQuadTreeNode> > v1\l" [ ]
+   "BB4\n7   conditional branch(ne) v5,v4:#null\l" [ ]
+   "BB5\n9   v6 = getfield < Application, LQuadTreeNode, sw, <Application,LQuadTreeNode> > v1\l" [ ]
+   "BB6\n11   conditional branch(ne) v6,v4:#null\l" [ ]
+   "BB7\n13   v7 = getfield < Application, LQuadTreeNode, se, <Application,LQuadTreeNode> > v1\l" [ ]
+   "BB8\n15   conditional branch(ne) v7,v4:#null\l" [ ]
+   "BB9\n17   return v23:#1                 \l" [ ]
+   "BB10\n19   v8 = getfield < Application, LQuadTreeNode, sw, <Application,LQuadTreeNode> > v1\l" [ ]
+   "BB11\n20   v10 = invokevirtual < Application, LQuadTreeNode, countTree()I > v8 @34 exception:v9\l" [ ]
+   "BB12\n22   v11 = getfield < Application, LQuadTreeNode, se, <Application,LQuadTreeNode> > v1\l" [ ]
+   "BB13\n23   v13 = invokevirtual < Application, LQuadTreeNode, countTree()I > v11 @41 exception:v12\l" [ ]
+   "BB14\n24   v14 = binaryop(add) v10 , v13 \l26   v15 = getfield < Application, LQuadTreeNode, ne, <Application,LQuadTreeNode> > v1\l" [ ]
+   "BB15\n27   v17 = invokevirtual < Application, LQuadTreeNode, countTree()I > v15 @49 exception:v16\l" [ ]
+   "BB16\n28   v18 = binaryop(add) v14 , v17 \l30   v19 = getfield < Application, LQuadTreeNode, nw, <Application,LQuadTreeNode> > v1\l" [ ]
+   "BB17\n31   v21 = invokevirtual < Application, LQuadTreeNode, countTree()I > v19 @57 exception:v20\l" [ ]
+   "BB18\n32   v22 = binaryop(add) v18 , v21 \l33   return v22                    \l" [ ]
+   "BB19 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v3 = getfield < Application, LQuadTreeNode, nw, <Application,LQuadTreeNode> > v1\l" 
+ "BB1\n1   v3 = getfield < Application, LQuadTreeNode, nw, <Application,LQuadTreeNode> > v1\l" -> "BB2\n3   conditional branch(ne) v3,v4:#null\l" 
+ "BB2\n3   conditional branch(ne) v3,v4:#null\l" -> "BB3\n5   v5 = getfield < Application, LQuadTreeNode, ne, <Application,LQuadTreeNode> > v1\l" 
+ "BB2\n3   conditional branch(ne) v3,v4:#null\l" -> "BB10\n19   v8 = getfield < Application, LQuadTreeNode, sw, <Application,LQuadTreeNode> > v1\l" 
+ "BB3\n5   v5 = getfield < Application, LQuadTreeNode, ne, <Application,LQuadTreeNode> > v1\l" -> "BB4\n7   conditional branch(ne) v5,v4:#null\l" 
+ "BB4\n7   conditional branch(ne) v5,v4:#null\l" -> "BB5\n9   v6 = getfield < Application, LQuadTreeNode, sw, <Application,LQuadTreeNode> > v1\l" 
+ "BB4\n7   conditional branch(ne) v5,v4:#null\l" -> "BB10\n19   v8 = getfield < Application, LQuadTreeNode, sw, <Application,LQuadTreeNode> > v1\l" 
+ "BB5\n9   v6 = getfield < Application, LQuadTreeNode, sw, <Application,LQuadTreeNode> > v1\l" -> "BB6\n11   conditional branch(ne) v6,v4:#null\l" 
+ "BB6\n11   conditional branch(ne) v6,v4:#null\l" -> "BB7\n13   v7 = getfield < Application, LQuadTreeNode, se, <Application,LQuadTreeNode> > v1\l" 
+ "BB6\n11   conditional branch(ne) v6,v4:#null\l" -> "BB10\n19   v8 = getfield < Application, LQuadTreeNode, sw, <Application,LQuadTreeNode> > v1\l" 
+ "BB7\n13   v7 = getfield < Application, LQuadTreeNode, se, <Application,LQuadTreeNode> > v1\l" -> "BB8\n15   conditional branch(ne) v7,v4:#null\l" 
+ "BB8\n15   conditional branch(ne) v7,v4:#null\l" -> "BB9\n17   return v23:#1                 \l" 
+ "BB8\n15   conditional branch(ne) v7,v4:#null\l" -> "BB10\n19   v8 = getfield < Application, LQuadTreeNode, sw, <Application,LQuadTreeNode> > v1\l" 
+ "BB9\n17   return v23:#1                 \l" -> "BB19 (ex)\n\n" 
+ "BB10\n19   v8 = getfield < Application, LQuadTreeNode, sw, <Application,LQuadTreeNode> > v1\l" -> "BB11\n20   v10 = invokevirtual < Application, LQuadTreeNode, countTree()I > v8 @34 exception:v9\l" 
+ "BB11\n20   v10 = invokevirtual < Application, LQuadTreeNode, countTree()I > v8 @34 exception:v9\l" -> "BB12\n22   v11 = getfield < Application, LQuadTreeNode, se, <Application,LQuadTreeNode> > v1\l" 
+ "BB12\n22   v11 = getfield < Application, LQuadTreeNode, se, <Application,LQuadTreeNode> > v1\l" -> "BB13\n23   v13 = invokevirtual < Application, LQuadTreeNode, countTree()I > v11 @41 exception:v12\l" 
+ "BB13\n23   v13 = invokevirtual < Application, LQuadTreeNode, countTree()I > v11 @41 exception:v12\l" -> "BB14\n24   v14 = binaryop(add) v10 , v13 \l26   v15 = getfield < Application, LQuadTreeNode, ne, <Application,LQuadTreeNode> > v1\l" 
+ "BB14\n24   v14 = binaryop(add) v10 , v13 \l26   v15 = getfield < Application, LQuadTreeNode, ne, <Application,LQuadTreeNode> > v1\l" -> "BB15\n27   v17 = invokevirtual < Application, LQuadTreeNode, countTree()I > v15 @49 exception:v16\l" 
+ "BB15\n27   v17 = invokevirtual < Application, LQuadTreeNode, countTree()I > v15 @49 exception:v16\l" -> "BB16\n28   v18 = binaryop(add) v14 , v17 \l30   v19 = getfield < Application, LQuadTreeNode, nw, <Application,LQuadTreeNode> > v1\l" 
+ "BB16\n28   v18 = binaryop(add) v14 , v17 \l30   v19 = getfield < Application, LQuadTreeNode, nw, <Application,LQuadTreeNode> > v1\l" -> "BB17\n31   v21 = invokevirtual < Application, LQuadTreeNode, countTree()I > v19 @57 exception:v20\l" 
+ "BB17\n31   v21 = invokevirtual < Application, LQuadTreeNode, countTree()I > v19 @57 exception:v20\l" -> "BB18\n32   v22 = binaryop(add) v18 , v21 \l33   return v22                    \l" 
+ "BB18\n32   v22 = binaryop(add) v18 , v21 \l33   return v22                    \l" -> "BB19 (ex)\n\n" 
+
+}

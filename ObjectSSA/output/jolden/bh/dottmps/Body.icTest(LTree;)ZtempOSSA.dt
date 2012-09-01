@@ -1,0 +1,63 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Body.icTest(LTree;)Z", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  GetOSSAInstruction:	O3_1= O1_1< pos>      \l" [ ]
+   "BB2\n3  O4_1 = < Application, LMathVector, value(I)D >( O3_1, V5 )\l" [ ]
+   "BB3\n6  GetOSSAInstruction:	O3_1= O1_1< pos>      \l" [ ]
+   "BB4\n8  O4_2 = < Application, LMathVector, value(I)D >( O3_1, V9 )\l" [ ]
+   "BB5\n11  GetOSSAInstruction:	O3_1= O1_1< pos>     \l" [ ]
+   "BB6\n13  O4_3 = < Application, LMathVector, value(I)D >( O3_1, V13 )\l" [ ]
+   "BB7\n19  GetOSSAInstruction:	O5_1= O2_1< rmin>    \l" [ ]
+   "BB8\n21  O4_4 = < Application, LMathVector, value(I)D >( O5_1, V5 )\l" [ ]
+   "BB9\n22   v19 = binaryop(sub) v7 , v18            \l24  GetOSSAInstruction:	20= O2_1< rsize>     \l" [ ]
+   "BB10\n25   v21 = binaryop(div) v19 , v20           \l29   v23 = compare v22:#0.0,v21 opcode=cmpg  \l31   conditional branch(ge) v23,v5:#0        \l" [ ]
+   "BB11\n34   v25 = compare v21,v24:#1.0 opcode=cmpg  \l36   conditional branch(lt) v25,v5:#0        \l" [ ]
+   "BB12\n" [ ]
+   "BB13\n           v26 = phi  v9:#1,v5:#0\l41  GetOSSAInstruction:	O5_1= O2_1< rmin>    \l" [ ]
+   "BB14\n43  O4_5 = < Application, LMathVector, value(I)D >( O5_1, V9 )\l" [ ]
+   "BB15\n44   v30 = binaryop(sub) v11 , v29           \l46  GetOSSAInstruction:	31= O2_1< rsize>     \l" [ ]
+   "BB16\n47   v32 = binaryop(div) v30 , v31           \l51   v33 = compare v22:#0.0,v32 opcode=cmpg  \l53   conditional branch(ge) v33,v5:#0        \l" [ ]
+   "BB17\n56   v34 = compare v32,v24:#1.0 opcode=cmpg  \l58   conditional branch(lt) v34,v5:#0        \l" [ ]
+   "BB18\n" [ ]
+   "BB19\n           v35 = phi  v26,v5:#0\l63  GetOSSAInstruction:	O5_1= O2_1< rmin>    \l" [ ]
+   "BB20\n65  O4_6 = < Application, LMathVector, value(I)D >( O5_1, V13 )\l" [ ]
+   "BB21\n66   v39 = binaryop(sub) v15 , v38           \l68  GetOSSAInstruction:	40= O2_1< rsize>     \l" [ ]
+   "BB22\n69   v41 = binaryop(div) v39 , v40           \l73   v42 = compare v22:#0.0,v41 opcode=cmpg  \l75   conditional branch(ge) v42,v5:#0        \l" [ ]
+   "BB23\n78   v43 = compare v41,v24:#1.0 opcode=cmpg  \l80   conditional branch(lt) v43,v5:#0        \l" [ ]
+   "BB24\n" [ ]
+   "BB25\n           v44 = phi  v35,v5:#0\l84  Return O4_6                              \l" [ ]
+   "BB26 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  GetOSSAInstruction:	O3_1= O1_1< pos>      \l" 
+ "BB1\n1  GetOSSAInstruction:	O3_1= O1_1< pos>      \l" -> "BB2\n3  O4_1 = < Application, LMathVector, value(I)D >( O3_1, V5 )\l" 
+ "BB2\n3  O4_1 = < Application, LMathVector, value(I)D >( O3_1, V5 )\l" -> "BB3\n6  GetOSSAInstruction:	O3_1= O1_1< pos>      \l" 
+ "BB3\n6  GetOSSAInstruction:	O3_1= O1_1< pos>      \l" -> "BB4\n8  O4_2 = < Application, LMathVector, value(I)D >( O3_1, V9 )\l" 
+ "BB4\n8  O4_2 = < Application, LMathVector, value(I)D >( O3_1, V9 )\l" -> "BB5\n11  GetOSSAInstruction:	O3_1= O1_1< pos>     \l" 
+ "BB5\n11  GetOSSAInstruction:	O3_1= O1_1< pos>     \l" -> "BB6\n13  O4_3 = < Application, LMathVector, value(I)D >( O3_1, V13 )\l" 
+ "BB6\n13  O4_3 = < Application, LMathVector, value(I)D >( O3_1, V13 )\l" -> "BB7\n19  GetOSSAInstruction:	O5_1= O2_1< rmin>    \l" 
+ "BB7\n19  GetOSSAInstruction:	O5_1= O2_1< rmin>    \l" -> "BB8\n21  O4_4 = < Application, LMathVector, value(I)D >( O5_1, V5 )\l" 
+ "BB8\n21  O4_4 = < Application, LMathVector, value(I)D >( O5_1, V5 )\l" -> "BB9\n22   v19 = binaryop(sub) v7 , v18            \l24  GetOSSAInstruction:	20= O2_1< rsize>     \l" 
+ "BB9\n22   v19 = binaryop(sub) v7 , v18            \l24  GetOSSAInstruction:	20= O2_1< rsize>     \l" -> "BB10\n25   v21 = binaryop(div) v19 , v20           \l29   v23 = compare v22:#0.0,v21 opcode=cmpg  \l31   conditional branch(ge) v23,v5:#0        \l" 
+ "BB10\n25   v21 = binaryop(div) v19 , v20           \l29   v23 = compare v22:#0.0,v21 opcode=cmpg  \l31   conditional branch(ge) v23,v5:#0        \l" -> "BB11\n34   v25 = compare v21,v24:#1.0 opcode=cmpg  \l36   conditional branch(lt) v25,v5:#0        \l" 
+ "BB10\n25   v21 = binaryop(div) v19 , v20           \l29   v23 = compare v22:#0.0,v21 opcode=cmpg  \l31   conditional branch(ge) v23,v5:#0        \l" -> "BB12\n" 
+ "BB11\n34   v25 = compare v21,v24:#1.0 opcode=cmpg  \l36   conditional branch(lt) v25,v5:#0        \l" -> "BB12\n" 
+ "BB11\n34   v25 = compare v21,v24:#1.0 opcode=cmpg  \l36   conditional branch(lt) v25,v5:#0        \l" -> "BB13\n           v26 = phi  v9:#1,v5:#0\l41  GetOSSAInstruction:	O5_1= O2_1< rmin>    \l" 
+ "BB12\n" -> "BB13\n           v26 = phi  v9:#1,v5:#0\l41  GetOSSAInstruction:	O5_1= O2_1< rmin>    \l" 
+ "BB13\n           v26 = phi  v9:#1,v5:#0\l41  GetOSSAInstruction:	O5_1= O2_1< rmin>    \l" -> "BB14\n43  O4_5 = < Application, LMathVector, value(I)D >( O5_1, V9 )\l" 
+ "BB14\n43  O4_5 = < Application, LMathVector, value(I)D >( O5_1, V9 )\l" -> "BB15\n44   v30 = binaryop(sub) v11 , v29           \l46  GetOSSAInstruction:	31= O2_1< rsize>     \l" 
+ "BB15\n44   v30 = binaryop(sub) v11 , v29           \l46  GetOSSAInstruction:	31= O2_1< rsize>     \l" -> "BB16\n47   v32 = binaryop(div) v30 , v31           \l51   v33 = compare v22:#0.0,v32 opcode=cmpg  \l53   conditional branch(ge) v33,v5:#0        \l" 
+ "BB16\n47   v32 = binaryop(div) v30 , v31           \l51   v33 = compare v22:#0.0,v32 opcode=cmpg  \l53   conditional branch(ge) v33,v5:#0        \l" -> "BB17\n56   v34 = compare v32,v24:#1.0 opcode=cmpg  \l58   conditional branch(lt) v34,v5:#0        \l" 
+ "BB16\n47   v32 = binaryop(div) v30 , v31           \l51   v33 = compare v22:#0.0,v32 opcode=cmpg  \l53   conditional branch(ge) v33,v5:#0        \l" -> "BB18\n" 
+ "BB17\n56   v34 = compare v32,v24:#1.0 opcode=cmpg  \l58   conditional branch(lt) v34,v5:#0        \l" -> "BB18\n" 
+ "BB17\n56   v34 = compare v32,v24:#1.0 opcode=cmpg  \l58   conditional branch(lt) v34,v5:#0        \l" -> "BB19\n           v35 = phi  v26,v5:#0\l63  GetOSSAInstruction:	O5_1= O2_1< rmin>    \l" 
+ "BB18\n" -> "BB19\n           v35 = phi  v26,v5:#0\l63  GetOSSAInstruction:	O5_1= O2_1< rmin>    \l" 
+ "BB19\n           v35 = phi  v26,v5:#0\l63  GetOSSAInstruction:	O5_1= O2_1< rmin>    \l" -> "BB20\n65  O4_6 = < Application, LMathVector, value(I)D >( O5_1, V13 )\l" 
+ "BB20\n65  O4_6 = < Application, LMathVector, value(I)D >( O5_1, V13 )\l" -> "BB21\n66   v39 = binaryop(sub) v15 , v38           \l68  GetOSSAInstruction:	40= O2_1< rsize>     \l" 
+ "BB21\n66   v39 = binaryop(sub) v15 , v38           \l68  GetOSSAInstruction:	40= O2_1< rsize>     \l" -> "BB22\n69   v41 = binaryop(div) v39 , v40           \l73   v42 = compare v22:#0.0,v41 opcode=cmpg  \l75   conditional branch(ge) v42,v5:#0        \l" 
+ "BB22\n69   v41 = binaryop(div) v39 , v40           \l73   v42 = compare v22:#0.0,v41 opcode=cmpg  \l75   conditional branch(ge) v42,v5:#0        \l" -> "BB23\n78   v43 = compare v41,v24:#1.0 opcode=cmpg  \l80   conditional branch(lt) v43,v5:#0        \l" 
+ "BB22\n69   v41 = binaryop(div) v39 , v40           \l73   v42 = compare v22:#0.0,v41 opcode=cmpg  \l75   conditional branch(ge) v42,v5:#0        \l" -> "BB24\n" 
+ "BB23\n78   v43 = compare v41,v24:#1.0 opcode=cmpg  \l80   conditional branch(lt) v43,v5:#0        \l" -> "BB24\n" 
+ "BB23\n78   v43 = compare v41,v24:#1.0 opcode=cmpg  \l80   conditional branch(lt) v43,v5:#0        \l" -> "BB25\n           v44 = phi  v35,v5:#0\l84  Return O4_6                              \l" 
+ "BB24\n" -> "BB25\n           v44 = phi  v35,v5:#0\l84  Return O4_6                              \l" 
+ "BB25\n           v44 = phi  v35,v5:#0\l84  Return O4_6                              \l" -> "BB26 (ex)\n\n" 
+
+}

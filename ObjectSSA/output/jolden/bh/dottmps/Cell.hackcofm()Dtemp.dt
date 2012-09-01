@@ -1,0 +1,49 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2   v4 = new <Application,LMathVector>@2\l" [ ]
+   "BB2\n4   invokespecial < Application, LMathVector, <init>()V > v4 @6 exception:v5\l" [ ]
+   "BB3\n6   v6 = new <Application,LMathVector>@10\l" [ ]
+   "BB4\n8   invokespecial < Application, LMathVector, <init>()V > v6 @14 exception:v7\l" [ ]
+   "BB5\n" [ ]
+   "BB6\n           v22 = phi  v19,v3:#0.0\l           v23 = phi  v21,v8:#0\l14   conditional branch(ge) v23,v9:#8\l" [ ]
+   "BB7\n16   v10 = getfield < Application, LCell, subp, <Application,[LNode> > v1\l" [ ]
+   "BB8\n18   v11 = arrayload v10[v23]      \l" [ ]
+   "BB9\n22   conditional branch(eq) v11,v12:#null\l" [ ]
+   "BB10\n24   v14 = invokevirtual < Application, LNode, hackcofm()D > v11 @45 exception:v13\l" [ ]
+   "BB11\n28   v15 = binaryop(add) v14 , v22 \l32   v16 = getfield < Application, LNode, pos, <Application,LMathVector> > v11\l" [ ]
+   "BB12\n34   invokevirtual < Application, LMathVector, multScalar(LMathVector;D)V > v6,v16,v14 @64 exception:v17\l" [ ]
+   "BB13\n37   invokevirtual < Application, LMathVector, addition(LMathVector;)V > v4,v6 @70 exception:v18\l" [ ]
+   "BB14\n           v19 = phi  v22,v15\l40   v21 = binaryop(add) v23 , v20:#1\l42   goto                          \l" [ ]
+   "BB15\n45   putfield v1 = v22 < Application, LCell, mass, <Primordial,D> >\l" [ ]
+   "BB16\n48   putfield v1 = v4 < Application, LCell, pos, <Application,LMathVector> >\l" [ ]
+   "BB17\n50   v24 = getfield < Application, LCell, pos, <Application,LMathVector> > v1\l" [ ]
+   "BB18\n52   v25 = getfield < Application, LCell, mass, <Primordial,D> > v1\l" [ ]
+   "BB19\n53   invokevirtual < Application, LMathVector, divScalar(D)V > v24,v25 @97 exception:v26\l" [ ]
+   "BB20\n55   return v22                    \l" [ ]
+   "BB21 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2   v4 = new <Application,LMathVector>@2\l" 
+ "BB1\n2   v4 = new <Application,LMathVector>@2\l" -> "BB2\n4   invokespecial < Application, LMathVector, <init>()V > v4 @6 exception:v5\l" 
+ "BB2\n4   invokespecial < Application, LMathVector, <init>()V > v4 @6 exception:v5\l" -> "BB3\n6   v6 = new <Application,LMathVector>@10\l" 
+ "BB3\n6   v6 = new <Application,LMathVector>@10\l" -> "BB4\n8   invokespecial < Application, LMathVector, <init>()V > v6 @14 exception:v7\l" 
+ "BB4\n8   invokespecial < Application, LMathVector, <init>()V > v6 @14 exception:v7\l" -> "BB5\n" 
+ "BB5\n" -> "BB6\n           v22 = phi  v19,v3:#0.0\l           v23 = phi  v21,v8:#0\l14   conditional branch(ge) v23,v9:#8\l" 
+ "BB6\n           v22 = phi  v19,v3:#0.0\l           v23 = phi  v21,v8:#0\l14   conditional branch(ge) v23,v9:#8\l" -> "BB7\n16   v10 = getfield < Application, LCell, subp, <Application,[LNode> > v1\l" 
+ "BB6\n           v22 = phi  v19,v3:#0.0\l           v23 = phi  v21,v8:#0\l14   conditional branch(ge) v23,v9:#8\l" -> "BB15\n45   putfield v1 = v22 < Application, LCell, mass, <Primordial,D> >\l" 
+ "BB7\n16   v10 = getfield < Application, LCell, subp, <Application,[LNode> > v1\l" -> "BB8\n18   v11 = arrayload v10[v23]      \l" 
+ "BB8\n18   v11 = arrayload v10[v23]      \l" -> "BB9\n22   conditional branch(eq) v11,v12:#null\l" 
+ "BB9\n22   conditional branch(eq) v11,v12:#null\l" -> "BB10\n24   v14 = invokevirtual < Application, LNode, hackcofm()D > v11 @45 exception:v13\l" 
+ "BB9\n22   conditional branch(eq) v11,v12:#null\l" -> "BB14\n           v19 = phi  v22,v15\l40   v21 = binaryop(add) v23 , v20:#1\l42   goto                          \l" 
+ "BB10\n24   v14 = invokevirtual < Application, LNode, hackcofm()D > v11 @45 exception:v13\l" -> "BB11\n28   v15 = binaryop(add) v14 , v22 \l32   v16 = getfield < Application, LNode, pos, <Application,LMathVector> > v11\l" 
+ "BB11\n28   v15 = binaryop(add) v14 , v22 \l32   v16 = getfield < Application, LNode, pos, <Application,LMathVector> > v11\l" -> "BB12\n34   invokevirtual < Application, LMathVector, multScalar(LMathVector;D)V > v6,v16,v14 @64 exception:v17\l" 
+ "BB12\n34   invokevirtual < Application, LMathVector, multScalar(LMathVector;D)V > v6,v16,v14 @64 exception:v17\l" -> "BB13\n37   invokevirtual < Application, LMathVector, addition(LMathVector;)V > v4,v6 @70 exception:v18\l" 
+ "BB13\n37   invokevirtual < Application, LMathVector, addition(LMathVector;)V > v4,v6 @70 exception:v18\l" -> "BB14\n           v19 = phi  v22,v15\l40   v21 = binaryop(add) v23 , v20:#1\l42   goto                          \l" 
+ "BB14\n           v19 = phi  v22,v15\l40   v21 = binaryop(add) v23 , v20:#1\l42   goto                          \l" -> "BB6\n           v22 = phi  v19,v3:#0.0\l           v23 = phi  v21,v8:#0\l14   conditional branch(ge) v23,v9:#8\l" 
+ "BB15\n45   putfield v1 = v22 < Application, LCell, mass, <Primordial,D> >\l" -> "BB16\n48   putfield v1 = v4 < Application, LCell, pos, <Application,LMathVector> >\l" 
+ "BB16\n48   putfield v1 = v4 < Application, LCell, pos, <Application,LMathVector> >\l" -> "BB17\n50   v24 = getfield < Application, LCell, pos, <Application,LMathVector> > v1\l" 
+ "BB17\n50   v24 = getfield < Application, LCell, pos, <Application,LMathVector> > v1\l" -> "BB18\n52   v25 = getfield < Application, LCell, mass, <Primordial,D> > v1\l" 
+ "BB18\n52   v25 = getfield < Application, LCell, mass, <Primordial,D> > v1\l" -> "BB19\n53   invokevirtual < Application, LMathVector, divScalar(D)V > v24,v25 @97 exception:v26\l" 
+ "BB19\n53   invokevirtual < Application, LMathVector, divScalar(D)V > v24,v25 @97 exception:v26\l" -> "BB20\n55   return v22                    \l" 
+ "BB20\n55   return v22                    \l" -> "BB21 (ex)\n\n" 
+
+}

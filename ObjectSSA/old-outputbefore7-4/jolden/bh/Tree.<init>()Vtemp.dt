@@ -1,0 +1,37 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v3\l" [ ]
+   "BB2\n3   v4 = new <Application,LMathVector>@5\l" [ ]
+   "BB3\n5   invokespecial < Application, LMathVector, <init>()V > v4 @9 exception:v5\l" [ ]
+   "BB4\n6   putfield v1 = v4 < Application, LTree, rmin, <Application,LMathVector> >\l" [ ]
+   "BB5\n9   putfield v1 = v6:#4.0 < Application, LTree, rsize, <Primordial,D> >\l" [ ]
+   "BB6\n12   putfield v1 = v7:#null < Application, LTree, root, <Application,LNode> >\l" [ ]
+   "BB7\n15   putfield v1 = v7:#null < Application, LTree, bodyTab, <Application,LBody> >\l" [ ]
+   "BB8\n18   putfield v1 = v7:#null < Application, LTree, bodyTabRev, <Application,LBody> >\l" [ ]
+   "BB9\n20   v8 = getfield < Application, LTree, rmin, <Application,LMathVector> > v1\l" [ ]
+   "BB10\n23   invokevirtual < Application, LMathVector, value(ID)V > v8,v9:#0,v10:#-2.0 @45 exception:v11\l" [ ]
+   "BB11\n25   v12 = getfield < Application, LTree, rmin, <Application,LMathVector> > v1\l" [ ]
+   "BB12\n28   invokevirtual < Application, LMathVector, value(ID)V > v12,v13:#1,v10:#-2.0 @56 exception:v14\l" [ ]
+   "BB13\n30   v15 = getfield < Application, LTree, rmin, <Application,LMathVector> > v1\l" [ ]
+   "BB14\n33   invokevirtual < Application, LMathVector, value(ID)V > v15,v16:#2,v10:#-2.0 @67 exception:v17\l" [ ]
+   "BB15\n34   return                        \l" [ ]
+   "BB16 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v3\l" 
+ "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v3\l" -> "BB2\n3   v4 = new <Application,LMathVector>@5\l" 
+ "BB2\n3   v4 = new <Application,LMathVector>@5\l" -> "BB3\n5   invokespecial < Application, LMathVector, <init>()V > v4 @9 exception:v5\l" 
+ "BB3\n5   invokespecial < Application, LMathVector, <init>()V > v4 @9 exception:v5\l" -> "BB4\n6   putfield v1 = v4 < Application, LTree, rmin, <Application,LMathVector> >\l" 
+ "BB4\n6   putfield v1 = v4 < Application, LTree, rmin, <Application,LMathVector> >\l" -> "BB5\n9   putfield v1 = v6:#4.0 < Application, LTree, rsize, <Primordial,D> >\l" 
+ "BB5\n9   putfield v1 = v6:#4.0 < Application, LTree, rsize, <Primordial,D> >\l" -> "BB6\n12   putfield v1 = v7:#null < Application, LTree, root, <Application,LNode> >\l" 
+ "BB6\n12   putfield v1 = v7:#null < Application, LTree, root, <Application,LNode> >\l" -> "BB7\n15   putfield v1 = v7:#null < Application, LTree, bodyTab, <Application,LBody> >\l" 
+ "BB7\n15   putfield v1 = v7:#null < Application, LTree, bodyTab, <Application,LBody> >\l" -> "BB8\n18   putfield v1 = v7:#null < Application, LTree, bodyTabRev, <Application,LBody> >\l" 
+ "BB8\n18   putfield v1 = v7:#null < Application, LTree, bodyTabRev, <Application,LBody> >\l" -> "BB9\n20   v8 = getfield < Application, LTree, rmin, <Application,LMathVector> > v1\l" 
+ "BB9\n20   v8 = getfield < Application, LTree, rmin, <Application,LMathVector> > v1\l" -> "BB10\n23   invokevirtual < Application, LMathVector, value(ID)V > v8,v9:#0,v10:#-2.0 @45 exception:v11\l" 
+ "BB10\n23   invokevirtual < Application, LMathVector, value(ID)V > v8,v9:#0,v10:#-2.0 @45 exception:v11\l" -> "BB11\n25   v12 = getfield < Application, LTree, rmin, <Application,LMathVector> > v1\l" 
+ "BB11\n25   v12 = getfield < Application, LTree, rmin, <Application,LMathVector> > v1\l" -> "BB12\n28   invokevirtual < Application, LMathVector, value(ID)V > v12,v13:#1,v10:#-2.0 @56 exception:v14\l" 
+ "BB12\n28   invokevirtual < Application, LMathVector, value(ID)V > v12,v13:#1,v10:#-2.0 @56 exception:v14\l" -> "BB13\n30   v15 = getfield < Application, LTree, rmin, <Application,LMathVector> > v1\l" 
+ "BB13\n30   v15 = getfield < Application, LTree, rmin, <Application,LMathVector> > v1\l" -> "BB14\n33   invokevirtual < Application, LMathVector, value(ID)V > v15,v16:#2,v10:#-2.0 @67 exception:v17\l" 
+ "BB14\n33   invokevirtual < Application, LMathVector, value(ID)V > v15,v16:#2,v10:#-2.0 @67 exception:v17\l" -> "BB15\n34   return                        \l" 
+ "BB15\n34   return                        \l" -> "BB16 (ex)\n\n" 
+
+}

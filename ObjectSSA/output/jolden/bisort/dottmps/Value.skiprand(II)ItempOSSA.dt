@@ -1,0 +1,16 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Value.skiprand(II)I", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n           v9 = phi  v6,v1\l           v10 = phi  v8,v2\l2   conditional branch(eq) v10,v4:#0         \l" [ ]
+   "BB2\n4  O1_1 = < Application, LValue, random(I)I >( V9 )\l" [ ]
+   "BB3\n8   v8 = binaryop(add) v10 , v7:#-1          \l10   goto                                    \l" [ ]
+   "BB4\n12  Return O1_1                              \l" [ ]
+   "BB5 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n           v9 = phi  v6,v1\l           v10 = phi  v8,v2\l2   conditional branch(eq) v10,v4:#0         \l" 
+ "BB1\n           v9 = phi  v6,v1\l           v10 = phi  v8,v2\l2   conditional branch(eq) v10,v4:#0         \l" -> "BB2\n4  O1_1 = < Application, LValue, random(I)I >( V9 )\l" 
+ "BB1\n           v9 = phi  v6,v1\l           v10 = phi  v8,v2\l2   conditional branch(eq) v10,v4:#0         \l" -> "BB4\n12  Return O1_1                              \l" 
+ "BB2\n4  O1_1 = < Application, LValue, random(I)I >( V9 )\l" -> "BB3\n8   v8 = binaryop(add) v10 , v7:#-1          \l10   goto                                    \l" 
+ "BB3\n8   v8 = binaryop(add) v10 , v7:#-1          \l10   goto                                    \l" -> "BB1\n           v9 = phi  v6,v1\l           v10 = phi  v8,v2\l2   conditional branch(eq) v10,v4:#0         \l" 
+ "BB4\n12  Return O1_1                              \l" -> "BB5 (ex)\n\n" 
+
+}

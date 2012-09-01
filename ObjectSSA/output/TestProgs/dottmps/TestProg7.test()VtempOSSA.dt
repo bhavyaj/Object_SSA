@@ -1,0 +1,41 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for TestProg7.test()V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0  Create O1_1                               \l" [ ]
+   "BB2\n2   invokespecial < Application, LSample, <init>()V > v2 @4 exception:v3\l" [ ]
+   "BB3\n4  Create O2_1                               \l" [ ]
+   "BB4\n6   invokespecial < Application, LSample, <init>()V > v4 @12 exception:v5\l" [ ]
+   "BB5\n8  Create O3_1                               \l" [ ]
+   "BB6\n10   invokespecial < Application, LSample, <init>()V > v6 @20 exception:v7\l" [ ]
+   "BB7\n15  GetOSSAInstruction:	8= O3_1< x>          \l" [ ]
+   "BB8\n19   conditional branch(le) v8,v9:#5         \l" [ ]
+   "BB9\n24  PutOSSAInstruction:	O1_2< x > = O1_1<V10>\l" [ ]
+   "BB10\n25   goto                                    \l" [ ]
+   "BB11\n28   conditional branch(le) v8,v10:#3        \l" [ ]
+   "BB12\n31  PutOSSAInstruction:	O1_3< x > = O1_1<V11>\l" [ ]
+   "BB13\n32   goto                                    \l" [ ]
+   "BB14\n" [ ]
+   "BB15\n           O1_4 = Object-Phi(O1_1, O1_2, O1_3 )\l           O4_1 = diff-Object-Phi(O1_2, O3_1, O2_1 )\l           v12 = phi  v2,v6,v4\l37  PutOSSAInstruction:	O4_2< x > = O4_1<V13>\l" [ ]
+   "BB16\n38  return                                   \l" [ ]
+   "BB17 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0  Create O1_1                               \l" 
+ "BB1\n0  Create O1_1                               \l" -> "BB2\n2   invokespecial < Application, LSample, <init>()V > v2 @4 exception:v3\l" 
+ "BB2\n2   invokespecial < Application, LSample, <init>()V > v2 @4 exception:v3\l" -> "BB3\n4  Create O2_1                               \l" 
+ "BB3\n4  Create O2_1                               \l" -> "BB4\n6   invokespecial < Application, LSample, <init>()V > v4 @12 exception:v5\l" 
+ "BB4\n6   invokespecial < Application, LSample, <init>()V > v4 @12 exception:v5\l" -> "BB5\n8  Create O3_1                               \l" 
+ "BB5\n8  Create O3_1                               \l" -> "BB6\n10   invokespecial < Application, LSample, <init>()V > v6 @20 exception:v7\l" 
+ "BB6\n10   invokespecial < Application, LSample, <init>()V > v6 @20 exception:v7\l" -> "BB7\n15  GetOSSAInstruction:	8= O3_1< x>          \l" 
+ "BB7\n15  GetOSSAInstruction:	8= O3_1< x>          \l" -> "BB8\n19   conditional branch(le) v8,v9:#5         \l" 
+ "BB8\n19   conditional branch(le) v8,v9:#5         \l" -> "BB9\n24  PutOSSAInstruction:	O1_2< x > = O1_1<V10>\l" 
+ "BB8\n19   conditional branch(le) v8,v9:#5         \l" -> "BB11\n28   conditional branch(le) v8,v10:#3        \l" 
+ "BB9\n24  PutOSSAInstruction:	O1_2< x > = O1_1<V10>\l" -> "BB10\n25   goto                                    \l" 
+ "BB10\n25   goto                                    \l" -> "BB15\n           O1_4 = Object-Phi(O1_1, O1_2, O1_3 )\l           O4_1 = diff-Object-Phi(O1_2, O3_1, O2_1 )\l           v12 = phi  v2,v6,v4\l37  PutOSSAInstruction:	O4_2< x > = O4_1<V13>\l" 
+ "BB11\n28   conditional branch(le) v8,v10:#3        \l" -> "BB12\n31  PutOSSAInstruction:	O1_3< x > = O1_1<V11>\l" 
+ "BB11\n28   conditional branch(le) v8,v10:#3        \l" -> "BB14\n" 
+ "BB12\n31  PutOSSAInstruction:	O1_3< x > = O1_1<V11>\l" -> "BB13\n32   goto                                    \l" 
+ "BB13\n32   goto                                    \l" -> "BB15\n           O1_4 = Object-Phi(O1_1, O1_2, O1_3 )\l           O4_1 = diff-Object-Phi(O1_2, O3_1, O2_1 )\l           v12 = phi  v2,v6,v4\l37  PutOSSAInstruction:	O4_2< x > = O4_1<V13>\l" 
+ "BB14\n" -> "BB15\n           O1_4 = Object-Phi(O1_1, O1_2, O1_3 )\l           O4_1 = diff-Object-Phi(O1_2, O3_1, O2_1 )\l           v12 = phi  v2,v6,v4\l37  PutOSSAInstruction:	O4_2< x > = O4_1<V13>\l" 
+ "BB15\n           O1_4 = Object-Phi(O1_1, O1_2, O1_3 )\l           O4_1 = diff-Object-Phi(O1_2, O3_1, O2_1 )\l           v12 = phi  v2,v6,v4\l37  PutOSSAInstruction:	O4_2< x > = O4_1<V13>\l" -> "BB16\n38  return                                   \l" 
+ "BB16\n38  return                                   \l" -> "BB17 (ex)\n\n" 
+
+}

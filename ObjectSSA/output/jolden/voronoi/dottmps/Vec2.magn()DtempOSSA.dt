@@ -1,0 +1,19 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Vec2.magn()D", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  GetOSSAInstruction:	3= O1_1< x>           \l" [ ]
+   "BB2\n3  GetOSSAInstruction:	4= O1_1< x>           \l" [ ]
+   "BB3\n4   v5 = binaryop(mul) v3 , v4               \l6  GetOSSAInstruction:	6= O1_1< y>           \l" [ ]
+   "BB4\n8  GetOSSAInstruction:	7= O1_1< y>           \l" [ ]
+   "BB5\n9   v8 = binaryop(mul) v6 , v7               \l10   v9 = binaryop(add) v5 , v8              \l11  O2_1 = < Application, Ljava/lang/Math, sqrt(D)D >( V9 )\l" [ ]
+   "BB6\n12  Return O2_1                              \l" [ ]
+   "BB7 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  GetOSSAInstruction:	3= O1_1< x>           \l" 
+ "BB1\n1  GetOSSAInstruction:	3= O1_1< x>           \l" -> "BB2\n3  GetOSSAInstruction:	4= O1_1< x>           \l" 
+ "BB2\n3  GetOSSAInstruction:	4= O1_1< x>           \l" -> "BB3\n4   v5 = binaryop(mul) v3 , v4               \l6  GetOSSAInstruction:	6= O1_1< y>           \l" 
+ "BB3\n4   v5 = binaryop(mul) v3 , v4               \l6  GetOSSAInstruction:	6= O1_1< y>           \l" -> "BB4\n8  GetOSSAInstruction:	7= O1_1< y>           \l" 
+ "BB4\n8  GetOSSAInstruction:	7= O1_1< y>           \l" -> "BB5\n9   v8 = binaryop(mul) v6 , v7               \l10   v9 = binaryop(add) v5 , v8              \l11  O2_1 = < Application, Ljava/lang/Math, sqrt(D)D >( V9 )\l" 
+ "BB5\n9   v8 = binaryop(mul) v6 , v7               \l10   v9 = binaryop(add) v5 , v8              \l11  O2_1 = < Application, Ljava/lang/Math, sqrt(D)D >( V9 )\l" -> "BB6\n12  Return O2_1                              \l" 
+ "BB6\n12  Return O2_1                              \l" -> "BB7 (ex)\n\n" 
+
+}

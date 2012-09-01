@@ -1,0 +1,70 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0   v4 = new <Application,LList>@0 \l" [ ]
+   "BB2\n2   invokespecial < Application, LList, <init>()V > v4 @4 exception:v5\l" [ ]
+   "BB3\n5   v6 = getfield < Application, LHospital, assess, <Application,LList> > v1\l" [ ]
+   "BB4\n6   v8 = invokevirtual < Application, LList, elements()Ljava/util/Enumeration; > v6 @12 exception:v7\l" [ ]
+   "BB5\n" [ ]
+   "BB6\n9   v10 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v8 @17 exception:v9\l" [ ]
+   "BB7\n11   conditional branch(eq) v10,v11:#0\l" [ ]
+   "BB8\n13   v13 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v8 @26 exception:v12\l" [ ]
+   "BB9\n14   v14 = checkcast <Application,LPatient>v13\l" [ ]
+   "BB10\n18   v15 = getfield < Application, LPatient, timeLeft, <Primordial,I> > v14\l" [ ]
+   "BB11\n20   v17 = binaryop(sub) v15 , v16:#1\l21   putfield v14 = v17 < Application, LPatient, timeLeft, <Primordial,I> >\l" [ ]
+   "BB12\n23   v18 = getfield < Application, LPatient, timeLeft, <Primordial,I> > v14\l" [ ]
+   "BB13\n25   conditional branch(ne) v18,v11:#0\l" [ ]
+   "BB14\n27   v20 = invokevirtual < Application, LVillage, staysHere()Z > v2 @56 exception:v19\l" [ ]
+   "BB15\n29   conditional branch(eq) v20,v11:#0\l" [ ]
+   "BB16\n31   v21 = getfield < Application, LHospital, assess, <Application,LList> > v1\l" [ ]
+   "BB17\n33   invokevirtual < Application, LList, delete(Ljava/lang/Object;)V > v21,v14 @68 exception:v22\l" [ ]
+   "BB18\n35   v23 = getfield < Application, LHospital, inside, <Application,LList> > v1\l" [ ]
+   "BB19\n37   invokevirtual < Application, LList, add(LPatient;)V > v23,v14 @77 exception:v24\l" [ ]
+   "BB20\n40   putfield v14 = v25:#10 < Application, LPatient, timeLeft, <Primordial,I> >\l" [ ]
+   "BB21\n43   v26 = getfield < Application, LPatient, time, <Primordial,I> > v14\l" [ ]
+   "BB22\n45   v27 = binaryop(add) v26 , v25:#10\l46   putfield v14 = v27 < Application, LPatient, time, <Primordial,I> >\l" [ ]
+   "BB23\n47   goto                          \l" [ ]
+   "BB24\n50   v28 = getfield < Application, LHospital, freePersonnel, <Primordial,I> > v1\l" [ ]
+   "BB25\n52   v29 = binaryop(add) v28 , v16:#1\l53   putfield v1 = v29 < Application, LHospital, freePersonnel, <Primordial,I> >\l" [ ]
+   "BB26\n55   v30 = getfield < Application, LHospital, assess, <Application,LList> > v1\l" [ ]
+   "BB27\n57   invokevirtual < Application, LList, delete(Ljava/lang/Object;)V > v30,v14 @118 exception:v31\l" [ ]
+   "BB28\n60   invokevirtual < Application, LList, add(LPatient;)V > v4,v14 @124 exception:v32\l" [ ]
+   "BB29\n61   goto                          \l" [ ]
+   "BB30\n63   return v4                     \l" [ ]
+   "BB31 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0   v4 = new <Application,LList>@0 \l" 
+ "BB1\n0   v4 = new <Application,LList>@0 \l" -> "BB2\n2   invokespecial < Application, LList, <init>()V > v4 @4 exception:v5\l" 
+ "BB2\n2   invokespecial < Application, LList, <init>()V > v4 @4 exception:v5\l" -> "BB3\n5   v6 = getfield < Application, LHospital, assess, <Application,LList> > v1\l" 
+ "BB3\n5   v6 = getfield < Application, LHospital, assess, <Application,LList> > v1\l" -> "BB4\n6   v8 = invokevirtual < Application, LList, elements()Ljava/util/Enumeration; > v6 @12 exception:v7\l" 
+ "BB4\n6   v8 = invokevirtual < Application, LList, elements()Ljava/util/Enumeration; > v6 @12 exception:v7\l" -> "BB5\n" 
+ "BB5\n" -> "BB6\n9   v10 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v8 @17 exception:v9\l" 
+ "BB6\n9   v10 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v8 @17 exception:v9\l" -> "BB7\n11   conditional branch(eq) v10,v11:#0\l" 
+ "BB7\n11   conditional branch(eq) v10,v11:#0\l" -> "BB8\n13   v13 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v8 @26 exception:v12\l" 
+ "BB7\n11   conditional branch(eq) v10,v11:#0\l" -> "BB30\n63   return v4                     \l" 
+ "BB8\n13   v13 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v8 @26 exception:v12\l" -> "BB9\n14   v14 = checkcast <Application,LPatient>v13\l" 
+ "BB9\n14   v14 = checkcast <Application,LPatient>v13\l" -> "BB10\n18   v15 = getfield < Application, LPatient, timeLeft, <Primordial,I> > v14\l" 
+ "BB10\n18   v15 = getfield < Application, LPatient, timeLeft, <Primordial,I> > v14\l" -> "BB11\n20   v17 = binaryop(sub) v15 , v16:#1\l21   putfield v14 = v17 < Application, LPatient, timeLeft, <Primordial,I> >\l" 
+ "BB11\n20   v17 = binaryop(sub) v15 , v16:#1\l21   putfield v14 = v17 < Application, LPatient, timeLeft, <Primordial,I> >\l" -> "BB12\n23   v18 = getfield < Application, LPatient, timeLeft, <Primordial,I> > v14\l" 
+ "BB12\n23   v18 = getfield < Application, LPatient, timeLeft, <Primordial,I> > v14\l" -> "BB13\n25   conditional branch(ne) v18,v11:#0\l" 
+ "BB13\n25   conditional branch(ne) v18,v11:#0\l" -> "BB14\n27   v20 = invokevirtual < Application, LVillage, staysHere()Z > v2 @56 exception:v19\l" 
+ "BB13\n25   conditional branch(ne) v18,v11:#0\l" -> "BB29\n61   goto                          \l" 
+ "BB14\n27   v20 = invokevirtual < Application, LVillage, staysHere()Z > v2 @56 exception:v19\l" -> "BB15\n29   conditional branch(eq) v20,v11:#0\l" 
+ "BB15\n29   conditional branch(eq) v20,v11:#0\l" -> "BB16\n31   v21 = getfield < Application, LHospital, assess, <Application,LList> > v1\l" 
+ "BB15\n29   conditional branch(eq) v20,v11:#0\l" -> "BB24\n50   v28 = getfield < Application, LHospital, freePersonnel, <Primordial,I> > v1\l" 
+ "BB16\n31   v21 = getfield < Application, LHospital, assess, <Application,LList> > v1\l" -> "BB17\n33   invokevirtual < Application, LList, delete(Ljava/lang/Object;)V > v21,v14 @68 exception:v22\l" 
+ "BB17\n33   invokevirtual < Application, LList, delete(Ljava/lang/Object;)V > v21,v14 @68 exception:v22\l" -> "BB18\n35   v23 = getfield < Application, LHospital, inside, <Application,LList> > v1\l" 
+ "BB18\n35   v23 = getfield < Application, LHospital, inside, <Application,LList> > v1\l" -> "BB19\n37   invokevirtual < Application, LList, add(LPatient;)V > v23,v14 @77 exception:v24\l" 
+ "BB19\n37   invokevirtual < Application, LList, add(LPatient;)V > v23,v14 @77 exception:v24\l" -> "BB20\n40   putfield v14 = v25:#10 < Application, LPatient, timeLeft, <Primordial,I> >\l" 
+ "BB20\n40   putfield v14 = v25:#10 < Application, LPatient, timeLeft, <Primordial,I> >\l" -> "BB21\n43   v26 = getfield < Application, LPatient, time, <Primordial,I> > v14\l" 
+ "BB21\n43   v26 = getfield < Application, LPatient, time, <Primordial,I> > v14\l" -> "BB22\n45   v27 = binaryop(add) v26 , v25:#10\l46   putfield v14 = v27 < Application, LPatient, time, <Primordial,I> >\l" 
+ "BB22\n45   v27 = binaryop(add) v26 , v25:#10\l46   putfield v14 = v27 < Application, LPatient, time, <Primordial,I> >\l" -> "BB23\n47   goto                          \l" 
+ "BB23\n47   goto                          \l" -> "BB29\n61   goto                          \l" 
+ "BB24\n50   v28 = getfield < Application, LHospital, freePersonnel, <Primordial,I> > v1\l" -> "BB25\n52   v29 = binaryop(add) v28 , v16:#1\l53   putfield v1 = v29 < Application, LHospital, freePersonnel, <Primordial,I> >\l" 
+ "BB25\n52   v29 = binaryop(add) v28 , v16:#1\l53   putfield v1 = v29 < Application, LHospital, freePersonnel, <Primordial,I> >\l" -> "BB26\n55   v30 = getfield < Application, LHospital, assess, <Application,LList> > v1\l" 
+ "BB26\n55   v30 = getfield < Application, LHospital, assess, <Application,LList> > v1\l" -> "BB27\n57   invokevirtual < Application, LList, delete(Ljava/lang/Object;)V > v30,v14 @118 exception:v31\l" 
+ "BB27\n57   invokevirtual < Application, LList, delete(Ljava/lang/Object;)V > v30,v14 @118 exception:v31\l" -> "BB28\n60   invokevirtual < Application, LList, add(LPatient;)V > v4,v14 @124 exception:v32\l" 
+ "BB28\n60   invokevirtual < Application, LList, add(LPatient;)V > v4,v14 @124 exception:v32\l" -> "BB29\n61   goto                          \l" 
+ "BB29\n61   goto                          \l" -> "BB6\n9   v10 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v8 @17 exception:v9\l" 
+ "BB30\n63   return v4                     \l" -> "BB31 (ex)\n\n" 
+
+}

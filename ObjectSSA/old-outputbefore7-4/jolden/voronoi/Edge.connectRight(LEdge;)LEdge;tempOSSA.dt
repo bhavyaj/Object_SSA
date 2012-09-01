@@ -1,0 +1,25 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Edge.connectRight(LEdge;)LEdge;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v5 = invokevirtual < Application, LEdge, dest()LVertex; > v1 @1 exception:v4\l" [ ]
+   "BB2\n4   v7 = invokevirtual < Application, LEdge, orig()LVertex; > v2 @6 exception:v6\l" [ ]
+   "BB3\n7   v9 = invokevirtual < Application, LEdge, oPrev()LEdge; > v2 @11 exception:v8\l" [ ]
+   "BB4\n11   v11 = invokestatic < Application, LEdge, makeEdge(LVertex;LVertex;)LEdge; > v5,v7 @18 exception:v10\l" [ ]
+   "BB5\n15   v13 = invokevirtual < Application, LEdge, symmetric()LEdge; > v1 @26 exception:v12\l" [ ]
+   "BB6\n16   invokevirtual < Application, LEdge, splice(LEdge;)V > v11,v13 @29 exception:v14\l" [ ]
+   "BB7\n18   v16 = invokevirtual < Application, LEdge, symmetric()LEdge; > v11 @34 exception:v15\l" [ ]
+   "BB8\n20   invokevirtual < Application, LEdge, splice(LEdge;)V > v16,v9 @39 exception:v17\l" [ ]
+   "BB9\n22   return v11                              \l" [ ]
+   "BB10 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v5 = invokevirtual < Application, LEdge, dest()LVertex; > v1 @1 exception:v4\l" 
+ "BB1\n1   v5 = invokevirtual < Application, LEdge, dest()LVertex; > v1 @1 exception:v4\l" -> "BB2\n4   v7 = invokevirtual < Application, LEdge, orig()LVertex; > v2 @6 exception:v6\l" 
+ "BB2\n4   v7 = invokevirtual < Application, LEdge, orig()LVertex; > v2 @6 exception:v6\l" -> "BB3\n7   v9 = invokevirtual < Application, LEdge, oPrev()LEdge; > v2 @11 exception:v8\l" 
+ "BB3\n7   v9 = invokevirtual < Application, LEdge, oPrev()LEdge; > v2 @11 exception:v8\l" -> "BB4\n11   v11 = invokestatic < Application, LEdge, makeEdge(LVertex;LVertex;)LEdge; > v5,v7 @18 exception:v10\l" 
+ "BB4\n11   v11 = invokestatic < Application, LEdge, makeEdge(LVertex;LVertex;)LEdge; > v5,v7 @18 exception:v10\l" -> "BB5\n15   v13 = invokevirtual < Application, LEdge, symmetric()LEdge; > v1 @26 exception:v12\l" 
+ "BB5\n15   v13 = invokevirtual < Application, LEdge, symmetric()LEdge; > v1 @26 exception:v12\l" -> "BB6\n16   invokevirtual < Application, LEdge, splice(LEdge;)V > v11,v13 @29 exception:v14\l" 
+ "BB6\n16   invokevirtual < Application, LEdge, splice(LEdge;)V > v11,v13 @29 exception:v14\l" -> "BB7\n18   v16 = invokevirtual < Application, LEdge, symmetric()LEdge; > v11 @34 exception:v15\l" 
+ "BB7\n18   v16 = invokevirtual < Application, LEdge, symmetric()LEdge; > v11 @34 exception:v15\l" -> "BB8\n20   invokevirtual < Application, LEdge, splice(LEdge;)V > v16,v9 @39 exception:v17\l" 
+ "BB8\n20   invokevirtual < Application, LEdge, splice(LEdge;)V > v16,v9 @39 exception:v17\l" -> "BB9\n22   return v11                              \l" 
+ "BB9\n22   return v11                              \l" -> "BB10 (ex)\n\n" 
+
+}

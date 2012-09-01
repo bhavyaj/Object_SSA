@@ -1,0 +1,48 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n" [ ]
+   "BB2\n           v16 = phi  v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1            \l" [ ]
+   "BB3\n5   conditional branch(ge) v16,v4  \l" [ ]
+   "BB4\n8   v5 = arrayload v1[v16]         \l" [ ]
+   "BB5\n10   v8 = invokevirtual < Application, Ljava/lang/String, startsWith(Ljava/lang/String;)Z > v5,v6:#- @13 exception:v7\l" [ ]
+   "BB6\n12   conditional branch(eq) v8,v3:#0\l" [ ]
+   "BB7\n17   v10 = binaryop(add) v16 , v9:#1\l19   v11 = arrayload v1[v16]       \l" [ ]
+   "BB8\n23   v14 = invokevirtual < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z > v11,v12:#-h @29 exception:v13\l" [ ]
+   "BB9\n25   conditional branch(eq) v14,v3:#0\l" [ ]
+   "BB10\n26   invokestatic < Application, LPower, usage()V > @35 exception:v15\l" [ ]
+   "BB11\n27   goto                          \l" [ ]
+   "BB12\n30   v19 = invokevirtual < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z > v11,v17:#-p @44 exception:v18\l" [ ]
+   "BB13\n32   conditional branch(eq) v19,v3:#0\l" [ ]
+   "BB14\n34   putstatic v9:#1 < Application, LPower, printResults, <Primordial,Z> >\l35   goto                          \l" [ ]
+   "BB15\n38   v22 = invokevirtual < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z > v11,v20:#-m @60 exception:v21\l" [ ]
+   "BB16\n40   conditional branch(eq) v22,v3:#0\l" [ ]
+   "BB17\n42   putstatic v9:#1 < Application, LPower, printMsgs, <Primordial,Z> >\l43   goto                          \l" [ ]
+   "BB18\n44   return                        \l" [ ]
+   "BB19 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n" 
+ "BB1\n" -> "BB2\n           v16 = phi  v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1            \l" 
+ "BB2\n           v16 = phi  v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1            \l" -> "BB3\n5   conditional branch(ge) v16,v4  \l" 
+ "BB3\n5   conditional branch(ge) v16,v4  \l" -> "BB4\n8   v5 = arrayload v1[v16]         \l" 
+ "BB3\n5   conditional branch(ge) v16,v4  \l" -> "BB18\n44   return                        \l" 
+ "BB4\n8   v5 = arrayload v1[v16]         \l" -> "BB5\n10   v8 = invokevirtual < Application, Ljava/lang/String, startsWith(Ljava/lang/String;)Z > v5,v6:#- @13 exception:v7\l" 
+ "BB5\n10   v8 = invokevirtual < Application, Ljava/lang/String, startsWith(Ljava/lang/String;)Z > v5,v6:#- @13 exception:v7\l" -> "BB6\n12   conditional branch(eq) v8,v3:#0\l" 
+ "BB6\n12   conditional branch(eq) v8,v3:#0\l" -> "BB7\n17   v10 = binaryop(add) v16 , v9:#1\l19   v11 = arrayload v1[v16]       \l" 
+ "BB6\n12   conditional branch(eq) v8,v3:#0\l" -> "BB18\n44   return                        \l" 
+ "BB7\n17   v10 = binaryop(add) v16 , v9:#1\l19   v11 = arrayload v1[v16]       \l" -> "BB8\n23   v14 = invokevirtual < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z > v11,v12:#-h @29 exception:v13\l" 
+ "BB8\n23   v14 = invokevirtual < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z > v11,v12:#-h @29 exception:v13\l" -> "BB9\n25   conditional branch(eq) v14,v3:#0\l" 
+ "BB9\n25   conditional branch(eq) v14,v3:#0\l" -> "BB10\n26   invokestatic < Application, LPower, usage()V > @35 exception:v15\l" 
+ "BB9\n25   conditional branch(eq) v14,v3:#0\l" -> "BB12\n30   v19 = invokevirtual < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z > v11,v17:#-p @44 exception:v18\l" 
+ "BB10\n26   invokestatic < Application, LPower, usage()V > @35 exception:v15\l" -> "BB11\n27   goto                          \l" 
+ "BB11\n27   goto                          \l" -> "BB2\n           v16 = phi  v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1            \l" 
+ "BB12\n30   v19 = invokevirtual < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z > v11,v17:#-p @44 exception:v18\l" -> "BB13\n32   conditional branch(eq) v19,v3:#0\l" 
+ "BB13\n32   conditional branch(eq) v19,v3:#0\l" -> "BB14\n34   putstatic v9:#1 < Application, LPower, printResults, <Primordial,Z> >\l35   goto                          \l" 
+ "BB13\n32   conditional branch(eq) v19,v3:#0\l" -> "BB15\n38   v22 = invokevirtual < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z > v11,v20:#-m @60 exception:v21\l" 
+ "BB14\n34   putstatic v9:#1 < Application, LPower, printResults, <Primordial,Z> >\l35   goto                          \l" -> "BB2\n           v16 = phi  v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1            \l" 
+ "BB15\n38   v22 = invokevirtual < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z > v11,v20:#-m @60 exception:v21\l" -> "BB16\n40   conditional branch(eq) v22,v3:#0\l" 
+ "BB16\n40   conditional branch(eq) v22,v3:#0\l" -> "BB2\n           v16 = phi  v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1            \l" 
+ "BB16\n40   conditional branch(eq) v22,v3:#0\l" -> "BB17\n42   putstatic v9:#1 < Application, LPower, printMsgs, <Primordial,Z> >\l43   goto                          \l" 
+ "BB17\n42   putstatic v9:#1 < Application, LPower, printMsgs, <Primordial,Z> >\l43   goto                          \l" -> "BB2\n           v16 = phi  v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1            \l" 
+ "BB18\n44   return                        \l" -> "BB19 (ex)\n\n" 
+
+}

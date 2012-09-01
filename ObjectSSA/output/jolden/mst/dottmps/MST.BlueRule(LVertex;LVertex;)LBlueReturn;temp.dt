@@ -1,0 +1,103 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0   v4 = new <Application,LBlueReturn>@0\l" [ ]
+   "BB2\n2   invokespecial < Application, LBlueReturn, <init>()V > v4 @4 exception:v5\l" [ ]
+   "BB3\n6   conditional branch(ne) v2,v6:#null\l" [ ]
+   "BB4\n9   invokevirtual < Application, LBlueReturn, setDist(I)V > v4,v61:#999999 @15 exception:v62\l" [ ]
+   "BB5\n11   return v4                     \l" [ ]
+   "BB6\n16   invokevirtual < Application, LBlueReturn, setVert(LVertex;)V > v4,v2 @24 exception:v7\l" [ ]
+   "BB7\n19   v9 = invokevirtual < Application, LVertex, mindist()I > v2 @29 exception:v8\l" [ ]
+   "BB8\n20   invokevirtual < Application, LBlueReturn, setDist(I)V > v4,v9 @32 exception:v10\l" [ ]
+   "BB9\n22   v12 = invokevirtual < Application, LVertex, neighbors()LHashtable; > v2 @36 exception:v11\l" [ ]
+   "BB10\n26   v14 = invokevirtual < Application, LHashtable, get(Ljava/lang/Object;)Ljava/lang/Object; > v12,v1 @44 exception:v13\l" [ ]
+   "BB11\n30   conditional branch(eq) v14,v6:#null\l" [ ]
+   "BB12\n32   v18 = checkcast <Application,Ljava/lang/Integer>v14\l" [ ]
+   "BB13\n33   v20 = invokevirtual < Application, Ljava/lang/Integer, intValue()I > v18 @59 exception:v19\l" [ ]
+   "BB14\n37   v22 = invokevirtual < Application, LBlueReturn, dist()I > v4 @67 exception:v21\l" [ ]
+   "BB15\n38   conditional branch(ge) v20,v22\l" [ ]
+   "BB16\n41   invokevirtual < Application, LVertex, setMindist(I)V > v2,v20 @76 exception:v23\l" [ ]
+   "BB17\n44   invokevirtual < Application, LBlueReturn, setDist(I)V > v4,v20 @82 exception:v24\l" [ ]
+   "BB18\n45   goto                          \l" [ ]
+   "BB19\n46   v15 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l48   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v15,v16:#Not found @93 exception:v17\l" [ ]
+   "BB20\n52   v27 = invokevirtual < Application, LVertex, next()LVertex; > v2 @100 exception:v26\l" [ ]
+   "BB21\n" [ ]
+   "BB22\n           v56 = phi  v60,v2\l           v59 = phi  v29,v25:#0\l           v60 = phi  v55,v27\l56   conditional branch(eq) v60,v6:#null\l" [ ]
+   "BB23\n59   v29 = binaryop(add) v59 , v28:#1\l63   conditional branch(ne) v60,v1 \l" [ ]
+   "BB24\n65   v47 = invokevirtual < Application, LVertex, next()LVertex; > v60 @121 exception:v46\l" [ ]
+   "BB25\n69   invokevirtual < Application, LVertex, setNext(LVertex;)V > v56,v47 @129 exception:v48\l" [ ]
+   "BB26\n70   goto                          \l" [ ]
+   "BB27\n72   v31 = invokevirtual < Application, LVertex, neighbors()LHashtable; > v60 @137 exception:v30\l" [ ]
+   "BB28\n75   v33 = invokevirtual < Application, LVertex, mindist()I > v60 @144 exception:v32\l" [ ]
+   "BB29\n79   v35 = invokevirtual < Application, LHashtable, get(Ljava/lang/Object;)Ljava/lang/Object; > v31,v1 @152 exception:v34\l" [ ]
+   "BB30\n83   conditional branch(eq) v35,v6:#null\l" [ ]
+   "BB31\n85   v36 = checkcast <Application,Ljava/lang/Integer>v35\l" [ ]
+   "BB32\n86   v38 = invokevirtual < Application, Ljava/lang/Integer, intValue()I > v36 @167 exception:v37\l" [ ]
+   "BB33\n90   conditional branch(ge) v38,v33\l" [ ]
+   "BB34\n93   invokevirtual < Application, LVertex, setMindist(I)V > v60,v38 @183 exception:v39\l" [ ]
+   "BB35\n" [ ]
+   "BB36\n           v40 = phi  v33,v38\l96   goto                          \l" [ ]
+   "BB37\n97   v41 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l99   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v41,v16:#Not found @198 exception:v42\l" [ ]
+   "BB38\n           v43 = phi  v40,v33\l102   v45 = invokevirtual < Application, LBlueReturn, dist()I > v4 @204 exception:v44\l" [ ]
+   "BB39\n103   conditional branch(ge) v43,v45\l" [ ]
+   "BB40\n106   invokevirtual < Application, LBlueReturn, setVert(LVertex;)V > v4,v60 @213 exception:v49\l" [ ]
+   "BB41\n109   invokevirtual < Application, LBlueReturn, setDist(I)V > v4,v43 @219 exception:v50\l" [ ]
+   "BB42\n113   v55 = invokevirtual < Application, LVertex, next()LVertex; > v60 @227 exception:v54\l" [ ]
+   "BB43\n115   goto                         \l" [ ]
+   "BB44\n117   return v4                    \l" [ ]
+   "BB45 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0   v4 = new <Application,LBlueReturn>@0\l" 
+ "BB1\n0   v4 = new <Application,LBlueReturn>@0\l" -> "BB2\n2   invokespecial < Application, LBlueReturn, <init>()V > v4 @4 exception:v5\l" 
+ "BB2\n2   invokespecial < Application, LBlueReturn, <init>()V > v4 @4 exception:v5\l" -> "BB3\n6   conditional branch(ne) v2,v6:#null\l" 
+ "BB3\n6   conditional branch(ne) v2,v6:#null\l" -> "BB4\n9   invokevirtual < Application, LBlueReturn, setDist(I)V > v4,v61:#999999 @15 exception:v62\l" 
+ "BB3\n6   conditional branch(ne) v2,v6:#null\l" -> "BB6\n16   invokevirtual < Application, LBlueReturn, setVert(LVertex;)V > v4,v2 @24 exception:v7\l" 
+ "BB4\n9   invokevirtual < Application, LBlueReturn, setDist(I)V > v4,v61:#999999 @15 exception:v62\l" -> "BB5\n11   return v4                     \l" 
+ "BB5\n11   return v4                     \l" -> "BB45 (ex)\n\n" 
+ "BB6\n16   invokevirtual < Application, LBlueReturn, setVert(LVertex;)V > v4,v2 @24 exception:v7\l" -> "BB7\n19   v9 = invokevirtual < Application, LVertex, mindist()I > v2 @29 exception:v8\l" 
+ "BB7\n19   v9 = invokevirtual < Application, LVertex, mindist()I > v2 @29 exception:v8\l" -> "BB8\n20   invokevirtual < Application, LBlueReturn, setDist(I)V > v4,v9 @32 exception:v10\l" 
+ "BB8\n20   invokevirtual < Application, LBlueReturn, setDist(I)V > v4,v9 @32 exception:v10\l" -> "BB9\n22   v12 = invokevirtual < Application, LVertex, neighbors()LHashtable; > v2 @36 exception:v11\l" 
+ "BB9\n22   v12 = invokevirtual < Application, LVertex, neighbors()LHashtable; > v2 @36 exception:v11\l" -> "BB10\n26   v14 = invokevirtual < Application, LHashtable, get(Ljava/lang/Object;)Ljava/lang/Object; > v12,v1 @44 exception:v13\l" 
+ "BB10\n26   v14 = invokevirtual < Application, LHashtable, get(Ljava/lang/Object;)Ljava/lang/Object; > v12,v1 @44 exception:v13\l" -> "BB11\n30   conditional branch(eq) v14,v6:#null\l" 
+ "BB11\n30   conditional branch(eq) v14,v6:#null\l" -> "BB12\n32   v18 = checkcast <Application,Ljava/lang/Integer>v14\l" 
+ "BB11\n30   conditional branch(eq) v14,v6:#null\l" -> "BB19\n46   v15 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l48   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v15,v16:#Not found @93 exception:v17\l" 
+ "BB12\n32   v18 = checkcast <Application,Ljava/lang/Integer>v14\l" -> "BB13\n33   v20 = invokevirtual < Application, Ljava/lang/Integer, intValue()I > v18 @59 exception:v19\l" 
+ "BB13\n33   v20 = invokevirtual < Application, Ljava/lang/Integer, intValue()I > v18 @59 exception:v19\l" -> "BB14\n37   v22 = invokevirtual < Application, LBlueReturn, dist()I > v4 @67 exception:v21\l" 
+ "BB14\n37   v22 = invokevirtual < Application, LBlueReturn, dist()I > v4 @67 exception:v21\l" -> "BB15\n38   conditional branch(ge) v20,v22\l" 
+ "BB15\n38   conditional branch(ge) v20,v22\l" -> "BB16\n41   invokevirtual < Application, LVertex, setMindist(I)V > v2,v20 @76 exception:v23\l" 
+ "BB15\n38   conditional branch(ge) v20,v22\l" -> "BB18\n45   goto                          \l" 
+ "BB16\n41   invokevirtual < Application, LVertex, setMindist(I)V > v2,v20 @76 exception:v23\l" -> "BB17\n44   invokevirtual < Application, LBlueReturn, setDist(I)V > v4,v20 @82 exception:v24\l" 
+ "BB17\n44   invokevirtual < Application, LBlueReturn, setDist(I)V > v4,v20 @82 exception:v24\l" -> "BB18\n45   goto                          \l" 
+ "BB18\n45   goto                          \l" -> "BB20\n52   v27 = invokevirtual < Application, LVertex, next()LVertex; > v2 @100 exception:v26\l" 
+ "BB19\n46   v15 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l48   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v15,v16:#Not found @93 exception:v17\l" -> "BB20\n52   v27 = invokevirtual < Application, LVertex, next()LVertex; > v2 @100 exception:v26\l" 
+ "BB20\n52   v27 = invokevirtual < Application, LVertex, next()LVertex; > v2 @100 exception:v26\l" -> "BB21\n" 
+ "BB21\n" -> "BB22\n           v56 = phi  v60,v2\l           v59 = phi  v29,v25:#0\l           v60 = phi  v55,v27\l56   conditional branch(eq) v60,v6:#null\l" 
+ "BB22\n           v56 = phi  v60,v2\l           v59 = phi  v29,v25:#0\l           v60 = phi  v55,v27\l56   conditional branch(eq) v60,v6:#null\l" -> "BB23\n59   v29 = binaryop(add) v59 , v28:#1\l63   conditional branch(ne) v60,v1 \l" 
+ "BB22\n           v56 = phi  v60,v2\l           v59 = phi  v29,v25:#0\l           v60 = phi  v55,v27\l56   conditional branch(eq) v60,v6:#null\l" -> "BB44\n117   return v4                    \l" 
+ "BB23\n59   v29 = binaryop(add) v59 , v28:#1\l63   conditional branch(ne) v60,v1 \l" -> "BB24\n65   v47 = invokevirtual < Application, LVertex, next()LVertex; > v60 @121 exception:v46\l" 
+ "BB23\n59   v29 = binaryop(add) v59 , v28:#1\l63   conditional branch(ne) v60,v1 \l" -> "BB27\n72   v31 = invokevirtual < Application, LVertex, neighbors()LHashtable; > v60 @137 exception:v30\l" 
+ "BB24\n65   v47 = invokevirtual < Application, LVertex, next()LVertex; > v60 @121 exception:v46\l" -> "BB25\n69   invokevirtual < Application, LVertex, setNext(LVertex;)V > v56,v47 @129 exception:v48\l" 
+ "BB25\n69   invokevirtual < Application, LVertex, setNext(LVertex;)V > v56,v47 @129 exception:v48\l" -> "BB26\n70   goto                          \l" 
+ "BB26\n70   goto                          \l" -> "BB42\n113   v55 = invokevirtual < Application, LVertex, next()LVertex; > v60 @227 exception:v54\l" 
+ "BB27\n72   v31 = invokevirtual < Application, LVertex, neighbors()LHashtable; > v60 @137 exception:v30\l" -> "BB28\n75   v33 = invokevirtual < Application, LVertex, mindist()I > v60 @144 exception:v32\l" 
+ "BB28\n75   v33 = invokevirtual < Application, LVertex, mindist()I > v60 @144 exception:v32\l" -> "BB29\n79   v35 = invokevirtual < Application, LHashtable, get(Ljava/lang/Object;)Ljava/lang/Object; > v31,v1 @152 exception:v34\l" 
+ "BB29\n79   v35 = invokevirtual < Application, LHashtable, get(Ljava/lang/Object;)Ljava/lang/Object; > v31,v1 @152 exception:v34\l" -> "BB30\n83   conditional branch(eq) v35,v6:#null\l" 
+ "BB30\n83   conditional branch(eq) v35,v6:#null\l" -> "BB31\n85   v36 = checkcast <Application,Ljava/lang/Integer>v35\l" 
+ "BB30\n83   conditional branch(eq) v35,v6:#null\l" -> "BB37\n97   v41 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l99   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v41,v16:#Not found @198 exception:v42\l" 
+ "BB31\n85   v36 = checkcast <Application,Ljava/lang/Integer>v35\l" -> "BB32\n86   v38 = invokevirtual < Application, Ljava/lang/Integer, intValue()I > v36 @167 exception:v37\l" 
+ "BB32\n86   v38 = invokevirtual < Application, Ljava/lang/Integer, intValue()I > v36 @167 exception:v37\l" -> "BB33\n90   conditional branch(ge) v38,v33\l" 
+ "BB33\n90   conditional branch(ge) v38,v33\l" -> "BB34\n93   invokevirtual < Application, LVertex, setMindist(I)V > v60,v38 @183 exception:v39\l" 
+ "BB33\n90   conditional branch(ge) v38,v33\l" -> "BB36\n           v40 = phi  v33,v38\l96   goto                          \l" 
+ "BB34\n93   invokevirtual < Application, LVertex, setMindist(I)V > v60,v38 @183 exception:v39\l" -> "BB35\n" 
+ "BB35\n" -> "BB36\n           v40 = phi  v33,v38\l96   goto                          \l" 
+ "BB36\n           v40 = phi  v33,v38\l96   goto                          \l" -> "BB38\n           v43 = phi  v40,v33\l102   v45 = invokevirtual < Application, LBlueReturn, dist()I > v4 @204 exception:v44\l" 
+ "BB37\n97   v41 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l99   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v41,v16:#Not found @198 exception:v42\l" -> "BB38\n           v43 = phi  v40,v33\l102   v45 = invokevirtual < Application, LBlueReturn, dist()I > v4 @204 exception:v44\l" 
+ "BB38\n           v43 = phi  v40,v33\l102   v45 = invokevirtual < Application, LBlueReturn, dist()I > v4 @204 exception:v44\l" -> "BB39\n103   conditional branch(ge) v43,v45\l" 
+ "BB39\n103   conditional branch(ge) v43,v45\l" -> "BB40\n106   invokevirtual < Application, LBlueReturn, setVert(LVertex;)V > v4,v60 @213 exception:v49\l" 
+ "BB39\n103   conditional branch(ge) v43,v45\l" -> "BB42\n113   v55 = invokevirtual < Application, LVertex, next()LVertex; > v60 @227 exception:v54\l" 
+ "BB40\n106   invokevirtual < Application, LBlueReturn, setVert(LVertex;)V > v4,v60 @213 exception:v49\l" -> "BB41\n109   invokevirtual < Application, LBlueReturn, setDist(I)V > v4,v43 @219 exception:v50\l" 
+ "BB41\n109   invokevirtual < Application, LBlueReturn, setDist(I)V > v4,v43 @219 exception:v50\l" -> "BB42\n113   v55 = invokevirtual < Application, LVertex, next()LVertex; > v60 @227 exception:v54\l" 
+ "BB42\n113   v55 = invokevirtual < Application, LVertex, next()LVertex; > v60 @227 exception:v54\l" -> "BB43\n115   goto                         \l" 
+ "BB43\n115   goto                         \l" -> "BB22\n           v56 = phi  v60,v2\l           v59 = phi  v29,v25:#0\l           v60 = phi  v55,v27\l56   conditional branch(eq) v60,v6:#null\l" 
+ "BB44\n117   return v4                    \l" -> "BB45 (ex)\n\n" 
+
+}

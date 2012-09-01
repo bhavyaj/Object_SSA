@@ -1,0 +1,174 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n4   v6 = invokevirtual < Application, LTree, distance(LTree;)D > v1,v2 @4 exception:v5\l" [ ]
+   "BB2\n9   v7 = getfield < Application, LTree, next, <Application,LTree> > v2\l" [ ]
+   "BB3\n" [ ]
+   "BB4\n           v15 = phi  v14,v7\l           v16 = phi  v12,v2\l           v17 = phi  v13,v6\l13   conditional branch(eq) v15,v2 \l" [ ]
+   "BB5\n16   v9 = invokevirtual < Application, LTree, distance(LTree;)D > v1,v15 @25 exception:v8\l" [ ]
+   "BB6\n20   v10 = compare v9,v17 opcode=cmpg\l22   conditional branch(ge) v10,v11:#0\l" [ ]
+   "BB7\n" [ ]
+   "BB8\n           v12 = phi  v16,v15\l           v13 = phi  v17,v9\l28   v14 = getfield < Application, LTree, next, <Application,LTree> > v15\l" [ ]
+   "BB9\n30   goto                          \l" [ ]
+   "BB10\n32   v18 = getfield < Application, LTree, next, <Application,LTree> > v16\l" [ ]
+   "BB11\n35   v19 = getfield < Application, LTree, prev, <Application,LTree> > v16\l" [ ]
+   "BB12\n39   v21 = invokevirtual < Application, LTree, distance(LTree;)D > v16,v18 @67 exception:v20\l" [ ]
+   "BB13\n43   v23 = invokevirtual < Application, LTree, distance(LTree;)D > v16,v19 @75 exception:v22\l" [ ]
+   "BB14\n47   v25 = invokevirtual < Application, LTree, distance(LTree;)D > v1,v18 @83 exception:v24\l" [ ]
+   "BB15\n51   v27 = invokevirtual < Application, LTree, distance(LTree;)D > v1,v19 @91 exception:v26\l" [ ]
+   "BB16\n55   v28 = binaryop(sub) v27 , v23 \l58   v29 = binaryop(sub) v25 , v21 \l59   v30 = compare v28,v29 opcode=cmpg\l61   conditional branch(ge) v30,v11:#0\l" [ ]
+   "BB17\n70   goto                          \l" [ ]
+   "BB18\n" [ ]
+   "BB19\n           v31 = phi  v19,v16\l           v32 = phi  v16,v18\l           v33 = phi  v17,v25\l           v34 = phi  v27,v17\l83   v36 = invokevirtual < Application, LTree, distance(LTree;)D > v1,v3 @147 exception:v35\l" [ ]
+   "BB20\n88   v37 = getfield < Application, LTree, next, <Application,LTree> > v3\l" [ ]
+   "BB21\n" [ ]
+   "BB22\n           v44 = phi  v43,v37\l           v45 = phi  v41,v3\l           v46 = phi  v42,v36\l92   conditional branch(eq) v44,v3 \l" [ ]
+   "BB23\n95   v39 = invokevirtual < Application, LTree, distance(LTree;)D > v1,v44 @168 exception:v38\l" [ ]
+   "BB24\n99   v40 = compare v39,v46 opcode=cmpg\l101   conditional branch(ge) v40,v11:#0\l" [ ]
+   "BB25\n" [ ]
+   "BB26\n           v41 = phi  v45,v44\l           v42 = phi  v46,v39\l107   v43 = getfield < Application, LTree, next, <Application,LTree> > v44\l" [ ]
+   "BB27\n109   goto                         \l" [ ]
+   "BB28\n111   v47 = getfield < Application, LTree, next, <Application,LTree> > v45\l" [ ]
+   "BB29\n114   v48 = getfield < Application, LTree, prev, <Application,LTree> > v45\l" [ ]
+   "BB30\n118   v50 = invokevirtual < Application, LTree, distance(LTree;)D > v45,v47 @210 exception:v49\l" [ ]
+   "BB31\n122   v52 = invokevirtual < Application, LTree, distance(LTree;)D > v45,v48 @218 exception:v51\l" [ ]
+   "BB32\n126   v54 = invokevirtual < Application, LTree, distance(LTree;)D > v1,v47 @226 exception:v53\l" [ ]
+   "BB33\n130   v56 = invokevirtual < Application, LTree, distance(LTree;)D > v1,v48 @234 exception:v55\l" [ ]
+   "BB34\n134   v57 = binaryop(sub) v56 , v52\l137   v58 = binaryop(sub) v54 , v50\l138   v59 = compare v57,v58 opcode=cmpg\l140   conditional branch(ge) v59,v11:#0\l" [ ]
+   "BB35\n149   goto                         \l" [ ]
+   "BB36\n" [ ]
+   "BB37\n           v60 = phi  v48,v45\l           v61 = phi  v45,v47\l           v62 = phi  v46,v54\l           v63 = phi  v56,v46\l160   v65 = invokevirtual < Application, LTree, distance(LTree;)D > v32,v61 @290 exception:v64\l" [ ]
+   "BB38\n164   v67 = invokevirtual < Application, LTree, distance(LTree;)D > v32,v60 @299 exception:v66\l" [ ]
+   "BB39\n168   v69 = invokevirtual < Application, LTree, distance(LTree;)D > v31,v61 @308 exception:v68\l" [ ]
+   "BB40\n172   v71 = invokevirtual < Application, LTree, distance(LTree;)D > v31,v60 @317 exception:v70\l" [ ]
+   "BB41\n176   v72 = binaryop(add) v34 , v63\l178   v73 = binaryop(add) v72 , v65\l184   v75 = binaryop(add) v34 , v62\l186   v76 = binaryop(add) v75 , v67\l190   v77 = compare v76,v73 opcode=cmpg\l192   conditional branch(ge) v77,v11:#0\l" [ ]
+   "BB42\n" [ ]
+   "BB43\n           v79 = phi  v73,v76\l           v80 = phi  v74:#1,v78:#2\l199   v81 = binaryop(add) v33 , v63\l201   v82 = binaryop(add) v81 , v69\l205   v83 = compare v82,v79 opcode=cmpg\l207   conditional branch(ge) v83,v11:#0\l" [ ]
+   "BB44\n" [ ]
+   "BB45\n           v85 = phi  v79,v82\l           v86 = phi  v80,v84:#3\l214   v87 = binaryop(add) v33 , v62\l216   v88 = binaryop(add) v87 , v71\l220   v89 = compare v88,v85 opcode=cmpg\l222   conditional branch(ge) v89,v11:#0\l" [ ]
+   "BB46\n" [ ]
+   "BB47\n           v91 = phi  v86,v90:#4\l226   switch v91 [1->227,2->248,3->267,4->286]\l" [ ]
+   "BB48\n228   invokevirtual < Application, LTree, reverse()V > v61 @442 exception:v93\l" [ ]
+   "BB49\n231   putfield v31 = v1 < Application, LTree, next, <Application,LTree> >\l" [ ]
+   "BB50\n234   putfield v1 = v31 < Application, LTree, prev, <Application,LTree> >\l" [ ]
+   "BB51\n237   putfield v1 = v60 < Application, LTree, next, <Application,LTree> >\l" [ ]
+   "BB52\n240   putfield v60 = v1 < Application, LTree, prev, <Application,LTree> >\l" [ ]
+   "BB53\n243   putfield v61 = v32 < Application, LTree, next, <Application,LTree> >\l" [ ]
+   "BB54\n246   putfield v32 = v61 < Application, LTree, prev, <Application,LTree> >\l" [ ]
+   "BB55\n247   goto                         \l" [ ]
+   "BB56\n250   putfield v31 = v1 < Application, LTree, next, <Application,LTree> >\l" [ ]
+   "BB57\n253   putfield v1 = v31 < Application, LTree, prev, <Application,LTree> >\l" [ ]
+   "BB58\n256   putfield v1 = v61 < Application, LTree, next, <Application,LTree> >\l" [ ]
+   "BB59\n259   putfield v61 = v1 < Application, LTree, prev, <Application,LTree> >\l" [ ]
+   "BB60\n262   putfield v60 = v32 < Application, LTree, next, <Application,LTree> >\l" [ ]
+   "BB61\n265   putfield v32 = v60 < Application, LTree, prev, <Application,LTree> >\l" [ ]
+   "BB62\n266   goto                         \l" [ ]
+   "BB63\n269   putfield v60 = v1 < Application, LTree, next, <Application,LTree> >\l" [ ]
+   "BB64\n272   putfield v1 = v60 < Application, LTree, prev, <Application,LTree> >\l" [ ]
+   "BB65\n275   putfield v1 = v32 < Application, LTree, next, <Application,LTree> >\l" [ ]
+   "BB66\n278   putfield v32 = v1 < Application, LTree, prev, <Application,LTree> >\l" [ ]
+   "BB67\n281   putfield v31 = v61 < Application, LTree, next, <Application,LTree> >\l" [ ]
+   "BB68\n284   putfield v61 = v31 < Application, LTree, prev, <Application,LTree> >\l" [ ]
+   "BB69\n285   goto                         \l" [ ]
+   "BB70\n287   invokevirtual < Application, LTree, reverse()V > v32 @570 exception:v92\l" [ ]
+   "BB71\n290   putfield v32 = v1 < Application, LTree, next, <Application,LTree> >\l" [ ]
+   "BB72\n293   putfield v1 = v32 < Application, LTree, prev, <Application,LTree> >\l" [ ]
+   "BB73\n296   putfield v1 = v61 < Application, LTree, next, <Application,LTree> >\l" [ ]
+   "BB74\n299   putfield v61 = v1 < Application, LTree, prev, <Application,LTree> >\l" [ ]
+   "BB75\n302   putfield v60 = v31 < Application, LTree, next, <Application,LTree> >\l" [ ]
+   "BB76\n305   putfield v31 = v60 < Application, LTree, prev, <Application,LTree> >\l" [ ]
+   "BB77\n307   return v1                    \l" [ ]
+   "BB78 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n4   v6 = invokevirtual < Application, LTree, distance(LTree;)D > v1,v2 @4 exception:v5\l" 
+ "BB1\n4   v6 = invokevirtual < Application, LTree, distance(LTree;)D > v1,v2 @4 exception:v5\l" -> "BB2\n9   v7 = getfield < Application, LTree, next, <Application,LTree> > v2\l" 
+ "BB2\n9   v7 = getfield < Application, LTree, next, <Application,LTree> > v2\l" -> "BB3\n" 
+ "BB3\n" -> "BB4\n           v15 = phi  v14,v7\l           v16 = phi  v12,v2\l           v17 = phi  v13,v6\l13   conditional branch(eq) v15,v2 \l" 
+ "BB4\n           v15 = phi  v14,v7\l           v16 = phi  v12,v2\l           v17 = phi  v13,v6\l13   conditional branch(eq) v15,v2 \l" -> "BB5\n16   v9 = invokevirtual < Application, LTree, distance(LTree;)D > v1,v15 @25 exception:v8\l" 
+ "BB4\n           v15 = phi  v14,v7\l           v16 = phi  v12,v2\l           v17 = phi  v13,v6\l13   conditional branch(eq) v15,v2 \l" -> "BB10\n32   v18 = getfield < Application, LTree, next, <Application,LTree> > v16\l" 
+ "BB5\n16   v9 = invokevirtual < Application, LTree, distance(LTree;)D > v1,v15 @25 exception:v8\l" -> "BB6\n20   v10 = compare v9,v17 opcode=cmpg\l22   conditional branch(ge) v10,v11:#0\l" 
+ "BB6\n20   v10 = compare v9,v17 opcode=cmpg\l22   conditional branch(ge) v10,v11:#0\l" -> "BB7\n" 
+ "BB6\n20   v10 = compare v9,v17 opcode=cmpg\l22   conditional branch(ge) v10,v11:#0\l" -> "BB8\n           v12 = phi  v16,v15\l           v13 = phi  v17,v9\l28   v14 = getfield < Application, LTree, next, <Application,LTree> > v15\l" 
+ "BB7\n" -> "BB8\n           v12 = phi  v16,v15\l           v13 = phi  v17,v9\l28   v14 = getfield < Application, LTree, next, <Application,LTree> > v15\l" 
+ "BB8\n           v12 = phi  v16,v15\l           v13 = phi  v17,v9\l28   v14 = getfield < Application, LTree, next, <Application,LTree> > v15\l" -> "BB9\n30   goto                          \l" 
+ "BB9\n30   goto                          \l" -> "BB4\n           v15 = phi  v14,v7\l           v16 = phi  v12,v2\l           v17 = phi  v13,v6\l13   conditional branch(eq) v15,v2 \l" 
+ "BB10\n32   v18 = getfield < Application, LTree, next, <Application,LTree> > v16\l" -> "BB11\n35   v19 = getfield < Application, LTree, prev, <Application,LTree> > v16\l" 
+ "BB11\n35   v19 = getfield < Application, LTree, prev, <Application,LTree> > v16\l" -> "BB12\n39   v21 = invokevirtual < Application, LTree, distance(LTree;)D > v16,v18 @67 exception:v20\l" 
+ "BB12\n39   v21 = invokevirtual < Application, LTree, distance(LTree;)D > v16,v18 @67 exception:v20\l" -> "BB13\n43   v23 = invokevirtual < Application, LTree, distance(LTree;)D > v16,v19 @75 exception:v22\l" 
+ "BB13\n43   v23 = invokevirtual < Application, LTree, distance(LTree;)D > v16,v19 @75 exception:v22\l" -> "BB14\n47   v25 = invokevirtual < Application, LTree, distance(LTree;)D > v1,v18 @83 exception:v24\l" 
+ "BB14\n47   v25 = invokevirtual < Application, LTree, distance(LTree;)D > v1,v18 @83 exception:v24\l" -> "BB15\n51   v27 = invokevirtual < Application, LTree, distance(LTree;)D > v1,v19 @91 exception:v26\l" 
+ "BB15\n51   v27 = invokevirtual < Application, LTree, distance(LTree;)D > v1,v19 @91 exception:v26\l" -> "BB16\n55   v28 = binaryop(sub) v27 , v23 \l58   v29 = binaryop(sub) v25 , v21 \l59   v30 = compare v28,v29 opcode=cmpg\l61   conditional branch(ge) v30,v11:#0\l" 
+ "BB16\n55   v28 = binaryop(sub) v27 , v23 \l58   v29 = binaryop(sub) v25 , v21 \l59   v30 = compare v28,v29 opcode=cmpg\l61   conditional branch(ge) v30,v11:#0\l" -> "BB17\n70   goto                          \l" 
+ "BB16\n55   v28 = binaryop(sub) v27 , v23 \l58   v29 = binaryop(sub) v25 , v21 \l59   v30 = compare v28,v29 opcode=cmpg\l61   conditional branch(ge) v30,v11:#0\l" -> "BB18\n" 
+ "BB17\n70   goto                          \l" -> "BB19\n           v31 = phi  v19,v16\l           v32 = phi  v16,v18\l           v33 = phi  v17,v25\l           v34 = phi  v27,v17\l83   v36 = invokevirtual < Application, LTree, distance(LTree;)D > v1,v3 @147 exception:v35\l" 
+ "BB18\n" -> "BB19\n           v31 = phi  v19,v16\l           v32 = phi  v16,v18\l           v33 = phi  v17,v25\l           v34 = phi  v27,v17\l83   v36 = invokevirtual < Application, LTree, distance(LTree;)D > v1,v3 @147 exception:v35\l" 
+ "BB19\n           v31 = phi  v19,v16\l           v32 = phi  v16,v18\l           v33 = phi  v17,v25\l           v34 = phi  v27,v17\l83   v36 = invokevirtual < Application, LTree, distance(LTree;)D > v1,v3 @147 exception:v35\l" -> "BB20\n88   v37 = getfield < Application, LTree, next, <Application,LTree> > v3\l" 
+ "BB20\n88   v37 = getfield < Application, LTree, next, <Application,LTree> > v3\l" -> "BB21\n" 
+ "BB21\n" -> "BB22\n           v44 = phi  v43,v37\l           v45 = phi  v41,v3\l           v46 = phi  v42,v36\l92   conditional branch(eq) v44,v3 \l" 
+ "BB22\n           v44 = phi  v43,v37\l           v45 = phi  v41,v3\l           v46 = phi  v42,v36\l92   conditional branch(eq) v44,v3 \l" -> "BB23\n95   v39 = invokevirtual < Application, LTree, distance(LTree;)D > v1,v44 @168 exception:v38\l" 
+ "BB22\n           v44 = phi  v43,v37\l           v45 = phi  v41,v3\l           v46 = phi  v42,v36\l92   conditional branch(eq) v44,v3 \l" -> "BB28\n111   v47 = getfield < Application, LTree, next, <Application,LTree> > v45\l" 
+ "BB23\n95   v39 = invokevirtual < Application, LTree, distance(LTree;)D > v1,v44 @168 exception:v38\l" -> "BB24\n99   v40 = compare v39,v46 opcode=cmpg\l101   conditional branch(ge) v40,v11:#0\l" 
+ "BB24\n99   v40 = compare v39,v46 opcode=cmpg\l101   conditional branch(ge) v40,v11:#0\l" -> "BB25\n" 
+ "BB24\n99   v40 = compare v39,v46 opcode=cmpg\l101   conditional branch(ge) v40,v11:#0\l" -> "BB26\n           v41 = phi  v45,v44\l           v42 = phi  v46,v39\l107   v43 = getfield < Application, LTree, next, <Application,LTree> > v44\l" 
+ "BB25\n" -> "BB26\n           v41 = phi  v45,v44\l           v42 = phi  v46,v39\l107   v43 = getfield < Application, LTree, next, <Application,LTree> > v44\l" 
+ "BB26\n           v41 = phi  v45,v44\l           v42 = phi  v46,v39\l107   v43 = getfield < Application, LTree, next, <Application,LTree> > v44\l" -> "BB27\n109   goto                         \l" 
+ "BB27\n109   goto                         \l" -> "BB22\n           v44 = phi  v43,v37\l           v45 = phi  v41,v3\l           v46 = phi  v42,v36\l92   conditional branch(eq) v44,v3 \l" 
+ "BB28\n111   v47 = getfield < Application, LTree, next, <Application,LTree> > v45\l" -> "BB29\n114   v48 = getfield < Application, LTree, prev, <Application,LTree> > v45\l" 
+ "BB29\n114   v48 = getfield < Application, LTree, prev, <Application,LTree> > v45\l" -> "BB30\n118   v50 = invokevirtual < Application, LTree, distance(LTree;)D > v45,v47 @210 exception:v49\l" 
+ "BB30\n118   v50 = invokevirtual < Application, LTree, distance(LTree;)D > v45,v47 @210 exception:v49\l" -> "BB31\n122   v52 = invokevirtual < Application, LTree, distance(LTree;)D > v45,v48 @218 exception:v51\l" 
+ "BB31\n122   v52 = invokevirtual < Application, LTree, distance(LTree;)D > v45,v48 @218 exception:v51\l" -> "BB32\n126   v54 = invokevirtual < Application, LTree, distance(LTree;)D > v1,v47 @226 exception:v53\l" 
+ "BB32\n126   v54 = invokevirtual < Application, LTree, distance(LTree;)D > v1,v47 @226 exception:v53\l" -> "BB33\n130   v56 = invokevirtual < Application, LTree, distance(LTree;)D > v1,v48 @234 exception:v55\l" 
+ "BB33\n130   v56 = invokevirtual < Application, LTree, distance(LTree;)D > v1,v48 @234 exception:v55\l" -> "BB34\n134   v57 = binaryop(sub) v56 , v52\l137   v58 = binaryop(sub) v54 , v50\l138   v59 = compare v57,v58 opcode=cmpg\l140   conditional branch(ge) v59,v11:#0\l" 
+ "BB34\n134   v57 = binaryop(sub) v56 , v52\l137   v58 = binaryop(sub) v54 , v50\l138   v59 = compare v57,v58 opcode=cmpg\l140   conditional branch(ge) v59,v11:#0\l" -> "BB35\n149   goto                         \l" 
+ "BB34\n134   v57 = binaryop(sub) v56 , v52\l137   v58 = binaryop(sub) v54 , v50\l138   v59 = compare v57,v58 opcode=cmpg\l140   conditional branch(ge) v59,v11:#0\l" -> "BB36\n" 
+ "BB35\n149   goto                         \l" -> "BB37\n           v60 = phi  v48,v45\l           v61 = phi  v45,v47\l           v62 = phi  v46,v54\l           v63 = phi  v56,v46\l160   v65 = invokevirtual < Application, LTree, distance(LTree;)D > v32,v61 @290 exception:v64\l" 
+ "BB36\n" -> "BB37\n           v60 = phi  v48,v45\l           v61 = phi  v45,v47\l           v62 = phi  v46,v54\l           v63 = phi  v56,v46\l160   v65 = invokevirtual < Application, LTree, distance(LTree;)D > v32,v61 @290 exception:v64\l" 
+ "BB37\n           v60 = phi  v48,v45\l           v61 = phi  v45,v47\l           v62 = phi  v46,v54\l           v63 = phi  v56,v46\l160   v65 = invokevirtual < Application, LTree, distance(LTree;)D > v32,v61 @290 exception:v64\l" -> "BB38\n164   v67 = invokevirtual < Application, LTree, distance(LTree;)D > v32,v60 @299 exception:v66\l" 
+ "BB38\n164   v67 = invokevirtual < Application, LTree, distance(LTree;)D > v32,v60 @299 exception:v66\l" -> "BB39\n168   v69 = invokevirtual < Application, LTree, distance(LTree;)D > v31,v61 @308 exception:v68\l" 
+ "BB39\n168   v69 = invokevirtual < Application, LTree, distance(LTree;)D > v31,v61 @308 exception:v68\l" -> "BB40\n172   v71 = invokevirtual < Application, LTree, distance(LTree;)D > v31,v60 @317 exception:v70\l" 
+ "BB40\n172   v71 = invokevirtual < Application, LTree, distance(LTree;)D > v31,v60 @317 exception:v70\l" -> "BB41\n176   v72 = binaryop(add) v34 , v63\l178   v73 = binaryop(add) v72 , v65\l184   v75 = binaryop(add) v34 , v62\l186   v76 = binaryop(add) v75 , v67\l190   v77 = compare v76,v73 opcode=cmpg\l192   conditional branch(ge) v77,v11:#0\l" 
+ "BB41\n176   v72 = binaryop(add) v34 , v63\l178   v73 = binaryop(add) v72 , v65\l184   v75 = binaryop(add) v34 , v62\l186   v76 = binaryop(add) v75 , v67\l190   v77 = compare v76,v73 opcode=cmpg\l192   conditional branch(ge) v77,v11:#0\l" -> "BB42\n" 
+ "BB41\n176   v72 = binaryop(add) v34 , v63\l178   v73 = binaryop(add) v72 , v65\l184   v75 = binaryop(add) v34 , v62\l186   v76 = binaryop(add) v75 , v67\l190   v77 = compare v76,v73 opcode=cmpg\l192   conditional branch(ge) v77,v11:#0\l" -> "BB43\n           v79 = phi  v73,v76\l           v80 = phi  v74:#1,v78:#2\l199   v81 = binaryop(add) v33 , v63\l201   v82 = binaryop(add) v81 , v69\l205   v83 = compare v82,v79 opcode=cmpg\l207   conditional branch(ge) v83,v11:#0\l" 
+ "BB42\n" -> "BB43\n           v79 = phi  v73,v76\l           v80 = phi  v74:#1,v78:#2\l199   v81 = binaryop(add) v33 , v63\l201   v82 = binaryop(add) v81 , v69\l205   v83 = compare v82,v79 opcode=cmpg\l207   conditional branch(ge) v83,v11:#0\l" 
+ "BB43\n           v79 = phi  v73,v76\l           v80 = phi  v74:#1,v78:#2\l199   v81 = binaryop(add) v33 , v63\l201   v82 = binaryop(add) v81 , v69\l205   v83 = compare v82,v79 opcode=cmpg\l207   conditional branch(ge) v83,v11:#0\l" -> "BB44\n" 
+ "BB43\n           v79 = phi  v73,v76\l           v80 = phi  v74:#1,v78:#2\l199   v81 = binaryop(add) v33 , v63\l201   v82 = binaryop(add) v81 , v69\l205   v83 = compare v82,v79 opcode=cmpg\l207   conditional branch(ge) v83,v11:#0\l" -> "BB45\n           v85 = phi  v79,v82\l           v86 = phi  v80,v84:#3\l214   v87 = binaryop(add) v33 , v62\l216   v88 = binaryop(add) v87 , v71\l220   v89 = compare v88,v85 opcode=cmpg\l222   conditional branch(ge) v89,v11:#0\l" 
+ "BB44\n" -> "BB45\n           v85 = phi  v79,v82\l           v86 = phi  v80,v84:#3\l214   v87 = binaryop(add) v33 , v62\l216   v88 = binaryop(add) v87 , v71\l220   v89 = compare v88,v85 opcode=cmpg\l222   conditional branch(ge) v89,v11:#0\l" 
+ "BB45\n           v85 = phi  v79,v82\l           v86 = phi  v80,v84:#3\l214   v87 = binaryop(add) v33 , v62\l216   v88 = binaryop(add) v87 , v71\l220   v89 = compare v88,v85 opcode=cmpg\l222   conditional branch(ge) v89,v11:#0\l" -> "BB46\n" 
+ "BB45\n           v85 = phi  v79,v82\l           v86 = phi  v80,v84:#3\l214   v87 = binaryop(add) v33 , v62\l216   v88 = binaryop(add) v87 , v71\l220   v89 = compare v88,v85 opcode=cmpg\l222   conditional branch(ge) v89,v11:#0\l" -> "BB47\n           v91 = phi  v86,v90:#4\l226   switch v91 [1->227,2->248,3->267,4->286]\l" 
+ "BB46\n" -> "BB47\n           v91 = phi  v86,v90:#4\l226   switch v91 [1->227,2->248,3->267,4->286]\l" 
+ "BB47\n           v91 = phi  v86,v90:#4\l226   switch v91 [1->227,2->248,3->267,4->286]\l" -> "BB48\n228   invokevirtual < Application, LTree, reverse()V > v61 @442 exception:v93\l" 
+ "BB47\n           v91 = phi  v86,v90:#4\l226   switch v91 [1->227,2->248,3->267,4->286]\l" -> "BB56\n250   putfield v31 = v1 < Application, LTree, next, <Application,LTree> >\l" 
+ "BB47\n           v91 = phi  v86,v90:#4\l226   switch v91 [1->227,2->248,3->267,4->286]\l" -> "BB63\n269   putfield v60 = v1 < Application, LTree, next, <Application,LTree> >\l" 
+ "BB47\n           v91 = phi  v86,v90:#4\l226   switch v91 [1->227,2->248,3->267,4->286]\l" -> "BB70\n287   invokevirtual < Application, LTree, reverse()V > v32 @570 exception:v92\l" 
+ "BB47\n           v91 = phi  v86,v90:#4\l226   switch v91 [1->227,2->248,3->267,4->286]\l" -> "BB77\n307   return v1                    \l" 
+ "BB48\n228   invokevirtual < Application, LTree, reverse()V > v61 @442 exception:v93\l" -> "BB49\n231   putfield v31 = v1 < Application, LTree, next, <Application,LTree> >\l" 
+ "BB49\n231   putfield v31 = v1 < Application, LTree, next, <Application,LTree> >\l" -> "BB50\n234   putfield v1 = v31 < Application, LTree, prev, <Application,LTree> >\l" 
+ "BB50\n234   putfield v1 = v31 < Application, LTree, prev, <Application,LTree> >\l" -> "BB51\n237   putfield v1 = v60 < Application, LTree, next, <Application,LTree> >\l" 
+ "BB51\n237   putfield v1 = v60 < Application, LTree, next, <Application,LTree> >\l" -> "BB52\n240   putfield v60 = v1 < Application, LTree, prev, <Application,LTree> >\l" 
+ "BB52\n240   putfield v60 = v1 < Application, LTree, prev, <Application,LTree> >\l" -> "BB53\n243   putfield v61 = v32 < Application, LTree, next, <Application,LTree> >\l" 
+ "BB53\n243   putfield v61 = v32 < Application, LTree, next, <Application,LTree> >\l" -> "BB54\n246   putfield v32 = v61 < Application, LTree, prev, <Application,LTree> >\l" 
+ "BB54\n246   putfield v32 = v61 < Application, LTree, prev, <Application,LTree> >\l" -> "BB55\n247   goto                         \l" 
+ "BB55\n247   goto                         \l" -> "BB77\n307   return v1                    \l" 
+ "BB56\n250   putfield v31 = v1 < Application, LTree, next, <Application,LTree> >\l" -> "BB57\n253   putfield v1 = v31 < Application, LTree, prev, <Application,LTree> >\l" 
+ "BB57\n253   putfield v1 = v31 < Application, LTree, prev, <Application,LTree> >\l" -> "BB58\n256   putfield v1 = v61 < Application, LTree, next, <Application,LTree> >\l" 
+ "BB58\n256   putfield v1 = v61 < Application, LTree, next, <Application,LTree> >\l" -> "BB59\n259   putfield v61 = v1 < Application, LTree, prev, <Application,LTree> >\l" 
+ "BB59\n259   putfield v61 = v1 < Application, LTree, prev, <Application,LTree> >\l" -> "BB60\n262   putfield v60 = v32 < Application, LTree, next, <Application,LTree> >\l" 
+ "BB60\n262   putfield v60 = v32 < Application, LTree, next, <Application,LTree> >\l" -> "BB61\n265   putfield v32 = v60 < Application, LTree, prev, <Application,LTree> >\l" 
+ "BB61\n265   putfield v32 = v60 < Application, LTree, prev, <Application,LTree> >\l" -> "BB62\n266   goto                         \l" 
+ "BB62\n266   goto                         \l" -> "BB77\n307   return v1                    \l" 
+ "BB63\n269   putfield v60 = v1 < Application, LTree, next, <Application,LTree> >\l" -> "BB64\n272   putfield v1 = v60 < Application, LTree, prev, <Application,LTree> >\l" 
+ "BB64\n272   putfield v1 = v60 < Application, LTree, prev, <Application,LTree> >\l" -> "BB65\n275   putfield v1 = v32 < Application, LTree, next, <Application,LTree> >\l" 
+ "BB65\n275   putfield v1 = v32 < Application, LTree, next, <Application,LTree> >\l" -> "BB66\n278   putfield v32 = v1 < Application, LTree, prev, <Application,LTree> >\l" 
+ "BB66\n278   putfield v32 = v1 < Application, LTree, prev, <Application,LTree> >\l" -> "BB67\n281   putfield v31 = v61 < Application, LTree, next, <Application,LTree> >\l" 
+ "BB67\n281   putfield v31 = v61 < Application, LTree, next, <Application,LTree> >\l" -> "BB68\n284   putfield v61 = v31 < Application, LTree, prev, <Application,LTree> >\l" 
+ "BB68\n284   putfield v61 = v31 < Application, LTree, prev, <Application,LTree> >\l" -> "BB69\n285   goto                         \l" 
+ "BB69\n285   goto                         \l" -> "BB77\n307   return v1                    \l" 
+ "BB70\n287   invokevirtual < Application, LTree, reverse()V > v32 @570 exception:v92\l" -> "BB71\n290   putfield v32 = v1 < Application, LTree, next, <Application,LTree> >\l" 
+ "BB71\n290   putfield v32 = v1 < Application, LTree, next, <Application,LTree> >\l" -> "BB72\n293   putfield v1 = v32 < Application, LTree, prev, <Application,LTree> >\l" 
+ "BB72\n293   putfield v1 = v32 < Application, LTree, prev, <Application,LTree> >\l" -> "BB73\n296   putfield v1 = v61 < Application, LTree, next, <Application,LTree> >\l" 
+ "BB73\n296   putfield v1 = v61 < Application, LTree, next, <Application,LTree> >\l" -> "BB74\n299   putfield v61 = v1 < Application, LTree, prev, <Application,LTree> >\l" 
+ "BB74\n299   putfield v61 = v1 < Application, LTree, prev, <Application,LTree> >\l" -> "BB75\n302   putfield v60 = v31 < Application, LTree, next, <Application,LTree> >\l" 
+ "BB75\n302   putfield v60 = v31 < Application, LTree, next, <Application,LTree> >\l" -> "BB76\n305   putfield v31 = v60 < Application, LTree, prev, <Application,LTree> >\l" 
+ "BB76\n305   putfield v31 = v60 < Application, LTree, prev, <Application,LTree> >\l" -> "BB77\n307   return v1                    \l" 
+ "BB77\n307   return v1                    \l" -> "BB78 (ex)\n\n" 
+
+}

@@ -1,0 +1,805 @@
+Printing all the methods from ObjReachabilityAnalysis.findMethodSig():-
+
+[TestProg3.<init>()V, TestProg3.main([Ljava/lang/String;)V, TestProg3.test()V, TestProgReachability.<init>()V, TestProgReachability.main([Ljava/lang/String;)V, TestProgReachability.test()V, TestInterProc.<init>()V, TestInterProc.main([Ljava/lang/String;)V, TestInterProc.test()V, TestInterProc.test2(LSample;LSample;)LSample;, TestProg5.<init>()V, TestProg5.main([Ljava/lang/String;)V, TestProg5.test()V, TestProg6.<init>()V, TestProg6.main([Ljava/lang/String;)V, TestProg6.test()V, TestProg2.<init>()V, TestProg2.main([Ljava/lang/String;)V, TestProg2.test()V, TestProg4.<init>()V, TestProg4.main([Ljava/lang/String;)V, TestProg4.test()V, TestProg7.<init>()V, TestProg7.main([Ljava/lang/String;)V, TestProg7.test()V, TestProg1.<init>()V, TestProg1.main([Ljava/lang/String;)V, TestProg1.test()V, TestLinkedList.<init>()V, TestLinkedList.main([Ljava/lang/String;)V, TestLinkedList.test()V, CreateObjects.<init>()V, CreateObjects.pointstodump(Ljava/lang/Object;)V, CreateObjects.main([Ljava/lang/String;)V, CreateObjects.func()V, CreateObjects.fun1()V, CreateObjects.fun2()V, CreateObjects.fun3()V, TestProg61.<init>()V, TestProg61.main([Ljava/lang/String;)V, TestProg61.test()V, TestInterprocwithstatics.<clinit>()V, TestInterprocwithstatics.<init>()V, TestInterprocwithstatics.main([Ljava/lang/String;)V, TestInterprocwithstatics.test()V, TestInterprocwithstatics.test1(LSample;)V, TestInterprocwithstatics.test2(LSample;LSample;)LSample;, prabhuprog.<init>()V, prabhuprog.main([Ljava/lang/String;)V, prabhuprog.bar()V, prabhuprog.helper(LSample;)LSample;, TestGetField.<init>()V, TestGetField.main([Ljava/lang/String;)V, TestGetField.test()V, Sample.<init>()V, Sample.a()I, Sample.main([Ljava/lang/String;)V, Sample.check(I)V]
+
+
+
+Creating OSSA for method:- TestProg3.main([Ljava/lang/String;)V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- TestProg3.test()V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- TestProgReachability.main([Ljava/lang/String;)V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- TestProgReachability.test()V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- TestInterProc.main([Ljava/lang/String;)V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- TestInterProc.test()V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- TestInterProc.test2(LSample;LSample;)LSample;
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- TestProg5.main([Ljava/lang/String;)V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- TestProg5.test()V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- TestProg6.main([Ljava/lang/String;)V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- TestProg6.test()V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- TestProg2.main([Ljava/lang/String;)V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- TestProg2.test()V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- TestProg4.main([Ljava/lang/String;)V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- TestProg4.test()V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- TestProg7.main([Ljava/lang/String;)V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- TestProg7.test()V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- TestProg1.main([Ljava/lang/String;)V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- TestProg1.test()V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- TestLinkedList.main([Ljava/lang/String;)V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- TestLinkedList.test()V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- CreateObjects.pointstodump(Ljava/lang/Object;)V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- CreateObjects.main([Ljava/lang/String;)V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- CreateObjects.func()V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- TestProg61.main([Ljava/lang/String;)V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- TestProg61.test()V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- TestInterprocwithstatics.<clinit>()V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- TestInterprocwithstatics.main([Ljava/lang/String;)V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- TestInterprocwithstatics.test()V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- TestInterprocwithstatics.test1(LSample;)V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- TestInterprocwithstatics.test2(LSample;LSample;)LSample;
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- prabhuprog.main([Ljava/lang/String;)V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- prabhuprog.bar()V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- prabhuprog.helper(LSample;)LSample;
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- TestGetField.main([Ljava/lang/String;)V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- TestGetField.test()V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- Sample.<init>()V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- Sample.a()I
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- Sample.main([Ljava/lang/String;)V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+
+Creating OSSA for method:- Sample.check(I)V
+
+
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:79)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:68)
+	at com.ibm.wala.viz.PDFViewUtil.ghostviewIR(PDFViewUtil.java:44)
+	at ObjectSSA.pdfIr.printIr(pdfIr.java:32)
+	at ObjectSSA.OSSA.<init>(OSSA.java:993)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)
+com.ibm.wala.util.WalaException: Error writing dot file /home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/pdf/dottmps/
+	at com.ibm.wala.viz.DotUtil.writeDotFile(DotUtil.java:171)
+	at com.ibm.wala.viz.DotUtil.dotify(DotUtil.java:87)
+	at ObjectSSA.pdfOSSA.printOSSA(pdfOSSA.java:44)
+	at ObjectSSA.OSSA.translator(OSSA.java:494)
+	at ObjectSSA.OSSA.<init>(OSSA.java:994)
+	at Analysis.ObjReachabilityAnalysis.main(ObjReachabilityAnalysis.java:107)

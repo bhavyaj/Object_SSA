@@ -1,0 +1,28 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0   v2 = new <Application,LSample>@0\l" [ ]
+   "BB2\n2   invokespecial < Application, LSample, <init>()V > v2 @4 exception:v3\l" [ ]
+   "BB3\n8   goto                           \l" [ ]
+   "BB4\n10   v6 = new <Application,LSample>@16\l" [ ]
+   "BB5\n12   invokespecial < Application, LSample, <init>()V > v6 @20 exception:v7\l" [ ]
+   "BB6\n13   putfield v10 = v6 < Application, LSample, next, <Application,LSample> >\l" [ ]
+   "BB7\n15   v8 = getfield < Application, LSample, next, <Application,LSample> > v10\l" [ ]
+   "BB8\n19   v9 = binaryop(add) v11 , v4:#1\l" [ ]
+   "BB9\n           v10 = phi  v2,v8\l           v11 = phi  v4:#1,v9\l23   conditional branch(lt) v11,v5:#10\l" [ ]
+   "BB10\n24   return                        \l" [ ]
+   "BB11 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0   v2 = new <Application,LSample>@0\l" 
+ "BB1\n0   v2 = new <Application,LSample>@0\l" -> "BB2\n2   invokespecial < Application, LSample, <init>()V > v2 @4 exception:v3\l" 
+ "BB2\n2   invokespecial < Application, LSample, <init>()V > v2 @4 exception:v3\l" -> "BB3\n8   goto                           \l" 
+ "BB3\n8   goto                           \l" -> "BB9\n           v10 = phi  v2,v8\l           v11 = phi  v4:#1,v9\l23   conditional branch(lt) v11,v5:#10\l" 
+ "BB4\n10   v6 = new <Application,LSample>@16\l" -> "BB5\n12   invokespecial < Application, LSample, <init>()V > v6 @20 exception:v7\l" 
+ "BB5\n12   invokespecial < Application, LSample, <init>()V > v6 @20 exception:v7\l" -> "BB6\n13   putfield v10 = v6 < Application, LSample, next, <Application,LSample> >\l" 
+ "BB6\n13   putfield v10 = v6 < Application, LSample, next, <Application,LSample> >\l" -> "BB7\n15   v8 = getfield < Application, LSample, next, <Application,LSample> > v10\l" 
+ "BB7\n15   v8 = getfield < Application, LSample, next, <Application,LSample> > v10\l" -> "BB8\n19   v9 = binaryop(add) v11 , v4:#1\l" 
+ "BB8\n19   v9 = binaryop(add) v11 , v4:#1\l" -> "BB9\n           v10 = phi  v2,v8\l           v11 = phi  v4:#1,v9\l23   conditional branch(lt) v11,v5:#10\l" 
+ "BB9\n           v10 = phi  v2,v8\l           v11 = phi  v4:#1,v9\l23   conditional branch(lt) v11,v5:#10\l" -> "BB4\n10   v6 = new <Application,LSample>@16\l" 
+ "BB9\n           v10 = phi  v2,v8\l           v11 = phi  v4:#1,v9\l23   conditional branch(lt) v11,v5:#10\l" -> "BB10\n24   return                        \l" 
+ "BB10\n24   return                        \l" -> "BB11 (ex)\n\n" 
+
+}

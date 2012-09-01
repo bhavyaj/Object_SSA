@@ -1,0 +1,38 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for MathVector.toString()Ljava-lang-String;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0  Create O2_1                               \l" [ ]
+   "BB2\n2   invokespecial < Application, Ljava/lang/StringBuffer, <init>()V > v3 @4 exception:v4\l" [ ]
+   "BB3\n" [ ]
+   "BB4\n           v22 = phi  v21,v5:#0\l8   conditional branch(ge) v22,v6:#3         \l" [ ]
+   "BB5\n10  Create O3_1                              \l" [ ]
+   "BB6\n12   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v7 @20 exception:v8\l" [ ]
+   "BB7\n14  GetOSSAInstruction:	O4_1= O1_1< data>    \l" [ ]
+   "BB8\n16   v10 = arrayload v9[v22]                 \l" [ ]
+   "BB9\n17   v12 = invokevirtual < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; > v7,v10 @29 exception:v11\l" [ ]
+   "BB10\n19   v15 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v12,v13:#  @34 exception:v14\l" [ ]
+   "BB11\n20   v17 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v15 @37 exception:v16\l" [ ]
+   "BB12\n21   v19 = invokevirtual < Application, Ljava/lang/StringBuffer, append(Ljava/lang/String;)Ljava/lang/StringBuffer; > v3,v17 @40 exception:v18\l" [ ]
+   "BB13\n25   v21 = binaryop(add) v22 , v20:#1        \l27   goto                                    \l" [ ]
+   "BB14\n29   v24 = invokevirtual < Application, Ljava/lang/StringBuffer, toString()Ljava/lang/String; > v3 @51 exception:v23\l" [ ]
+   "BB15\n30   return v24                              \l" [ ]
+   "BB16 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0  Create O2_1                               \l" 
+ "BB1\n0  Create O2_1                               \l" -> "BB2\n2   invokespecial < Application, Ljava/lang/StringBuffer, <init>()V > v3 @4 exception:v4\l" 
+ "BB2\n2   invokespecial < Application, Ljava/lang/StringBuffer, <init>()V > v3 @4 exception:v4\l" -> "BB3\n" 
+ "BB3\n" -> "BB4\n           v22 = phi  v21,v5:#0\l8   conditional branch(ge) v22,v6:#3         \l" 
+ "BB4\n           v22 = phi  v21,v5:#0\l8   conditional branch(ge) v22,v6:#3         \l" -> "BB5\n10  Create O3_1                              \l" 
+ "BB4\n           v22 = phi  v21,v5:#0\l8   conditional branch(ge) v22,v6:#3         \l" -> "BB14\n29   v24 = invokevirtual < Application, Ljava/lang/StringBuffer, toString()Ljava/lang/String; > v3 @51 exception:v23\l" 
+ "BB5\n10  Create O3_1                              \l" -> "BB6\n12   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v7 @20 exception:v8\l" 
+ "BB6\n12   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v7 @20 exception:v8\l" -> "BB7\n14  GetOSSAInstruction:	O4_1= O1_1< data>    \l" 
+ "BB7\n14  GetOSSAInstruction:	O4_1= O1_1< data>    \l" -> "BB8\n16   v10 = arrayload v9[v22]                 \l" 
+ "BB8\n16   v10 = arrayload v9[v22]                 \l" -> "BB9\n17   v12 = invokevirtual < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; > v7,v10 @29 exception:v11\l" 
+ "BB9\n17   v12 = invokevirtual < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; > v7,v10 @29 exception:v11\l" -> "BB10\n19   v15 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v12,v13:#  @34 exception:v14\l" 
+ "BB10\n19   v15 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v12,v13:#  @34 exception:v14\l" -> "BB11\n20   v17 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v15 @37 exception:v16\l" 
+ "BB11\n20   v17 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v15 @37 exception:v16\l" -> "BB12\n21   v19 = invokevirtual < Application, Ljava/lang/StringBuffer, append(Ljava/lang/String;)Ljava/lang/StringBuffer; > v3,v17 @40 exception:v18\l" 
+ "BB12\n21   v19 = invokevirtual < Application, Ljava/lang/StringBuffer, append(Ljava/lang/String;)Ljava/lang/StringBuffer; > v3,v17 @40 exception:v18\l" -> "BB13\n25   v21 = binaryop(add) v22 , v20:#1        \l27   goto                                    \l" 
+ "BB13\n25   v21 = binaryop(add) v22 , v20:#1        \l27   goto                                    \l" -> "BB4\n           v22 = phi  v21,v5:#0\l8   conditional branch(ge) v22,v6:#3         \l" 
+ "BB14\n29   v24 = invokevirtual < Application, Ljava/lang/StringBuffer, toString()Ljava/lang/String; > v3 @51 exception:v23\l" -> "BB15\n30   return v24                              \l" 
+ "BB15\n30   return v24                              \l" -> "BB16 (ex)\n\n" 
+
+}

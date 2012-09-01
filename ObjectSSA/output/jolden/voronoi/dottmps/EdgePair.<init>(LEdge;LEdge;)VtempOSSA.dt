@@ -1,0 +1,15 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for EdgePair.<init>(LEdge;LEdge;)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  < Application, Ljava/lang/Object, <init>()V >( O1_1 )\l" [ ]
+   "BB2\n4  PutOSSAInstruction:	O1_2< left > = O1_1<refO2_1>\l" [ ]
+   "BB3\n7  PutOSSAInstruction:	O1_3< right > = O1_2<refO3_1>\l" [ ]
+   "BB4\n8  return                                    \l" [ ]
+   "BB5 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  < Application, Ljava/lang/Object, <init>()V >( O1_1 )\l" 
+ "BB1\n1  < Application, Ljava/lang/Object, <init>()V >( O1_1 )\l" -> "BB2\n4  PutOSSAInstruction:	O1_2< left > = O1_1<refO2_1>\l" 
+ "BB2\n4  PutOSSAInstruction:	O1_2< left > = O1_1<refO2_1>\l" -> "BB3\n7  PutOSSAInstruction:	O1_3< right > = O1_2<refO3_1>\l" 
+ "BB3\n7  PutOSSAInstruction:	O1_3< right > = O1_2<refO3_1>\l" -> "BB4\n8  return                                    \l" 
+ "BB4\n8  return                                    \l" -> "BB5 (ex)\n\n" 
+
+}

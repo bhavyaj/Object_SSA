@@ -1,0 +1,35 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v7\l" [ ]
+   "BB2\n4   putfield v1 = v4 < Application, LVillage, back, <Application,LVillage> >\l" [ ]
+   "BB3\n7   putfield v1 = v3 < Application, LVillage, label, <Primordial,I> >\l" [ ]
+   "BB4\n10   v9 = new <Application,[LVillage>@16v8:#4 \l" [ ]
+   "BB5\n11   putfield v1 = v9 < Application, LVillage, forward, <Application,[LVillage> >\l" [ ]
+   "BB6\n14   v10 = getfield < Application, LVillage, label, <Primordial,I> > v1\l" [ ]
+   "BB7\n17   v12 = binaryop(add) v11:#127773 , v5\l18   v13 = binaryop(mul) v10 , v12 \l19   putfield v1 = v13 < Application, LVillage, seed, <Primordial,I> >\l" [ ]
+   "BB8\n21   v14 = new <Application,LHospital>@37\l" [ ]
+   "BB9\n24   invokespecial < Application, LHospital, <init>(I)V > v14,v2 @42 exception:v15\l" [ ]
+   "BB10\n25   putfield v1 = v14 < Application, LVillage, hospital, <Application,LHospital> >\l" [ ]
+   "BB11\n27   v16 = new <Application,LList>@49\l" [ ]
+   "BB12\n29   invokespecial < Application, LList, <init>()V > v16 @53 exception:v17\l" [ ]
+   "BB13\n30   putfield v1 = v16 < Application, LVillage, returned, <Application,LList> >\l" [ ]
+   "BB14\n31   return                        \l" [ ]
+   "BB15 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v7\l" 
+ "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v7\l" -> "BB2\n4   putfield v1 = v4 < Application, LVillage, back, <Application,LVillage> >\l" 
+ "BB2\n4   putfield v1 = v4 < Application, LVillage, back, <Application,LVillage> >\l" -> "BB3\n7   putfield v1 = v3 < Application, LVillage, label, <Primordial,I> >\l" 
+ "BB3\n7   putfield v1 = v3 < Application, LVillage, label, <Primordial,I> >\l" -> "BB4\n10   v9 = new <Application,[LVillage>@16v8:#4 \l" 
+ "BB4\n10   v9 = new <Application,[LVillage>@16v8:#4 \l" -> "BB5\n11   putfield v1 = v9 < Application, LVillage, forward, <Application,[LVillage> >\l" 
+ "BB5\n11   putfield v1 = v9 < Application, LVillage, forward, <Application,[LVillage> >\l" -> "BB6\n14   v10 = getfield < Application, LVillage, label, <Primordial,I> > v1\l" 
+ "BB6\n14   v10 = getfield < Application, LVillage, label, <Primordial,I> > v1\l" -> "BB7\n17   v12 = binaryop(add) v11:#127773 , v5\l18   v13 = binaryop(mul) v10 , v12 \l19   putfield v1 = v13 < Application, LVillage, seed, <Primordial,I> >\l" 
+ "BB7\n17   v12 = binaryop(add) v11:#127773 , v5\l18   v13 = binaryop(mul) v10 , v12 \l19   putfield v1 = v13 < Application, LVillage, seed, <Primordial,I> >\l" -> "BB8\n21   v14 = new <Application,LHospital>@37\l" 
+ "BB8\n21   v14 = new <Application,LHospital>@37\l" -> "BB9\n24   invokespecial < Application, LHospital, <init>(I)V > v14,v2 @42 exception:v15\l" 
+ "BB9\n24   invokespecial < Application, LHospital, <init>(I)V > v14,v2 @42 exception:v15\l" -> "BB10\n25   putfield v1 = v14 < Application, LVillage, hospital, <Application,LHospital> >\l" 
+ "BB10\n25   putfield v1 = v14 < Application, LVillage, hospital, <Application,LHospital> >\l" -> "BB11\n27   v16 = new <Application,LList>@49\l" 
+ "BB11\n27   v16 = new <Application,LList>@49\l" -> "BB12\n29   invokespecial < Application, LList, <init>()V > v16 @53 exception:v17\l" 
+ "BB12\n29   invokespecial < Application, LList, <init>()V > v16 @53 exception:v17\l" -> "BB13\n30   putfield v1 = v16 < Application, LVillage, returned, <Application,LList> >\l" 
+ "BB13\n30   putfield v1 = v16 < Application, LVillage, returned, <Application,LList> >\l" -> "BB14\n31   return                        \l" 
+ "BB14\n31   return                        \l" -> "BB15 (ex)\n\n" 
+
+}

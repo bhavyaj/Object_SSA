@@ -1,0 +1,54 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Tree.makeTree(I)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v5 = invokevirtual < Application, LTree, bodiesRev()Ljava/util/Enumeration; > v1 @1 exception:v4\l" [ ]
+   "BB2\n" [ ]
+   "BB3\n4   v7 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v5 @6 exception:v6\l" [ ]
+   "BB4\n6   conditional branch(eq) v7,v8:#0          \l" [ ]
+   "BB5\n8   v10 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v5 @15 exception:v9\l" [ ]
+   "BB6\n9   v11 = checkcast <Application,LBody>v10   \l" [ ]
+   "BB7\n12  nonreference field get instrctn: 12 = getfield < Application, LBody, mass, <Primordial,D> > 11\l" [ ]
+   "BB8\n14   v14 = compare v12,v13:#0.0 opcode=cmpl  \l16   conditional branch(eq) v14,v8:#0        \l" [ ]
+   "BB9\n20   invokevirtual < Application, LBody, expandBox(LTree;I)V > v11,v1,v2 @36 exception:v15\l" [ ]
+   "BB10\n23  nonreference field get instrctn: 16 = getfield < Application, LBody, pos, <Application,LMathVector> > 11\l" [ ]
+   "BB11\n24   v18 = invokevirtual < Application, LTree, intcoord(LMathVector;)LMathVector; > v1,v16 @44 exception:v17\l" [ ]
+   "BB12\n27  GetOSSAInstruction:	O3_1= O1_1< root>    \l" [ ]
+   "BB13\n29   conditional branch(ne) v19,v20:#null    \l" [ ]
+   "BB14\n32  PutOSSAInstruction:	O1_1< root > = O1_1<V11>\l" [ ]
+   "BB15\n33   goto                                    \l" [ ]
+   "BB16\n36  GetOSSAInstruction:	O3_1= O1_1< root>    \l" [ ]
+   "BB17\n41   v24 = invokevirtual < Application, LNode, loadTree(LBody;LMathVector;ILTree;)LNode; > v21,v11,v18,v22:#536870912,v1 @75 exception:v23\l" [ ]
+   "BB18\n42  PutOSSAInstruction:	O1_2< root > = O1_1<V24>\l" [ ]
+   "BB19\n           O1_3 = Object-Phi(O1_1, O1_2 )\l43   goto                                    \l" [ ]
+   "BB20\n45  GetOSSAInstruction:	O3_1= O1_1< root>    \l" [ ]
+   "BB21\n46   v27 = invokevirtual < Application, LNode, hackcofm()D > v25 @88 exception:v26\l" [ ]
+   "BB22\n48  return                                   \l" [ ]
+   "BB23 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v5 = invokevirtual < Application, LTree, bodiesRev()Ljava/util/Enumeration; > v1 @1 exception:v4\l" 
+ "BB1\n1   v5 = invokevirtual < Application, LTree, bodiesRev()Ljava/util/Enumeration; > v1 @1 exception:v4\l" -> "BB2\n" 
+ "BB2\n" -> "BB3\n4   v7 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v5 @6 exception:v6\l" 
+ "BB3\n4   v7 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v5 @6 exception:v6\l" -> "BB4\n6   conditional branch(eq) v7,v8:#0          \l" 
+ "BB4\n6   conditional branch(eq) v7,v8:#0          \l" -> "BB5\n8   v10 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v5 @15 exception:v9\l" 
+ "BB4\n6   conditional branch(eq) v7,v8:#0          \l" -> "BB20\n45  GetOSSAInstruction:	O3_1= O1_1< root>    \l" 
+ "BB5\n8   v10 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v5 @15 exception:v9\l" -> "BB6\n9   v11 = checkcast <Application,LBody>v10   \l" 
+ "BB6\n9   v11 = checkcast <Application,LBody>v10   \l" -> "BB7\n12  nonreference field get instrctn: 12 = getfield < Application, LBody, mass, <Primordial,D> > 11\l" 
+ "BB7\n12  nonreference field get instrctn: 12 = getfield < Application, LBody, mass, <Primordial,D> > 11\l" -> "BB8\n14   v14 = compare v12,v13:#0.0 opcode=cmpl  \l16   conditional branch(eq) v14,v8:#0        \l" 
+ "BB8\n14   v14 = compare v12,v13:#0.0 opcode=cmpl  \l16   conditional branch(eq) v14,v8:#0        \l" -> "BB9\n20   invokevirtual < Application, LBody, expandBox(LTree;I)V > v11,v1,v2 @36 exception:v15\l" 
+ "BB8\n14   v14 = compare v12,v13:#0.0 opcode=cmpl  \l16   conditional branch(eq) v14,v8:#0        \l" -> "BB19\n           O1_3 = Object-Phi(O1_1, O1_2 )\l43   goto                                    \l" 
+ "BB9\n20   invokevirtual < Application, LBody, expandBox(LTree;I)V > v11,v1,v2 @36 exception:v15\l" -> "BB10\n23  nonreference field get instrctn: 16 = getfield < Application, LBody, pos, <Application,LMathVector> > 11\l" 
+ "BB10\n23  nonreference field get instrctn: 16 = getfield < Application, LBody, pos, <Application,LMathVector> > 11\l" -> "BB11\n24   v18 = invokevirtual < Application, LTree, intcoord(LMathVector;)LMathVector; > v1,v16 @44 exception:v17\l" 
+ "BB11\n24   v18 = invokevirtual < Application, LTree, intcoord(LMathVector;)LMathVector; > v1,v16 @44 exception:v17\l" -> "BB12\n27  GetOSSAInstruction:	O3_1= O1_1< root>    \l" 
+ "BB12\n27  GetOSSAInstruction:	O3_1= O1_1< root>    \l" -> "BB13\n29   conditional branch(ne) v19,v20:#null    \l" 
+ "BB13\n29   conditional branch(ne) v19,v20:#null    \l" -> "BB14\n32  PutOSSAInstruction:	O1_1< root > = O1_1<V11>\l" 
+ "BB13\n29   conditional branch(ne) v19,v20:#null    \l" -> "BB16\n36  GetOSSAInstruction:	O3_1= O1_1< root>    \l" 
+ "BB14\n32  PutOSSAInstruction:	O1_1< root > = O1_1<V11>\l" -> "BB15\n33   goto                                    \l" 
+ "BB15\n33   goto                                    \l" -> "BB19\n           O1_3 = Object-Phi(O1_1, O1_2 )\l43   goto                                    \l" 
+ "BB16\n36  GetOSSAInstruction:	O3_1= O1_1< root>    \l" -> "BB17\n41   v24 = invokevirtual < Application, LNode, loadTree(LBody;LMathVector;ILTree;)LNode; > v21,v11,v18,v22:#536870912,v1 @75 exception:v23\l" 
+ "BB17\n41   v24 = invokevirtual < Application, LNode, loadTree(LBody;LMathVector;ILTree;)LNode; > v21,v11,v18,v22:#536870912,v1 @75 exception:v23\l" -> "BB18\n42  PutOSSAInstruction:	O1_2< root > = O1_1<V24>\l" 
+ "BB18\n42  PutOSSAInstruction:	O1_2< root > = O1_1<V24>\l" -> "BB19\n           O1_3 = Object-Phi(O1_1, O1_2 )\l43   goto                                    \l" 
+ "BB19\n           O1_3 = Object-Phi(O1_1, O1_2 )\l43   goto                                    \l" -> "BB3\n4   v7 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v5 @6 exception:v6\l" 
+ "BB20\n45  GetOSSAInstruction:	O3_1= O1_1< root>    \l" -> "BB21\n46   v27 = invokevirtual < Application, LNode, hackcofm()D > v25 @88 exception:v26\l" 
+ "BB21\n46   v27 = invokevirtual < Application, LNode, hackcofm()D > v25 @88 exception:v26\l" -> "BB22\n48  return                                   \l" 
+ "BB22\n48  return                                   \l" -> "BB23 (ex)\n\n" 
+
+}

@@ -1,0 +1,26 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Tree.median(DDI)D", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0  Create O1_1                               \l" [ ]
+   "BB2\n2   invokespecial < Application, Ljava/util/Random, <init>()V > v5 @4 exception:v6\l" [ ]
+   "BB3\n3   v8 = invokevirtual < Application, Ljava/util/Random, nextDouble()D > v5 @7 exception:v7\l" [ ]
+   "BB4\n7   v10 = compare v8,v9:#0.5 opcode=cmpl     \l9   conditional branch(le) v10,v11:#0        \l" [ ]
+   "BB5\n14   v23 = binaryop(sub) v8 , v9:#0.5        \l15   v24 = binaryop(mul) v13:#325507.58283800783 , v23\l17   v25 = binaryop(div) v24 , v15:#162754.79141900392\l18   v26 = binaryop(sub) v12:#1.0 , v25      \l19   v28 = invokestatic < Application, Ljava/lang/Math, log(D)D > v26 @37 exception:v27\l" [ ]
+   "BB6\n21   v29 = binaryop(div) v28 , v21:#12.0     \l23   goto                                    \l" [ ]
+   "BB7\n27   v14 = binaryop(mul) v13:#325507.58283800783 , v8\l29   v16 = binaryop(div) v14 , v15:#162754.79141900392\l30   v17 = binaryop(sub) v12:#1.0 , v16      \l31   v19 = invokestatic < Application, Ljava/lang/Math, log(D)D > v17 @61 exception:v18\l" [ ]
+   "BB8\n32   v20 = neg v19                           \l34   v22 = binaryop(div) v20 , v21:#12.0     \l" [ ]
+   "BB9\n           v30 = phi  v29,v22\l38   v31 = binaryop(add) v30 , v12:#1.0      \l41   v32 = binaryop(sub) v2 , v1             \l42   v33 = binaryop(mul) v31 , v32           \l44   v35 = binaryop(div) v33 , v34:#2.0      \l48   v36 = binaryop(add) v35 , v1            \l51   return v36                              \l" [ ]
+   "BB10 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0  Create O1_1                               \l" 
+ "BB1\n0  Create O1_1                               \l" -> "BB2\n2   invokespecial < Application, Ljava/util/Random, <init>()V > v5 @4 exception:v6\l" 
+ "BB2\n2   invokespecial < Application, Ljava/util/Random, <init>()V > v5 @4 exception:v6\l" -> "BB3\n3   v8 = invokevirtual < Application, Ljava/util/Random, nextDouble()D > v5 @7 exception:v7\l" 
+ "BB3\n3   v8 = invokevirtual < Application, Ljava/util/Random, nextDouble()D > v5 @7 exception:v7\l" -> "BB4\n7   v10 = compare v8,v9:#0.5 opcode=cmpl     \l9   conditional branch(le) v10,v11:#0        \l" 
+ "BB4\n7   v10 = compare v8,v9:#0.5 opcode=cmpl     \l9   conditional branch(le) v10,v11:#0        \l" -> "BB5\n14   v23 = binaryop(sub) v8 , v9:#0.5        \l15   v24 = binaryop(mul) v13:#325507.58283800783 , v23\l17   v25 = binaryop(div) v24 , v15:#162754.79141900392\l18   v26 = binaryop(sub) v12:#1.0 , v25      \l19   v28 = invokestatic < Application, Ljava/lang/Math, log(D)D > v26 @37 exception:v27\l" 
+ "BB4\n7   v10 = compare v8,v9:#0.5 opcode=cmpl     \l9   conditional branch(le) v10,v11:#0        \l" -> "BB7\n27   v14 = binaryop(mul) v13:#325507.58283800783 , v8\l29   v16 = binaryop(div) v14 , v15:#162754.79141900392\l30   v17 = binaryop(sub) v12:#1.0 , v16      \l31   v19 = invokestatic < Application, Ljava/lang/Math, log(D)D > v17 @61 exception:v18\l" 
+ "BB5\n14   v23 = binaryop(sub) v8 , v9:#0.5        \l15   v24 = binaryop(mul) v13:#325507.58283800783 , v23\l17   v25 = binaryop(div) v24 , v15:#162754.79141900392\l18   v26 = binaryop(sub) v12:#1.0 , v25      \l19   v28 = invokestatic < Application, Ljava/lang/Math, log(D)D > v26 @37 exception:v27\l" -> "BB6\n21   v29 = binaryop(div) v28 , v21:#12.0     \l23   goto                                    \l" 
+ "BB6\n21   v29 = binaryop(div) v28 , v21:#12.0     \l23   goto                                    \l" -> "BB9\n           v30 = phi  v29,v22\l38   v31 = binaryop(add) v30 , v12:#1.0      \l41   v32 = binaryop(sub) v2 , v1             \l42   v33 = binaryop(mul) v31 , v32           \l44   v35 = binaryop(div) v33 , v34:#2.0      \l48   v36 = binaryop(add) v35 , v1            \l51   return v36                              \l" 
+ "BB7\n27   v14 = binaryop(mul) v13:#325507.58283800783 , v8\l29   v16 = binaryop(div) v14 , v15:#162754.79141900392\l30   v17 = binaryop(sub) v12:#1.0 , v16      \l31   v19 = invokestatic < Application, Ljava/lang/Math, log(D)D > v17 @61 exception:v18\l" -> "BB8\n32   v20 = neg v19                           \l34   v22 = binaryop(div) v20 , v21:#12.0     \l" 
+ "BB8\n32   v20 = neg v19                           \l34   v22 = binaryop(div) v20 , v21:#12.0     \l" -> "BB9\n           v30 = phi  v29,v22\l38   v31 = binaryop(add) v30 , v12:#1.0      \l41   v32 = binaryop(sub) v2 , v1             \l42   v33 = binaryop(mul) v31 , v32           \l44   v35 = binaryop(div) v33 , v34:#2.0      \l48   v36 = binaryop(add) v35 , v1            \l51   return v36                              \l" 
+ "BB9\n           v30 = phi  v29,v22\l38   v31 = binaryop(add) v30 , v12:#1.0      \l41   v32 = binaryop(sub) v2 , v1             \l42   v33 = binaryop(mul) v31 , v32           \l44   v35 = binaryop(div) v33 , v34:#2.0      \l48   v36 = binaryop(add) v35 , v1            \l51   return v36                              \l" -> "BB10 (ex)\n\n" 
+
+}

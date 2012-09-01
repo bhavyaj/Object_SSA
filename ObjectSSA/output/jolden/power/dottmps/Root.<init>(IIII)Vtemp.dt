@@ -1,0 +1,46 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v7\l" [ ]
+   "BB2\n4   putfield v1 = v8:#0.8 < Application, LRoot, theta_R, <Primordial,D> >\l" [ ]
+   "BB3\n7   putfield v1 = v9:#0.16 < Application, LRoot, theta_I, <Primordial,D> >\l" [ ]
+   "BB4\n9   v10 = new <Application,LDemand>@19\l" [ ]
+   "BB5\n11   invokespecial < Application, LDemand, <init>()V > v10 @23 exception:v11\l" [ ]
+   "BB6\n12   putfield v1 = v10 < Application, LRoot, D, <Application,LDemand> >\l" [ ]
+   "BB7\n14   v12 = new <Application,LDemand>@30\l" [ ]
+   "BB8\n16   invokespecial < Application, LDemand, <init>()V > v12 @34 exception:v13\l" [ ]
+   "BB9\n17   putfield v1 = v12 < Application, LRoot, last, <Application,LDemand> >\l" [ ]
+   "BB10\n20   v14 = new <Application,[LLateral>@42v2 \l" [ ]
+   "BB11\n21   putfield v1 = v14 < Application, LRoot, feeders, <Application,[LLateral> >\l" [ ]
+   "BB12\n" [ ]
+   "BB13\n           v21 = phi  v20,v15:#0\l26   conditional branch(ge) v21,v2 \l" [ ]
+   "BB14\n28   v16 = getfield < Application, LRoot, feeders, <Application,[LLateral> > v1\l" [ ]
+   "BB15\n30   v17 = new <Application,LLateral>@63\l" [ ]
+   "BB16\n35   invokespecial < Application, LLateral, <init>(III)V > v17,v3,v4,v5 @71 exception:v18\l" [ ]
+   "BB17\n36   arraystore v16[v21] = v17     \l" [ ]
+   "BB18\n39   v20 = binaryop(add) v21 , v19:#1\l41   goto                          \l" [ ]
+   "BB19\n42   return                        \l" [ ]
+   "BB20 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v7\l" 
+ "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v7\l" -> "BB2\n4   putfield v1 = v8:#0.8 < Application, LRoot, theta_R, <Primordial,D> >\l" 
+ "BB2\n4   putfield v1 = v8:#0.8 < Application, LRoot, theta_R, <Primordial,D> >\l" -> "BB3\n7   putfield v1 = v9:#0.16 < Application, LRoot, theta_I, <Primordial,D> >\l" 
+ "BB3\n7   putfield v1 = v9:#0.16 < Application, LRoot, theta_I, <Primordial,D> >\l" -> "BB4\n9   v10 = new <Application,LDemand>@19\l" 
+ "BB4\n9   v10 = new <Application,LDemand>@19\l" -> "BB5\n11   invokespecial < Application, LDemand, <init>()V > v10 @23 exception:v11\l" 
+ "BB5\n11   invokespecial < Application, LDemand, <init>()V > v10 @23 exception:v11\l" -> "BB6\n12   putfield v1 = v10 < Application, LRoot, D, <Application,LDemand> >\l" 
+ "BB6\n12   putfield v1 = v10 < Application, LRoot, D, <Application,LDemand> >\l" -> "BB7\n14   v12 = new <Application,LDemand>@30\l" 
+ "BB7\n14   v12 = new <Application,LDemand>@30\l" -> "BB8\n16   invokespecial < Application, LDemand, <init>()V > v12 @34 exception:v13\l" 
+ "BB8\n16   invokespecial < Application, LDemand, <init>()V > v12 @34 exception:v13\l" -> "BB9\n17   putfield v1 = v12 < Application, LRoot, last, <Application,LDemand> >\l" 
+ "BB9\n17   putfield v1 = v12 < Application, LRoot, last, <Application,LDemand> >\l" -> "BB10\n20   v14 = new <Application,[LLateral>@42v2 \l" 
+ "BB10\n20   v14 = new <Application,[LLateral>@42v2 \l" -> "BB11\n21   putfield v1 = v14 < Application, LRoot, feeders, <Application,[LLateral> >\l" 
+ "BB11\n21   putfield v1 = v14 < Application, LRoot, feeders, <Application,[LLateral> >\l" -> "BB12\n" 
+ "BB12\n" -> "BB13\n           v21 = phi  v20,v15:#0\l26   conditional branch(ge) v21,v2 \l" 
+ "BB13\n           v21 = phi  v20,v15:#0\l26   conditional branch(ge) v21,v2 \l" -> "BB14\n28   v16 = getfield < Application, LRoot, feeders, <Application,[LLateral> > v1\l" 
+ "BB13\n           v21 = phi  v20,v15:#0\l26   conditional branch(ge) v21,v2 \l" -> "BB19\n42   return                        \l" 
+ "BB14\n28   v16 = getfield < Application, LRoot, feeders, <Application,[LLateral> > v1\l" -> "BB15\n30   v17 = new <Application,LLateral>@63\l" 
+ "BB15\n30   v17 = new <Application,LLateral>@63\l" -> "BB16\n35   invokespecial < Application, LLateral, <init>(III)V > v17,v3,v4,v5 @71 exception:v18\l" 
+ "BB16\n35   invokespecial < Application, LLateral, <init>(III)V > v17,v3,v4,v5 @71 exception:v18\l" -> "BB17\n36   arraystore v16[v21] = v17     \l" 
+ "BB17\n36   arraystore v16[v21] = v17     \l" -> "BB18\n39   v20 = binaryop(add) v21 , v19:#1\l41   goto                          \l" 
+ "BB18\n39   v20 = binaryop(add) v21 , v19:#1\l41   goto                          \l" -> "BB13\n           v21 = phi  v20,v15:#0\l26   conditional branch(ge) v21,v2 \l" 
+ "BB19\n42   return                        \l" -> "BB20 (ex)\n\n" 
+
+}

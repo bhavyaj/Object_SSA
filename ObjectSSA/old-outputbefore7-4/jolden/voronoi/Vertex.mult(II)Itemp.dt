@@ -1,0 +1,19 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n4   v5 = binaryop(div) v1 , v4:#10000\l" [ ]
+   "BB2\n8   v6 = binaryop(rem) v1 , v4:#10000\l" [ ]
+   "BB3\n12   v7 = binaryop(div) v2 , v4:#10000\l" [ ]
+   "BB4\n16   v8 = binaryop(rem) v2 , v4:#10000\l" [ ]
+   "BB5\n20   v9 = binaryop(mul) v6 , v7    \l23   v10 = binaryop(mul) v5 , v8   \l24   v11 = binaryop(add) v9 , v10  \l26   v12 = binaryop(rem) v11 , v4:#10000\l" [ ]
+   "BB6\n28   v13 = binaryop(mul) v12 , v4:#10000\l31   v14 = binaryop(mul) v6 , v8   \l32   v15 = binaryop(add) v13 , v14 \l33   return v15                    \l" [ ]
+   "BB7 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n4   v5 = binaryop(div) v1 , v4:#10000\l" 
+ "BB1\n4   v5 = binaryop(div) v1 , v4:#10000\l" -> "BB2\n8   v6 = binaryop(rem) v1 , v4:#10000\l" 
+ "BB2\n8   v6 = binaryop(rem) v1 , v4:#10000\l" -> "BB3\n12   v7 = binaryop(div) v2 , v4:#10000\l" 
+ "BB3\n12   v7 = binaryop(div) v2 , v4:#10000\l" -> "BB4\n16   v8 = binaryop(rem) v2 , v4:#10000\l" 
+ "BB4\n16   v8 = binaryop(rem) v2 , v4:#10000\l" -> "BB5\n20   v9 = binaryop(mul) v6 , v7    \l23   v10 = binaryop(mul) v5 , v8   \l24   v11 = binaryop(add) v9 , v10  \l26   v12 = binaryop(rem) v11 , v4:#10000\l" 
+ "BB5\n20   v9 = binaryop(mul) v6 , v7    \l23   v10 = binaryop(mul) v5 , v8   \l24   v11 = binaryop(add) v9 , v10  \l26   v12 = binaryop(rem) v11 , v4:#10000\l" -> "BB6\n28   v13 = binaryop(mul) v12 , v4:#10000\l31   v14 = binaryop(mul) v6 , v8   \l32   v15 = binaryop(add) v13 , v14 \l33   return v15                    \l" 
+ "BB6\n28   v13 = binaryop(mul) v12 , v4:#10000\l31   v14 = binaryop(mul) v6 , v8   \l32   v15 = binaryop(add) v13 , v14 \l33   return v15                    \l" -> "BB7 (ex)\n\n" 
+
+}

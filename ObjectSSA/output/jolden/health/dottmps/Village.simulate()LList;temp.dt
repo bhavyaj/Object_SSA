@@ -1,0 +1,83 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v4 = new <Application,[LList>@1v3:#4 \l" [ ]
+   "BB2\n" [ ]
+   "BB3\n           v14 = phi  v13,v5:#3\l7   conditional branch(lt) v14,v6:#0\l" [ ]
+   "BB4\n9   v7 = getfield < Application, LVillage, forward, <Application,[LVillage> > v1\l" [ ]
+   "BB5\n11   v8 = arrayload v7[v14]        \l" [ ]
+   "BB6\n15   conditional branch(eq) v8,v9:#null\l" [ ]
+   "BB7\n19   v11 = invokevirtual < Application, LVillage, simulate()LList; > v8 @25 exception:v10\l" [ ]
+   "BB8\n20   arraystore v4[v14] = v11      \l" [ ]
+   "BB9\n23   v13 = binaryop(add) v14 , v12:#-1\l25   goto                          \l" [ ]
+   "BB10\n" [ ]
+   "BB11\n           v26 = phi  v25,v5:#3\l30   conditional branch(lt) v26,v6:#0\l" [ ]
+   "BB12\n33   v15 = arrayload v4[v26]       \l" [ ]
+   "BB13\n37   conditional branch(eq) v15,v9:#null\l" [ ]
+   "BB14\n39   v17 = invokevirtual < Application, LList, elements()Ljava/util/Enumeration; > v15 @50 exception:v16\l" [ ]
+   "BB15\n" [ ]
+   "BB16\n           v28 = phi  v28,v26\l42   v19 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v17 @57 exception:v18\l" [ ]
+   "BB17\n44   conditional branch(eq) v19,v6:#0\l" [ ]
+   "BB18\n46   v21 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v17 @67 exception:v20\l" [ ]
+   "BB19\n47   v22 = checkcast <Application,LPatient>v21\l" [ ]
+   "BB20\n50   v23 = getfield < Application, LVillage, hospital, <Application,LHospital> > v1\l" [ ]
+   "BB21\n52   invokevirtual < Application, LHospital, putInHospital(LPatient;)V > v23,v22 @83 exception:v24\l" [ ]
+   "BB22\n53   goto                          \l" [ ]
+   "BB23\n           v29 = phi  v26,v28\l56   v25 = binaryop(add) v29 , v12:#-1\l58   goto                          \l" [ ]
+   "BB24\n60   v30 = getfield < Application, LVillage, hospital, <Application,LHospital> > v1\l" [ ]
+   "BB25\n62   v31 = getfield < Application, LVillage, returned, <Application,LList> > v1\l" [ ]
+   "BB26\n63   invokevirtual < Application, LHospital, checkPatientsInside(LList;)V > v30,v31 @103 exception:v32\l" [ ]
+   "BB27\n65   v33 = getfield < Application, LVillage, hospital, <Application,LHospital> > v1\l" [ ]
+   "BB28\n67   v35 = invokevirtual < Application, LHospital, checkPatientsAssess(LVillage;)LList; > v33,v1 @111 exception:v34\l" [ ]
+   "BB29\n70   v36 = getfield < Application, LVillage, hospital, <Application,LHospital> > v1\l" [ ]
+   "BB30\n71   invokevirtual < Application, LHospital, checkPatientsWaiting()V > v36 @119 exception:v37\l" [ ]
+   "BB31\n73   v39 = invokespecial < Application, LVillage, generatePatient()LPatient; > v1 @123 exception:v38\l" [ ]
+   "BB32\n77   conditional branch(eq) v39,v9:#null\l" [ ]
+   "BB33\n79   v40 = getfield < Application, LVillage, hospital, <Application,LHospital> > v1\l" [ ]
+   "BB34\n81   invokevirtual < Application, LHospital, putInHospital(LPatient;)V > v40,v39 @136 exception:v41\l" [ ]
+   "BB35\n83   return v35                    \l" [ ]
+   "BB36 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v4 = new <Application,[LList>@1v3:#4 \l" 
+ "BB1\n1   v4 = new <Application,[LList>@1v3:#4 \l" -> "BB2\n" 
+ "BB2\n" -> "BB3\n           v14 = phi  v13,v5:#3\l7   conditional branch(lt) v14,v6:#0\l" 
+ "BB3\n           v14 = phi  v13,v5:#3\l7   conditional branch(lt) v14,v6:#0\l" -> "BB4\n9   v7 = getfield < Application, LVillage, forward, <Application,[LVillage> > v1\l" 
+ "BB3\n           v14 = phi  v13,v5:#3\l7   conditional branch(lt) v14,v6:#0\l" -> "BB10\n" 
+ "BB4\n9   v7 = getfield < Application, LVillage, forward, <Application,[LVillage> > v1\l" -> "BB5\n11   v8 = arrayload v7[v14]        \l" 
+ "BB5\n11   v8 = arrayload v7[v14]        \l" -> "BB6\n15   conditional branch(eq) v8,v9:#null\l" 
+ "BB6\n15   conditional branch(eq) v8,v9:#null\l" -> "BB7\n19   v11 = invokevirtual < Application, LVillage, simulate()LList; > v8 @25 exception:v10\l" 
+ "BB6\n15   conditional branch(eq) v8,v9:#null\l" -> "BB9\n23   v13 = binaryop(add) v14 , v12:#-1\l25   goto                          \l" 
+ "BB7\n19   v11 = invokevirtual < Application, LVillage, simulate()LList; > v8 @25 exception:v10\l" -> "BB8\n20   arraystore v4[v14] = v11      \l" 
+ "BB8\n20   arraystore v4[v14] = v11      \l" -> "BB9\n23   v13 = binaryop(add) v14 , v12:#-1\l25   goto                          \l" 
+ "BB9\n23   v13 = binaryop(add) v14 , v12:#-1\l25   goto                          \l" -> "BB3\n           v14 = phi  v13,v5:#3\l7   conditional branch(lt) v14,v6:#0\l" 
+ "BB10\n" -> "BB11\n           v26 = phi  v25,v5:#3\l30   conditional branch(lt) v26,v6:#0\l" 
+ "BB11\n           v26 = phi  v25,v5:#3\l30   conditional branch(lt) v26,v6:#0\l" -> "BB12\n33   v15 = arrayload v4[v26]       \l" 
+ "BB11\n           v26 = phi  v25,v5:#3\l30   conditional branch(lt) v26,v6:#0\l" -> "BB24\n60   v30 = getfield < Application, LVillage, hospital, <Application,LHospital> > v1\l" 
+ "BB12\n33   v15 = arrayload v4[v26]       \l" -> "BB13\n37   conditional branch(eq) v15,v9:#null\l" 
+ "BB13\n37   conditional branch(eq) v15,v9:#null\l" -> "BB14\n39   v17 = invokevirtual < Application, LList, elements()Ljava/util/Enumeration; > v15 @50 exception:v16\l" 
+ "BB13\n37   conditional branch(eq) v15,v9:#null\l" -> "BB23\n           v29 = phi  v26,v28\l56   v25 = binaryop(add) v29 , v12:#-1\l58   goto                          \l" 
+ "BB14\n39   v17 = invokevirtual < Application, LList, elements()Ljava/util/Enumeration; > v15 @50 exception:v16\l" -> "BB15\n" 
+ "BB15\n" -> "BB16\n           v28 = phi  v28,v26\l42   v19 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v17 @57 exception:v18\l" 
+ "BB16\n           v28 = phi  v28,v26\l42   v19 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v17 @57 exception:v18\l" -> "BB17\n44   conditional branch(eq) v19,v6:#0\l" 
+ "BB17\n44   conditional branch(eq) v19,v6:#0\l" -> "BB18\n46   v21 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v17 @67 exception:v20\l" 
+ "BB17\n44   conditional branch(eq) v19,v6:#0\l" -> "BB23\n           v29 = phi  v26,v28\l56   v25 = binaryop(add) v29 , v12:#-1\l58   goto                          \l" 
+ "BB18\n46   v21 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v17 @67 exception:v20\l" -> "BB19\n47   v22 = checkcast <Application,LPatient>v21\l" 
+ "BB19\n47   v22 = checkcast <Application,LPatient>v21\l" -> "BB20\n50   v23 = getfield < Application, LVillage, hospital, <Application,LHospital> > v1\l" 
+ "BB20\n50   v23 = getfield < Application, LVillage, hospital, <Application,LHospital> > v1\l" -> "BB21\n52   invokevirtual < Application, LHospital, putInHospital(LPatient;)V > v23,v22 @83 exception:v24\l" 
+ "BB21\n52   invokevirtual < Application, LHospital, putInHospital(LPatient;)V > v23,v22 @83 exception:v24\l" -> "BB22\n53   goto                          \l" 
+ "BB22\n53   goto                          \l" -> "BB16\n           v28 = phi  v28,v26\l42   v19 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v17 @57 exception:v18\l" 
+ "BB23\n           v29 = phi  v26,v28\l56   v25 = binaryop(add) v29 , v12:#-1\l58   goto                          \l" -> "BB11\n           v26 = phi  v25,v5:#3\l30   conditional branch(lt) v26,v6:#0\l" 
+ "BB24\n60   v30 = getfield < Application, LVillage, hospital, <Application,LHospital> > v1\l" -> "BB25\n62   v31 = getfield < Application, LVillage, returned, <Application,LList> > v1\l" 
+ "BB25\n62   v31 = getfield < Application, LVillage, returned, <Application,LList> > v1\l" -> "BB26\n63   invokevirtual < Application, LHospital, checkPatientsInside(LList;)V > v30,v31 @103 exception:v32\l" 
+ "BB26\n63   invokevirtual < Application, LHospital, checkPatientsInside(LList;)V > v30,v31 @103 exception:v32\l" -> "BB27\n65   v33 = getfield < Application, LVillage, hospital, <Application,LHospital> > v1\l" 
+ "BB27\n65   v33 = getfield < Application, LVillage, hospital, <Application,LHospital> > v1\l" -> "BB28\n67   v35 = invokevirtual < Application, LHospital, checkPatientsAssess(LVillage;)LList; > v33,v1 @111 exception:v34\l" 
+ "BB28\n67   v35 = invokevirtual < Application, LHospital, checkPatientsAssess(LVillage;)LList; > v33,v1 @111 exception:v34\l" -> "BB29\n70   v36 = getfield < Application, LVillage, hospital, <Application,LHospital> > v1\l" 
+ "BB29\n70   v36 = getfield < Application, LVillage, hospital, <Application,LHospital> > v1\l" -> "BB30\n71   invokevirtual < Application, LHospital, checkPatientsWaiting()V > v36 @119 exception:v37\l" 
+ "BB30\n71   invokevirtual < Application, LHospital, checkPatientsWaiting()V > v36 @119 exception:v37\l" -> "BB31\n73   v39 = invokespecial < Application, LVillage, generatePatient()LPatient; > v1 @123 exception:v38\l" 
+ "BB31\n73   v39 = invokespecial < Application, LVillage, generatePatient()LPatient; > v1 @123 exception:v38\l" -> "BB32\n77   conditional branch(eq) v39,v9:#null\l" 
+ "BB32\n77   conditional branch(eq) v39,v9:#null\l" -> "BB33\n79   v40 = getfield < Application, LVillage, hospital, <Application,LHospital> > v1\l" 
+ "BB32\n77   conditional branch(eq) v39,v9:#null\l" -> "BB35\n83   return v35                    \l" 
+ "BB33\n79   v40 = getfield < Application, LVillage, hospital, <Application,LHospital> > v1\l" -> "BB34\n81   invokevirtual < Application, LHospital, putInHospital(LPatient;)V > v40,v39 @136 exception:v41\l" 
+ "BB34\n81   invokevirtual < Application, LHospital, putInHospital(LPatient;)V > v40,v39 @136 exception:v41\l" -> "BB35\n83   return v35                    \l" 
+ "BB35\n83   return v35                    \l" -> "BB36 (ex)\n\n" 
+
+}

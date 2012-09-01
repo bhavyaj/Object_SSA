@@ -1,0 +1,102 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Village.getResults()LResults;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  Create O2_1                               \l" [ ]
+   "BB2\n" [ ]
+   "BB3\n           v14 = phi  v13,v5:#3\l7   conditional branch(lt) v14,v6:#0         \l" [ ]
+   "BB4\n9  GetOSSAInstruction:	O3_1= O1_1< forward>  \l" [ ]
+   "BB5\n11   v8 = arrayload v7[v14]                  \l" [ ]
+   "BB6\n15   conditional branch(eq) v8,v9:#null      \l" [ ]
+   "BB7\n19  O4_1 = < Application, LVillage, getResults()LResults; >( O1_1 )\l" [ ]
+   "BB8\n20   arraystore v4[v14] = v11                \l" [ ]
+   "BB9\n23   v13 = binaryop(add) v14 , v12:#-1       \l25   goto                                    \l" [ ]
+   "BB10\n26  Create O5_1                              \l" [ ]
+   "BB11\n28  < Application, LResults, <init>()V >( O5_1 )\l" [ ]
+   "BB12\n" [ ]
+   "BB13\n           v31 = phi  v30,v5:#3\l34   conditional branch(lt) v31,v6:#0        \l" [ ]
+   "BB14\n37   v17 = arrayload v4[v31]                 \l" [ ]
+   "BB15\n39   conditional branch(eq) v17,v9:#null     \l" [ ]
+   "BB16\n42  GetOSSAInstruction:	18= O5_1< totalHospitals>\l" [ ]
+   "BB17\n45   v19 = arrayload v4[v31]                 \l" [ ]
+   "BB18\n46  nonreference field get instrctn: 20 = getfield < Application, LResults, totalHospitals, <Primordial,F> > 19\l" [ ]
+   "BB19\n47   v21 = binaryop(add) v18 , v20           \l48  PutOSSAInstruction:	O5_2< totalHospitals > = O5_1<V21>\l" [ ]
+   "BB20\n51  GetOSSAInstruction:	22= O5_2< totalPatients>\l" [ ]
+   "BB21\n54   v23 = arrayload v4[v31]                 \l" [ ]
+   "BB22\n55  nonreference field get instrctn: 24 = getfield < Application, LResults, totalPatients, <Primordial,F> > 23\l" [ ]
+   "BB23\n56   v25 = binaryop(add) v22 , v24           \l57  PutOSSAInstruction:	O5_3< totalPatients > = O5_2<V25>\l" [ ]
+   "BB24\n60  GetOSSAInstruction:	26= O5_3< totalTime> \l" [ ]
+   "BB25\n63   v27 = arrayload v4[v31]                 \l" [ ]
+   "BB26\n64  nonreference field get instrctn: 28 = getfield < Application, LResults, totalTime, <Primordial,F> > 27\l" [ ]
+   "BB27\n65   v29 = binaryop(add) v26 , v28           \l66  PutOSSAInstruction:	O5_4< totalTime > = O5_3<V29>\l" [ ]
+   "BB28\n           O5_5 = Object-Phi(O5_1, O5_4 )\l69   v30 = binaryop(add) v31 , v12:#-1       \l71   goto                                    \l" [ ]
+   "BB29\n73  GetOSSAInstruction:	O6_1= O1_1< returned>\l" [ ]
+   "BB30\n74  O7_1 = < Application, LList, elements()Ljava/util/Enumeration; >( O6_1 )\l" [ ]
+   "BB31\n" [ ]
+   "BB32\n           O5_6 = Object-Phi(O5_1, O5_9 )\l77  O8_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O7_1 )\l" [ ]
+   "BB33\n79   conditional branch(eq) v36,v6:#0        \l" [ ]
+   "BB34\n81  O9_1 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O7_1 )\l" [ ]
+   "BB35\n82   v39 = checkcast <Application,LPatient>v38\l" [ ]
+   "BB36\n86  GetOSSAInstruction:	40= O5_6< totalHospitals>\l" [ ]
+   "BB37\n88  nonreference field get instrctn: 41 = getfield < Application, LPatient, hospitalsVisited, <Primordial,I> > 39\l" [ ]
+   "BB38\n89   v42 = conversion(F) v41                 \l90   v43 = binaryop(add) v40 , v42           \l91  PutOSSAInstruction:	O5_7< totalHospitals > = O5_6<V43>\l" [ ]
+   "BB39\n94  GetOSSAInstruction:	44= O5_7< totalTime> \l" [ ]
+   "BB40\n96  nonreference field get instrctn: 45 = getfield < Application, LPatient, time, <Primordial,I> > 39\l" [ ]
+   "BB41\n97   v46 = conversion(F) v45                 \l98   v47 = binaryop(add) v44 , v46           \l99  PutOSSAInstruction:	O5_8< totalTime > = O5_7<V47>\l" [ ]
+   "BB42\n102  GetOSSAInstruction:	48= O5_8< totalPatients>\l" [ ]
+   "BB43\n103   v49 = conversion(D) v48                \l105   v51 = binaryop(add) v49 , v50:#1.0     \l106   v52 = conversion(F) v51                \l107  PutOSSAInstruction:	O5_9< totalPatients > = O5_8<V52>\l" [ ]
+   "BB44\n108   goto                                   \l" [ ]
+   "BB45\n110  Return O4_1                             \l" [ ]
+   "BB46 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  Create O2_1                               \l" 
+ "BB1\n1  Create O2_1                               \l" -> "BB2\n" 
+ "BB2\n" -> "BB3\n           v14 = phi  v13,v5:#3\l7   conditional branch(lt) v14,v6:#0         \l" 
+ "BB3\n           v14 = phi  v13,v5:#3\l7   conditional branch(lt) v14,v6:#0         \l" -> "BB4\n9  GetOSSAInstruction:	O3_1= O1_1< forward>  \l" 
+ "BB3\n           v14 = phi  v13,v5:#3\l7   conditional branch(lt) v14,v6:#0         \l" -> "BB10\n26  Create O5_1                              \l" 
+ "BB4\n9  GetOSSAInstruction:	O3_1= O1_1< forward>  \l" -> "BB5\n11   v8 = arrayload v7[v14]                  \l" 
+ "BB5\n11   v8 = arrayload v7[v14]                  \l" -> "BB6\n15   conditional branch(eq) v8,v9:#null      \l" 
+ "BB6\n15   conditional branch(eq) v8,v9:#null      \l" -> "BB7\n19  O4_1 = < Application, LVillage, getResults()LResults; >( O1_1 )\l" 
+ "BB6\n15   conditional branch(eq) v8,v9:#null      \l" -> "BB9\n23   v13 = binaryop(add) v14 , v12:#-1       \l25   goto                                    \l" 
+ "BB7\n19  O4_1 = < Application, LVillage, getResults()LResults; >( O1_1 )\l" -> "BB8\n20   arraystore v4[v14] = v11                \l" 
+ "BB8\n20   arraystore v4[v14] = v11                \l" -> "BB9\n23   v13 = binaryop(add) v14 , v12:#-1       \l25   goto                                    \l" 
+ "BB9\n23   v13 = binaryop(add) v14 , v12:#-1       \l25   goto                                    \l" -> "BB3\n           v14 = phi  v13,v5:#3\l7   conditional branch(lt) v14,v6:#0         \l" 
+ "BB10\n26  Create O5_1                              \l" -> "BB11\n28  < Application, LResults, <init>()V >( O5_1 )\l" 
+ "BB11\n28  < Application, LResults, <init>()V >( O5_1 )\l" -> "BB12\n" 
+ "BB12\n" -> "BB13\n           v31 = phi  v30,v5:#3\l34   conditional branch(lt) v31,v6:#0        \l" 
+ "BB13\n           v31 = phi  v30,v5:#3\l34   conditional branch(lt) v31,v6:#0        \l" -> "BB14\n37   v17 = arrayload v4[v31]                 \l" 
+ "BB13\n           v31 = phi  v30,v5:#3\l34   conditional branch(lt) v31,v6:#0        \l" -> "BB29\n73  GetOSSAInstruction:	O6_1= O1_1< returned>\l" 
+ "BB14\n37   v17 = arrayload v4[v31]                 \l" -> "BB15\n39   conditional branch(eq) v17,v9:#null     \l" 
+ "BB15\n39   conditional branch(eq) v17,v9:#null     \l" -> "BB16\n42  GetOSSAInstruction:	18= O5_1< totalHospitals>\l" 
+ "BB15\n39   conditional branch(eq) v17,v9:#null     \l" -> "BB28\n           O5_5 = Object-Phi(O5_1, O5_4 )\l69   v30 = binaryop(add) v31 , v12:#-1       \l71   goto                                    \l" 
+ "BB16\n42  GetOSSAInstruction:	18= O5_1< totalHospitals>\l" -> "BB17\n45   v19 = arrayload v4[v31]                 \l" 
+ "BB17\n45   v19 = arrayload v4[v31]                 \l" -> "BB18\n46  nonreference field get instrctn: 20 = getfield < Application, LResults, totalHospitals, <Primordial,F> > 19\l" 
+ "BB18\n46  nonreference field get instrctn: 20 = getfield < Application, LResults, totalHospitals, <Primordial,F> > 19\l" -> "BB19\n47   v21 = binaryop(add) v18 , v20           \l48  PutOSSAInstruction:	O5_2< totalHospitals > = O5_1<V21>\l" 
+ "BB19\n47   v21 = binaryop(add) v18 , v20           \l48  PutOSSAInstruction:	O5_2< totalHospitals > = O5_1<V21>\l" -> "BB20\n51  GetOSSAInstruction:	22= O5_2< totalPatients>\l" 
+ "BB20\n51  GetOSSAInstruction:	22= O5_2< totalPatients>\l" -> "BB21\n54   v23 = arrayload v4[v31]                 \l" 
+ "BB21\n54   v23 = arrayload v4[v31]                 \l" -> "BB22\n55  nonreference field get instrctn: 24 = getfield < Application, LResults, totalPatients, <Primordial,F> > 23\l" 
+ "BB22\n55  nonreference field get instrctn: 24 = getfield < Application, LResults, totalPatients, <Primordial,F> > 23\l" -> "BB23\n56   v25 = binaryop(add) v22 , v24           \l57  PutOSSAInstruction:	O5_3< totalPatients > = O5_2<V25>\l" 
+ "BB23\n56   v25 = binaryop(add) v22 , v24           \l57  PutOSSAInstruction:	O5_3< totalPatients > = O5_2<V25>\l" -> "BB24\n60  GetOSSAInstruction:	26= O5_3< totalTime> \l" 
+ "BB24\n60  GetOSSAInstruction:	26= O5_3< totalTime> \l" -> "BB25\n63   v27 = arrayload v4[v31]                 \l" 
+ "BB25\n63   v27 = arrayload v4[v31]                 \l" -> "BB26\n64  nonreference field get instrctn: 28 = getfield < Application, LResults, totalTime, <Primordial,F> > 27\l" 
+ "BB26\n64  nonreference field get instrctn: 28 = getfield < Application, LResults, totalTime, <Primordial,F> > 27\l" -> "BB27\n65   v29 = binaryop(add) v26 , v28           \l66  PutOSSAInstruction:	O5_4< totalTime > = O5_3<V29>\l" 
+ "BB27\n65   v29 = binaryop(add) v26 , v28           \l66  PutOSSAInstruction:	O5_4< totalTime > = O5_3<V29>\l" -> "BB28\n           O5_5 = Object-Phi(O5_1, O5_4 )\l69   v30 = binaryop(add) v31 , v12:#-1       \l71   goto                                    \l" 
+ "BB28\n           O5_5 = Object-Phi(O5_1, O5_4 )\l69   v30 = binaryop(add) v31 , v12:#-1       \l71   goto                                    \l" -> "BB13\n           v31 = phi  v30,v5:#3\l34   conditional branch(lt) v31,v6:#0        \l" 
+ "BB29\n73  GetOSSAInstruction:	O6_1= O1_1< returned>\l" -> "BB30\n74  O7_1 = < Application, LList, elements()Ljava/util/Enumeration; >( O6_1 )\l" 
+ "BB30\n74  O7_1 = < Application, LList, elements()Ljava/util/Enumeration; >( O6_1 )\l" -> "BB31\n" 
+ "BB31\n" -> "BB32\n           O5_6 = Object-Phi(O5_1, O5_9 )\l77  O8_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O7_1 )\l" 
+ "BB32\n           O5_6 = Object-Phi(O5_1, O5_9 )\l77  O8_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O7_1 )\l" -> "BB33\n79   conditional branch(eq) v36,v6:#0        \l" 
+ "BB33\n79   conditional branch(eq) v36,v6:#0        \l" -> "BB34\n81  O9_1 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O7_1 )\l" 
+ "BB33\n79   conditional branch(eq) v36,v6:#0        \l" -> "BB45\n110  Return O4_1                             \l" 
+ "BB34\n81  O9_1 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O7_1 )\l" -> "BB35\n82   v39 = checkcast <Application,LPatient>v38\l" 
+ "BB35\n82   v39 = checkcast <Application,LPatient>v38\l" -> "BB36\n86  GetOSSAInstruction:	40= O5_6< totalHospitals>\l" 
+ "BB36\n86  GetOSSAInstruction:	40= O5_6< totalHospitals>\l" -> "BB37\n88  nonreference field get instrctn: 41 = getfield < Application, LPatient, hospitalsVisited, <Primordial,I> > 39\l" 
+ "BB37\n88  nonreference field get instrctn: 41 = getfield < Application, LPatient, hospitalsVisited, <Primordial,I> > 39\l" -> "BB38\n89   v42 = conversion(F) v41                 \l90   v43 = binaryop(add) v40 , v42           \l91  PutOSSAInstruction:	O5_7< totalHospitals > = O5_6<V43>\l" 
+ "BB38\n89   v42 = conversion(F) v41                 \l90   v43 = binaryop(add) v40 , v42           \l91  PutOSSAInstruction:	O5_7< totalHospitals > = O5_6<V43>\l" -> "BB39\n94  GetOSSAInstruction:	44= O5_7< totalTime> \l" 
+ "BB39\n94  GetOSSAInstruction:	44= O5_7< totalTime> \l" -> "BB40\n96  nonreference field get instrctn: 45 = getfield < Application, LPatient, time, <Primordial,I> > 39\l" 
+ "BB40\n96  nonreference field get instrctn: 45 = getfield < Application, LPatient, time, <Primordial,I> > 39\l" -> "BB41\n97   v46 = conversion(F) v45                 \l98   v47 = binaryop(add) v44 , v46           \l99  PutOSSAInstruction:	O5_8< totalTime > = O5_7<V47>\l" 
+ "BB41\n97   v46 = conversion(F) v45                 \l98   v47 = binaryop(add) v44 , v46           \l99  PutOSSAInstruction:	O5_8< totalTime > = O5_7<V47>\l" -> "BB42\n102  GetOSSAInstruction:	48= O5_8< totalPatients>\l" 
+ "BB42\n102  GetOSSAInstruction:	48= O5_8< totalPatients>\l" -> "BB43\n103   v49 = conversion(D) v48                \l105   v51 = binaryop(add) v49 , v50:#1.0     \l106   v52 = conversion(F) v51                \l107  PutOSSAInstruction:	O5_9< totalPatients > = O5_8<V52>\l" 
+ "BB43\n103   v49 = conversion(D) v48                \l105   v51 = binaryop(add) v49 , v50:#1.0     \l106   v52 = conversion(F) v51                \l107  PutOSSAInstruction:	O5_9< totalPatients > = O5_8<V52>\l" -> "BB44\n108   goto                                   \l" 
+ "BB44\n108   goto                                   \l" -> "BB32\n           O5_6 = Object-Phi(O5_1, O5_9 )\l77  O8_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O7_1 )\l" 
+ "BB45\n110  Return O4_1                             \l" -> "BB46 (ex)\n\n" 
+
+}

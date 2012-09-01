@@ -1,0 +1,15 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Hashtable.hashMap(Ljava-lang-Object;)I", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v5 = invokevirtual < Application, Ljava/lang/Object, hashCode()I > v2 @1 exception:v4\l" [ ]
+   "BB2\n3   v7 = binaryop(SHR) v5 , v6:#3            \l5  GetOSSAInstruction:	8= O1_1< size>        \l" [ ]
+   "BB3\n6   v9 = binaryop(rem) v7 , v8               \l" [ ]
+   "BB4\n7   return v9                                \l" [ ]
+   "BB5 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v5 = invokevirtual < Application, Ljava/lang/Object, hashCode()I > v2 @1 exception:v4\l" 
+ "BB1\n1   v5 = invokevirtual < Application, Ljava/lang/Object, hashCode()I > v2 @1 exception:v4\l" -> "BB2\n3   v7 = binaryop(SHR) v5 , v6:#3            \l5  GetOSSAInstruction:	8= O1_1< size>        \l" 
+ "BB2\n3   v7 = binaryop(SHR) v5 , v6:#3            \l5  GetOSSAInstruction:	8= O1_1< size>        \l" -> "BB3\n6   v9 = binaryop(rem) v7 , v8               \l" 
+ "BB3\n6   v9 = binaryop(rem) v7 , v8               \l" -> "BB4\n7   return v9                                \l" 
+ "BB4\n7   return v9                                \l" -> "BB5 (ex)\n\n" 
+
+}

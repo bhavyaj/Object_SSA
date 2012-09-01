@@ -1,0 +1,27 @@
+<project default="bh">
+	<target name="compile">
+		<javac srcdir="." />
+	</target>
+
+	<target name="jar" depends="compile" >
+		<delete file="bh.jar"/>
+		<delete file="MANIFEST.MF"/>
+		<property name="version.num" value="1.00"/>
+		<buildnumber file="build.num"/>
+
+		<manifest file="MANIFEST.MF">
+			<attribute name="Built-By" value="${yash}"/>
+			<attribute name="Main-Class" value="BH"/>
+			<attribute name="Implementation-Version" value="${version.num}-b${build.number}"/>
+		</manifest>
+
+
+		<jar destfile="bh.jar"
+			basedir="."
+			includes="**/*.class"
+			manifest="MANIFEST.MF"
+			/>
+	</target>
+
+	<target name="bh" depends="compile,jar" />
+</project>

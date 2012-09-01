@@ -1,0 +1,41 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n4   v6 = getfield < Application, LDemand, P, <Primordial,D> > v1\l" [ ]
+   "BB2\n5   v7 = binaryop(mul) v5:#2.0 , v6\l6   arraystore v2[v4:#0] = v7      \l" [ ]
+   "BB3\n11   v9 = getfield < Application, LDemand, Q, <Primordial,D> > v1\l" [ ]
+   "BB4\n12   v10 = binaryop(mul) v5:#2.0 , v9\l13   arraystore v2[v8:#1] = v10    \l" [ ]
+   "BB5\n" [ ]
+   "BB6\n           v18 = phi  v16,v11:#0.0\l           v19 = phi  v17,v4:#0\l20   conditional branch(ge) v19,v12:#2\l" [ ]
+   "BB7\n24   v13 = arrayload v2[v19]       \l" [ ]
+   "BB8\n27   v14 = arrayload v2[v19]       \l" [ ]
+   "BB9\n28   v15 = binaryop(mul) v13 , v14 \l29   v16 = binaryop(add) v18 , v15 \l33   v17 = binaryop(add) v19 , v8:#1\l35   goto                          \l" [ ]
+   "BB10\n37   v21 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v18 @52 exception:v20\l" [ ]
+   "BB11\n" [ ]
+   "BB12\n           v25 = phi  v24,v4:#0\l43   conditional branch(ge) v25,v12:#2\l" [ ]
+   "BB13\n47   v22 = arrayload v2[v25]       \l" [ ]
+   "BB14\n49   v23 = binaryop(div) v22 , v21 \l50   arraystore v2[v25] = v23      \l" [ ]
+   "BB15\n53   v24 = binaryop(add) v25 , v8:#1\l55   goto                          \l" [ ]
+   "BB16\n57   return v21                    \l" [ ]
+   "BB17 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n4   v6 = getfield < Application, LDemand, P, <Primordial,D> > v1\l" 
+ "BB1\n4   v6 = getfield < Application, LDemand, P, <Primordial,D> > v1\l" -> "BB2\n5   v7 = binaryop(mul) v5:#2.0 , v6\l6   arraystore v2[v4:#0] = v7      \l" 
+ "BB2\n5   v7 = binaryop(mul) v5:#2.0 , v6\l6   arraystore v2[v4:#0] = v7      \l" -> "BB3\n11   v9 = getfield < Application, LDemand, Q, <Primordial,D> > v1\l" 
+ "BB3\n11   v9 = getfield < Application, LDemand, Q, <Primordial,D> > v1\l" -> "BB4\n12   v10 = binaryop(mul) v5:#2.0 , v9\l13   arraystore v2[v8:#1] = v10    \l" 
+ "BB4\n12   v10 = binaryop(mul) v5:#2.0 , v9\l13   arraystore v2[v8:#1] = v10    \l" -> "BB5\n" 
+ "BB5\n" -> "BB6\n           v18 = phi  v16,v11:#0.0\l           v19 = phi  v17,v4:#0\l20   conditional branch(ge) v19,v12:#2\l" 
+ "BB6\n           v18 = phi  v16,v11:#0.0\l           v19 = phi  v17,v4:#0\l20   conditional branch(ge) v19,v12:#2\l" -> "BB7\n24   v13 = arrayload v2[v19]       \l" 
+ "BB6\n           v18 = phi  v16,v11:#0.0\l           v19 = phi  v17,v4:#0\l20   conditional branch(ge) v19,v12:#2\l" -> "BB10\n37   v21 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v18 @52 exception:v20\l" 
+ "BB7\n24   v13 = arrayload v2[v19]       \l" -> "BB8\n27   v14 = arrayload v2[v19]       \l" 
+ "BB8\n27   v14 = arrayload v2[v19]       \l" -> "BB9\n28   v15 = binaryop(mul) v13 , v14 \l29   v16 = binaryop(add) v18 , v15 \l33   v17 = binaryop(add) v19 , v8:#1\l35   goto                          \l" 
+ "BB9\n28   v15 = binaryop(mul) v13 , v14 \l29   v16 = binaryop(add) v18 , v15 \l33   v17 = binaryop(add) v19 , v8:#1\l35   goto                          \l" -> "BB6\n           v18 = phi  v16,v11:#0.0\l           v19 = phi  v17,v4:#0\l20   conditional branch(ge) v19,v12:#2\l" 
+ "BB10\n37   v21 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v18 @52 exception:v20\l" -> "BB11\n" 
+ "BB11\n" -> "BB12\n           v25 = phi  v24,v4:#0\l43   conditional branch(ge) v25,v12:#2\l" 
+ "BB12\n           v25 = phi  v24,v4:#0\l43   conditional branch(ge) v25,v12:#2\l" -> "BB13\n47   v22 = arrayload v2[v25]       \l" 
+ "BB12\n           v25 = phi  v24,v4:#0\l43   conditional branch(ge) v25,v12:#2\l" -> "BB16\n57   return v21                    \l" 
+ "BB13\n47   v22 = arrayload v2[v25]       \l" -> "BB14\n49   v23 = binaryop(div) v22 , v21 \l50   arraystore v2[v25] = v23      \l" 
+ "BB14\n49   v23 = binaryop(div) v22 , v21 \l50   arraystore v2[v25] = v23      \l" -> "BB15\n53   v24 = binaryop(add) v25 , v8:#1\l55   goto                          \l" 
+ "BB15\n53   v24 = binaryop(add) v25 , v8:#1\l55   goto                          \l" -> "BB12\n           v25 = phi  v24,v4:#0\l43   conditional branch(ge) v25,v12:#2\l" 
+ "BB16\n57   return v21                    \l" -> "BB17 (ex)\n\n" 
+
+}

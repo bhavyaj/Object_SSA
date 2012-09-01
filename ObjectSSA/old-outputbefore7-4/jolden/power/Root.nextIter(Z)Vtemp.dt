@@ -1,0 +1,104 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v4 = getfield < Application, LRoot, theta_R, <Primordial,D> > v1\l" [ ]
+   "BB2\n3   v6 = binaryop(sub) v4 , v5:#0.65\l5   v8 = binaryop(div) v6 , v7:#0.01\l6   v9 = conversion(I) v8          \l10   conditional branch(ge) v9,v10:#0\l" [ ]
+   "BB3\n" [ ]
+   "BB4\n           v11 = phi  v9,v10:#0\l15   conditional branch(le) v11,v12:#35\l" [ ]
+   "BB5\n" [ ]
+   "BB6\n           v13 = phi  v11,v12:#35\l19   v14 = getfield < Application, LRoot, theta_R, <Primordial,D> > v1\l" [ ]
+   "BB7\n21   v15 = getfield < Application, LRoot, D, <Application,LDemand> > v1\l" [ ]
+   "BB8\n22   v16 = getfield < Application, LDemand, P, <Primordial,D> > v15\l" [ ]
+   "BB9\n24   v18 = binaryop(div) v16 , v17:#10000.0\l25   v19 = binaryop(sub) v14 , v18 \l26   v20 = neg v19                 \l28   v22 = getstatic < Application, LRoot, map_P, <Primordial,[D> >\l31   v24 = binaryop(add) v13 , v23:#1\l32   v25 = arrayload v22[v24]      \l" [ ]
+   "BB10\n33   v26 = getstatic < Application, LRoot, map_P, <Primordial,[D> >\l35   v27 = arrayload v26[v13]      \l" [ ]
+   "BB11\n36   v28 = binaryop(sub) v25 , v27 \l38   v30 = binaryop(div) v28 , v29:#100.0\l39   v31 = binaryop(sub) v21:#1.0 , v30\l40   v32 = binaryop(div) v20 , v31 \l43   v33 = getfield < Application, LRoot, theta_I, <Primordial,D> > v1\l" [ ]
+   "BB12\n45   v35 = binaryop(sub) v33 , v34:#0.13\l47   v37 = binaryop(div) v35 , v36:#0.002\l48   v38 = conversion(I) v37       \l52   conditional branch(ge) v38,v10:#0\l" [ ]
+   "BB13\n" [ ]
+   "BB14\n           v39 = phi  v38,v10:#0\l57   conditional branch(le) v39,v12:#35\l" [ ]
+   "BB15\n" [ ]
+   "BB16\n           v40 = phi  v39,v12:#35\l61   v41 = getfield < Application, LRoot, theta_I, <Primordial,D> > v1\l" [ ]
+   "BB17\n63   v42 = getfield < Application, LRoot, D, <Application,LDemand> > v1\l" [ ]
+   "BB18\n64   v43 = getfield < Application, LDemand, Q, <Primordial,D> > v42\l" [ ]
+   "BB19\n66   v44 = binaryop(div) v43 , v17:#10000.0\l67   v45 = binaryop(sub) v41 , v44 \l68   v46 = neg v45                 \l70   v47 = getstatic < Application, LRoot, map_Q, <Primordial,[D> >\l73   v48 = binaryop(add) v40 , v23:#1\l74   v49 = arrayload v47[v48]      \l" [ ]
+   "BB20\n75   v50 = getstatic < Application, LRoot, map_Q, <Primordial,[D> >\l77   v51 = arrayload v50[v40]      \l" [ ]
+   "BB21\n78   v52 = binaryop(sub) v49 , v51 \l80   v54 = binaryop(div) v52 , v53:#20.0\l81   v55 = binaryop(sub) v21:#1.0 , v54\l82   v56 = binaryop(div) v46 , v55 \l86   conditional branch(eq) v2,v10:#0\l" [ ]
+   "BB22\n87   v57 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l88   v58 = new <Application,Ljava/lang/StringBuilder>@142\l" [ ]
+   "BB23\n90   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v58 @146 exception:v59\l" [ ]
+   "BB24\n92   v62 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v58,v60:#D TR- @151 exception:v61\l" [ ]
+   "BB25\n94   v64 = invokevirtual < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; > v62,v32 @155 exception:v63\l" [ ]
+   "BB26\n96   v67 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v64,v65:#, TI= @160 exception:v66\l" [ ]
+   "BB27\n98   v69 = invokevirtual < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; > v67,v56 @165 exception:v68\l" [ ]
+   "BB28\n99   v71 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v69 @168 exception:v70\l" [ ]
+   "BB29\n100   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v57,v71 @171 exception:v72\l" [ ]
+   "BB30\n102   v73 = getfield < Application, LRoot, last, <Application,LDemand> > v1\l" [ ]
+   "BB31\n104   v74 = getfield < Application, LRoot, D, <Application,LDemand> > v1\l" [ ]
+   "BB32\n105   v75 = getfield < Application, LDemand, P, <Primordial,D> > v74\l" [ ]
+   "BB33\n106   putfield v73 = v75 < Application, LDemand, P, <Primordial,D> >\l" [ ]
+   "BB34\n108   v76 = getfield < Application, LRoot, last, <Application,LDemand> > v1\l" [ ]
+   "BB35\n110   v77 = getfield < Application, LRoot, D, <Application,LDemand> > v1\l" [ ]
+   "BB36\n111   v78 = getfield < Application, LDemand, Q, <Primordial,D> > v77\l" [ ]
+   "BB37\n112   putfield v76 = v78 < Application, LDemand, Q, <Primordial,D> >\l" [ ]
+   "BB38\n115   v79 = getfield < Application, LRoot, theta_R, <Primordial,D> > v1\l" [ ]
+   "BB39\n116   putfield v1 = v79 < Application, LRoot, last_theta_R, <Primordial,D> >\l" [ ]
+   "BB40\n119   v80 = getfield < Application, LRoot, theta_I, <Primordial,D> > v1\l" [ ]
+   "BB41\n120   putfield v1 = v80 < Application, LRoot, last_theta_I, <Primordial,D> >\l" [ ]
+   "BB42\n123   v81 = getfield < Application, LRoot, theta_R, <Primordial,D> > v1\l" [ ]
+   "BB43\n125   v82 = binaryop(add) v81 , v32\l126   putfield v1 = v82 < Application, LRoot, theta_R, <Primordial,D> >\l" [ ]
+   "BB44\n129   v83 = getfield < Application, LRoot, theta_I, <Primordial,D> > v1\l" [ ]
+   "BB45\n131   v84 = binaryop(add) v83 , v56\l132   putfield v1 = v84 < Application, LRoot, theta_I, <Primordial,D> >\l" [ ]
+   "BB46\n133   return                       \l" [ ]
+   "BB47 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v4 = getfield < Application, LRoot, theta_R, <Primordial,D> > v1\l" 
+ "BB1\n1   v4 = getfield < Application, LRoot, theta_R, <Primordial,D> > v1\l" -> "BB2\n3   v6 = binaryop(sub) v4 , v5:#0.65\l5   v8 = binaryop(div) v6 , v7:#0.01\l6   v9 = conversion(I) v8          \l10   conditional branch(ge) v9,v10:#0\l" 
+ "BB2\n3   v6 = binaryop(sub) v4 , v5:#0.65\l5   v8 = binaryop(div) v6 , v7:#0.01\l6   v9 = conversion(I) v8          \l10   conditional branch(ge) v9,v10:#0\l" -> "BB3\n" 
+ "BB2\n3   v6 = binaryop(sub) v4 , v5:#0.65\l5   v8 = binaryop(div) v6 , v7:#0.01\l6   v9 = conversion(I) v8          \l10   conditional branch(ge) v9,v10:#0\l" -> "BB4\n           v11 = phi  v9,v10:#0\l15   conditional branch(le) v11,v12:#35\l" 
+ "BB3\n" -> "BB4\n           v11 = phi  v9,v10:#0\l15   conditional branch(le) v11,v12:#35\l" 
+ "BB4\n           v11 = phi  v9,v10:#0\l15   conditional branch(le) v11,v12:#35\l" -> "BB5\n" 
+ "BB4\n           v11 = phi  v9,v10:#0\l15   conditional branch(le) v11,v12:#35\l" -> "BB6\n           v13 = phi  v11,v12:#35\l19   v14 = getfield < Application, LRoot, theta_R, <Primordial,D> > v1\l" 
+ "BB5\n" -> "BB6\n           v13 = phi  v11,v12:#35\l19   v14 = getfield < Application, LRoot, theta_R, <Primordial,D> > v1\l" 
+ "BB6\n           v13 = phi  v11,v12:#35\l19   v14 = getfield < Application, LRoot, theta_R, <Primordial,D> > v1\l" -> "BB7\n21   v15 = getfield < Application, LRoot, D, <Application,LDemand> > v1\l" 
+ "BB7\n21   v15 = getfield < Application, LRoot, D, <Application,LDemand> > v1\l" -> "BB8\n22   v16 = getfield < Application, LDemand, P, <Primordial,D> > v15\l" 
+ "BB8\n22   v16 = getfield < Application, LDemand, P, <Primordial,D> > v15\l" -> "BB9\n24   v18 = binaryop(div) v16 , v17:#10000.0\l25   v19 = binaryop(sub) v14 , v18 \l26   v20 = neg v19                 \l28   v22 = getstatic < Application, LRoot, map_P, <Primordial,[D> >\l31   v24 = binaryop(add) v13 , v23:#1\l32   v25 = arrayload v22[v24]      \l" 
+ "BB9\n24   v18 = binaryop(div) v16 , v17:#10000.0\l25   v19 = binaryop(sub) v14 , v18 \l26   v20 = neg v19                 \l28   v22 = getstatic < Application, LRoot, map_P, <Primordial,[D> >\l31   v24 = binaryop(add) v13 , v23:#1\l32   v25 = arrayload v22[v24]      \l" -> "BB10\n33   v26 = getstatic < Application, LRoot, map_P, <Primordial,[D> >\l35   v27 = arrayload v26[v13]      \l" 
+ "BB10\n33   v26 = getstatic < Application, LRoot, map_P, <Primordial,[D> >\l35   v27 = arrayload v26[v13]      \l" -> "BB11\n36   v28 = binaryop(sub) v25 , v27 \l38   v30 = binaryop(div) v28 , v29:#100.0\l39   v31 = binaryop(sub) v21:#1.0 , v30\l40   v32 = binaryop(div) v20 , v31 \l43   v33 = getfield < Application, LRoot, theta_I, <Primordial,D> > v1\l" 
+ "BB11\n36   v28 = binaryop(sub) v25 , v27 \l38   v30 = binaryop(div) v28 , v29:#100.0\l39   v31 = binaryop(sub) v21:#1.0 , v30\l40   v32 = binaryop(div) v20 , v31 \l43   v33 = getfield < Application, LRoot, theta_I, <Primordial,D> > v1\l" -> "BB12\n45   v35 = binaryop(sub) v33 , v34:#0.13\l47   v37 = binaryop(div) v35 , v36:#0.002\l48   v38 = conversion(I) v37       \l52   conditional branch(ge) v38,v10:#0\l" 
+ "BB12\n45   v35 = binaryop(sub) v33 , v34:#0.13\l47   v37 = binaryop(div) v35 , v36:#0.002\l48   v38 = conversion(I) v37       \l52   conditional branch(ge) v38,v10:#0\l" -> "BB13\n" 
+ "BB12\n45   v35 = binaryop(sub) v33 , v34:#0.13\l47   v37 = binaryop(div) v35 , v36:#0.002\l48   v38 = conversion(I) v37       \l52   conditional branch(ge) v38,v10:#0\l" -> "BB14\n           v39 = phi  v38,v10:#0\l57   conditional branch(le) v39,v12:#35\l" 
+ "BB13\n" -> "BB14\n           v39 = phi  v38,v10:#0\l57   conditional branch(le) v39,v12:#35\l" 
+ "BB14\n           v39 = phi  v38,v10:#0\l57   conditional branch(le) v39,v12:#35\l" -> "BB15\n" 
+ "BB14\n           v39 = phi  v38,v10:#0\l57   conditional branch(le) v39,v12:#35\l" -> "BB16\n           v40 = phi  v39,v12:#35\l61   v41 = getfield < Application, LRoot, theta_I, <Primordial,D> > v1\l" 
+ "BB15\n" -> "BB16\n           v40 = phi  v39,v12:#35\l61   v41 = getfield < Application, LRoot, theta_I, <Primordial,D> > v1\l" 
+ "BB16\n           v40 = phi  v39,v12:#35\l61   v41 = getfield < Application, LRoot, theta_I, <Primordial,D> > v1\l" -> "BB17\n63   v42 = getfield < Application, LRoot, D, <Application,LDemand> > v1\l" 
+ "BB17\n63   v42 = getfield < Application, LRoot, D, <Application,LDemand> > v1\l" -> "BB18\n64   v43 = getfield < Application, LDemand, Q, <Primordial,D> > v42\l" 
+ "BB18\n64   v43 = getfield < Application, LDemand, Q, <Primordial,D> > v42\l" -> "BB19\n66   v44 = binaryop(div) v43 , v17:#10000.0\l67   v45 = binaryop(sub) v41 , v44 \l68   v46 = neg v45                 \l70   v47 = getstatic < Application, LRoot, map_Q, <Primordial,[D> >\l73   v48 = binaryop(add) v40 , v23:#1\l74   v49 = arrayload v47[v48]      \l" 
+ "BB19\n66   v44 = binaryop(div) v43 , v17:#10000.0\l67   v45 = binaryop(sub) v41 , v44 \l68   v46 = neg v45                 \l70   v47 = getstatic < Application, LRoot, map_Q, <Primordial,[D> >\l73   v48 = binaryop(add) v40 , v23:#1\l74   v49 = arrayload v47[v48]      \l" -> "BB20\n75   v50 = getstatic < Application, LRoot, map_Q, <Primordial,[D> >\l77   v51 = arrayload v50[v40]      \l" 
+ "BB20\n75   v50 = getstatic < Application, LRoot, map_Q, <Primordial,[D> >\l77   v51 = arrayload v50[v40]      \l" -> "BB21\n78   v52 = binaryop(sub) v49 , v51 \l80   v54 = binaryop(div) v52 , v53:#20.0\l81   v55 = binaryop(sub) v21:#1.0 , v54\l82   v56 = binaryop(div) v46 , v55 \l86   conditional branch(eq) v2,v10:#0\l" 
+ "BB21\n78   v52 = binaryop(sub) v49 , v51 \l80   v54 = binaryop(div) v52 , v53:#20.0\l81   v55 = binaryop(sub) v21:#1.0 , v54\l82   v56 = binaryop(div) v46 , v55 \l86   conditional branch(eq) v2,v10:#0\l" -> "BB22\n87   v57 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l88   v58 = new <Application,Ljava/lang/StringBuilder>@142\l" 
+ "BB21\n78   v52 = binaryop(sub) v49 , v51 \l80   v54 = binaryop(div) v52 , v53:#20.0\l81   v55 = binaryop(sub) v21:#1.0 , v54\l82   v56 = binaryop(div) v46 , v55 \l86   conditional branch(eq) v2,v10:#0\l" -> "BB30\n102   v73 = getfield < Application, LRoot, last, <Application,LDemand> > v1\l" 
+ "BB22\n87   v57 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l88   v58 = new <Application,Ljava/lang/StringBuilder>@142\l" -> "BB23\n90   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v58 @146 exception:v59\l" 
+ "BB23\n90   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v58 @146 exception:v59\l" -> "BB24\n92   v62 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v58,v60:#D TR- @151 exception:v61\l" 
+ "BB24\n92   v62 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v58,v60:#D TR- @151 exception:v61\l" -> "BB25\n94   v64 = invokevirtual < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; > v62,v32 @155 exception:v63\l" 
+ "BB25\n94   v64 = invokevirtual < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; > v62,v32 @155 exception:v63\l" -> "BB26\n96   v67 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v64,v65:#, TI= @160 exception:v66\l" 
+ "BB26\n96   v67 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v64,v65:#, TI= @160 exception:v66\l" -> "BB27\n98   v69 = invokevirtual < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; > v67,v56 @165 exception:v68\l" 
+ "BB27\n98   v69 = invokevirtual < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; > v67,v56 @165 exception:v68\l" -> "BB28\n99   v71 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v69 @168 exception:v70\l" 
+ "BB28\n99   v71 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v69 @168 exception:v70\l" -> "BB29\n100   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v57,v71 @171 exception:v72\l" 
+ "BB29\n100   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v57,v71 @171 exception:v72\l" -> "BB30\n102   v73 = getfield < Application, LRoot, last, <Application,LDemand> > v1\l" 
+ "BB30\n102   v73 = getfield < Application, LRoot, last, <Application,LDemand> > v1\l" -> "BB31\n104   v74 = getfield < Application, LRoot, D, <Application,LDemand> > v1\l" 
+ "BB31\n104   v74 = getfield < Application, LRoot, D, <Application,LDemand> > v1\l" -> "BB32\n105   v75 = getfield < Application, LDemand, P, <Primordial,D> > v74\l" 
+ "BB32\n105   v75 = getfield < Application, LDemand, P, <Primordial,D> > v74\l" -> "BB33\n106   putfield v73 = v75 < Application, LDemand, P, <Primordial,D> >\l" 
+ "BB33\n106   putfield v73 = v75 < Application, LDemand, P, <Primordial,D> >\l" -> "BB34\n108   v76 = getfield < Application, LRoot, last, <Application,LDemand> > v1\l" 
+ "BB34\n108   v76 = getfield < Application, LRoot, last, <Application,LDemand> > v1\l" -> "BB35\n110   v77 = getfield < Application, LRoot, D, <Application,LDemand> > v1\l" 
+ "BB35\n110   v77 = getfield < Application, LRoot, D, <Application,LDemand> > v1\l" -> "BB36\n111   v78 = getfield < Application, LDemand, Q, <Primordial,D> > v77\l" 
+ "BB36\n111   v78 = getfield < Application, LDemand, Q, <Primordial,D> > v77\l" -> "BB37\n112   putfield v76 = v78 < Application, LDemand, Q, <Primordial,D> >\l" 
+ "BB37\n112   putfield v76 = v78 < Application, LDemand, Q, <Primordial,D> >\l" -> "BB38\n115   v79 = getfield < Application, LRoot, theta_R, <Primordial,D> > v1\l" 
+ "BB38\n115   v79 = getfield < Application, LRoot, theta_R, <Primordial,D> > v1\l" -> "BB39\n116   putfield v1 = v79 < Application, LRoot, last_theta_R, <Primordial,D> >\l" 
+ "BB39\n116   putfield v1 = v79 < Application, LRoot, last_theta_R, <Primordial,D> >\l" -> "BB40\n119   v80 = getfield < Application, LRoot, theta_I, <Primordial,D> > v1\l" 
+ "BB40\n119   v80 = getfield < Application, LRoot, theta_I, <Primordial,D> > v1\l" -> "BB41\n120   putfield v1 = v80 < Application, LRoot, last_theta_I, <Primordial,D> >\l" 
+ "BB41\n120   putfield v1 = v80 < Application, LRoot, last_theta_I, <Primordial,D> >\l" -> "BB42\n123   v81 = getfield < Application, LRoot, theta_R, <Primordial,D> > v1\l" 
+ "BB42\n123   v81 = getfield < Application, LRoot, theta_R, <Primordial,D> > v1\l" -> "BB43\n125   v82 = binaryop(add) v81 , v32\l126   putfield v1 = v82 < Application, LRoot, theta_R, <Primordial,D> >\l" 
+ "BB43\n125   v82 = binaryop(add) v81 , v32\l126   putfield v1 = v82 < Application, LRoot, theta_R, <Primordial,D> >\l" -> "BB44\n129   v83 = getfield < Application, LRoot, theta_I, <Primordial,D> > v1\l" 
+ "BB44\n129   v83 = getfield < Application, LRoot, theta_I, <Primordial,D> > v1\l" -> "BB45\n131   v84 = binaryop(add) v83 , v56\l132   putfield v1 = v84 < Application, LRoot, theta_I, <Primordial,D> >\l" 
+ "BB45\n131   v84 = binaryop(add) v83 , v56\l132   putfield v1 = v84 < Application, LRoot, theta_I, <Primordial,D> >\l" -> "BB46\n133   return                       \l" 
+ "BB46\n133   return                       \l" -> "BB47 (ex)\n\n" 
+
+}

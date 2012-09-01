@@ -1,0 +1,20 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2   conditional branch(ge) v2,v3   \l" [ ]
+   "BB2\n7   goto                           \l" [ ]
+   "BB3\n" [ ]
+   "BB4\n           v6 = phi  v2,v3\l           v7 = phi  v3,v2\l14   v8 = binaryop(mul) v6 , v4    \l16   v9 = binaryop(add) v8 , v7    \l17   v11 = invokestatic < Application, LGraph, random(I)I > v9 @27 exception:v10\l" [ ]
+   "BB5\n19   v13 = binaryop(rem) v11 , v12:#2048\l" [ ]
+   "BB6\n21   v15 = binaryop(add) v13 , v14:#1\l22   return v15                    \l" [ ]
+   "BB7 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2   conditional branch(ge) v2,v3   \l" 
+ "BB1\n2   conditional branch(ge) v2,v3   \l" -> "BB2\n7   goto                           \l" 
+ "BB1\n2   conditional branch(ge) v2,v3   \l" -> "BB3\n" 
+ "BB2\n7   goto                           \l" -> "BB4\n           v6 = phi  v2,v3\l           v7 = phi  v3,v2\l14   v8 = binaryop(mul) v6 , v4    \l16   v9 = binaryop(add) v8 , v7    \l17   v11 = invokestatic < Application, LGraph, random(I)I > v9 @27 exception:v10\l" 
+ "BB3\n" -> "BB4\n           v6 = phi  v2,v3\l           v7 = phi  v3,v2\l14   v8 = binaryop(mul) v6 , v4    \l16   v9 = binaryop(add) v8 , v7    \l17   v11 = invokestatic < Application, LGraph, random(I)I > v9 @27 exception:v10\l" 
+ "BB4\n           v6 = phi  v2,v3\l           v7 = phi  v3,v2\l14   v8 = binaryop(mul) v6 , v4    \l16   v9 = binaryop(add) v8 , v7    \l17   v11 = invokestatic < Application, LGraph, random(I)I > v9 @27 exception:v10\l" -> "BB5\n19   v13 = binaryop(rem) v11 , v12:#2048\l" 
+ "BB5\n19   v13 = binaryop(rem) v11 , v12:#2048\l" -> "BB6\n21   v15 = binaryop(add) v13 , v14:#1\l22   return v15                    \l" 
+ "BB6\n21   v15 = binaryop(add) v13 , v14:#1\l22   return v15                    \l" -> "BB7 (ex)\n\n" 
+
+}

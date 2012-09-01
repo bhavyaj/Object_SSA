@@ -1,0 +1,153 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v6 = new <Primordial,[D>@1v5:#2 \l" [ ]
+   "BB2\n4   v7 = new <Primordial,[D>@6v5:#2 \l" [ ]
+   "BB3\n7   v8 = new <Primordial,[D>@11v5:#2 \l" [ ]
+   "BB4\n10   v9 = new <Primordial,[D>@16v5:#2 \l" [ ]
+   "BB5\n" [ ]
+   "BB6\n13   v11 = invokespecial < Application, LDemand, findH()D > v1 @21 exception:v10\l" [ ]
+   "BB7\n16   v13 = invokestatic < Application, Ljava/lang/Math, abs(D)D > v11 @28 exception:v12\l" [ ]
+   "BB8\n18   v15 = compare v13,v14:#1.0E-6 opcode=cmpl\l20   conditional branch(le) v15,v16:#0\l" [ ]
+   "BB9\n23   v18 = invokespecial < Application, LDemand, findGradientH([D)D > v1,v8 @41 exception:v17\l" [ ]
+   "BB10\n27   v19 = binaryop(div) v11 , v18 \l31   v20 = getfield < Application, LDemand, P, <Primordial,D> > v1\l" [ ]
+   "BB11\n35   v21 = arrayload v8[v16:#0]    \l" [ ]
+   "BB12\n36   v22 = binaryop(mul) v19 , v21 \l37   v23 = binaryop(sub) v20 , v22 \l38   putfield v1 = v23 < Application, LDemand, P, <Primordial,D> >\l" [ ]
+   "BB13\n41   v24 = getfield < Application, LDemand, Q, <Primordial,D> > v1\l" [ ]
+   "BB14\n45   v26 = arrayload v8[v25:#1]    \l" [ ]
+   "BB15\n46   v27 = binaryop(mul) v19 , v26 \l47   v28 = binaryop(sub) v24 , v27 \l48   putfield v1 = v28 < Application, LDemand, Q, <Primordial,D> >\l" [ ]
+   "BB16\n50   v30 = invokespecial < Application, LDemand, findG()D > v1 @86 exception:v29\l" [ ]
+   "BB17\n54   v31 = compare v30,v14:#1.0E-6 opcode=cmpl\l56   conditional branch(le) v31,v16:#0\l" [ ]
+   "BB18\n59   v33 = invokespecial < Application, LDemand, findGradientG([D)D > v1,v7 @103 exception:v32\l" [ ]
+   "BB19\n63   v35 = invokespecial < Application, LDemand, findGradientH([D)D > v1,v8 @111 exception:v34\l" [ ]
+   "BB20\n69   v37 = invokespecial < Application, LDemand, makeOrthogonal([D[D)D > v1,v7,v8 @122 exception:v36\l" [ ]
+   "BB21\n70   v38 = binaryop(mul) v33 , v37 \l74   v39 = binaryop(div) v30 , v38 \l78   v40 = getfield < Application, LDemand, P, <Primordial,D> > v1\l" [ ]
+   "BB22\n82   v41 = arrayload v7[v16:#0]    \l" [ ]
+   "BB23\n83   v42 = binaryop(mul) v39 , v41 \l84   v43 = binaryop(sub) v40 , v42 \l85   putfield v1 = v43 < Application, LDemand, P, <Primordial,D> >\l" [ ]
+   "BB24\n88   v44 = getfield < Application, LDemand, Q, <Primordial,D> > v1\l" [ ]
+   "BB25\n92   v45 = arrayload v7[v25:#1]    \l" [ ]
+   "BB26\n93   v46 = binaryop(mul) v39 , v45 \l94   v47 = binaryop(sub) v44 , v46 \l95   putfield v1 = v47 < Application, LDemand, Q, <Primordial,D> >\l" [ ]
+   "BB27\n100   v49 = invokespecial < Application, LDemand, findGradientF(DD[D)D > v1,v2,v3,v6 @172 exception:v48\l" [ ]
+   "BB28\n106   invokespecial < Application, LDemand, findDDGradF(DD[D)V > v1,v2,v3,v9 @182 exception:v50\l" [ ]
+   "BB29\n" [ ]
+   "BB30\n           v57 = phi  v55,v51:#0.0\l           v58 = phi  v56,v16:#0\l113   conditional branch(ge) v58,v5:#2\l" [ ]
+   "BB31\n117   v52 = arrayload v6[v58]      \l" [ ]
+   "BB32\n120   v53 = arrayload v9[v58]      \l" [ ]
+   "BB33\n121   v54 = binaryop(mul) v52 , v53\l122   v55 = binaryop(add) v57 , v54\l126   v56 = binaryop(add) v58 , v25:#1\l128   goto                         \l" [ ]
+   "BB34\n131   v60 = invokestatic < Application, Ljava/lang/Math, abs(D)D > v57 @223 exception:v59\l" [ ]
+   "BB35\n132   v61 = binaryop(div) v49 , v60\l136   v63 = invokespecial < Application, LDemand, findGradientH([D)D > v1,v8 @232 exception:v62\l" [ ]
+   "BB36\n142   v65 = invokespecial < Application, LDemand, makeOrthogonal([D[D)D > v1,v6,v8 @243 exception:v64\l" [ ]
+   "BB37\n143   v66 = binaryop(mul) v61 , v65\l147   v68 = invokespecial < Application, LDemand, findGradientG([D)D > v1,v7 @252 exception:v67\l" [ ]
+   "BB38\n" [ ]
+   "BB39\n           v74 = phi  v72,v51:#0.0\l           v75 = phi  v73,v16:#0\l155   conditional branch(ge) v75,v5:#2\l" [ ]
+   "BB40\n159   v69 = arrayload v6[v75]      \l" [ ]
+   "BB41\n162   v70 = arrayload v7[v75]      \l" [ ]
+   "BB42\n163   v71 = binaryop(mul) v69 , v70\l164   v72 = binaryop(add) v74 , v71\l168   v73 = binaryop(add) v75 , v25:#1\l170   goto                         \l" [ ]
+   "BB43\n173   v76 = compare v74,v51:#0.0 opcode=cmpl\l175   conditional branch(le) v76,v16:#0\l" [ ]
+   "BB44\n177   v78 = invokespecial < Application, LDemand, findG()D > v1 @298 exception:v77\l" [ ]
+   "BB45\n178   v79 = neg v78                \l180   v80 = binaryop(div) v79 , v74\l184   v81 = compare v66,v80 opcode=cmpl\l186   conditional branch(le) v81,v16:#0\l" [ ]
+   "BB46\n" [ ]
+   "BB47\n           v82 = phi  v66,v66,v80\l191   v84 = getfield < Application, LDemand, P, <Primordial,D> > v1\l" [ ]
+   "BB48\n195   v85 = arrayload v6[v16:#0]   \l" [ ]
+   "BB49\n196   v86 = binaryop(mul) v82 , v85\l197   v87 = binaryop(add) v84 , v86\l198   putfield v1 = v87 < Application, LDemand, P, <Primordial,D> >\l" [ ]
+   "BB50\n201   v88 = getfield < Application, LDemand, Q, <Primordial,D> > v1\l" [ ]
+   "BB51\n205   v89 = arrayload v6[v25:#1]   \l" [ ]
+   "BB52\n206   v90 = binaryop(mul) v82 , v89\l207   v91 = binaryop(add) v88 , v90\l208   putfield v1 = v91 < Application, LDemand, Q, <Primordial,D> >\l" [ ]
+   "BB53\n210   v93 = invokespecial < Application, LDemand, findH()D > v1 @352 exception:v92\l" [ ]
+   "BB54\n213   v95 = invokespecial < Application, LDemand, findG()D > v1 @358 exception:v94\l" [ ]
+   "BB55\n219   v97 = invokespecial < Application, LDemand, findGradientF(DD[D)D > v1,v2,v3,v6 @368 exception:v96\l" [ ]
+   "BB56\n223   v99 = invokespecial < Application, LDemand, findGradientH([D)D > v1,v8 @375 exception:v98\l" [ ]
+   "BB57\n226   v101 = invokestatic < Application, Ljava/lang/Math, abs(D)D > v93 @381 exception:v100\l" [ ]
+   "BB58\n228   v102 = compare v101,v14:#1.0E-6 opcode=cmpl\l230   conditional branch(gt) v102,v16:#0\l" [ ]
+   "BB59\n233   v107 = compare v95,v14:#1.0E-6 opcode=cmpl\l235   conditional branch(gt) v107,v16:#0\l" [ ]
+   "BB60\n237   v109 = invokestatic < Application, Ljava/lang/Math, abs(D)D > v95 @402 exception:v108\l" [ ]
+   "BB61\n239   v110 = compare v109,v14:#1.0E-6 opcode=cmpl\l241   conditional branch(le) v110,v16:#0\l" [ ]
+   "BB62\n244   v111 = arrayload v6[v16:#0]  \l" [ ]
+   "BB63\n247   v112 = arrayload v8[v25:#1]  \l" [ ]
+   "BB64\n248   v113 = binaryop(mul) v111 , v112\l251   v114 = arrayload v6[v25:#1]  \l" [ ]
+   "BB65\n254   v115 = arrayload v8[v16:#0]  \l" [ ]
+   "BB66\n255   v116 = binaryop(mul) v114 , v115\l256   v117 = binaryop(sub) v113 , v116\l257   v119 = invokestatic < Application, Ljava/lang/Math, abs(D)D > v117 @431 exception:v118\l" [ ]
+   "BB67\n259   v120 = compare v119,v14:#1.0E-6 opcode=cmpl\l261   conditional branch(gt) v120,v16:#0\l" [ ]
+   "BB68\n262   return                       \l" [ ]
+   "BB69 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v6 = new <Primordial,[D>@1v5:#2 \l" 
+ "BB1\n1   v6 = new <Primordial,[D>@1v5:#2 \l" -> "BB2\n4   v7 = new <Primordial,[D>@6v5:#2 \l" 
+ "BB2\n4   v7 = new <Primordial,[D>@6v5:#2 \l" -> "BB3\n7   v8 = new <Primordial,[D>@11v5:#2 \l" 
+ "BB3\n7   v8 = new <Primordial,[D>@11v5:#2 \l" -> "BB4\n10   v9 = new <Primordial,[D>@16v5:#2 \l" 
+ "BB4\n10   v9 = new <Primordial,[D>@16v5:#2 \l" -> "BB5\n" 
+ "BB5\n" -> "BB6\n13   v11 = invokespecial < Application, LDemand, findH()D > v1 @21 exception:v10\l" 
+ "BB6\n13   v11 = invokespecial < Application, LDemand, findH()D > v1 @21 exception:v10\l" -> "BB7\n16   v13 = invokestatic < Application, Ljava/lang/Math, abs(D)D > v11 @28 exception:v12\l" 
+ "BB7\n16   v13 = invokestatic < Application, Ljava/lang/Math, abs(D)D > v11 @28 exception:v12\l" -> "BB8\n18   v15 = compare v13,v14:#1.0E-6 opcode=cmpl\l20   conditional branch(le) v15,v16:#0\l" 
+ "BB8\n18   v15 = compare v13,v14:#1.0E-6 opcode=cmpl\l20   conditional branch(le) v15,v16:#0\l" -> "BB9\n23   v18 = invokespecial < Application, LDemand, findGradientH([D)D > v1,v8 @41 exception:v17\l" 
+ "BB8\n18   v15 = compare v13,v14:#1.0E-6 opcode=cmpl\l20   conditional branch(le) v15,v16:#0\l" -> "BB16\n50   v30 = invokespecial < Application, LDemand, findG()D > v1 @86 exception:v29\l" 
+ "BB9\n23   v18 = invokespecial < Application, LDemand, findGradientH([D)D > v1,v8 @41 exception:v17\l" -> "BB10\n27   v19 = binaryop(div) v11 , v18 \l31   v20 = getfield < Application, LDemand, P, <Primordial,D> > v1\l" 
+ "BB10\n27   v19 = binaryop(div) v11 , v18 \l31   v20 = getfield < Application, LDemand, P, <Primordial,D> > v1\l" -> "BB11\n35   v21 = arrayload v8[v16:#0]    \l" 
+ "BB11\n35   v21 = arrayload v8[v16:#0]    \l" -> "BB12\n36   v22 = binaryop(mul) v19 , v21 \l37   v23 = binaryop(sub) v20 , v22 \l38   putfield v1 = v23 < Application, LDemand, P, <Primordial,D> >\l" 
+ "BB12\n36   v22 = binaryop(mul) v19 , v21 \l37   v23 = binaryop(sub) v20 , v22 \l38   putfield v1 = v23 < Application, LDemand, P, <Primordial,D> >\l" -> "BB13\n41   v24 = getfield < Application, LDemand, Q, <Primordial,D> > v1\l" 
+ "BB13\n41   v24 = getfield < Application, LDemand, Q, <Primordial,D> > v1\l" -> "BB14\n45   v26 = arrayload v8[v25:#1]    \l" 
+ "BB14\n45   v26 = arrayload v8[v25:#1]    \l" -> "BB15\n46   v27 = binaryop(mul) v19 , v26 \l47   v28 = binaryop(sub) v24 , v27 \l48   putfield v1 = v28 < Application, LDemand, Q, <Primordial,D> >\l" 
+ "BB15\n46   v27 = binaryop(mul) v19 , v26 \l47   v28 = binaryop(sub) v24 , v27 \l48   putfield v1 = v28 < Application, LDemand, Q, <Primordial,D> >\l" -> "BB16\n50   v30 = invokespecial < Application, LDemand, findG()D > v1 @86 exception:v29\l" 
+ "BB16\n50   v30 = invokespecial < Application, LDemand, findG()D > v1 @86 exception:v29\l" -> "BB17\n54   v31 = compare v30,v14:#1.0E-6 opcode=cmpl\l56   conditional branch(le) v31,v16:#0\l" 
+ "BB17\n54   v31 = compare v30,v14:#1.0E-6 opcode=cmpl\l56   conditional branch(le) v31,v16:#0\l" -> "BB18\n59   v33 = invokespecial < Application, LDemand, findGradientG([D)D > v1,v7 @103 exception:v32\l" 
+ "BB17\n54   v31 = compare v30,v14:#1.0E-6 opcode=cmpl\l56   conditional branch(le) v31,v16:#0\l" -> "BB27\n100   v49 = invokespecial < Application, LDemand, findGradientF(DD[D)D > v1,v2,v3,v6 @172 exception:v48\l" 
+ "BB18\n59   v33 = invokespecial < Application, LDemand, findGradientG([D)D > v1,v7 @103 exception:v32\l" -> "BB19\n63   v35 = invokespecial < Application, LDemand, findGradientH([D)D > v1,v8 @111 exception:v34\l" 
+ "BB19\n63   v35 = invokespecial < Application, LDemand, findGradientH([D)D > v1,v8 @111 exception:v34\l" -> "BB20\n69   v37 = invokespecial < Application, LDemand, makeOrthogonal([D[D)D > v1,v7,v8 @122 exception:v36\l" 
+ "BB20\n69   v37 = invokespecial < Application, LDemand, makeOrthogonal([D[D)D > v1,v7,v8 @122 exception:v36\l" -> "BB21\n70   v38 = binaryop(mul) v33 , v37 \l74   v39 = binaryop(div) v30 , v38 \l78   v40 = getfield < Application, LDemand, P, <Primordial,D> > v1\l" 
+ "BB21\n70   v38 = binaryop(mul) v33 , v37 \l74   v39 = binaryop(div) v30 , v38 \l78   v40 = getfield < Application, LDemand, P, <Primordial,D> > v1\l" -> "BB22\n82   v41 = arrayload v7[v16:#0]    \l" 
+ "BB22\n82   v41 = arrayload v7[v16:#0]    \l" -> "BB23\n83   v42 = binaryop(mul) v39 , v41 \l84   v43 = binaryop(sub) v40 , v42 \l85   putfield v1 = v43 < Application, LDemand, P, <Primordial,D> >\l" 
+ "BB23\n83   v42 = binaryop(mul) v39 , v41 \l84   v43 = binaryop(sub) v40 , v42 \l85   putfield v1 = v43 < Application, LDemand, P, <Primordial,D> >\l" -> "BB24\n88   v44 = getfield < Application, LDemand, Q, <Primordial,D> > v1\l" 
+ "BB24\n88   v44 = getfield < Application, LDemand, Q, <Primordial,D> > v1\l" -> "BB25\n92   v45 = arrayload v7[v25:#1]    \l" 
+ "BB25\n92   v45 = arrayload v7[v25:#1]    \l" -> "BB26\n93   v46 = binaryop(mul) v39 , v45 \l94   v47 = binaryop(sub) v44 , v46 \l95   putfield v1 = v47 < Application, LDemand, Q, <Primordial,D> >\l" 
+ "BB26\n93   v46 = binaryop(mul) v39 , v45 \l94   v47 = binaryop(sub) v44 , v46 \l95   putfield v1 = v47 < Application, LDemand, Q, <Primordial,D> >\l" -> "BB27\n100   v49 = invokespecial < Application, LDemand, findGradientF(DD[D)D > v1,v2,v3,v6 @172 exception:v48\l" 
+ "BB27\n100   v49 = invokespecial < Application, LDemand, findGradientF(DD[D)D > v1,v2,v3,v6 @172 exception:v48\l" -> "BB28\n106   invokespecial < Application, LDemand, findDDGradF(DD[D)V > v1,v2,v3,v9 @182 exception:v50\l" 
+ "BB28\n106   invokespecial < Application, LDemand, findDDGradF(DD[D)V > v1,v2,v3,v9 @182 exception:v50\l" -> "BB29\n" 
+ "BB29\n" -> "BB30\n           v57 = phi  v55,v51:#0.0\l           v58 = phi  v56,v16:#0\l113   conditional branch(ge) v58,v5:#2\l" 
+ "BB30\n           v57 = phi  v55,v51:#0.0\l           v58 = phi  v56,v16:#0\l113   conditional branch(ge) v58,v5:#2\l" -> "BB31\n117   v52 = arrayload v6[v58]      \l" 
+ "BB30\n           v57 = phi  v55,v51:#0.0\l           v58 = phi  v56,v16:#0\l113   conditional branch(ge) v58,v5:#2\l" -> "BB34\n131   v60 = invokestatic < Application, Ljava/lang/Math, abs(D)D > v57 @223 exception:v59\l" 
+ "BB31\n117   v52 = arrayload v6[v58]      \l" -> "BB32\n120   v53 = arrayload v9[v58]      \l" 
+ "BB32\n120   v53 = arrayload v9[v58]      \l" -> "BB33\n121   v54 = binaryop(mul) v52 , v53\l122   v55 = binaryop(add) v57 , v54\l126   v56 = binaryop(add) v58 , v25:#1\l128   goto                         \l" 
+ "BB33\n121   v54 = binaryop(mul) v52 , v53\l122   v55 = binaryop(add) v57 , v54\l126   v56 = binaryop(add) v58 , v25:#1\l128   goto                         \l" -> "BB30\n           v57 = phi  v55,v51:#0.0\l           v58 = phi  v56,v16:#0\l113   conditional branch(ge) v58,v5:#2\l" 
+ "BB34\n131   v60 = invokestatic < Application, Ljava/lang/Math, abs(D)D > v57 @223 exception:v59\l" -> "BB35\n132   v61 = binaryop(div) v49 , v60\l136   v63 = invokespecial < Application, LDemand, findGradientH([D)D > v1,v8 @232 exception:v62\l" 
+ "BB35\n132   v61 = binaryop(div) v49 , v60\l136   v63 = invokespecial < Application, LDemand, findGradientH([D)D > v1,v8 @232 exception:v62\l" -> "BB36\n142   v65 = invokespecial < Application, LDemand, makeOrthogonal([D[D)D > v1,v6,v8 @243 exception:v64\l" 
+ "BB36\n142   v65 = invokespecial < Application, LDemand, makeOrthogonal([D[D)D > v1,v6,v8 @243 exception:v64\l" -> "BB37\n143   v66 = binaryop(mul) v61 , v65\l147   v68 = invokespecial < Application, LDemand, findGradientG([D)D > v1,v7 @252 exception:v67\l" 
+ "BB37\n143   v66 = binaryop(mul) v61 , v65\l147   v68 = invokespecial < Application, LDemand, findGradientG([D)D > v1,v7 @252 exception:v67\l" -> "BB38\n" 
+ "BB38\n" -> "BB39\n           v74 = phi  v72,v51:#0.0\l           v75 = phi  v73,v16:#0\l155   conditional branch(ge) v75,v5:#2\l" 
+ "BB39\n           v74 = phi  v72,v51:#0.0\l           v75 = phi  v73,v16:#0\l155   conditional branch(ge) v75,v5:#2\l" -> "BB40\n159   v69 = arrayload v6[v75]      \l" 
+ "BB39\n           v74 = phi  v72,v51:#0.0\l           v75 = phi  v73,v16:#0\l155   conditional branch(ge) v75,v5:#2\l" -> "BB43\n173   v76 = compare v74,v51:#0.0 opcode=cmpl\l175   conditional branch(le) v76,v16:#0\l" 
+ "BB40\n159   v69 = arrayload v6[v75]      \l" -> "BB41\n162   v70 = arrayload v7[v75]      \l" 
+ "BB41\n162   v70 = arrayload v7[v75]      \l" -> "BB42\n163   v71 = binaryop(mul) v69 , v70\l164   v72 = binaryop(add) v74 , v71\l168   v73 = binaryop(add) v75 , v25:#1\l170   goto                         \l" 
+ "BB42\n163   v71 = binaryop(mul) v69 , v70\l164   v72 = binaryop(add) v74 , v71\l168   v73 = binaryop(add) v75 , v25:#1\l170   goto                         \l" -> "BB39\n           v74 = phi  v72,v51:#0.0\l           v75 = phi  v73,v16:#0\l155   conditional branch(ge) v75,v5:#2\l" 
+ "BB43\n173   v76 = compare v74,v51:#0.0 opcode=cmpl\l175   conditional branch(le) v76,v16:#0\l" -> "BB44\n177   v78 = invokespecial < Application, LDemand, findG()D > v1 @298 exception:v77\l" 
+ "BB43\n173   v76 = compare v74,v51:#0.0 opcode=cmpl\l175   conditional branch(le) v76,v16:#0\l" -> "BB47\n           v82 = phi  v66,v66,v80\l191   v84 = getfield < Application, LDemand, P, <Primordial,D> > v1\l" 
+ "BB44\n177   v78 = invokespecial < Application, LDemand, findG()D > v1 @298 exception:v77\l" -> "BB45\n178   v79 = neg v78                \l180   v80 = binaryop(div) v79 , v74\l184   v81 = compare v66,v80 opcode=cmpl\l186   conditional branch(le) v81,v16:#0\l" 
+ "BB45\n178   v79 = neg v78                \l180   v80 = binaryop(div) v79 , v74\l184   v81 = compare v66,v80 opcode=cmpl\l186   conditional branch(le) v81,v16:#0\l" -> "BB46\n" 
+ "BB45\n178   v79 = neg v78                \l180   v80 = binaryop(div) v79 , v74\l184   v81 = compare v66,v80 opcode=cmpl\l186   conditional branch(le) v81,v16:#0\l" -> "BB47\n           v82 = phi  v66,v66,v80\l191   v84 = getfield < Application, LDemand, P, <Primordial,D> > v1\l" 
+ "BB46\n" -> "BB47\n           v82 = phi  v66,v66,v80\l191   v84 = getfield < Application, LDemand, P, <Primordial,D> > v1\l" 
+ "BB47\n           v82 = phi  v66,v66,v80\l191   v84 = getfield < Application, LDemand, P, <Primordial,D> > v1\l" -> "BB48\n195   v85 = arrayload v6[v16:#0]   \l" 
+ "BB48\n195   v85 = arrayload v6[v16:#0]   \l" -> "BB49\n196   v86 = binaryop(mul) v82 , v85\l197   v87 = binaryop(add) v84 , v86\l198   putfield v1 = v87 < Application, LDemand, P, <Primordial,D> >\l" 
+ "BB49\n196   v86 = binaryop(mul) v82 , v85\l197   v87 = binaryop(add) v84 , v86\l198   putfield v1 = v87 < Application, LDemand, P, <Primordial,D> >\l" -> "BB50\n201   v88 = getfield < Application, LDemand, Q, <Primordial,D> > v1\l" 
+ "BB50\n201   v88 = getfield < Application, LDemand, Q, <Primordial,D> > v1\l" -> "BB51\n205   v89 = arrayload v6[v25:#1]   \l" 
+ "BB51\n205   v89 = arrayload v6[v25:#1]   \l" -> "BB52\n206   v90 = binaryop(mul) v82 , v89\l207   v91 = binaryop(add) v88 , v90\l208   putfield v1 = v91 < Application, LDemand, Q, <Primordial,D> >\l" 
+ "BB52\n206   v90 = binaryop(mul) v82 , v89\l207   v91 = binaryop(add) v88 , v90\l208   putfield v1 = v91 < Application, LDemand, Q, <Primordial,D> >\l" -> "BB53\n210   v93 = invokespecial < Application, LDemand, findH()D > v1 @352 exception:v92\l" 
+ "BB53\n210   v93 = invokespecial < Application, LDemand, findH()D > v1 @352 exception:v92\l" -> "BB54\n213   v95 = invokespecial < Application, LDemand, findG()D > v1 @358 exception:v94\l" 
+ "BB54\n213   v95 = invokespecial < Application, LDemand, findG()D > v1 @358 exception:v94\l" -> "BB55\n219   v97 = invokespecial < Application, LDemand, findGradientF(DD[D)D > v1,v2,v3,v6 @368 exception:v96\l" 
+ "BB55\n219   v97 = invokespecial < Application, LDemand, findGradientF(DD[D)D > v1,v2,v3,v6 @368 exception:v96\l" -> "BB56\n223   v99 = invokespecial < Application, LDemand, findGradientH([D)D > v1,v8 @375 exception:v98\l" 
+ "BB56\n223   v99 = invokespecial < Application, LDemand, findGradientH([D)D > v1,v8 @375 exception:v98\l" -> "BB57\n226   v101 = invokestatic < Application, Ljava/lang/Math, abs(D)D > v93 @381 exception:v100\l" 
+ "BB57\n226   v101 = invokestatic < Application, Ljava/lang/Math, abs(D)D > v93 @381 exception:v100\l" -> "BB58\n228   v102 = compare v101,v14:#1.0E-6 opcode=cmpl\l230   conditional branch(gt) v102,v16:#0\l" 
+ "BB58\n228   v102 = compare v101,v14:#1.0E-6 opcode=cmpl\l230   conditional branch(gt) v102,v16:#0\l" -> "BB6\n13   v11 = invokespecial < Application, LDemand, findH()D > v1 @21 exception:v10\l" 
+ "BB58\n228   v102 = compare v101,v14:#1.0E-6 opcode=cmpl\l230   conditional branch(gt) v102,v16:#0\l" -> "BB59\n233   v107 = compare v95,v14:#1.0E-6 opcode=cmpl\l235   conditional branch(gt) v107,v16:#0\l" 
+ "BB59\n233   v107 = compare v95,v14:#1.0E-6 opcode=cmpl\l235   conditional branch(gt) v107,v16:#0\l" -> "BB6\n13   v11 = invokespecial < Application, LDemand, findH()D > v1 @21 exception:v10\l" 
+ "BB59\n233   v107 = compare v95,v14:#1.0E-6 opcode=cmpl\l235   conditional branch(gt) v107,v16:#0\l" -> "BB60\n237   v109 = invokestatic < Application, Ljava/lang/Math, abs(D)D > v95 @402 exception:v108\l" 
+ "BB60\n237   v109 = invokestatic < Application, Ljava/lang/Math, abs(D)D > v95 @402 exception:v108\l" -> "BB61\n239   v110 = compare v109,v14:#1.0E-6 opcode=cmpl\l241   conditional branch(le) v110,v16:#0\l" 
+ "BB61\n239   v110 = compare v109,v14:#1.0E-6 opcode=cmpl\l241   conditional branch(le) v110,v16:#0\l" -> "BB62\n244   v111 = arrayload v6[v16:#0]  \l" 
+ "BB61\n239   v110 = compare v109,v14:#1.0E-6 opcode=cmpl\l241   conditional branch(le) v110,v16:#0\l" -> "BB68\n262   return                       \l" 
+ "BB62\n244   v111 = arrayload v6[v16:#0]  \l" -> "BB63\n247   v112 = arrayload v8[v25:#1]  \l" 
+ "BB63\n247   v112 = arrayload v8[v25:#1]  \l" -> "BB64\n248   v113 = binaryop(mul) v111 , v112\l251   v114 = arrayload v6[v25:#1]  \l" 
+ "BB64\n248   v113 = binaryop(mul) v111 , v112\l251   v114 = arrayload v6[v25:#1]  \l" -> "BB65\n254   v115 = arrayload v8[v16:#0]  \l" 
+ "BB65\n254   v115 = arrayload v8[v16:#0]  \l" -> "BB66\n255   v116 = binaryop(mul) v114 , v115\l256   v117 = binaryop(sub) v113 , v116\l257   v119 = invokestatic < Application, Ljava/lang/Math, abs(D)D > v117 @431 exception:v118\l" 
+ "BB66\n255   v116 = binaryop(mul) v114 , v115\l256   v117 = binaryop(sub) v113 , v116\l257   v119 = invokestatic < Application, Ljava/lang/Math, abs(D)D > v117 @431 exception:v118\l" -> "BB67\n259   v120 = compare v119,v14:#1.0E-6 opcode=cmpl\l261   conditional branch(gt) v120,v16:#0\l" 
+ "BB67\n259   v120 = compare v119,v14:#1.0E-6 opcode=cmpl\l261   conditional branch(gt) v120,v16:#0\l" -> "BB6\n13   v11 = invokespecial < Application, LDemand, findH()D > v1 @21 exception:v10\l" 
+ "BB67\n259   v120 = compare v119,v14:#1.0E-6 opcode=cmpl\l261   conditional branch(gt) v120,v16:#0\l" -> "BB68\n262   return                       \l" 
+ "BB68\n262   return                       \l" -> "BB69 (ex)\n\n" 
+
+}

@@ -1,0 +1,60 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Tree.makeList()LTree;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n3  GetOSSAInstruction:	O1_1= O1_1< left>     \l" [ ]
+   "BB2\n5   conditional branch(eq) v3,v4:#null       \l" [ ]
+   "BB3\n7  GetOSSAInstruction:	O1_1= O1_1< left>     \l" [ ]
+   "BB4\n8   v7 = invokevirtual < Application, LTree, makeList()LTree; > v5 @14 exception:v6\l" [ ]
+   "BB5\n10   goto                                    \l" [ ]
+   "BB6\n" [ ]
+   "BB7\n           O2_1 = diff-Object-Phi(nullobject_7, nullobject_4 )\l           v8 = phi  v7,v4:#null\l14  GetOSSAInstruction:	O2_1= O1_1< right>   \l" [ ]
+   "BB8\n16   conditional branch(eq) v9,v4:#null      \l" [ ]
+   "BB9\n18  GetOSSAInstruction:	O2_1= O1_1< right>   \l" [ ]
+   "BB10\n19   v12 = invokevirtual < Application, LTree, makeList()LTree; > v10 @34 exception:v11\l" [ ]
+   "BB11\n21   goto                                    \l" [ ]
+   "BB12\n" [ ]
+   "BB13\n           O3_1 = diff-Object-Phi(nullobject_12, nullobject_4 )\l           v13 = phi  v12,v4:#null\l26   conditional branch(eq) v13,v4:#null     \l" [ ]
+   "BB14\n30  GetOSSAInstruction:	O3_1= O1_1< right>   \l" [ ]
+   "BB15\n32  PutOSSAInstruction:	O3_2< next > = O3_1<refO1_1>\l" [ ]
+   "BB16\n           O3_3 = Object-Phi(O3_1, O3_2 )\l           O4_1 = diff-Object-Phi(O1_1, O3_2 )\l           v15 = phi  v1,v13\l35   conditional branch(eq) v8,v4:#null      \l" [ ]
+   "BB17\n40   conditional branch(eq) v13,v4:#null     \l" [ ]
+   "BB18\n42  GetOSSAInstruction:	O3_3= O1_1< left>    \l" [ ]
+   "BB19\n44  PutOSSAInstruction:	O3_4< next > = O3_3<refO3_3>\l" [ ]
+   "BB20\n45   goto                                    \l" [ ]
+   "BB21\n47  GetOSSAInstruction:	O3_3= O1_1< left>    \l" [ ]
+   "BB22\n49  PutOSSAInstruction:	O3_5< next > = O3_3<refO1_1>\l" [ ]
+   "BB23\n           O3_6 = Object-Phi(O3_3, O3_4, O3_5 )\l           O5_1 = diff-Object-Phi(O4_1, O2_1, O2_1 )\l           v18 = phi  v15,v8,v8\l52  PutOSSAInstruction:	O1_1< next > = O1_1<V4>\l" [ ]
+   "BB24\n54   return v18                              \l" [ ]
+   "BB25 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n3  GetOSSAInstruction:	O1_1= O1_1< left>     \l" 
+ "BB1\n3  GetOSSAInstruction:	O1_1= O1_1< left>     \l" -> "BB2\n5   conditional branch(eq) v3,v4:#null       \l" 
+ "BB2\n5   conditional branch(eq) v3,v4:#null       \l" -> "BB3\n7  GetOSSAInstruction:	O1_1= O1_1< left>     \l" 
+ "BB2\n5   conditional branch(eq) v3,v4:#null       \l" -> "BB6\n" 
+ "BB3\n7  GetOSSAInstruction:	O1_1= O1_1< left>     \l" -> "BB4\n8   v7 = invokevirtual < Application, LTree, makeList()LTree; > v5 @14 exception:v6\l" 
+ "BB4\n8   v7 = invokevirtual < Application, LTree, makeList()LTree; > v5 @14 exception:v6\l" -> "BB5\n10   goto                                    \l" 
+ "BB5\n10   goto                                    \l" -> "BB7\n           O2_1 = diff-Object-Phi(nullobject_7, nullobject_4 )\l           v8 = phi  v7,v4:#null\l14  GetOSSAInstruction:	O2_1= O1_1< right>   \l" 
+ "BB6\n" -> "BB7\n           O2_1 = diff-Object-Phi(nullobject_7, nullobject_4 )\l           v8 = phi  v7,v4:#null\l14  GetOSSAInstruction:	O2_1= O1_1< right>   \l" 
+ "BB7\n           O2_1 = diff-Object-Phi(nullobject_7, nullobject_4 )\l           v8 = phi  v7,v4:#null\l14  GetOSSAInstruction:	O2_1= O1_1< right>   \l" -> "BB8\n16   conditional branch(eq) v9,v4:#null      \l" 
+ "BB8\n16   conditional branch(eq) v9,v4:#null      \l" -> "BB9\n18  GetOSSAInstruction:	O2_1= O1_1< right>   \l" 
+ "BB8\n16   conditional branch(eq) v9,v4:#null      \l" -> "BB12\n" 
+ "BB9\n18  GetOSSAInstruction:	O2_1= O1_1< right>   \l" -> "BB10\n19   v12 = invokevirtual < Application, LTree, makeList()LTree; > v10 @34 exception:v11\l" 
+ "BB10\n19   v12 = invokevirtual < Application, LTree, makeList()LTree; > v10 @34 exception:v11\l" -> "BB11\n21   goto                                    \l" 
+ "BB11\n21   goto                                    \l" -> "BB13\n           O3_1 = diff-Object-Phi(nullobject_12, nullobject_4 )\l           v13 = phi  v12,v4:#null\l26   conditional branch(eq) v13,v4:#null     \l" 
+ "BB12\n" -> "BB13\n           O3_1 = diff-Object-Phi(nullobject_12, nullobject_4 )\l           v13 = phi  v12,v4:#null\l26   conditional branch(eq) v13,v4:#null     \l" 
+ "BB13\n           O3_1 = diff-Object-Phi(nullobject_12, nullobject_4 )\l           v13 = phi  v12,v4:#null\l26   conditional branch(eq) v13,v4:#null     \l" -> "BB14\n30  GetOSSAInstruction:	O3_1= O1_1< right>   \l" 
+ "BB13\n           O3_1 = diff-Object-Phi(nullobject_12, nullobject_4 )\l           v13 = phi  v12,v4:#null\l26   conditional branch(eq) v13,v4:#null     \l" -> "BB16\n           O3_3 = Object-Phi(O3_1, O3_2 )\l           O4_1 = diff-Object-Phi(O1_1, O3_2 )\l           v15 = phi  v1,v13\l35   conditional branch(eq) v8,v4:#null      \l" 
+ "BB14\n30  GetOSSAInstruction:	O3_1= O1_1< right>   \l" -> "BB15\n32  PutOSSAInstruction:	O3_2< next > = O3_1<refO1_1>\l" 
+ "BB15\n32  PutOSSAInstruction:	O3_2< next > = O3_1<refO1_1>\l" -> "BB16\n           O3_3 = Object-Phi(O3_1, O3_2 )\l           O4_1 = diff-Object-Phi(O1_1, O3_2 )\l           v15 = phi  v1,v13\l35   conditional branch(eq) v8,v4:#null      \l" 
+ "BB16\n           O3_3 = Object-Phi(O3_1, O3_2 )\l           O4_1 = diff-Object-Phi(O1_1, O3_2 )\l           v15 = phi  v1,v13\l35   conditional branch(eq) v8,v4:#null      \l" -> "BB17\n40   conditional branch(eq) v13,v4:#null     \l" 
+ "BB16\n           O3_3 = Object-Phi(O3_1, O3_2 )\l           O4_1 = diff-Object-Phi(O1_1, O3_2 )\l           v15 = phi  v1,v13\l35   conditional branch(eq) v8,v4:#null      \l" -> "BB23\n           O3_6 = Object-Phi(O3_3, O3_4, O3_5 )\l           O5_1 = diff-Object-Phi(O4_1, O2_1, O2_1 )\l           v18 = phi  v15,v8,v8\l52  PutOSSAInstruction:	O1_1< next > = O1_1<V4>\l" 
+ "BB17\n40   conditional branch(eq) v13,v4:#null     \l" -> "BB18\n42  GetOSSAInstruction:	O3_3= O1_1< left>    \l" 
+ "BB17\n40   conditional branch(eq) v13,v4:#null     \l" -> "BB21\n47  GetOSSAInstruction:	O3_3= O1_1< left>    \l" 
+ "BB18\n42  GetOSSAInstruction:	O3_3= O1_1< left>    \l" -> "BB19\n44  PutOSSAInstruction:	O3_4< next > = O3_3<refO3_3>\l" 
+ "BB19\n44  PutOSSAInstruction:	O3_4< next > = O3_3<refO3_3>\l" -> "BB20\n45   goto                                    \l" 
+ "BB20\n45   goto                                    \l" -> "BB23\n           O3_6 = Object-Phi(O3_3, O3_4, O3_5 )\l           O5_1 = diff-Object-Phi(O4_1, O2_1, O2_1 )\l           v18 = phi  v15,v8,v8\l52  PutOSSAInstruction:	O1_1< next > = O1_1<V4>\l" 
+ "BB21\n47  GetOSSAInstruction:	O3_3= O1_1< left>    \l" -> "BB22\n49  PutOSSAInstruction:	O3_5< next > = O3_3<refO1_1>\l" 
+ "BB22\n49  PutOSSAInstruction:	O3_5< next > = O3_3<refO1_1>\l" -> "BB23\n           O3_6 = Object-Phi(O3_3, O3_4, O3_5 )\l           O5_1 = diff-Object-Phi(O4_1, O2_1, O2_1 )\l           v18 = phi  v15,v8,v8\l52  PutOSSAInstruction:	O1_1< next > = O1_1<V4>\l" 
+ "BB23\n           O3_6 = Object-Phi(O3_3, O3_4, O3_5 )\l           O5_1 = diff-Object-Phi(O4_1, O2_1, O2_1 )\l           v18 = phi  v15,v8,v8\l52  PutOSSAInstruction:	O1_1< next > = O1_1<V4>\l" -> "BB24\n54   return v18                              \l" 
+ "BB24\n54   return v18                              \l" -> "BB25 (ex)\n\n" 
+
+}

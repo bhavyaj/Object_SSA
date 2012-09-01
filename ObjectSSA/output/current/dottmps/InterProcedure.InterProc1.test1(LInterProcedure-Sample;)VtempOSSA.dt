@@ -1,0 +1,15 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for InterProcedure.InterProc1.test1(LInterProcedure-Sample;)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  Create O2_1                               \l" [ ]
+   "BB2\n3  < Application, LInterProcedure/Sample, <init>()V >( O2_1 )\l" [ ]
+   "BB3\n4  PutOSSAInstruction:	O1_2< next > = O1_1<refO2_1>\l" [ ]
+   "BB4\n5  return                                    \l" [ ]
+   "BB5 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  Create O2_1                               \l" 
+ "BB1\n1  Create O2_1                               \l" -> "BB2\n3  < Application, LInterProcedure/Sample, <init>()V >( O2_1 )\l" 
+ "BB2\n3  < Application, LInterProcedure/Sample, <init>()V >( O2_1 )\l" -> "BB3\n4  PutOSSAInstruction:	O1_2< next > = O1_1<refO2_1>\l" 
+ "BB3\n4  PutOSSAInstruction:	O1_2< next > = O1_1<refO2_1>\l" -> "BB4\n5  return                                    \l" 
+ "BB4\n5  return                                    \l" -> "BB5 (ex)\n\n" 
+
+}

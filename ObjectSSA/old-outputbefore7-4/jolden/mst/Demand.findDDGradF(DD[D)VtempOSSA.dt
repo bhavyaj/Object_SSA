@@ -1,0 +1,19 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Demand.findDDGradF(DD[D)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2  GetOSSAInstruction:	7= O1_1< P>           \l" [ ]
+   "BB2\n4   v8 = binaryop(add) v7 , v6:#1.0          \l5   v9 = binaryop(div) v6:#1.0 , v8          \l9  GetOSSAInstruction:	10= O1_1< Q>          \l" [ ]
+   "BB3\n11   v11 = binaryop(add) v10 , v6:#1.0       \l12   v12 = binaryop(div) v6:#1.0 , v11       \l16   v13 = binaryop(sub) v9 , v2             \l20   v14 = binaryop(sub) v12 , v3            \l24   v15 = binaryop(mul) v13 , v13           \l27   v16 = binaryop(mul) v14 , v14           \l28   v17 = binaryop(add) v15 , v16           \l29   v19 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v17 @43 exception:v18\l" [ ]
+   "BB4\n34   v21 = neg v9                            \l36   v22 = binaryop(mul) v21 , v9            \l38   v23 = binaryop(mul) v22 , v13           \l40   v24 = binaryop(div) v23 , v19           \l41   arraystore v4[v20:#0] = v24             \l" [ ]
+   "BB5\n45   v26 = neg v12                           \l47   v27 = binaryop(mul) v26 , v12           \l49   v28 = binaryop(mul) v27 , v14           \l51   v29 = binaryop(div) v28 , v19           \l52   arraystore v4[v25:#1] = v29             \l" [ ]
+   "BB6\n53  return                                   \l" [ ]
+   "BB7 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2  GetOSSAInstruction:	7= O1_1< P>           \l" 
+ "BB1\n2  GetOSSAInstruction:	7= O1_1< P>           \l" -> "BB2\n4   v8 = binaryop(add) v7 , v6:#1.0          \l5   v9 = binaryop(div) v6:#1.0 , v8          \l9  GetOSSAInstruction:	10= O1_1< Q>          \l" 
+ "BB2\n4   v8 = binaryop(add) v7 , v6:#1.0          \l5   v9 = binaryop(div) v6:#1.0 , v8          \l9  GetOSSAInstruction:	10= O1_1< Q>          \l" -> "BB3\n11   v11 = binaryop(add) v10 , v6:#1.0       \l12   v12 = binaryop(div) v6:#1.0 , v11       \l16   v13 = binaryop(sub) v9 , v2             \l20   v14 = binaryop(sub) v12 , v3            \l24   v15 = binaryop(mul) v13 , v13           \l27   v16 = binaryop(mul) v14 , v14           \l28   v17 = binaryop(add) v15 , v16           \l29   v19 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v17 @43 exception:v18\l" 
+ "BB3\n11   v11 = binaryop(add) v10 , v6:#1.0       \l12   v12 = binaryop(div) v6:#1.0 , v11       \l16   v13 = binaryop(sub) v9 , v2             \l20   v14 = binaryop(sub) v12 , v3            \l24   v15 = binaryop(mul) v13 , v13           \l27   v16 = binaryop(mul) v14 , v14           \l28   v17 = binaryop(add) v15 , v16           \l29   v19 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v17 @43 exception:v18\l" -> "BB4\n34   v21 = neg v9                            \l36   v22 = binaryop(mul) v21 , v9            \l38   v23 = binaryop(mul) v22 , v13           \l40   v24 = binaryop(div) v23 , v19           \l41   arraystore v4[v20:#0] = v24             \l" 
+ "BB4\n34   v21 = neg v9                            \l36   v22 = binaryop(mul) v21 , v9            \l38   v23 = binaryop(mul) v22 , v13           \l40   v24 = binaryop(div) v23 , v19           \l41   arraystore v4[v20:#0] = v24             \l" -> "BB5\n45   v26 = neg v12                           \l47   v27 = binaryop(mul) v26 , v12           \l49   v28 = binaryop(mul) v27 , v14           \l51   v29 = binaryop(div) v28 , v19           \l52   arraystore v4[v25:#1] = v29             \l" 
+ "BB5\n45   v26 = neg v12                           \l47   v27 = binaryop(mul) v26 , v12           \l49   v28 = binaryop(mul) v27 , v14           \l51   v29 = binaryop(div) v28 , v19           \l52   arraystore v4[v25:#1] = v29             \l" -> "BB6\n53  return                                   \l" 
+ "BB6\n53  return                                   \l" -> "BB7 (ex)\n\n" 
+
+}

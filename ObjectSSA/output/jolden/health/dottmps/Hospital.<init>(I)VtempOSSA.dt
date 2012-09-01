@@ -1,0 +1,43 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Hospital.<init>(I)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  < Application, Ljava/lang/Object, <init>()V >( O1_1 )\l" [ ]
+   "BB2\n6   v6 = binaryop(sub) v2 , v5:#1            \l7   v7 = binaryop(SHL) v5:#1 , v6            \l8  PutOSSAInstruction:	O1_2< personnel > = O1_1<V7>\l" [ ]
+   "BB3\n11  GetOSSAInstruction:	8= O1_2< personnel>  \l" [ ]
+   "BB4\n12  PutOSSAInstruction:	O1_3< freePersonnel > = O1_2<V8>\l" [ ]
+   "BB5\n15  PutOSSAInstruction:	O1_4< numWaitingPatients > = O1_3<V9>\l" [ ]
+   "BB6\n17  Create O2_1                              \l" [ ]
+   "BB7\n19  < Application, LList, <init>()V >( O2_1 )\l" [ ]
+   "BB8\n20  PutOSSAInstruction:	O1_5< waiting > = O1_4<refO2_1>\l" [ ]
+   "BB9\n22  Create O3_1                              \l" [ ]
+   "BB10\n24  < Application, LList, <init>()V >( O3_1 )\l" [ ]
+   "BB11\n25  PutOSSAInstruction:	O1_6< assess > = O1_5<refO3_1>\l" [ ]
+   "BB12\n27  Create O4_1                              \l" [ ]
+   "BB13\n29  < Application, LList, <init>()V >( O4_1 )\l" [ ]
+   "BB14\n30  PutOSSAInstruction:	O1_7< inside > = O1_6<refO4_1>\l" [ ]
+   "BB15\n32  Create O5_1                              \l" [ ]
+   "BB16\n34  < Application, LList, <init>()V >( O5_1 )\l" [ ]
+   "BB17\n35  PutOSSAInstruction:	O1_8< up > = O1_7<refO5_1>\l" [ ]
+   "BB18\n36  return                                   \l" [ ]
+   "BB19 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  < Application, Ljava/lang/Object, <init>()V >( O1_1 )\l" 
+ "BB1\n1  < Application, Ljava/lang/Object, <init>()V >( O1_1 )\l" -> "BB2\n6   v6 = binaryop(sub) v2 , v5:#1            \l7   v7 = binaryop(SHL) v5:#1 , v6            \l8  PutOSSAInstruction:	O1_2< personnel > = O1_1<V7>\l" 
+ "BB2\n6   v6 = binaryop(sub) v2 , v5:#1            \l7   v7 = binaryop(SHL) v5:#1 , v6            \l8  PutOSSAInstruction:	O1_2< personnel > = O1_1<V7>\l" -> "BB3\n11  GetOSSAInstruction:	8= O1_2< personnel>  \l" 
+ "BB3\n11  GetOSSAInstruction:	8= O1_2< personnel>  \l" -> "BB4\n12  PutOSSAInstruction:	O1_3< freePersonnel > = O1_2<V8>\l" 
+ "BB4\n12  PutOSSAInstruction:	O1_3< freePersonnel > = O1_2<V8>\l" -> "BB5\n15  PutOSSAInstruction:	O1_4< numWaitingPatients > = O1_3<V9>\l" 
+ "BB5\n15  PutOSSAInstruction:	O1_4< numWaitingPatients > = O1_3<V9>\l" -> "BB6\n17  Create O2_1                              \l" 
+ "BB6\n17  Create O2_1                              \l" -> "BB7\n19  < Application, LList, <init>()V >( O2_1 )\l" 
+ "BB7\n19  < Application, LList, <init>()V >( O2_1 )\l" -> "BB8\n20  PutOSSAInstruction:	O1_5< waiting > = O1_4<refO2_1>\l" 
+ "BB8\n20  PutOSSAInstruction:	O1_5< waiting > = O1_4<refO2_1>\l" -> "BB9\n22  Create O3_1                              \l" 
+ "BB9\n22  Create O3_1                              \l" -> "BB10\n24  < Application, LList, <init>()V >( O3_1 )\l" 
+ "BB10\n24  < Application, LList, <init>()V >( O3_1 )\l" -> "BB11\n25  PutOSSAInstruction:	O1_6< assess > = O1_5<refO3_1>\l" 
+ "BB11\n25  PutOSSAInstruction:	O1_6< assess > = O1_5<refO3_1>\l" -> "BB12\n27  Create O4_1                              \l" 
+ "BB12\n27  Create O4_1                              \l" -> "BB13\n29  < Application, LList, <init>()V >( O4_1 )\l" 
+ "BB13\n29  < Application, LList, <init>()V >( O4_1 )\l" -> "BB14\n30  PutOSSAInstruction:	O1_7< inside > = O1_6<refO4_1>\l" 
+ "BB14\n30  PutOSSAInstruction:	O1_7< inside > = O1_6<refO4_1>\l" -> "BB15\n32  Create O5_1                              \l" 
+ "BB15\n32  Create O5_1                              \l" -> "BB16\n34  < Application, LList, <init>()V >( O5_1 )\l" 
+ "BB16\n34  < Application, LList, <init>()V >( O5_1 )\l" -> "BB17\n35  PutOSSAInstruction:	O1_8< up > = O1_7<refO5_1>\l" 
+ "BB17\n35  PutOSSAInstruction:	O1_8< up > = O1_7<refO5_1>\l" -> "BB18\n36  return                                   \l" 
+ "BB18\n36  return                                   \l" -> "BB19 (ex)\n\n" 
+
+}

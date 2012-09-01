@@ -1,0 +1,34 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for TestProg5.test()V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0  Create O1_1                               \l" [ ]
+   "BB2\n2   invokespecial < Application, LSample, <init>()V > v2 @4 exception:v3\l" [ ]
+   "BB3\n5  GetOSSAInstruction:	4= O1_1< x>           \l" [ ]
+   "BB4\n9   conditional branch(ge) v4,v5:#5          \l" [ ]
+   "BB5\n12  PutOSSAInstruction:	O1_2< x > = O1_1<V8> \l" [ ]
+   "BB6\n15  PutOSSAInstruction:	O1_3< x > = O1_2<V9> \l" [ ]
+   "BB7\n16   goto                                    \l" [ ]
+   "BB8\n19   conditional branch(le) v4,v5:#5         \l" [ ]
+   "BB9\n22   conditional branch(ge) v4,v6:#7         \l" [ ]
+   "BB10\n25  PutOSSAInstruction:	O1_4< x > = O1_1<V7> \l" [ ]
+   "BB11\n           O1_5 = Object-Phi(O1_1, O1_3, O1_4 )\l27  GetOSSAInstruction:	10= O1_5< x>         \l" [ ]
+   "BB12\n29  return                                   \l" [ ]
+   "BB13 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0  Create O1_1                               \l" 
+ "BB1\n0  Create O1_1                               \l" -> "BB2\n2   invokespecial < Application, LSample, <init>()V > v2 @4 exception:v3\l" 
+ "BB2\n2   invokespecial < Application, LSample, <init>()V > v2 @4 exception:v3\l" -> "BB3\n5  GetOSSAInstruction:	4= O1_1< x>           \l" 
+ "BB3\n5  GetOSSAInstruction:	4= O1_1< x>           \l" -> "BB4\n9   conditional branch(ge) v4,v5:#5          \l" 
+ "BB4\n9   conditional branch(ge) v4,v5:#5          \l" -> "BB5\n12  PutOSSAInstruction:	O1_2< x > = O1_1<V8> \l" 
+ "BB4\n9   conditional branch(ge) v4,v5:#5          \l" -> "BB8\n19   conditional branch(le) v4,v5:#5         \l" 
+ "BB5\n12  PutOSSAInstruction:	O1_2< x > = O1_1<V8> \l" -> "BB6\n15  PutOSSAInstruction:	O1_3< x > = O1_2<V9> \l" 
+ "BB6\n15  PutOSSAInstruction:	O1_3< x > = O1_2<V9> \l" -> "BB7\n16   goto                                    \l" 
+ "BB7\n16   goto                                    \l" -> "BB11\n           O1_5 = Object-Phi(O1_1, O1_3, O1_4 )\l27  GetOSSAInstruction:	10= O1_5< x>         \l" 
+ "BB8\n19   conditional branch(le) v4,v5:#5         \l" -> "BB9\n22   conditional branch(ge) v4,v6:#7         \l" 
+ "BB8\n19   conditional branch(le) v4,v5:#5         \l" -> "BB11\n           O1_5 = Object-Phi(O1_1, O1_3, O1_4 )\l27  GetOSSAInstruction:	10= O1_5< x>         \l" 
+ "BB9\n22   conditional branch(ge) v4,v6:#7         \l" -> "BB10\n25  PutOSSAInstruction:	O1_4< x > = O1_1<V7> \l" 
+ "BB9\n22   conditional branch(ge) v4,v6:#7         \l" -> "BB11\n           O1_5 = Object-Phi(O1_1, O1_3, O1_4 )\l27  GetOSSAInstruction:	10= O1_5< x>         \l" 
+ "BB10\n25  PutOSSAInstruction:	O1_4< x > = O1_1<V7> \l" -> "BB11\n           O1_5 = Object-Phi(O1_1, O1_3, O1_4 )\l27  GetOSSAInstruction:	10= O1_5< x>         \l" 
+ "BB11\n           O1_5 = Object-Phi(O1_1, O1_3, O1_4 )\l27  GetOSSAInstruction:	10= O1_5< x>         \l" -> "BB12\n29  return                                   \l" 
+ "BB12\n29  return                                   \l" -> "BB13 (ex)\n\n" 
+
+}

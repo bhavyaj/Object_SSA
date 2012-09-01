@@ -1,0 +1,23 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0   invokestatic < Application, LOSSATestCases/TestOSSA4, test()V > @0 exception:v3\l" [ ]
+   "BB2\n1   invokestatic < Application, LOSSATestCases/TestOSSA4, test1()V > @3 exception:v4\l" [ ]
+   "BB3\n2   invokestatic < Application, LOSSATestCases/TestOSSA4, test2()V > @6 exception:v5\l" [ ]
+   "BB4\n3   invokestatic < Application, LOSSATestCases/TestOSSA4, test3()V > @9 exception:v6\l" [ ]
+   "BB5\n4   v7 = new <Application,LOSSATestCases/Sample>@12\l" [ ]
+   "BB6\n6   invokespecial < Application, LOSSATestCases/Sample, <init>()V > v7 @16 exception:v8\l" [ ]
+   "BB7\n7   v10 = invokestatic < Application, LOSSATestCases/TestOSSA4, test4(LOSSATestCases/Sample;)LOSSATestCases/Sample; > v7 @19 exception:v9\l" [ ]
+   "BB8\n9   return                         \l" [ ]
+   "BB9 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0   invokestatic < Application, LOSSATestCases/TestOSSA4, test()V > @0 exception:v3\l" 
+ "BB1\n0   invokestatic < Application, LOSSATestCases/TestOSSA4, test()V > @0 exception:v3\l" -> "BB2\n1   invokestatic < Application, LOSSATestCases/TestOSSA4, test1()V > @3 exception:v4\l" 
+ "BB2\n1   invokestatic < Application, LOSSATestCases/TestOSSA4, test1()V > @3 exception:v4\l" -> "BB3\n2   invokestatic < Application, LOSSATestCases/TestOSSA4, test2()V > @6 exception:v5\l" 
+ "BB3\n2   invokestatic < Application, LOSSATestCases/TestOSSA4, test2()V > @6 exception:v5\l" -> "BB4\n3   invokestatic < Application, LOSSATestCases/TestOSSA4, test3()V > @9 exception:v6\l" 
+ "BB4\n3   invokestatic < Application, LOSSATestCases/TestOSSA4, test3()V > @9 exception:v6\l" -> "BB5\n4   v7 = new <Application,LOSSATestCases/Sample>@12\l" 
+ "BB5\n4   v7 = new <Application,LOSSATestCases/Sample>@12\l" -> "BB6\n6   invokespecial < Application, LOSSATestCases/Sample, <init>()V > v7 @16 exception:v8\l" 
+ "BB6\n6   invokespecial < Application, LOSSATestCases/Sample, <init>()V > v7 @16 exception:v8\l" -> "BB7\n7   v10 = invokestatic < Application, LOSSATestCases/TestOSSA4, test4(LOSSATestCases/Sample;)LOSSATestCases/Sample; > v7 @19 exception:v9\l" 
+ "BB7\n7   v10 = invokestatic < Application, LOSSATestCases/TestOSSA4, test4(LOSSATestCases/Sample;)LOSSATestCases/Sample; > v7 @19 exception:v9\l" -> "BB8\n9   return                         \l" 
+ "BB8\n9   return                         \l" -> "BB9 (ex)\n\n" 
+
+}

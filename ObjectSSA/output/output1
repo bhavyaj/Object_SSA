@@ -1,0 +1,6 @@
+spawning process [/usr/bin/dot, -Tpdf, -o, /home/yash/Workspaces/workspace/ObjectSSA/output/current/TestProg3.test()Vir.pdf, -v, /home/yash/Workspaces/workspace/ObjectSSA/output/current/dottmps/TestProg3.test()Vtemp.dt]
+process terminated with exit code 0
+read 1051 bytes from error stream
+spawning process [/usr/bin/dot, -Tpdf, -o, /home/yash/Workspaces/workspace/ObjectSSA/output/current/TestProg3.test()VOSSA.pdf, -v, /home/yash/Workspaces/workspace/ObjectSSA/output/current/dottmps/TestProg3.test()VtempOSSA.dt]
+read 1110 bytes from error stream
+process terminated with exit code 0

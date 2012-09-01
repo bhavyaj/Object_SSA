@@ -1,0 +1,38 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Node.updateFromNodes()V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n" [ ]
+   "BB2\n           v17 = phi  v16,v3:#0\l4  GetOSSAInstruction:	O2_1= O1_1< toNodes>  \l" [ ]
+   "BB3\n5   v5 = arraylength v4                      \l" [ ]
+   "BB4\n6   conditional branch(ge) v17,v5            \l" [ ]
+   "BB5\n8  GetOSSAInstruction:	O2_1= O1_1< toNodes>  \l" [ ]
+   "BB6\n10   v7 = arrayload v6[v17]                  \l" [ ]
+   "BB7\n14  nonreference field get instrctn: 8 = getfield < Application, LNode, fromLength, <Primordial,I> > 7\l" [ ]
+   "BB8\n17   v10 = binaryop(add) v8 , v9:#1          \l18   putfield v7 = v10 < Application, LNode, fromLength, <Primordial,I> >\l" [ ]
+   "BB9\n21  nonreference field get instrctn: 11 = getfield < Application, LNode, fromNodes, <Application,[LNode> > 7\l" [ ]
+   "BB10\n24   arraystore v11[v8] = v1                 \l" [ ]
+   "BB11\n26  nonreference field get instrctn: 12 = getfield < Application, LNode, coeffs, <Primordial,[D> > 7\l" [ ]
+   "BB12\n28  nonreference field get instrctn: 13 = getstatic < Application, LNode, rand, <Application,Ljava/util/Random> >\l29   v15 = invokevirtual < Application, Ljava/util/Random, nextDouble()D > v13 @45 exception:v14\l" [ ]
+   "BB13\n30   arraystore v12[v8] = v15                \l" [ ]
+   "BB14\n33   v16 = binaryop(add) v17 , v9:#1         \l35   goto                                    \l" [ ]
+   "BB15\n36  return                                   \l" [ ]
+   "BB16 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n" 
+ "BB1\n" -> "BB2\n           v17 = phi  v16,v3:#0\l4  GetOSSAInstruction:	O2_1= O1_1< toNodes>  \l" 
+ "BB2\n           v17 = phi  v16,v3:#0\l4  GetOSSAInstruction:	O2_1= O1_1< toNodes>  \l" -> "BB3\n5   v5 = arraylength v4                      \l" 
+ "BB3\n5   v5 = arraylength v4                      \l" -> "BB4\n6   conditional branch(ge) v17,v5            \l" 
+ "BB4\n6   conditional branch(ge) v17,v5            \l" -> "BB5\n8  GetOSSAInstruction:	O2_1= O1_1< toNodes>  \l" 
+ "BB4\n6   conditional branch(ge) v17,v5            \l" -> "BB15\n36  return                                   \l" 
+ "BB5\n8  GetOSSAInstruction:	O2_1= O1_1< toNodes>  \l" -> "BB6\n10   v7 = arrayload v6[v17]                  \l" 
+ "BB6\n10   v7 = arrayload v6[v17]                  \l" -> "BB7\n14  nonreference field get instrctn: 8 = getfield < Application, LNode, fromLength, <Primordial,I> > 7\l" 
+ "BB7\n14  nonreference field get instrctn: 8 = getfield < Application, LNode, fromLength, <Primordial,I> > 7\l" -> "BB8\n17   v10 = binaryop(add) v8 , v9:#1          \l18   putfield v7 = v10 < Application, LNode, fromLength, <Primordial,I> >\l" 
+ "BB8\n17   v10 = binaryop(add) v8 , v9:#1          \l18   putfield v7 = v10 < Application, LNode, fromLength, <Primordial,I> >\l" -> "BB9\n21  nonreference field get instrctn: 11 = getfield < Application, LNode, fromNodes, <Application,[LNode> > 7\l" 
+ "BB9\n21  nonreference field get instrctn: 11 = getfield < Application, LNode, fromNodes, <Application,[LNode> > 7\l" -> "BB10\n24   arraystore v11[v8] = v1                 \l" 
+ "BB10\n24   arraystore v11[v8] = v1                 \l" -> "BB11\n26  nonreference field get instrctn: 12 = getfield < Application, LNode, coeffs, <Primordial,[D> > 7\l" 
+ "BB11\n26  nonreference field get instrctn: 12 = getfield < Application, LNode, coeffs, <Primordial,[D> > 7\l" -> "BB12\n28  nonreference field get instrctn: 13 = getstatic < Application, LNode, rand, <Application,Ljava/util/Random> >\l29   v15 = invokevirtual < Application, Ljava/util/Random, nextDouble()D > v13 @45 exception:v14\l" 
+ "BB12\n28  nonreference field get instrctn: 13 = getstatic < Application, LNode, rand, <Application,Ljava/util/Random> >\l29   v15 = invokevirtual < Application, Ljava/util/Random, nextDouble()D > v13 @45 exception:v14\l" -> "BB13\n30   arraystore v12[v8] = v15                \l" 
+ "BB13\n30   arraystore v12[v8] = v15                \l" -> "BB14\n33   v16 = binaryop(add) v17 , v9:#1         \l35   goto                                    \l" 
+ "BB14\n33   v16 = binaryop(add) v17 , v9:#1         \l35   goto                                    \l" -> "BB2\n           v17 = phi  v16,v3:#0\l4  GetOSSAInstruction:	O2_1= O1_1< toNodes>  \l" 
+ "BB15\n36  return                                   \l" -> "BB16 (ex)\n\n" 
+
+}

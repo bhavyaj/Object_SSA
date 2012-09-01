@@ -1,0 +1,15 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v4 = getfield < Application, LSample, next, <Application,LSample> > v1\l" [ ]
+   "BB2\n5   putfield v2 = v1 < Application, LSample, next, <Application,LSample> >\l" [ ]
+   "BB3\n7   v5 = getfield < Application, LSample, next, <Application,LSample> > v2\l" [ ]
+   "BB4\n10   return v5                     \l" [ ]
+   "BB5 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v4 = getfield < Application, LSample, next, <Application,LSample> > v1\l" 
+ "BB1\n1   v4 = getfield < Application, LSample, next, <Application,LSample> > v1\l" -> "BB2\n5   putfield v2 = v1 < Application, LSample, next, <Application,LSample> >\l" 
+ "BB2\n5   putfield v2 = v1 < Application, LSample, next, <Application,LSample> >\l" -> "BB3\n7   v5 = getfield < Application, LSample, next, <Application,LSample> > v2\l" 
+ "BB3\n7   v5 = getfield < Application, LSample, next, <Application,LSample> > v2\l" -> "BB4\n10   return v5                     \l" 
+ "BB4\n10   return v5                     \l" -> "BB5 (ex)\n\n" 
+
+}

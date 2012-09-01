@@ -1,0 +1,88 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Body.expandBox(LTree;I)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0  Create O3_1                               \l" [ ]
+   "BB2\n2  < Application, LMathVector, <init>()V >( O3_1 )\l" [ ]
+   "BB3\n6  O4_1 = < Application, LBody, icTest(LTree;)Z >( O1_1, O2_1 )\l" [ ]
+   "BB4\n" [ ]
+   "BB5\n           O2_2 = Object-Phi(O2_1, O2_5 )\l           v48 = phi  v46,v8\l10   conditional branch(ne) v48,v9:#0        \l" [ ]
+   "BB6\n12  GetOSSAInstruction:	10= O2_2< rsize>     \l" [ ]
+   "BB7\n16  GetOSSAInstruction:	O5_1= O2_2< rmin>    \l" [ ]
+   "BB8\n19   v13 = binaryop(mul) v12:#0.5 , v10      \l20  < Application, LMathVector, addScalar(LMathVector;D)V >( O3_1, O5_1, V13 )\l" [ ]
+   "BB9\n" [ ]
+   "BB10\n           v49 = phi  v49,v48\l           v30 = phi  v29,v9:#0\l25   conditional branch(ge) v30,v15:#3       \l" [ ]
+   "BB11\n27  GetOSSAInstruction:	O6_1= O1_1< pos>     \l" [ ]
+   "BB12\n29  O4_2 = < Application, LMathVector, value(I)D >( O6_1, V30 )\l" [ ]
+   "BB13\n32  O4_3 = < Application, LMathVector, value(I)D >( O3_1, V30 )\l" [ ]
+   "BB14\n33   v21 = compare v18,v20 opcode=cmpg       \l35   conditional branch(ge) v21,v9:#0        \l" [ ]
+   "BB15\n37  GetOSSAInstruction:	O5_1= O2_2< rmin>    \l" [ ]
+   "BB16\n39  O4_4 = < Application, LMathVector, value(I)D >( O5_1, V30 )\l" [ ]
+   "BB17\n42  GetOSSAInstruction:	O5_1= O2_2< rmin>    \l" [ ]
+   "BB18\n46   v26 = binaryop(sub) v24 , v10           \l47  < Application, LMathVector, value(ID)V >( O5_1, V30, V26 )\l" [ ]
+   "BB19\n50   v29 = binaryop(add) v30 , v28:#1        \l52   goto                                    \l" [ ]
+   "BB20\n56   v32 = binaryop(mul) v31:#2.0 , v10      \l57  PutOSSAInstruction:	O2_3< rsize > = O2_2<V32>\l" [ ]
+   "BB21\n59  GetOSSAInstruction:	O7_1= O2_3< root>    \l" [ ]
+   "BB22\n61   conditional branch(eq) v33,v34:#null    \l" [ ]
+   "BB23\n64  O8_1 = < Application, LTree, intcoord(LMathVector;)LMathVector; >( O2_3, O3_1 )\l" [ ]
+   "BB24\n68   conditional branch(ne) v36,v34:#null    \l" [ ]
+   "BB25\n69  Create O9_1                              \l" [ ]
+   "BB26\n72  < Application, Ljava/lang/Error, <init>(Ljava/lang/String;)V >( O9_1, V51 )\l" [ ]
+   "BB27\n73   throw v50                               \l" [ ]
+   "BB28\n76  O4_5 = < Application, LBody, oldSubindex(LMathVector;I)I >( O8_1, V37 )\l" [ ]
+   "BB29\n78  Create O10_1                             \l" [ ]
+   "BB30\n80  < Application, LCell, <init>()V >( O10_1 )\l" [ ]
+   "BB31\n83  GetOSSAInstruction:	O11_1= O10_1< subp>  \l" [ ]
+   "BB32\n86  GetOSSAInstruction:	O7_1= O2_3< root>    \l" [ ]
+   "BB33\n87   arraystore v42[v39] = v43               \l" [ ]
+   "BB34\n90  PutOSSAInstruction:	O2_4< root > = O2_3<refO10_1>\l" [ ]
+   "BB35\n93  O4_6 = < Application, LBody, icTest(LTree;)Z >( O1_1, O2_4 )\l" [ ]
+   "BB36\n" [ ]
+   "BB37\n           O2_5 = Object-Phi(O2_3, O2_4 )\l           v46 = phi  v49,v45\l95   goto                                    \l" [ ]
+   "BB38\n96  return                                   \l" [ ]
+   "BB39 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0  Create O3_1                               \l" 
+ "BB1\n0  Create O3_1                               \l" -> "BB2\n2  < Application, LMathVector, <init>()V >( O3_1 )\l" 
+ "BB2\n2  < Application, LMathVector, <init>()V >( O3_1 )\l" -> "BB3\n6  O4_1 = < Application, LBody, icTest(LTree;)Z >( O1_1, O2_1 )\l" 
+ "BB3\n6  O4_1 = < Application, LBody, icTest(LTree;)Z >( O1_1, O2_1 )\l" -> "BB4\n" 
+ "BB4\n" -> "BB5\n           O2_2 = Object-Phi(O2_1, O2_5 )\l           v48 = phi  v46,v8\l10   conditional branch(ne) v48,v9:#0        \l" 
+ "BB5\n           O2_2 = Object-Phi(O2_1, O2_5 )\l           v48 = phi  v46,v8\l10   conditional branch(ne) v48,v9:#0        \l" -> "BB6\n12  GetOSSAInstruction:	10= O2_2< rsize>     \l" 
+ "BB5\n           O2_2 = Object-Phi(O2_1, O2_5 )\l           v48 = phi  v46,v8\l10   conditional branch(ne) v48,v9:#0        \l" -> "BB38\n96  return                                   \l" 
+ "BB6\n12  GetOSSAInstruction:	10= O2_2< rsize>     \l" -> "BB7\n16  GetOSSAInstruction:	O5_1= O2_2< rmin>    \l" 
+ "BB7\n16  GetOSSAInstruction:	O5_1= O2_2< rmin>    \l" -> "BB8\n19   v13 = binaryop(mul) v12:#0.5 , v10      \l20  < Application, LMathVector, addScalar(LMathVector;D)V >( O3_1, O5_1, V13 )\l" 
+ "BB8\n19   v13 = binaryop(mul) v12:#0.5 , v10      \l20  < Application, LMathVector, addScalar(LMathVector;D)V >( O3_1, O5_1, V13 )\l" -> "BB9\n" 
+ "BB9\n" -> "BB10\n           v49 = phi  v49,v48\l           v30 = phi  v29,v9:#0\l25   conditional branch(ge) v30,v15:#3       \l" 
+ "BB10\n           v49 = phi  v49,v48\l           v30 = phi  v29,v9:#0\l25   conditional branch(ge) v30,v15:#3       \l" -> "BB11\n27  GetOSSAInstruction:	O6_1= O1_1< pos>     \l" 
+ "BB10\n           v49 = phi  v49,v48\l           v30 = phi  v29,v9:#0\l25   conditional branch(ge) v30,v15:#3       \l" -> "BB20\n56   v32 = binaryop(mul) v31:#2.0 , v10      \l57  PutOSSAInstruction:	O2_3< rsize > = O2_2<V32>\l" 
+ "BB11\n27  GetOSSAInstruction:	O6_1= O1_1< pos>     \l" -> "BB12\n29  O4_2 = < Application, LMathVector, value(I)D >( O6_1, V30 )\l" 
+ "BB12\n29  O4_2 = < Application, LMathVector, value(I)D >( O6_1, V30 )\l" -> "BB13\n32  O4_3 = < Application, LMathVector, value(I)D >( O3_1, V30 )\l" 
+ "BB13\n32  O4_3 = < Application, LMathVector, value(I)D >( O3_1, V30 )\l" -> "BB14\n33   v21 = compare v18,v20 opcode=cmpg       \l35   conditional branch(ge) v21,v9:#0        \l" 
+ "BB14\n33   v21 = compare v18,v20 opcode=cmpg       \l35   conditional branch(ge) v21,v9:#0        \l" -> "BB15\n37  GetOSSAInstruction:	O5_1= O2_2< rmin>    \l" 
+ "BB14\n33   v21 = compare v18,v20 opcode=cmpg       \l35   conditional branch(ge) v21,v9:#0        \l" -> "BB19\n50   v29 = binaryop(add) v30 , v28:#1        \l52   goto                                    \l" 
+ "BB15\n37  GetOSSAInstruction:	O5_1= O2_2< rmin>    \l" -> "BB16\n39  O4_4 = < Application, LMathVector, value(I)D >( O5_1, V30 )\l" 
+ "BB16\n39  O4_4 = < Application, LMathVector, value(I)D >( O5_1, V30 )\l" -> "BB17\n42  GetOSSAInstruction:	O5_1= O2_2< rmin>    \l" 
+ "BB17\n42  GetOSSAInstruction:	O5_1= O2_2< rmin>    \l" -> "BB18\n46   v26 = binaryop(sub) v24 , v10           \l47  < Application, LMathVector, value(ID)V >( O5_1, V30, V26 )\l" 
+ "BB18\n46   v26 = binaryop(sub) v24 , v10           \l47  < Application, LMathVector, value(ID)V >( O5_1, V30, V26 )\l" -> "BB19\n50   v29 = binaryop(add) v30 , v28:#1        \l52   goto                                    \l" 
+ "BB19\n50   v29 = binaryop(add) v30 , v28:#1        \l52   goto                                    \l" -> "BB10\n           v49 = phi  v49,v48\l           v30 = phi  v29,v9:#0\l25   conditional branch(ge) v30,v15:#3       \l" 
+ "BB20\n56   v32 = binaryop(mul) v31:#2.0 , v10      \l57  PutOSSAInstruction:	O2_3< rsize > = O2_2<V32>\l" -> "BB21\n59  GetOSSAInstruction:	O7_1= O2_3< root>    \l" 
+ "BB21\n59  GetOSSAInstruction:	O7_1= O2_3< root>    \l" -> "BB22\n61   conditional branch(eq) v33,v34:#null    \l" 
+ "BB22\n61   conditional branch(eq) v33,v34:#null    \l" -> "BB23\n64  O8_1 = < Application, LTree, intcoord(LMathVector;)LMathVector; >( O2_3, O3_1 )\l" 
+ "BB22\n61   conditional branch(eq) v33,v34:#null    \l" -> "BB37\n           O2_5 = Object-Phi(O2_3, O2_4 )\l           v46 = phi  v49,v45\l95   goto                                    \l" 
+ "BB23\n64  O8_1 = < Application, LTree, intcoord(LMathVector;)LMathVector; >( O2_3, O3_1 )\l" -> "BB24\n68   conditional branch(ne) v36,v34:#null    \l" 
+ "BB24\n68   conditional branch(ne) v36,v34:#null    \l" -> "BB25\n69  Create O9_1                              \l" 
+ "BB24\n68   conditional branch(ne) v36,v34:#null    \l" -> "BB28\n76  O4_5 = < Application, LBody, oldSubindex(LMathVector;I)I >( O8_1, V37 )\l" 
+ "BB25\n69  Create O9_1                              \l" -> "BB26\n72  < Application, Ljava/lang/Error, <init>(Ljava/lang/String;)V >( O9_1, V51 )\l" 
+ "BB26\n72  < Application, Ljava/lang/Error, <init>(Ljava/lang/String;)V >( O9_1, V51 )\l" -> "BB27\n73   throw v50                               \l" 
+ "BB27\n73   throw v50                               \l" -> "BB39 (ex)\n\n" 
+ "BB28\n76  O4_5 = < Application, LBody, oldSubindex(LMathVector;I)I >( O8_1, V37 )\l" -> "BB29\n78  Create O10_1                             \l" 
+ "BB29\n78  Create O10_1                             \l" -> "BB30\n80  < Application, LCell, <init>()V >( O10_1 )\l" 
+ "BB30\n80  < Application, LCell, <init>()V >( O10_1 )\l" -> "BB31\n83  GetOSSAInstruction:	O11_1= O10_1< subp>  \l" 
+ "BB31\n83  GetOSSAInstruction:	O11_1= O10_1< subp>  \l" -> "BB32\n86  GetOSSAInstruction:	O7_1= O2_3< root>    \l" 
+ "BB32\n86  GetOSSAInstruction:	O7_1= O2_3< root>    \l" -> "BB33\n87   arraystore v42[v39] = v43               \l" 
+ "BB33\n87   arraystore v42[v39] = v43               \l" -> "BB34\n90  PutOSSAInstruction:	O2_4< root > = O2_3<refO10_1>\l" 
+ "BB34\n90  PutOSSAInstruction:	O2_4< root > = O2_3<refO10_1>\l" -> "BB35\n93  O4_6 = < Application, LBody, icTest(LTree;)Z >( O1_1, O2_4 )\l" 
+ "BB35\n93  O4_6 = < Application, LBody, icTest(LTree;)Z >( O1_1, O2_4 )\l" -> "BB36\n" 
+ "BB36\n" -> "BB37\n           O2_5 = Object-Phi(O2_3, O2_4 )\l           v46 = phi  v49,v45\l95   goto                                    \l" 
+ "BB37\n           O2_5 = Object-Phi(O2_3, O2_4 )\l           v46 = phi  v49,v45\l95   goto                                    \l" -> "BB5\n           O2_2 = Object-Phi(O2_1, O2_5 )\l           v48 = phi  v46,v8\l10   conditional branch(ne) v48,v9:#0        \l" 
+ "BB38\n96  return                                   \l" -> "BB39 (ex)\n\n" 
+
+}

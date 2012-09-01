@@ -1,0 +1,54 @@
+bh:
+Total Objects checked = 166
+69 objects live
+97 objects not live
+
+bisort:
+Total Objects checked = 16
+0 objects live
+16 objects not live
+
+em3d:
+Total Objects checked = 34
+6 objects live
+28 objects not live
+
+
+health:
+Total Objects checked = 57
+28 objects live
+29 objects not live
+
+mst:
+Total Objects checked = 55
+14 objects live
+41 objects not live
+
+perimeter:
+Total Objects checked = 46
+15 objects live
+31 objects not live
+
+power:
+Total Objects checked = 62
+41 objects live
+21 objects not live
+
+treeadd:
+Total Objects checked = 6
+2 objects live
+4 objects not live
+
+
+
+tsp:
+Total Objects checked = 56
+45 objects live
+11 objects not live
+
+
+voronoi:
+Total Objects checked = 318
+20 objects live
+298 objects not live
+

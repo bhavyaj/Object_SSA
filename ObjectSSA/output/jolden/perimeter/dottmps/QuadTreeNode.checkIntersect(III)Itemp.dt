@@ -1,0 +1,47 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2   v5 = binaryop(add) v1 , v3     \l5   v6 = binaryop(add) v2 , v3     \l6   v8 = invokestatic < Application, LQuadTreeNode, checkOutside(II)I > v5,v6 @6 exception:v7\l" [ ]
+   "BB2\n8   conditional branch(ne) v8,v9:#0\l" [ ]
+   "BB3\n11   v10 = binaryop(add) v1 , v3   \l14   v11 = binaryop(sub) v2 , v3   \l15   v13 = invokestatic < Application, LQuadTreeNode, checkOutside(II)I > v10,v11 @18 exception:v12\l" [ ]
+   "BB4\n17   conditional branch(ne) v13,v9:#0\l" [ ]
+   "BB5\n20   v14 = binaryop(sub) v1 , v3   \l23   v15 = binaryop(sub) v2 , v3   \l24   v17 = invokestatic < Application, LQuadTreeNode, checkOutside(II)I > v14,v15 @30 exception:v16\l" [ ]
+   "BB6\n26   conditional branch(ne) v17,v9:#0\l" [ ]
+   "BB7\n29   v18 = binaryop(sub) v1 , v3   \l32   v19 = binaryop(add) v2 , v3   \l33   v21 = invokestatic < Application, LQuadTreeNode, checkOutside(II)I > v18,v19 @42 exception:v20\l" [ ]
+   "BB8\n35   conditional branch(ne) v21,v9:#0\l" [ ]
+   "BB9\n37   return v44:#2                 \l" [ ]
+   "BB10\n40   v22 = binaryop(add) v1 , v3   \l43   v23 = binaryop(add) v2 , v3   \l44   v25 = invokestatic < Application, LQuadTreeNode, checkOutside(II)I > v22,v23 @56 exception:v24\l" [ ]
+   "BB11\n47   v26 = binaryop(add) v1 , v3   \l50   v27 = binaryop(sub) v2 , v3   \l51   v29 = invokestatic < Application, LQuadTreeNode, checkOutside(II)I > v26,v27 @65 exception:v28\l" [ ]
+   "BB12\n52   v30 = binaryop(add) v25 , v29 \l55   v31 = binaryop(sub) v1 , v3   \l58   v32 = binaryop(sub) v2 , v3   \l59   v34 = invokestatic < Application, LQuadTreeNode, checkOutside(II)I > v31,v32 @75 exception:v33\l" [ ]
+   "BB13\n60   v35 = binaryop(add) v30 , v34 \l63   v36 = binaryop(sub) v1 , v3   \l66   v37 = binaryop(add) v2 , v3   \l67   v39 = invokestatic < Application, LQuadTreeNode, checkOutside(II)I > v36,v37 @85 exception:v38\l" [ ]
+   "BB14\n68   v40 = binaryop(add) v35 , v39 \l72   conditional branch(eq) v40,v41:#4\l" [ ]
+   "BB15\n75   conditional branch(ne) v40,v42:#-4\l" [ ]
+   "BB16\n77   return v9:#0                  \l" [ ]
+   "BB17\n79   return v43:#1                 \l" [ ]
+   "BB18 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2   v5 = binaryop(add) v1 , v3     \l5   v6 = binaryop(add) v2 , v3     \l6   v8 = invokestatic < Application, LQuadTreeNode, checkOutside(II)I > v5,v6 @6 exception:v7\l" 
+ "BB1\n2   v5 = binaryop(add) v1 , v3     \l5   v6 = binaryop(add) v2 , v3     \l6   v8 = invokestatic < Application, LQuadTreeNode, checkOutside(II)I > v5,v6 @6 exception:v7\l" -> "BB2\n8   conditional branch(ne) v8,v9:#0\l" 
+ "BB2\n8   conditional branch(ne) v8,v9:#0\l" -> "BB3\n11   v10 = binaryop(add) v1 , v3   \l14   v11 = binaryop(sub) v2 , v3   \l15   v13 = invokestatic < Application, LQuadTreeNode, checkOutside(II)I > v10,v11 @18 exception:v12\l" 
+ "BB2\n8   conditional branch(ne) v8,v9:#0\l" -> "BB10\n40   v22 = binaryop(add) v1 , v3   \l43   v23 = binaryop(add) v2 , v3   \l44   v25 = invokestatic < Application, LQuadTreeNode, checkOutside(II)I > v22,v23 @56 exception:v24\l" 
+ "BB3\n11   v10 = binaryop(add) v1 , v3   \l14   v11 = binaryop(sub) v2 , v3   \l15   v13 = invokestatic < Application, LQuadTreeNode, checkOutside(II)I > v10,v11 @18 exception:v12\l" -> "BB4\n17   conditional branch(ne) v13,v9:#0\l" 
+ "BB4\n17   conditional branch(ne) v13,v9:#0\l" -> "BB5\n20   v14 = binaryop(sub) v1 , v3   \l23   v15 = binaryop(sub) v2 , v3   \l24   v17 = invokestatic < Application, LQuadTreeNode, checkOutside(II)I > v14,v15 @30 exception:v16\l" 
+ "BB4\n17   conditional branch(ne) v13,v9:#0\l" -> "BB10\n40   v22 = binaryop(add) v1 , v3   \l43   v23 = binaryop(add) v2 , v3   \l44   v25 = invokestatic < Application, LQuadTreeNode, checkOutside(II)I > v22,v23 @56 exception:v24\l" 
+ "BB5\n20   v14 = binaryop(sub) v1 , v3   \l23   v15 = binaryop(sub) v2 , v3   \l24   v17 = invokestatic < Application, LQuadTreeNode, checkOutside(II)I > v14,v15 @30 exception:v16\l" -> "BB6\n26   conditional branch(ne) v17,v9:#0\l" 
+ "BB6\n26   conditional branch(ne) v17,v9:#0\l" -> "BB7\n29   v18 = binaryop(sub) v1 , v3   \l32   v19 = binaryop(add) v2 , v3   \l33   v21 = invokestatic < Application, LQuadTreeNode, checkOutside(II)I > v18,v19 @42 exception:v20\l" 
+ "BB6\n26   conditional branch(ne) v17,v9:#0\l" -> "BB10\n40   v22 = binaryop(add) v1 , v3   \l43   v23 = binaryop(add) v2 , v3   \l44   v25 = invokestatic < Application, LQuadTreeNode, checkOutside(II)I > v22,v23 @56 exception:v24\l" 
+ "BB7\n29   v18 = binaryop(sub) v1 , v3   \l32   v19 = binaryop(add) v2 , v3   \l33   v21 = invokestatic < Application, LQuadTreeNode, checkOutside(II)I > v18,v19 @42 exception:v20\l" -> "BB8\n35   conditional branch(ne) v21,v9:#0\l" 
+ "BB8\n35   conditional branch(ne) v21,v9:#0\l" -> "BB9\n37   return v44:#2                 \l" 
+ "BB8\n35   conditional branch(ne) v21,v9:#0\l" -> "BB10\n40   v22 = binaryop(add) v1 , v3   \l43   v23 = binaryop(add) v2 , v3   \l44   v25 = invokestatic < Application, LQuadTreeNode, checkOutside(II)I > v22,v23 @56 exception:v24\l" 
+ "BB9\n37   return v44:#2                 \l" -> "BB18 (ex)\n\n" 
+ "BB10\n40   v22 = binaryop(add) v1 , v3   \l43   v23 = binaryop(add) v2 , v3   \l44   v25 = invokestatic < Application, LQuadTreeNode, checkOutside(II)I > v22,v23 @56 exception:v24\l" -> "BB11\n47   v26 = binaryop(add) v1 , v3   \l50   v27 = binaryop(sub) v2 , v3   \l51   v29 = invokestatic < Application, LQuadTreeNode, checkOutside(II)I > v26,v27 @65 exception:v28\l" 
+ "BB11\n47   v26 = binaryop(add) v1 , v3   \l50   v27 = binaryop(sub) v2 , v3   \l51   v29 = invokestatic < Application, LQuadTreeNode, checkOutside(II)I > v26,v27 @65 exception:v28\l" -> "BB12\n52   v30 = binaryop(add) v25 , v29 \l55   v31 = binaryop(sub) v1 , v3   \l58   v32 = binaryop(sub) v2 , v3   \l59   v34 = invokestatic < Application, LQuadTreeNode, checkOutside(II)I > v31,v32 @75 exception:v33\l" 
+ "BB12\n52   v30 = binaryop(add) v25 , v29 \l55   v31 = binaryop(sub) v1 , v3   \l58   v32 = binaryop(sub) v2 , v3   \l59   v34 = invokestatic < Application, LQuadTreeNode, checkOutside(II)I > v31,v32 @75 exception:v33\l" -> "BB13\n60   v35 = binaryop(add) v30 , v34 \l63   v36 = binaryop(sub) v1 , v3   \l66   v37 = binaryop(add) v2 , v3   \l67   v39 = invokestatic < Application, LQuadTreeNode, checkOutside(II)I > v36,v37 @85 exception:v38\l" 
+ "BB13\n60   v35 = binaryop(add) v30 , v34 \l63   v36 = binaryop(sub) v1 , v3   \l66   v37 = binaryop(add) v2 , v3   \l67   v39 = invokestatic < Application, LQuadTreeNode, checkOutside(II)I > v36,v37 @85 exception:v38\l" -> "BB14\n68   v40 = binaryop(add) v35 , v39 \l72   conditional branch(eq) v40,v41:#4\l" 
+ "BB14\n68   v40 = binaryop(add) v35 , v39 \l72   conditional branch(eq) v40,v41:#4\l" -> "BB15\n75   conditional branch(ne) v40,v42:#-4\l" 
+ "BB14\n68   v40 = binaryop(add) v35 , v39 \l72   conditional branch(eq) v40,v41:#4\l" -> "BB16\n77   return v9:#0                  \l" 
+ "BB15\n75   conditional branch(ne) v40,v42:#-4\l" -> "BB16\n77   return v9:#0                  \l" 
+ "BB15\n75   conditional branch(ne) v40,v42:#-4\l" -> "BB17\n79   return v43:#1                 \l" 
+ "BB16\n77   return v9:#0                  \l" -> "BB18 (ex)\n\n" 
+ "BB17\n79   return v43:#1                 \l" -> "BB18 (ex)\n\n" 
+
+}

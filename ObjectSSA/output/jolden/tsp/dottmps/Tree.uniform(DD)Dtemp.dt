@@ -1,0 +1,15 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0   v4 = new <Application,Ljava/util/Random>@0\l" [ ]
+   "BB2\n2   invokespecial < Application, Ljava/util/Random, <init>()V > v4 @4 exception:v5\l" [ ]
+   "BB3\n3   v7 = invokevirtual < Application, Ljava/util/Random, nextDouble()D > v4 @7 exception:v6\l" [ ]
+   "BB4\n8   v8 = binaryop(sub) v2 , v1     \l9   v9 = binaryop(mul) v7 , v8     \l13   v10 = binaryop(add) v9 , v1   \l14   return v10                    \l" [ ]
+   "BB5 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0   v4 = new <Application,Ljava/util/Random>@0\l" 
+ "BB1\n0   v4 = new <Application,Ljava/util/Random>@0\l" -> "BB2\n2   invokespecial < Application, Ljava/util/Random, <init>()V > v4 @4 exception:v5\l" 
+ "BB2\n2   invokespecial < Application, Ljava/util/Random, <init>()V > v4 @4 exception:v5\l" -> "BB3\n3   v7 = invokevirtual < Application, Ljava/util/Random, nextDouble()D > v4 @7 exception:v6\l" 
+ "BB3\n3   v7 = invokevirtual < Application, Ljava/util/Random, nextDouble()D > v4 @7 exception:v6\l" -> "BB4\n8   v8 = binaryop(sub) v2 , v1     \l9   v9 = binaryop(mul) v7 , v8     \l13   v10 = binaryop(add) v9 , v1   \l14   return v10                    \l" 
+ "BB4\n8   v8 = binaryop(sub) v2 , v1     \l9   v9 = binaryop(mul) v7 , v8     \l13   v10 = binaryop(add) v9 , v1   \l14   return v10                    \l" -> "BB5 (ex)\n\n" 
+
+}

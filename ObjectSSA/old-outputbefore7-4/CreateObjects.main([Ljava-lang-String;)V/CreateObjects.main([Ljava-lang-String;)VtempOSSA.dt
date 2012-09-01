@@ -1,0 +1,50 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for CreateObjects.main([Ljava-lang-String;)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0  Create O2_1                               \l" [ ]
+   "BB2\n2   invokespecial < Application, LSample, <init>()V > v3 @4 exception:v4\l" [ ]
+   "BB3\n8   goto                                     \l" [ ]
+   "BB4\n10  Create O3_1                              \l" [ ]
+   "BB5\n12   invokespecial < Application, LSample, <init>()V > v7 @20 exception:v8\l" [ ]
+   "BB6\n13   putfield v11 = v7 < Application, LSample, next, <Application,LSample> >\l" [ ]
+   "BB7\n15  nonreference field get instrctn: 9 = getfield < Application, LSample, next, <Application,LSample> > 11\l" [ ]
+   "BB8\n19   v10 = binaryop(add) v12 , v5:#1         \l" [ ]
+   "BB9\n           O5_1 = diff-Object-Phi(O2_1, O4_1 )\l           v11 = phi  v3,v9\l           v12 = phi  v5:#1,v10\l23   conditional branch(lt) v12,v6:#5        \l" [ ]
+   "BB10\n25  GetOSSAInstruction:	O3_1= O2_1< next>    \l" [ ]
+   "BB11\n26  GetOSSAInstruction:	O4_1= O3_1< next>    \l" [ ]
+   "BB12\n27  Create O6_1                              \l" [ ]
+   "BB13\n29   invokespecial < Application, LSample, <init>()V > v15 @50 exception:v16\l" [ ]
+   "BB14\n30  PutOSSAInstruction:	O4_1< next > = O4_1<refO6_1>\l" [ ]
+   "BB15\n32  GetOSSAInstruction:	O3_1= O2_1< next>    \l" [ ]
+   "BB16\n35  GetOSSAInstruction:	O3_1= O2_1< next>    \l" [ ]
+   "BB17\n36  GetOSSAInstruction:	O4_1= O3_1< next>    \l" [ ]
+   "BB18\n39   invokestatic < Application, LCreateObjects, pointstodump(Ljava/lang/Object;)V > v19 @72 exception:v20\l" [ ]
+   "BB19\n40   invokestatic < Application, LCreateObjects, func()V > @75 exception:v21\l" [ ]
+   "BB20\n42  GetOSSAInstruction:	22= O4_1< x>         \l" [ ]
+   "BB21\n44  return                                   \l" [ ]
+   "BB22 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0  Create O2_1                               \l" 
+ "BB1\n0  Create O2_1                               \l" -> "BB2\n2   invokespecial < Application, LSample, <init>()V > v3 @4 exception:v4\l" 
+ "BB2\n2   invokespecial < Application, LSample, <init>()V > v3 @4 exception:v4\l" -> "BB3\n8   goto                                     \l" 
+ "BB3\n8   goto                                     \l" -> "BB9\n           O5_1 = diff-Object-Phi(O2_1, O4_1 )\l           v11 = phi  v3,v9\l           v12 = phi  v5:#1,v10\l23   conditional branch(lt) v12,v6:#5        \l" 
+ "BB4\n10  Create O3_1                              \l" -> "BB5\n12   invokespecial < Application, LSample, <init>()V > v7 @20 exception:v8\l" 
+ "BB5\n12   invokespecial < Application, LSample, <init>()V > v7 @20 exception:v8\l" -> "BB6\n13   putfield v11 = v7 < Application, LSample, next, <Application,LSample> >\l" 
+ "BB6\n13   putfield v11 = v7 < Application, LSample, next, <Application,LSample> >\l" -> "BB7\n15  nonreference field get instrctn: 9 = getfield < Application, LSample, next, <Application,LSample> > 11\l" 
+ "BB7\n15  nonreference field get instrctn: 9 = getfield < Application, LSample, next, <Application,LSample> > 11\l" -> "BB8\n19   v10 = binaryop(add) v12 , v5:#1         \l" 
+ "BB8\n19   v10 = binaryop(add) v12 , v5:#1         \l" -> "BB9\n           O5_1 = diff-Object-Phi(O2_1, O4_1 )\l           v11 = phi  v3,v9\l           v12 = phi  v5:#1,v10\l23   conditional branch(lt) v12,v6:#5        \l" 
+ "BB9\n           O5_1 = diff-Object-Phi(O2_1, O4_1 )\l           v11 = phi  v3,v9\l           v12 = phi  v5:#1,v10\l23   conditional branch(lt) v12,v6:#5        \l" -> "BB4\n10  Create O3_1                              \l" 
+ "BB9\n           O5_1 = diff-Object-Phi(O2_1, O4_1 )\l           v11 = phi  v3,v9\l           v12 = phi  v5:#1,v10\l23   conditional branch(lt) v12,v6:#5        \l" -> "BB10\n25  GetOSSAInstruction:	O3_1= O2_1< next>    \l" 
+ "BB10\n25  GetOSSAInstruction:	O3_1= O2_1< next>    \l" -> "BB11\n26  GetOSSAInstruction:	O4_1= O3_1< next>    \l" 
+ "BB11\n26  GetOSSAInstruction:	O4_1= O3_1< next>    \l" -> "BB12\n27  Create O6_1                              \l" 
+ "BB12\n27  Create O6_1                              \l" -> "BB13\n29   invokespecial < Application, LSample, <init>()V > v15 @50 exception:v16\l" 
+ "BB13\n29   invokespecial < Application, LSample, <init>()V > v15 @50 exception:v16\l" -> "BB14\n30  PutOSSAInstruction:	O4_1< next > = O4_1<refO6_1>\l" 
+ "BB14\n30  PutOSSAInstruction:	O4_1< next > = O4_1<refO6_1>\l" -> "BB15\n32  GetOSSAInstruction:	O3_1= O2_1< next>    \l" 
+ "BB15\n32  GetOSSAInstruction:	O3_1= O2_1< next>    \l" -> "BB16\n35  GetOSSAInstruction:	O3_1= O2_1< next>    \l" 
+ "BB16\n35  GetOSSAInstruction:	O3_1= O2_1< next>    \l" -> "BB17\n36  GetOSSAInstruction:	O4_1= O3_1< next>    \l" 
+ "BB17\n36  GetOSSAInstruction:	O4_1= O3_1< next>    \l" -> "BB18\n39   invokestatic < Application, LCreateObjects, pointstodump(Ljava/lang/Object;)V > v19 @72 exception:v20\l" 
+ "BB18\n39   invokestatic < Application, LCreateObjects, pointstodump(Ljava/lang/Object;)V > v19 @72 exception:v20\l" -> "BB19\n40   invokestatic < Application, LCreateObjects, func()V > @75 exception:v21\l" 
+ "BB19\n40   invokestatic < Application, LCreateObjects, func()V > @75 exception:v21\l" -> "BB20\n42  GetOSSAInstruction:	22= O4_1< x>         \l" 
+ "BB20\n42  GetOSSAInstruction:	22= O4_1< x>         \l" -> "BB21\n44  return                                   \l" 
+ "BB21\n44  return                                   \l" -> "BB22 (ex)\n\n" 
+
+}

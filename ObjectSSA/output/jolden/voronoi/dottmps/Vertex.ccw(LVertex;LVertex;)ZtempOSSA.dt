@@ -1,0 +1,28 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Vertex.ccw(LVertex;LVertex;)Z", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n3  O4_1 = < Application, LVertex, X()D >( O1_1 )\l" [ ]
+   "BB2\n6  O4_2 = < Application, LVertex, Y()D >( O1_1 )\l" [ ]
+   "BB3\n11  O4_3 = < Application, LVertex, X()D >( O1_1 )\l" [ ]
+   "BB4\n14  O4_4 = < Application, LVertex, Y()D >( O1_1 )\l" [ ]
+   "BB5\n19  O4_5 = < Application, LVertex, X()D >( O1_1 )\l" [ ]
+   "BB6\n22  O4_6 = < Application, LVertex, Y()D >( O1_1 )\l" [ ]
+   "BB7\n26   v17 = binaryop(sub) v6 , v14            \l29   v18 = binaryop(sub) v12 , v16           \l30   v19 = binaryop(mul) v17 , v18           \l33   v20 = binaryop(sub) v10 , v14           \l36   v21 = binaryop(sub) v8 , v16            \l37   v22 = binaryop(mul) v20 , v21           \l38   v23 = binaryop(sub) v19 , v22           \l42   v25 = compare v23,v24:#0.0 opcode=cmpl  \l44   conditional branch(le) v25,v26:#0       \l" [ ]
+   "BB8\n46   goto                                    \l" [ ]
+   "BB9\n" [ ]
+   "BB10\n           v28 = phi  v27:#1,v26:#0\l48  Return O4_6                              \l" [ ]
+   "BB11 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n3  O4_1 = < Application, LVertex, X()D >( O1_1 )\l" 
+ "BB1\n3  O4_1 = < Application, LVertex, X()D >( O1_1 )\l" -> "BB2\n6  O4_2 = < Application, LVertex, Y()D >( O1_1 )\l" 
+ "BB2\n6  O4_2 = < Application, LVertex, Y()D >( O1_1 )\l" -> "BB3\n11  O4_3 = < Application, LVertex, X()D >( O1_1 )\l" 
+ "BB3\n11  O4_3 = < Application, LVertex, X()D >( O1_1 )\l" -> "BB4\n14  O4_4 = < Application, LVertex, Y()D >( O1_1 )\l" 
+ "BB4\n14  O4_4 = < Application, LVertex, Y()D >( O1_1 )\l" -> "BB5\n19  O4_5 = < Application, LVertex, X()D >( O1_1 )\l" 
+ "BB5\n19  O4_5 = < Application, LVertex, X()D >( O1_1 )\l" -> "BB6\n22  O4_6 = < Application, LVertex, Y()D >( O1_1 )\l" 
+ "BB6\n22  O4_6 = < Application, LVertex, Y()D >( O1_1 )\l" -> "BB7\n26   v17 = binaryop(sub) v6 , v14            \l29   v18 = binaryop(sub) v12 , v16           \l30   v19 = binaryop(mul) v17 , v18           \l33   v20 = binaryop(sub) v10 , v14           \l36   v21 = binaryop(sub) v8 , v16            \l37   v22 = binaryop(mul) v20 , v21           \l38   v23 = binaryop(sub) v19 , v22           \l42   v25 = compare v23,v24:#0.0 opcode=cmpl  \l44   conditional branch(le) v25,v26:#0       \l" 
+ "BB7\n26   v17 = binaryop(sub) v6 , v14            \l29   v18 = binaryop(sub) v12 , v16           \l30   v19 = binaryop(mul) v17 , v18           \l33   v20 = binaryop(sub) v10 , v14           \l36   v21 = binaryop(sub) v8 , v16            \l37   v22 = binaryop(mul) v20 , v21           \l38   v23 = binaryop(sub) v19 , v22           \l42   v25 = compare v23,v24:#0.0 opcode=cmpl  \l44   conditional branch(le) v25,v26:#0       \l" -> "BB8\n46   goto                                    \l" 
+ "BB7\n26   v17 = binaryop(sub) v6 , v14            \l29   v18 = binaryop(sub) v12 , v16           \l30   v19 = binaryop(mul) v17 , v18           \l33   v20 = binaryop(sub) v10 , v14           \l36   v21 = binaryop(sub) v8 , v16            \l37   v22 = binaryop(mul) v20 , v21           \l38   v23 = binaryop(sub) v19 , v22           \l42   v25 = compare v23,v24:#0.0 opcode=cmpl  \l44   conditional branch(le) v25,v26:#0       \l" -> "BB9\n" 
+ "BB8\n46   goto                                    \l" -> "BB10\n           v28 = phi  v27:#1,v26:#0\l48  Return O4_6                              \l" 
+ "BB9\n" -> "BB10\n           v28 = phi  v27:#1,v26:#0\l48  Return O4_6                              \l" 
+ "BB10\n           v28 = phi  v27:#1,v26:#0\l48  Return O4_6                              \l" -> "BB11 (ex)\n\n" 
+
+}

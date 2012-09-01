@@ -1,0 +1,66 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Branch.<init>(II)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v5\l" [ ]
+   "BB2\n4  PutOSSAInstruction:	O1_1< alpha > = O1_1<V6>\l" [ ]
+   "BB3\n7  PutOSSAInstruction:	O1_2< beta > = O1_1<V6>\l" [ ]
+   "BB4\n10  PutOSSAInstruction:	O1_3< R > = O1_2<V7> \l" [ ]
+   "BB5\n13  PutOSSAInstruction:	O1_4< X > = O1_3<V8> \l" [ ]
+   "BB6\n15  Create O2_1                              \l" [ ]
+   "BB7\n17   invokespecial < Application, LDemand, <init>()V > v9 @33 exception:v10\l" [ ]
+   "BB8\n18  PutOSSAInstruction:	O1_5< D > = O1_4<refO2_1>\l" [ ]
+   "BB9\n21   conditional branch(gt) v2,v11:#1        \l" [ ]
+   "BB10\n24   conditional branch(gt) v2,v15:#0        \l" [ ]
+   "BB11\n25  Create O3_1                              \l" [ ]
+   "BB12\n28   invokespecial < Application, Ljava/lang/RuntimeException, <init>(Ljava/lang/String;)V > v23,v24:#Branch constructor with zero num @54 exception:v25\l" [ ]
+   "BB13\n29   throw v23                               \l" [ ]
+   "BB14\n32  PutOSSAInstruction:	O1_6< nextBranch > = O1_5<V16>\l" [ ]
+   "BB15\n33   goto                                    \l" [ ]
+   "BB16\n35  Create O4_1                              \l" [ ]
+   "BB17\n39   v13 = binaryop(sub) v2 , v11:#1         \l41   invokespecial < Application, LBranch, <init>(II)V > v12,v13,v3 @75 exception:v14\l" [ ]
+   "BB18\n42  PutOSSAInstruction:	O1_7< nextBranch > = O1_5<refO4_1>\l" [ ]
+   "BB19\n           O1_8 = Object-Phi(O1_6, O1_7 )\l45  Create O5_1                              \l" [ ]
+   "BB20\n46  PutOSSAInstruction:	O1_9< leaves > = O1_8<refO5_1>\l" [ ]
+   "BB21\n" [ ]
+   "BB22\n           v22 = phi  v21,v15:#0\l51   conditional branch(ge) v22,v3           \l" [ ]
+   "BB23\n53  GetOSSAInstruction:	O5_1= O1_9< leaves>  \l" [ ]
+   "BB24\n55  Create O6_1                              \l" [ ]
+   "BB25\n57   invokespecial < Application, LLeaf, <init>()V > v19 @105 exception:v20\l" [ ]
+   "BB26\n58   arraystore v18[v22] = v19               \l" [ ]
+   "BB27\n61   v21 = binaryop(add) v22 , v11:#1        \l63   goto                                    \l" [ ]
+   "BB28\n64  return                                   \l" [ ]
+   "BB29 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v5\l" 
+ "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v5\l" -> "BB2\n4  PutOSSAInstruction:	O1_1< alpha > = O1_1<V6>\l" 
+ "BB2\n4  PutOSSAInstruction:	O1_1< alpha > = O1_1<V6>\l" -> "BB3\n7  PutOSSAInstruction:	O1_2< beta > = O1_1<V6>\l" 
+ "BB3\n7  PutOSSAInstruction:	O1_2< beta > = O1_1<V6>\l" -> "BB4\n10  PutOSSAInstruction:	O1_3< R > = O1_2<V7> \l" 
+ "BB4\n10  PutOSSAInstruction:	O1_3< R > = O1_2<V7> \l" -> "BB5\n13  PutOSSAInstruction:	O1_4< X > = O1_3<V8> \l" 
+ "BB5\n13  PutOSSAInstruction:	O1_4< X > = O1_3<V8> \l" -> "BB6\n15  Create O2_1                              \l" 
+ "BB6\n15  Create O2_1                              \l" -> "BB7\n17   invokespecial < Application, LDemand, <init>()V > v9 @33 exception:v10\l" 
+ "BB7\n17   invokespecial < Application, LDemand, <init>()V > v9 @33 exception:v10\l" -> "BB8\n18  PutOSSAInstruction:	O1_5< D > = O1_4<refO2_1>\l" 
+ "BB8\n18  PutOSSAInstruction:	O1_5< D > = O1_4<refO2_1>\l" -> "BB9\n21   conditional branch(gt) v2,v11:#1        \l" 
+ "BB9\n21   conditional branch(gt) v2,v11:#1        \l" -> "BB10\n24   conditional branch(gt) v2,v15:#0        \l" 
+ "BB9\n21   conditional branch(gt) v2,v11:#1        \l" -> "BB16\n35  Create O4_1                              \l" 
+ "BB10\n24   conditional branch(gt) v2,v15:#0        \l" -> "BB11\n25  Create O3_1                              \l" 
+ "BB10\n24   conditional branch(gt) v2,v15:#0        \l" -> "BB14\n32  PutOSSAInstruction:	O1_6< nextBranch > = O1_5<V16>\l" 
+ "BB11\n25  Create O3_1                              \l" -> "BB12\n28   invokespecial < Application, Ljava/lang/RuntimeException, <init>(Ljava/lang/String;)V > v23,v24:#Branch constructor with zero num @54 exception:v25\l" 
+ "BB12\n28   invokespecial < Application, Ljava/lang/RuntimeException, <init>(Ljava/lang/String;)V > v23,v24:#Branch constructor with zero num @54 exception:v25\l" -> "BB13\n29   throw v23                               \l" 
+ "BB13\n29   throw v23                               \l" -> "BB29 (ex)\n\n" 
+ "BB14\n32  PutOSSAInstruction:	O1_6< nextBranch > = O1_5<V16>\l" -> "BB15\n33   goto                                    \l" 
+ "BB15\n33   goto                                    \l" -> "BB19\n           O1_8 = Object-Phi(O1_6, O1_7 )\l45  Create O5_1                              \l" 
+ "BB16\n35  Create O4_1                              \l" -> "BB17\n39   v13 = binaryop(sub) v2 , v11:#1         \l41   invokespecial < Application, LBranch, <init>(II)V > v12,v13,v3 @75 exception:v14\l" 
+ "BB17\n39   v13 = binaryop(sub) v2 , v11:#1         \l41   invokespecial < Application, LBranch, <init>(II)V > v12,v13,v3 @75 exception:v14\l" -> "BB18\n42  PutOSSAInstruction:	O1_7< nextBranch > = O1_5<refO4_1>\l" 
+ "BB18\n42  PutOSSAInstruction:	O1_7< nextBranch > = O1_5<refO4_1>\l" -> "BB19\n           O1_8 = Object-Phi(O1_6, O1_7 )\l45  Create O5_1                              \l" 
+ "BB19\n           O1_8 = Object-Phi(O1_6, O1_7 )\l45  Create O5_1                              \l" -> "BB20\n46  PutOSSAInstruction:	O1_9< leaves > = O1_8<refO5_1>\l" 
+ "BB20\n46  PutOSSAInstruction:	O1_9< leaves > = O1_8<refO5_1>\l" -> "BB21\n" 
+ "BB21\n" -> "BB22\n           v22 = phi  v21,v15:#0\l51   conditional branch(ge) v22,v3           \l" 
+ "BB22\n           v22 = phi  v21,v15:#0\l51   conditional branch(ge) v22,v3           \l" -> "BB23\n53  GetOSSAInstruction:	O5_1= O1_9< leaves>  \l" 
+ "BB22\n           v22 = phi  v21,v15:#0\l51   conditional branch(ge) v22,v3           \l" -> "BB28\n64  return                                   \l" 
+ "BB23\n53  GetOSSAInstruction:	O5_1= O1_9< leaves>  \l" -> "BB24\n55  Create O6_1                              \l" 
+ "BB24\n55  Create O6_1                              \l" -> "BB25\n57   invokespecial < Application, LLeaf, <init>()V > v19 @105 exception:v20\l" 
+ "BB25\n57   invokespecial < Application, LLeaf, <init>()V > v19 @105 exception:v20\l" -> "BB26\n58   arraystore v18[v22] = v19               \l" 
+ "BB26\n58   arraystore v18[v22] = v19               \l" -> "BB27\n61   v21 = binaryop(add) v22 , v11:#1        \l63   goto                                    \l" 
+ "BB27\n61   v21 = binaryop(add) v22 , v11:#1        \l63   goto                                    \l" -> "BB22\n           v22 = phi  v21,v15:#0\l51   conditional branch(ge) v22,v3           \l" 
+ "BB28\n64  return                                   \l" -> "BB29 (ex)\n\n" 
+
+}

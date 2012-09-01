@@ -1,0 +1,45 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v4 = getfield < Application, LHospital, inside, <Application,LList> > v1\l" [ ]
+   "BB2\n2   v6 = invokevirtual < Application, LList, elements()Ljava/util/Enumeration; > v4 @4 exception:v5\l" [ ]
+   "BB3\n" [ ]
+   "BB4\n5   v8 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v6 @9 exception:v7\l" [ ]
+   "BB5\n7   conditional branch(eq) v8,v9:#0\l" [ ]
+   "BB6\n9   v11 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v6 @18 exception:v10\l" [ ]
+   "BB7\n10   v12 = checkcast <Application,LPatient>v11\l" [ ]
+   "BB8\n14   v13 = getfield < Application, LPatient, timeLeft, <Primordial,I> > v12\l" [ ]
+   "BB9\n16   v15 = binaryop(sub) v13 , v14:#1\l17   putfield v12 = v15 < Application, LPatient, timeLeft, <Primordial,I> >\l" [ ]
+   "BB10\n19   v16 = getfield < Application, LPatient, timeLeft, <Primordial,I> > v12\l" [ ]
+   "BB11\n21   conditional branch(ne) v16,v9:#0\l" [ ]
+   "BB12\n24   v17 = getfield < Application, LHospital, freePersonnel, <Primordial,I> > v1\l" [ ]
+   "BB13\n26   v18 = binaryop(add) v17 , v14:#1\l27   putfield v1 = v18 < Application, LHospital, freePersonnel, <Primordial,I> >\l" [ ]
+   "BB14\n29   v19 = getfield < Application, LHospital, inside, <Application,LList> > v1\l" [ ]
+   "BB15\n31   invokevirtual < Application, LList, delete(Ljava/lang/Object;)V > v19,v12 @59 exception:v20\l" [ ]
+   "BB16\n34   invokevirtual < Application, LList, add(LPatient;)V > v2,v12 @64 exception:v21\l" [ ]
+   "BB17\n35   goto                          \l" [ ]
+   "BB18\n36   return                        \l" [ ]
+   "BB19 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v4 = getfield < Application, LHospital, inside, <Application,LList> > v1\l" 
+ "BB1\n1   v4 = getfield < Application, LHospital, inside, <Application,LList> > v1\l" -> "BB2\n2   v6 = invokevirtual < Application, LList, elements()Ljava/util/Enumeration; > v4 @4 exception:v5\l" 
+ "BB2\n2   v6 = invokevirtual < Application, LList, elements()Ljava/util/Enumeration; > v4 @4 exception:v5\l" -> "BB3\n" 
+ "BB3\n" -> "BB4\n5   v8 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v6 @9 exception:v7\l" 
+ "BB4\n5   v8 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v6 @9 exception:v7\l" -> "BB5\n7   conditional branch(eq) v8,v9:#0\l" 
+ "BB5\n7   conditional branch(eq) v8,v9:#0\l" -> "BB6\n9   v11 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v6 @18 exception:v10\l" 
+ "BB5\n7   conditional branch(eq) v8,v9:#0\l" -> "BB18\n36   return                        \l" 
+ "BB6\n9   v11 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v6 @18 exception:v10\l" -> "BB7\n10   v12 = checkcast <Application,LPatient>v11\l" 
+ "BB7\n10   v12 = checkcast <Application,LPatient>v11\l" -> "BB8\n14   v13 = getfield < Application, LPatient, timeLeft, <Primordial,I> > v12\l" 
+ "BB8\n14   v13 = getfield < Application, LPatient, timeLeft, <Primordial,I> > v12\l" -> "BB9\n16   v15 = binaryop(sub) v13 , v14:#1\l17   putfield v12 = v15 < Application, LPatient, timeLeft, <Primordial,I> >\l" 
+ "BB9\n16   v15 = binaryop(sub) v13 , v14:#1\l17   putfield v12 = v15 < Application, LPatient, timeLeft, <Primordial,I> >\l" -> "BB10\n19   v16 = getfield < Application, LPatient, timeLeft, <Primordial,I> > v12\l" 
+ "BB10\n19   v16 = getfield < Application, LPatient, timeLeft, <Primordial,I> > v12\l" -> "BB11\n21   conditional branch(ne) v16,v9:#0\l" 
+ "BB11\n21   conditional branch(ne) v16,v9:#0\l" -> "BB12\n24   v17 = getfield < Application, LHospital, freePersonnel, <Primordial,I> > v1\l" 
+ "BB11\n21   conditional branch(ne) v16,v9:#0\l" -> "BB17\n35   goto                          \l" 
+ "BB12\n24   v17 = getfield < Application, LHospital, freePersonnel, <Primordial,I> > v1\l" -> "BB13\n26   v18 = binaryop(add) v17 , v14:#1\l27   putfield v1 = v18 < Application, LHospital, freePersonnel, <Primordial,I> >\l" 
+ "BB13\n26   v18 = binaryop(add) v17 , v14:#1\l27   putfield v1 = v18 < Application, LHospital, freePersonnel, <Primordial,I> >\l" -> "BB14\n29   v19 = getfield < Application, LHospital, inside, <Application,LList> > v1\l" 
+ "BB14\n29   v19 = getfield < Application, LHospital, inside, <Application,LList> > v1\l" -> "BB15\n31   invokevirtual < Application, LList, delete(Ljava/lang/Object;)V > v19,v12 @59 exception:v20\l" 
+ "BB15\n31   invokevirtual < Application, LList, delete(Ljava/lang/Object;)V > v19,v12 @59 exception:v20\l" -> "BB16\n34   invokevirtual < Application, LList, add(LPatient;)V > v2,v12 @64 exception:v21\l" 
+ "BB16\n34   invokevirtual < Application, LList, add(LPatient;)V > v2,v12 @64 exception:v21\l" -> "BB17\n35   goto                          \l" 
+ "BB17\n35   goto                          \l" -> "BB4\n5   v8 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v6 @9 exception:v7\l" 
+ "BB18\n36   return                        \l" -> "BB19 (ex)\n\n" 
+
+}

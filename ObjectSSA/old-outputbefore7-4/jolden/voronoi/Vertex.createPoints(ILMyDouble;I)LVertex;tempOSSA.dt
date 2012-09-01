@@ -1,0 +1,60 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Vertex.createPoints(ILMyDouble;I)LVertex;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2   conditional branch(ge) v1,v5:#1          \l" [ ]
+   "BB2\n4   return v39:#null                         \l" [ ]
+   "BB3\n5  Create O2_1                               \l" [ ]
+   "BB4\n7   invokespecial < Application, LVertex, <init>()V > v6 @11 exception:v7\l" [ ]
+   "BB5\n11   v9 = binaryop(div) v1 , v8:#2           \l" [ ]
+   "BB6\n14   v11 = invokestatic < Application, LVertex, createPoints(ILMyDouble;I)LVertex; > v9,v2,v3 @20 exception:v10\l" [ ]
+   "BB7\n19   v12 = binaryop(div) v1 , v8:#2          \l" [ ]
+   "BB8\n20   v13 = binaryop(sub) v3 , v12            \l24  GetOSSAInstruction:	14= O1_1< value>     \l" [ ]
+   "BB9\n25   v16 = invokestatic < Application, LVertex, drand()D > @36 exception:v15\l" [ ]
+   "BB10\n26   v18 = invokestatic < Application, Ljava/lang/Math, log(D)D > v16 @39 exception:v17\l" [ ]
+   "BB11\n28   v19 = conversion(D) v13                 \l29   v20 = binaryop(div) v18 , v19           \l30   v22 = invokestatic < Application, Ljava/lang/Math, exp(D)D > v20 @45 exception:v21\l" [ ]
+   "BB12\n31   v23 = binaryop(mul) v14 , v22           \l32  PutOSSAInstruction:	O2_2< x > = O2_1<V23>\l" [ ]
+   "BB13\n34   v25 = invokestatic < Application, LVertex, drand()D > @53 exception:v24\l" [ ]
+   "BB14\n35  PutOSSAInstruction:	O2_3< y > = O2_2<V25>\l" [ ]
+   "BB15\n38  GetOSSAInstruction:	26= O2_3< x>         \l" [ ]
+   "BB16\n40  GetOSSAInstruction:	27= O2_3< x>         \l" [ ]
+   "BB17\n41   v28 = binaryop(mul) v26 , v27           \l43  GetOSSAInstruction:	29= O2_3< y>         \l" [ ]
+   "BB18\n45  GetOSSAInstruction:	30= O2_3< y>         \l" [ ]
+   "BB19\n46   v31 = binaryop(mul) v29 , v30           \l47   v32 = binaryop(add) v28 , v31           \l48  PutOSSAInstruction:	O2_4< norm > = O2_3<V32>\l" [ ]
+   "BB20\n51  PutOSSAInstruction:	O2_5< right > = O2_4<V11>\l" [ ]
+   "BB21\n54   v34 = invokevirtual < Application, LVertex, X()D > v6 @90 exception:v33\l" [ ]
+   "BB22\n55  PutOSSAInstruction:	O1_1< value > = O1_1<V34>\l" [ ]
+   "BB23\n58   v35 = binaryop(div) v1 , v8:#2          \l" [ ]
+   "BB24\n62   v36 = binaryop(sub) v13 , v5:#1         \l63   v38 = invokestatic < Application, LVertex, createPoints(ILMyDouble;I)LVertex; > v35,v2,v36 @103 exception:v37\l" [ ]
+   "BB25\n67  PutOSSAInstruction:	O2_6< left > = O2_5<V38>\l" [ ]
+   "BB26\n69   return v6                               \l" [ ]
+   "BB27 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2   conditional branch(ge) v1,v5:#1          \l" 
+ "BB1\n2   conditional branch(ge) v1,v5:#1          \l" -> "BB2\n4   return v39:#null                         \l" 
+ "BB1\n2   conditional branch(ge) v1,v5:#1          \l" -> "BB3\n5  Create O2_1                               \l" 
+ "BB2\n4   return v39:#null                         \l" -> "BB27 (ex)\n\n" 
+ "BB3\n5  Create O2_1                               \l" -> "BB4\n7   invokespecial < Application, LVertex, <init>()V > v6 @11 exception:v7\l" 
+ "BB4\n7   invokespecial < Application, LVertex, <init>()V > v6 @11 exception:v7\l" -> "BB5\n11   v9 = binaryop(div) v1 , v8:#2           \l" 
+ "BB5\n11   v9 = binaryop(div) v1 , v8:#2           \l" -> "BB6\n14   v11 = invokestatic < Application, LVertex, createPoints(ILMyDouble;I)LVertex; > v9,v2,v3 @20 exception:v10\l" 
+ "BB6\n14   v11 = invokestatic < Application, LVertex, createPoints(ILMyDouble;I)LVertex; > v9,v2,v3 @20 exception:v10\l" -> "BB7\n19   v12 = binaryop(div) v1 , v8:#2          \l" 
+ "BB7\n19   v12 = binaryop(div) v1 , v8:#2          \l" -> "BB8\n20   v13 = binaryop(sub) v3 , v12            \l24  GetOSSAInstruction:	14= O1_1< value>     \l" 
+ "BB8\n20   v13 = binaryop(sub) v3 , v12            \l24  GetOSSAInstruction:	14= O1_1< value>     \l" -> "BB9\n25   v16 = invokestatic < Application, LVertex, drand()D > @36 exception:v15\l" 
+ "BB9\n25   v16 = invokestatic < Application, LVertex, drand()D > @36 exception:v15\l" -> "BB10\n26   v18 = invokestatic < Application, Ljava/lang/Math, log(D)D > v16 @39 exception:v17\l" 
+ "BB10\n26   v18 = invokestatic < Application, Ljava/lang/Math, log(D)D > v16 @39 exception:v17\l" -> "BB11\n28   v19 = conversion(D) v13                 \l29   v20 = binaryop(div) v18 , v19           \l30   v22 = invokestatic < Application, Ljava/lang/Math, exp(D)D > v20 @45 exception:v21\l" 
+ "BB11\n28   v19 = conversion(D) v13                 \l29   v20 = binaryop(div) v18 , v19           \l30   v22 = invokestatic < Application, Ljava/lang/Math, exp(D)D > v20 @45 exception:v21\l" -> "BB12\n31   v23 = binaryop(mul) v14 , v22           \l32  PutOSSAInstruction:	O2_2< x > = O2_1<V23>\l" 
+ "BB12\n31   v23 = binaryop(mul) v14 , v22           \l32  PutOSSAInstruction:	O2_2< x > = O2_1<V23>\l" -> "BB13\n34   v25 = invokestatic < Application, LVertex, drand()D > @53 exception:v24\l" 
+ "BB13\n34   v25 = invokestatic < Application, LVertex, drand()D > @53 exception:v24\l" -> "BB14\n35  PutOSSAInstruction:	O2_3< y > = O2_2<V25>\l" 
+ "BB14\n35  PutOSSAInstruction:	O2_3< y > = O2_2<V25>\l" -> "BB15\n38  GetOSSAInstruction:	26= O2_3< x>         \l" 
+ "BB15\n38  GetOSSAInstruction:	26= O2_3< x>         \l" -> "BB16\n40  GetOSSAInstruction:	27= O2_3< x>         \l" 
+ "BB16\n40  GetOSSAInstruction:	27= O2_3< x>         \l" -> "BB17\n41   v28 = binaryop(mul) v26 , v27           \l43  GetOSSAInstruction:	29= O2_3< y>         \l" 
+ "BB17\n41   v28 = binaryop(mul) v26 , v27           \l43  GetOSSAInstruction:	29= O2_3< y>         \l" -> "BB18\n45  GetOSSAInstruction:	30= O2_3< y>         \l" 
+ "BB18\n45  GetOSSAInstruction:	30= O2_3< y>         \l" -> "BB19\n46   v31 = binaryop(mul) v29 , v30           \l47   v32 = binaryop(add) v28 , v31           \l48  PutOSSAInstruction:	O2_4< norm > = O2_3<V32>\l" 
+ "BB19\n46   v31 = binaryop(mul) v29 , v30           \l47   v32 = binaryop(add) v28 , v31           \l48  PutOSSAInstruction:	O2_4< norm > = O2_3<V32>\l" -> "BB20\n51  PutOSSAInstruction:	O2_5< right > = O2_4<V11>\l" 
+ "BB20\n51  PutOSSAInstruction:	O2_5< right > = O2_4<V11>\l" -> "BB21\n54   v34 = invokevirtual < Application, LVertex, X()D > v6 @90 exception:v33\l" 
+ "BB21\n54   v34 = invokevirtual < Application, LVertex, X()D > v6 @90 exception:v33\l" -> "BB22\n55  PutOSSAInstruction:	O1_1< value > = O1_1<V34>\l" 
+ "BB22\n55  PutOSSAInstruction:	O1_1< value > = O1_1<V34>\l" -> "BB23\n58   v35 = binaryop(div) v1 , v8:#2          \l" 
+ "BB23\n58   v35 = binaryop(div) v1 , v8:#2          \l" -> "BB24\n62   v36 = binaryop(sub) v13 , v5:#1         \l63   v38 = invokestatic < Application, LVertex, createPoints(ILMyDouble;I)LVertex; > v35,v2,v36 @103 exception:v37\l" 
+ "BB24\n62   v36 = binaryop(sub) v13 , v5:#1         \l63   v38 = invokestatic < Application, LVertex, createPoints(ILMyDouble;I)LVertex; > v35,v2,v36 @103 exception:v37\l" -> "BB25\n67  PutOSSAInstruction:	O2_6< left > = O2_5<V38>\l" 
+ "BB25\n67  PutOSSAInstruction:	O2_6< left > = O2_5<V38>\l" -> "BB26\n69   return v6                               \l" 
+ "BB26\n69   return v6                               \l" -> "BB27 (ex)\n\n" 
+
+}

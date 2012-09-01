@@ -1,0 +1,152 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for BiGraph.create(IIZ)LBiGraph;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  < Application, LNode, initSeed(J)V >( V5 )\l" [ ]
+   "BB2\n4   conditional branch(eq) v3,v7:#0          \l" [ ]
+   "BB3\n5  nonreference field get instrctn: 8 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l7  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O1_1, V9 )\l" [ ]
+   "BB4\n10  O2_1 = < Application, LNode, fillTable(II)[LNode; >( V1, V2 )\l" [ ]
+   "BB5\n14  O2_2 = < Application, LNode, fillTable(II)[LNode; >( V1, V2 )\l" [ ]
+   "BB6\n18   conditional branch(eq) v3,v7:#0         \l" [ ]
+   "BB7\n19  nonreference field get instrctn: 15 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l21  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O1_1, V16 )\l" [ ]
+   "BB8\n24   v18 = arrayload v12[v7:#0]              \l" [ ]
+   "BB9\n25  O3_1 = < Application, LNode, elements()Ljava/util/Enumeration; >( V18 )\l" [ ]
+   "BB10\n" [ ]
+   "BB11\n28  O4_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_1 )\l" [ ]
+   "BB12\n30   conditional branch(eq) v22,v7:#0        \l" [ ]
+   "BB13\n32  O5_1 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O3_1 )\l" [ ]
+   "BB14\n33   v25 = checkcast <Application,LNode>v24  \l" [ ]
+   "BB15\n37  < Application, LNode, makeUniqueNeighbors([LNode;)V >( O5_1, O2_2 )\l" [ ]
+   "BB16\n38   goto                                    \l" [ ]
+   "BB17\n41   v27 = arrayload v14[v7:#0]              \l" [ ]
+   "BB18\n42  O3_2 = < Application, LNode, elements()Ljava/util/Enumeration; >( O5_1 )\l" [ ]
+   "BB19\n" [ ]
+   "BB20\n45  O4_2 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_2 )\l" [ ]
+   "BB21\n47   conditional branch(eq) v31,v7:#0        \l" [ ]
+   "BB22\n49  O5_2 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O3_2 )\l" [ ]
+   "BB23\n50   v34 = checkcast <Application,LNode>v33  \l" [ ]
+   "BB24\n54  < Application, LNode, makeUniqueNeighbors([LNode;)V >( O5_2, O2_2 )\l" [ ]
+   "BB25\n55   goto                                    \l" [ ]
+   "BB26\n58   conditional branch(eq) v3,v7:#0         \l" [ ]
+   "BB27\n59  nonreference field get instrctn: 37 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l61  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O1_1, V38 )\l" [ ]
+   "BB28\n64   v40 = arrayload v12[v7:#0]              \l" [ ]
+   "BB29\n65  O3_3 = < Application, LNode, elements()Ljava/util/Enumeration; >( O5_1 )\l" [ ]
+   "BB30\n" [ ]
+   "BB31\n68  O4_3 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_3 )\l" [ ]
+   "BB32\n70   conditional branch(eq) v44,v7:#0        \l" [ ]
+   "BB33\n72  O5_3 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O3_3 )\l" [ ]
+   "BB34\n73   v47 = checkcast <Application,LNode>v46  \l" [ ]
+   "BB35\n76  < Application, LNode, makeFromNodes()V >( O5_3 )\l" [ ]
+   "BB36\n77   goto                                    \l" [ ]
+   "BB37\n80   v50 = arrayload v14[v7:#0]              \l" [ ]
+   "BB38\n81  O3_4 = < Application, LNode, elements()Ljava/util/Enumeration; >( O5_1 )\l" [ ]
+   "BB39\n" [ ]
+   "BB40\n84  O4_4 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_4 )\l" [ ]
+   "BB41\n86   conditional branch(eq) v54,v7:#0        \l" [ ]
+   "BB42\n88  O5_4 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O3_4 )\l" [ ]
+   "BB43\n89   v57 = checkcast <Application,LNode>v56  \l" [ ]
+   "BB44\n92  < Application, LNode, makeFromNodes()V >( O5_4 )\l" [ ]
+   "BB45\n93   goto                                    \l" [ ]
+   "BB46\n96   v60 = arrayload v12[v7:#0]              \l" [ ]
+   "BB47\n97  O3_5 = < Application, LNode, elements()Ljava/util/Enumeration; >( O5_1 )\l" [ ]
+   "BB48\n" [ ]
+   "BB49\n100  O4_5 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_5 )\l" [ ]
+   "BB50\n102   conditional branch(eq) v64,v7:#0       \l" [ ]
+   "BB51\n104  O5_5 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O3_5 )\l" [ ]
+   "BB52\n105   v67 = checkcast <Application,LNode>v66 \l" [ ]
+   "BB53\n108  < Application, LNode, updateFromNodes()V >( O5_5 )\l" [ ]
+   "BB54\n109   goto                                   \l" [ ]
+   "BB55\n112   v70 = arrayload v14[v7:#0]             \l" [ ]
+   "BB56\n113  O3_6 = < Application, LNode, elements()Ljava/util/Enumeration; >( O5_1 )\l" [ ]
+   "BB57\n" [ ]
+   "BB58\n116  O4_6 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_6 )\l" [ ]
+   "BB59\n118   conditional branch(eq) v74,v7:#0       \l" [ ]
+   "BB60\n120  O5_6 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O3_6 )\l" [ ]
+   "BB61\n121   v77 = checkcast <Application,LNode>v76 \l" [ ]
+   "BB62\n124  < Application, LNode, updateFromNodes()V >( O5_6 )\l" [ ]
+   "BB63\n125   goto                                   \l" [ ]
+   "BB64\n126  Create O6_1                             \l" [ ]
+   "BB65\n130   v81 = arrayload v14[v7:#0]             \l" [ ]
+   "BB66\n133   v82 = arrayload v12[v7:#0]             \l" [ ]
+   "BB67\n134  < Application, LBiGraph, <init>(LNode;LNode;)V >( O6_1, O5_1, O5_1 )\l" [ ]
+   "BB68\n137  Return O6_1                             \l" [ ]
+   "BB69 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  < Application, LNode, initSeed(J)V >( V5 )\l" 
+ "BB1\n1  < Application, LNode, initSeed(J)V >( V5 )\l" -> "BB2\n4   conditional branch(eq) v3,v7:#0          \l" 
+ "BB2\n4   conditional branch(eq) v3,v7:#0          \l" -> "BB3\n5  nonreference field get instrctn: 8 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l7  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O1_1, V9 )\l" 
+ "BB2\n4   conditional branch(eq) v3,v7:#0          \l" -> "BB4\n10  O2_1 = < Application, LNode, fillTable(II)[LNode; >( V1, V2 )\l" 
+ "BB3\n5  nonreference field get instrctn: 8 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l7  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O1_1, V9 )\l" -> "BB4\n10  O2_1 = < Application, LNode, fillTable(II)[LNode; >( V1, V2 )\l" 
+ "BB4\n10  O2_1 = < Application, LNode, fillTable(II)[LNode; >( V1, V2 )\l" -> "BB5\n14  O2_2 = < Application, LNode, fillTable(II)[LNode; >( V1, V2 )\l" 
+ "BB5\n14  O2_2 = < Application, LNode, fillTable(II)[LNode; >( V1, V2 )\l" -> "BB6\n18   conditional branch(eq) v3,v7:#0         \l" 
+ "BB6\n18   conditional branch(eq) v3,v7:#0         \l" -> "BB7\n19  nonreference field get instrctn: 15 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l21  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O1_1, V16 )\l" 
+ "BB6\n18   conditional branch(eq) v3,v7:#0         \l" -> "BB8\n24   v18 = arrayload v12[v7:#0]              \l" 
+ "BB7\n19  nonreference field get instrctn: 15 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l21  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O1_1, V16 )\l" -> "BB8\n24   v18 = arrayload v12[v7:#0]              \l" 
+ "BB8\n24   v18 = arrayload v12[v7:#0]              \l" -> "BB9\n25  O3_1 = < Application, LNode, elements()Ljava/util/Enumeration; >( V18 )\l" 
+ "BB9\n25  O3_1 = < Application, LNode, elements()Ljava/util/Enumeration; >( V18 )\l" -> "BB10\n" 
+ "BB10\n" -> "BB11\n28  O4_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_1 )\l" 
+ "BB11\n28  O4_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_1 )\l" -> "BB12\n30   conditional branch(eq) v22,v7:#0        \l" 
+ "BB12\n30   conditional branch(eq) v22,v7:#0        \l" -> "BB13\n32  O5_1 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O3_1 )\l" 
+ "BB12\n30   conditional branch(eq) v22,v7:#0        \l" -> "BB17\n41   v27 = arrayload v14[v7:#0]              \l" 
+ "BB13\n32  O5_1 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O3_1 )\l" -> "BB14\n33   v25 = checkcast <Application,LNode>v24  \l" 
+ "BB14\n33   v25 = checkcast <Application,LNode>v24  \l" -> "BB15\n37  < Application, LNode, makeUniqueNeighbors([LNode;)V >( O5_1, O2_2 )\l" 
+ "BB15\n37  < Application, LNode, makeUniqueNeighbors([LNode;)V >( O5_1, O2_2 )\l" -> "BB16\n38   goto                                    \l" 
+ "BB16\n38   goto                                    \l" -> "BB11\n28  O4_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_1 )\l" 
+ "BB17\n41   v27 = arrayload v14[v7:#0]              \l" -> "BB18\n42  O3_2 = < Application, LNode, elements()Ljava/util/Enumeration; >( O5_1 )\l" 
+ "BB18\n42  O3_2 = < Application, LNode, elements()Ljava/util/Enumeration; >( O5_1 )\l" -> "BB19\n" 
+ "BB19\n" -> "BB20\n45  O4_2 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_2 )\l" 
+ "BB20\n45  O4_2 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_2 )\l" -> "BB21\n47   conditional branch(eq) v31,v7:#0        \l" 
+ "BB21\n47   conditional branch(eq) v31,v7:#0        \l" -> "BB22\n49  O5_2 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O3_2 )\l" 
+ "BB21\n47   conditional branch(eq) v31,v7:#0        \l" -> "BB26\n58   conditional branch(eq) v3,v7:#0         \l" 
+ "BB22\n49  O5_2 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O3_2 )\l" -> "BB23\n50   v34 = checkcast <Application,LNode>v33  \l" 
+ "BB23\n50   v34 = checkcast <Application,LNode>v33  \l" -> "BB24\n54  < Application, LNode, makeUniqueNeighbors([LNode;)V >( O5_2, O2_2 )\l" 
+ "BB24\n54  < Application, LNode, makeUniqueNeighbors([LNode;)V >( O5_2, O2_2 )\l" -> "BB25\n55   goto                                    \l" 
+ "BB25\n55   goto                                    \l" -> "BB20\n45  O4_2 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_2 )\l" 
+ "BB26\n58   conditional branch(eq) v3,v7:#0         \l" -> "BB27\n59  nonreference field get instrctn: 37 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l61  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O1_1, V38 )\l" 
+ "BB26\n58   conditional branch(eq) v3,v7:#0         \l" -> "BB28\n64   v40 = arrayload v12[v7:#0]              \l" 
+ "BB27\n59  nonreference field get instrctn: 37 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l61  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O1_1, V38 )\l" -> "BB28\n64   v40 = arrayload v12[v7:#0]              \l" 
+ "BB28\n64   v40 = arrayload v12[v7:#0]              \l" -> "BB29\n65  O3_3 = < Application, LNode, elements()Ljava/util/Enumeration; >( O5_1 )\l" 
+ "BB29\n65  O3_3 = < Application, LNode, elements()Ljava/util/Enumeration; >( O5_1 )\l" -> "BB30\n" 
+ "BB30\n" -> "BB31\n68  O4_3 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_3 )\l" 
+ "BB31\n68  O4_3 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_3 )\l" -> "BB32\n70   conditional branch(eq) v44,v7:#0        \l" 
+ "BB32\n70   conditional branch(eq) v44,v7:#0        \l" -> "BB33\n72  O5_3 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O3_3 )\l" 
+ "BB32\n70   conditional branch(eq) v44,v7:#0        \l" -> "BB37\n80   v50 = arrayload v14[v7:#0]              \l" 
+ "BB33\n72  O5_3 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O3_3 )\l" -> "BB34\n73   v47 = checkcast <Application,LNode>v46  \l" 
+ "BB34\n73   v47 = checkcast <Application,LNode>v46  \l" -> "BB35\n76  < Application, LNode, makeFromNodes()V >( O5_3 )\l" 
+ "BB35\n76  < Application, LNode, makeFromNodes()V >( O5_3 )\l" -> "BB36\n77   goto                                    \l" 
+ "BB36\n77   goto                                    \l" -> "BB31\n68  O4_3 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_3 )\l" 
+ "BB37\n80   v50 = arrayload v14[v7:#0]              \l" -> "BB38\n81  O3_4 = < Application, LNode, elements()Ljava/util/Enumeration; >( O5_1 )\l" 
+ "BB38\n81  O3_4 = < Application, LNode, elements()Ljava/util/Enumeration; >( O5_1 )\l" -> "BB39\n" 
+ "BB39\n" -> "BB40\n84  O4_4 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_4 )\l" 
+ "BB40\n84  O4_4 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_4 )\l" -> "BB41\n86   conditional branch(eq) v54,v7:#0        \l" 
+ "BB41\n86   conditional branch(eq) v54,v7:#0        \l" -> "BB42\n88  O5_4 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O3_4 )\l" 
+ "BB41\n86   conditional branch(eq) v54,v7:#0        \l" -> "BB46\n96   v60 = arrayload v12[v7:#0]              \l" 
+ "BB42\n88  O5_4 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O3_4 )\l" -> "BB43\n89   v57 = checkcast <Application,LNode>v56  \l" 
+ "BB43\n89   v57 = checkcast <Application,LNode>v56  \l" -> "BB44\n92  < Application, LNode, makeFromNodes()V >( O5_4 )\l" 
+ "BB44\n92  < Application, LNode, makeFromNodes()V >( O5_4 )\l" -> "BB45\n93   goto                                    \l" 
+ "BB45\n93   goto                                    \l" -> "BB40\n84  O4_4 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_4 )\l" 
+ "BB46\n96   v60 = arrayload v12[v7:#0]              \l" -> "BB47\n97  O3_5 = < Application, LNode, elements()Ljava/util/Enumeration; >( O5_1 )\l" 
+ "BB47\n97  O3_5 = < Application, LNode, elements()Ljava/util/Enumeration; >( O5_1 )\l" -> "BB48\n" 
+ "BB48\n" -> "BB49\n100  O4_5 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_5 )\l" 
+ "BB49\n100  O4_5 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_5 )\l" -> "BB50\n102   conditional branch(eq) v64,v7:#0       \l" 
+ "BB50\n102   conditional branch(eq) v64,v7:#0       \l" -> "BB51\n104  O5_5 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O3_5 )\l" 
+ "BB50\n102   conditional branch(eq) v64,v7:#0       \l" -> "BB55\n112   v70 = arrayload v14[v7:#0]             \l" 
+ "BB51\n104  O5_5 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O3_5 )\l" -> "BB52\n105   v67 = checkcast <Application,LNode>v66 \l" 
+ "BB52\n105   v67 = checkcast <Application,LNode>v66 \l" -> "BB53\n108  < Application, LNode, updateFromNodes()V >( O5_5 )\l" 
+ "BB53\n108  < Application, LNode, updateFromNodes()V >( O5_5 )\l" -> "BB54\n109   goto                                   \l" 
+ "BB54\n109   goto                                   \l" -> "BB49\n100  O4_5 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_5 )\l" 
+ "BB55\n112   v70 = arrayload v14[v7:#0]             \l" -> "BB56\n113  O3_6 = < Application, LNode, elements()Ljava/util/Enumeration; >( O5_1 )\l" 
+ "BB56\n113  O3_6 = < Application, LNode, elements()Ljava/util/Enumeration; >( O5_1 )\l" -> "BB57\n" 
+ "BB57\n" -> "BB58\n116  O4_6 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_6 )\l" 
+ "BB58\n116  O4_6 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_6 )\l" -> "BB59\n118   conditional branch(eq) v74,v7:#0       \l" 
+ "BB59\n118   conditional branch(eq) v74,v7:#0       \l" -> "BB60\n120  O5_6 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O3_6 )\l" 
+ "BB59\n118   conditional branch(eq) v74,v7:#0       \l" -> "BB64\n126  Create O6_1                             \l" 
+ "BB60\n120  O5_6 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O3_6 )\l" -> "BB61\n121   v77 = checkcast <Application,LNode>v76 \l" 
+ "BB61\n121   v77 = checkcast <Application,LNode>v76 \l" -> "BB62\n124  < Application, LNode, updateFromNodes()V >( O5_6 )\l" 
+ "BB62\n124  < Application, LNode, updateFromNodes()V >( O5_6 )\l" -> "BB63\n125   goto                                   \l" 
+ "BB63\n125   goto                                   \l" -> "BB58\n116  O4_6 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_6 )\l" 
+ "BB64\n126  Create O6_1                             \l" -> "BB65\n130   v81 = arrayload v14[v7:#0]             \l" 
+ "BB65\n130   v81 = arrayload v14[v7:#0]             \l" -> "BB66\n133   v82 = arrayload v12[v7:#0]             \l" 
+ "BB66\n133   v82 = arrayload v12[v7:#0]             \l" -> "BB67\n134  < Application, LBiGraph, <init>(LNode;LNode;)V >( O6_1, O5_1, O5_1 )\l" 
+ "BB67\n134  < Application, LBiGraph, <init>(LNode;LNode;)V >( O6_1, O5_1, O5_1 )\l" -> "BB68\n137  Return O6_1                             \l" 
+ "BB68\n137  Return O6_1                             \l" -> "BB69 (ex)\n\n" 
+
+}

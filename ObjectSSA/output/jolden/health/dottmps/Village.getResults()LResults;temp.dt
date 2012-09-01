@@ -1,0 +1,102 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v4 = new <Application,[LResults>@1v3:#4 \l" [ ]
+   "BB2\n" [ ]
+   "BB3\n           v14 = phi  v13,v5:#3\l7   conditional branch(lt) v14,v6:#0\l" [ ]
+   "BB4\n9   v7 = getfield < Application, LVillage, forward, <Application,[LVillage> > v1\l" [ ]
+   "BB5\n11   v8 = arrayload v7[v14]        \l" [ ]
+   "BB6\n15   conditional branch(eq) v8,v9:#null\l" [ ]
+   "BB7\n19   v11 = invokevirtual < Application, LVillage, getResults()LResults; > v8 @25 exception:v10\l" [ ]
+   "BB8\n20   arraystore v4[v14] = v11      \l" [ ]
+   "BB9\n23   v13 = binaryop(add) v14 , v12:#-1\l25   goto                          \l" [ ]
+   "BB10\n26   v15 = new <Application,LResults>@35\l" [ ]
+   "BB11\n28   invokespecial < Application, LResults, <init>()V > v15 @39 exception:v16\l" [ ]
+   "BB12\n" [ ]
+   "BB13\n           v31 = phi  v30,v5:#3\l34   conditional branch(lt) v31,v6:#0\l" [ ]
+   "BB14\n37   v17 = arrayload v4[v31]       \l" [ ]
+   "BB15\n39   conditional branch(eq) v17,v9:#null\l" [ ]
+   "BB16\n42   v18 = getfield < Application, LResults, totalHospitals, <Primordial,F> > v15\l" [ ]
+   "BB17\n45   v19 = arrayload v4[v31]       \l" [ ]
+   "BB18\n46   v20 = getfield < Application, LResults, totalHospitals, <Primordial,F> > v19\l" [ ]
+   "BB19\n47   v21 = binaryop(add) v18 , v20 \l48   putfield v15 = v21 < Application, LResults, totalHospitals, <Primordial,F> >\l" [ ]
+   "BB20\n51   v22 = getfield < Application, LResults, totalPatients, <Primordial,F> > v15\l" [ ]
+   "BB21\n54   v23 = arrayload v4[v31]       \l" [ ]
+   "BB22\n55   v24 = getfield < Application, LResults, totalPatients, <Primordial,F> > v23\l" [ ]
+   "BB23\n56   v25 = binaryop(add) v22 , v24 \l57   putfield v15 = v25 < Application, LResults, totalPatients, <Primordial,F> >\l" [ ]
+   "BB24\n60   v26 = getfield < Application, LResults, totalTime, <Primordial,F> > v15\l" [ ]
+   "BB25\n63   v27 = arrayload v4[v31]       \l" [ ]
+   "BB26\n64   v28 = getfield < Application, LResults, totalTime, <Primordial,F> > v27\l" [ ]
+   "BB27\n65   v29 = binaryop(add) v26 , v28 \l66   putfield v15 = v29 < Application, LResults, totalTime, <Primordial,F> >\l" [ ]
+   "BB28\n69   v30 = binaryop(add) v31 , v12:#-1\l71   goto                          \l" [ ]
+   "BB29\n73   v32 = getfield < Application, LVillage, returned, <Application,LList> > v1\l" [ ]
+   "BB30\n74   v34 = invokevirtual < Application, LList, elements()Ljava/util/Enumeration; > v32 @110 exception:v33\l" [ ]
+   "BB31\n" [ ]
+   "BB32\n77   v36 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v34 @115 exception:v35\l" [ ]
+   "BB33\n79   conditional branch(eq) v36,v6:#0\l" [ ]
+   "BB34\n81   v38 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v34 @124 exception:v37\l" [ ]
+   "BB35\n82   v39 = checkcast <Application,LPatient>v38\l" [ ]
+   "BB36\n86   v40 = getfield < Application, LResults, totalHospitals, <Primordial,F> > v15\l" [ ]
+   "BB37\n88   v41 = getfield < Application, LPatient, hospitalsVisited, <Primordial,I> > v39\l" [ ]
+   "BB38\n89   v42 = conversion(F) v41       \l90   v43 = binaryop(add) v40 , v42 \l91   putfield v15 = v43 < Application, LResults, totalHospitals, <Primordial,F> >\l" [ ]
+   "BB39\n94   v44 = getfield < Application, LResults, totalTime, <Primordial,F> > v15\l" [ ]
+   "BB40\n96   v45 = getfield < Application, LPatient, time, <Primordial,I> > v39\l" [ ]
+   "BB41\n97   v46 = conversion(F) v45       \l98   v47 = binaryop(add) v44 , v46 \l99   putfield v15 = v47 < Application, LResults, totalTime, <Primordial,F> >\l" [ ]
+   "BB42\n102   v48 = getfield < Application, LResults, totalPatients, <Primordial,F> > v15\l" [ ]
+   "BB43\n103   v49 = conversion(D) v48      \l105   v51 = binaryop(add) v49 , v50:#1.0\l106   v52 = conversion(F) v51      \l107   putfield v15 = v52 < Application, LResults, totalPatients, <Primordial,F> >\l" [ ]
+   "BB44\n108   goto                         \l" [ ]
+   "BB45\n110   return v15                   \l" [ ]
+   "BB46 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v4 = new <Application,[LResults>@1v3:#4 \l" 
+ "BB1\n1   v4 = new <Application,[LResults>@1v3:#4 \l" -> "BB2\n" 
+ "BB2\n" -> "BB3\n           v14 = phi  v13,v5:#3\l7   conditional branch(lt) v14,v6:#0\l" 
+ "BB3\n           v14 = phi  v13,v5:#3\l7   conditional branch(lt) v14,v6:#0\l" -> "BB4\n9   v7 = getfield < Application, LVillage, forward, <Application,[LVillage> > v1\l" 
+ "BB3\n           v14 = phi  v13,v5:#3\l7   conditional branch(lt) v14,v6:#0\l" -> "BB10\n26   v15 = new <Application,LResults>@35\l" 
+ "BB4\n9   v7 = getfield < Application, LVillage, forward, <Application,[LVillage> > v1\l" -> "BB5\n11   v8 = arrayload v7[v14]        \l" 
+ "BB5\n11   v8 = arrayload v7[v14]        \l" -> "BB6\n15   conditional branch(eq) v8,v9:#null\l" 
+ "BB6\n15   conditional branch(eq) v8,v9:#null\l" -> "BB7\n19   v11 = invokevirtual < Application, LVillage, getResults()LResults; > v8 @25 exception:v10\l" 
+ "BB6\n15   conditional branch(eq) v8,v9:#null\l" -> "BB9\n23   v13 = binaryop(add) v14 , v12:#-1\l25   goto                          \l" 
+ "BB7\n19   v11 = invokevirtual < Application, LVillage, getResults()LResults; > v8 @25 exception:v10\l" -> "BB8\n20   arraystore v4[v14] = v11      \l" 
+ "BB8\n20   arraystore v4[v14] = v11      \l" -> "BB9\n23   v13 = binaryop(add) v14 , v12:#-1\l25   goto                          \l" 
+ "BB9\n23   v13 = binaryop(add) v14 , v12:#-1\l25   goto                          \l" -> "BB3\n           v14 = phi  v13,v5:#3\l7   conditional branch(lt) v14,v6:#0\l" 
+ "BB10\n26   v15 = new <Application,LResults>@35\l" -> "BB11\n28   invokespecial < Application, LResults, <init>()V > v15 @39 exception:v16\l" 
+ "BB11\n28   invokespecial < Application, LResults, <init>()V > v15 @39 exception:v16\l" -> "BB12\n" 
+ "BB12\n" -> "BB13\n           v31 = phi  v30,v5:#3\l34   conditional branch(lt) v31,v6:#0\l" 
+ "BB13\n           v31 = phi  v30,v5:#3\l34   conditional branch(lt) v31,v6:#0\l" -> "BB14\n37   v17 = arrayload v4[v31]       \l" 
+ "BB13\n           v31 = phi  v30,v5:#3\l34   conditional branch(lt) v31,v6:#0\l" -> "BB29\n73   v32 = getfield < Application, LVillage, returned, <Application,LList> > v1\l" 
+ "BB14\n37   v17 = arrayload v4[v31]       \l" -> "BB15\n39   conditional branch(eq) v17,v9:#null\l" 
+ "BB15\n39   conditional branch(eq) v17,v9:#null\l" -> "BB16\n42   v18 = getfield < Application, LResults, totalHospitals, <Primordial,F> > v15\l" 
+ "BB15\n39   conditional branch(eq) v17,v9:#null\l" -> "BB28\n69   v30 = binaryop(add) v31 , v12:#-1\l71   goto                          \l" 
+ "BB16\n42   v18 = getfield < Application, LResults, totalHospitals, <Primordial,F> > v15\l" -> "BB17\n45   v19 = arrayload v4[v31]       \l" 
+ "BB17\n45   v19 = arrayload v4[v31]       \l" -> "BB18\n46   v20 = getfield < Application, LResults, totalHospitals, <Primordial,F> > v19\l" 
+ "BB18\n46   v20 = getfield < Application, LResults, totalHospitals, <Primordial,F> > v19\l" -> "BB19\n47   v21 = binaryop(add) v18 , v20 \l48   putfield v15 = v21 < Application, LResults, totalHospitals, <Primordial,F> >\l" 
+ "BB19\n47   v21 = binaryop(add) v18 , v20 \l48   putfield v15 = v21 < Application, LResults, totalHospitals, <Primordial,F> >\l" -> "BB20\n51   v22 = getfield < Application, LResults, totalPatients, <Primordial,F> > v15\l" 
+ "BB20\n51   v22 = getfield < Application, LResults, totalPatients, <Primordial,F> > v15\l" -> "BB21\n54   v23 = arrayload v4[v31]       \l" 
+ "BB21\n54   v23 = arrayload v4[v31]       \l" -> "BB22\n55   v24 = getfield < Application, LResults, totalPatients, <Primordial,F> > v23\l" 
+ "BB22\n55   v24 = getfield < Application, LResults, totalPatients, <Primordial,F> > v23\l" -> "BB23\n56   v25 = binaryop(add) v22 , v24 \l57   putfield v15 = v25 < Application, LResults, totalPatients, <Primordial,F> >\l" 
+ "BB23\n56   v25 = binaryop(add) v22 , v24 \l57   putfield v15 = v25 < Application, LResults, totalPatients, <Primordial,F> >\l" -> "BB24\n60   v26 = getfield < Application, LResults, totalTime, <Primordial,F> > v15\l" 
+ "BB24\n60   v26 = getfield < Application, LResults, totalTime, <Primordial,F> > v15\l" -> "BB25\n63   v27 = arrayload v4[v31]       \l" 
+ "BB25\n63   v27 = arrayload v4[v31]       \l" -> "BB26\n64   v28 = getfield < Application, LResults, totalTime, <Primordial,F> > v27\l" 
+ "BB26\n64   v28 = getfield < Application, LResults, totalTime, <Primordial,F> > v27\l" -> "BB27\n65   v29 = binaryop(add) v26 , v28 \l66   putfield v15 = v29 < Application, LResults, totalTime, <Primordial,F> >\l" 
+ "BB27\n65   v29 = binaryop(add) v26 , v28 \l66   putfield v15 = v29 < Application, LResults, totalTime, <Primordial,F> >\l" -> "BB28\n69   v30 = binaryop(add) v31 , v12:#-1\l71   goto                          \l" 
+ "BB28\n69   v30 = binaryop(add) v31 , v12:#-1\l71   goto                          \l" -> "BB13\n           v31 = phi  v30,v5:#3\l34   conditional branch(lt) v31,v6:#0\l" 
+ "BB29\n73   v32 = getfield < Application, LVillage, returned, <Application,LList> > v1\l" -> "BB30\n74   v34 = invokevirtual < Application, LList, elements()Ljava/util/Enumeration; > v32 @110 exception:v33\l" 
+ "BB30\n74   v34 = invokevirtual < Application, LList, elements()Ljava/util/Enumeration; > v32 @110 exception:v33\l" -> "BB31\n" 
+ "BB31\n" -> "BB32\n77   v36 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v34 @115 exception:v35\l" 
+ "BB32\n77   v36 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v34 @115 exception:v35\l" -> "BB33\n79   conditional branch(eq) v36,v6:#0\l" 
+ "BB33\n79   conditional branch(eq) v36,v6:#0\l" -> "BB34\n81   v38 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v34 @124 exception:v37\l" 
+ "BB33\n79   conditional branch(eq) v36,v6:#0\l" -> "BB45\n110   return v15                   \l" 
+ "BB34\n81   v38 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v34 @124 exception:v37\l" -> "BB35\n82   v39 = checkcast <Application,LPatient>v38\l" 
+ "BB35\n82   v39 = checkcast <Application,LPatient>v38\l" -> "BB36\n86   v40 = getfield < Application, LResults, totalHospitals, <Primordial,F> > v15\l" 
+ "BB36\n86   v40 = getfield < Application, LResults, totalHospitals, <Primordial,F> > v15\l" -> "BB37\n88   v41 = getfield < Application, LPatient, hospitalsVisited, <Primordial,I> > v39\l" 
+ "BB37\n88   v41 = getfield < Application, LPatient, hospitalsVisited, <Primordial,I> > v39\l" -> "BB38\n89   v42 = conversion(F) v41       \l90   v43 = binaryop(add) v40 , v42 \l91   putfield v15 = v43 < Application, LResults, totalHospitals, <Primordial,F> >\l" 
+ "BB38\n89   v42 = conversion(F) v41       \l90   v43 = binaryop(add) v40 , v42 \l91   putfield v15 = v43 < Application, LResults, totalHospitals, <Primordial,F> >\l" -> "BB39\n94   v44 = getfield < Application, LResults, totalTime, <Primordial,F> > v15\l" 
+ "BB39\n94   v44 = getfield < Application, LResults, totalTime, <Primordial,F> > v15\l" -> "BB40\n96   v45 = getfield < Application, LPatient, time, <Primordial,I> > v39\l" 
+ "BB40\n96   v45 = getfield < Application, LPatient, time, <Primordial,I> > v39\l" -> "BB41\n97   v46 = conversion(F) v45       \l98   v47 = binaryop(add) v44 , v46 \l99   putfield v15 = v47 < Application, LResults, totalTime, <Primordial,F> >\l" 
+ "BB41\n97   v46 = conversion(F) v45       \l98   v47 = binaryop(add) v44 , v46 \l99   putfield v15 = v47 < Application, LResults, totalTime, <Primordial,F> >\l" -> "BB42\n102   v48 = getfield < Application, LResults, totalPatients, <Primordial,F> > v15\l" 
+ "BB42\n102   v48 = getfield < Application, LResults, totalPatients, <Primordial,F> > v15\l" -> "BB43\n103   v49 = conversion(D) v48      \l105   v51 = binaryop(add) v49 , v50:#1.0\l106   v52 = conversion(F) v51      \l107   putfield v15 = v52 < Application, LResults, totalPatients, <Primordial,F> >\l" 
+ "BB43\n103   v49 = conversion(D) v48      \l105   v51 = binaryop(add) v49 , v50:#1.0\l106   v52 = conversion(F) v51      \l107   putfield v15 = v52 < Application, LResults, totalPatients, <Primordial,F> >\l" -> "BB44\n108   goto                         \l" 
+ "BB44\n108   goto                         \l" -> "BB32\n77   v36 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v34 @115 exception:v35\l" 
+ "BB45\n110   return v15                   \l" -> "BB46 (ex)\n\n" 
+
+}

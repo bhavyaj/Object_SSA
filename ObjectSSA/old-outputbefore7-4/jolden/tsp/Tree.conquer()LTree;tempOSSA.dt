@@ -1,0 +1,77 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Tree.conquer()LTree;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v4 = invokevirtual < Application, LTree, makeList()LTree; > v1 @1 exception:v3\l" [ ]
+   "BB2\n6  nonreference field get instrctn: 5 = getfield < Application, LTree, next, <Application,LTree> > 4\l" [ ]
+   "BB3\n10   putfield v4 = v4 < Application, LTree, next, <Application,LTree> >\l" [ ]
+   "BB4\n13   putfield v4 = v4 < Application, LTree, prev, <Application,LTree> >\l" [ ]
+   "BB5\n           O2_1 = diff-Object-Phi(nullobject_7, O1_1 )\l           v34 = phi  v7,v5\l16   conditional branch(eq) v34,v6:#null     \l" [ ]
+   "BB6\n18  GetOSSAInstruction:	O2_1= O2_1< next>    \l" [ ]
+   "BB7\n24   v9 = invokevirtual < Application, LTree, distance(LTree;)D > v34,v4 @36 exception:v8\l" [ ]
+   "BB8\n27  nonreference field get instrctn: 10 = getfield < Application, LTree, next, <Application,LTree> > 4\l" [ ]
+   "BB9\n" [ ]
+   "BB10\n           O3_1 = diff-Object-Phi(O3_1, O2_1 )\l           O5_1 = diff-Object-Phi(nullobject_17, O2_1 )\l           O4_1 = diff-Object-Phi(nullobject_15, nullobject_4 )\l           v35 = phi  v35,v34\l           v18 = phi  v15,v4\l           v19 = phi  v16,v9\l           v20 = phi  v17,v10\l31   conditional branch(eq) v20,v4           \l" [ ]
+   "BB11\n34   v12 = invokevirtual < Application, LTree, distance(LTree;)D > v20,v35 @56 exception:v11\l" [ ]
+   "BB12\n38   v13 = compare v12,v19 opcode=cmpg       \l40   conditional branch(ge) v13,v14:#0       \l" [ ]
+   "BB13\n" [ ]
+   "BB14\n           O6_1 = diff-Object-Phi(O4_1, O5_1 )\l           v15 = phi  v18,v20\l           v16 = phi  v19,v12\l46  GetOSSAInstruction:	O6_1= O5_1< next>    \l" [ ]
+   "BB15\n48   goto                                    \l" [ ]
+   "BB16\n50  GetOSSAInstruction:	O6_1= O4_1< next>    \l" [ ]
+   "BB17\n53  GetOSSAInstruction:	O6_1= O4_1< prev>    \l" [ ]
+   "BB18\n57   v24 = invokevirtual < Application, LTree, distance(LTree;)D > v18,v21 @105 exception:v23\l" [ ]
+   "BB19\n61   v26 = invokevirtual < Application, LTree, distance(LTree;)D > v18,v22 @114 exception:v25\l" [ ]
+   "BB20\n65   v28 = invokevirtual < Application, LTree, distance(LTree;)D > v35,v21 @122 exception:v27\l" [ ]
+   "BB21\n69   v30 = invokevirtual < Application, LTree, distance(LTree;)D > v35,v22 @130 exception:v29\l" [ ]
+   "BB22\n73   v31 = binaryop(sub) v30 , v26           \l76   v32 = binaryop(sub) v28 , v24           \l77   v33 = compare v31,v32 opcode=cmpg       \l79   conditional branch(ge) v33,v14:#0       \l" [ ]
+   "BB23\n82  PutOSSAInstruction:	O6_2< next > = O6_1<refO3_1>\l" [ ]
+   "BB24\n85  PutOSSAInstruction:	O3_2< next > = O3_1<refO4_1>\l" [ ]
+   "BB25\n88  PutOSSAInstruction:	O3_3< prev > = O3_2<refO6_2>\l" [ ]
+   "BB26\n91  PutOSSAInstruction:	O4_2< prev > = O4_1<refO3_3>\l" [ ]
+   "BB27\n92   goto                                    \l" [ ]
+   "BB28\n95  PutOSSAInstruction:	O6_3< prev > = O6_1<refO3_1>\l" [ ]
+   "BB29\n98  PutOSSAInstruction:	O3_4< next > = O3_1<refO6_3>\l" [ ]
+   "BB30\n101  PutOSSAInstruction:	O4_3< next > = O4_1<refO3_4>\l" [ ]
+   "BB31\n104  PutOSSAInstruction:	O3_5< prev > = O3_4<refO4_3>\l" [ ]
+   "BB32\n           O3_6 = Object-Phi(O3_3, O3_5 )\l           O4_4 = Object-Phi(O4_2, O4_3 )\l           O6_4 = Object-Phi(O6_2, O6_3 )\l107   goto                                   \l" [ ]
+   "BB33\n109   return v4                              \l" [ ]
+   "BB34 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v4 = invokevirtual < Application, LTree, makeList()LTree; > v1 @1 exception:v3\l" 
+ "BB1\n1   v4 = invokevirtual < Application, LTree, makeList()LTree; > v1 @1 exception:v3\l" -> "BB2\n6  nonreference field get instrctn: 5 = getfield < Application, LTree, next, <Application,LTree> > 4\l" 
+ "BB2\n6  nonreference field get instrctn: 5 = getfield < Application, LTree, next, <Application,LTree> > 4\l" -> "BB3\n10   putfield v4 = v4 < Application, LTree, next, <Application,LTree> >\l" 
+ "BB3\n10   putfield v4 = v4 < Application, LTree, next, <Application,LTree> >\l" -> "BB4\n13   putfield v4 = v4 < Application, LTree, prev, <Application,LTree> >\l" 
+ "BB4\n13   putfield v4 = v4 < Application, LTree, prev, <Application,LTree> >\l" -> "BB5\n           O2_1 = diff-Object-Phi(nullobject_7, O1_1 )\l           v34 = phi  v7,v5\l16   conditional branch(eq) v34,v6:#null     \l" 
+ "BB5\n           O2_1 = diff-Object-Phi(nullobject_7, O1_1 )\l           v34 = phi  v7,v5\l16   conditional branch(eq) v34,v6:#null     \l" -> "BB6\n18  GetOSSAInstruction:	O2_1= O2_1< next>    \l" 
+ "BB5\n           O2_1 = diff-Object-Phi(nullobject_7, O1_1 )\l           v34 = phi  v7,v5\l16   conditional branch(eq) v34,v6:#null     \l" -> "BB33\n109   return v4                              \l" 
+ "BB6\n18  GetOSSAInstruction:	O2_1= O2_1< next>    \l" -> "BB7\n24   v9 = invokevirtual < Application, LTree, distance(LTree;)D > v34,v4 @36 exception:v8\l" 
+ "BB7\n24   v9 = invokevirtual < Application, LTree, distance(LTree;)D > v34,v4 @36 exception:v8\l" -> "BB8\n27  nonreference field get instrctn: 10 = getfield < Application, LTree, next, <Application,LTree> > 4\l" 
+ "BB8\n27  nonreference field get instrctn: 10 = getfield < Application, LTree, next, <Application,LTree> > 4\l" -> "BB9\n" 
+ "BB9\n" -> "BB10\n           O3_1 = diff-Object-Phi(O3_1, O2_1 )\l           O5_1 = diff-Object-Phi(nullobject_17, O2_1 )\l           O4_1 = diff-Object-Phi(nullobject_15, nullobject_4 )\l           v35 = phi  v35,v34\l           v18 = phi  v15,v4\l           v19 = phi  v16,v9\l           v20 = phi  v17,v10\l31   conditional branch(eq) v20,v4           \l" 
+ "BB10\n           O3_1 = diff-Object-Phi(O3_1, O2_1 )\l           O5_1 = diff-Object-Phi(nullobject_17, O2_1 )\l           O4_1 = diff-Object-Phi(nullobject_15, nullobject_4 )\l           v35 = phi  v35,v34\l           v18 = phi  v15,v4\l           v19 = phi  v16,v9\l           v20 = phi  v17,v10\l31   conditional branch(eq) v20,v4           \l" -> "BB11\n34   v12 = invokevirtual < Application, LTree, distance(LTree;)D > v20,v35 @56 exception:v11\l" 
+ "BB10\n           O3_1 = diff-Object-Phi(O3_1, O2_1 )\l           O5_1 = diff-Object-Phi(nullobject_17, O2_1 )\l           O4_1 = diff-Object-Phi(nullobject_15, nullobject_4 )\l           v35 = phi  v35,v34\l           v18 = phi  v15,v4\l           v19 = phi  v16,v9\l           v20 = phi  v17,v10\l31   conditional branch(eq) v20,v4           \l" -> "BB16\n50  GetOSSAInstruction:	O6_1= O4_1< next>    \l" 
+ "BB11\n34   v12 = invokevirtual < Application, LTree, distance(LTree;)D > v20,v35 @56 exception:v11\l" -> "BB12\n38   v13 = compare v12,v19 opcode=cmpg       \l40   conditional branch(ge) v13,v14:#0       \l" 
+ "BB12\n38   v13 = compare v12,v19 opcode=cmpg       \l40   conditional branch(ge) v13,v14:#0       \l" -> "BB13\n" 
+ "BB12\n38   v13 = compare v12,v19 opcode=cmpg       \l40   conditional branch(ge) v13,v14:#0       \l" -> "BB14\n           O6_1 = diff-Object-Phi(O4_1, O5_1 )\l           v15 = phi  v18,v20\l           v16 = phi  v19,v12\l46  GetOSSAInstruction:	O6_1= O5_1< next>    \l" 
+ "BB13\n" -> "BB14\n           O6_1 = diff-Object-Phi(O4_1, O5_1 )\l           v15 = phi  v18,v20\l           v16 = phi  v19,v12\l46  GetOSSAInstruction:	O6_1= O5_1< next>    \l" 
+ "BB14\n           O6_1 = diff-Object-Phi(O4_1, O5_1 )\l           v15 = phi  v18,v20\l           v16 = phi  v19,v12\l46  GetOSSAInstruction:	O6_1= O5_1< next>    \l" -> "BB15\n48   goto                                    \l" 
+ "BB15\n48   goto                                    \l" -> "BB10\n           O3_1 = diff-Object-Phi(O3_1, O2_1 )\l           O5_1 = diff-Object-Phi(nullobject_17, O2_1 )\l           O4_1 = diff-Object-Phi(nullobject_15, nullobject_4 )\l           v35 = phi  v35,v34\l           v18 = phi  v15,v4\l           v19 = phi  v16,v9\l           v20 = phi  v17,v10\l31   conditional branch(eq) v20,v4           \l" 
+ "BB16\n50  GetOSSAInstruction:	O6_1= O4_1< next>    \l" -> "BB17\n53  GetOSSAInstruction:	O6_1= O4_1< prev>    \l" 
+ "BB17\n53  GetOSSAInstruction:	O6_1= O4_1< prev>    \l" -> "BB18\n57   v24 = invokevirtual < Application, LTree, distance(LTree;)D > v18,v21 @105 exception:v23\l" 
+ "BB18\n57   v24 = invokevirtual < Application, LTree, distance(LTree;)D > v18,v21 @105 exception:v23\l" -> "BB19\n61   v26 = invokevirtual < Application, LTree, distance(LTree;)D > v18,v22 @114 exception:v25\l" 
+ "BB19\n61   v26 = invokevirtual < Application, LTree, distance(LTree;)D > v18,v22 @114 exception:v25\l" -> "BB20\n65   v28 = invokevirtual < Application, LTree, distance(LTree;)D > v35,v21 @122 exception:v27\l" 
+ "BB20\n65   v28 = invokevirtual < Application, LTree, distance(LTree;)D > v35,v21 @122 exception:v27\l" -> "BB21\n69   v30 = invokevirtual < Application, LTree, distance(LTree;)D > v35,v22 @130 exception:v29\l" 
+ "BB21\n69   v30 = invokevirtual < Application, LTree, distance(LTree;)D > v35,v22 @130 exception:v29\l" -> "BB22\n73   v31 = binaryop(sub) v30 , v26           \l76   v32 = binaryop(sub) v28 , v24           \l77   v33 = compare v31,v32 opcode=cmpg       \l79   conditional branch(ge) v33,v14:#0       \l" 
+ "BB22\n73   v31 = binaryop(sub) v30 , v26           \l76   v32 = binaryop(sub) v28 , v24           \l77   v33 = compare v31,v32 opcode=cmpg       \l79   conditional branch(ge) v33,v14:#0       \l" -> "BB23\n82  PutOSSAInstruction:	O6_2< next > = O6_1<refO3_1>\l" 
+ "BB22\n73   v31 = binaryop(sub) v30 , v26           \l76   v32 = binaryop(sub) v28 , v24           \l77   v33 = compare v31,v32 opcode=cmpg       \l79   conditional branch(ge) v33,v14:#0       \l" -> "BB28\n95  PutOSSAInstruction:	O6_3< prev > = O6_1<refO3_1>\l" 
+ "BB23\n82  PutOSSAInstruction:	O6_2< next > = O6_1<refO3_1>\l" -> "BB24\n85  PutOSSAInstruction:	O3_2< next > = O3_1<refO4_1>\l" 
+ "BB24\n85  PutOSSAInstruction:	O3_2< next > = O3_1<refO4_1>\l" -> "BB25\n88  PutOSSAInstruction:	O3_3< prev > = O3_2<refO6_2>\l" 
+ "BB25\n88  PutOSSAInstruction:	O3_3< prev > = O3_2<refO6_2>\l" -> "BB26\n91  PutOSSAInstruction:	O4_2< prev > = O4_1<refO3_3>\l" 
+ "BB26\n91  PutOSSAInstruction:	O4_2< prev > = O4_1<refO3_3>\l" -> "BB27\n92   goto                                    \l" 
+ "BB27\n92   goto                                    \l" -> "BB32\n           O3_6 = Object-Phi(O3_3, O3_5 )\l           O4_4 = Object-Phi(O4_2, O4_3 )\l           O6_4 = Object-Phi(O6_2, O6_3 )\l107   goto                                   \l" 
+ "BB28\n95  PutOSSAInstruction:	O6_3< prev > = O6_1<refO3_1>\l" -> "BB29\n98  PutOSSAInstruction:	O3_4< next > = O3_1<refO6_3>\l" 
+ "BB29\n98  PutOSSAInstruction:	O3_4< next > = O3_1<refO6_3>\l" -> "BB30\n101  PutOSSAInstruction:	O4_3< next > = O4_1<refO3_4>\l" 
+ "BB30\n101  PutOSSAInstruction:	O4_3< next > = O4_1<refO3_4>\l" -> "BB31\n104  PutOSSAInstruction:	O3_5< prev > = O3_4<refO4_3>\l" 
+ "BB31\n104  PutOSSAInstruction:	O3_5< prev > = O3_4<refO4_3>\l" -> "BB32\n           O3_6 = Object-Phi(O3_3, O3_5 )\l           O4_4 = Object-Phi(O4_2, O4_3 )\l           O6_4 = Object-Phi(O6_2, O6_3 )\l107   goto                                   \l" 
+ "BB32\n           O3_6 = Object-Phi(O3_3, O3_5 )\l           O4_4 = Object-Phi(O4_2, O4_3 )\l           O6_4 = Object-Phi(O6_2, O6_3 )\l107   goto                                   \l" -> "BB5\n           O2_1 = diff-Object-Phi(nullobject_7, O1_1 )\l           v34 = phi  v7,v5\l16   conditional branch(eq) v34,v6:#null     \l" 
+ "BB33\n109   return v4                              \l" -> "BB34 (ex)\n\n" 
+
+}

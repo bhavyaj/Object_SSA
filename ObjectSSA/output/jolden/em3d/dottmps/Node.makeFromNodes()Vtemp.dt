@@ -1,0 +1,21 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2   v3 = getfield < Application, LNode, fromCount, <Primordial,I> > v1\l" [ ]
+   "BB2\n3   v4 = new <Application,[LNode>@5v3 \l" [ ]
+   "BB3\n4   putfield v1 = v4 < Application, LNode, fromNodes, <Application,[LNode> >\l" [ ]
+   "BB4\n7   v5 = getfield < Application, LNode, fromCount, <Primordial,I> > v1\l" [ ]
+   "BB5\n8   v6 = new <Primordial,[D>@16v5  \l" [ ]
+   "BB6\n9   putfield v1 = v6 < Application, LNode, coeffs, <Primordial,[D> >\l" [ ]
+   "BB7\n10   return                        \l" [ ]
+   "BB8 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2   v3 = getfield < Application, LNode, fromCount, <Primordial,I> > v1\l" 
+ "BB1\n2   v3 = getfield < Application, LNode, fromCount, <Primordial,I> > v1\l" -> "BB2\n3   v4 = new <Application,[LNode>@5v3 \l" 
+ "BB2\n3   v4 = new <Application,[LNode>@5v3 \l" -> "BB3\n4   putfield v1 = v4 < Application, LNode, fromNodes, <Application,[LNode> >\l" 
+ "BB3\n4   putfield v1 = v4 < Application, LNode, fromNodes, <Application,[LNode> >\l" -> "BB4\n7   v5 = getfield < Application, LNode, fromCount, <Primordial,I> > v1\l" 
+ "BB4\n7   v5 = getfield < Application, LNode, fromCount, <Primordial,I> > v1\l" -> "BB5\n8   v6 = new <Primordial,[D>@16v5  \l" 
+ "BB5\n8   v6 = new <Primordial,[D>@16v5  \l" -> "BB6\n9   putfield v1 = v6 < Application, LNode, coeffs, <Primordial,[D> >\l" 
+ "BB6\n9   putfield v1 = v6 < Application, LNode, coeffs, <Primordial,[D> >\l" -> "BB7\n10   return                        \l" 
+ "BB7\n10   return                        \l" -> "BB8 (ex)\n\n" 
+
+}

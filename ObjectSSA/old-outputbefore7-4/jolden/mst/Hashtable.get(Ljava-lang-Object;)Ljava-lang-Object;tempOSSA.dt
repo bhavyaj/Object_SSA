@@ -1,0 +1,36 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Hashtable.get(Ljava-lang-Object;)Ljava-lang-Object;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2   v5 = invokespecial < Application, LHashtable, hashMap(Ljava/lang/Object;)I > v1,v2 @2 exception:v4\l" [ ]
+   "BB2\n7  GetOSSAInstruction:	O3_1= O1_1< array>    \l" [ ]
+   "BB3\n9   v8 = arrayload v7[v5]                    \l" [ ]
+   "BB4\n" [ ]
+   "BB5\n           O4_1 = diff-Object-Phi(nullobject_12, nullobject_8 )\l           v13 = phi  v12,v8\l13   conditional branch(eq) v13,v6:#null     \l" [ ]
+   "BB6\n15   v10 = invokevirtual < Application, LHashEntry, key()Ljava/lang/Object; > v13 @20 exception:v9\l" [ ]
+   "BB7\n17   conditional branch(eq) v10,v2           \l" [ ]
+   "BB8\n19   v12 = invokevirtual < Application, LHashEntry, next()LHashEntry; > v13 @28 exception:v11\l" [ ]
+   "BB9\n21   goto                                    \l" [ ]
+   "BB10\n24   conditional branch(eq) v13,v6:#null     \l" [ ]
+   "BB11\n26   v15 = invokevirtual < Application, LHashEntry, entry()Ljava/lang/Object; > v13 @40 exception:v14\l" [ ]
+   "BB12\n27   return v15                              \l" [ ]
+   "BB13\n29   return v6:#null                         \l" [ ]
+   "BB14 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2   v5 = invokespecial < Application, LHashtable, hashMap(Ljava/lang/Object;)I > v1,v2 @2 exception:v4\l" 
+ "BB1\n2   v5 = invokespecial < Application, LHashtable, hashMap(Ljava/lang/Object;)I > v1,v2 @2 exception:v4\l" -> "BB2\n7  GetOSSAInstruction:	O3_1= O1_1< array>    \l" 
+ "BB2\n7  GetOSSAInstruction:	O3_1= O1_1< array>    \l" -> "BB3\n9   v8 = arrayload v7[v5]                    \l" 
+ "BB3\n9   v8 = arrayload v7[v5]                    \l" -> "BB4\n" 
+ "BB4\n" -> "BB5\n           O4_1 = diff-Object-Phi(nullobject_12, nullobject_8 )\l           v13 = phi  v12,v8\l13   conditional branch(eq) v13,v6:#null     \l" 
+ "BB5\n           O4_1 = diff-Object-Phi(nullobject_12, nullobject_8 )\l           v13 = phi  v12,v8\l13   conditional branch(eq) v13,v6:#null     \l" -> "BB6\n15   v10 = invokevirtual < Application, LHashEntry, key()Ljava/lang/Object; > v13 @20 exception:v9\l" 
+ "BB5\n           O4_1 = diff-Object-Phi(nullobject_12, nullobject_8 )\l           v13 = phi  v12,v8\l13   conditional branch(eq) v13,v6:#null     \l" -> "BB10\n24   conditional branch(eq) v13,v6:#null     \l" 
+ "BB6\n15   v10 = invokevirtual < Application, LHashEntry, key()Ljava/lang/Object; > v13 @20 exception:v9\l" -> "BB7\n17   conditional branch(eq) v10,v2           \l" 
+ "BB7\n17   conditional branch(eq) v10,v2           \l" -> "BB8\n19   v12 = invokevirtual < Application, LHashEntry, next()LHashEntry; > v13 @28 exception:v11\l" 
+ "BB7\n17   conditional branch(eq) v10,v2           \l" -> "BB10\n24   conditional branch(eq) v13,v6:#null     \l" 
+ "BB8\n19   v12 = invokevirtual < Application, LHashEntry, next()LHashEntry; > v13 @28 exception:v11\l" -> "BB9\n21   goto                                    \l" 
+ "BB9\n21   goto                                    \l" -> "BB5\n           O4_1 = diff-Object-Phi(nullobject_12, nullobject_8 )\l           v13 = phi  v12,v8\l13   conditional branch(eq) v13,v6:#null     \l" 
+ "BB10\n24   conditional branch(eq) v13,v6:#null     \l" -> "BB11\n26   v15 = invokevirtual < Application, LHashEntry, entry()Ljava/lang/Object; > v13 @40 exception:v14\l" 
+ "BB10\n24   conditional branch(eq) v13,v6:#null     \l" -> "BB13\n29   return v6:#null                         \l" 
+ "BB11\n26   v15 = invokevirtual < Application, LHashEntry, entry()Ljava/lang/Object; > v13 @40 exception:v14\l" -> "BB12\n27   return v15                              \l" 
+ "BB12\n27   return v15                              \l" -> "BB14 (ex)\n\n" 
+ "BB13\n29   return v6:#null                         \l" -> "BB14 (ex)\n\n" 
+
+}

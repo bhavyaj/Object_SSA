@@ -1,0 +1,13 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Graph.firstNode()LVertex;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  GetOSSAInstruction:	O2_1= O1_1< nodes>    \l" [ ]
+   "BB2\n3   v5 = arrayload v3[v4:#0]                 \l" [ ]
+   "BB3\n4  Return                                    \l" [ ]
+   "BB4 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  GetOSSAInstruction:	O2_1= O1_1< nodes>    \l" 
+ "BB1\n1  GetOSSAInstruction:	O2_1= O1_1< nodes>    \l" -> "BB2\n3   v5 = arrayload v3[v4:#0]                 \l" 
+ "BB2\n3   v5 = arrayload v3[v4:#0]                 \l" -> "BB3\n4  Return                                    \l" 
+ "BB3\n4  Return                                    \l" -> "BB4 (ex)\n\n" 
+
+}

@@ -1,0 +1,66 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v5\l" [ ]
+   "BB2\n4   putfield v1 = v6:#0.0 < Application, LBranch, alpha, <Primordial,D> >\l" [ ]
+   "BB3\n7   putfield v1 = v6:#0.0 < Application, LBranch, beta, <Primordial,D> >\l" [ ]
+   "BB4\n10   putfield v1 = v7:#1.0E-4 < Application, LBranch, R, <Primordial,D> >\l" [ ]
+   "BB5\n13   putfield v1 = v8:#2.0E-5 < Application, LBranch, X, <Primordial,D> >\l" [ ]
+   "BB6\n15   v9 = new <Application,LDemand>@29\l" [ ]
+   "BB7\n17   invokespecial < Application, LDemand, <init>()V > v9 @33 exception:v10\l" [ ]
+   "BB8\n18   putfield v1 = v9 < Application, LBranch, D, <Application,LDemand> >\l" [ ]
+   "BB9\n21   conditional branch(gt) v2,v11:#1\l" [ ]
+   "BB10\n24   conditional branch(gt) v2,v15:#0\l" [ ]
+   "BB11\n25   v23 = new <Application,Ljava/lang/RuntimeException>@48\l" [ ]
+   "BB12\n28   invokespecial < Application, Ljava/lang/RuntimeException, <init>(Ljava/lang/String;)V > v23,v24:#Branch constructor with zero num @54 exception:v25\l" [ ]
+   "BB13\n29   throw v23                     \l" [ ]
+   "BB14\n32   putfield v1 = v16:#null < Application, LBranch, nextBranch, <Application,LBranch> >\l" [ ]
+   "BB15\n33   goto                          \l" [ ]
+   "BB16\n35   v12 = new <Application,LBranch>@67\l" [ ]
+   "BB17\n39   v13 = binaryop(sub) v2 , v11:#1\l41   invokespecial < Application, LBranch, <init>(II)V > v12,v13,v3 @75 exception:v14\l" [ ]
+   "BB18\n42   putfield v1 = v12 < Application, LBranch, nextBranch, <Application,LBranch> >\l" [ ]
+   "BB19\n45   v17 = new <Application,[LLeaf>@83v3 \l" [ ]
+   "BB20\n46   putfield v1 = v17 < Application, LBranch, leaves, <Application,[LLeaf> >\l" [ ]
+   "BB21\n" [ ]
+   "BB22\n           v22 = phi  v21,v15:#0\l51   conditional branch(ge) v22,v3 \l" [ ]
+   "BB23\n53   v18 = getfield < Application, LBranch, leaves, <Application,[LLeaf> > v1\l" [ ]
+   "BB24\n55   v19 = new <Application,LLeaf>@101\l" [ ]
+   "BB25\n57   invokespecial < Application, LLeaf, <init>()V > v19 @105 exception:v20\l" [ ]
+   "BB26\n58   arraystore v18[v22] = v19     \l" [ ]
+   "BB27\n61   v21 = binaryop(add) v22 , v11:#1\l63   goto                          \l" [ ]
+   "BB28\n64   return                        \l" [ ]
+   "BB29 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v5\l" 
+ "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v5\l" -> "BB2\n4   putfield v1 = v6:#0.0 < Application, LBranch, alpha, <Primordial,D> >\l" 
+ "BB2\n4   putfield v1 = v6:#0.0 < Application, LBranch, alpha, <Primordial,D> >\l" -> "BB3\n7   putfield v1 = v6:#0.0 < Application, LBranch, beta, <Primordial,D> >\l" 
+ "BB3\n7   putfield v1 = v6:#0.0 < Application, LBranch, beta, <Primordial,D> >\l" -> "BB4\n10   putfield v1 = v7:#1.0E-4 < Application, LBranch, R, <Primordial,D> >\l" 
+ "BB4\n10   putfield v1 = v7:#1.0E-4 < Application, LBranch, R, <Primordial,D> >\l" -> "BB5\n13   putfield v1 = v8:#2.0E-5 < Application, LBranch, X, <Primordial,D> >\l" 
+ "BB5\n13   putfield v1 = v8:#2.0E-5 < Application, LBranch, X, <Primordial,D> >\l" -> "BB6\n15   v9 = new <Application,LDemand>@29\l" 
+ "BB6\n15   v9 = new <Application,LDemand>@29\l" -> "BB7\n17   invokespecial < Application, LDemand, <init>()V > v9 @33 exception:v10\l" 
+ "BB7\n17   invokespecial < Application, LDemand, <init>()V > v9 @33 exception:v10\l" -> "BB8\n18   putfield v1 = v9 < Application, LBranch, D, <Application,LDemand> >\l" 
+ "BB8\n18   putfield v1 = v9 < Application, LBranch, D, <Application,LDemand> >\l" -> "BB9\n21   conditional branch(gt) v2,v11:#1\l" 
+ "BB9\n21   conditional branch(gt) v2,v11:#1\l" -> "BB10\n24   conditional branch(gt) v2,v15:#0\l" 
+ "BB9\n21   conditional branch(gt) v2,v11:#1\l" -> "BB16\n35   v12 = new <Application,LBranch>@67\l" 
+ "BB10\n24   conditional branch(gt) v2,v15:#0\l" -> "BB11\n25   v23 = new <Application,Ljava/lang/RuntimeException>@48\l" 
+ "BB10\n24   conditional branch(gt) v2,v15:#0\l" -> "BB14\n32   putfield v1 = v16:#null < Application, LBranch, nextBranch, <Application,LBranch> >\l" 
+ "BB11\n25   v23 = new <Application,Ljava/lang/RuntimeException>@48\l" -> "BB12\n28   invokespecial < Application, Ljava/lang/RuntimeException, <init>(Ljava/lang/String;)V > v23,v24:#Branch constructor with zero num @54 exception:v25\l" 
+ "BB12\n28   invokespecial < Application, Ljava/lang/RuntimeException, <init>(Ljava/lang/String;)V > v23,v24:#Branch constructor with zero num @54 exception:v25\l" -> "BB13\n29   throw v23                     \l" 
+ "BB13\n29   throw v23                     \l" -> "BB29 (ex)\n\n" 
+ "BB14\n32   putfield v1 = v16:#null < Application, LBranch, nextBranch, <Application,LBranch> >\l" -> "BB15\n33   goto                          \l" 
+ "BB15\n33   goto                          \l" -> "BB19\n45   v17 = new <Application,[LLeaf>@83v3 \l" 
+ "BB16\n35   v12 = new <Application,LBranch>@67\l" -> "BB17\n39   v13 = binaryop(sub) v2 , v11:#1\l41   invokespecial < Application, LBranch, <init>(II)V > v12,v13,v3 @75 exception:v14\l" 
+ "BB17\n39   v13 = binaryop(sub) v2 , v11:#1\l41   invokespecial < Application, LBranch, <init>(II)V > v12,v13,v3 @75 exception:v14\l" -> "BB18\n42   putfield v1 = v12 < Application, LBranch, nextBranch, <Application,LBranch> >\l" 
+ "BB18\n42   putfield v1 = v12 < Application, LBranch, nextBranch, <Application,LBranch> >\l" -> "BB19\n45   v17 = new <Application,[LLeaf>@83v3 \l" 
+ "BB19\n45   v17 = new <Application,[LLeaf>@83v3 \l" -> "BB20\n46   putfield v1 = v17 < Application, LBranch, leaves, <Application,[LLeaf> >\l" 
+ "BB20\n46   putfield v1 = v17 < Application, LBranch, leaves, <Application,[LLeaf> >\l" -> "BB21\n" 
+ "BB21\n" -> "BB22\n           v22 = phi  v21,v15:#0\l51   conditional branch(ge) v22,v3 \l" 
+ "BB22\n           v22 = phi  v21,v15:#0\l51   conditional branch(ge) v22,v3 \l" -> "BB23\n53   v18 = getfield < Application, LBranch, leaves, <Application,[LLeaf> > v1\l" 
+ "BB22\n           v22 = phi  v21,v15:#0\l51   conditional branch(ge) v22,v3 \l" -> "BB28\n64   return                        \l" 
+ "BB23\n53   v18 = getfield < Application, LBranch, leaves, <Application,[LLeaf> > v1\l" -> "BB24\n55   v19 = new <Application,LLeaf>@101\l" 
+ "BB24\n55   v19 = new <Application,LLeaf>@101\l" -> "BB25\n57   invokespecial < Application, LLeaf, <init>()V > v19 @105 exception:v20\l" 
+ "BB25\n57   invokespecial < Application, LLeaf, <init>()V > v19 @105 exception:v20\l" -> "BB26\n58   arraystore v18[v22] = v19     \l" 
+ "BB26\n58   arraystore v18[v22] = v19     \l" -> "BB27\n61   v21 = binaryop(add) v22 , v11:#1\l63   goto                          \l" 
+ "BB27\n61   v21 = binaryop(add) v22 , v11:#1\l63   goto                          \l" -> "BB22\n           v22 = phi  v21,v15:#0\l51   conditional branch(ge) v22,v3 \l" 
+ "BB28\n64   return                        \l" -> "BB29 (ex)\n\n" 
+
+}

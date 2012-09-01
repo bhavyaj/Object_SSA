@@ -1,0 +1,27 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Village.staysHere()Z", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  GetOSSAInstruction:	3= O1_1< seed>        \l" [ ]
+   "BB2\n2  O2_1 = < Application, LVillage, myRand(I)F >( V3 )\l" [ ]
+   "BB3\n7   v7 = binaryop(mul) v5 , v6:#2.14748365E9 \l8   v8 = conversion(I) v7                    \l9  PutOSSAInstruction:	O1_2< seed > = O1_1<V8>\l" [ ]
+   "BB4\n11   v9 = conversion(D) v5                   \l13   v11 = compare v9,v10:#0.1 opcode=cmpl   \l15   conditional branch(gt) v11,v12:#0       \l" [ ]
+   "BB5\n17  GetOSSAInstruction:	O1_2= O1_2< back>    \l" [ ]
+   "BB6\n19   conditional branch(ne) v13,v14:#null    \l" [ ]
+   "BB7\n21   goto                                    \l" [ ]
+   "BB8\n" [ ]
+   "BB9\n           v16 = phi  v15:#1,v12:#0\l23  Return O2_1                              \l" [ ]
+   "BB10 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  GetOSSAInstruction:	3= O1_1< seed>        \l" 
+ "BB1\n1  GetOSSAInstruction:	3= O1_1< seed>        \l" -> "BB2\n2  O2_1 = < Application, LVillage, myRand(I)F >( V3 )\l" 
+ "BB2\n2  O2_1 = < Application, LVillage, myRand(I)F >( V3 )\l" -> "BB3\n7   v7 = binaryop(mul) v5 , v6:#2.14748365E9 \l8   v8 = conversion(I) v7                    \l9  PutOSSAInstruction:	O1_2< seed > = O1_1<V8>\l" 
+ "BB3\n7   v7 = binaryop(mul) v5 , v6:#2.14748365E9 \l8   v8 = conversion(I) v7                    \l9  PutOSSAInstruction:	O1_2< seed > = O1_1<V8>\l" -> "BB4\n11   v9 = conversion(D) v5                   \l13   v11 = compare v9,v10:#0.1 opcode=cmpl   \l15   conditional branch(gt) v11,v12:#0       \l" 
+ "BB4\n11   v9 = conversion(D) v5                   \l13   v11 = compare v9,v10:#0.1 opcode=cmpl   \l15   conditional branch(gt) v11,v12:#0       \l" -> "BB5\n17  GetOSSAInstruction:	O1_2= O1_2< back>    \l" 
+ "BB4\n11   v9 = conversion(D) v5                   \l13   v11 = compare v9,v10:#0.1 opcode=cmpl   \l15   conditional branch(gt) v11,v12:#0       \l" -> "BB7\n21   goto                                    \l" 
+ "BB5\n17  GetOSSAInstruction:	O1_2= O1_2< back>    \l" -> "BB6\n19   conditional branch(ne) v13,v14:#null    \l" 
+ "BB6\n19   conditional branch(ne) v13,v14:#null    \l" -> "BB7\n21   goto                                    \l" 
+ "BB6\n19   conditional branch(ne) v13,v14:#null    \l" -> "BB8\n" 
+ "BB7\n21   goto                                    \l" -> "BB9\n           v16 = phi  v15:#1,v12:#0\l23  Return O2_1                              \l" 
+ "BB8\n" -> "BB9\n           v16 = phi  v15:#1,v12:#0\l23  Return O2_1                              \l" 
+ "BB9\n           v16 = phi  v15:#1,v12:#0\l23  Return O2_1                              \l" -> "BB10 (ex)\n\n" 
+
+}

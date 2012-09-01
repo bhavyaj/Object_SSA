@@ -1,0 +1,27 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2   v5 = binaryop(div) v2 , v4:#2  \l" [ ]
+   "BB2\n5   v6 = getfield < Application, LGreyNode, sw, <Application,LQuadTreeNode> > v1\l" [ ]
+   "BB3\n7   v8 = invokevirtual < Application, LQuadTreeNode, perimeter(I)I > v6,v5 @9 exception:v7\l" [ ]
+   "BB4\n11   v9 = getfield < Application, LGreyNode, se, <Application,LQuadTreeNode> > v1\l" [ ]
+   "BB5\n13   v11 = invokevirtual < Application, LQuadTreeNode, perimeter(I)I > v9,v5 @19 exception:v10\l" [ ]
+   "BB6\n14   v12 = binaryop(add) v8 , v11  \l18   v13 = getfield < Application, LGreyNode, ne, <Application,LQuadTreeNode> > v1\l" [ ]
+   "BB7\n20   v15 = invokevirtual < Application, LQuadTreeNode, perimeter(I)I > v13,v5 @30 exception:v14\l" [ ]
+   "BB8\n21   v16 = binaryop(add) v12 , v15 \l25   v17 = getfield < Application, LGreyNode, nw, <Application,LQuadTreeNode> > v1\l" [ ]
+   "BB9\n27   v19 = invokevirtual < Application, LQuadTreeNode, perimeter(I)I > v17,v5 @41 exception:v18\l" [ ]
+   "BB10\n28   v20 = binaryop(add) v16 , v19 \l31   return v20                    \l" [ ]
+   "BB11 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2   v5 = binaryop(div) v2 , v4:#2  \l" 
+ "BB1\n2   v5 = binaryop(div) v2 , v4:#2  \l" -> "BB2\n5   v6 = getfield < Application, LGreyNode, sw, <Application,LQuadTreeNode> > v1\l" 
+ "BB2\n5   v6 = getfield < Application, LGreyNode, sw, <Application,LQuadTreeNode> > v1\l" -> "BB3\n7   v8 = invokevirtual < Application, LQuadTreeNode, perimeter(I)I > v6,v5 @9 exception:v7\l" 
+ "BB3\n7   v8 = invokevirtual < Application, LQuadTreeNode, perimeter(I)I > v6,v5 @9 exception:v7\l" -> "BB4\n11   v9 = getfield < Application, LGreyNode, se, <Application,LQuadTreeNode> > v1\l" 
+ "BB4\n11   v9 = getfield < Application, LGreyNode, se, <Application,LQuadTreeNode> > v1\l" -> "BB5\n13   v11 = invokevirtual < Application, LQuadTreeNode, perimeter(I)I > v9,v5 @19 exception:v10\l" 
+ "BB5\n13   v11 = invokevirtual < Application, LQuadTreeNode, perimeter(I)I > v9,v5 @19 exception:v10\l" -> "BB6\n14   v12 = binaryop(add) v8 , v11  \l18   v13 = getfield < Application, LGreyNode, ne, <Application,LQuadTreeNode> > v1\l" 
+ "BB6\n14   v12 = binaryop(add) v8 , v11  \l18   v13 = getfield < Application, LGreyNode, ne, <Application,LQuadTreeNode> > v1\l" -> "BB7\n20   v15 = invokevirtual < Application, LQuadTreeNode, perimeter(I)I > v13,v5 @30 exception:v14\l" 
+ "BB7\n20   v15 = invokevirtual < Application, LQuadTreeNode, perimeter(I)I > v13,v5 @30 exception:v14\l" -> "BB8\n21   v16 = binaryop(add) v12 , v15 \l25   v17 = getfield < Application, LGreyNode, nw, <Application,LQuadTreeNode> > v1\l" 
+ "BB8\n21   v16 = binaryop(add) v12 , v15 \l25   v17 = getfield < Application, LGreyNode, nw, <Application,LQuadTreeNode> > v1\l" -> "BB9\n27   v19 = invokevirtual < Application, LQuadTreeNode, perimeter(I)I > v17,v5 @41 exception:v18\l" 
+ "BB9\n27   v19 = invokevirtual < Application, LQuadTreeNode, perimeter(I)I > v17,v5 @41 exception:v18\l" -> "BB10\n28   v20 = binaryop(add) v16 , v19 \l31   return v20                    \l" 
+ "BB10\n28   v20 = binaryop(add) v16 , v19 \l31   return v20                    \l" -> "BB11 (ex)\n\n" 
+
+}

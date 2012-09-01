@@ -1,0 +1,212 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Edge.outputVoronoiDiagram()V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n" [ ]
+   "BB2\n           v57 = phi  v56,v1\l3  O2_1 = < Application, LEdge, dest()LVertex; >( O1_1 )\l" [ ]
+   "BB3\n6  O2_2 = < Application, LEdge, orig()LVertex; >( O1_1 )\l" [ ]
+   "BB4\n9  O1_2 = < Application, LEdge, oNext()LEdge; >( O1_1 )\l" [ ]
+   "BB5\n12  O2_3 = < Application, LEdge, dest()LVertex; >( O1_2 )\l" [ ]
+   "BB6\n16  O3_1 = < Application, LVec2, sub(LVec2;)LVec2; >( O2_3, O2_3 )\l" [ ]
+   "BB7\n21  O4_1 = < Application, LVec2, circle_center(LVec2;LVec2;)LVec2; >( O2_3, O2_3, O2_3 )\l" [ ]
+   "BB8\n25  O5_1 = < Application, LVec2, sum(LVec2;)LVec2; >( O2_3, O2_3 )\l" [ ]
+   "BB9\n29  O6_1 = < Application, LVec2, times(D)LVec2; >( O5_1, V17 )\l" [ ]
+   "BB10\n33  O3_2 = < Application, LVec2, sub(LVec2;)LVec2; >( O4_1, O6_1 )\l" [ ]
+   "BB11\n37  O7_1 = < Application, LVec2, magn()D >( O3_2 )\l" [ ]
+   "BB12\n38   v25 = binaryop(add) v22:#1.0 , v24      \l42  O7_2 = < Application, LVec2, magn()D >( O3_2 )\l" [ ]
+   "BB13\n43   v28 = binaryop(div) v25 , v27           \l46  O8_1 = < Application, LVec2, cross()LVec2; >( O3_2 )\l" [ ]
+   "BB14\n50  O6_2 = < Application, LVec2, times(D)LVec2; >( O8_1, V28 )\l" [ ]
+   "BB15\n54  O5_2 = < Application, LVec2, sum(LVec2;)LVec2; >( O4_1, O6_2 )\l" [ ]
+   "BB16\n56  nonreference field get instrctn: 35 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l57  Create O10_1                             \l" [ ]
+   "BB17\n59  < Application, Ljava/lang/StringBuilder, <init>()V >( O10_1 )\l" [ ]
+   "BB18\n61  O11_1 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O10_1, V38 )\l" [ ]
+   "BB19\n63  O12_1 = < Application, LVec2, toString()Ljava/lang/String; >( O4_1 )\l" [ ]
+   "BB20\n64  O11_2 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O11_1, O12_1 )\l" [ ]
+   "BB21\n66  O11_3 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O11_2, V45 )\l" [ ]
+   "BB22\n68  O12_2 = < Application, LVec2, toString()Ljava/lang/String; >( O5_2 )\l" [ ]
+   "BB23\n69  O11_4 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O11_3, O12_2 )\l" [ ]
+   "BB24\n70  O12_3 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O11_4 )\l" [ ]
+   "BB25\n71  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O9_1, O12_3 )\l" [ ]
+   "BB26\n73  O1_3 = < Application, LEdge, rNext()LEdge; >( O1_2 )\l" [ ]
+   "BB27\n77   conditional branch(ne) v56,v1           \l" [ ]
+   "BB28\n78  Create O13_1                             \l" [ ]
+   "BB29\n80  < Application, Ljava/util/Stack, <init>()V >( O13_1 )\l" [ ]
+   "BB30\n82  Create O14_1                             \l" [ ]
+   "BB31\n84  < Application, Ljava/util/Hashtable, <init>()V >( O14_1 )\l" [ ]
+   "BB32\n89  < Application, LEdge, pushRing(Ljava/util/Stack;Ljava/util/Hashtable;)V >( O1_3, O13_1, O14_1 )\l" [ ]
+   "BB33\n90  nonreference field get instrctn: 63 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l91  Create O15_1                             \l" [ ]
+   "BB34\n93  < Application, Ljava/lang/StringBuilder, <init>()V >( O15_1 )\l" [ ]
+   "BB35\n95  O11_5 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O15_1, V66 )\l" [ ]
+   "BB36\n97  O7_3 = < Application, Ljava/util/Stack, size()I >( O13_1 )\l" [ ]
+   "BB37\n98  O11_6 = < Application, Ljava/lang/StringBuilder, append(I)Ljava/lang/StringBuilder; >( O11_5, V70 )\l" [ ]
+   "BB38\n99  O12_4 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O11_6 )\l" [ ]
+   "BB39\n100  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O9_1, O12_4 )\l" [ ]
+   "BB40\n102  O7_4 = < Application, Ljava/util/Stack, empty()Z >( O13_1 )\l" [ ]
+   "BB41\n104   conditional branch(ne) v77,v78:#0      \l" [ ]
+   "BB42\n106  O16_1 = < Application, Ljava/util/Stack, pop()Ljava/lang/Object; >( O13_1 )\l" [ ]
+   "BB43\n107   v81 = checkcast <Application,LEdge>v80 \l" [ ]
+   "BB44\n111  O17_1 = < Application, Ljava/util/Hashtable, get(Ljava/lang/Object;)Ljava/lang/Object; >( O14_1, O1_3 )\l" [ ]
+   "BB45\n112   v84 = checkcast <Application,Ljava/lang/Boolean>v83\l" [ ]
+   "BB46\n116   conditional branch(eq) v84,v85:#null   \l" [ ]
+   "BB47\n118  O7_5 = < Application, Ljava/lang/Boolean, booleanValue()Z >( V84 )\l" [ ]
+   "BB48\n120   conditional branch(eq) v87,v78:#0      \l" [ ]
+   "BB49\n124  O1_4 = < Application, LEdge, oNext()LEdge; >( O1_3 )\l" [ ]
+   "BB50\n" [ ]
+   "BB51\n           v173 = phi  v172,v89\l           v174 = phi  v173,v81\l127  O2_4 = < Application, LEdge, orig()LVertex; >( O1_4 )\l" [ ]
+   "BB52\n130  O7_6 = < Application, LVertex, X()D >( O2_4 )\l" [ ]
+   "BB53\n133  O2_5 = < Application, LEdge, dest()LVertex; >( O1_4 )\l" [ ]
+   "BB54\n136  O7_7 = < Application, LVertex, X()D >( O2_5 )\l" [ ]
+   "BB55\n140   v98 = compare v93,v97 opcode=cmpl      \l142   conditional branch(lt) v98,v78:#0      \l" [ ]
+   "BB56\n143  nonreference field get instrctn: 99 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l144  Create O18_1                            \l" [ ]
+   "BB57\n146  < Application, Ljava/lang/StringBuilder, <init>()V >( O18_1 )\l" [ ]
+   "BB58\n148  O11_7 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O18_1, V102 )\l" [ ]
+   "BB59\n150  O11_8 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/Object;)Ljava/lang/StringBuilder; >( O11_7, O2_5 )\l" [ ]
+   "BB60\n152  O11_9 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O11_8, V45 )\l" [ ]
+   "BB61\n154  O11_10 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/Object;)Ljava/lang/StringBuilder; >( O11_9, O2_5 )\l" [ ]
+   "BB62\n155  O12_5 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O11_10 )\l" [ ]
+   "BB63\n156  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O9_1, O12_5 )\l" [ ]
+   "BB64\n158  O1_5 = < Application, LEdge, symmetric()LEdge; >( O1_4 )\l" [ ]
+   "BB65\n161  O1_6 = < Application, LEdge, oNext()LEdge; >( O1_5 )\l" [ ]
+   "BB66\n164  O2_6 = < Application, LEdge, orig()LVertex; >( O1_6 )\l" [ ]
+   "BB67\n167  O2_7 = < Application, LEdge, dest()LVertex; >( O1_6 )\l" [ ]
+   "BB68\n170  O2_8 = < Application, LEdge, dest()LVertex; >( O1_6 )\l" [ ]
+   "BB69\n173  O2_9 = < Application, LEdge, dest()LVertex; >( O1_6 )\l" [ ]
+   "BB70\n178  O7_8 = < Application, LVertex, ccw(LVertex;LVertex;)Z >( O2_9, O2_9, O2_9 )\l" [ ]
+   "BB71\n182  O7_9 = < Application, LVertex, ccw(LVertex;LVertex;)Z >( O2_9, O2_9, O2_9 )\l" [ ]
+   "BB72\n183   conditional branch(eq) v127,v129       \l" [ ]
+   "BB73\n185  O2_10 = < Application, LEdge, orig()LVertex; >( O1_6 )\l" [ ]
+   "BB74\n188  O2_11 = < Application, LEdge, dest()LVertex; >( O1_6 )\l" [ ]
+   "BB75\n191  O2_12 = < Application, LEdge, dest()LVertex; >( O1_6 )\l" [ ]
+   "BB76\n196  O4_2 = < Application, LVec2, circle_center(LVec2;LVec2;)LVec2; >( O2_12, O2_12, O2_12 )\l" [ ]
+   "BB77\n199  O2_13 = < Application, LEdge, orig()LVertex; >( O1_6 )\l" [ ]
+   "BB78\n202  O2_14 = < Application, LEdge, dest()LVertex; >( O1_6 )\l" [ ]
+   "BB79\n205  O2_15 = < Application, LEdge, dest()LVertex; >( O1_6 )\l" [ ]
+   "BB80\n210  O4_3 = < Application, LVec2, circle_center(LVec2;LVec2;)LVec2; >( O2_15, O2_15, O2_15 )\l" [ ]
+   "BB81\n212  nonreference field get instrctn: 146 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l213  Create O19_1                            \l" [ ]
+   "BB82\n215  < Application, Ljava/lang/StringBuilder, <init>()V >( O19_1 )\l" [ ]
+   "BB83\n217  O11_11 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O19_1, V38 )\l" [ ]
+   "BB84\n219  O12_6 = < Application, LVec2, toString()Ljava/lang/String; >( O4_3 )\l" [ ]
+   "BB85\n220  O11_12 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O11_11, O12_6 )\l" [ ]
+   "BB86\n222  O11_13 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O11_12, V45 )\l" [ ]
+   "BB87\n224  O12_7 = < Application, LVec2, toString()Ljava/lang/String; >( O4_3 )\l" [ ]
+   "BB88\n225  O11_14 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O11_13, O12_7 )\l" [ ]
+   "BB89\n226  O12_8 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O11_14 )\l" [ ]
+   "BB90\n227  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O9_1, O12_8 )\l" [ ]
+   "BB91\n230  Create O20_1                            \l" [ ]
+   "BB92\n233  < Application, Ljava/lang/Boolean, <init>(Z)V >( O20_1, V78 )\l" [ ]
+   "BB93\n234  O17_2 = < Application, Ljava/util/Hashtable, put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; >( O14_1, O1_4, O20_1 )\l" [ ]
+   "BB94\n239  O1_7 = < Application, LEdge, oNext()LEdge; >( O1_4 )\l" [ ]
+   "BB95\n243   conditional branch(ne) v173,v81        \l" [ ]
+   "BB96\n245  O1_8 = < Application, LEdge, symmetric()LEdge; >( O1_3 )\l" [ ]
+   "BB97\n248  < Application, LEdge, pushRing(Ljava/util/Stack;Ljava/util/Hashtable;)V >( O1_8, O13_1, O14_1 )\l" [ ]
+   "BB98\n249   goto                                   \l" [ ]
+   "BB99\n250  return                                  \l" [ ]
+   "BB100 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n" 
+ "BB1\n" -> "BB2\n           v57 = phi  v56,v1\l3  O2_1 = < Application, LEdge, dest()LVertex; >( O1_1 )\l" 
+ "BB2\n           v57 = phi  v56,v1\l3  O2_1 = < Application, LEdge, dest()LVertex; >( O1_1 )\l" -> "BB3\n6  O2_2 = < Application, LEdge, orig()LVertex; >( O1_1 )\l" 
+ "BB3\n6  O2_2 = < Application, LEdge, orig()LVertex; >( O1_1 )\l" -> "BB4\n9  O1_2 = < Application, LEdge, oNext()LEdge; >( O1_1 )\l" 
+ "BB4\n9  O1_2 = < Application, LEdge, oNext()LEdge; >( O1_1 )\l" -> "BB5\n12  O2_3 = < Application, LEdge, dest()LVertex; >( O1_2 )\l" 
+ "BB5\n12  O2_3 = < Application, LEdge, dest()LVertex; >( O1_2 )\l" -> "BB6\n16  O3_1 = < Application, LVec2, sub(LVec2;)LVec2; >( O2_3, O2_3 )\l" 
+ "BB6\n16  O3_1 = < Application, LVec2, sub(LVec2;)LVec2; >( O2_3, O2_3 )\l" -> "BB7\n21  O4_1 = < Application, LVec2, circle_center(LVec2;LVec2;)LVec2; >( O2_3, O2_3, O2_3 )\l" 
+ "BB7\n21  O4_1 = < Application, LVec2, circle_center(LVec2;LVec2;)LVec2; >( O2_3, O2_3, O2_3 )\l" -> "BB8\n25  O5_1 = < Application, LVec2, sum(LVec2;)LVec2; >( O2_3, O2_3 )\l" 
+ "BB8\n25  O5_1 = < Application, LVec2, sum(LVec2;)LVec2; >( O2_3, O2_3 )\l" -> "BB9\n29  O6_1 = < Application, LVec2, times(D)LVec2; >( O5_1, V17 )\l" 
+ "BB9\n29  O6_1 = < Application, LVec2, times(D)LVec2; >( O5_1, V17 )\l" -> "BB10\n33  O3_2 = < Application, LVec2, sub(LVec2;)LVec2; >( O4_1, O6_1 )\l" 
+ "BB10\n33  O3_2 = < Application, LVec2, sub(LVec2;)LVec2; >( O4_1, O6_1 )\l" -> "BB11\n37  O7_1 = < Application, LVec2, magn()D >( O3_2 )\l" 
+ "BB11\n37  O7_1 = < Application, LVec2, magn()D >( O3_2 )\l" -> "BB12\n38   v25 = binaryop(add) v22:#1.0 , v24      \l42  O7_2 = < Application, LVec2, magn()D >( O3_2 )\l" 
+ "BB12\n38   v25 = binaryop(add) v22:#1.0 , v24      \l42  O7_2 = < Application, LVec2, magn()D >( O3_2 )\l" -> "BB13\n43   v28 = binaryop(div) v25 , v27           \l46  O8_1 = < Application, LVec2, cross()LVec2; >( O3_2 )\l" 
+ "BB13\n43   v28 = binaryop(div) v25 , v27           \l46  O8_1 = < Application, LVec2, cross()LVec2; >( O3_2 )\l" -> "BB14\n50  O6_2 = < Application, LVec2, times(D)LVec2; >( O8_1, V28 )\l" 
+ "BB14\n50  O6_2 = < Application, LVec2, times(D)LVec2; >( O8_1, V28 )\l" -> "BB15\n54  O5_2 = < Application, LVec2, sum(LVec2;)LVec2; >( O4_1, O6_2 )\l" 
+ "BB15\n54  O5_2 = < Application, LVec2, sum(LVec2;)LVec2; >( O4_1, O6_2 )\l" -> "BB16\n56  nonreference field get instrctn: 35 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l57  Create O10_1                             \l" 
+ "BB16\n56  nonreference field get instrctn: 35 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l57  Create O10_1                             \l" -> "BB17\n59  < Application, Ljava/lang/StringBuilder, <init>()V >( O10_1 )\l" 
+ "BB17\n59  < Application, Ljava/lang/StringBuilder, <init>()V >( O10_1 )\l" -> "BB18\n61  O11_1 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O10_1, V38 )\l" 
+ "BB18\n61  O11_1 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O10_1, V38 )\l" -> "BB19\n63  O12_1 = < Application, LVec2, toString()Ljava/lang/String; >( O4_1 )\l" 
+ "BB19\n63  O12_1 = < Application, LVec2, toString()Ljava/lang/String; >( O4_1 )\l" -> "BB20\n64  O11_2 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O11_1, O12_1 )\l" 
+ "BB20\n64  O11_2 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O11_1, O12_1 )\l" -> "BB21\n66  O11_3 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O11_2, V45 )\l" 
+ "BB21\n66  O11_3 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O11_2, V45 )\l" -> "BB22\n68  O12_2 = < Application, LVec2, toString()Ljava/lang/String; >( O5_2 )\l" 
+ "BB22\n68  O12_2 = < Application, LVec2, toString()Ljava/lang/String; >( O5_2 )\l" -> "BB23\n69  O11_4 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O11_3, O12_2 )\l" 
+ "BB23\n69  O11_4 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O11_3, O12_2 )\l" -> "BB24\n70  O12_3 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O11_4 )\l" 
+ "BB24\n70  O12_3 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O11_4 )\l" -> "BB25\n71  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O9_1, O12_3 )\l" 
+ "BB25\n71  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O9_1, O12_3 )\l" -> "BB26\n73  O1_3 = < Application, LEdge, rNext()LEdge; >( O1_2 )\l" 
+ "BB26\n73  O1_3 = < Application, LEdge, rNext()LEdge; >( O1_2 )\l" -> "BB27\n77   conditional branch(ne) v56,v1           \l" 
+ "BB27\n77   conditional branch(ne) v56,v1           \l" -> "BB2\n           v57 = phi  v56,v1\l3  O2_1 = < Application, LEdge, dest()LVertex; >( O1_1 )\l" 
+ "BB27\n77   conditional branch(ne) v56,v1           \l" -> "BB28\n78  Create O13_1                             \l" 
+ "BB28\n78  Create O13_1                             \l" -> "BB29\n80  < Application, Ljava/util/Stack, <init>()V >( O13_1 )\l" 
+ "BB29\n80  < Application, Ljava/util/Stack, <init>()V >( O13_1 )\l" -> "BB30\n82  Create O14_1                             \l" 
+ "BB30\n82  Create O14_1                             \l" -> "BB31\n84  < Application, Ljava/util/Hashtable, <init>()V >( O14_1 )\l" 
+ "BB31\n84  < Application, Ljava/util/Hashtable, <init>()V >( O14_1 )\l" -> "BB32\n89  < Application, LEdge, pushRing(Ljava/util/Stack;Ljava/util/Hashtable;)V >( O1_3, O13_1, O14_1 )\l" 
+ "BB32\n89  < Application, LEdge, pushRing(Ljava/util/Stack;Ljava/util/Hashtable;)V >( O1_3, O13_1, O14_1 )\l" -> "BB33\n90  nonreference field get instrctn: 63 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l91  Create O15_1                             \l" 
+ "BB33\n90  nonreference field get instrctn: 63 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l91  Create O15_1                             \l" -> "BB34\n93  < Application, Ljava/lang/StringBuilder, <init>()V >( O15_1 )\l" 
+ "BB34\n93  < Application, Ljava/lang/StringBuilder, <init>()V >( O15_1 )\l" -> "BB35\n95  O11_5 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O15_1, V66 )\l" 
+ "BB35\n95  O11_5 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O15_1, V66 )\l" -> "BB36\n97  O7_3 = < Application, Ljava/util/Stack, size()I >( O13_1 )\l" 
+ "BB36\n97  O7_3 = < Application, Ljava/util/Stack, size()I >( O13_1 )\l" -> "BB37\n98  O11_6 = < Application, Ljava/lang/StringBuilder, append(I)Ljava/lang/StringBuilder; >( O11_5, V70 )\l" 
+ "BB37\n98  O11_6 = < Application, Ljava/lang/StringBuilder, append(I)Ljava/lang/StringBuilder; >( O11_5, V70 )\l" -> "BB38\n99  O12_4 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O11_6 )\l" 
+ "BB38\n99  O12_4 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O11_6 )\l" -> "BB39\n100  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O9_1, O12_4 )\l" 
+ "BB39\n100  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O9_1, O12_4 )\l" -> "BB40\n102  O7_4 = < Application, Ljava/util/Stack, empty()Z >( O13_1 )\l" 
+ "BB40\n102  O7_4 = < Application, Ljava/util/Stack, empty()Z >( O13_1 )\l" -> "BB41\n104   conditional branch(ne) v77,v78:#0      \l" 
+ "BB41\n104   conditional branch(ne) v77,v78:#0      \l" -> "BB42\n106  O16_1 = < Application, Ljava/util/Stack, pop()Ljava/lang/Object; >( O13_1 )\l" 
+ "BB41\n104   conditional branch(ne) v77,v78:#0      \l" -> "BB99\n250  return                                  \l" 
+ "BB42\n106  O16_1 = < Application, Ljava/util/Stack, pop()Ljava/lang/Object; >( O13_1 )\l" -> "BB43\n107   v81 = checkcast <Application,LEdge>v80 \l" 
+ "BB43\n107   v81 = checkcast <Application,LEdge>v80 \l" -> "BB44\n111  O17_1 = < Application, Ljava/util/Hashtable, get(Ljava/lang/Object;)Ljava/lang/Object; >( O14_1, O1_3 )\l" 
+ "BB44\n111  O17_1 = < Application, Ljava/util/Hashtable, get(Ljava/lang/Object;)Ljava/lang/Object; >( O14_1, O1_3 )\l" -> "BB45\n112   v84 = checkcast <Application,Ljava/lang/Boolean>v83\l" 
+ "BB45\n112   v84 = checkcast <Application,Ljava/lang/Boolean>v83\l" -> "BB46\n116   conditional branch(eq) v84,v85:#null   \l" 
+ "BB46\n116   conditional branch(eq) v84,v85:#null   \l" -> "BB47\n118  O7_5 = < Application, Ljava/lang/Boolean, booleanValue()Z >( V84 )\l" 
+ "BB46\n116   conditional branch(eq) v84,v85:#null   \l" -> "BB96\n245  O1_8 = < Application, LEdge, symmetric()LEdge; >( O1_3 )\l" 
+ "BB47\n118  O7_5 = < Application, Ljava/lang/Boolean, booleanValue()Z >( V84 )\l" -> "BB48\n120   conditional branch(eq) v87,v78:#0      \l" 
+ "BB48\n120   conditional branch(eq) v87,v78:#0      \l" -> "BB49\n124  O1_4 = < Application, LEdge, oNext()LEdge; >( O1_3 )\l" 
+ "BB48\n120   conditional branch(eq) v87,v78:#0      \l" -> "BB96\n245  O1_8 = < Application, LEdge, symmetric()LEdge; >( O1_3 )\l" 
+ "BB49\n124  O1_4 = < Application, LEdge, oNext()LEdge; >( O1_3 )\l" -> "BB50\n" 
+ "BB50\n" -> "BB51\n           v173 = phi  v172,v89\l           v174 = phi  v173,v81\l127  O2_4 = < Application, LEdge, orig()LVertex; >( O1_4 )\l" 
+ "BB51\n           v173 = phi  v172,v89\l           v174 = phi  v173,v81\l127  O2_4 = < Application, LEdge, orig()LVertex; >( O1_4 )\l" -> "BB52\n130  O7_6 = < Application, LVertex, X()D >( O2_4 )\l" 
+ "BB52\n130  O7_6 = < Application, LVertex, X()D >( O2_4 )\l" -> "BB53\n133  O2_5 = < Application, LEdge, dest()LVertex; >( O1_4 )\l" 
+ "BB53\n133  O2_5 = < Application, LEdge, dest()LVertex; >( O1_4 )\l" -> "BB54\n136  O7_7 = < Application, LVertex, X()D >( O2_5 )\l" 
+ "BB54\n136  O7_7 = < Application, LVertex, X()D >( O2_5 )\l" -> "BB55\n140   v98 = compare v93,v97 opcode=cmpl      \l142   conditional branch(lt) v98,v78:#0      \l" 
+ "BB55\n140   v98 = compare v93,v97 opcode=cmpl      \l142   conditional branch(lt) v98,v78:#0      \l" -> "BB56\n143  nonreference field get instrctn: 99 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l144  Create O18_1                            \l" 
+ "BB55\n140   v98 = compare v93,v97 opcode=cmpl      \l142   conditional branch(lt) v98,v78:#0      \l" -> "BB91\n230  Create O20_1                            \l" 
+ "BB56\n143  nonreference field get instrctn: 99 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l144  Create O18_1                            \l" -> "BB57\n146  < Application, Ljava/lang/StringBuilder, <init>()V >( O18_1 )\l" 
+ "BB57\n146  < Application, Ljava/lang/StringBuilder, <init>()V >( O18_1 )\l" -> "BB58\n148  O11_7 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O18_1, V102 )\l" 
+ "BB58\n148  O11_7 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O18_1, V102 )\l" -> "BB59\n150  O11_8 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/Object;)Ljava/lang/StringBuilder; >( O11_7, O2_5 )\l" 
+ "BB59\n150  O11_8 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/Object;)Ljava/lang/StringBuilder; >( O11_7, O2_5 )\l" -> "BB60\n152  O11_9 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O11_8, V45 )\l" 
+ "BB60\n152  O11_9 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O11_8, V45 )\l" -> "BB61\n154  O11_10 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/Object;)Ljava/lang/StringBuilder; >( O11_9, O2_5 )\l" 
+ "BB61\n154  O11_10 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/Object;)Ljava/lang/StringBuilder; >( O11_9, O2_5 )\l" -> "BB62\n155  O12_5 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O11_10 )\l" 
+ "BB62\n155  O12_5 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O11_10 )\l" -> "BB63\n156  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O9_1, O12_5 )\l" 
+ "BB63\n156  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O9_1, O12_5 )\l" -> "BB64\n158  O1_5 = < Application, LEdge, symmetric()LEdge; >( O1_4 )\l" 
+ "BB64\n158  O1_5 = < Application, LEdge, symmetric()LEdge; >( O1_4 )\l" -> "BB65\n161  O1_6 = < Application, LEdge, oNext()LEdge; >( O1_5 )\l" 
+ "BB65\n161  O1_6 = < Application, LEdge, oNext()LEdge; >( O1_5 )\l" -> "BB66\n164  O2_6 = < Application, LEdge, orig()LVertex; >( O1_6 )\l" 
+ "BB66\n164  O2_6 = < Application, LEdge, orig()LVertex; >( O1_6 )\l" -> "BB67\n167  O2_7 = < Application, LEdge, dest()LVertex; >( O1_6 )\l" 
+ "BB67\n167  O2_7 = < Application, LEdge, dest()LVertex; >( O1_6 )\l" -> "BB68\n170  O2_8 = < Application, LEdge, dest()LVertex; >( O1_6 )\l" 
+ "BB68\n170  O2_8 = < Application, LEdge, dest()LVertex; >( O1_6 )\l" -> "BB69\n173  O2_9 = < Application, LEdge, dest()LVertex; >( O1_6 )\l" 
+ "BB69\n173  O2_9 = < Application, LEdge, dest()LVertex; >( O1_6 )\l" -> "BB70\n178  O7_8 = < Application, LVertex, ccw(LVertex;LVertex;)Z >( O2_9, O2_9, O2_9 )\l" 
+ "BB70\n178  O7_8 = < Application, LVertex, ccw(LVertex;LVertex;)Z >( O2_9, O2_9, O2_9 )\l" -> "BB71\n182  O7_9 = < Application, LVertex, ccw(LVertex;LVertex;)Z >( O2_9, O2_9, O2_9 )\l" 
+ "BB71\n182  O7_9 = < Application, LVertex, ccw(LVertex;LVertex;)Z >( O2_9, O2_9, O2_9 )\l" -> "BB72\n183   conditional branch(eq) v127,v129       \l" 
+ "BB72\n183   conditional branch(eq) v127,v129       \l" -> "BB73\n185  O2_10 = < Application, LEdge, orig()LVertex; >( O1_6 )\l" 
+ "BB72\n183   conditional branch(eq) v127,v129       \l" -> "BB91\n230  Create O20_1                            \l" 
+ "BB73\n185  O2_10 = < Application, LEdge, orig()LVertex; >( O1_6 )\l" -> "BB74\n188  O2_11 = < Application, LEdge, dest()LVertex; >( O1_6 )\l" 
+ "BB74\n188  O2_11 = < Application, LEdge, dest()LVertex; >( O1_6 )\l" -> "BB75\n191  O2_12 = < Application, LEdge, dest()LVertex; >( O1_6 )\l" 
+ "BB75\n191  O2_12 = < Application, LEdge, dest()LVertex; >( O1_6 )\l" -> "BB76\n196  O4_2 = < Application, LVec2, circle_center(LVec2;LVec2;)LVec2; >( O2_12, O2_12, O2_12 )\l" 
+ "BB76\n196  O4_2 = < Application, LVec2, circle_center(LVec2;LVec2;)LVec2; >( O2_12, O2_12, O2_12 )\l" -> "BB77\n199  O2_13 = < Application, LEdge, orig()LVertex; >( O1_6 )\l" 
+ "BB77\n199  O2_13 = < Application, LEdge, orig()LVertex; >( O1_6 )\l" -> "BB78\n202  O2_14 = < Application, LEdge, dest()LVertex; >( O1_6 )\l" 
+ "BB78\n202  O2_14 = < Application, LEdge, dest()LVertex; >( O1_6 )\l" -> "BB79\n205  O2_15 = < Application, LEdge, dest()LVertex; >( O1_6 )\l" 
+ "BB79\n205  O2_15 = < Application, LEdge, dest()LVertex; >( O1_6 )\l" -> "BB80\n210  O4_3 = < Application, LVec2, circle_center(LVec2;LVec2;)LVec2; >( O2_15, O2_15, O2_15 )\l" 
+ "BB80\n210  O4_3 = < Application, LVec2, circle_center(LVec2;LVec2;)LVec2; >( O2_15, O2_15, O2_15 )\l" -> "BB81\n212  nonreference field get instrctn: 146 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l213  Create O19_1                            \l" 
+ "BB81\n212  nonreference field get instrctn: 146 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l213  Create O19_1                            \l" -> "BB82\n215  < Application, Ljava/lang/StringBuilder, <init>()V >( O19_1 )\l" 
+ "BB82\n215  < Application, Ljava/lang/StringBuilder, <init>()V >( O19_1 )\l" -> "BB83\n217  O11_11 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O19_1, V38 )\l" 
+ "BB83\n217  O11_11 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O19_1, V38 )\l" -> "BB84\n219  O12_6 = < Application, LVec2, toString()Ljava/lang/String; >( O4_3 )\l" 
+ "BB84\n219  O12_6 = < Application, LVec2, toString()Ljava/lang/String; >( O4_3 )\l" -> "BB85\n220  O11_12 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O11_11, O12_6 )\l" 
+ "BB85\n220  O11_12 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O11_11, O12_6 )\l" -> "BB86\n222  O11_13 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O11_12, V45 )\l" 
+ "BB86\n222  O11_13 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O11_12, V45 )\l" -> "BB87\n224  O12_7 = < Application, LVec2, toString()Ljava/lang/String; >( O4_3 )\l" 
+ "BB87\n224  O12_7 = < Application, LVec2, toString()Ljava/lang/String; >( O4_3 )\l" -> "BB88\n225  O11_14 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O11_13, O12_7 )\l" 
+ "BB88\n225  O11_14 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O11_13, O12_7 )\l" -> "BB89\n226  O12_8 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O11_14 )\l" 
+ "BB89\n226  O12_8 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O11_14 )\l" -> "BB90\n227  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O9_1, O12_8 )\l" 
+ "BB90\n227  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O9_1, O12_8 )\l" -> "BB91\n230  Create O20_1                            \l" 
+ "BB91\n230  Create O20_1                            \l" -> "BB92\n233  < Application, Ljava/lang/Boolean, <init>(Z)V >( O20_1, V78 )\l" 
+ "BB92\n233  < Application, Ljava/lang/Boolean, <init>(Z)V >( O20_1, V78 )\l" -> "BB93\n234  O17_2 = < Application, Ljava/util/Hashtable, put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; >( O14_1, O1_4, O20_1 )\l" 
+ "BB93\n234  O17_2 = < Application, Ljava/util/Hashtable, put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; >( O14_1, O1_4, O20_1 )\l" -> "BB94\n239  O1_7 = < Application, LEdge, oNext()LEdge; >( O1_4 )\l" 
+ "BB94\n239  O1_7 = < Application, LEdge, oNext()LEdge; >( O1_4 )\l" -> "BB95\n243   conditional branch(ne) v173,v81        \l" 
+ "BB95\n243   conditional branch(ne) v173,v81        \l" -> "BB51\n           v173 = phi  v172,v89\l           v174 = phi  v173,v81\l127  O2_4 = < Application, LEdge, orig()LVertex; >( O1_4 )\l" 
+ "BB95\n243   conditional branch(ne) v173,v81        \l" -> "BB96\n245  O1_8 = < Application, LEdge, symmetric()LEdge; >( O1_3 )\l" 
+ "BB96\n245  O1_8 = < Application, LEdge, symmetric()LEdge; >( O1_3 )\l" -> "BB97\n248  < Application, LEdge, pushRing(Ljava/util/Stack;Ljava/util/Hashtable;)V >( O1_8, O13_1, O14_1 )\l" 
+ "BB97\n248  < Application, LEdge, pushRing(Ljava/util/Stack;Ljava/util/Hashtable;)V >( O1_8, O13_1, O14_1 )\l" -> "BB98\n249   goto                                   \l" 
+ "BB98\n249   goto                                   \l" -> "BB40\n102  O7_4 = < Application, Ljava/util/Stack, empty()Z >( O13_1 )\l" 
+ "BB99\n250  return                                  \l" -> "BB100 (ex)\n\n" 
+
+}

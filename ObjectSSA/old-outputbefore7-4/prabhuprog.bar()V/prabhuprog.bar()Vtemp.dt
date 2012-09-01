@@ -1,0 +1,40 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0   v2 = new <Application,LSample>@0\l" [ ]
+   "BB2\n2   invokespecial < Application, LSample, <init>()V > v2 @4 exception:v3\l" [ ]
+   "BB3\n4   v4 = new <Application,LSample>@8\l" [ ]
+   "BB4\n6   invokespecial < Application, LSample, <init>()V > v4 @12 exception:v5\l" [ ]
+   "BB5\n8   v6 = new <Application,LSample>@16\l" [ ]
+   "BB6\n10   invokespecial < Application, LSample, <init>()V > v6 @20 exception:v7\l" [ ]
+   "BB7\n14   putfield v2 = v4 < Application, LSample, next, <Application,LSample> >\l" [ ]
+   "BB8\n16   v9 = invokestatic < Application, Lprabhuprog, helper(LSample;)LSample; > v2 @30 exception:v8\l" [ ]
+   "BB9\n22   putfield v2 = v6 < Application, LSample, next, <Application,LSample> >\l" [ ]
+   "BB10\n25   putfield v2 = v4 < Application, LSample, next, <Application,LSample> >\l" [ ]
+   "BB11\n27   v10 = getfield < Application, LSample, x, <Primordial,I> > v2\l" [ ]
+   "BB12\n31   conditional branch(le) v10,v11:#4\l" [ ]
+   "BB13\n34   putfield v2 = v6 < Application, LSample, next, <Application,LSample> >\l" [ ]
+   "BB14\n" [ ]
+   "BB15\n           v12 = phi  v2,v4\l38   v13 = getfield < Application, LSample, x, <Primordial,I> > v12\l" [ ]
+   "BB16\n40   return                        \l" [ ]
+   "BB17 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0   v2 = new <Application,LSample>@0\l" 
+ "BB1\n0   v2 = new <Application,LSample>@0\l" -> "BB2\n2   invokespecial < Application, LSample, <init>()V > v2 @4 exception:v3\l" 
+ "BB2\n2   invokespecial < Application, LSample, <init>()V > v2 @4 exception:v3\l" -> "BB3\n4   v4 = new <Application,LSample>@8\l" 
+ "BB3\n4   v4 = new <Application,LSample>@8\l" -> "BB4\n6   invokespecial < Application, LSample, <init>()V > v4 @12 exception:v5\l" 
+ "BB4\n6   invokespecial < Application, LSample, <init>()V > v4 @12 exception:v5\l" -> "BB5\n8   v6 = new <Application,LSample>@16\l" 
+ "BB5\n8   v6 = new <Application,LSample>@16\l" -> "BB6\n10   invokespecial < Application, LSample, <init>()V > v6 @20 exception:v7\l" 
+ "BB6\n10   invokespecial < Application, LSample, <init>()V > v6 @20 exception:v7\l" -> "BB7\n14   putfield v2 = v4 < Application, LSample, next, <Application,LSample> >\l" 
+ "BB7\n14   putfield v2 = v4 < Application, LSample, next, <Application,LSample> >\l" -> "BB8\n16   v9 = invokestatic < Application, Lprabhuprog, helper(LSample;)LSample; > v2 @30 exception:v8\l" 
+ "BB8\n16   v9 = invokestatic < Application, Lprabhuprog, helper(LSample;)LSample; > v2 @30 exception:v8\l" -> "BB9\n22   putfield v2 = v6 < Application, LSample, next, <Application,LSample> >\l" 
+ "BB9\n22   putfield v2 = v6 < Application, LSample, next, <Application,LSample> >\l" -> "BB10\n25   putfield v2 = v4 < Application, LSample, next, <Application,LSample> >\l" 
+ "BB10\n25   putfield v2 = v4 < Application, LSample, next, <Application,LSample> >\l" -> "BB11\n27   v10 = getfield < Application, LSample, x, <Primordial,I> > v2\l" 
+ "BB11\n27   v10 = getfield < Application, LSample, x, <Primordial,I> > v2\l" -> "BB12\n31   conditional branch(le) v10,v11:#4\l" 
+ "BB12\n31   conditional branch(le) v10,v11:#4\l" -> "BB13\n34   putfield v2 = v6 < Application, LSample, next, <Application,LSample> >\l" 
+ "BB12\n31   conditional branch(le) v10,v11:#4\l" -> "BB15\n           v12 = phi  v2,v4\l38   v13 = getfield < Application, LSample, x, <Primordial,I> > v12\l" 
+ "BB13\n34   putfield v2 = v6 < Application, LSample, next, <Application,LSample> >\l" -> "BB14\n" 
+ "BB14\n" -> "BB15\n           v12 = phi  v2,v4\l38   v13 = getfield < Application, LSample, x, <Primordial,I> > v12\l" 
+ "BB15\n           v12 = phi  v2,v4\l38   v13 = getfield < Application, LSample, x, <Primordial,I> > v12\l" -> "BB16\n40   return                        \l" 
+ "BB16\n40   return                        \l" -> "BB17 (ex)\n\n" 
+
+}

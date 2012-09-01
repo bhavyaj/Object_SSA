@@ -1,0 +1,86 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Power.main([Ljava-lang-String;)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  < Application, LPower, parseCmdLine([Ljava/lang/String;)V >( O1_1 )\l" [ ]
+   "BB2\n2  O2_1 = < Application, Ljava/lang/System, currentTimeMillis()J > )\l" [ ]
+   "BB3\n4  Create O3_1                               \l" [ ]
+   "BB4\n10  < Application, LRoot, <init>(IIII)V >( O3_1, V7, V8, V9, V7 )\l" [ ]
+   "BB5\n12  O2_2 = < Application, Ljava/lang/System, currentTimeMillis()J > )\l" [ ]
+   "BB6\n14  O2_3 = < Application, Ljava/lang/System, currentTimeMillis()J > )\l" [ ]
+   "BB7\n17  < Application, LRoot, compute()V >( O3_1 )\l" [ ]
+   "BB8\n22  < Application, LRoot, nextIter(ZDD)V >( O3_1, V16, V17, V18 )\l" [ ]
+   "BB9\n24  < Application, LRoot, compute()V >( O3_1 )\l" [ ]
+   "BB10\n25  nonreference field get instrctn: 21 = getstatic < Application, LPower, printResults, <Primordial,Z> >\l27   conditional branch(eq) v21,v16:#0       \l" [ ]
+   "BB11\n28  nonreference field get instrctn: 22 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l30  < Application, Ljava/io/PrintStream, println(Ljava/lang/Object;)V >( O4_1, O3_1 )\l" [ ]
+   "BB12\n32  O2_4 = < Application, LRoot, reachedLimit()Z >( O3_1 )\l" [ ]
+   "BB13\n34   conditional branch(eq) v25,v16:#0       \l" [ ]
+   "BB14\n35   goto                                    \l" [ ]
+   "BB15\n37  nonreference field get instrctn: 26 = getstatic < Application, LPower, printResults, <Primordial,Z> >\l38  < Application, LRoot, nextIter(Z)V >( O3_1, V26 )\l" [ ]
+   "BB16\n39   goto                                    \l" [ ]
+   "BB17\n40  O2_5 = < Application, Ljava/lang/System, currentTimeMillis()J > )\l" [ ]
+   "BB18\n42  nonreference field get instrctn: 30 = getstatic < Application, LPower, printMsgs, <Primordial,Z> >\l44   conditional branch(eq) v30,v16:#0       \l" [ ]
+   "BB19\n45  nonreference field get instrctn: 31 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l46  Create O5_1                              \l" [ ]
+   "BB20\n48  < Application, Ljava/lang/StringBuilder, <init>()V >( O5_1 )\l" [ ]
+   "BB21\n50  O6_1 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O5_1, V34 )\l" [ ]
+   "BB22\n53   v37 = binaryop(sub) v12 , v5            \l54   v38 = conversion(D) v37                 \l56   v40 = binaryop(div) v38 , v39:#1000.0   \l57  O6_2 = < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; >( O6_1, V40 )\l" [ ]
+   "BB23\n58  O7_1 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O6_2 )\l" [ ]
+   "BB24\n59  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O4_1, O7_1 )\l" [ ]
+   "BB25\n60  nonreference field get instrctn: 46 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l61  Create O8_1                              \l" [ ]
+   "BB26\n63  < Application, Ljava/lang/StringBuilder, <init>()V >( O8_1 )\l" [ ]
+   "BB27\n65  O6_3 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O8_1, V49 )\l" [ ]
+   "BB28\n68   v52 = binaryop(sub) v29 , v14           \l69   v53 = conversion(D) v52                 \l71   v54 = binaryop(div) v53 , v39:#1000.0   \l72  O6_4 = < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; >( O6_3, V54 )\l" [ ]
+   "BB29\n73  O7_2 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O6_4 )\l" [ ]
+   "BB30\n74  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O4_1, O7_2 )\l" [ ]
+   "BB31\n75  nonreference field get instrctn: 60 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l76  Create O9_1                              \l" [ ]
+   "BB32\n78  < Application, Ljava/lang/StringBuilder, <init>()V >( O9_1 )\l" [ ]
+   "BB33\n80  O6_5 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O9_1, V63 )\l" [ ]
+   "BB34\n83   v66 = binaryop(sub) v29 , v5            \l84   v67 = conversion(D) v66                 \l86   v68 = binaryop(div) v67 , v39:#1000.0   \l87  O6_6 = < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; >( O6_5, V68 )\l" [ ]
+   "BB35\n88  O7_3 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O6_6 )\l" [ ]
+   "BB36\n89  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O4_1, O7_3 )\l" [ ]
+   "BB37\n90  nonreference field get instrctn: 74 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l92  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O4_1, V75 )\l" [ ]
+   "BB38\n93  return                                   \l" [ ]
+   "BB39 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  < Application, LPower, parseCmdLine([Ljava/lang/String;)V >( O1_1 )\l" 
+ "BB1\n1  < Application, LPower, parseCmdLine([Ljava/lang/String;)V >( O1_1 )\l" -> "BB2\n2  O2_1 = < Application, Ljava/lang/System, currentTimeMillis()J > )\l" 
+ "BB2\n2  O2_1 = < Application, Ljava/lang/System, currentTimeMillis()J > )\l" -> "BB3\n4  Create O3_1                               \l" 
+ "BB3\n4  Create O3_1                               \l" -> "BB4\n10  < Application, LRoot, <init>(IIII)V >( O3_1, V7, V8, V9, V7 )\l" 
+ "BB4\n10  < Application, LRoot, <init>(IIII)V >( O3_1, V7, V8, V9, V7 )\l" -> "BB5\n12  O2_2 = < Application, Ljava/lang/System, currentTimeMillis()J > )\l" 
+ "BB5\n12  O2_2 = < Application, Ljava/lang/System, currentTimeMillis()J > )\l" -> "BB6\n14  O2_3 = < Application, Ljava/lang/System, currentTimeMillis()J > )\l" 
+ "BB6\n14  O2_3 = < Application, Ljava/lang/System, currentTimeMillis()J > )\l" -> "BB7\n17  < Application, LRoot, compute()V >( O3_1 )\l" 
+ "BB7\n17  < Application, LRoot, compute()V >( O3_1 )\l" -> "BB8\n22  < Application, LRoot, nextIter(ZDD)V >( O3_1, V16, V17, V18 )\l" 
+ "BB8\n22  < Application, LRoot, nextIter(ZDD)V >( O3_1, V16, V17, V18 )\l" -> "BB9\n24  < Application, LRoot, compute()V >( O3_1 )\l" 
+ "BB9\n24  < Application, LRoot, compute()V >( O3_1 )\l" -> "BB10\n25  nonreference field get instrctn: 21 = getstatic < Application, LPower, printResults, <Primordial,Z> >\l27   conditional branch(eq) v21,v16:#0       \l" 
+ "BB10\n25  nonreference field get instrctn: 21 = getstatic < Application, LPower, printResults, <Primordial,Z> >\l27   conditional branch(eq) v21,v16:#0       \l" -> "BB11\n28  nonreference field get instrctn: 22 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l30  < Application, Ljava/io/PrintStream, println(Ljava/lang/Object;)V >( O4_1, O3_1 )\l" 
+ "BB10\n25  nonreference field get instrctn: 21 = getstatic < Application, LPower, printResults, <Primordial,Z> >\l27   conditional branch(eq) v21,v16:#0       \l" -> "BB12\n32  O2_4 = < Application, LRoot, reachedLimit()Z >( O3_1 )\l" 
+ "BB11\n28  nonreference field get instrctn: 22 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l30  < Application, Ljava/io/PrintStream, println(Ljava/lang/Object;)V >( O4_1, O3_1 )\l" -> "BB12\n32  O2_4 = < Application, LRoot, reachedLimit()Z >( O3_1 )\l" 
+ "BB12\n32  O2_4 = < Application, LRoot, reachedLimit()Z >( O3_1 )\l" -> "BB13\n34   conditional branch(eq) v25,v16:#0       \l" 
+ "BB13\n34   conditional branch(eq) v25,v16:#0       \l" -> "BB14\n35   goto                                    \l" 
+ "BB13\n34   conditional branch(eq) v25,v16:#0       \l" -> "BB15\n37  nonreference field get instrctn: 26 = getstatic < Application, LPower, printResults, <Primordial,Z> >\l38  < Application, LRoot, nextIter(Z)V >( O3_1, V26 )\l" 
+ "BB14\n35   goto                                    \l" -> "BB17\n40  O2_5 = < Application, Ljava/lang/System, currentTimeMillis()J > )\l" 
+ "BB15\n37  nonreference field get instrctn: 26 = getstatic < Application, LPower, printResults, <Primordial,Z> >\l38  < Application, LRoot, nextIter(Z)V >( O3_1, V26 )\l" -> "BB16\n39   goto                                    \l" 
+ "BB16\n39   goto                                    \l" -> "BB9\n24  < Application, LRoot, compute()V >( O3_1 )\l" 
+ "BB17\n40  O2_5 = < Application, Ljava/lang/System, currentTimeMillis()J > )\l" -> "BB18\n42  nonreference field get instrctn: 30 = getstatic < Application, LPower, printMsgs, <Primordial,Z> >\l44   conditional branch(eq) v30,v16:#0       \l" 
+ "BB18\n42  nonreference field get instrctn: 30 = getstatic < Application, LPower, printMsgs, <Primordial,Z> >\l44   conditional branch(eq) v30,v16:#0       \l" -> "BB19\n45  nonreference field get instrctn: 31 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l46  Create O5_1                              \l" 
+ "BB18\n42  nonreference field get instrctn: 30 = getstatic < Application, LPower, printMsgs, <Primordial,Z> >\l44   conditional branch(eq) v30,v16:#0       \l" -> "BB37\n90  nonreference field get instrctn: 74 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l92  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O4_1, V75 )\l" 
+ "BB19\n45  nonreference field get instrctn: 31 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l46  Create O5_1                              \l" -> "BB20\n48  < Application, Ljava/lang/StringBuilder, <init>()V >( O5_1 )\l" 
+ "BB20\n48  < Application, Ljava/lang/StringBuilder, <init>()V >( O5_1 )\l" -> "BB21\n50  O6_1 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O5_1, V34 )\l" 
+ "BB21\n50  O6_1 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O5_1, V34 )\l" -> "BB22\n53   v37 = binaryop(sub) v12 , v5            \l54   v38 = conversion(D) v37                 \l56   v40 = binaryop(div) v38 , v39:#1000.0   \l57  O6_2 = < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; >( O6_1, V40 )\l" 
+ "BB22\n53   v37 = binaryop(sub) v12 , v5            \l54   v38 = conversion(D) v37                 \l56   v40 = binaryop(div) v38 , v39:#1000.0   \l57  O6_2 = < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; >( O6_1, V40 )\l" -> "BB23\n58  O7_1 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O6_2 )\l" 
+ "BB23\n58  O7_1 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O6_2 )\l" -> "BB24\n59  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O4_1, O7_1 )\l" 
+ "BB24\n59  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O4_1, O7_1 )\l" -> "BB25\n60  nonreference field get instrctn: 46 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l61  Create O8_1                              \l" 
+ "BB25\n60  nonreference field get instrctn: 46 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l61  Create O8_1                              \l" -> "BB26\n63  < Application, Ljava/lang/StringBuilder, <init>()V >( O8_1 )\l" 
+ "BB26\n63  < Application, Ljava/lang/StringBuilder, <init>()V >( O8_1 )\l" -> "BB27\n65  O6_3 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O8_1, V49 )\l" 
+ "BB27\n65  O6_3 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O8_1, V49 )\l" -> "BB28\n68   v52 = binaryop(sub) v29 , v14           \l69   v53 = conversion(D) v52                 \l71   v54 = binaryop(div) v53 , v39:#1000.0   \l72  O6_4 = < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; >( O6_3, V54 )\l" 
+ "BB28\n68   v52 = binaryop(sub) v29 , v14           \l69   v53 = conversion(D) v52                 \l71   v54 = binaryop(div) v53 , v39:#1000.0   \l72  O6_4 = < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; >( O6_3, V54 )\l" -> "BB29\n73  O7_2 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O6_4 )\l" 
+ "BB29\n73  O7_2 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O6_4 )\l" -> "BB30\n74  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O4_1, O7_2 )\l" 
+ "BB30\n74  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O4_1, O7_2 )\l" -> "BB31\n75  nonreference field get instrctn: 60 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l76  Create O9_1                              \l" 
+ "BB31\n75  nonreference field get instrctn: 60 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l76  Create O9_1                              \l" -> "BB32\n78  < Application, Ljava/lang/StringBuilder, <init>()V >( O9_1 )\l" 
+ "BB32\n78  < Application, Ljava/lang/StringBuilder, <init>()V >( O9_1 )\l" -> "BB33\n80  O6_5 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O9_1, V63 )\l" 
+ "BB33\n80  O6_5 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O9_1, V63 )\l" -> "BB34\n83   v66 = binaryop(sub) v29 , v5            \l84   v67 = conversion(D) v66                 \l86   v68 = binaryop(div) v67 , v39:#1000.0   \l87  O6_6 = < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; >( O6_5, V68 )\l" 
+ "BB34\n83   v66 = binaryop(sub) v29 , v5            \l84   v67 = conversion(D) v66                 \l86   v68 = binaryop(div) v67 , v39:#1000.0   \l87  O6_6 = < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; >( O6_5, V68 )\l" -> "BB35\n88  O7_3 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O6_6 )\l" 
+ "BB35\n88  O7_3 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O6_6 )\l" -> "BB36\n89  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O4_1, O7_3 )\l" 
+ "BB36\n89  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O4_1, O7_3 )\l" -> "BB37\n90  nonreference field get instrctn: 74 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l92  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O4_1, V75 )\l" 
+ "BB37\n90  nonreference field get instrctn: 74 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l92  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O4_1, V75 )\l" -> "BB38\n93  return                                   \l" 
+ "BB38\n93  return                                   \l" -> "BB39 (ex)\n\n" 
+
+}

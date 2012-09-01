@@ -1,0 +1,48 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Power.parseCmdLine([Ljava-lang-String;)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n" [ ]
+   "BB2\n           v16 = phi  v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1                      \l" [ ]
+   "BB3\n5   conditional branch(ge) v16,v4            \l" [ ]
+   "BB4\n8   v5 = arrayload v1[v16]                   \l" [ ]
+   "BB5\n10  O2_1 = < Application, Ljava/lang/String, startsWith(Ljava/lang/String;)Z >( V5, V6 )\l" [ ]
+   "BB6\n12   conditional branch(eq) v8,v3:#0         \l" [ ]
+   "BB7\n17   v10 = binaryop(add) v16 , v9:#1         \l19   v11 = arrayload v1[v16]                 \l" [ ]
+   "BB8\n23  O2_2 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V12 )\l" [ ]
+   "BB9\n25   conditional branch(eq) v14,v3:#0        \l" [ ]
+   "BB10\n26  < Application, LPower, usage()V > )      \l" [ ]
+   "BB11\n27   goto                                    \l" [ ]
+   "BB12\n30  O2_3 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V17 )\l" [ ]
+   "BB13\n32   conditional branch(eq) v19,v3:#0        \l" [ ]
+   "BB14\n34   putstatic v9:#1 < Application, LPower, printResults, <Primordial,Z> >\l35   goto                                    \l" [ ]
+   "BB15\n38  O2_4 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V20 )\l" [ ]
+   "BB16\n40   conditional branch(eq) v22,v3:#0        \l" [ ]
+   "BB17\n42   putstatic v9:#1 < Application, LPower, printMsgs, <Primordial,Z> >\l43   goto                                    \l" [ ]
+   "BB18\n44  return                                   \l" [ ]
+   "BB19 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n" 
+ "BB1\n" -> "BB2\n           v16 = phi  v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1                      \l" 
+ "BB2\n           v16 = phi  v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1                      \l" -> "BB3\n5   conditional branch(ge) v16,v4            \l" 
+ "BB3\n5   conditional branch(ge) v16,v4            \l" -> "BB4\n8   v5 = arrayload v1[v16]                   \l" 
+ "BB3\n5   conditional branch(ge) v16,v4            \l" -> "BB18\n44  return                                   \l" 
+ "BB4\n8   v5 = arrayload v1[v16]                   \l" -> "BB5\n10  O2_1 = < Application, Ljava/lang/String, startsWith(Ljava/lang/String;)Z >( V5, V6 )\l" 
+ "BB5\n10  O2_1 = < Application, Ljava/lang/String, startsWith(Ljava/lang/String;)Z >( V5, V6 )\l" -> "BB6\n12   conditional branch(eq) v8,v3:#0         \l" 
+ "BB6\n12   conditional branch(eq) v8,v3:#0         \l" -> "BB7\n17   v10 = binaryop(add) v16 , v9:#1         \l19   v11 = arrayload v1[v16]                 \l" 
+ "BB6\n12   conditional branch(eq) v8,v3:#0         \l" -> "BB18\n44  return                                   \l" 
+ "BB7\n17   v10 = binaryop(add) v16 , v9:#1         \l19   v11 = arrayload v1[v16]                 \l" -> "BB8\n23  O2_2 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V12 )\l" 
+ "BB8\n23  O2_2 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V12 )\l" -> "BB9\n25   conditional branch(eq) v14,v3:#0        \l" 
+ "BB9\n25   conditional branch(eq) v14,v3:#0        \l" -> "BB10\n26  < Application, LPower, usage()V > )      \l" 
+ "BB9\n25   conditional branch(eq) v14,v3:#0        \l" -> "BB12\n30  O2_3 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V17 )\l" 
+ "BB10\n26  < Application, LPower, usage()V > )      \l" -> "BB11\n27   goto                                    \l" 
+ "BB11\n27   goto                                    \l" -> "BB2\n           v16 = phi  v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1                      \l" 
+ "BB12\n30  O2_3 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V17 )\l" -> "BB13\n32   conditional branch(eq) v19,v3:#0        \l" 
+ "BB13\n32   conditional branch(eq) v19,v3:#0        \l" -> "BB14\n34   putstatic v9:#1 < Application, LPower, printResults, <Primordial,Z> >\l35   goto                                    \l" 
+ "BB13\n32   conditional branch(eq) v19,v3:#0        \l" -> "BB15\n38  O2_4 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V20 )\l" 
+ "BB14\n34   putstatic v9:#1 < Application, LPower, printResults, <Primordial,Z> >\l35   goto                                    \l" -> "BB2\n           v16 = phi  v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1                      \l" 
+ "BB15\n38  O2_4 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V20 )\l" -> "BB16\n40   conditional branch(eq) v22,v3:#0        \l" 
+ "BB16\n40   conditional branch(eq) v22,v3:#0        \l" -> "BB2\n           v16 = phi  v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1                      \l" 
+ "BB16\n40   conditional branch(eq) v22,v3:#0        \l" -> "BB17\n42   putstatic v9:#1 < Application, LPower, printMsgs, <Primordial,Z> >\l43   goto                                    \l" 
+ "BB17\n42   putstatic v9:#1 < Application, LPower, printMsgs, <Primordial,Z> >\l43   goto                                    \l" -> "BB2\n           v16 = phi  v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1                      \l" 
+ "BB18\n44  return                                   \l" -> "BB19 (ex)\n\n" 
+
+}

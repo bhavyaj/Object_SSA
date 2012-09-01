@@ -1,0 +1,16 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2   v4 = binaryop(xor) v1 , v3:#123459876\l6   v6 = binaryop(div) v4 , v5:#127773\l" [ ]
+   "BB2\n12   v8 = binaryop(mul) v6 , v5:#127773\l13   v9 = binaryop(sub) v4 , v8    \l14   v10 = binaryop(mul) v7:#16807 , v9\l17   v12 = binaryop(mul) v11:#2836 , v6\l18   v13 = binaryop(sub) v10 , v12 \l22   v14 = binaryop(xor) v13 , v3:#123459876\l26   conditional branch(ge) v14,v15:#0\l" [ ]
+   "BB3\n28   v16 = conversion(F) v14       \l30   v18 = binaryop(add) v16 , v17:#2.14748365E9\l31   v19 = conversion(I) v18       \l" [ ]
+   "BB4\n           v20 = phi  v14,v19\l35   v22 = conversion(F) v20       \l36   v23 = binaryop(mul) v21:#4.656613E-10 , v22\l39   return v23                    \l" [ ]
+   "BB5 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2   v4 = binaryop(xor) v1 , v3:#123459876\l6   v6 = binaryop(div) v4 , v5:#127773\l" 
+ "BB1\n2   v4 = binaryop(xor) v1 , v3:#123459876\l6   v6 = binaryop(div) v4 , v5:#127773\l" -> "BB2\n12   v8 = binaryop(mul) v6 , v5:#127773\l13   v9 = binaryop(sub) v4 , v8    \l14   v10 = binaryop(mul) v7:#16807 , v9\l17   v12 = binaryop(mul) v11:#2836 , v6\l18   v13 = binaryop(sub) v10 , v12 \l22   v14 = binaryop(xor) v13 , v3:#123459876\l26   conditional branch(ge) v14,v15:#0\l" 
+ "BB2\n12   v8 = binaryop(mul) v6 , v5:#127773\l13   v9 = binaryop(sub) v4 , v8    \l14   v10 = binaryop(mul) v7:#16807 , v9\l17   v12 = binaryop(mul) v11:#2836 , v6\l18   v13 = binaryop(sub) v10 , v12 \l22   v14 = binaryop(xor) v13 , v3:#123459876\l26   conditional branch(ge) v14,v15:#0\l" -> "BB3\n28   v16 = conversion(F) v14       \l30   v18 = binaryop(add) v16 , v17:#2.14748365E9\l31   v19 = conversion(I) v18       \l" 
+ "BB2\n12   v8 = binaryop(mul) v6 , v5:#127773\l13   v9 = binaryop(sub) v4 , v8    \l14   v10 = binaryop(mul) v7:#16807 , v9\l17   v12 = binaryop(mul) v11:#2836 , v6\l18   v13 = binaryop(sub) v10 , v12 \l22   v14 = binaryop(xor) v13 , v3:#123459876\l26   conditional branch(ge) v14,v15:#0\l" -> "BB4\n           v20 = phi  v14,v19\l35   v22 = conversion(F) v20       \l36   v23 = binaryop(mul) v21:#4.656613E-10 , v22\l39   return v23                    \l" 
+ "BB3\n28   v16 = conversion(F) v14       \l30   v18 = binaryop(add) v16 , v17:#2.14748365E9\l31   v19 = conversion(I) v18       \l" -> "BB4\n           v20 = phi  v14,v19\l35   v22 = conversion(F) v20       \l36   v23 = binaryop(mul) v21:#4.656613E-10 , v22\l39   return v23                    \l" 
+ "BB4\n           v20 = phi  v14,v19\l35   v22 = conversion(F) v20       \l36   v23 = binaryop(mul) v21:#4.656613E-10 , v22\l39   return v23                    \l" -> "BB5 (ex)\n\n" 
+
+}

@@ -1,0 +1,18 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for MST.doAllBlueRule(LVertex;)LBlueReturn;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  nonreference field get instrctn: 3 = getstatic < Application, LMST, MyVertexList, <Application,LVertex> >\l2   conditional branch(ne) v1,v3             \l" [ ]
+   "BB2\n3  nonreference field get instrctn: 4 = getstatic < Application, LMST, MyVertexList, <Application,LVertex> >\l4   v6 = invokevirtual < Application, LVertex, next()LVertex; > v4 @10 exception:v5\l" [ ]
+   "BB3\n5   putstatic v6 < Application, LMST, MyVertexList, <Application,LVertex> >\l" [ ]
+   "BB4\n7  nonreference field get instrctn: 7 = getstatic < Application, LMST, MyVertexList, <Application,LVertex> >\l8   v9 = invokestatic < Application, LMST, BlueRule(LVertex;LVertex;)LBlueReturn; > v1,v7 @20 exception:v8\l" [ ]
+   "BB5\n9   return v9                                \l" [ ]
+   "BB6 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  nonreference field get instrctn: 3 = getstatic < Application, LMST, MyVertexList, <Application,LVertex> >\l2   conditional branch(ne) v1,v3             \l" 
+ "BB1\n1  nonreference field get instrctn: 3 = getstatic < Application, LMST, MyVertexList, <Application,LVertex> >\l2   conditional branch(ne) v1,v3             \l" -> "BB2\n3  nonreference field get instrctn: 4 = getstatic < Application, LMST, MyVertexList, <Application,LVertex> >\l4   v6 = invokevirtual < Application, LVertex, next()LVertex; > v4 @10 exception:v5\l" 
+ "BB1\n1  nonreference field get instrctn: 3 = getstatic < Application, LMST, MyVertexList, <Application,LVertex> >\l2   conditional branch(ne) v1,v3             \l" -> "BB4\n7  nonreference field get instrctn: 7 = getstatic < Application, LMST, MyVertexList, <Application,LVertex> >\l8   v9 = invokestatic < Application, LMST, BlueRule(LVertex;LVertex;)LBlueReturn; > v1,v7 @20 exception:v8\l" 
+ "BB2\n3  nonreference field get instrctn: 4 = getstatic < Application, LMST, MyVertexList, <Application,LVertex> >\l4   v6 = invokevirtual < Application, LVertex, next()LVertex; > v4 @10 exception:v5\l" -> "BB3\n5   putstatic v6 < Application, LMST, MyVertexList, <Application,LVertex> >\l" 
+ "BB3\n5   putstatic v6 < Application, LMST, MyVertexList, <Application,LVertex> >\l" -> "BB4\n7  nonreference field get instrctn: 7 = getstatic < Application, LMST, MyVertexList, <Application,LVertex> >\l8   v9 = invokestatic < Application, LMST, BlueRule(LVertex;LVertex;)LBlueReturn; > v1,v7 @20 exception:v8\l" 
+ "BB4\n7  nonreference field get instrctn: 7 = getstatic < Application, LMST, MyVertexList, <Application,LVertex> >\l8   v9 = invokestatic < Application, LMST, BlueRule(LVertex;LVertex;)LBlueReturn; > v1,v7 @20 exception:v8\l" -> "BB5\n9   return v9                                \l" 
+ "BB5\n9   return v9                                \l" -> "BB6 (ex)\n\n" 
+
+}

@@ -1,0 +1,49 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Cell.hackcofm()D", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2  Create O2_1                               \l" [ ]
+   "BB2\n4  < Application, LMathVector, <init>()V >( O2_1 )\l" [ ]
+   "BB3\n6  Create O3_1                               \l" [ ]
+   "BB4\n8  < Application, LMathVector, <init>()V >( O3_1 )\l" [ ]
+   "BB5\n" [ ]
+   "BB6\n           v22 = phi  v19,v3:#0.0\l           v23 = phi  v21,v8:#0\l14   conditional branch(ge) v23,v9:#8        \l" [ ]
+   "BB7\n16  GetOSSAInstruction:	O4_1= O1_1< subp>    \l" [ ]
+   "BB8\n18   v11 = arrayload v10[v23]                \l" [ ]
+   "BB9\n22   conditional branch(eq) v11,v12:#null    \l" [ ]
+   "BB10\n24  O5_1 = < Application, LNode, hackcofm()D >( V11 )\l" [ ]
+   "BB11\n28   v15 = binaryop(add) v14 , v22           \l32  nonreference field get instrctn: 16 = getfield < Application, LNode, pos, <Application,LMathVector> > 11\l" [ ]
+   "BB12\n34  < Application, LMathVector, multScalar(LMathVector;D)V >( O3_1, O6_1, V14 )\l" [ ]
+   "BB13\n37  < Application, LMathVector, addition(LMathVector;)V >( O2_1, O3_1 )\l" [ ]
+   "BB14\n           v19 = phi  v22,v15\l40   v21 = binaryop(add) v23 , v20:#1        \l42   goto                                    \l" [ ]
+   "BB15\n45  PutOSSAInstruction:	O1_2< mass > = O1_1<V22>\l" [ ]
+   "BB16\n48  PutOSSAInstruction:	O1_3< pos > = O1_2<refO2_1>\l" [ ]
+   "BB17\n50  GetOSSAInstruction:	O7_1= O1_3< pos>     \l" [ ]
+   "BB18\n52  GetOSSAInstruction:	25= O1_3< mass>      \l" [ ]
+   "BB19\n53  < Application, LMathVector, divScalar(D)V >( O7_1, V25 )\l" [ ]
+   "BB20\n55  Return O5_1                              \l" [ ]
+   "BB21 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2  Create O2_1                               \l" 
+ "BB1\n2  Create O2_1                               \l" -> "BB2\n4  < Application, LMathVector, <init>()V >( O2_1 )\l" 
+ "BB2\n4  < Application, LMathVector, <init>()V >( O2_1 )\l" -> "BB3\n6  Create O3_1                               \l" 
+ "BB3\n6  Create O3_1                               \l" -> "BB4\n8  < Application, LMathVector, <init>()V >( O3_1 )\l" 
+ "BB4\n8  < Application, LMathVector, <init>()V >( O3_1 )\l" -> "BB5\n" 
+ "BB5\n" -> "BB6\n           v22 = phi  v19,v3:#0.0\l           v23 = phi  v21,v8:#0\l14   conditional branch(ge) v23,v9:#8        \l" 
+ "BB6\n           v22 = phi  v19,v3:#0.0\l           v23 = phi  v21,v8:#0\l14   conditional branch(ge) v23,v9:#8        \l" -> "BB7\n16  GetOSSAInstruction:	O4_1= O1_1< subp>    \l" 
+ "BB6\n           v22 = phi  v19,v3:#0.0\l           v23 = phi  v21,v8:#0\l14   conditional branch(ge) v23,v9:#8        \l" -> "BB15\n45  PutOSSAInstruction:	O1_2< mass > = O1_1<V22>\l" 
+ "BB7\n16  GetOSSAInstruction:	O4_1= O1_1< subp>    \l" -> "BB8\n18   v11 = arrayload v10[v23]                \l" 
+ "BB8\n18   v11 = arrayload v10[v23]                \l" -> "BB9\n22   conditional branch(eq) v11,v12:#null    \l" 
+ "BB9\n22   conditional branch(eq) v11,v12:#null    \l" -> "BB10\n24  O5_1 = < Application, LNode, hackcofm()D >( V11 )\l" 
+ "BB9\n22   conditional branch(eq) v11,v12:#null    \l" -> "BB14\n           v19 = phi  v22,v15\l40   v21 = binaryop(add) v23 , v20:#1        \l42   goto                                    \l" 
+ "BB10\n24  O5_1 = < Application, LNode, hackcofm()D >( V11 )\l" -> "BB11\n28   v15 = binaryop(add) v14 , v22           \l32  nonreference field get instrctn: 16 = getfield < Application, LNode, pos, <Application,LMathVector> > 11\l" 
+ "BB11\n28   v15 = binaryop(add) v14 , v22           \l32  nonreference field get instrctn: 16 = getfield < Application, LNode, pos, <Application,LMathVector> > 11\l" -> "BB12\n34  < Application, LMathVector, multScalar(LMathVector;D)V >( O3_1, O6_1, V14 )\l" 
+ "BB12\n34  < Application, LMathVector, multScalar(LMathVector;D)V >( O3_1, O6_1, V14 )\l" -> "BB13\n37  < Application, LMathVector, addition(LMathVector;)V >( O2_1, O3_1 )\l" 
+ "BB13\n37  < Application, LMathVector, addition(LMathVector;)V >( O2_1, O3_1 )\l" -> "BB14\n           v19 = phi  v22,v15\l40   v21 = binaryop(add) v23 , v20:#1        \l42   goto                                    \l" 
+ "BB14\n           v19 = phi  v22,v15\l40   v21 = binaryop(add) v23 , v20:#1        \l42   goto                                    \l" -> "BB6\n           v22 = phi  v19,v3:#0.0\l           v23 = phi  v21,v8:#0\l14   conditional branch(ge) v23,v9:#8        \l" 
+ "BB15\n45  PutOSSAInstruction:	O1_2< mass > = O1_1<V22>\l" -> "BB16\n48  PutOSSAInstruction:	O1_3< pos > = O1_2<refO2_1>\l" 
+ "BB16\n48  PutOSSAInstruction:	O1_3< pos > = O1_2<refO2_1>\l" -> "BB17\n50  GetOSSAInstruction:	O7_1= O1_3< pos>     \l" 
+ "BB17\n50  GetOSSAInstruction:	O7_1= O1_3< pos>     \l" -> "BB18\n52  GetOSSAInstruction:	25= O1_3< mass>      \l" 
+ "BB18\n52  GetOSSAInstruction:	25= O1_3< mass>      \l" -> "BB19\n53  < Application, LMathVector, divScalar(D)V >( O7_1, V25 )\l" 
+ "BB19\n53  < Application, LMathVector, divScalar(D)V >( O7_1, V25 )\l" -> "BB20\n55  Return O5_1                              \l" 
+ "BB20\n55  Return O5_1                              \l" -> "BB21 (ex)\n\n" 
+
+}

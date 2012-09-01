@@ -1,0 +1,31 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0   v2 = new <Application,LSample>@0\l" [ ]
+   "BB2\n2   invokespecial < Application, LSample, <init>()V > v2 @4 exception:v3\l" [ ]
+   "BB3\n4   v4 = new <Application,LSample>@8\l" [ ]
+   "BB4\n6   invokespecial < Application, LSample, <init>()V > v4 @12 exception:v5\l" [ ]
+   "BB5\n10   putfield v2 = v4 < Application, LSample, next, <Application,LSample> >\l" [ ]
+   "BB6\n12   v6 = getfield < Application, LSample, next, <Application,LSample> > v2\l" [ ]
+   "BB7\n16   putfield v6 = v7:#6 < Application, LSample, x, <Primordial,I> >\l" [ ]
+   "BB8\n20   invokestatic < Application, LSample, check(I)V > v8:#1 @35 exception:v9\l" [ ]
+   "BB9\n22   v10 = getfield < Application, LSample, next, <Application,LSample> > v4\l" [ ]
+   "BB10\n24   putfield v10 = v11:#5 < Application, LSample, x, <Primordial,I> >\l" [ ]
+   "BB11\n27   invokestatic < Application, LTestProg3, test1(LSample;LSample;)V > v4,v6 @48 exception:v12\l" [ ]
+   "BB12\n28   return                        \l" [ ]
+   "BB13 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0   v2 = new <Application,LSample>@0\l" 
+ "BB1\n0   v2 = new <Application,LSample>@0\l" -> "BB2\n2   invokespecial < Application, LSample, <init>()V > v2 @4 exception:v3\l" 
+ "BB2\n2   invokespecial < Application, LSample, <init>()V > v2 @4 exception:v3\l" -> "BB3\n4   v4 = new <Application,LSample>@8\l" 
+ "BB3\n4   v4 = new <Application,LSample>@8\l" -> "BB4\n6   invokespecial < Application, LSample, <init>()V > v4 @12 exception:v5\l" 
+ "BB4\n6   invokespecial < Application, LSample, <init>()V > v4 @12 exception:v5\l" -> "BB5\n10   putfield v2 = v4 < Application, LSample, next, <Application,LSample> >\l" 
+ "BB5\n10   putfield v2 = v4 < Application, LSample, next, <Application,LSample> >\l" -> "BB6\n12   v6 = getfield < Application, LSample, next, <Application,LSample> > v2\l" 
+ "BB6\n12   v6 = getfield < Application, LSample, next, <Application,LSample> > v2\l" -> "BB7\n16   putfield v6 = v7:#6 < Application, LSample, x, <Primordial,I> >\l" 
+ "BB7\n16   putfield v6 = v7:#6 < Application, LSample, x, <Primordial,I> >\l" -> "BB8\n20   invokestatic < Application, LSample, check(I)V > v8:#1 @35 exception:v9\l" 
+ "BB8\n20   invokestatic < Application, LSample, check(I)V > v8:#1 @35 exception:v9\l" -> "BB9\n22   v10 = getfield < Application, LSample, next, <Application,LSample> > v4\l" 
+ "BB9\n22   v10 = getfield < Application, LSample, next, <Application,LSample> > v4\l" -> "BB10\n24   putfield v10 = v11:#5 < Application, LSample, x, <Primordial,I> >\l" 
+ "BB10\n24   putfield v10 = v11:#5 < Application, LSample, x, <Primordial,I> >\l" -> "BB11\n27   invokestatic < Application, LTestProg3, test1(LSample;LSample;)V > v4,v6 @48 exception:v12\l" 
+ "BB11\n27   invokestatic < Application, LTestProg3, test1(LSample;LSample;)V > v4,v6 @48 exception:v12\l" -> "BB12\n28   return                        \l" 
+ "BB12\n28   return                        \l" -> "BB13 (ex)\n\n" 
+
+}

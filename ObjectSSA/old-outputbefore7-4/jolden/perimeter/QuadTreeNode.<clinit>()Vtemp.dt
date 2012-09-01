@@ -1,0 +1,9 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   putstatic v2:#4194304 < Application, LQuadTreeNode, gcmp, <Primordial,I> >\l3   putstatic v3:#1048576 < Application, LQuadTreeNode, lcmp, <Primordial,I> >\l4   return                         \l" [ ]
+   "BB2 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   putstatic v2:#4194304 < Application, LQuadTreeNode, gcmp, <Primordial,I> >\l3   putstatic v3:#1048576 < Application, LQuadTreeNode, lcmp, <Primordial,I> >\l4   return                         \l" 
+ "BB1\n1   putstatic v2:#4194304 < Application, LQuadTreeNode, gcmp, <Primordial,I> >\l3   putstatic v3:#1048576 < Application, LQuadTreeNode, lcmp, <Primordial,I> >\l4   return                         \l" -> "BB2 (ex)\n\n" 
+
+}

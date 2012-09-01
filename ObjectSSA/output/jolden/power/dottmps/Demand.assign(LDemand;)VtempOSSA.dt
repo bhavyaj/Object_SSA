@@ -1,0 +1,17 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Demand.assign(LDemand;)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2  GetOSSAInstruction:	4= O2_1< P>           \l" [ ]
+   "BB2\n3  PutOSSAInstruction:	O1_2< P > = O1_1<V4>  \l" [ ]
+   "BB3\n6  GetOSSAInstruction:	5= O2_1< Q>           \l" [ ]
+   "BB4\n7  PutOSSAInstruction:	O1_3< Q > = O1_2<V5>  \l" [ ]
+   "BB5\n8  return                                    \l" [ ]
+   "BB6 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2  GetOSSAInstruction:	4= O2_1< P>           \l" 
+ "BB1\n2  GetOSSAInstruction:	4= O2_1< P>           \l" -> "BB2\n3  PutOSSAInstruction:	O1_2< P > = O1_1<V4>  \l" 
+ "BB2\n3  PutOSSAInstruction:	O1_2< P > = O1_1<V4>  \l" -> "BB3\n6  GetOSSAInstruction:	5= O2_1< Q>           \l" 
+ "BB3\n6  GetOSSAInstruction:	5= O2_1< Q>           \l" -> "BB4\n7  PutOSSAInstruction:	O1_3< Q > = O1_2<V5>  \l" 
+ "BB4\n7  PutOSSAInstruction:	O1_3< Q > = O1_2<V5>  \l" -> "BB5\n8  return                                    \l" 
+ "BB5\n8  return                                    \l" -> "BB6 (ex)\n\n" 
+
+}

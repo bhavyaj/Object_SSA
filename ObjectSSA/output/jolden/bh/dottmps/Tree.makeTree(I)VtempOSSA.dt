@@ -1,0 +1,54 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Tree.makeTree(I)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  O2_1 = < Application, LTree, bodiesRev()Ljava/util/Enumeration; >( O1_1 )\l" [ ]
+   "BB2\n" [ ]
+   "BB3\n4  O3_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O2_1 )\l" [ ]
+   "BB4\n6   conditional branch(eq) v7,v8:#0          \l" [ ]
+   "BB5\n8  O4_1 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O2_1 )\l" [ ]
+   "BB6\n9   v11 = checkcast <Application,LBody>v10   \l" [ ]
+   "BB7\n12  nonreference field get instrctn: 12 = getfield < Application, LBody, mass, <Primordial,D> > 11\l" [ ]
+   "BB8\n14   v14 = compare v12,v13:#0.0 opcode=cmpl  \l16   conditional branch(eq) v14,v8:#0        \l" [ ]
+   "BB9\n20  < Application, LBody, expandBox(LTree;I)V >( O4_1, O1_1, V2 )\l" [ ]
+   "BB10\n23  nonreference field get instrctn: 16 = getfield < Application, LBody, pos, <Application,LMathVector> > 11\l" [ ]
+   "BB11\n24  O6_1 = < Application, LTree, intcoord(LMathVector;)LMathVector; >( O1_1, O5_1 )\l" [ ]
+   "BB12\n27  GetOSSAInstruction:	O7_1= O1_1< root>    \l" [ ]
+   "BB13\n29   conditional branch(ne) v19,v20:#null    \l" [ ]
+   "BB14\n32  PutOSSAInstruction:	O1_2< root > = O1_1<V11>\l" [ ]
+   "BB15\n33   goto                                    \l" [ ]
+   "BB16\n36  GetOSSAInstruction:	O7_1= O1_1< root>    \l" [ ]
+   "BB17\n41  O8_1 = < Application, LNode, loadTree(LBody;LMathVector;ILTree;)LNode; >( O7_1, O4_1, O6_1, V22, O1_1 )\l" [ ]
+   "BB18\n42  PutOSSAInstruction:	O1_3< root > = O1_1<refO8_1>\l" [ ]
+   "BB19\n           O1_4 = Object-Phi(O1_1, O1_2, O1_3 )\l43   goto                                    \l" [ ]
+   "BB20\n45  GetOSSAInstruction:	O7_1= O1_1< root>    \l" [ ]
+   "BB21\n46  O3_2 = < Application, LNode, hackcofm()D >( O7_1 )\l" [ ]
+   "BB22\n48  return                                   \l" [ ]
+   "BB23 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  O2_1 = < Application, LTree, bodiesRev()Ljava/util/Enumeration; >( O1_1 )\l" 
+ "BB1\n1  O2_1 = < Application, LTree, bodiesRev()Ljava/util/Enumeration; >( O1_1 )\l" -> "BB2\n" 
+ "BB2\n" -> "BB3\n4  O3_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O2_1 )\l" 
+ "BB3\n4  O3_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O2_1 )\l" -> "BB4\n6   conditional branch(eq) v7,v8:#0          \l" 
+ "BB4\n6   conditional branch(eq) v7,v8:#0          \l" -> "BB5\n8  O4_1 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O2_1 )\l" 
+ "BB4\n6   conditional branch(eq) v7,v8:#0          \l" -> "BB20\n45  GetOSSAInstruction:	O7_1= O1_1< root>    \l" 
+ "BB5\n8  O4_1 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O2_1 )\l" -> "BB6\n9   v11 = checkcast <Application,LBody>v10   \l" 
+ "BB6\n9   v11 = checkcast <Application,LBody>v10   \l" -> "BB7\n12  nonreference field get instrctn: 12 = getfield < Application, LBody, mass, <Primordial,D> > 11\l" 
+ "BB7\n12  nonreference field get instrctn: 12 = getfield < Application, LBody, mass, <Primordial,D> > 11\l" -> "BB8\n14   v14 = compare v12,v13:#0.0 opcode=cmpl  \l16   conditional branch(eq) v14,v8:#0        \l" 
+ "BB8\n14   v14 = compare v12,v13:#0.0 opcode=cmpl  \l16   conditional branch(eq) v14,v8:#0        \l" -> "BB9\n20  < Application, LBody, expandBox(LTree;I)V >( O4_1, O1_1, V2 )\l" 
+ "BB8\n14   v14 = compare v12,v13:#0.0 opcode=cmpl  \l16   conditional branch(eq) v14,v8:#0        \l" -> "BB19\n           O1_4 = Object-Phi(O1_1, O1_2, O1_3 )\l43   goto                                    \l" 
+ "BB9\n20  < Application, LBody, expandBox(LTree;I)V >( O4_1, O1_1, V2 )\l" -> "BB10\n23  nonreference field get instrctn: 16 = getfield < Application, LBody, pos, <Application,LMathVector> > 11\l" 
+ "BB10\n23  nonreference field get instrctn: 16 = getfield < Application, LBody, pos, <Application,LMathVector> > 11\l" -> "BB11\n24  O6_1 = < Application, LTree, intcoord(LMathVector;)LMathVector; >( O1_1, O5_1 )\l" 
+ "BB11\n24  O6_1 = < Application, LTree, intcoord(LMathVector;)LMathVector; >( O1_1, O5_1 )\l" -> "BB12\n27  GetOSSAInstruction:	O7_1= O1_1< root>    \l" 
+ "BB12\n27  GetOSSAInstruction:	O7_1= O1_1< root>    \l" -> "BB13\n29   conditional branch(ne) v19,v20:#null    \l" 
+ "BB13\n29   conditional branch(ne) v19,v20:#null    \l" -> "BB14\n32  PutOSSAInstruction:	O1_2< root > = O1_1<V11>\l" 
+ "BB13\n29   conditional branch(ne) v19,v20:#null    \l" -> "BB16\n36  GetOSSAInstruction:	O7_1= O1_1< root>    \l" 
+ "BB14\n32  PutOSSAInstruction:	O1_2< root > = O1_1<V11>\l" -> "BB15\n33   goto                                    \l" 
+ "BB15\n33   goto                                    \l" -> "BB19\n           O1_4 = Object-Phi(O1_1, O1_2, O1_3 )\l43   goto                                    \l" 
+ "BB16\n36  GetOSSAInstruction:	O7_1= O1_1< root>    \l" -> "BB17\n41  O8_1 = < Application, LNode, loadTree(LBody;LMathVector;ILTree;)LNode; >( O7_1, O4_1, O6_1, V22, O1_1 )\l" 
+ "BB17\n41  O8_1 = < Application, LNode, loadTree(LBody;LMathVector;ILTree;)LNode; >( O7_1, O4_1, O6_1, V22, O1_1 )\l" -> "BB18\n42  PutOSSAInstruction:	O1_3< root > = O1_1<refO8_1>\l" 
+ "BB18\n42  PutOSSAInstruction:	O1_3< root > = O1_1<refO8_1>\l" -> "BB19\n           O1_4 = Object-Phi(O1_1, O1_2, O1_3 )\l43   goto                                    \l" 
+ "BB19\n           O1_4 = Object-Phi(O1_1, O1_2, O1_3 )\l43   goto                                    \l" -> "BB3\n4  O3_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O2_1 )\l" 
+ "BB20\n45  GetOSSAInstruction:	O7_1= O1_1< root>    \l" -> "BB21\n46  O3_2 = < Application, LNode, hackcofm()D >( O7_1 )\l" 
+ "BB21\n46  O3_2 = < Application, LNode, hackcofm()D >( O7_1 )\l" -> "BB22\n48  return                                   \l" 
+ "BB22\n48  return                                   \l" -> "BB23 (ex)\n\n" 
+
+}

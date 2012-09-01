@@ -1,0 +1,35 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v6 = invokevirtual < Application, LEdge, oNext()LEdge; > v1 @1 exception:v5\l" [ ]
+   "BB2\n" [ ]
+   "BB3\n           v19 = phi  v18,v6\l5   conditional branch(eq) v19,v1  \l" [ ]
+   "BB4\n8   v8 = invokevirtual < Application, Ljava/util/Hashtable, containsKey(Ljava/lang/Object;)Z > v3,v19 @12 exception:v7\l" [ ]
+   "BB5\n10   conditional branch(ne) v8,v9:#0\l" [ ]
+   "BB6\n13   v10 = new <Application,Ljava/lang/Boolean>@20\l" [ ]
+   "BB7\n16   invokespecial < Application, Ljava/lang/Boolean, <init>(Z)V > v10,v11:#1 @25 exception:v12\l" [ ]
+   "BB8\n17   v14 = invokevirtual < Application, Ljava/util/Hashtable, put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; > v3,v19,v10 @28 exception:v13\l" [ ]
+   "BB9\n21   v16 = invokevirtual < Application, Ljava/util/Stack, push(Ljava/lang/Object;)Ljava/lang/Object; > v2,v19 @34 exception:v15\l" [ ]
+   "BB10\n" [ ]
+   "BB11\n24   v18 = invokevirtual < Application, LEdge, oNext()LEdge; > v19 @39 exception:v17\l" [ ]
+   "BB12\n26   goto                          \l" [ ]
+   "BB13\n27   return                        \l" [ ]
+   "BB14 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v6 = invokevirtual < Application, LEdge, oNext()LEdge; > v1 @1 exception:v5\l" 
+ "BB1\n1   v6 = invokevirtual < Application, LEdge, oNext()LEdge; > v1 @1 exception:v5\l" -> "BB2\n" 
+ "BB2\n" -> "BB3\n           v19 = phi  v18,v6\l5   conditional branch(eq) v19,v1  \l" 
+ "BB3\n           v19 = phi  v18,v6\l5   conditional branch(eq) v19,v1  \l" -> "BB4\n8   v8 = invokevirtual < Application, Ljava/util/Hashtable, containsKey(Ljava/lang/Object;)Z > v3,v19 @12 exception:v7\l" 
+ "BB3\n           v19 = phi  v18,v6\l5   conditional branch(eq) v19,v1  \l" -> "BB13\n27   return                        \l" 
+ "BB4\n8   v8 = invokevirtual < Application, Ljava/util/Hashtable, containsKey(Ljava/lang/Object;)Z > v3,v19 @12 exception:v7\l" -> "BB5\n10   conditional branch(ne) v8,v9:#0\l" 
+ "BB5\n10   conditional branch(ne) v8,v9:#0\l" -> "BB6\n13   v10 = new <Application,Ljava/lang/Boolean>@20\l" 
+ "BB5\n10   conditional branch(ne) v8,v9:#0\l" -> "BB11\n24   v18 = invokevirtual < Application, LEdge, oNext()LEdge; > v19 @39 exception:v17\l" 
+ "BB6\n13   v10 = new <Application,Ljava/lang/Boolean>@20\l" -> "BB7\n16   invokespecial < Application, Ljava/lang/Boolean, <init>(Z)V > v10,v11:#1 @25 exception:v12\l" 
+ "BB7\n16   invokespecial < Application, Ljava/lang/Boolean, <init>(Z)V > v10,v11:#1 @25 exception:v12\l" -> "BB8\n17   v14 = invokevirtual < Application, Ljava/util/Hashtable, put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; > v3,v19,v10 @28 exception:v13\l" 
+ "BB8\n17   v14 = invokevirtual < Application, Ljava/util/Hashtable, put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; > v3,v19,v10 @28 exception:v13\l" -> "BB9\n21   v16 = invokevirtual < Application, Ljava/util/Stack, push(Ljava/lang/Object;)Ljava/lang/Object; > v2,v19 @34 exception:v15\l" 
+ "BB9\n21   v16 = invokevirtual < Application, Ljava/util/Stack, push(Ljava/lang/Object;)Ljava/lang/Object; > v2,v19 @34 exception:v15\l" -> "BB10\n" 
+ "BB10\n" -> "BB11\n24   v18 = invokevirtual < Application, LEdge, oNext()LEdge; > v19 @39 exception:v17\l" 
+ "BB11\n24   v18 = invokevirtual < Application, LEdge, oNext()LEdge; > v19 @39 exception:v17\l" -> "BB12\n26   goto                          \l" 
+ "BB12\n26   goto                          \l" -> "BB3\n           v19 = phi  v18,v6\l5   conditional branch(eq) v19,v1  \l" 
+ "BB13\n27   return                        \l" -> "BB14 (ex)\n\n" 
+
+}

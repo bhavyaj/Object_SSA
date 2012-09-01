@@ -1,0 +1,45 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Value.inOrder()V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  GetOSSAInstruction:	O1_1= O1_1< left>     \l" [ ]
+   "BB2\n3   conditional branch(eq) v3,v4:#null       \l" [ ]
+   "BB3\n5  GetOSSAInstruction:	O1_1= O1_1< left>     \l" [ ]
+   "BB4\n6   invokevirtual < Application, LValue, inOrder()V > v5 @11 exception:v6\l" [ ]
+   "BB5\n7  nonreference field get instrctn: 7 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l8  Create O3_1                               \l" [ ]
+   "BB6\n10   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v8 @21 exception:v9\l" [ ]
+   "BB7\n12  GetOSSAInstruction:	10= O1_1< value>     \l" [ ]
+   "BB8\n13   v12 = invokevirtual < Application, Ljava/lang/StringBuilder, append(I)Ljava/lang/StringBuilder; > v8,v10 @28 exception:v11\l" [ ]
+   "BB9\n15   v15 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v12,v13:#  @33 exception:v14\l" [ ]
+   "BB10\n17   v17 = invokevirtual < Application, Ljava/lang/Object, hashCode()I > v1 @37 exception:v16\l" [ ]
+   "BB11\n18   v19 = invokevirtual < Application, Ljava/lang/StringBuilder, append(I)Ljava/lang/StringBuilder; > v15,v17 @40 exception:v18\l" [ ]
+   "BB12\n19   v21 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v19 @43 exception:v20\l" [ ]
+   "BB13\n20   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v7,v21 @46 exception:v22\l" [ ]
+   "BB14\n22  GetOSSAInstruction:	O1_1= O1_1< right>   \l" [ ]
+   "BB15\n24   conditional branch(eq) v23,v4:#null     \l" [ ]
+   "BB16\n26  GetOSSAInstruction:	O1_1= O1_1< right>   \l" [ ]
+   "BB17\n27   invokevirtual < Application, LValue, inOrder()V > v24 @60 exception:v25\l" [ ]
+   "BB18\n28  return                                   \l" [ ]
+   "BB19 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  GetOSSAInstruction:	O1_1= O1_1< left>     \l" 
+ "BB1\n1  GetOSSAInstruction:	O1_1= O1_1< left>     \l" -> "BB2\n3   conditional branch(eq) v3,v4:#null       \l" 
+ "BB2\n3   conditional branch(eq) v3,v4:#null       \l" -> "BB3\n5  GetOSSAInstruction:	O1_1= O1_1< left>     \l" 
+ "BB2\n3   conditional branch(eq) v3,v4:#null       \l" -> "BB5\n7  nonreference field get instrctn: 7 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l8  Create O3_1                               \l" 
+ "BB3\n5  GetOSSAInstruction:	O1_1= O1_1< left>     \l" -> "BB4\n6   invokevirtual < Application, LValue, inOrder()V > v5 @11 exception:v6\l" 
+ "BB4\n6   invokevirtual < Application, LValue, inOrder()V > v5 @11 exception:v6\l" -> "BB5\n7  nonreference field get instrctn: 7 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l8  Create O3_1                               \l" 
+ "BB5\n7  nonreference field get instrctn: 7 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l8  Create O3_1                               \l" -> "BB6\n10   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v8 @21 exception:v9\l" 
+ "BB6\n10   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v8 @21 exception:v9\l" -> "BB7\n12  GetOSSAInstruction:	10= O1_1< value>     \l" 
+ "BB7\n12  GetOSSAInstruction:	10= O1_1< value>     \l" -> "BB8\n13   v12 = invokevirtual < Application, Ljava/lang/StringBuilder, append(I)Ljava/lang/StringBuilder; > v8,v10 @28 exception:v11\l" 
+ "BB8\n13   v12 = invokevirtual < Application, Ljava/lang/StringBuilder, append(I)Ljava/lang/StringBuilder; > v8,v10 @28 exception:v11\l" -> "BB9\n15   v15 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v12,v13:#  @33 exception:v14\l" 
+ "BB9\n15   v15 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v12,v13:#  @33 exception:v14\l" -> "BB10\n17   v17 = invokevirtual < Application, Ljava/lang/Object, hashCode()I > v1 @37 exception:v16\l" 
+ "BB10\n17   v17 = invokevirtual < Application, Ljava/lang/Object, hashCode()I > v1 @37 exception:v16\l" -> "BB11\n18   v19 = invokevirtual < Application, Ljava/lang/StringBuilder, append(I)Ljava/lang/StringBuilder; > v15,v17 @40 exception:v18\l" 
+ "BB11\n18   v19 = invokevirtual < Application, Ljava/lang/StringBuilder, append(I)Ljava/lang/StringBuilder; > v15,v17 @40 exception:v18\l" -> "BB12\n19   v21 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v19 @43 exception:v20\l" 
+ "BB12\n19   v21 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v19 @43 exception:v20\l" -> "BB13\n20   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v7,v21 @46 exception:v22\l" 
+ "BB13\n20   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v7,v21 @46 exception:v22\l" -> "BB14\n22  GetOSSAInstruction:	O1_1= O1_1< right>   \l" 
+ "BB14\n22  GetOSSAInstruction:	O1_1= O1_1< right>   \l" -> "BB15\n24   conditional branch(eq) v23,v4:#null     \l" 
+ "BB15\n24   conditional branch(eq) v23,v4:#null     \l" -> "BB16\n26  GetOSSAInstruction:	O1_1= O1_1< right>   \l" 
+ "BB15\n24   conditional branch(eq) v23,v4:#null     \l" -> "BB18\n28  return                                   \l" 
+ "BB16\n26  GetOSSAInstruction:	O1_1= O1_1< right>   \l" -> "BB17\n27   invokevirtual < Application, LValue, inOrder()V > v24 @60 exception:v25\l" 
+ "BB17\n27   invokevirtual < Application, LValue, inOrder()V > v24 @60 exception:v25\l" -> "BB18\n28  return                                   \l" 
+ "BB18\n28  return                                   \l" -> "BB19 (ex)\n\n" 
+
+}

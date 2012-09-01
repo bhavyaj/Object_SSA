@@ -1,0 +1,40 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Tree.stepSystem(I)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2  PutOSSAInstruction:	O1_2< root > = O1_1<V4>\l" [ ]
+   "BB2\n5  < Application, LTree, makeTree(I)V >( O1_2, V2 )\l" [ ]
+   "BB3\n7  GetOSSAInstruction:	O2_1= O1_2< bodyTabRev>\l" [ ]
+   "BB4\n8  O3_1 = < Application, LBody, elementsRev()Ljava/util/Enumeration; >( O2_1 )\l" [ ]
+   "BB5\n" [ ]
+   "BB6\n11  O4_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_1 )\l" [ ]
+   "BB7\n13   conditional branch(eq) v10,v11:#0       \l" [ ]
+   "BB8\n15  O2_1 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O3_1 )\l" [ ]
+   "BB9\n16   v14 = checkcast <Application,LBody>v13  \l" [ ]
+   "BB10\n20  GetOSSAInstruction:	15= O1_2< rsize>     \l" [ ]
+   "BB11\n22  GetOSSAInstruction:	O5_1= O1_2< root>    \l" [ ]
+   "BB12\n23  < Application, LBody, hackGravity(DLNode;)V >( O2_1, V15, O5_1 )\l" [ ]
+   "BB13\n24   goto                                    \l" [ ]
+   "BB14\n26  GetOSSAInstruction:	O2_1= O1_2< bodyTabRev>\l" [ ]
+   "BB15\n28  < Application, LTree, vp(LBody;I)V >( O2_1, V2 )\l" [ ]
+   "BB16\n29  return                                   \l" [ ]
+   "BB17 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2  PutOSSAInstruction:	O1_2< root > = O1_1<V4>\l" 
+ "BB1\n2  PutOSSAInstruction:	O1_2< root > = O1_1<V4>\l" -> "BB2\n5  < Application, LTree, makeTree(I)V >( O1_2, V2 )\l" 
+ "BB2\n5  < Application, LTree, makeTree(I)V >( O1_2, V2 )\l" -> "BB3\n7  GetOSSAInstruction:	O2_1= O1_2< bodyTabRev>\l" 
+ "BB3\n7  GetOSSAInstruction:	O2_1= O1_2< bodyTabRev>\l" -> "BB4\n8  O3_1 = < Application, LBody, elementsRev()Ljava/util/Enumeration; >( O2_1 )\l" 
+ "BB4\n8  O3_1 = < Application, LBody, elementsRev()Ljava/util/Enumeration; >( O2_1 )\l" -> "BB5\n" 
+ "BB5\n" -> "BB6\n11  O4_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_1 )\l" 
+ "BB6\n11  O4_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_1 )\l" -> "BB7\n13   conditional branch(eq) v10,v11:#0       \l" 
+ "BB7\n13   conditional branch(eq) v10,v11:#0       \l" -> "BB8\n15  O2_1 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O3_1 )\l" 
+ "BB7\n13   conditional branch(eq) v10,v11:#0       \l" -> "BB14\n26  GetOSSAInstruction:	O2_1= O1_2< bodyTabRev>\l" 
+ "BB8\n15  O2_1 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O3_1 )\l" -> "BB9\n16   v14 = checkcast <Application,LBody>v13  \l" 
+ "BB9\n16   v14 = checkcast <Application,LBody>v13  \l" -> "BB10\n20  GetOSSAInstruction:	15= O1_2< rsize>     \l" 
+ "BB10\n20  GetOSSAInstruction:	15= O1_2< rsize>     \l" -> "BB11\n22  GetOSSAInstruction:	O5_1= O1_2< root>    \l" 
+ "BB11\n22  GetOSSAInstruction:	O5_1= O1_2< root>    \l" -> "BB12\n23  < Application, LBody, hackGravity(DLNode;)V >( O2_1, V15, O5_1 )\l" 
+ "BB12\n23  < Application, LBody, hackGravity(DLNode;)V >( O2_1, V15, O5_1 )\l" -> "BB13\n24   goto                                    \l" 
+ "BB13\n24   goto                                    \l" -> "BB6\n11  O4_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_1 )\l" 
+ "BB14\n26  GetOSSAInstruction:	O2_1= O1_2< bodyTabRev>\l" -> "BB15\n28  < Application, LTree, vp(LBody;I)V >( O2_1, V2 )\l" 
+ "BB15\n28  < Application, LTree, vp(LBody;I)V >( O2_1, V2 )\l" -> "BB16\n29  return                                   \l" 
+ "BB16\n29  return                                   \l" -> "BB17 (ex)\n\n" 
+
+}

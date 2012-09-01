@@ -1,0 +1,19 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v3 = getfield < Application, LList$ListEnumerator, curNode, <Application,LList$ListNode> > v1\l" [ ]
+   "BB2\n2   v4 = getfield < Application, LList$ListNode, object, <Application,Ljava/lang/Object> > v3\l" [ ]
+   "BB3\n6   v5 = getfield < Application, LList$ListEnumerator, curNode, <Application,LList$ListNode> > v1\l" [ ]
+   "BB4\n7   v6 = getfield < Application, LList$ListNode, next, <Application,LList$ListNode> > v5\l" [ ]
+   "BB5\n8   putfield v1 = v6 < Application, LList$ListEnumerator, curNode, <Application,LList$ListNode> >\l" [ ]
+   "BB6\n10   return v4                     \l" [ ]
+   "BB7 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v3 = getfield < Application, LList$ListEnumerator, curNode, <Application,LList$ListNode> > v1\l" 
+ "BB1\n1   v3 = getfield < Application, LList$ListEnumerator, curNode, <Application,LList$ListNode> > v1\l" -> "BB2\n2   v4 = getfield < Application, LList$ListNode, object, <Application,Ljava/lang/Object> > v3\l" 
+ "BB2\n2   v4 = getfield < Application, LList$ListNode, object, <Application,Ljava/lang/Object> > v3\l" -> "BB3\n6   v5 = getfield < Application, LList$ListEnumerator, curNode, <Application,LList$ListNode> > v1\l" 
+ "BB3\n6   v5 = getfield < Application, LList$ListEnumerator, curNode, <Application,LList$ListNode> > v1\l" -> "BB4\n7   v6 = getfield < Application, LList$ListNode, next, <Application,LList$ListNode> > v5\l" 
+ "BB4\n7   v6 = getfield < Application, LList$ListNode, next, <Application,LList$ListNode> > v5\l" -> "BB5\n8   putfield v1 = v6 < Application, LList$ListEnumerator, curNode, <Application,LList$ListNode> >\l" 
+ "BB5\n8   putfield v1 = v6 < Application, LList$ListEnumerator, curNode, <Application,LList$ListNode> >\l" -> "BB6\n10   return v4                     \l" 
+ "BB6\n10   return v4                     \l" -> "BB7 (ex)\n\n" 
+
+}

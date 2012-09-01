@@ -1,0 +1,30 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Leaf.compute(DD)LDemand;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  GetOSSAInstruction:	O2_1= O1_1< D>        \l" [ ]
+   "BB2\n4   invokevirtual < Application, LDemand, optimizeNode(DD)V > v5,v2,v3 @6 exception:v6\l" [ ]
+   "BB3\n6  GetOSSAInstruction:	O2_1= O1_1< D>        \l" [ ]
+   "BB4\n7  GetOSSAInstruction:	8= O2_1< P>           \l" [ ]
+   "BB5\n9   v10 = compare v8,v9:#0.0 opcode=cmpg     \l11   conditional branch(ge) v10,v11:#0       \l" [ ]
+   "BB6\n13  GetOSSAInstruction:	O2_1= O1_1< D>       \l" [ ]
+   "BB7\n15  PutOSSAInstruction:	O2_1< P > = O2_1<V9> \l" [ ]
+   "BB8\n17  GetOSSAInstruction:	O2_1= O1_1< D>       \l" [ ]
+   "BB9\n19  PutOSSAInstruction:	O2_2< Q > = O2_1<V9> \l" [ ]
+   "BB10\n           O2_3 = Object-Phi(O2_1, O2_2 )\l21  GetOSSAInstruction:	O2_3= O1_1< D>       \l" [ ]
+   "BB11\n22   return v14                              \l" [ ]
+   "BB12 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  GetOSSAInstruction:	O2_1= O1_1< D>        \l" 
+ "BB1\n1  GetOSSAInstruction:	O2_1= O1_1< D>        \l" -> "BB2\n4   invokevirtual < Application, LDemand, optimizeNode(DD)V > v5,v2,v3 @6 exception:v6\l" 
+ "BB2\n4   invokevirtual < Application, LDemand, optimizeNode(DD)V > v5,v2,v3 @6 exception:v6\l" -> "BB3\n6  GetOSSAInstruction:	O2_1= O1_1< D>        \l" 
+ "BB3\n6  GetOSSAInstruction:	O2_1= O1_1< D>        \l" -> "BB4\n7  GetOSSAInstruction:	8= O2_1< P>           \l" 
+ "BB4\n7  GetOSSAInstruction:	8= O2_1< P>           \l" -> "BB5\n9   v10 = compare v8,v9:#0.0 opcode=cmpg     \l11   conditional branch(ge) v10,v11:#0       \l" 
+ "BB5\n9   v10 = compare v8,v9:#0.0 opcode=cmpg     \l11   conditional branch(ge) v10,v11:#0       \l" -> "BB6\n13  GetOSSAInstruction:	O2_1= O1_1< D>       \l" 
+ "BB5\n9   v10 = compare v8,v9:#0.0 opcode=cmpg     \l11   conditional branch(ge) v10,v11:#0       \l" -> "BB10\n           O2_3 = Object-Phi(O2_1, O2_2 )\l21  GetOSSAInstruction:	O2_3= O1_1< D>       \l" 
+ "BB6\n13  GetOSSAInstruction:	O2_1= O1_1< D>       \l" -> "BB7\n15  PutOSSAInstruction:	O2_1< P > = O2_1<V9> \l" 
+ "BB7\n15  PutOSSAInstruction:	O2_1< P > = O2_1<V9> \l" -> "BB8\n17  GetOSSAInstruction:	O2_1= O1_1< D>       \l" 
+ "BB8\n17  GetOSSAInstruction:	O2_1= O1_1< D>       \l" -> "BB9\n19  PutOSSAInstruction:	O2_2< Q > = O2_1<V9> \l" 
+ "BB9\n19  PutOSSAInstruction:	O2_2< Q > = O2_1<V9> \l" -> "BB10\n           O2_3 = Object-Phi(O2_1, O2_2 )\l21  GetOSSAInstruction:	O2_3= O1_1< D>       \l" 
+ "BB10\n           O2_3 = Object-Phi(O2_1, O2_2 )\l21  GetOSSAInstruction:	O2_3= O1_1< D>       \l" -> "BB11\n22   return v14                              \l" 
+ "BB11\n22   return v14                              \l" -> "BB12 (ex)\n\n" 
+
+}

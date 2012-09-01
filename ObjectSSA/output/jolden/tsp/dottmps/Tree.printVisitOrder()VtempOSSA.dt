@@ -1,0 +1,60 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Tree.printVisitOrder()V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0  nonreference field get instrctn: 3 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l1  Create O3_1                               \l" [ ]
+   "BB2\n3  < Application, Ljava/lang/StringBuilder, <init>()V >( O3_1 )\l" [ ]
+   "BB3\n5  O4_1 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O3_1, V6 )\l" [ ]
+   "BB4\n7  GetOSSAInstruction:	9= O1_1< x>           \l" [ ]
+   "BB5\n8  O4_2 = < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; >( O4_1, V9 )\l" [ ]
+   "BB6\n10  O4_3 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O4_2, V12 )\l" [ ]
+   "BB7\n12  GetOSSAInstruction:	15= O1_1< y>         \l" [ ]
+   "BB8\n13  O4_4 = < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; >( O4_3, V15 )\l" [ ]
+   "BB9\n14  O5_1 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O4_4 )\l" [ ]
+   "BB10\n15  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O2_1, O5_1 )\l" [ ]
+   "BB11\n17  GetOSSAInstruction:	O1_1= O1_1< next>    \l" [ ]
+   "BB12\n" [ ]
+   "BB13\n           v39 = phi  v38,v21\l21   conditional branch(eq) v39,v1           \l" [ ]
+   "BB14\n22  nonreference field get instrctn: 22 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l23  Create O6_1                              \l" [ ]
+   "BB15\n25  < Application, Ljava/lang/StringBuilder, <init>()V >( O6_1 )\l" [ ]
+   "BB16\n27  O4_5 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O6_1, V6 )\l" [ ]
+   "BB17\n29  GetOSSAInstruction:	27= O1_1< x>         \l" [ ]
+   "BB18\n30  O4_6 = < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; >( O4_5, V27 )\l" [ ]
+   "BB19\n32  O4_7 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O4_6, V12 )\l" [ ]
+   "BB20\n34  GetOSSAInstruction:	32= O1_1< y>         \l" [ ]
+   "BB21\n35  O4_8 = < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; >( O4_7, V32 )\l" [ ]
+   "BB22\n36  O5_2 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O4_8 )\l" [ ]
+   "BB23\n37  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O2_1, O5_2 )\l" [ ]
+   "BB24\n39  GetOSSAInstruction:	O1_1= O1_1< next>    \l" [ ]
+   "BB25\n41   goto                                    \l" [ ]
+   "BB26\n42  return                                   \l" [ ]
+   "BB27 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0  nonreference field get instrctn: 3 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l1  Create O3_1                               \l" 
+ "BB1\n0  nonreference field get instrctn: 3 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l1  Create O3_1                               \l" -> "BB2\n3  < Application, Ljava/lang/StringBuilder, <init>()V >( O3_1 )\l" 
+ "BB2\n3  < Application, Ljava/lang/StringBuilder, <init>()V >( O3_1 )\l" -> "BB3\n5  O4_1 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O3_1, V6 )\l" 
+ "BB3\n5  O4_1 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O3_1, V6 )\l" -> "BB4\n7  GetOSSAInstruction:	9= O1_1< x>           \l" 
+ "BB4\n7  GetOSSAInstruction:	9= O1_1< x>           \l" -> "BB5\n8  O4_2 = < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; >( O4_1, V9 )\l" 
+ "BB5\n8  O4_2 = < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; >( O4_1, V9 )\l" -> "BB6\n10  O4_3 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O4_2, V12 )\l" 
+ "BB6\n10  O4_3 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O4_2, V12 )\l" -> "BB7\n12  GetOSSAInstruction:	15= O1_1< y>         \l" 
+ "BB7\n12  GetOSSAInstruction:	15= O1_1< y>         \l" -> "BB8\n13  O4_4 = < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; >( O4_3, V15 )\l" 
+ "BB8\n13  O4_4 = < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; >( O4_3, V15 )\l" -> "BB9\n14  O5_1 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O4_4 )\l" 
+ "BB9\n14  O5_1 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O4_4 )\l" -> "BB10\n15  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O2_1, O5_1 )\l" 
+ "BB10\n15  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O2_1, O5_1 )\l" -> "BB11\n17  GetOSSAInstruction:	O1_1= O1_1< next>    \l" 
+ "BB11\n17  GetOSSAInstruction:	O1_1= O1_1< next>    \l" -> "BB12\n" 
+ "BB12\n" -> "BB13\n           v39 = phi  v38,v21\l21   conditional branch(eq) v39,v1           \l" 
+ "BB13\n           v39 = phi  v38,v21\l21   conditional branch(eq) v39,v1           \l" -> "BB14\n22  nonreference field get instrctn: 22 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l23  Create O6_1                              \l" 
+ "BB13\n           v39 = phi  v38,v21\l21   conditional branch(eq) v39,v1           \l" -> "BB26\n42  return                                   \l" 
+ "BB14\n22  nonreference field get instrctn: 22 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l23  Create O6_1                              \l" -> "BB15\n25  < Application, Ljava/lang/StringBuilder, <init>()V >( O6_1 )\l" 
+ "BB15\n25  < Application, Ljava/lang/StringBuilder, <init>()V >( O6_1 )\l" -> "BB16\n27  O4_5 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O6_1, V6 )\l" 
+ "BB16\n27  O4_5 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O6_1, V6 )\l" -> "BB17\n29  GetOSSAInstruction:	27= O1_1< x>         \l" 
+ "BB17\n29  GetOSSAInstruction:	27= O1_1< x>         \l" -> "BB18\n30  O4_6 = < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; >( O4_5, V27 )\l" 
+ "BB18\n30  O4_6 = < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; >( O4_5, V27 )\l" -> "BB19\n32  O4_7 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O4_6, V12 )\l" 
+ "BB19\n32  O4_7 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O4_6, V12 )\l" -> "BB20\n34  GetOSSAInstruction:	32= O1_1< y>         \l" 
+ "BB20\n34  GetOSSAInstruction:	32= O1_1< y>         \l" -> "BB21\n35  O4_8 = < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; >( O4_7, V32 )\l" 
+ "BB21\n35  O4_8 = < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; >( O4_7, V32 )\l" -> "BB22\n36  O5_2 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O4_8 )\l" 
+ "BB22\n36  O5_2 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O4_8 )\l" -> "BB23\n37  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O2_1, O5_2 )\l" 
+ "BB23\n37  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O2_1, O5_2 )\l" -> "BB24\n39  GetOSSAInstruction:	O1_1= O1_1< next>    \l" 
+ "BB24\n39  GetOSSAInstruction:	O1_1= O1_1< next>    \l" -> "BB25\n41   goto                                    \l" 
+ "BB25\n41   goto                                    \l" -> "BB13\n           v39 = phi  v38,v21\l21   conditional branch(eq) v39,v1           \l" 
+ "BB26\n42  return                                   \l" -> "BB27 (ex)\n\n" 
+
+}

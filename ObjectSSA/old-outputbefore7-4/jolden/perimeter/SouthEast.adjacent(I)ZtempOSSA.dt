@@ -1,0 +1,19 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for SouthEast.adjacent(I)Z", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2   conditional branch(eq) v2,v4:#2          \l" [ ]
+   "BB2\n5   conditional branch(ne) v2,v5:#1          \l" [ ]
+   "BB3\n7   goto                                     \l" [ ]
+   "BB4\n" [ ]
+   "BB5\n           v7 = phi  v5:#1,v6:#0\l9   return v7                                \l" [ ]
+   "BB6 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2   conditional branch(eq) v2,v4:#2          \l" 
+ "BB1\n2   conditional branch(eq) v2,v4:#2          \l" -> "BB2\n5   conditional branch(ne) v2,v5:#1          \l" 
+ "BB1\n2   conditional branch(eq) v2,v4:#2          \l" -> "BB3\n7   goto                                     \l" 
+ "BB2\n5   conditional branch(ne) v2,v5:#1          \l" -> "BB3\n7   goto                                     \l" 
+ "BB2\n5   conditional branch(ne) v2,v5:#1          \l" -> "BB4\n" 
+ "BB3\n7   goto                                     \l" -> "BB5\n           v7 = phi  v5:#1,v6:#0\l9   return v7                                \l" 
+ "BB4\n" -> "BB5\n           v7 = phi  v5:#1,v6:#0\l9   return v7                                \l" 
+ "BB5\n           v7 = phi  v5:#1,v6:#0\l9   return v7                                \l" -> "BB6 (ex)\n\n" 
+
+}

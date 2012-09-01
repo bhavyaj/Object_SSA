@@ -1,0 +1,49 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v4\l" [ ]
+   "BB2\n4   putfield v1 = v5:#0 < Application, LTreeNode, value, <Primordial,I> >\l" [ ]
+   "BB3\n7   putfield v1 = v6:#null < Application, LTreeNode, left, <Application,LTreeNode> >\l" [ ]
+   "BB4\n10   putfield v1 = v6:#null < Application, LTreeNode, right, <Application,LTreeNode> >\l" [ ]
+   "BB5\n13   putfield v1 = v7:#1 < Application, LTreeNode, value, <Primordial,I> >\l" [ ]
+   "BB6\n16   conditional branch(gt) v2,v7:#1\l" [ ]
+   "BB7\n19   conditional branch(gt) v2,v5:#0\l" [ ]
+   "BB8\n20   v14 = new <Application,Ljava/lang/RuntimeException>@33\l" [ ]
+   "BB9\n23   invokespecial < Application, Ljava/lang/RuntimeException, <init>(Ljava/lang/String;)V > v14,v15:#Number of levels must be positive no. @39 exception:v16\l" [ ]
+   "BB10\n24   throw v14                     \l" [ ]
+   "BB11\n27   putfield v1 = v6:#null < Application, LTreeNode, left, <Application,LTreeNode> >\l" [ ]
+   "BB12\n30   putfield v1 = v6:#null < Application, LTreeNode, right, <Application,LTreeNode> >\l" [ ]
+   "BB13\n31   goto                          \l" [ ]
+   "BB14\n33   v8 = new <Application,LTreeNode>@57\l" [ ]
+   "BB15\n37   v9 = binaryop(sub) v2 , v7:#1 \l38   invokespecial < Application, LTreeNode, <init>(I)V > v8,v9 @64 exception:v10\l" [ ]
+   "BB16\n39   putfield v1 = v8 < Application, LTreeNode, left, <Application,LTreeNode> >\l" [ ]
+   "BB17\n41   v11 = new <Application,LTreeNode>@71\l" [ ]
+   "BB18\n45   v12 = binaryop(sub) v2 , v7:#1\l46   invokespecial < Application, LTreeNode, <init>(I)V > v11,v12 @78 exception:v13\l" [ ]
+   "BB19\n47   putfield v1 = v11 < Application, LTreeNode, right, <Application,LTreeNode> >\l" [ ]
+   "BB20\n48   return                        \l" [ ]
+   "BB21 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v4\l" 
+ "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v4\l" -> "BB2\n4   putfield v1 = v5:#0 < Application, LTreeNode, value, <Primordial,I> >\l" 
+ "BB2\n4   putfield v1 = v5:#0 < Application, LTreeNode, value, <Primordial,I> >\l" -> "BB3\n7   putfield v1 = v6:#null < Application, LTreeNode, left, <Application,LTreeNode> >\l" 
+ "BB3\n7   putfield v1 = v6:#null < Application, LTreeNode, left, <Application,LTreeNode> >\l" -> "BB4\n10   putfield v1 = v6:#null < Application, LTreeNode, right, <Application,LTreeNode> >\l" 
+ "BB4\n10   putfield v1 = v6:#null < Application, LTreeNode, right, <Application,LTreeNode> >\l" -> "BB5\n13   putfield v1 = v7:#1 < Application, LTreeNode, value, <Primordial,I> >\l" 
+ "BB5\n13   putfield v1 = v7:#1 < Application, LTreeNode, value, <Primordial,I> >\l" -> "BB6\n16   conditional branch(gt) v2,v7:#1\l" 
+ "BB6\n16   conditional branch(gt) v2,v7:#1\l" -> "BB7\n19   conditional branch(gt) v2,v5:#0\l" 
+ "BB6\n16   conditional branch(gt) v2,v7:#1\l" -> "BB14\n33   v8 = new <Application,LTreeNode>@57\l" 
+ "BB7\n19   conditional branch(gt) v2,v5:#0\l" -> "BB8\n20   v14 = new <Application,Ljava/lang/RuntimeException>@33\l" 
+ "BB7\n19   conditional branch(gt) v2,v5:#0\l" -> "BB11\n27   putfield v1 = v6:#null < Application, LTreeNode, left, <Application,LTreeNode> >\l" 
+ "BB8\n20   v14 = new <Application,Ljava/lang/RuntimeException>@33\l" -> "BB9\n23   invokespecial < Application, Ljava/lang/RuntimeException, <init>(Ljava/lang/String;)V > v14,v15:#Number of levels must be positive no. @39 exception:v16\l" 
+ "BB9\n23   invokespecial < Application, Ljava/lang/RuntimeException, <init>(Ljava/lang/String;)V > v14,v15:#Number of levels must be positive no. @39 exception:v16\l" -> "BB10\n24   throw v14                     \l" 
+ "BB10\n24   throw v14                     \l" -> "BB21 (ex)\n\n" 
+ "BB11\n27   putfield v1 = v6:#null < Application, LTreeNode, left, <Application,LTreeNode> >\l" -> "BB12\n30   putfield v1 = v6:#null < Application, LTreeNode, right, <Application,LTreeNode> >\l" 
+ "BB12\n30   putfield v1 = v6:#null < Application, LTreeNode, right, <Application,LTreeNode> >\l" -> "BB13\n31   goto                          \l" 
+ "BB13\n31   goto                          \l" -> "BB20\n48   return                        \l" 
+ "BB14\n33   v8 = new <Application,LTreeNode>@57\l" -> "BB15\n37   v9 = binaryop(sub) v2 , v7:#1 \l38   invokespecial < Application, LTreeNode, <init>(I)V > v8,v9 @64 exception:v10\l" 
+ "BB15\n37   v9 = binaryop(sub) v2 , v7:#1 \l38   invokespecial < Application, LTreeNode, <init>(I)V > v8,v9 @64 exception:v10\l" -> "BB16\n39   putfield v1 = v8 < Application, LTreeNode, left, <Application,LTreeNode> >\l" 
+ "BB16\n39   putfield v1 = v8 < Application, LTreeNode, left, <Application,LTreeNode> >\l" -> "BB17\n41   v11 = new <Application,LTreeNode>@71\l" 
+ "BB17\n41   v11 = new <Application,LTreeNode>@71\l" -> "BB18\n45   v12 = binaryop(sub) v2 , v7:#1\l46   invokespecial < Application, LTreeNode, <init>(I)V > v11,v12 @78 exception:v13\l" 
+ "BB18\n45   v12 = binaryop(sub) v2 , v7:#1\l46   invokespecial < Application, LTreeNode, <init>(I)V > v11,v12 @78 exception:v13\l" -> "BB19\n47   putfield v1 = v11 < Application, LTreeNode, right, <Application,LTreeNode> >\l" 
+ "BB19\n47   putfield v1 = v11 < Application, LTreeNode, right, <Application,LTreeNode> >\l" -> "BB20\n48   return                        \l" 
+ "BB20\n48   return                        \l" -> "BB21 (ex)\n\n" 
+
+}

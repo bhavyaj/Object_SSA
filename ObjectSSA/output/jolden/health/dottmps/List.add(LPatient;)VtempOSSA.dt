@@ -1,0 +1,28 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for List.add(LPatient;)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0  Create O3_1                               \l" [ ]
+   "BB2\n4  < Application, LList$ListNode, <init>(LList;Ljava/lang/Object;)V >( O3_1, O1_1, O2_1 )\l" [ ]
+   "BB3\n7  GetOSSAInstruction:	O3_1= O1_1< head>     \l" [ ]
+   "BB4\n9   conditional branch(ne) v6,v7:#null       \l" [ ]
+   "BB5\n12  PutOSSAInstruction:	O1_2< head > = O1_1<refO3_1>\l" [ ]
+   "BB6\n13   goto                                    \l" [ ]
+   "BB7\n15  GetOSSAInstruction:	O3_1= O1_1< tail>    \l" [ ]
+   "BB8\n17  PutOSSAInstruction:	O3_2< next > = O3_1<refO3_1>\l" [ ]
+   "BB9\n           O1_3 = Object-Phi(O1_1, O1_2 )\l           O3_3 = Object-Phi(O3_1, O3_2 )\l20  PutOSSAInstruction:	O1_4< tail > = O1_3<refO3_3>\l" [ ]
+   "BB10\n21  return                                   \l" [ ]
+   "BB11 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0  Create O3_1                               \l" 
+ "BB1\n0  Create O3_1                               \l" -> "BB2\n4  < Application, LList$ListNode, <init>(LList;Ljava/lang/Object;)V >( O3_1, O1_1, O2_1 )\l" 
+ "BB2\n4  < Application, LList$ListNode, <init>(LList;Ljava/lang/Object;)V >( O3_1, O1_1, O2_1 )\l" -> "BB3\n7  GetOSSAInstruction:	O3_1= O1_1< head>     \l" 
+ "BB3\n7  GetOSSAInstruction:	O3_1= O1_1< head>     \l" -> "BB4\n9   conditional branch(ne) v6,v7:#null       \l" 
+ "BB4\n9   conditional branch(ne) v6,v7:#null       \l" -> "BB5\n12  PutOSSAInstruction:	O1_2< head > = O1_1<refO3_1>\l" 
+ "BB4\n9   conditional branch(ne) v6,v7:#null       \l" -> "BB7\n15  GetOSSAInstruction:	O3_1= O1_1< tail>    \l" 
+ "BB5\n12  PutOSSAInstruction:	O1_2< head > = O1_1<refO3_1>\l" -> "BB6\n13   goto                                    \l" 
+ "BB6\n13   goto                                    \l" -> "BB9\n           O1_3 = Object-Phi(O1_1, O1_2 )\l           O3_3 = Object-Phi(O3_1, O3_2 )\l20  PutOSSAInstruction:	O1_4< tail > = O1_3<refO3_3>\l" 
+ "BB7\n15  GetOSSAInstruction:	O3_1= O1_1< tail>    \l" -> "BB8\n17  PutOSSAInstruction:	O3_2< next > = O3_1<refO3_1>\l" 
+ "BB8\n17  PutOSSAInstruction:	O3_2< next > = O3_1<refO3_1>\l" -> "BB9\n           O1_3 = Object-Phi(O1_1, O1_2 )\l           O3_3 = Object-Phi(O3_1, O3_2 )\l20  PutOSSAInstruction:	O1_4< tail > = O1_3<refO3_3>\l" 
+ "BB9\n           O1_3 = Object-Phi(O1_1, O1_2 )\l           O3_3 = Object-Phi(O3_1, O3_2 )\l20  PutOSSAInstruction:	O1_4< tail > = O1_3<refO3_3>\l" -> "BB10\n21  return                                   \l" 
+ "BB10\n21  return                                   \l" -> "BB11 (ex)\n\n" 
+
+}

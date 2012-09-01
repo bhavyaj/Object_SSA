@@ -1,0 +1,17 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2   putfield v1 = v2 < Application, LList$ListEnumerator, this$0, <Application,LList> >\l" [ ]
+   "BB2\n4   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @6 exception:v5\l" [ ]
+   "BB3\n7   v6 = getfield < Application, LList, head, <Application,LList$ListNode> > v3\l" [ ]
+   "BB4\n8   putfield v1 = v6 < Application, LList$ListEnumerator, curNode, <Application,LList$ListNode> >\l" [ ]
+   "BB5\n9   return                         \l" [ ]
+   "BB6 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2   putfield v1 = v2 < Application, LList$ListEnumerator, this$0, <Application,LList> >\l" 
+ "BB1\n2   putfield v1 = v2 < Application, LList$ListEnumerator, this$0, <Application,LList> >\l" -> "BB2\n4   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @6 exception:v5\l" 
+ "BB2\n4   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @6 exception:v5\l" -> "BB3\n7   v6 = getfield < Application, LList, head, <Application,LList$ListNode> > v3\l" 
+ "BB3\n7   v6 = getfield < Application, LList, head, <Application,LList$ListNode> > v3\l" -> "BB4\n8   putfield v1 = v6 < Application, LList$ListEnumerator, curNode, <Application,LList$ListNode> >\l" 
+ "BB4\n8   putfield v1 = v6 < Application, LList$ListEnumerator, curNode, <Application,LList$ListNode> >\l" -> "BB5\n9   return                         \l" 
+ "BB5\n9   return                         \l" -> "BB6 (ex)\n\n" 
+
+}

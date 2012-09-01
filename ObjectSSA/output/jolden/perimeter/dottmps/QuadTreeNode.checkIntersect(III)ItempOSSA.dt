@@ -1,0 +1,47 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for QuadTreeNode.checkIntersect(III)I", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2   v5 = binaryop(add) v1 , v3               \l5   v6 = binaryop(add) v2 , v3               \l6  O1_1 = < Application, LQuadTreeNode, checkOutside(II)I >( V5, V6 )\l" [ ]
+   "BB2\n8   conditional branch(ne) v8,v9:#0          \l" [ ]
+   "BB3\n11   v10 = binaryop(add) v1 , v3             \l14   v11 = binaryop(sub) v2 , v3             \l15  O1_2 = < Application, LQuadTreeNode, checkOutside(II)I >( V10, V11 )\l" [ ]
+   "BB4\n17   conditional branch(ne) v13,v9:#0        \l" [ ]
+   "BB5\n20   v14 = binaryop(sub) v1 , v3             \l23   v15 = binaryop(sub) v2 , v3             \l24  O1_3 = < Application, LQuadTreeNode, checkOutside(II)I >( V14, V15 )\l" [ ]
+   "BB6\n26   conditional branch(ne) v17,v9:#0        \l" [ ]
+   "BB7\n29   v18 = binaryop(sub) v1 , v3             \l32   v19 = binaryop(add) v2 , v3             \l33  O1_4 = < Application, LQuadTreeNode, checkOutside(II)I >( V18, V19 )\l" [ ]
+   "BB8\n35   conditional branch(ne) v21,v9:#0        \l" [ ]
+   "BB9\n37  Return O1_4                              \l" [ ]
+   "BB10\n40   v22 = binaryop(add) v1 , v3             \l43   v23 = binaryop(add) v2 , v3             \l44  O1_5 = < Application, LQuadTreeNode, checkOutside(II)I >( V22, V23 )\l" [ ]
+   "BB11\n47   v26 = binaryop(add) v1 , v3             \l50   v27 = binaryop(sub) v2 , v3             \l51  O1_6 = < Application, LQuadTreeNode, checkOutside(II)I >( V26, V27 )\l" [ ]
+   "BB12\n52   v30 = binaryop(add) v25 , v29           \l55   v31 = binaryop(sub) v1 , v3             \l58   v32 = binaryop(sub) v2 , v3             \l59  O1_7 = < Application, LQuadTreeNode, checkOutside(II)I >( V31, V32 )\l" [ ]
+   "BB13\n60   v35 = binaryop(add) v30 , v34           \l63   v36 = binaryop(sub) v1 , v3             \l66   v37 = binaryop(add) v2 , v3             \l67  O1_8 = < Application, LQuadTreeNode, checkOutside(II)I >( V36, V37 )\l" [ ]
+   "BB14\n68   v40 = binaryop(add) v35 , v39           \l72   conditional branch(eq) v40,v41:#4       \l" [ ]
+   "BB15\n75   conditional branch(ne) v40,v42:#-4      \l" [ ]
+   "BB16\n77  Return O1_8                              \l" [ ]
+   "BB17\n79  Return O1_8                              \l" [ ]
+   "BB18 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2   v5 = binaryop(add) v1 , v3               \l5   v6 = binaryop(add) v2 , v3               \l6  O1_1 = < Application, LQuadTreeNode, checkOutside(II)I >( V5, V6 )\l" 
+ "BB1\n2   v5 = binaryop(add) v1 , v3               \l5   v6 = binaryop(add) v2 , v3               \l6  O1_1 = < Application, LQuadTreeNode, checkOutside(II)I >( V5, V6 )\l" -> "BB2\n8   conditional branch(ne) v8,v9:#0          \l" 
+ "BB2\n8   conditional branch(ne) v8,v9:#0          \l" -> "BB3\n11   v10 = binaryop(add) v1 , v3             \l14   v11 = binaryop(sub) v2 , v3             \l15  O1_2 = < Application, LQuadTreeNode, checkOutside(II)I >( V10, V11 )\l" 
+ "BB2\n8   conditional branch(ne) v8,v9:#0          \l" -> "BB10\n40   v22 = binaryop(add) v1 , v3             \l43   v23 = binaryop(add) v2 , v3             \l44  O1_5 = < Application, LQuadTreeNode, checkOutside(II)I >( V22, V23 )\l" 
+ "BB3\n11   v10 = binaryop(add) v1 , v3             \l14   v11 = binaryop(sub) v2 , v3             \l15  O1_2 = < Application, LQuadTreeNode, checkOutside(II)I >( V10, V11 )\l" -> "BB4\n17   conditional branch(ne) v13,v9:#0        \l" 
+ "BB4\n17   conditional branch(ne) v13,v9:#0        \l" -> "BB5\n20   v14 = binaryop(sub) v1 , v3             \l23   v15 = binaryop(sub) v2 , v3             \l24  O1_3 = < Application, LQuadTreeNode, checkOutside(II)I >( V14, V15 )\l" 
+ "BB4\n17   conditional branch(ne) v13,v9:#0        \l" -> "BB10\n40   v22 = binaryop(add) v1 , v3             \l43   v23 = binaryop(add) v2 , v3             \l44  O1_5 = < Application, LQuadTreeNode, checkOutside(II)I >( V22, V23 )\l" 
+ "BB5\n20   v14 = binaryop(sub) v1 , v3             \l23   v15 = binaryop(sub) v2 , v3             \l24  O1_3 = < Application, LQuadTreeNode, checkOutside(II)I >( V14, V15 )\l" -> "BB6\n26   conditional branch(ne) v17,v9:#0        \l" 
+ "BB6\n26   conditional branch(ne) v17,v9:#0        \l" -> "BB7\n29   v18 = binaryop(sub) v1 , v3             \l32   v19 = binaryop(add) v2 , v3             \l33  O1_4 = < Application, LQuadTreeNode, checkOutside(II)I >( V18, V19 )\l" 
+ "BB6\n26   conditional branch(ne) v17,v9:#0        \l" -> "BB10\n40   v22 = binaryop(add) v1 , v3             \l43   v23 = binaryop(add) v2 , v3             \l44  O1_5 = < Application, LQuadTreeNode, checkOutside(II)I >( V22, V23 )\l" 
+ "BB7\n29   v18 = binaryop(sub) v1 , v3             \l32   v19 = binaryop(add) v2 , v3             \l33  O1_4 = < Application, LQuadTreeNode, checkOutside(II)I >( V18, V19 )\l" -> "BB8\n35   conditional branch(ne) v21,v9:#0        \l" 
+ "BB8\n35   conditional branch(ne) v21,v9:#0        \l" -> "BB9\n37  Return O1_4                              \l" 
+ "BB8\n35   conditional branch(ne) v21,v9:#0        \l" -> "BB10\n40   v22 = binaryop(add) v1 , v3             \l43   v23 = binaryop(add) v2 , v3             \l44  O1_5 = < Application, LQuadTreeNode, checkOutside(II)I >( V22, V23 )\l" 
+ "BB9\n37  Return O1_4                              \l" -> "BB18 (ex)\n\n" 
+ "BB10\n40   v22 = binaryop(add) v1 , v3             \l43   v23 = binaryop(add) v2 , v3             \l44  O1_5 = < Application, LQuadTreeNode, checkOutside(II)I >( V22, V23 )\l" -> "BB11\n47   v26 = binaryop(add) v1 , v3             \l50   v27 = binaryop(sub) v2 , v3             \l51  O1_6 = < Application, LQuadTreeNode, checkOutside(II)I >( V26, V27 )\l" 
+ "BB11\n47   v26 = binaryop(add) v1 , v3             \l50   v27 = binaryop(sub) v2 , v3             \l51  O1_6 = < Application, LQuadTreeNode, checkOutside(II)I >( V26, V27 )\l" -> "BB12\n52   v30 = binaryop(add) v25 , v29           \l55   v31 = binaryop(sub) v1 , v3             \l58   v32 = binaryop(sub) v2 , v3             \l59  O1_7 = < Application, LQuadTreeNode, checkOutside(II)I >( V31, V32 )\l" 
+ "BB12\n52   v30 = binaryop(add) v25 , v29           \l55   v31 = binaryop(sub) v1 , v3             \l58   v32 = binaryop(sub) v2 , v3             \l59  O1_7 = < Application, LQuadTreeNode, checkOutside(II)I >( V31, V32 )\l" -> "BB13\n60   v35 = binaryop(add) v30 , v34           \l63   v36 = binaryop(sub) v1 , v3             \l66   v37 = binaryop(add) v2 , v3             \l67  O1_8 = < Application, LQuadTreeNode, checkOutside(II)I >( V36, V37 )\l" 
+ "BB13\n60   v35 = binaryop(add) v30 , v34           \l63   v36 = binaryop(sub) v1 , v3             \l66   v37 = binaryop(add) v2 , v3             \l67  O1_8 = < Application, LQuadTreeNode, checkOutside(II)I >( V36, V37 )\l" -> "BB14\n68   v40 = binaryop(add) v35 , v39           \l72   conditional branch(eq) v40,v41:#4       \l" 
+ "BB14\n68   v40 = binaryop(add) v35 , v39           \l72   conditional branch(eq) v40,v41:#4       \l" -> "BB15\n75   conditional branch(ne) v40,v42:#-4      \l" 
+ "BB14\n68   v40 = binaryop(add) v35 , v39           \l72   conditional branch(eq) v40,v41:#4       \l" -> "BB16\n77  Return O1_8                              \l" 
+ "BB15\n75   conditional branch(ne) v40,v42:#-4      \l" -> "BB16\n77  Return O1_8                              \l" 
+ "BB15\n75   conditional branch(ne) v40,v42:#-4      \l" -> "BB17\n79  Return O1_8                              \l" 
+ "BB16\n77  Return O1_8                              \l" -> "BB18 (ex)\n\n" 
+ "BB17\n79  Return O1_8                              \l" -> "BB18 (ex)\n\n" 
+
+}

@@ -1,0 +1,40 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2   putfield v1 = v4:#null < Application, LTree, root, <Application,LNode> >\l" [ ]
+   "BB2\n5   invokespecial < Application, LTree, makeTree(I)V > v1,v2 @7 exception:v5\l" [ ]
+   "BB3\n7   v6 = getfield < Application, LTree, bodyTabRev, <Application,LBody> > v1\l" [ ]
+   "BB4\n8   v8 = invokevirtual < Application, LBody, elementsRev()Ljava/util/Enumeration; > v6 @14 exception:v7\l" [ ]
+   "BB5\n" [ ]
+   "BB6\n11   v10 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v8 @19 exception:v9\l" [ ]
+   "BB7\n13   conditional branch(eq) v10,v11:#0\l" [ ]
+   "BB8\n15   v13 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v8 @28 exception:v12\l" [ ]
+   "BB9\n16   v14 = checkcast <Application,LBody>v13\l" [ ]
+   "BB10\n20   v15 = getfield < Application, LTree, rsize, <Primordial,D> > v1\l" [ ]
+   "BB11\n22   v16 = getfield < Application, LTree, root, <Application,LNode> > v1\l" [ ]
+   "BB12\n23   invokevirtual < Application, LBody, hackGravity(DLNode;)V > v14,v15,v16 @46 exception:v17\l" [ ]
+   "BB13\n24   goto                          \l" [ ]
+   "BB14\n26   v18 = getfield < Application, LTree, bodyTabRev, <Application,LBody> > v1\l" [ ]
+   "BB15\n28   invokestatic < Application, LTree, vp(LBody;I)V > v18,v2 @57 exception:v19\l" [ ]
+   "BB16\n29   return                        \l" [ ]
+   "BB17 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2   putfield v1 = v4:#null < Application, LTree, root, <Application,LNode> >\l" 
+ "BB1\n2   putfield v1 = v4:#null < Application, LTree, root, <Application,LNode> >\l" -> "BB2\n5   invokespecial < Application, LTree, makeTree(I)V > v1,v2 @7 exception:v5\l" 
+ "BB2\n5   invokespecial < Application, LTree, makeTree(I)V > v1,v2 @7 exception:v5\l" -> "BB3\n7   v6 = getfield < Application, LTree, bodyTabRev, <Application,LBody> > v1\l" 
+ "BB3\n7   v6 = getfield < Application, LTree, bodyTabRev, <Application,LBody> > v1\l" -> "BB4\n8   v8 = invokevirtual < Application, LBody, elementsRev()Ljava/util/Enumeration; > v6 @14 exception:v7\l" 
+ "BB4\n8   v8 = invokevirtual < Application, LBody, elementsRev()Ljava/util/Enumeration; > v6 @14 exception:v7\l" -> "BB5\n" 
+ "BB5\n" -> "BB6\n11   v10 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v8 @19 exception:v9\l" 
+ "BB6\n11   v10 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v8 @19 exception:v9\l" -> "BB7\n13   conditional branch(eq) v10,v11:#0\l" 
+ "BB7\n13   conditional branch(eq) v10,v11:#0\l" -> "BB8\n15   v13 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v8 @28 exception:v12\l" 
+ "BB7\n13   conditional branch(eq) v10,v11:#0\l" -> "BB14\n26   v18 = getfield < Application, LTree, bodyTabRev, <Application,LBody> > v1\l" 
+ "BB8\n15   v13 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v8 @28 exception:v12\l" -> "BB9\n16   v14 = checkcast <Application,LBody>v13\l" 
+ "BB9\n16   v14 = checkcast <Application,LBody>v13\l" -> "BB10\n20   v15 = getfield < Application, LTree, rsize, <Primordial,D> > v1\l" 
+ "BB10\n20   v15 = getfield < Application, LTree, rsize, <Primordial,D> > v1\l" -> "BB11\n22   v16 = getfield < Application, LTree, root, <Application,LNode> > v1\l" 
+ "BB11\n22   v16 = getfield < Application, LTree, root, <Application,LNode> > v1\l" -> "BB12\n23   invokevirtual < Application, LBody, hackGravity(DLNode;)V > v14,v15,v16 @46 exception:v17\l" 
+ "BB12\n23   invokevirtual < Application, LBody, hackGravity(DLNode;)V > v14,v15,v16 @46 exception:v17\l" -> "BB13\n24   goto                          \l" 
+ "BB13\n24   goto                          \l" -> "BB6\n11   v10 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v8 @19 exception:v9\l" 
+ "BB14\n26   v18 = getfield < Application, LTree, bodyTabRev, <Application,LBody> > v1\l" -> "BB15\n28   invokestatic < Application, LTree, vp(LBody;I)V > v18,v2 @57 exception:v19\l" 
+ "BB15\n28   invokestatic < Application, LTree, vp(LBody;I)V > v18,v2 @57 exception:v19\l" -> "BB16\n29   return                        \l" 
+ "BB16\n29   return                        \l" -> "BB17 (ex)\n\n" 
+
+}

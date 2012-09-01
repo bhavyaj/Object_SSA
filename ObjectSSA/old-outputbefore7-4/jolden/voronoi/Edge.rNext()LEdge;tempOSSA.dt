@@ -1,0 +1,15 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Edge.rNext()LEdge;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v4 = invokevirtual < Application, LEdge, rotate()LEdge; > v1 @1 exception:v3\l" [ ]
+   "BB2\n2   v6 = invokevirtual < Application, LEdge, oNext()LEdge; > v4 @4 exception:v5\l" [ ]
+   "BB3\n3   v8 = invokevirtual < Application, LEdge, rotateInv()LEdge; > v6 @7 exception:v7\l" [ ]
+   "BB4\n4   return v8                                \l" [ ]
+   "BB5 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v4 = invokevirtual < Application, LEdge, rotate()LEdge; > v1 @1 exception:v3\l" 
+ "BB1\n1   v4 = invokevirtual < Application, LEdge, rotate()LEdge; > v1 @1 exception:v3\l" -> "BB2\n2   v6 = invokevirtual < Application, LEdge, oNext()LEdge; > v4 @4 exception:v5\l" 
+ "BB2\n2   v6 = invokevirtual < Application, LEdge, oNext()LEdge; > v4 @4 exception:v5\l" -> "BB3\n3   v8 = invokevirtual < Application, LEdge, rotateInv()LEdge; > v6 @7 exception:v7\l" 
+ "BB3\n3   v8 = invokevirtual < Application, LEdge, rotateInv()LEdge; > v6 @7 exception:v7\l" -> "BB4\n4   return v8                                \l" 
+ "BB4\n4   return v8                                \l" -> "BB5 (ex)\n\n" 
+
+}

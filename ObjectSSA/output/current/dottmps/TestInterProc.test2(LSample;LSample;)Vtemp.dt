@@ -1,0 +1,13 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2   putfield v1 = v2 < Application, LSample, next, <Application,LSample> >\l" [ ]
+   "BB2\n5   putfield v2 = v1 < Application, LSample, next, <Application,LSample> >\l" [ ]
+   "BB3\n6   return                         \l" [ ]
+   "BB4 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2   putfield v1 = v2 < Application, LSample, next, <Application,LSample> >\l" 
+ "BB1\n2   putfield v1 = v2 < Application, LSample, next, <Application,LSample> >\l" -> "BB2\n5   putfield v2 = v1 < Application, LSample, next, <Application,LSample> >\l" 
+ "BB2\n5   putfield v2 = v1 < Application, LSample, next, <Application,LSample> >\l" -> "BB3\n6   return                         \l" 
+ "BB3\n6   return                         \l" -> "BB4 (ex)\n\n" 
+
+}

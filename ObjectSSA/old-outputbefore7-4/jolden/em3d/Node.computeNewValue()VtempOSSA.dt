@@ -1,0 +1,32 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Node.computeNewValue()V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n" [ ]
+   "BB2\n           O1_1 = Object-Phi(O1_1, O1_2 )\l           v15 = phi  v14,v3:#0\l4  GetOSSAInstruction:	4= O1_1< fromCount>   \l" [ ]
+   "BB3\n5   conditional branch(ge) v15,v4            \l" [ ]
+   "BB4\n8  GetOSSAInstruction:	5= O1_1< value>       \l" [ ]
+   "BB5\n10  GetOSSAInstruction:	O2_1= O1_1< coeffs>  \l" [ ]
+   "BB6\n12   v7 = arrayload v6[v15]                  \l" [ ]
+   "BB7\n14  GetOSSAInstruction:	O3_1= O1_1< fromNodes>\l" [ ]
+   "BB8\n16   v9 = arrayload v8[v15]                  \l" [ ]
+   "BB9\n17  nonreference field get instrctn: 10 = getfield < Application, LNode, value, <Primordial,D> > 9\l" [ ]
+   "BB10\n18   v11 = binaryop(mul) v7 , v10            \l19   v12 = binaryop(sub) v5 , v11            \l20  PutOSSAInstruction:	O1_2< value > = O1_1<V12>\l" [ ]
+   "BB11\n23   v14 = binaryop(add) v15 , v13:#1        \l25   goto                                    \l" [ ]
+   "BB12\n26  return                                   \l" [ ]
+   "BB13 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n" 
+ "BB1\n" -> "BB2\n           O1_1 = Object-Phi(O1_1, O1_2 )\l           v15 = phi  v14,v3:#0\l4  GetOSSAInstruction:	4= O1_1< fromCount>   \l" 
+ "BB2\n           O1_1 = Object-Phi(O1_1, O1_2 )\l           v15 = phi  v14,v3:#0\l4  GetOSSAInstruction:	4= O1_1< fromCount>   \l" -> "BB3\n5   conditional branch(ge) v15,v4            \l" 
+ "BB3\n5   conditional branch(ge) v15,v4            \l" -> "BB4\n8  GetOSSAInstruction:	5= O1_1< value>       \l" 
+ "BB3\n5   conditional branch(ge) v15,v4            \l" -> "BB12\n26  return                                   \l" 
+ "BB4\n8  GetOSSAInstruction:	5= O1_1< value>       \l" -> "BB5\n10  GetOSSAInstruction:	O2_1= O1_1< coeffs>  \l" 
+ "BB5\n10  GetOSSAInstruction:	O2_1= O1_1< coeffs>  \l" -> "BB6\n12   v7 = arrayload v6[v15]                  \l" 
+ "BB6\n12   v7 = arrayload v6[v15]                  \l" -> "BB7\n14  GetOSSAInstruction:	O3_1= O1_1< fromNodes>\l" 
+ "BB7\n14  GetOSSAInstruction:	O3_1= O1_1< fromNodes>\l" -> "BB8\n16   v9 = arrayload v8[v15]                  \l" 
+ "BB8\n16   v9 = arrayload v8[v15]                  \l" -> "BB9\n17  nonreference field get instrctn: 10 = getfield < Application, LNode, value, <Primordial,D> > 9\l" 
+ "BB9\n17  nonreference field get instrctn: 10 = getfield < Application, LNode, value, <Primordial,D> > 9\l" -> "BB10\n18   v11 = binaryop(mul) v7 , v10            \l19   v12 = binaryop(sub) v5 , v11            \l20  PutOSSAInstruction:	O1_2< value > = O1_1<V12>\l" 
+ "BB10\n18   v11 = binaryop(mul) v7 , v10            \l19   v12 = binaryop(sub) v5 , v11            \l20  PutOSSAInstruction:	O1_2< value > = O1_1<V12>\l" -> "BB11\n23   v14 = binaryop(add) v15 , v13:#1        \l25   goto                                    \l" 
+ "BB11\n23   v14 = binaryop(add) v15 , v13:#1        \l25   goto                                    \l" -> "BB2\n           O1_1 = Object-Phi(O1_1, O1_2 )\l           v15 = phi  v14,v3:#0\l4  GetOSSAInstruction:	4= O1_1< fromCount>   \l" 
+ "BB12\n26  return                                   \l" -> "BB13 (ex)\n\n" 
+
+}

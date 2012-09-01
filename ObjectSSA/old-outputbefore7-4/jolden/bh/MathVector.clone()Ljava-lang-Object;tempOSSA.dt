@@ -1,0 +1,39 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for MathVector.clone()Ljava-lang-Object;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v4 = invokespecial < Application, Ljava/lang/Object, clone()Ljava/lang/Object; > v1 @1 exception:v3\l" [ ]
+   "BB2\n2   v8 = checkcast <Application,LMathVector>v4\l" [ ]
+   "BB3\n6  Create O2_1                               \l" [ ]
+   "BB4\n7   putfield v8 = v10 < Application, LMathVector, data, <Primordial,[D> >\l" [ ]
+   "BB5\n" [ ]
+   "BB6\n           v17 = phi  v16,v11:#0\l12   conditional branch(ge) v17,v9:#3        \l" [ ]
+   "BB7\n14  nonreference field get instrctn: 12 = getfield < Application, LMathVector, data, <Primordial,[D> > 8\l" [ ]
+   "BB8\n17  GetOSSAInstruction:	O3_1= O1_1< data>    \l" [ ]
+   "BB9\n19   v14 = arrayload v13[v17]                \l" [ ]
+   "BB10\n20   arraystore v12[v17] = v14               \l" [ ]
+   "BB11\n23   v16 = binaryop(add) v17 , v15:#1        \l25   goto                                    \l" [ ]
+   "BB12\n27   return v8                               \l" [ ]
+   "BB13<Handler>\n           v5 = getCaughtException \l29  Create O4_1                              \l" [ ]
+   "BB14\n31   invokespecial < Application, Ljava/lang/Error, <init>()V > v6 @47 exception:v7\l" [ ]
+   "BB15\n32   throw v6                                \l" [ ]
+   "BB16 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v4 = invokespecial < Application, Ljava/lang/Object, clone()Ljava/lang/Object; > v1 @1 exception:v3\l" 
+ "BB1\n1   v4 = invokespecial < Application, Ljava/lang/Object, clone()Ljava/lang/Object; > v1 @1 exception:v3\l" -> "BB2\n2   v8 = checkcast <Application,LMathVector>v4\l" 
+ "BB1\n1   v4 = invokespecial < Application, Ljava/lang/Object, clone()Ljava/lang/Object; > v1 @1 exception:v3\l" -> "BB13<Handler>\n           v5 = getCaughtException \l29  Create O4_1                              \l" 
+ "BB2\n2   v8 = checkcast <Application,LMathVector>v4\l" -> "BB3\n6  Create O2_1                               \l" 
+ "BB3\n6  Create O2_1                               \l" -> "BB4\n7   putfield v8 = v10 < Application, LMathVector, data, <Primordial,[D> >\l" 
+ "BB4\n7   putfield v8 = v10 < Application, LMathVector, data, <Primordial,[D> >\l" -> "BB5\n" 
+ "BB5\n" -> "BB6\n           v17 = phi  v16,v11:#0\l12   conditional branch(ge) v17,v9:#3        \l" 
+ "BB6\n           v17 = phi  v16,v11:#0\l12   conditional branch(ge) v17,v9:#3        \l" -> "BB7\n14  nonreference field get instrctn: 12 = getfield < Application, LMathVector, data, <Primordial,[D> > 8\l" 
+ "BB6\n           v17 = phi  v16,v11:#0\l12   conditional branch(ge) v17,v9:#3        \l" -> "BB12\n27   return v8                               \l" 
+ "BB7\n14  nonreference field get instrctn: 12 = getfield < Application, LMathVector, data, <Primordial,[D> > 8\l" -> "BB8\n17  GetOSSAInstruction:	O3_1= O1_1< data>    \l" 
+ "BB8\n17  GetOSSAInstruction:	O3_1= O1_1< data>    \l" -> "BB9\n19   v14 = arrayload v13[v17]                \l" 
+ "BB9\n19   v14 = arrayload v13[v17]                \l" -> "BB10\n20   arraystore v12[v17] = v14               \l" 
+ "BB10\n20   arraystore v12[v17] = v14               \l" -> "BB11\n23   v16 = binaryop(add) v17 , v15:#1        \l25   goto                                    \l" 
+ "BB11\n23   v16 = binaryop(add) v17 , v15:#1        \l25   goto                                    \l" -> "BB6\n           v17 = phi  v16,v11:#0\l12   conditional branch(ge) v17,v9:#3        \l" 
+ "BB12\n27   return v8                               \l" -> "BB16 (ex)\n\n" 
+ "BB13<Handler>\n           v5 = getCaughtException \l29  Create O4_1                              \l" -> "BB14\n31   invokespecial < Application, Ljava/lang/Error, <init>()V > v6 @47 exception:v7\l" 
+ "BB14\n31   invokespecial < Application, Ljava/lang/Error, <init>()V > v6 @47 exception:v7\l" -> "BB15\n32   throw v6                                \l" 
+ "BB15\n32   throw v6                                \l" -> "BB16 (ex)\n\n" 
+
+}

@@ -1,0 +1,25 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v4 = getfield < Application, LValue, value, <Primordial,I> > v2\l" [ ]
+   "BB2\n4   v5 = getfield < Application, LValue, right, <Application,LValue> > v2\l" [ ]
+   "BB3\n8   v6 = getfield < Application, LValue, value, <Primordial,I> > v1\l" [ ]
+   "BB4\n9   putfield v2 = v6 < Application, LValue, value, <Primordial,I> >\l" [ ]
+   "BB5\n12   v7 = getfield < Application, LValue, right, <Application,LValue> > v1\l" [ ]
+   "BB6\n13   putfield v2 = v7 < Application, LValue, right, <Application,LValue> >\l" [ ]
+   "BB7\n16   putfield v1 = v4 < Application, LValue, value, <Primordial,I> >\l" [ ]
+   "BB8\n19   putfield v1 = v5 < Application, LValue, right, <Application,LValue> >\l" [ ]
+   "BB9\n20   return                        \l" [ ]
+   "BB10 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v4 = getfield < Application, LValue, value, <Primordial,I> > v2\l" 
+ "BB1\n1   v4 = getfield < Application, LValue, value, <Primordial,I> > v2\l" -> "BB2\n4   v5 = getfield < Application, LValue, right, <Application,LValue> > v2\l" 
+ "BB2\n4   v5 = getfield < Application, LValue, right, <Application,LValue> > v2\l" -> "BB3\n8   v6 = getfield < Application, LValue, value, <Primordial,I> > v1\l" 
+ "BB3\n8   v6 = getfield < Application, LValue, value, <Primordial,I> > v1\l" -> "BB4\n9   putfield v2 = v6 < Application, LValue, value, <Primordial,I> >\l" 
+ "BB4\n9   putfield v2 = v6 < Application, LValue, value, <Primordial,I> >\l" -> "BB5\n12   v7 = getfield < Application, LValue, right, <Application,LValue> > v1\l" 
+ "BB5\n12   v7 = getfield < Application, LValue, right, <Application,LValue> > v1\l" -> "BB6\n13   putfield v2 = v7 < Application, LValue, right, <Application,LValue> >\l" 
+ "BB6\n13   putfield v2 = v7 < Application, LValue, right, <Application,LValue> >\l" -> "BB7\n16   putfield v1 = v4 < Application, LValue, value, <Primordial,I> >\l" 
+ "BB7\n16   putfield v1 = v4 < Application, LValue, value, <Primordial,I> >\l" -> "BB8\n19   putfield v1 = v5 < Application, LValue, right, <Application,LValue> >\l" 
+ "BB8\n19   putfield v1 = v5 < Application, LValue, right, <Application,LValue> >\l" -> "BB9\n20   return                        \l" 
+ "BB9\n20   return                        \l" -> "BB10 (ex)\n\n" 
+
+}

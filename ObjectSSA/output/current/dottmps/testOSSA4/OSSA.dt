@@ -1,0 +1,57 @@
+digraph "DirectedGraph" {
+center=true;
+node [ color=blue,shape="box"];
+	BB0 [label="(en)\n\n"  ];
+   BB1	[ label=" Create O1\l Create O2\l Create O3\l"];
+/* "BB2\n2   invokespecial < Application, LOSSATestCases/Sample, <init>()V > v2 @4 exception:v3\l" [ ]*/
+//   BB3 [label="Sample b = new Sample();\l" ];
+/* "BB4\n6   invokespecial < Application, LOSSATestCases/Sample, <init>()V > v4 @12 exception:v5\l" [ ]*/
+//   BB5 [label=" Sample c = new Sample();\l" ];
+/*   "BB6\n10   invokespecial < Application, LOSSATestCases/Sample, <init>()V > v6 @20 exception:v7\l" [ ]*/
+   BB7 [label=" getField v1 = O1<x>\l getField v2 = O2<x>\l getField v3 = O3<x>\l" ];
+//  BB8 [label=" int p2=b.x;\l"  ];
+//   BB9 [label=" int p3=c.x;\l"  ];
+   BB10 [label="  if(v1>10) \l"  ];
+   BB11 [label="  if(v2>5) \l"  ];
+   BB12 [label="  putField O4<x>=O1<3>;\l"  ];
+   BB13 [label="  goto                          \l"  ];
+   BB14 [label="  d=b;\l"  ];
+   BB15 [label="  O5 = pphi([O4,O1]_a);\l O6<x> = O5<4>;\l"  ];
+   BB16 [label="  O7 = dphi(O6_a,O2_b);\l putField O8<x> = O7<2>"  ];
+   BB17 [label="  goto                          \l" ];
+   BB18 [label=" if(v3>1)\l"  ];
+   BB19 [label="  "  ];
+   BB20 [label=" "  ];
+   BB21 [label=" O9 = dphi(O2_b,O3_c);\l O10<x> = O9<20>;"  ];
+   BB22 [label=" O11 = pphi([O8_a,O1]_a);\l O12 = pphi([O11]_a,[O8,O10]_b);\l O13= pphi([O12]_b,[O3,O10]_c);\l O14 = dphi(O12_a,O13_b);\l putField O15<next> = O14<refO13>;\l"  ];
+   BB23 [label="  O16 = dphi(O15_b,O13_c);\l putField O17<x>=O16<2>;\l"  ];
+   BB24 [label="  getField v4 = {O15,O17}<x>\l"  ];
+   BB25 [label="  getField v5 = O15_a<x>;\l putField O18_b<x>=O17_b<v5>;\l"  ];
+/*   "BB26\n69   putfield v4 = v24 < Application, LOSSATestCases/Sample, x, <Primordial,I> >\l" [ ]*/
+   BB27 [label="  return                        \l"  ];
+   BB28 [label="  (ex)\n\n"  ];
+BB0 -> BB1;
+BB1 -> BB7;
+BB7 -> BB10;
+BB10 -> BB11;
+BB10 -> BB18;
+BB11 -> BB12;
+BB11 -> BB14;
+BB12 -> BB13;
+BB13 -> BB15;
+BB14 -> BB15;
+BB15 -> BB16;
+BB10 -> BB11;
+BB16 -> BB17;
+BB17 -> BB22;
+BB18 -> BB19;
+BB18 -> BB20;
+BB19 -> BB21;
+BB20 -> BB21;
+BB21 -> BB22;
+BB22 -> BB23;
+BB23 -> BB24;
+BB24 -> BB25;
+BB25 -> BB27;
+BB27 -> BB28;
+}

@@ -1,0 +1,53 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Lateral.<init>(III)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v6\l" [ ]
+   "BB2\n4  PutOSSAInstruction:	O1_1< alpha > = O1_1<V7>\l" [ ]
+   "BB3\n7  PutOSSAInstruction:	O1_2< beta > = O1_1<V7>\l" [ ]
+   "BB4\n10  PutOSSAInstruction:	O1_3< R > = O1_2<V8> \l" [ ]
+   "BB5\n13  PutOSSAInstruction:	O1_4< X > = O1_3<V9> \l" [ ]
+   "BB6\n15  Create O2_1                              \l" [ ]
+   "BB7\n17   invokespecial < Application, LDemand, <init>()V > v10 @33 exception:v11\l" [ ]
+   "BB8\n18  PutOSSAInstruction:	O1_5< D > = O1_4<refO2_1>\l" [ ]
+   "BB9\n21   conditional branch(gt) v2,v12:#1        \l" [ ]
+   "BB10\n24   conditional branch(gt) v2,v16:#0        \l" [ ]
+   "BB11\n25  Create O3_1                              \l" [ ]
+   "BB12\n28   invokespecial < Application, Ljava/lang/RuntimeException, <init>(Ljava/lang/String;)V > v20,v21:#Lateral constructor with zero num @54 exception:v22\l" [ ]
+   "BB13\n29   throw v20                               \l" [ ]
+   "BB14\n32  PutOSSAInstruction:	O1_6< next_lateral > = O1_5<V17>\l" [ ]
+   "BB15\n33   goto                                    \l" [ ]
+   "BB16\n35  Create O4_1                              \l" [ ]
+   "BB17\n39   v14 = binaryop(sub) v2 , v12:#1         \l42   invokespecial < Application, LLateral, <init>(III)V > v13,v14,v3,v4 @76 exception:v15\l" [ ]
+   "BB18\n43  PutOSSAInstruction:	O1_7< next_lateral > = O1_5<refO4_1>\l" [ ]
+   "BB19\n           O1_8 = Object-Phi(O1_6, O1_7 )\l45  Create O5_1                              \l" [ ]
+   "BB20\n49   invokespecial < Application, LBranch, <init>(II)V > v18,v3,v4 @89 exception:v19\l" [ ]
+   "BB21\n50  PutOSSAInstruction:	O1_9< branch > = O1_8<refO5_1>\l" [ ]
+   "BB22\n51  return                                   \l" [ ]
+   "BB23 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v6\l" 
+ "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v6\l" -> "BB2\n4  PutOSSAInstruction:	O1_1< alpha > = O1_1<V7>\l" 
+ "BB2\n4  PutOSSAInstruction:	O1_1< alpha > = O1_1<V7>\l" -> "BB3\n7  PutOSSAInstruction:	O1_2< beta > = O1_1<V7>\l" 
+ "BB3\n7  PutOSSAInstruction:	O1_2< beta > = O1_1<V7>\l" -> "BB4\n10  PutOSSAInstruction:	O1_3< R > = O1_2<V8> \l" 
+ "BB4\n10  PutOSSAInstruction:	O1_3< R > = O1_2<V8> \l" -> "BB5\n13  PutOSSAInstruction:	O1_4< X > = O1_3<V9> \l" 
+ "BB5\n13  PutOSSAInstruction:	O1_4< X > = O1_3<V9> \l" -> "BB6\n15  Create O2_1                              \l" 
+ "BB6\n15  Create O2_1                              \l" -> "BB7\n17   invokespecial < Application, LDemand, <init>()V > v10 @33 exception:v11\l" 
+ "BB7\n17   invokespecial < Application, LDemand, <init>()V > v10 @33 exception:v11\l" -> "BB8\n18  PutOSSAInstruction:	O1_5< D > = O1_4<refO2_1>\l" 
+ "BB8\n18  PutOSSAInstruction:	O1_5< D > = O1_4<refO2_1>\l" -> "BB9\n21   conditional branch(gt) v2,v12:#1        \l" 
+ "BB9\n21   conditional branch(gt) v2,v12:#1        \l" -> "BB10\n24   conditional branch(gt) v2,v16:#0        \l" 
+ "BB9\n21   conditional branch(gt) v2,v12:#1        \l" -> "BB16\n35  Create O4_1                              \l" 
+ "BB10\n24   conditional branch(gt) v2,v16:#0        \l" -> "BB11\n25  Create O3_1                              \l" 
+ "BB10\n24   conditional branch(gt) v2,v16:#0        \l" -> "BB14\n32  PutOSSAInstruction:	O1_6< next_lateral > = O1_5<V17>\l" 
+ "BB11\n25  Create O3_1                              \l" -> "BB12\n28   invokespecial < Application, Ljava/lang/RuntimeException, <init>(Ljava/lang/String;)V > v20,v21:#Lateral constructor with zero num @54 exception:v22\l" 
+ "BB12\n28   invokespecial < Application, Ljava/lang/RuntimeException, <init>(Ljava/lang/String;)V > v20,v21:#Lateral constructor with zero num @54 exception:v22\l" -> "BB13\n29   throw v20                               \l" 
+ "BB13\n29   throw v20                               \l" -> "BB23 (ex)\n\n" 
+ "BB14\n32  PutOSSAInstruction:	O1_6< next_lateral > = O1_5<V17>\l" -> "BB15\n33   goto                                    \l" 
+ "BB15\n33   goto                                    \l" -> "BB19\n           O1_8 = Object-Phi(O1_6, O1_7 )\l45  Create O5_1                              \l" 
+ "BB16\n35  Create O4_1                              \l" -> "BB17\n39   v14 = binaryop(sub) v2 , v12:#1         \l42   invokespecial < Application, LLateral, <init>(III)V > v13,v14,v3,v4 @76 exception:v15\l" 
+ "BB17\n39   v14 = binaryop(sub) v2 , v12:#1         \l42   invokespecial < Application, LLateral, <init>(III)V > v13,v14,v3,v4 @76 exception:v15\l" -> "BB18\n43  PutOSSAInstruction:	O1_7< next_lateral > = O1_5<refO4_1>\l" 
+ "BB18\n43  PutOSSAInstruction:	O1_7< next_lateral > = O1_5<refO4_1>\l" -> "BB19\n           O1_8 = Object-Phi(O1_6, O1_7 )\l45  Create O5_1                              \l" 
+ "BB19\n           O1_8 = Object-Phi(O1_6, O1_7 )\l45  Create O5_1                              \l" -> "BB20\n49   invokespecial < Application, LBranch, <init>(II)V > v18,v3,v4 @89 exception:v19\l" 
+ "BB20\n49   invokespecial < Application, LBranch, <init>(II)V > v18,v3,v4 @89 exception:v19\l" -> "BB21\n50  PutOSSAInstruction:	O1_9< branch > = O1_8<refO5_1>\l" 
+ "BB21\n50  PutOSSAInstruction:	O1_9< branch > = O1_8<refO5_1>\l" -> "BB22\n51  return                                   \l" 
+ "BB22\n51  return                                   \l" -> "BB23 (ex)\n\n" 
+
+}

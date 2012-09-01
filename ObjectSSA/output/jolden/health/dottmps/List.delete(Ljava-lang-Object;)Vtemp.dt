@@ -1,0 +1,66 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v4 = getfield < Application, LList, head, <Application,LList$ListNode> > v1\l" [ ]
+   "BB2\n3   conditional branch(ne) v4,v5:#null\l" [ ]
+   "BB3\n4   return                         \l" [ ]
+   "BB4\n6   v6 = getfield < Application, LList, tail, <Application,LList$ListNode> > v1\l" [ ]
+   "BB5\n7   v7 = getfield < Application, LList$ListNode, object, <Application,Ljava/lang/Object> > v6\l" [ ]
+   "BB6\n9   conditional branch(ne) v7,v2   \l" [ ]
+   "BB7\n12   putfield v1 = v5:#null < Application, LList, tail, <Application,LList$ListNode> >\l" [ ]
+   "BB8\n14   v8 = getfield < Application, LList, head, <Application,LList$ListNode> > v1\l" [ ]
+   "BB9\n15   v9 = getfield < Application, LList$ListNode, object, <Application,Ljava/lang/Object> > v8\l" [ ]
+   "BB10\n17   conditional branch(ne) v9,v2  \l" [ ]
+   "BB11\n20   v18 = getfield < Application, LList, head, <Application,LList$ListNode> > v1\l" [ ]
+   "BB12\n21   v19 = getfield < Application, LList$ListNode, next, <Application,LList$ListNode> > v18\l" [ ]
+   "BB13\n22   putfield v1 = v19 < Application, LList, head, <Application,LList$ListNode> >\l" [ ]
+   "BB14\n23   return                        \l" [ ]
+   "BB15\n25   v10 = getfield < Application, LList, head, <Application,LList$ListNode> > v1\l" [ ]
+   "BB16\n28   v11 = getfield < Application, LList, head, <Application,LList$ListNode> > v1\l" [ ]
+   "BB17\n29   v12 = getfield < Application, LList$ListNode, next, <Application,LList$ListNode> > v11\l" [ ]
+   "BB18\n" [ ]
+   "BB19\n           v15 = phi  v16,v10\l           v16 = phi  v14,v12\l33   conditional branch(eq) v16,v5:#null\l" [ ]
+   "BB20\n35   v13 = getfield < Application, LList$ListNode, object, <Application,Ljava/lang/Object> > v16\l" [ ]
+   "BB21\n37   conditional branch(ne) v13,v2 \l" [ ]
+   "BB22\n40   v17 = getfield < Application, LList$ListNode, next, <Application,LList$ListNode> > v16\l" [ ]
+   "BB23\n41   putfield v15 = v17 < Application, LList$ListNode, next, <Application,LList$ListNode> >\l" [ ]
+   "BB24\n42   return                        \l" [ ]
+   "BB25\n46   v14 = getfield < Application, LList$ListNode, next, <Application,LList$ListNode> > v16\l" [ ]
+   "BB26\n48   goto                          \l" [ ]
+   "BB27\n49   return                        \l" [ ]
+   "BB28 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v4 = getfield < Application, LList, head, <Application,LList$ListNode> > v1\l" 
+ "BB1\n1   v4 = getfield < Application, LList, head, <Application,LList$ListNode> > v1\l" -> "BB2\n3   conditional branch(ne) v4,v5:#null\l" 
+ "BB2\n3   conditional branch(ne) v4,v5:#null\l" -> "BB3\n4   return                         \l" 
+ "BB2\n3   conditional branch(ne) v4,v5:#null\l" -> "BB4\n6   v6 = getfield < Application, LList, tail, <Application,LList$ListNode> > v1\l" 
+ "BB3\n4   return                         \l" -> "BB28 (ex)\n\n" 
+ "BB4\n6   v6 = getfield < Application, LList, tail, <Application,LList$ListNode> > v1\l" -> "BB5\n7   v7 = getfield < Application, LList$ListNode, object, <Application,Ljava/lang/Object> > v6\l" 
+ "BB5\n7   v7 = getfield < Application, LList$ListNode, object, <Application,Ljava/lang/Object> > v6\l" -> "BB6\n9   conditional branch(ne) v7,v2   \l" 
+ "BB6\n9   conditional branch(ne) v7,v2   \l" -> "BB7\n12   putfield v1 = v5:#null < Application, LList, tail, <Application,LList$ListNode> >\l" 
+ "BB6\n9   conditional branch(ne) v7,v2   \l" -> "BB8\n14   v8 = getfield < Application, LList, head, <Application,LList$ListNode> > v1\l" 
+ "BB7\n12   putfield v1 = v5:#null < Application, LList, tail, <Application,LList$ListNode> >\l" -> "BB8\n14   v8 = getfield < Application, LList, head, <Application,LList$ListNode> > v1\l" 
+ "BB8\n14   v8 = getfield < Application, LList, head, <Application,LList$ListNode> > v1\l" -> "BB9\n15   v9 = getfield < Application, LList$ListNode, object, <Application,Ljava/lang/Object> > v8\l" 
+ "BB9\n15   v9 = getfield < Application, LList$ListNode, object, <Application,Ljava/lang/Object> > v8\l" -> "BB10\n17   conditional branch(ne) v9,v2  \l" 
+ "BB10\n17   conditional branch(ne) v9,v2  \l" -> "BB11\n20   v18 = getfield < Application, LList, head, <Application,LList$ListNode> > v1\l" 
+ "BB10\n17   conditional branch(ne) v9,v2  \l" -> "BB15\n25   v10 = getfield < Application, LList, head, <Application,LList$ListNode> > v1\l" 
+ "BB11\n20   v18 = getfield < Application, LList, head, <Application,LList$ListNode> > v1\l" -> "BB12\n21   v19 = getfield < Application, LList$ListNode, next, <Application,LList$ListNode> > v18\l" 
+ "BB12\n21   v19 = getfield < Application, LList$ListNode, next, <Application,LList$ListNode> > v18\l" -> "BB13\n22   putfield v1 = v19 < Application, LList, head, <Application,LList$ListNode> >\l" 
+ "BB13\n22   putfield v1 = v19 < Application, LList, head, <Application,LList$ListNode> >\l" -> "BB14\n23   return                        \l" 
+ "BB14\n23   return                        \l" -> "BB28 (ex)\n\n" 
+ "BB15\n25   v10 = getfield < Application, LList, head, <Application,LList$ListNode> > v1\l" -> "BB16\n28   v11 = getfield < Application, LList, head, <Application,LList$ListNode> > v1\l" 
+ "BB16\n28   v11 = getfield < Application, LList, head, <Application,LList$ListNode> > v1\l" -> "BB17\n29   v12 = getfield < Application, LList$ListNode, next, <Application,LList$ListNode> > v11\l" 
+ "BB17\n29   v12 = getfield < Application, LList$ListNode, next, <Application,LList$ListNode> > v11\l" -> "BB18\n" 
+ "BB18\n" -> "BB19\n           v15 = phi  v16,v10\l           v16 = phi  v14,v12\l33   conditional branch(eq) v16,v5:#null\l" 
+ "BB19\n           v15 = phi  v16,v10\l           v16 = phi  v14,v12\l33   conditional branch(eq) v16,v5:#null\l" -> "BB20\n35   v13 = getfield < Application, LList$ListNode, object, <Application,Ljava/lang/Object> > v16\l" 
+ "BB19\n           v15 = phi  v16,v10\l           v16 = phi  v14,v12\l33   conditional branch(eq) v16,v5:#null\l" -> "BB27\n49   return                        \l" 
+ "BB20\n35   v13 = getfield < Application, LList$ListNode, object, <Application,Ljava/lang/Object> > v16\l" -> "BB21\n37   conditional branch(ne) v13,v2 \l" 
+ "BB21\n37   conditional branch(ne) v13,v2 \l" -> "BB22\n40   v17 = getfield < Application, LList$ListNode, next, <Application,LList$ListNode> > v16\l" 
+ "BB21\n37   conditional branch(ne) v13,v2 \l" -> "BB25\n46   v14 = getfield < Application, LList$ListNode, next, <Application,LList$ListNode> > v16\l" 
+ "BB22\n40   v17 = getfield < Application, LList$ListNode, next, <Application,LList$ListNode> > v16\l" -> "BB23\n41   putfield v15 = v17 < Application, LList$ListNode, next, <Application,LList$ListNode> >\l" 
+ "BB23\n41   putfield v15 = v17 < Application, LList$ListNode, next, <Application,LList$ListNode> >\l" -> "BB24\n42   return                        \l" 
+ "BB24\n42   return                        \l" -> "BB28 (ex)\n\n" 
+ "BB25\n46   v14 = getfield < Application, LList$ListNode, next, <Application,LList$ListNode> > v16\l" -> "BB26\n48   goto                          \l" 
+ "BB26\n48   goto                          \l" -> "BB19\n           v15 = phi  v16,v10\l           v16 = phi  v14,v12\l33   conditional branch(eq) v16,v5:#null\l" 
+ "BB27\n49   return                        \l" -> "BB28 (ex)\n\n" 
+
+}

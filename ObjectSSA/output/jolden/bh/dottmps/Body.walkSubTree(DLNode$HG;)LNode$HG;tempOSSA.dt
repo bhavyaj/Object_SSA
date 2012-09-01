@@ -1,0 +1,18 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Body.walkSubTree(DLNode$HG;)LNode$HG;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2  GetOSSAInstruction:	O1_1= O2_1< pskip>    \l" [ ]
+   "BB2\n3   conditional branch(eq) v1,v5             \l" [ ]
+   "BB3\n6  O2_2 = < Application, LBody, gravSub(LNode$HG;)LNode$HG; >( O1_1, O2_1 )\l" [ ]
+   "BB4\n" [ ]
+   "BB5\n           v8 = phi  v3,v7\l9  Return O2_1                               \l" [ ]
+   "BB6 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2  GetOSSAInstruction:	O1_1= O2_1< pskip>    \l" 
+ "BB1\n2  GetOSSAInstruction:	O1_1= O2_1< pskip>    \l" -> "BB2\n3   conditional branch(eq) v1,v5             \l" 
+ "BB2\n3   conditional branch(eq) v1,v5             \l" -> "BB3\n6  O2_2 = < Application, LBody, gravSub(LNode$HG;)LNode$HG; >( O1_1, O2_1 )\l" 
+ "BB2\n3   conditional branch(eq) v1,v5             \l" -> "BB5\n           v8 = phi  v3,v7\l9  Return O2_1                               \l" 
+ "BB3\n6  O2_2 = < Application, LBody, gravSub(LNode$HG;)LNode$HG; >( O1_1, O2_1 )\l" -> "BB4\n" 
+ "BB4\n" -> "BB5\n           v8 = phi  v3,v7\l9  Return O2_1                               \l" 
+ "BB5\n           v8 = phi  v3,v7\l9  Return O2_1                               \l" -> "BB6 (ex)\n\n" 
+
+}

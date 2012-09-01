@@ -1,0 +1,63 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Tree.buildTree(IZDDDD)LTree;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2   conditional branch(ne) v1,v8:#0          \l" [ ]
+   "BB2\n4  Return                                    \l" [ ]
+   "BB3\n7   conditional branch(eq) v2,v8:#0          \l" [ ]
+   "BB4\n10   conditional branch(ne) v2,v8:#0         \l" [ ]
+   "BB5\n12   goto                                    \l" [ ]
+   "BB6\n" [ ]
+   "BB7\n           v22 = phi  v9:#1,v8:#0\l18  O1_1 = < Application, LTree, median(DDI)D >( V3, V4, V1 )\l" [ ]
+   "BB8\n22   v25 = binaryop(div) v1 , v13:#2         \l" [ ]
+   "BB9\n28  O2_1 = < Application, LTree, buildTree(IZDDDD)LTree; >( V25, V22, V3, V24, V5, V6 )\l" [ ]
+   "BB10\n32   v28 = binaryop(div) v1 , v13:#2         \l" [ ]
+   "BB11\n38  O2_2 = < Application, LTree, buildTree(IZDDDD)LTree; >( V28, V22, V24, V4, V5, V6 )\l" [ ]
+   "BB12\n44  O1_2 = < Application, LTree, uniform(DD)D >( V5, V6 )\l" [ ]
+   "BB13\n46   goto                                    \l" [ ]
+   "BB14\n49   conditional branch(ne) v2,v8:#0         \l" [ ]
+   "BB15\n51   goto                                    \l" [ ]
+   "BB16\n" [ ]
+   "BB17\n           v10 = phi  v9:#1,v8:#0\l57  O1_3 = < Application, LTree, median(DDI)D >( V5, V6, V1 )\l" [ ]
+   "BB18\n61   v14 = binaryop(div) v1 , v13:#2         \l" [ ]
+   "BB19\n67  O2_3 = < Application, LTree, buildTree(IZDDDD)LTree; >( V14, V10, V3, V4, V5, V12 )\l" [ ]
+   "BB20\n71   v17 = binaryop(div) v1 , v13:#2         \l" [ ]
+   "BB21\n77  O2_4 = < Application, LTree, buildTree(IZDDDD)LTree; >( V17, V10, V3, V4, V12, V6 )\l" [ ]
+   "BB22\n83  O1_4 = < Application, LTree, uniform(DD)D >( V3, V4 )\l" [ ]
+   "BB23\n" [ ]
+   "BB24\n           v34 = phi  v27,v16\l           v35 = phi  v30,v19\l           v36 = phi  v24,v21\l           v37 = phi  v32,v12\l85  Create O3_1                              \l" [ ]
+   "BB25\n92  < Application, LTree, <init>(IDDLTree;LTree;)V >( O2_1, V1, V36, V37, O2_1, O2_1 )\l" [ ]
+   "BB26\n93  Return O2_1                              \l" [ ]
+   "BB27 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2   conditional branch(ne) v1,v8:#0          \l" 
+ "BB1\n2   conditional branch(ne) v1,v8:#0          \l" -> "BB2\n4  Return                                    \l" 
+ "BB1\n2   conditional branch(ne) v1,v8:#0          \l" -> "BB3\n7   conditional branch(eq) v2,v8:#0          \l" 
+ "BB2\n4  Return                                    \l" -> "BB27 (ex)\n\n" 
+ "BB3\n7   conditional branch(eq) v2,v8:#0          \l" -> "BB4\n10   conditional branch(ne) v2,v8:#0         \l" 
+ "BB3\n7   conditional branch(eq) v2,v8:#0          \l" -> "BB14\n49   conditional branch(ne) v2,v8:#0         \l" 
+ "BB4\n10   conditional branch(ne) v2,v8:#0         \l" -> "BB5\n12   goto                                    \l" 
+ "BB4\n10   conditional branch(ne) v2,v8:#0         \l" -> "BB6\n" 
+ "BB5\n12   goto                                    \l" -> "BB7\n           v22 = phi  v9:#1,v8:#0\l18  O1_1 = < Application, LTree, median(DDI)D >( V3, V4, V1 )\l" 
+ "BB6\n" -> "BB7\n           v22 = phi  v9:#1,v8:#0\l18  O1_1 = < Application, LTree, median(DDI)D >( V3, V4, V1 )\l" 
+ "BB7\n           v22 = phi  v9:#1,v8:#0\l18  O1_1 = < Application, LTree, median(DDI)D >( V3, V4, V1 )\l" -> "BB8\n22   v25 = binaryop(div) v1 , v13:#2         \l" 
+ "BB8\n22   v25 = binaryop(div) v1 , v13:#2         \l" -> "BB9\n28  O2_1 = < Application, LTree, buildTree(IZDDDD)LTree; >( V25, V22, V3, V24, V5, V6 )\l" 
+ "BB9\n28  O2_1 = < Application, LTree, buildTree(IZDDDD)LTree; >( V25, V22, V3, V24, V5, V6 )\l" -> "BB10\n32   v28 = binaryop(div) v1 , v13:#2         \l" 
+ "BB10\n32   v28 = binaryop(div) v1 , v13:#2         \l" -> "BB11\n38  O2_2 = < Application, LTree, buildTree(IZDDDD)LTree; >( V28, V22, V24, V4, V5, V6 )\l" 
+ "BB11\n38  O2_2 = < Application, LTree, buildTree(IZDDDD)LTree; >( V28, V22, V24, V4, V5, V6 )\l" -> "BB12\n44  O1_2 = < Application, LTree, uniform(DD)D >( V5, V6 )\l" 
+ "BB12\n44  O1_2 = < Application, LTree, uniform(DD)D >( V5, V6 )\l" -> "BB13\n46   goto                                    \l" 
+ "BB13\n46   goto                                    \l" -> "BB24\n           v34 = phi  v27,v16\l           v35 = phi  v30,v19\l           v36 = phi  v24,v21\l           v37 = phi  v32,v12\l85  Create O3_1                              \l" 
+ "BB14\n49   conditional branch(ne) v2,v8:#0         \l" -> "BB15\n51   goto                                    \l" 
+ "BB14\n49   conditional branch(ne) v2,v8:#0         \l" -> "BB16\n" 
+ "BB15\n51   goto                                    \l" -> "BB17\n           v10 = phi  v9:#1,v8:#0\l57  O1_3 = < Application, LTree, median(DDI)D >( V5, V6, V1 )\l" 
+ "BB16\n" -> "BB17\n           v10 = phi  v9:#1,v8:#0\l57  O1_3 = < Application, LTree, median(DDI)D >( V5, V6, V1 )\l" 
+ "BB17\n           v10 = phi  v9:#1,v8:#0\l57  O1_3 = < Application, LTree, median(DDI)D >( V5, V6, V1 )\l" -> "BB18\n61   v14 = binaryop(div) v1 , v13:#2         \l" 
+ "BB18\n61   v14 = binaryop(div) v1 , v13:#2         \l" -> "BB19\n67  O2_3 = < Application, LTree, buildTree(IZDDDD)LTree; >( V14, V10, V3, V4, V5, V12 )\l" 
+ "BB19\n67  O2_3 = < Application, LTree, buildTree(IZDDDD)LTree; >( V14, V10, V3, V4, V5, V12 )\l" -> "BB20\n71   v17 = binaryop(div) v1 , v13:#2         \l" 
+ "BB20\n71   v17 = binaryop(div) v1 , v13:#2         \l" -> "BB21\n77  O2_4 = < Application, LTree, buildTree(IZDDDD)LTree; >( V17, V10, V3, V4, V12, V6 )\l" 
+ "BB21\n77  O2_4 = < Application, LTree, buildTree(IZDDDD)LTree; >( V17, V10, V3, V4, V12, V6 )\l" -> "BB22\n83  O1_4 = < Application, LTree, uniform(DD)D >( V3, V4 )\l" 
+ "BB22\n83  O1_4 = < Application, LTree, uniform(DD)D >( V3, V4 )\l" -> "BB23\n" 
+ "BB23\n" -> "BB24\n           v34 = phi  v27,v16\l           v35 = phi  v30,v19\l           v36 = phi  v24,v21\l           v37 = phi  v32,v12\l85  Create O3_1                              \l" 
+ "BB24\n           v34 = phi  v27,v16\l           v35 = phi  v30,v19\l           v36 = phi  v24,v21\l           v37 = phi  v32,v12\l85  Create O3_1                              \l" -> "BB25\n92  < Application, LTree, <init>(IDDLTree;LTree;)V >( O2_1, V1, V36, V37, O2_1, O2_1 )\l" 
+ "BB25\n92  < Application, LTree, <init>(IDDLTree;LTree;)V >( O2_1, V1, V36, V37, O2_1, O2_1 )\l" -> "BB26\n93  Return O2_1                              \l" 
+ "BB26\n93  Return O2_1                              \l" -> "BB27 (ex)\n\n" 
+
+}

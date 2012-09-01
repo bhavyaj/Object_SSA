@@ -1,0 +1,13 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Demand.findH()D", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  GetOSSAInstruction:	3= O1_1< P>           \l" [ ]
+   "BB2\n4  GetOSSAInstruction:	5= O1_1< Q>           \l" [ ]
+   "BB3\n5   v6 = binaryop(mul) v4:#5.0 , v5          \l6   v7 = binaryop(sub) v3 , v6               \l7  Return                                    \l" [ ]
+   "BB4 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  GetOSSAInstruction:	3= O1_1< P>           \l" 
+ "BB1\n1  GetOSSAInstruction:	3= O1_1< P>           \l" -> "BB2\n4  GetOSSAInstruction:	5= O1_1< Q>           \l" 
+ "BB2\n4  GetOSSAInstruction:	5= O1_1< Q>           \l" -> "BB3\n5   v6 = binaryop(mul) v4:#5.0 , v5          \l6   v7 = binaryop(sub) v3 , v6               \l7  Return                                    \l" 
+ "BB3\n5   v6 = binaryop(mul) v4:#5.0 , v5          \l6   v7 = binaryop(sub) v3 , v6               \l7  Return                                    \l" -> "BB4 (ex)\n\n" 
+
+}

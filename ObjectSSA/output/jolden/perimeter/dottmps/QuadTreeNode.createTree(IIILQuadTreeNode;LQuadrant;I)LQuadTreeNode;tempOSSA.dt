@@ -1,0 +1,57 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for QuadTreeNode.createTree(IIILQuadTreeNode;LQuadrant;I)LQuadTreeNode;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n3  O3_1 = < Application, LQuadTreeNode, checkIntersect(III)I >( V2, V3, V1 )\l" [ ]
+   "BB2\n7   v11 = binaryop(div) v1 , v10:#2          \l" [ ]
+   "BB3\n11   conditional branch(ne) v9,v12:#0        \l" [ ]
+   "BB4\n14   conditional branch(ge) v11,v13:#512     \l" [ ]
+   "BB5\n15  Create O4_1                              \l" [ ]
+   "BB6\n19  < Application, LWhiteNode, <init>(LQuadrant;LQuadTreeNode;)V >( O4_1, O2_1, O1_1 )\l" [ ]
+   "BB7\n21   goto                                    \l" [ ]
+   "BB8\n24   conditional branch(ne) v9,v10:#2        \l" [ ]
+   "BB9\n25  Create O5_1                              \l" [ ]
+   "BB10\n29  < Application, LBlackNode, <init>(LQuadrant;LQuadTreeNode;)V >( O5_1, O2_1, O1_1 )\l" [ ]
+   "BB11\n31   goto                                    \l" [ ]
+   "BB12\n34   conditional branch(ne) v6,v12:#0        \l" [ ]
+   "BB13\n35  Create O6_1                              \l" [ ]
+   "BB14\n39  < Application, LBlackNode, <init>(LQuadrant;LQuadTreeNode;)V >( O6_1, O2_1, O1_1 )\l" [ ]
+   "BB15\n41   goto                                    \l" [ ]
+   "BB16\n42  Create O7_1                              \l" [ ]
+   "BB17\n46  < Application, LGreyNode, <init>(LQuadrant;LQuadTreeNode;)V >( O1_1, O2_1, O1_1 )\l" [ ]
+   "BB18\n51   v16 = binaryop(sub) v2 , v11            \l54   v17 = binaryop(sub) v3 , v11            \l56  nonreference field get instrctn: 18 = getstatic < Application, LQuadrant, cSouthWest, <Application,LQuadrant> >\l59   v20 = binaryop(sub) v6 , v19:#1         \l60  O9_1 = < Application, LQuadTreeNode, createTree(IIILQuadTreeNode;LQuadrant;I)LQuadTreeNode; >( V11, V16, V17, O1_1, O8_1, V20 )\l" [ ]
+   "BB19\n65   v23 = binaryop(add) v2 , v11            \l68   v24 = binaryop(sub) v3 , v11            \l70  nonreference field get instrctn: 25 = getstatic < Application, LQuadrant, cSouthEast, <Application,LQuadrant> >\l73   v26 = binaryop(sub) v6 , v19:#1         \l74  O9_2 = < Application, LQuadTreeNode, createTree(IIILQuadTreeNode;LQuadrant;I)LQuadTreeNode; >( V11, V23, V24, O1_1, O10_1, V26 )\l" [ ]
+   "BB20\n79   v29 = binaryop(add) v2 , v11            \l82   v30 = binaryop(add) v3 , v11            \l84  nonreference field get instrctn: 31 = getstatic < Application, LQuadrant, cNorthEast, <Application,LQuadrant> >\l87   v32 = binaryop(sub) v6 , v19:#1         \l88  O9_3 = < Application, LQuadTreeNode, createTree(IIILQuadTreeNode;LQuadrant;I)LQuadTreeNode; >( V11, V29, V30, O1_1, O11_1, V32 )\l" [ ]
+   "BB21\n93   v35 = binaryop(sub) v2 , v11            \l96   v36 = binaryop(add) v3 , v11            \l98  nonreference field get instrctn: 37 = getstatic < Application, LQuadrant, cNorthWest, <Application,LQuadrant> >\l101   v38 = binaryop(sub) v6 , v19:#1        \l102  O9_4 = < Application, LQuadTreeNode, createTree(IIILQuadTreeNode;LQuadrant;I)LQuadTreeNode; >( V11, V35, V36, O1_1, O12_1, V38 )\l" [ ]
+   "BB22\n109  < Application, LQuadTreeNode, setChildren(LQuadTreeNode;LQuadTreeNode;LQuadTreeNode;LQuadTreeNode;)V >( O1_1, O9_4, O9_4, O9_4, O9_4 )\l" [ ]
+   "BB23\n           v48 = phi  v46,v44,v42,v14\l111  Return O9_1                             \l" [ ]
+   "BB24 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n3  O3_1 = < Application, LQuadTreeNode, checkIntersect(III)I >( V2, V3, V1 )\l" 
+ "BB1\n3  O3_1 = < Application, LQuadTreeNode, checkIntersect(III)I >( V2, V3, V1 )\l" -> "BB2\n7   v11 = binaryop(div) v1 , v10:#2          \l" 
+ "BB2\n7   v11 = binaryop(div) v1 , v10:#2          \l" -> "BB3\n11   conditional branch(ne) v9,v12:#0        \l" 
+ "BB3\n11   conditional branch(ne) v9,v12:#0        \l" -> "BB4\n14   conditional branch(ge) v11,v13:#512     \l" 
+ "BB3\n11   conditional branch(ne) v9,v12:#0        \l" -> "BB8\n24   conditional branch(ne) v9,v10:#2        \l" 
+ "BB4\n14   conditional branch(ge) v11,v13:#512     \l" -> "BB5\n15  Create O4_1                              \l" 
+ "BB4\n14   conditional branch(ge) v11,v13:#512     \l" -> "BB8\n24   conditional branch(ne) v9,v10:#2        \l" 
+ "BB5\n15  Create O4_1                              \l" -> "BB6\n19  < Application, LWhiteNode, <init>(LQuadrant;LQuadTreeNode;)V >( O4_1, O2_1, O1_1 )\l" 
+ "BB6\n19  < Application, LWhiteNode, <init>(LQuadrant;LQuadTreeNode;)V >( O4_1, O2_1, O1_1 )\l" -> "BB7\n21   goto                                    \l" 
+ "BB7\n21   goto                                    \l" -> "BB23\n           v48 = phi  v46,v44,v42,v14\l111  Return O9_1                             \l" 
+ "BB8\n24   conditional branch(ne) v9,v10:#2        \l" -> "BB9\n25  Create O5_1                              \l" 
+ "BB8\n24   conditional branch(ne) v9,v10:#2        \l" -> "BB12\n34   conditional branch(ne) v6,v12:#0        \l" 
+ "BB9\n25  Create O5_1                              \l" -> "BB10\n29  < Application, LBlackNode, <init>(LQuadrant;LQuadTreeNode;)V >( O5_1, O2_1, O1_1 )\l" 
+ "BB10\n29  < Application, LBlackNode, <init>(LQuadrant;LQuadTreeNode;)V >( O5_1, O2_1, O1_1 )\l" -> "BB11\n31   goto                                    \l" 
+ "BB11\n31   goto                                    \l" -> "BB23\n           v48 = phi  v46,v44,v42,v14\l111  Return O9_1                             \l" 
+ "BB12\n34   conditional branch(ne) v6,v12:#0        \l" -> "BB13\n35  Create O6_1                              \l" 
+ "BB12\n34   conditional branch(ne) v6,v12:#0        \l" -> "BB16\n42  Create O7_1                              \l" 
+ "BB13\n35  Create O6_1                              \l" -> "BB14\n39  < Application, LBlackNode, <init>(LQuadrant;LQuadTreeNode;)V >( O6_1, O2_1, O1_1 )\l" 
+ "BB14\n39  < Application, LBlackNode, <init>(LQuadrant;LQuadTreeNode;)V >( O6_1, O2_1, O1_1 )\l" -> "BB15\n41   goto                                    \l" 
+ "BB15\n41   goto                                    \l" -> "BB23\n           v48 = phi  v46,v44,v42,v14\l111  Return O9_1                             \l" 
+ "BB16\n42  Create O7_1                              \l" -> "BB17\n46  < Application, LGreyNode, <init>(LQuadrant;LQuadTreeNode;)V >( O1_1, O2_1, O1_1 )\l" 
+ "BB17\n46  < Application, LGreyNode, <init>(LQuadrant;LQuadTreeNode;)V >( O1_1, O2_1, O1_1 )\l" -> "BB18\n51   v16 = binaryop(sub) v2 , v11            \l54   v17 = binaryop(sub) v3 , v11            \l56  nonreference field get instrctn: 18 = getstatic < Application, LQuadrant, cSouthWest, <Application,LQuadrant> >\l59   v20 = binaryop(sub) v6 , v19:#1         \l60  O9_1 = < Application, LQuadTreeNode, createTree(IIILQuadTreeNode;LQuadrant;I)LQuadTreeNode; >( V11, V16, V17, O1_1, O8_1, V20 )\l" 
+ "BB18\n51   v16 = binaryop(sub) v2 , v11            \l54   v17 = binaryop(sub) v3 , v11            \l56  nonreference field get instrctn: 18 = getstatic < Application, LQuadrant, cSouthWest, <Application,LQuadrant> >\l59   v20 = binaryop(sub) v6 , v19:#1         \l60  O9_1 = < Application, LQuadTreeNode, createTree(IIILQuadTreeNode;LQuadrant;I)LQuadTreeNode; >( V11, V16, V17, O1_1, O8_1, V20 )\l" -> "BB19\n65   v23 = binaryop(add) v2 , v11            \l68   v24 = binaryop(sub) v3 , v11            \l70  nonreference field get instrctn: 25 = getstatic < Application, LQuadrant, cSouthEast, <Application,LQuadrant> >\l73   v26 = binaryop(sub) v6 , v19:#1         \l74  O9_2 = < Application, LQuadTreeNode, createTree(IIILQuadTreeNode;LQuadrant;I)LQuadTreeNode; >( V11, V23, V24, O1_1, O10_1, V26 )\l" 
+ "BB19\n65   v23 = binaryop(add) v2 , v11            \l68   v24 = binaryop(sub) v3 , v11            \l70  nonreference field get instrctn: 25 = getstatic < Application, LQuadrant, cSouthEast, <Application,LQuadrant> >\l73   v26 = binaryop(sub) v6 , v19:#1         \l74  O9_2 = < Application, LQuadTreeNode, createTree(IIILQuadTreeNode;LQuadrant;I)LQuadTreeNode; >( V11, V23, V24, O1_1, O10_1, V26 )\l" -> "BB20\n79   v29 = binaryop(add) v2 , v11            \l82   v30 = binaryop(add) v3 , v11            \l84  nonreference field get instrctn: 31 = getstatic < Application, LQuadrant, cNorthEast, <Application,LQuadrant> >\l87   v32 = binaryop(sub) v6 , v19:#1         \l88  O9_3 = < Application, LQuadTreeNode, createTree(IIILQuadTreeNode;LQuadrant;I)LQuadTreeNode; >( V11, V29, V30, O1_1, O11_1, V32 )\l" 
+ "BB20\n79   v29 = binaryop(add) v2 , v11            \l82   v30 = binaryop(add) v3 , v11            \l84  nonreference field get instrctn: 31 = getstatic < Application, LQuadrant, cNorthEast, <Application,LQuadrant> >\l87   v32 = binaryop(sub) v6 , v19:#1         \l88  O9_3 = < Application, LQuadTreeNode, createTree(IIILQuadTreeNode;LQuadrant;I)LQuadTreeNode; >( V11, V29, V30, O1_1, O11_1, V32 )\l" -> "BB21\n93   v35 = binaryop(sub) v2 , v11            \l96   v36 = binaryop(add) v3 , v11            \l98  nonreference field get instrctn: 37 = getstatic < Application, LQuadrant, cNorthWest, <Application,LQuadrant> >\l101   v38 = binaryop(sub) v6 , v19:#1        \l102  O9_4 = < Application, LQuadTreeNode, createTree(IIILQuadTreeNode;LQuadrant;I)LQuadTreeNode; >( V11, V35, V36, O1_1, O12_1, V38 )\l" 
+ "BB21\n93   v35 = binaryop(sub) v2 , v11            \l96   v36 = binaryop(add) v3 , v11            \l98  nonreference field get instrctn: 37 = getstatic < Application, LQuadrant, cNorthWest, <Application,LQuadrant> >\l101   v38 = binaryop(sub) v6 , v19:#1        \l102  O9_4 = < Application, LQuadTreeNode, createTree(IIILQuadTreeNode;LQuadrant;I)LQuadTreeNode; >( V11, V35, V36, O1_1, O12_1, V38 )\l" -> "BB22\n109  < Application, LQuadTreeNode, setChildren(LQuadTreeNode;LQuadTreeNode;LQuadTreeNode;LQuadTreeNode;)V >( O1_1, O9_4, O9_4, O9_4, O9_4 )\l" 
+ "BB22\n109  < Application, LQuadTreeNode, setChildren(LQuadTreeNode;LQuadTreeNode;LQuadTreeNode;LQuadTreeNode;)V >( O1_1, O9_4, O9_4, O9_4, O9_4 )\l" -> "BB23\n           v48 = phi  v46,v44,v42,v14\l111  Return O9_1                             \l" 
+ "BB23\n           v48 = phi  v46,v44,v42,v14\l111  Return O9_1                             \l" -> "BB24 (ex)\n\n" 
+
+}

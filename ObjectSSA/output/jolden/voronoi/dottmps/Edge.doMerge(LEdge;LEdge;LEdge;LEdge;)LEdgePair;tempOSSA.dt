@@ -1,0 +1,190 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Edge.doMerge(LEdge;LEdge;LEdge;LEdge;)LEdgePair;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n           v30 = phi  v21,v2\l           v31 = phi  v29,v3\l1  O5_1 = < Application, LEdge, orig()LVertex; >( O4_1 )\l" [ ]
+   "BB2\n4  O5_2 = < Application, LEdge, orig()LVertex; >( O4_1 )\l" [ ]
+   "BB3\n7  O5_3 = < Application, LEdge, dest()LVertex; >( O4_1 )\l" [ ]
+   "BB4\n" [ ]
+   "BB5\n           v21 = phi  v16,v30\l           v32 = phi  v32,v31\l           v22 = phi  v18,v9\l           v23 = phi  v20,v11\l12  O6_1 = < Application, LVertex, ccw(LVertex;LVertex;)Z >( O5_3, O5_3, O5_3 )\l" [ ]
+   "BB6\n14   conditional branch(eq) v13,v14:#0       \l" [ ]
+   "BB7\n16  O4_2 = < Application, LEdge, lNext()LEdge; >( O4_1 )\l" [ ]
+   "BB8\n19  O5_4 = < Application, LEdge, orig()LVertex; >( O4_2 )\l" [ ]
+   "BB9\n22  O5_5 = < Application, LEdge, dest()LVertex; >( O4_2 )\l" [ ]
+   "BB10\n24   goto                                    \l" [ ]
+   "BB11\n26  O5_6 = < Application, LEdge, dest()LVertex; >( O4_1 )\l" [ ]
+   "BB12\n31  O6_2 = < Application, LVertex, ccw(LVertex;LVertex;)Z >( O5_6, O5_6, O5_6 )\l" [ ]
+   "BB13\n33   conditional branch(eq) v27,v14:#0       \l" [ ]
+   "BB14\n35  O4_3 = < Application, LEdge, rPrev()LEdge; >( O4_1 )\l" [ ]
+   "BB15\n37   goto                                    \l" [ ]
+   "BB16\n39  O4_4 = < Application, LEdge, symmetric()LEdge; >( O4_1 )\l" [ ]
+   "BB17\n41  O4_5 = < Application, LEdge, connectLeft(LEdge;)LEdge; >( O4_4, O4_4 )\l" [ ]
+   "BB18\n44  O4_6 = < Application, LEdge, rPrev()LEdge; >( O4_5 )\l" [ ]
+   "BB19\n47  O4_7 = < Application, LEdge, oPrev()LEdge; >( O4_6 )\l" [ ]
+   "BB20\n50  O5_7 = < Application, LEdge, orig()LVertex; >( O4_7 )\l" [ ]
+   "BB21\n53  O5_8 = < Application, LEdge, dest()LVertex; >( O4_7 )\l" [ ]
+   "BB22\n57  O5_9 = < Application, LEdge, orig()LVertex; >( O4_7 )\l" [ ]
+   "BB23\n58   conditional branch(ne) v42,v46          \l" [ ]
+   "BB24\n" [ ]
+   "BB25\n           v47 = phi  v4,v36\l63  O5_10 = < Application, LEdge, orig()LVertex; >( O4_7 )\l" [ ]
+   "BB26\n64   conditional branch(ne) v44,v49          \l" [ ]
+   "BB27\n66  O4_8 = < Application, LEdge, symmetric()LEdge; >( O4_7 )\l" [ ]
+   "BB28\n" [ ]
+   "BB29\n           v52 = phi  v1,v52,v51\l           v144 = phi  v36,v141,v36\l           v145 = phi  v38,v142,v38\l           v146 = phi  v40,v143,v40\l69  O4_9 = < Application, LEdge, oNext()LEdge; >( O4_7 )\l" [ ]
+   "BB30\n73  O6_3 = < Application, LEdge, valid(LEdge;)Z >( O4_9, O4_9 )\l" [ ]
+   "BB31\n75   conditional branch(eq) v56,v14:#0       \l" [ ]
+   "BB32\n77  O5_11 = < Application, LEdge, orig()LVertex; >( O4_9 )\l" [ ]
+   "BB33\n80  O5_12 = < Application, LEdge, dest()LVertex; >( O4_9 )\l" [ ]
+   "BB34\n83  O5_13 = < Application, LEdge, orig()LVertex; >( O4_9 )\l" [ ]
+   "BB35\n86  O5_14 = < Application, LEdge, dest()LVertex; >( O4_9 )\l" [ ]
+   "BB36\n" [ ]
+   "BB37\n           v147 = phi  v147,v144\l           v76 = phi  v77,v145\l           v148 = phi  v148,v146\l           v77 = phi  v69,v54\l           v78 = phi  v71,v60\l           v79 = phi  v73,v62\l           v80 = phi  v75,v64\l92  O6_4 = < Application, LVertex, incircle(LVertex;LVertex;LVertex;)Z >( O5_14, O5_14, O5_14, O5_14 )\l" [ ]
+   "BB38\n94   conditional branch(eq) v66,v14:#0       \l" [ ]
+   "BB39\n96  < Application, LEdge, deleteEdge()V >( O4_9 )\l" [ ]
+   "BB40\n100  O4_10 = < Application, LEdge, oNext()LEdge; >( O4_9 )\l" [ ]
+   "BB41\n103  O5_15 = < Application, LEdge, dest()LVertex; >( O4_10 )\l" [ ]
+   "BB42\n106  O5_16 = < Application, LEdge, orig()LVertex; >( O4_10 )\l" [ ]
+   "BB43\n109  O5_17 = < Application, LEdge, dest()LVertex; >( O4_10 )\l" [ ]
+   "BB44\n111   goto                                   \l" [ ]
+   "BB45\n           v149 = phi  v144,v147\l           v81 = phi  v145,v76\l           v150 = phi  v146,v148\l113  O4_11 = < Application, LEdge, oPrev()LEdge; >( O4_9 )\l" [ ]
+   "BB46\n117  O6_5 = < Application, LEdge, valid(LEdge;)Z >( O4_11, O4_11 )\l" [ ]
+   "BB47\n119   conditional branch(eq) v86,v14:#0      \l" [ ]
+   "BB48\n121  O5_18 = < Application, LEdge, dest()LVertex; >( O4_11 )\l" [ ]
+   "BB49\n124  O5_19 = < Application, LEdge, dest()LVertex; >( O4_11 )\l" [ ]
+   "BB50\n127  O5_20 = < Application, LEdge, dest()LVertex; >( O4_11 )\l" [ ]
+   "BB51\n130  O5_21 = < Application, LEdge, orig()LVertex; >( O4_11 )\l" [ ]
+   "BB52\n" [ ]
+   "BB53\n           v151 = phi  v151,v149\l           v106 = phi  v107,v150\l           v107 = phi  v99,v84\l           v108 = phi  v105,v90\l           v109 = phi  v101,v92\l           v110 = phi  v103,v94\l136  O6_6 = < Application, LVertex, incircle(LVertex;LVertex;LVertex;)Z >( O5_21, O5_21, O5_21, O5_21 )\l" [ ]
+   "BB54\n138   conditional branch(eq) v96,v14:#0      \l" [ ]
+   "BB55\n140  < Application, LEdge, deleteEdge()V >( O4_11 )\l" [ ]
+   "BB56\n144  O4_12 = < Application, LEdge, oPrev()LEdge; >( O4_11 )\l" [ ]
+   "BB57\n147  O5_22 = < Application, LEdge, dest()LVertex; >( O4_12 )\l" [ ]
+   "BB58\n150  O5_23 = < Application, LEdge, orig()LVertex; >( O4_12 )\l" [ ]
+   "BB59\n153  O5_24 = < Application, LEdge, dest()LVertex; >( O4_12 )\l" [ ]
+   "BB60\n155   goto                                   \l" [ ]
+   "BB61\n           v152 = phi  v149,v151\l           v111 = phi  v150,v106\l158  O6_7 = < Application, LEdge, valid(LEdge;)Z >( O4_11, O4_11 )\l" [ ]
+   "BB62\n162  O6_8 = < Application, LEdge, valid(LEdge;)Z >( O4_11, O4_11 )\l" [ ]
+   "BB63\n166   conditional branch(ne) v114,v14:#0     \l" [ ]
+   "BB64\n169   conditional branch(ne) v116,v14:#0     \l" [ ]
+   "BB65\n170  Create O7_1                             \l" [ ]
+   "BB66\n174  < Application, LEdgePair, <init>(LEdge;LEdge;)V >( O7_1, O4_11, O4_11 )\l" [ ]
+   "BB67\n175  Return O7_1                             \l" [ ]
+   "BB68\n177  O5_25 = < Application, LEdge, dest()LVertex; >( O4_11 )\l" [ ]
+   "BB69\n180  O5_26 = < Application, LEdge, orig()LVertex; >( O4_11 )\l" [ ]
+   "BB70\n183  O5_27 = < Application, LEdge, orig()LVertex; >( O4_11 )\l" [ ]
+   "BB71\n186  O5_28 = < Application, LEdge, dest()LVertex; >( O4_11 )\l" [ ]
+   "BB72\n190   conditional branch(eq) v114,v14:#0     \l" [ ]
+   "BB73\n193   conditional branch(eq) v116,v14:#0     \l" [ ]
+   "BB74\n198  O6_9 = < Application, LVertex, incircle(LVertex;LVertex;LVertex;)Z >( O5_28, O5_28, O5_28, O5_28 )\l" [ ]
+   "BB75\n200   conditional branch(eq) v126,v14:#0     \l" [ ]
+   "BB76\n203  O4_16 = < Application, LEdge, symmetric()LEdge; >( O4_11 )\l" [ ]
+   "BB77\n204  O4_17 = < Application, LEdge, connectLeft(LEdge;)LEdge; >( O4_16, O4_16 )\l" [ ]
+   "BB78\n207  O4_18 = < Application, LEdge, symmetric()LEdge; >( O4_17 )\l" [ ]
+   "BB79\n208  O4_19 = < Application, LEdge, lNext()LEdge; >( O4_18 )\l" [ ]
+   "BB80\n210   goto                                   \l" [ ]
+   "BB81\n213  O4_13 = < Application, LEdge, connectRight(LEdge;)LEdge; >( O4_11, O4_11 )\l" [ ]
+   "BB82\n214  O4_14 = < Application, LEdge, symmetric()LEdge; >( O4_13 )\l" [ ]
+   "BB83\n217  O4_15 = < Application, LEdge, rPrev()LEdge; >( O4_14 )\l" [ ]
+   "BB84\n" [ ]
+   "BB85\n           v141 = phi  v130,v138\l           v142 = phi  v81,v140\l           v143 = phi  v134,v111\l219   goto                                   \l" [ ]
+   "BB86 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n           v30 = phi  v21,v2\l           v31 = phi  v29,v3\l1  O5_1 = < Application, LEdge, orig()LVertex; >( O4_1 )\l" 
+ "BB1\n           v30 = phi  v21,v2\l           v31 = phi  v29,v3\l1  O5_1 = < Application, LEdge, orig()LVertex; >( O4_1 )\l" -> "BB2\n4  O5_2 = < Application, LEdge, orig()LVertex; >( O4_1 )\l" 
+ "BB2\n4  O5_2 = < Application, LEdge, orig()LVertex; >( O4_1 )\l" -> "BB3\n7  O5_3 = < Application, LEdge, dest()LVertex; >( O4_1 )\l" 
+ "BB3\n7  O5_3 = < Application, LEdge, dest()LVertex; >( O4_1 )\l" -> "BB4\n" 
+ "BB4\n" -> "BB5\n           v21 = phi  v16,v30\l           v32 = phi  v32,v31\l           v22 = phi  v18,v9\l           v23 = phi  v20,v11\l12  O6_1 = < Application, LVertex, ccw(LVertex;LVertex;)Z >( O5_3, O5_3, O5_3 )\l" 
+ "BB5\n           v21 = phi  v16,v30\l           v32 = phi  v32,v31\l           v22 = phi  v18,v9\l           v23 = phi  v20,v11\l12  O6_1 = < Application, LVertex, ccw(LVertex;LVertex;)Z >( O5_3, O5_3, O5_3 )\l" -> "BB6\n14   conditional branch(eq) v13,v14:#0       \l" 
+ "BB6\n14   conditional branch(eq) v13,v14:#0       \l" -> "BB7\n16  O4_2 = < Application, LEdge, lNext()LEdge; >( O4_1 )\l" 
+ "BB6\n14   conditional branch(eq) v13,v14:#0       \l" -> "BB11\n26  O5_6 = < Application, LEdge, dest()LVertex; >( O4_1 )\l" 
+ "BB7\n16  O4_2 = < Application, LEdge, lNext()LEdge; >( O4_1 )\l" -> "BB8\n19  O5_4 = < Application, LEdge, orig()LVertex; >( O4_2 )\l" 
+ "BB8\n19  O5_4 = < Application, LEdge, orig()LVertex; >( O4_2 )\l" -> "BB9\n22  O5_5 = < Application, LEdge, dest()LVertex; >( O4_2 )\l" 
+ "BB9\n22  O5_5 = < Application, LEdge, dest()LVertex; >( O4_2 )\l" -> "BB10\n24   goto                                    \l" 
+ "BB10\n24   goto                                    \l" -> "BB5\n           v21 = phi  v16,v30\l           v32 = phi  v32,v31\l           v22 = phi  v18,v9\l           v23 = phi  v20,v11\l12  O6_1 = < Application, LVertex, ccw(LVertex;LVertex;)Z >( O5_3, O5_3, O5_3 )\l" 
+ "BB11\n26  O5_6 = < Application, LEdge, dest()LVertex; >( O4_1 )\l" -> "BB12\n31  O6_2 = < Application, LVertex, ccw(LVertex;LVertex;)Z >( O5_6, O5_6, O5_6 )\l" 
+ "BB12\n31  O6_2 = < Application, LVertex, ccw(LVertex;LVertex;)Z >( O5_6, O5_6, O5_6 )\l" -> "BB13\n33   conditional branch(eq) v27,v14:#0       \l" 
+ "BB13\n33   conditional branch(eq) v27,v14:#0       \l" -> "BB14\n35  O4_3 = < Application, LEdge, rPrev()LEdge; >( O4_1 )\l" 
+ "BB13\n33   conditional branch(eq) v27,v14:#0       \l" -> "BB16\n39  O4_4 = < Application, LEdge, symmetric()LEdge; >( O4_1 )\l" 
+ "BB14\n35  O4_3 = < Application, LEdge, rPrev()LEdge; >( O4_1 )\l" -> "BB15\n37   goto                                    \l" 
+ "BB15\n37   goto                                    \l" -> "BB1\n           v30 = phi  v21,v2\l           v31 = phi  v29,v3\l1  O5_1 = < Application, LEdge, orig()LVertex; >( O4_1 )\l" 
+ "BB16\n39  O4_4 = < Application, LEdge, symmetric()LEdge; >( O4_1 )\l" -> "BB17\n41  O4_5 = < Application, LEdge, connectLeft(LEdge;)LEdge; >( O4_4, O4_4 )\l" 
+ "BB17\n41  O4_5 = < Application, LEdge, connectLeft(LEdge;)LEdge; >( O4_4, O4_4 )\l" -> "BB18\n44  O4_6 = < Application, LEdge, rPrev()LEdge; >( O4_5 )\l" 
+ "BB18\n44  O4_6 = < Application, LEdge, rPrev()LEdge; >( O4_5 )\l" -> "BB19\n47  O4_7 = < Application, LEdge, oPrev()LEdge; >( O4_6 )\l" 
+ "BB19\n47  O4_7 = < Application, LEdge, oPrev()LEdge; >( O4_6 )\l" -> "BB20\n50  O5_7 = < Application, LEdge, orig()LVertex; >( O4_7 )\l" 
+ "BB20\n50  O5_7 = < Application, LEdge, orig()LVertex; >( O4_7 )\l" -> "BB21\n53  O5_8 = < Application, LEdge, dest()LVertex; >( O4_7 )\l" 
+ "BB21\n53  O5_8 = < Application, LEdge, dest()LVertex; >( O4_7 )\l" -> "BB22\n57  O5_9 = < Application, LEdge, orig()LVertex; >( O4_7 )\l" 
+ "BB22\n57  O5_9 = < Application, LEdge, orig()LVertex; >( O4_7 )\l" -> "BB23\n58   conditional branch(ne) v42,v46          \l" 
+ "BB23\n58   conditional branch(ne) v42,v46          \l" -> "BB24\n" 
+ "BB23\n58   conditional branch(ne) v42,v46          \l" -> "BB25\n           v47 = phi  v4,v36\l63  O5_10 = < Application, LEdge, orig()LVertex; >( O4_7 )\l" 
+ "BB24\n" -> "BB25\n           v47 = phi  v4,v36\l63  O5_10 = < Application, LEdge, orig()LVertex; >( O4_7 )\l" 
+ "BB25\n           v47 = phi  v4,v36\l63  O5_10 = < Application, LEdge, orig()LVertex; >( O4_7 )\l" -> "BB26\n64   conditional branch(ne) v44,v49          \l" 
+ "BB26\n64   conditional branch(ne) v44,v49          \l" -> "BB27\n66  O4_8 = < Application, LEdge, symmetric()LEdge; >( O4_7 )\l" 
+ "BB26\n64   conditional branch(ne) v44,v49          \l" -> "BB29\n           v52 = phi  v1,v52,v51\l           v144 = phi  v36,v141,v36\l           v145 = phi  v38,v142,v38\l           v146 = phi  v40,v143,v40\l69  O4_9 = < Application, LEdge, oNext()LEdge; >( O4_7 )\l" 
+ "BB27\n66  O4_8 = < Application, LEdge, symmetric()LEdge; >( O4_7 )\l" -> "BB28\n" 
+ "BB28\n" -> "BB29\n           v52 = phi  v1,v52,v51\l           v144 = phi  v36,v141,v36\l           v145 = phi  v38,v142,v38\l           v146 = phi  v40,v143,v40\l69  O4_9 = < Application, LEdge, oNext()LEdge; >( O4_7 )\l" 
+ "BB29\n           v52 = phi  v1,v52,v51\l           v144 = phi  v36,v141,v36\l           v145 = phi  v38,v142,v38\l           v146 = phi  v40,v143,v40\l69  O4_9 = < Application, LEdge, oNext()LEdge; >( O4_7 )\l" -> "BB30\n73  O6_3 = < Application, LEdge, valid(LEdge;)Z >( O4_9, O4_9 )\l" 
+ "BB30\n73  O6_3 = < Application, LEdge, valid(LEdge;)Z >( O4_9, O4_9 )\l" -> "BB31\n75   conditional branch(eq) v56,v14:#0       \l" 
+ "BB31\n75   conditional branch(eq) v56,v14:#0       \l" -> "BB32\n77  O5_11 = < Application, LEdge, orig()LVertex; >( O4_9 )\l" 
+ "BB31\n75   conditional branch(eq) v56,v14:#0       \l" -> "BB45\n           v149 = phi  v144,v147\l           v81 = phi  v145,v76\l           v150 = phi  v146,v148\l113  O4_11 = < Application, LEdge, oPrev()LEdge; >( O4_9 )\l" 
+ "BB32\n77  O5_11 = < Application, LEdge, orig()LVertex; >( O4_9 )\l" -> "BB33\n80  O5_12 = < Application, LEdge, dest()LVertex; >( O4_9 )\l" 
+ "BB33\n80  O5_12 = < Application, LEdge, dest()LVertex; >( O4_9 )\l" -> "BB34\n83  O5_13 = < Application, LEdge, orig()LVertex; >( O4_9 )\l" 
+ "BB34\n83  O5_13 = < Application, LEdge, orig()LVertex; >( O4_9 )\l" -> "BB35\n86  O5_14 = < Application, LEdge, dest()LVertex; >( O4_9 )\l" 
+ "BB35\n86  O5_14 = < Application, LEdge, dest()LVertex; >( O4_9 )\l" -> "BB36\n" 
+ "BB36\n" -> "BB37\n           v147 = phi  v147,v144\l           v76 = phi  v77,v145\l           v148 = phi  v148,v146\l           v77 = phi  v69,v54\l           v78 = phi  v71,v60\l           v79 = phi  v73,v62\l           v80 = phi  v75,v64\l92  O6_4 = < Application, LVertex, incircle(LVertex;LVertex;LVertex;)Z >( O5_14, O5_14, O5_14, O5_14 )\l" 
+ "BB37\n           v147 = phi  v147,v144\l           v76 = phi  v77,v145\l           v148 = phi  v148,v146\l           v77 = phi  v69,v54\l           v78 = phi  v71,v60\l           v79 = phi  v73,v62\l           v80 = phi  v75,v64\l92  O6_4 = < Application, LVertex, incircle(LVertex;LVertex;LVertex;)Z >( O5_14, O5_14, O5_14, O5_14 )\l" -> "BB38\n94   conditional branch(eq) v66,v14:#0       \l" 
+ "BB38\n94   conditional branch(eq) v66,v14:#0       \l" -> "BB39\n96  < Application, LEdge, deleteEdge()V >( O4_9 )\l" 
+ "BB38\n94   conditional branch(eq) v66,v14:#0       \l" -> "BB45\n           v149 = phi  v144,v147\l           v81 = phi  v145,v76\l           v150 = phi  v146,v148\l113  O4_11 = < Application, LEdge, oPrev()LEdge; >( O4_9 )\l" 
+ "BB39\n96  < Application, LEdge, deleteEdge()V >( O4_9 )\l" -> "BB40\n100  O4_10 = < Application, LEdge, oNext()LEdge; >( O4_9 )\l" 
+ "BB40\n100  O4_10 = < Application, LEdge, oNext()LEdge; >( O4_9 )\l" -> "BB41\n103  O5_15 = < Application, LEdge, dest()LVertex; >( O4_10 )\l" 
+ "BB41\n103  O5_15 = < Application, LEdge, dest()LVertex; >( O4_10 )\l" -> "BB42\n106  O5_16 = < Application, LEdge, orig()LVertex; >( O4_10 )\l" 
+ "BB42\n106  O5_16 = < Application, LEdge, orig()LVertex; >( O4_10 )\l" -> "BB43\n109  O5_17 = < Application, LEdge, dest()LVertex; >( O4_10 )\l" 
+ "BB43\n109  O5_17 = < Application, LEdge, dest()LVertex; >( O4_10 )\l" -> "BB44\n111   goto                                   \l" 
+ "BB44\n111   goto                                   \l" -> "BB37\n           v147 = phi  v147,v144\l           v76 = phi  v77,v145\l           v148 = phi  v148,v146\l           v77 = phi  v69,v54\l           v78 = phi  v71,v60\l           v79 = phi  v73,v62\l           v80 = phi  v75,v64\l92  O6_4 = < Application, LVertex, incircle(LVertex;LVertex;LVertex;)Z >( O5_14, O5_14, O5_14, O5_14 )\l" 
+ "BB45\n           v149 = phi  v144,v147\l           v81 = phi  v145,v76\l           v150 = phi  v146,v148\l113  O4_11 = < Application, LEdge, oPrev()LEdge; >( O4_9 )\l" -> "BB46\n117  O6_5 = < Application, LEdge, valid(LEdge;)Z >( O4_11, O4_11 )\l" 
+ "BB46\n117  O6_5 = < Application, LEdge, valid(LEdge;)Z >( O4_11, O4_11 )\l" -> "BB47\n119   conditional branch(eq) v86,v14:#0      \l" 
+ "BB47\n119   conditional branch(eq) v86,v14:#0      \l" -> "BB48\n121  O5_18 = < Application, LEdge, dest()LVertex; >( O4_11 )\l" 
+ "BB47\n119   conditional branch(eq) v86,v14:#0      \l" -> "BB61\n           v152 = phi  v149,v151\l           v111 = phi  v150,v106\l158  O6_7 = < Application, LEdge, valid(LEdge;)Z >( O4_11, O4_11 )\l" 
+ "BB48\n121  O5_18 = < Application, LEdge, dest()LVertex; >( O4_11 )\l" -> "BB49\n124  O5_19 = < Application, LEdge, dest()LVertex; >( O4_11 )\l" 
+ "BB49\n124  O5_19 = < Application, LEdge, dest()LVertex; >( O4_11 )\l" -> "BB50\n127  O5_20 = < Application, LEdge, dest()LVertex; >( O4_11 )\l" 
+ "BB50\n127  O5_20 = < Application, LEdge, dest()LVertex; >( O4_11 )\l" -> "BB51\n130  O5_21 = < Application, LEdge, orig()LVertex; >( O4_11 )\l" 
+ "BB51\n130  O5_21 = < Application, LEdge, orig()LVertex; >( O4_11 )\l" -> "BB52\n" 
+ "BB52\n" -> "BB53\n           v151 = phi  v151,v149\l           v106 = phi  v107,v150\l           v107 = phi  v99,v84\l           v108 = phi  v105,v90\l           v109 = phi  v101,v92\l           v110 = phi  v103,v94\l136  O6_6 = < Application, LVertex, incircle(LVertex;LVertex;LVertex;)Z >( O5_21, O5_21, O5_21, O5_21 )\l" 
+ "BB53\n           v151 = phi  v151,v149\l           v106 = phi  v107,v150\l           v107 = phi  v99,v84\l           v108 = phi  v105,v90\l           v109 = phi  v101,v92\l           v110 = phi  v103,v94\l136  O6_6 = < Application, LVertex, incircle(LVertex;LVertex;LVertex;)Z >( O5_21, O5_21, O5_21, O5_21 )\l" -> "BB54\n138   conditional branch(eq) v96,v14:#0      \l" 
+ "BB54\n138   conditional branch(eq) v96,v14:#0      \l" -> "BB55\n140  < Application, LEdge, deleteEdge()V >( O4_11 )\l" 
+ "BB54\n138   conditional branch(eq) v96,v14:#0      \l" -> "BB61\n           v152 = phi  v149,v151\l           v111 = phi  v150,v106\l158  O6_7 = < Application, LEdge, valid(LEdge;)Z >( O4_11, O4_11 )\l" 
+ "BB55\n140  < Application, LEdge, deleteEdge()V >( O4_11 )\l" -> "BB56\n144  O4_12 = < Application, LEdge, oPrev()LEdge; >( O4_11 )\l" 
+ "BB56\n144  O4_12 = < Application, LEdge, oPrev()LEdge; >( O4_11 )\l" -> "BB57\n147  O5_22 = < Application, LEdge, dest()LVertex; >( O4_12 )\l" 
+ "BB57\n147  O5_22 = < Application, LEdge, dest()LVertex; >( O4_12 )\l" -> "BB58\n150  O5_23 = < Application, LEdge, orig()LVertex; >( O4_12 )\l" 
+ "BB58\n150  O5_23 = < Application, LEdge, orig()LVertex; >( O4_12 )\l" -> "BB59\n153  O5_24 = < Application, LEdge, dest()LVertex; >( O4_12 )\l" 
+ "BB59\n153  O5_24 = < Application, LEdge, dest()LVertex; >( O4_12 )\l" -> "BB60\n155   goto                                   \l" 
+ "BB60\n155   goto                                   \l" -> "BB53\n           v151 = phi  v151,v149\l           v106 = phi  v107,v150\l           v107 = phi  v99,v84\l           v108 = phi  v105,v90\l           v109 = phi  v101,v92\l           v110 = phi  v103,v94\l136  O6_6 = < Application, LVertex, incircle(LVertex;LVertex;LVertex;)Z >( O5_21, O5_21, O5_21, O5_21 )\l" 
+ "BB61\n           v152 = phi  v149,v151\l           v111 = phi  v150,v106\l158  O6_7 = < Application, LEdge, valid(LEdge;)Z >( O4_11, O4_11 )\l" -> "BB62\n162  O6_8 = < Application, LEdge, valid(LEdge;)Z >( O4_11, O4_11 )\l" 
+ "BB62\n162  O6_8 = < Application, LEdge, valid(LEdge;)Z >( O4_11, O4_11 )\l" -> "BB63\n166   conditional branch(ne) v114,v14:#0     \l" 
+ "BB63\n166   conditional branch(ne) v114,v14:#0     \l" -> "BB64\n169   conditional branch(ne) v116,v14:#0     \l" 
+ "BB63\n166   conditional branch(ne) v114,v14:#0     \l" -> "BB68\n177  O5_25 = < Application, LEdge, dest()LVertex; >( O4_11 )\l" 
+ "BB64\n169   conditional branch(ne) v116,v14:#0     \l" -> "BB65\n170  Create O7_1                             \l" 
+ "BB64\n169   conditional branch(ne) v116,v14:#0     \l" -> "BB68\n177  O5_25 = < Application, LEdge, dest()LVertex; >( O4_11 )\l" 
+ "BB65\n170  Create O7_1                             \l" -> "BB66\n174  < Application, LEdgePair, <init>(LEdge;LEdge;)V >( O7_1, O4_11, O4_11 )\l" 
+ "BB66\n174  < Application, LEdgePair, <init>(LEdge;LEdge;)V >( O7_1, O4_11, O4_11 )\l" -> "BB67\n175  Return O7_1                             \l" 
+ "BB67\n175  Return O7_1                             \l" -> "BB86 (ex)\n\n" 
+ "BB68\n177  O5_25 = < Application, LEdge, dest()LVertex; >( O4_11 )\l" -> "BB69\n180  O5_26 = < Application, LEdge, orig()LVertex; >( O4_11 )\l" 
+ "BB69\n180  O5_26 = < Application, LEdge, orig()LVertex; >( O4_11 )\l" -> "BB70\n183  O5_27 = < Application, LEdge, orig()LVertex; >( O4_11 )\l" 
+ "BB70\n183  O5_27 = < Application, LEdge, orig()LVertex; >( O4_11 )\l" -> "BB71\n186  O5_28 = < Application, LEdge, dest()LVertex; >( O4_11 )\l" 
+ "BB71\n186  O5_28 = < Application, LEdge, dest()LVertex; >( O4_11 )\l" -> "BB72\n190   conditional branch(eq) v114,v14:#0     \l" 
+ "BB72\n190   conditional branch(eq) v114,v14:#0     \l" -> "BB73\n193   conditional branch(eq) v116,v14:#0     \l" 
+ "BB72\n190   conditional branch(eq) v114,v14:#0     \l" -> "BB76\n203  O4_16 = < Application, LEdge, symmetric()LEdge; >( O4_11 )\l" 
+ "BB73\n193   conditional branch(eq) v116,v14:#0     \l" -> "BB74\n198  O6_9 = < Application, LVertex, incircle(LVertex;LVertex;LVertex;)Z >( O5_28, O5_28, O5_28, O5_28 )\l" 
+ "BB73\n193   conditional branch(eq) v116,v14:#0     \l" -> "BB81\n213  O4_13 = < Application, LEdge, connectRight(LEdge;)LEdge; >( O4_11, O4_11 )\l" 
+ "BB74\n198  O6_9 = < Application, LVertex, incircle(LVertex;LVertex;LVertex;)Z >( O5_28, O5_28, O5_28, O5_28 )\l" -> "BB75\n200   conditional branch(eq) v126,v14:#0     \l" 
+ "BB75\n200   conditional branch(eq) v126,v14:#0     \l" -> "BB76\n203  O4_16 = < Application, LEdge, symmetric()LEdge; >( O4_11 )\l" 
+ "BB75\n200   conditional branch(eq) v126,v14:#0     \l" -> "BB81\n213  O4_13 = < Application, LEdge, connectRight(LEdge;)LEdge; >( O4_11, O4_11 )\l" 
+ "BB76\n203  O4_16 = < Application, LEdge, symmetric()LEdge; >( O4_11 )\l" -> "BB77\n204  O4_17 = < Application, LEdge, connectLeft(LEdge;)LEdge; >( O4_16, O4_16 )\l" 
+ "BB77\n204  O4_17 = < Application, LEdge, connectLeft(LEdge;)LEdge; >( O4_16, O4_16 )\l" -> "BB78\n207  O4_18 = < Application, LEdge, symmetric()LEdge; >( O4_17 )\l" 
+ "BB78\n207  O4_18 = < Application, LEdge, symmetric()LEdge; >( O4_17 )\l" -> "BB79\n208  O4_19 = < Application, LEdge, lNext()LEdge; >( O4_18 )\l" 
+ "BB79\n208  O4_19 = < Application, LEdge, lNext()LEdge; >( O4_18 )\l" -> "BB80\n210   goto                                   \l" 
+ "BB80\n210   goto                                   \l" -> "BB85\n           v141 = phi  v130,v138\l           v142 = phi  v81,v140\l           v143 = phi  v134,v111\l219   goto                                   \l" 
+ "BB81\n213  O4_13 = < Application, LEdge, connectRight(LEdge;)LEdge; >( O4_11, O4_11 )\l" -> "BB82\n214  O4_14 = < Application, LEdge, symmetric()LEdge; >( O4_13 )\l" 
+ "BB82\n214  O4_14 = < Application, LEdge, symmetric()LEdge; >( O4_13 )\l" -> "BB83\n217  O4_15 = < Application, LEdge, rPrev()LEdge; >( O4_14 )\l" 
+ "BB83\n217  O4_15 = < Application, LEdge, rPrev()LEdge; >( O4_14 )\l" -> "BB84\n" 
+ "BB84\n" -> "BB85\n           v141 = phi  v130,v138\l           v142 = phi  v81,v140\l           v143 = phi  v134,v111\l219   goto                                   \l" 
+ "BB85\n           v141 = phi  v130,v138\l           v142 = phi  v81,v140\l           v143 = phi  v134,v111\l219   goto                                   \l" -> "BB29\n           v52 = phi  v1,v52,v51\l           v144 = phi  v36,v141,v36\l           v145 = phi  v38,v142,v38\l           v146 = phi  v40,v143,v40\l69  O4_9 = < Application, LEdge, oNext()LEdge; >( O4_7 )\l" 
+
+}

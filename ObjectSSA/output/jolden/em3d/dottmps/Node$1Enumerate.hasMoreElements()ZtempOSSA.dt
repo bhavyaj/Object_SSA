@@ -1,0 +1,18 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Node$1Enumerate.hasMoreElements()Z", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  GetOSSAInstruction:	O2_1= O1_1< current>  \l" [ ]
+   "BB2\n3   conditional branch(eq) v3,v4:#null       \l" [ ]
+   "BB3\n5   goto                                     \l" [ ]
+   "BB4\n" [ ]
+   "BB5\n           v7 = phi  v6:#1,v5:#0\l7  Return                                    \l" [ ]
+   "BB6 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  GetOSSAInstruction:	O2_1= O1_1< current>  \l" 
+ "BB1\n1  GetOSSAInstruction:	O2_1= O1_1< current>  \l" -> "BB2\n3   conditional branch(eq) v3,v4:#null       \l" 
+ "BB2\n3   conditional branch(eq) v3,v4:#null       \l" -> "BB3\n5   goto                                     \l" 
+ "BB2\n3   conditional branch(eq) v3,v4:#null       \l" -> "BB4\n" 
+ "BB3\n5   goto                                     \l" -> "BB5\n           v7 = phi  v6:#1,v5:#0\l7  Return                                    \l" 
+ "BB4\n" -> "BB5\n           v7 = phi  v6:#1,v5:#0\l7  Return                                    \l" 
+ "BB5\n           v7 = phi  v6:#1,v5:#0\l7  Return                                    \l" -> "BB6 (ex)\n\n" 
+
+}

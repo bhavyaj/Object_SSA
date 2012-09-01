@@ -1,0 +1,86 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   invokestatic < Application, LPower, parseCmdLine([Ljava/lang/String;)V > v1 @1 exception:v3\l" [ ]
+   "BB2\n2   v5 = invokestatic < Application, Ljava/lang/System, currentTimeMillis()J > @4 exception:v4\l" [ ]
+   "BB3\n4   v6 = new <Application,LRoot>@8 \l" [ ]
+   "BB4\n10   invokespecial < Application, LRoot, <init>(IIII)V > v6,v7:#10,v8:#20,v9:#5,v7:#10 @19 exception:v10\l" [ ]
+   "BB5\n12   v12 = invokestatic < Application, Ljava/lang/System, currentTimeMillis()J > @23 exception:v11\l" [ ]
+   "BB6\n14   v14 = invokestatic < Application, Ljava/lang/System, currentTimeMillis()J > @28 exception:v13\l" [ ]
+   "BB7\n17   invokevirtual < Application, LRoot, compute()V > v6 @34 exception:v15\l" [ ]
+   "BB8\n22   invokevirtual < Application, LRoot, nextIter(ZDD)V > v6,v16:#0,v17:#0.7,v18:#0.14 @45 exception:v19\l" [ ]
+   "BB9\n24   invokevirtual < Application, LRoot, compute()V > v6 @49 exception:v20\l" [ ]
+   "BB10\n25   v21 = getstatic < Application, LPower, printResults, <Primordial,Z> >\l27   conditional branch(eq) v21,v16:#0\l" [ ]
+   "BB11\n28   v22 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l30   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/Object;)V > v22,v6 @62 exception:v23\l" [ ]
+   "BB12\n32   v25 = invokevirtual < Application, LRoot, reachedLimit()Z > v6 @66 exception:v24\l" [ ]
+   "BB13\n34   conditional branch(eq) v25,v16:#0\l" [ ]
+   "BB14\n35   goto                          \l" [ ]
+   "BB15\n37   v26 = getstatic < Application, LPower, printResults, <Primordial,Z> >\l38   invokevirtual < Application, LRoot, nextIter(Z)V > v6,v26 @79 exception:v27\l" [ ]
+   "BB16\n39   goto                          \l" [ ]
+   "BB17\n40   v29 = invokestatic < Application, Ljava/lang/System, currentTimeMillis()J > @85 exception:v28\l" [ ]
+   "BB18\n42   v30 = getstatic < Application, LPower, printMsgs, <Primordial,Z> >\l44   conditional branch(eq) v30,v16:#0\l" [ ]
+   "BB19\n45   v31 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l46   v32 = new <Application,Ljava/lang/StringBuilder>@99\l" [ ]
+   "BB20\n48   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v32 @103 exception:v33\l" [ ]
+   "BB21\n50   v36 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v32,v34:#Power build time  @108 exception:v35\l" [ ]
+   "BB22\n53   v37 = binaryop(sub) v12 , v5  \l54   v38 = conversion(D) v37       \l56   v40 = binaryop(div) v38 , v39:#1000.0\l57   v42 = invokevirtual < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; > v36,v40 @120 exception:v41\l" [ ]
+   "BB23\n58   v44 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v42 @123 exception:v43\l" [ ]
+   "BB24\n59   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v31,v44 @126 exception:v45\l" [ ]
+   "BB25\n60   v46 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l61   v47 = new <Application,Ljava/lang/StringBuilder>@132\l" [ ]
+   "BB26\n63   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v47 @136 exception:v48\l" [ ]
+   "BB27\n65   v51 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v47,v49:#Power compute time  @141 exception:v50\l" [ ]
+   "BB28\n68   v52 = binaryop(sub) v29 , v14 \l69   v53 = conversion(D) v52       \l71   v54 = binaryop(div) v53 , v39:#1000.0\l72   v56 = invokevirtual < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; > v51,v54 @154 exception:v55\l" [ ]
+   "BB29\n73   v58 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v56 @157 exception:v57\l" [ ]
+   "BB30\n74   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v46,v58 @160 exception:v59\l" [ ]
+   "BB31\n75   v60 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l76   v61 = new <Application,Ljava/lang/StringBuilder>@166\l" [ ]
+   "BB32\n78   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v61 @170 exception:v62\l" [ ]
+   "BB33\n80   v65 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v61,v63:#Power total time  @175 exception:v64\l" [ ]
+   "BB34\n83   v66 = binaryop(sub) v29 , v5  \l84   v67 = conversion(D) v66       \l86   v68 = binaryop(div) v67 , v39:#1000.0\l87   v70 = invokevirtual < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; > v65,v68 @187 exception:v69\l" [ ]
+   "BB35\n88   v72 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v70 @190 exception:v71\l" [ ]
+   "BB36\n89   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v60,v72 @193 exception:v73\l" [ ]
+   "BB37\n90   v74 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l92   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v74,v75:#Done! @201 exception:v76\l" [ ]
+   "BB38\n93   return                        \l" [ ]
+   "BB39 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   invokestatic < Application, LPower, parseCmdLine([Ljava/lang/String;)V > v1 @1 exception:v3\l" 
+ "BB1\n1   invokestatic < Application, LPower, parseCmdLine([Ljava/lang/String;)V > v1 @1 exception:v3\l" -> "BB2\n2   v5 = invokestatic < Application, Ljava/lang/System, currentTimeMillis()J > @4 exception:v4\l" 
+ "BB2\n2   v5 = invokestatic < Application, Ljava/lang/System, currentTimeMillis()J > @4 exception:v4\l" -> "BB3\n4   v6 = new <Application,LRoot>@8 \l" 
+ "BB3\n4   v6 = new <Application,LRoot>@8 \l" -> "BB4\n10   invokespecial < Application, LRoot, <init>(IIII)V > v6,v7:#10,v8:#20,v9:#5,v7:#10 @19 exception:v10\l" 
+ "BB4\n10   invokespecial < Application, LRoot, <init>(IIII)V > v6,v7:#10,v8:#20,v9:#5,v7:#10 @19 exception:v10\l" -> "BB5\n12   v12 = invokestatic < Application, Ljava/lang/System, currentTimeMillis()J > @23 exception:v11\l" 
+ "BB5\n12   v12 = invokestatic < Application, Ljava/lang/System, currentTimeMillis()J > @23 exception:v11\l" -> "BB6\n14   v14 = invokestatic < Application, Ljava/lang/System, currentTimeMillis()J > @28 exception:v13\l" 
+ "BB6\n14   v14 = invokestatic < Application, Ljava/lang/System, currentTimeMillis()J > @28 exception:v13\l" -> "BB7\n17   invokevirtual < Application, LRoot, compute()V > v6 @34 exception:v15\l" 
+ "BB7\n17   invokevirtual < Application, LRoot, compute()V > v6 @34 exception:v15\l" -> "BB8\n22   invokevirtual < Application, LRoot, nextIter(ZDD)V > v6,v16:#0,v17:#0.7,v18:#0.14 @45 exception:v19\l" 
+ "BB8\n22   invokevirtual < Application, LRoot, nextIter(ZDD)V > v6,v16:#0,v17:#0.7,v18:#0.14 @45 exception:v19\l" -> "BB9\n24   invokevirtual < Application, LRoot, compute()V > v6 @49 exception:v20\l" 
+ "BB9\n24   invokevirtual < Application, LRoot, compute()V > v6 @49 exception:v20\l" -> "BB10\n25   v21 = getstatic < Application, LPower, printResults, <Primordial,Z> >\l27   conditional branch(eq) v21,v16:#0\l" 
+ "BB10\n25   v21 = getstatic < Application, LPower, printResults, <Primordial,Z> >\l27   conditional branch(eq) v21,v16:#0\l" -> "BB11\n28   v22 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l30   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/Object;)V > v22,v6 @62 exception:v23\l" 
+ "BB10\n25   v21 = getstatic < Application, LPower, printResults, <Primordial,Z> >\l27   conditional branch(eq) v21,v16:#0\l" -> "BB12\n32   v25 = invokevirtual < Application, LRoot, reachedLimit()Z > v6 @66 exception:v24\l" 
+ "BB11\n28   v22 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l30   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/Object;)V > v22,v6 @62 exception:v23\l" -> "BB12\n32   v25 = invokevirtual < Application, LRoot, reachedLimit()Z > v6 @66 exception:v24\l" 
+ "BB12\n32   v25 = invokevirtual < Application, LRoot, reachedLimit()Z > v6 @66 exception:v24\l" -> "BB13\n34   conditional branch(eq) v25,v16:#0\l" 
+ "BB13\n34   conditional branch(eq) v25,v16:#0\l" -> "BB14\n35   goto                          \l" 
+ "BB13\n34   conditional branch(eq) v25,v16:#0\l" -> "BB15\n37   v26 = getstatic < Application, LPower, printResults, <Primordial,Z> >\l38   invokevirtual < Application, LRoot, nextIter(Z)V > v6,v26 @79 exception:v27\l" 
+ "BB14\n35   goto                          \l" -> "BB17\n40   v29 = invokestatic < Application, Ljava/lang/System, currentTimeMillis()J > @85 exception:v28\l" 
+ "BB15\n37   v26 = getstatic < Application, LPower, printResults, <Primordial,Z> >\l38   invokevirtual < Application, LRoot, nextIter(Z)V > v6,v26 @79 exception:v27\l" -> "BB16\n39   goto                          \l" 
+ "BB16\n39   goto                          \l" -> "BB9\n24   invokevirtual < Application, LRoot, compute()V > v6 @49 exception:v20\l" 
+ "BB17\n40   v29 = invokestatic < Application, Ljava/lang/System, currentTimeMillis()J > @85 exception:v28\l" -> "BB18\n42   v30 = getstatic < Application, LPower, printMsgs, <Primordial,Z> >\l44   conditional branch(eq) v30,v16:#0\l" 
+ "BB18\n42   v30 = getstatic < Application, LPower, printMsgs, <Primordial,Z> >\l44   conditional branch(eq) v30,v16:#0\l" -> "BB19\n45   v31 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l46   v32 = new <Application,Ljava/lang/StringBuilder>@99\l" 
+ "BB18\n42   v30 = getstatic < Application, LPower, printMsgs, <Primordial,Z> >\l44   conditional branch(eq) v30,v16:#0\l" -> "BB37\n90   v74 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l92   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v74,v75:#Done! @201 exception:v76\l" 
+ "BB19\n45   v31 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l46   v32 = new <Application,Ljava/lang/StringBuilder>@99\l" -> "BB20\n48   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v32 @103 exception:v33\l" 
+ "BB20\n48   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v32 @103 exception:v33\l" -> "BB21\n50   v36 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v32,v34:#Power build time  @108 exception:v35\l" 
+ "BB21\n50   v36 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v32,v34:#Power build time  @108 exception:v35\l" -> "BB22\n53   v37 = binaryop(sub) v12 , v5  \l54   v38 = conversion(D) v37       \l56   v40 = binaryop(div) v38 , v39:#1000.0\l57   v42 = invokevirtual < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; > v36,v40 @120 exception:v41\l" 
+ "BB22\n53   v37 = binaryop(sub) v12 , v5  \l54   v38 = conversion(D) v37       \l56   v40 = binaryop(div) v38 , v39:#1000.0\l57   v42 = invokevirtual < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; > v36,v40 @120 exception:v41\l" -> "BB23\n58   v44 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v42 @123 exception:v43\l" 
+ "BB23\n58   v44 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v42 @123 exception:v43\l" -> "BB24\n59   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v31,v44 @126 exception:v45\l" 
+ "BB24\n59   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v31,v44 @126 exception:v45\l" -> "BB25\n60   v46 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l61   v47 = new <Application,Ljava/lang/StringBuilder>@132\l" 
+ "BB25\n60   v46 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l61   v47 = new <Application,Ljava/lang/StringBuilder>@132\l" -> "BB26\n63   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v47 @136 exception:v48\l" 
+ "BB26\n63   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v47 @136 exception:v48\l" -> "BB27\n65   v51 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v47,v49:#Power compute time  @141 exception:v50\l" 
+ "BB27\n65   v51 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v47,v49:#Power compute time  @141 exception:v50\l" -> "BB28\n68   v52 = binaryop(sub) v29 , v14 \l69   v53 = conversion(D) v52       \l71   v54 = binaryop(div) v53 , v39:#1000.0\l72   v56 = invokevirtual < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; > v51,v54 @154 exception:v55\l" 
+ "BB28\n68   v52 = binaryop(sub) v29 , v14 \l69   v53 = conversion(D) v52       \l71   v54 = binaryop(div) v53 , v39:#1000.0\l72   v56 = invokevirtual < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; > v51,v54 @154 exception:v55\l" -> "BB29\n73   v58 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v56 @157 exception:v57\l" 
+ "BB29\n73   v58 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v56 @157 exception:v57\l" -> "BB30\n74   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v46,v58 @160 exception:v59\l" 
+ "BB30\n74   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v46,v58 @160 exception:v59\l" -> "BB31\n75   v60 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l76   v61 = new <Application,Ljava/lang/StringBuilder>@166\l" 
+ "BB31\n75   v60 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l76   v61 = new <Application,Ljava/lang/StringBuilder>@166\l" -> "BB32\n78   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v61 @170 exception:v62\l" 
+ "BB32\n78   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v61 @170 exception:v62\l" -> "BB33\n80   v65 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v61,v63:#Power total time  @175 exception:v64\l" 
+ "BB33\n80   v65 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v61,v63:#Power total time  @175 exception:v64\l" -> "BB34\n83   v66 = binaryop(sub) v29 , v5  \l84   v67 = conversion(D) v66       \l86   v68 = binaryop(div) v67 , v39:#1000.0\l87   v70 = invokevirtual < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; > v65,v68 @187 exception:v69\l" 
+ "BB34\n83   v66 = binaryop(sub) v29 , v5  \l84   v67 = conversion(D) v66       \l86   v68 = binaryop(div) v67 , v39:#1000.0\l87   v70 = invokevirtual < Application, Ljava/lang/StringBuilder, append(D)Ljava/lang/StringBuilder; > v65,v68 @187 exception:v69\l" -> "BB35\n88   v72 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v70 @190 exception:v71\l" 
+ "BB35\n88   v72 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v70 @190 exception:v71\l" -> "BB36\n89   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v60,v72 @193 exception:v73\l" 
+ "BB36\n89   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v60,v72 @193 exception:v73\l" -> "BB37\n90   v74 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l92   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v74,v75:#Done! @201 exception:v76\l" 
+ "BB37\n90   v74 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l92   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v74,v75:#Done! @201 exception:v76\l" -> "BB38\n93   return                        \l" 
+ "BB38\n93   return                        \l" -> "BB39 (ex)\n\n" 
+
+}

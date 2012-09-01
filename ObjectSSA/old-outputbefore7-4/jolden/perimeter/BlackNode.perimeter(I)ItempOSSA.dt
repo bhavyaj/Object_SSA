@@ -1,0 +1,77 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for BlackNode.perimeter(I)I", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n4   v6 = invokevirtual < Application, LBlackNode, gtEqualAdjNeighbor(I)LQuadTreeNode; > v1,v4:#0 @4 exception:v5\l" [ ]
+   "BB2\n8   conditional branch(eq) v6,v7:#null       \l" [ ]
+   "BB3\n10   v8 = instanceof v6 <Application,LWhiteNode>\l12   conditional branch(eq) v8,v4:#0         \l" [ ]
+   "BB4\n15   v15 = binaryop(add) v4:#0 , v2          \l17   goto                                    \l" [ ]
+   "BB5\n19   v9 = instanceof v6 <Application,LGreyNode>\l21   conditional branch(eq) v9,v4:#0         \l" [ ]
+   "BB6\n24  nonreference field get instrctn: 10 = getstatic < Application, LQuadrant, cSouthEast, <Application,LQuadrant> >\l25  nonreference field get instrctn: 11 = getstatic < Application, LQuadrant, cSouthWest, <Application,LQuadrant> >\l27   v13 = invokevirtual < Application, LQuadTreeNode, sumAdjacent(LQuadrant;LQuadrant;I)I > v6,v10,v11,v2 @42 exception:v12\l" [ ]
+   "BB7\n28   v14 = binaryop(add) v4:#0 , v13         \l" [ ]
+   "BB8\n           v16 = phi  v15,v4:#0,v14\l32   v19 = invokevirtual < Application, LBlackNode, gtEqualAdjNeighbor(I)LQuadTreeNode; > v1,v17:#1 @49 exception:v18\l" [ ]
+   "BB9\n36   conditional branch(eq) v19,v7:#null     \l" [ ]
+   "BB10\n38   v20 = instanceof v19 <Application,LWhiteNode>\l40   conditional branch(eq) v20,v4:#0        \l" [ ]
+   "BB11\n43   v27 = binaryop(add) v16 , v2            \l45   goto                                    \l" [ ]
+   "BB12\n47   v21 = instanceof v19 <Application,LGreyNode>\l49   conditional branch(eq) v21,v4:#0        \l" [ ]
+   "BB13\n52  nonreference field get instrctn: 22 = getstatic < Application, LQuadrant, cSouthWest, <Application,LQuadrant> >\l53  nonreference field get instrctn: 23 = getstatic < Application, LQuadrant, cNorthWest, <Application,LQuadrant> >\l55   v25 = invokevirtual < Application, LQuadTreeNode, sumAdjacent(LQuadrant;LQuadrant;I)I > v19,v22,v23,v2 @87 exception:v24\l" [ ]
+   "BB14\n56   v26 = binaryop(add) v16 , v25           \l" [ ]
+   "BB15\n           v28 = phi  v27,v16,v26\l60   v31 = invokevirtual < Application, LBlackNode, gtEqualAdjNeighbor(I)LQuadTreeNode; > v1,v29:#2 @94 exception:v30\l" [ ]
+   "BB16\n64   conditional branch(eq) v31,v7:#null     \l" [ ]
+   "BB17\n66   v32 = instanceof v31 <Application,LWhiteNode>\l68   conditional branch(eq) v32,v4:#0        \l" [ ]
+   "BB18\n71   v39 = binaryop(add) v28 , v2            \l73   goto                                    \l" [ ]
+   "BB19\n75   v33 = instanceof v31 <Application,LGreyNode>\l77   conditional branch(eq) v33,v4:#0        \l" [ ]
+   "BB20\n80  nonreference field get instrctn: 34 = getstatic < Application, LQuadrant, cNorthWest, <Application,LQuadrant> >\l81  nonreference field get instrctn: 35 = getstatic < Application, LQuadrant, cNorthEast, <Application,LQuadrant> >\l83   v37 = invokevirtual < Application, LQuadTreeNode, sumAdjacent(LQuadrant;LQuadrant;I)I > v31,v34,v35,v2 @132 exception:v36\l" [ ]
+   "BB21\n84   v38 = binaryop(add) v28 , v37           \l" [ ]
+   "BB22\n           v40 = phi  v39,v28,v38\l88   v43 = invokevirtual < Application, LBlackNode, gtEqualAdjNeighbor(I)LQuadTreeNode; > v1,v41:#3 @139 exception:v42\l" [ ]
+   "BB23\n92   conditional branch(eq) v43,v7:#null     \l" [ ]
+   "BB24\n94   v44 = instanceof v43 <Application,LWhiteNode>\l96   conditional branch(eq) v44,v4:#0        \l" [ ]
+   "BB25\n99   v51 = binaryop(add) v40 , v2            \l101   goto                                   \l" [ ]
+   "BB26\n103   v45 = instanceof v43 <Application,LGreyNode>\l105   conditional branch(eq) v45,v4:#0       \l" [ ]
+   "BB27\n108  nonreference field get instrctn: 46 = getstatic < Application, LQuadrant, cNorthEast, <Application,LQuadrant> >\l109  nonreference field get instrctn: 47 = getstatic < Application, LQuadrant, cSouthEast, <Application,LQuadrant> >\l111   v49 = invokevirtual < Application, LQuadTreeNode, sumAdjacent(LQuadrant;LQuadrant;I)I > v43,v46,v47,v2 @177 exception:v48\l" [ ]
+   "BB28\n112   v50 = binaryop(add) v40 , v49          \l" [ ]
+   "BB29\n           v52 = phi  v51,v40,v50\l115   return v52                             \l" [ ]
+   "BB30 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n4   v6 = invokevirtual < Application, LBlackNode, gtEqualAdjNeighbor(I)LQuadTreeNode; > v1,v4:#0 @4 exception:v5\l" 
+ "BB1\n4   v6 = invokevirtual < Application, LBlackNode, gtEqualAdjNeighbor(I)LQuadTreeNode; > v1,v4:#0 @4 exception:v5\l" -> "BB2\n8   conditional branch(eq) v6,v7:#null       \l" 
+ "BB2\n8   conditional branch(eq) v6,v7:#null       \l" -> "BB3\n10   v8 = instanceof v6 <Application,LWhiteNode>\l12   conditional branch(eq) v8,v4:#0         \l" 
+ "BB2\n8   conditional branch(eq) v6,v7:#null       \l" -> "BB4\n15   v15 = binaryop(add) v4:#0 , v2          \l17   goto                                    \l" 
+ "BB3\n10   v8 = instanceof v6 <Application,LWhiteNode>\l12   conditional branch(eq) v8,v4:#0         \l" -> "BB4\n15   v15 = binaryop(add) v4:#0 , v2          \l17   goto                                    \l" 
+ "BB3\n10   v8 = instanceof v6 <Application,LWhiteNode>\l12   conditional branch(eq) v8,v4:#0         \l" -> "BB5\n19   v9 = instanceof v6 <Application,LGreyNode>\l21   conditional branch(eq) v9,v4:#0         \l" 
+ "BB4\n15   v15 = binaryop(add) v4:#0 , v2          \l17   goto                                    \l" -> "BB8\n           v16 = phi  v15,v4:#0,v14\l32   v19 = invokevirtual < Application, LBlackNode, gtEqualAdjNeighbor(I)LQuadTreeNode; > v1,v17:#1 @49 exception:v18\l" 
+ "BB5\n19   v9 = instanceof v6 <Application,LGreyNode>\l21   conditional branch(eq) v9,v4:#0         \l" -> "BB6\n24  nonreference field get instrctn: 10 = getstatic < Application, LQuadrant, cSouthEast, <Application,LQuadrant> >\l25  nonreference field get instrctn: 11 = getstatic < Application, LQuadrant, cSouthWest, <Application,LQuadrant> >\l27   v13 = invokevirtual < Application, LQuadTreeNode, sumAdjacent(LQuadrant;LQuadrant;I)I > v6,v10,v11,v2 @42 exception:v12\l" 
+ "BB5\n19   v9 = instanceof v6 <Application,LGreyNode>\l21   conditional branch(eq) v9,v4:#0         \l" -> "BB8\n           v16 = phi  v15,v4:#0,v14\l32   v19 = invokevirtual < Application, LBlackNode, gtEqualAdjNeighbor(I)LQuadTreeNode; > v1,v17:#1 @49 exception:v18\l" 
+ "BB6\n24  nonreference field get instrctn: 10 = getstatic < Application, LQuadrant, cSouthEast, <Application,LQuadrant> >\l25  nonreference field get instrctn: 11 = getstatic < Application, LQuadrant, cSouthWest, <Application,LQuadrant> >\l27   v13 = invokevirtual < Application, LQuadTreeNode, sumAdjacent(LQuadrant;LQuadrant;I)I > v6,v10,v11,v2 @42 exception:v12\l" -> "BB7\n28   v14 = binaryop(add) v4:#0 , v13         \l" 
+ "BB7\n28   v14 = binaryop(add) v4:#0 , v13         \l" -> "BB8\n           v16 = phi  v15,v4:#0,v14\l32   v19 = invokevirtual < Application, LBlackNode, gtEqualAdjNeighbor(I)LQuadTreeNode; > v1,v17:#1 @49 exception:v18\l" 
+ "BB8\n           v16 = phi  v15,v4:#0,v14\l32   v19 = invokevirtual < Application, LBlackNode, gtEqualAdjNeighbor(I)LQuadTreeNode; > v1,v17:#1 @49 exception:v18\l" -> "BB9\n36   conditional branch(eq) v19,v7:#null     \l" 
+ "BB9\n36   conditional branch(eq) v19,v7:#null     \l" -> "BB10\n38   v20 = instanceof v19 <Application,LWhiteNode>\l40   conditional branch(eq) v20,v4:#0        \l" 
+ "BB9\n36   conditional branch(eq) v19,v7:#null     \l" -> "BB11\n43   v27 = binaryop(add) v16 , v2            \l45   goto                                    \l" 
+ "BB10\n38   v20 = instanceof v19 <Application,LWhiteNode>\l40   conditional branch(eq) v20,v4:#0        \l" -> "BB11\n43   v27 = binaryop(add) v16 , v2            \l45   goto                                    \l" 
+ "BB10\n38   v20 = instanceof v19 <Application,LWhiteNode>\l40   conditional branch(eq) v20,v4:#0        \l" -> "BB12\n47   v21 = instanceof v19 <Application,LGreyNode>\l49   conditional branch(eq) v21,v4:#0        \l" 
+ "BB11\n43   v27 = binaryop(add) v16 , v2            \l45   goto                                    \l" -> "BB15\n           v28 = phi  v27,v16,v26\l60   v31 = invokevirtual < Application, LBlackNode, gtEqualAdjNeighbor(I)LQuadTreeNode; > v1,v29:#2 @94 exception:v30\l" 
+ "BB12\n47   v21 = instanceof v19 <Application,LGreyNode>\l49   conditional branch(eq) v21,v4:#0        \l" -> "BB13\n52  nonreference field get instrctn: 22 = getstatic < Application, LQuadrant, cSouthWest, <Application,LQuadrant> >\l53  nonreference field get instrctn: 23 = getstatic < Application, LQuadrant, cNorthWest, <Application,LQuadrant> >\l55   v25 = invokevirtual < Application, LQuadTreeNode, sumAdjacent(LQuadrant;LQuadrant;I)I > v19,v22,v23,v2 @87 exception:v24\l" 
+ "BB12\n47   v21 = instanceof v19 <Application,LGreyNode>\l49   conditional branch(eq) v21,v4:#0        \l" -> "BB15\n           v28 = phi  v27,v16,v26\l60   v31 = invokevirtual < Application, LBlackNode, gtEqualAdjNeighbor(I)LQuadTreeNode; > v1,v29:#2 @94 exception:v30\l" 
+ "BB13\n52  nonreference field get instrctn: 22 = getstatic < Application, LQuadrant, cSouthWest, <Application,LQuadrant> >\l53  nonreference field get instrctn: 23 = getstatic < Application, LQuadrant, cNorthWest, <Application,LQuadrant> >\l55   v25 = invokevirtual < Application, LQuadTreeNode, sumAdjacent(LQuadrant;LQuadrant;I)I > v19,v22,v23,v2 @87 exception:v24\l" -> "BB14\n56   v26 = binaryop(add) v16 , v25           \l" 
+ "BB14\n56   v26 = binaryop(add) v16 , v25           \l" -> "BB15\n           v28 = phi  v27,v16,v26\l60   v31 = invokevirtual < Application, LBlackNode, gtEqualAdjNeighbor(I)LQuadTreeNode; > v1,v29:#2 @94 exception:v30\l" 
+ "BB15\n           v28 = phi  v27,v16,v26\l60   v31 = invokevirtual < Application, LBlackNode, gtEqualAdjNeighbor(I)LQuadTreeNode; > v1,v29:#2 @94 exception:v30\l" -> "BB16\n64   conditional branch(eq) v31,v7:#null     \l" 
+ "BB16\n64   conditional branch(eq) v31,v7:#null     \l" -> "BB17\n66   v32 = instanceof v31 <Application,LWhiteNode>\l68   conditional branch(eq) v32,v4:#0        \l" 
+ "BB16\n64   conditional branch(eq) v31,v7:#null     \l" -> "BB18\n71   v39 = binaryop(add) v28 , v2            \l73   goto                                    \l" 
+ "BB17\n66   v32 = instanceof v31 <Application,LWhiteNode>\l68   conditional branch(eq) v32,v4:#0        \l" -> "BB18\n71   v39 = binaryop(add) v28 , v2            \l73   goto                                    \l" 
+ "BB17\n66   v32 = instanceof v31 <Application,LWhiteNode>\l68   conditional branch(eq) v32,v4:#0        \l" -> "BB19\n75   v33 = instanceof v31 <Application,LGreyNode>\l77   conditional branch(eq) v33,v4:#0        \l" 
+ "BB18\n71   v39 = binaryop(add) v28 , v2            \l73   goto                                    \l" -> "BB22\n           v40 = phi  v39,v28,v38\l88   v43 = invokevirtual < Application, LBlackNode, gtEqualAdjNeighbor(I)LQuadTreeNode; > v1,v41:#3 @139 exception:v42\l" 
+ "BB19\n75   v33 = instanceof v31 <Application,LGreyNode>\l77   conditional branch(eq) v33,v4:#0        \l" -> "BB20\n80  nonreference field get instrctn: 34 = getstatic < Application, LQuadrant, cNorthWest, <Application,LQuadrant> >\l81  nonreference field get instrctn: 35 = getstatic < Application, LQuadrant, cNorthEast, <Application,LQuadrant> >\l83   v37 = invokevirtual < Application, LQuadTreeNode, sumAdjacent(LQuadrant;LQuadrant;I)I > v31,v34,v35,v2 @132 exception:v36\l" 
+ "BB19\n75   v33 = instanceof v31 <Application,LGreyNode>\l77   conditional branch(eq) v33,v4:#0        \l" -> "BB22\n           v40 = phi  v39,v28,v38\l88   v43 = invokevirtual < Application, LBlackNode, gtEqualAdjNeighbor(I)LQuadTreeNode; > v1,v41:#3 @139 exception:v42\l" 
+ "BB20\n80  nonreference field get instrctn: 34 = getstatic < Application, LQuadrant, cNorthWest, <Application,LQuadrant> >\l81  nonreference field get instrctn: 35 = getstatic < Application, LQuadrant, cNorthEast, <Application,LQuadrant> >\l83   v37 = invokevirtual < Application, LQuadTreeNode, sumAdjacent(LQuadrant;LQuadrant;I)I > v31,v34,v35,v2 @132 exception:v36\l" -> "BB21\n84   v38 = binaryop(add) v28 , v37           \l" 
+ "BB21\n84   v38 = binaryop(add) v28 , v37           \l" -> "BB22\n           v40 = phi  v39,v28,v38\l88   v43 = invokevirtual < Application, LBlackNode, gtEqualAdjNeighbor(I)LQuadTreeNode; > v1,v41:#3 @139 exception:v42\l" 
+ "BB22\n           v40 = phi  v39,v28,v38\l88   v43 = invokevirtual < Application, LBlackNode, gtEqualAdjNeighbor(I)LQuadTreeNode; > v1,v41:#3 @139 exception:v42\l" -> "BB23\n92   conditional branch(eq) v43,v7:#null     \l" 
+ "BB23\n92   conditional branch(eq) v43,v7:#null     \l" -> "BB24\n94   v44 = instanceof v43 <Application,LWhiteNode>\l96   conditional branch(eq) v44,v4:#0        \l" 
+ "BB23\n92   conditional branch(eq) v43,v7:#null     \l" -> "BB25\n99   v51 = binaryop(add) v40 , v2            \l101   goto                                   \l" 
+ "BB24\n94   v44 = instanceof v43 <Application,LWhiteNode>\l96   conditional branch(eq) v44,v4:#0        \l" -> "BB25\n99   v51 = binaryop(add) v40 , v2            \l101   goto                                   \l" 
+ "BB24\n94   v44 = instanceof v43 <Application,LWhiteNode>\l96   conditional branch(eq) v44,v4:#0        \l" -> "BB26\n103   v45 = instanceof v43 <Application,LGreyNode>\l105   conditional branch(eq) v45,v4:#0       \l" 
+ "BB25\n99   v51 = binaryop(add) v40 , v2            \l101   goto                                   \l" -> "BB29\n           v52 = phi  v51,v40,v50\l115   return v52                             \l" 
+ "BB26\n103   v45 = instanceof v43 <Application,LGreyNode>\l105   conditional branch(eq) v45,v4:#0       \l" -> "BB27\n108  nonreference field get instrctn: 46 = getstatic < Application, LQuadrant, cNorthEast, <Application,LQuadrant> >\l109  nonreference field get instrctn: 47 = getstatic < Application, LQuadrant, cSouthEast, <Application,LQuadrant> >\l111   v49 = invokevirtual < Application, LQuadTreeNode, sumAdjacent(LQuadrant;LQuadrant;I)I > v43,v46,v47,v2 @177 exception:v48\l" 
+ "BB26\n103   v45 = instanceof v43 <Application,LGreyNode>\l105   conditional branch(eq) v45,v4:#0       \l" -> "BB29\n           v52 = phi  v51,v40,v50\l115   return v52                             \l" 
+ "BB27\n108  nonreference field get instrctn: 46 = getstatic < Application, LQuadrant, cNorthEast, <Application,LQuadrant> >\l109  nonreference field get instrctn: 47 = getstatic < Application, LQuadrant, cSouthEast, <Application,LQuadrant> >\l111   v49 = invokevirtual < Application, LQuadTreeNode, sumAdjacent(LQuadrant;LQuadrant;I)I > v43,v46,v47,v2 @177 exception:v48\l" -> "BB28\n112   v50 = binaryop(add) v40 , v49          \l" 
+ "BB28\n112   v50 = binaryop(add) v40 , v49          \l" -> "BB29\n           v52 = phi  v51,v40,v50\l115   return v52                             \l" 
+ "BB29\n           v52 = phi  v51,v40,v50\l115   return v52                             \l" -> "BB30 (ex)\n\n" 
+
+}

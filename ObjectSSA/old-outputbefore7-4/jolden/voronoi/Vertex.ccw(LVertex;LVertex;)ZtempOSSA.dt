@@ -1,0 +1,28 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Vertex.ccw(LVertex;LVertex;)Z", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n3   v6 = invokevirtual < Application, LVertex, X()D > v1 @5 exception:v5\l" [ ]
+   "BB2\n6   v8 = invokevirtual < Application, LVertex, Y()D > v1 @12 exception:v7\l" [ ]
+   "BB3\n11   v10 = invokevirtual < Application, LVertex, X()D > v2 @22 exception:v9\l" [ ]
+   "BB4\n14   v12 = invokevirtual < Application, LVertex, Y()D > v2 @29 exception:v11\l" [ ]
+   "BB5\n19   v14 = invokevirtual < Application, LVertex, X()D > v3 @39 exception:v13\l" [ ]
+   "BB6\n22   v16 = invokevirtual < Application, LVertex, Y()D > v3 @46 exception:v15\l" [ ]
+   "BB7\n26   v17 = binaryop(sub) v6 , v14            \l29   v18 = binaryop(sub) v12 , v16           \l30   v19 = binaryop(mul) v17 , v18           \l33   v20 = binaryop(sub) v10 , v14           \l36   v21 = binaryop(sub) v8 , v16            \l37   v22 = binaryop(mul) v20 , v21           \l38   v23 = binaryop(sub) v19 , v22           \l42   v25 = compare v23,v24:#0.0 opcode=cmpl  \l44   conditional branch(le) v25,v26:#0       \l" [ ]
+   "BB8\n46   goto                                    \l" [ ]
+   "BB9\n" [ ]
+   "BB10\n           v28 = phi  v27:#1,v26:#0\l48   return v28                              \l" [ ]
+   "BB11 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n3   v6 = invokevirtual < Application, LVertex, X()D > v1 @5 exception:v5\l" 
+ "BB1\n3   v6 = invokevirtual < Application, LVertex, X()D > v1 @5 exception:v5\l" -> "BB2\n6   v8 = invokevirtual < Application, LVertex, Y()D > v1 @12 exception:v7\l" 
+ "BB2\n6   v8 = invokevirtual < Application, LVertex, Y()D > v1 @12 exception:v7\l" -> "BB3\n11   v10 = invokevirtual < Application, LVertex, X()D > v2 @22 exception:v9\l" 
+ "BB3\n11   v10 = invokevirtual < Application, LVertex, X()D > v2 @22 exception:v9\l" -> "BB4\n14   v12 = invokevirtual < Application, LVertex, Y()D > v2 @29 exception:v11\l" 
+ "BB4\n14   v12 = invokevirtual < Application, LVertex, Y()D > v2 @29 exception:v11\l" -> "BB5\n19   v14 = invokevirtual < Application, LVertex, X()D > v3 @39 exception:v13\l" 
+ "BB5\n19   v14 = invokevirtual < Application, LVertex, X()D > v3 @39 exception:v13\l" -> "BB6\n22   v16 = invokevirtual < Application, LVertex, Y()D > v3 @46 exception:v15\l" 
+ "BB6\n22   v16 = invokevirtual < Application, LVertex, Y()D > v3 @46 exception:v15\l" -> "BB7\n26   v17 = binaryop(sub) v6 , v14            \l29   v18 = binaryop(sub) v12 , v16           \l30   v19 = binaryop(mul) v17 , v18           \l33   v20 = binaryop(sub) v10 , v14           \l36   v21 = binaryop(sub) v8 , v16            \l37   v22 = binaryop(mul) v20 , v21           \l38   v23 = binaryop(sub) v19 , v22           \l42   v25 = compare v23,v24:#0.0 opcode=cmpl  \l44   conditional branch(le) v25,v26:#0       \l" 
+ "BB7\n26   v17 = binaryop(sub) v6 , v14            \l29   v18 = binaryop(sub) v12 , v16           \l30   v19 = binaryop(mul) v17 , v18           \l33   v20 = binaryop(sub) v10 , v14           \l36   v21 = binaryop(sub) v8 , v16            \l37   v22 = binaryop(mul) v20 , v21           \l38   v23 = binaryop(sub) v19 , v22           \l42   v25 = compare v23,v24:#0.0 opcode=cmpl  \l44   conditional branch(le) v25,v26:#0       \l" -> "BB8\n46   goto                                    \l" 
+ "BB7\n26   v17 = binaryop(sub) v6 , v14            \l29   v18 = binaryop(sub) v12 , v16           \l30   v19 = binaryop(mul) v17 , v18           \l33   v20 = binaryop(sub) v10 , v14           \l36   v21 = binaryop(sub) v8 , v16            \l37   v22 = binaryop(mul) v20 , v21           \l38   v23 = binaryop(sub) v19 , v22           \l42   v25 = compare v23,v24:#0.0 opcode=cmpl  \l44   conditional branch(le) v25,v26:#0       \l" -> "BB9\n" 
+ "BB8\n46   goto                                    \l" -> "BB10\n           v28 = phi  v27:#1,v26:#0\l48   return v28                              \l" 
+ "BB9\n" -> "BB10\n           v28 = phi  v27:#1,v26:#0\l48   return v28                              \l" 
+ "BB10\n           v28 = phi  v27:#1,v26:#0\l48   return v28                              \l" -> "BB11 (ex)\n\n" 
+
+}

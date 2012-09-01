@@ -1,0 +1,60 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n3   v3 = getfield < Application, LTree, left, <Application,LTree> > v1\l" [ ]
+   "BB2\n5   conditional branch(eq) v3,v4:#null\l" [ ]
+   "BB3\n7   v5 = getfield < Application, LTree, left, <Application,LTree> > v1\l" [ ]
+   "BB4\n8   v7 = invokevirtual < Application, LTree, makeList()LTree; > v5 @14 exception:v6\l" [ ]
+   "BB5\n10   goto                          \l" [ ]
+   "BB6\n" [ ]
+   "BB7\n           v8 = phi  v7,v4:#null\l14   v9 = getfield < Application, LTree, right, <Application,LTree> > v1\l" [ ]
+   "BB8\n16   conditional branch(eq) v9,v4:#null\l" [ ]
+   "BB9\n18   v10 = getfield < Application, LTree, right, <Application,LTree> > v1\l" [ ]
+   "BB10\n19   v12 = invokevirtual < Application, LTree, makeList()LTree; > v10 @34 exception:v11\l" [ ]
+   "BB11\n21   goto                          \l" [ ]
+   "BB12\n" [ ]
+   "BB13\n           v13 = phi  v12,v4:#null\l26   conditional branch(eq) v13,v4:#null\l" [ ]
+   "BB14\n30   v14 = getfield < Application, LTree, right, <Application,LTree> > v1\l" [ ]
+   "BB15\n32   putfield v14 = v1 < Application, LTree, next, <Application,LTree> >\l" [ ]
+   "BB16\n           v15 = phi  v1,v13\l35   conditional branch(eq) v8,v4:#null\l" [ ]
+   "BB17\n40   conditional branch(eq) v13,v4:#null\l" [ ]
+   "BB18\n42   v17 = getfield < Application, LTree, left, <Application,LTree> > v1\l" [ ]
+   "BB19\n44   putfield v17 = v13 < Application, LTree, next, <Application,LTree> >\l" [ ]
+   "BB20\n45   goto                          \l" [ ]
+   "BB21\n47   v16 = getfield < Application, LTree, left, <Application,LTree> > v1\l" [ ]
+   "BB22\n49   putfield v16 = v1 < Application, LTree, next, <Application,LTree> >\l" [ ]
+   "BB23\n           v18 = phi  v15,v8,v8\l52   putfield v1 = v4:#null < Application, LTree, next, <Application,LTree> >\l" [ ]
+   "BB24\n54   return v18                    \l" [ ]
+   "BB25 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n3   v3 = getfield < Application, LTree, left, <Application,LTree> > v1\l" 
+ "BB1\n3   v3 = getfield < Application, LTree, left, <Application,LTree> > v1\l" -> "BB2\n5   conditional branch(eq) v3,v4:#null\l" 
+ "BB2\n5   conditional branch(eq) v3,v4:#null\l" -> "BB3\n7   v5 = getfield < Application, LTree, left, <Application,LTree> > v1\l" 
+ "BB2\n5   conditional branch(eq) v3,v4:#null\l" -> "BB6\n" 
+ "BB3\n7   v5 = getfield < Application, LTree, left, <Application,LTree> > v1\l" -> "BB4\n8   v7 = invokevirtual < Application, LTree, makeList()LTree; > v5 @14 exception:v6\l" 
+ "BB4\n8   v7 = invokevirtual < Application, LTree, makeList()LTree; > v5 @14 exception:v6\l" -> "BB5\n10   goto                          \l" 
+ "BB5\n10   goto                          \l" -> "BB7\n           v8 = phi  v7,v4:#null\l14   v9 = getfield < Application, LTree, right, <Application,LTree> > v1\l" 
+ "BB6\n" -> "BB7\n           v8 = phi  v7,v4:#null\l14   v9 = getfield < Application, LTree, right, <Application,LTree> > v1\l" 
+ "BB7\n           v8 = phi  v7,v4:#null\l14   v9 = getfield < Application, LTree, right, <Application,LTree> > v1\l" -> "BB8\n16   conditional branch(eq) v9,v4:#null\l" 
+ "BB8\n16   conditional branch(eq) v9,v4:#null\l" -> "BB9\n18   v10 = getfield < Application, LTree, right, <Application,LTree> > v1\l" 
+ "BB8\n16   conditional branch(eq) v9,v4:#null\l" -> "BB12\n" 
+ "BB9\n18   v10 = getfield < Application, LTree, right, <Application,LTree> > v1\l" -> "BB10\n19   v12 = invokevirtual < Application, LTree, makeList()LTree; > v10 @34 exception:v11\l" 
+ "BB10\n19   v12 = invokevirtual < Application, LTree, makeList()LTree; > v10 @34 exception:v11\l" -> "BB11\n21   goto                          \l" 
+ "BB11\n21   goto                          \l" -> "BB13\n           v13 = phi  v12,v4:#null\l26   conditional branch(eq) v13,v4:#null\l" 
+ "BB12\n" -> "BB13\n           v13 = phi  v12,v4:#null\l26   conditional branch(eq) v13,v4:#null\l" 
+ "BB13\n           v13 = phi  v12,v4:#null\l26   conditional branch(eq) v13,v4:#null\l" -> "BB14\n30   v14 = getfield < Application, LTree, right, <Application,LTree> > v1\l" 
+ "BB13\n           v13 = phi  v12,v4:#null\l26   conditional branch(eq) v13,v4:#null\l" -> "BB16\n           v15 = phi  v1,v13\l35   conditional branch(eq) v8,v4:#null\l" 
+ "BB14\n30   v14 = getfield < Application, LTree, right, <Application,LTree> > v1\l" -> "BB15\n32   putfield v14 = v1 < Application, LTree, next, <Application,LTree> >\l" 
+ "BB15\n32   putfield v14 = v1 < Application, LTree, next, <Application,LTree> >\l" -> "BB16\n           v15 = phi  v1,v13\l35   conditional branch(eq) v8,v4:#null\l" 
+ "BB16\n           v15 = phi  v1,v13\l35   conditional branch(eq) v8,v4:#null\l" -> "BB17\n40   conditional branch(eq) v13,v4:#null\l" 
+ "BB16\n           v15 = phi  v1,v13\l35   conditional branch(eq) v8,v4:#null\l" -> "BB23\n           v18 = phi  v15,v8,v8\l52   putfield v1 = v4:#null < Application, LTree, next, <Application,LTree> >\l" 
+ "BB17\n40   conditional branch(eq) v13,v4:#null\l" -> "BB18\n42   v17 = getfield < Application, LTree, left, <Application,LTree> > v1\l" 
+ "BB17\n40   conditional branch(eq) v13,v4:#null\l" -> "BB21\n47   v16 = getfield < Application, LTree, left, <Application,LTree> > v1\l" 
+ "BB18\n42   v17 = getfield < Application, LTree, left, <Application,LTree> > v1\l" -> "BB19\n44   putfield v17 = v13 < Application, LTree, next, <Application,LTree> >\l" 
+ "BB19\n44   putfield v17 = v13 < Application, LTree, next, <Application,LTree> >\l" -> "BB20\n45   goto                          \l" 
+ "BB20\n45   goto                          \l" -> "BB23\n           v18 = phi  v15,v8,v8\l52   putfield v1 = v4:#null < Application, LTree, next, <Application,LTree> >\l" 
+ "BB21\n47   v16 = getfield < Application, LTree, left, <Application,LTree> > v1\l" -> "BB22\n49   putfield v16 = v1 < Application, LTree, next, <Application,LTree> >\l" 
+ "BB22\n49   putfield v16 = v1 < Application, LTree, next, <Application,LTree> >\l" -> "BB23\n           v18 = phi  v15,v8,v8\l52   putfield v1 = v4:#null < Application, LTree, next, <Application,LTree> >\l" 
+ "BB23\n           v18 = phi  v15,v8,v8\l52   putfield v1 = v4:#null < Application, LTree, next, <Application,LTree> >\l" -> "BB24\n54   return v18                    \l" 
+ "BB24\n54   return v18                    \l" -> "BB25 (ex)\n\n" 
+
+}

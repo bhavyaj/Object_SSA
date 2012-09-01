@@ -1,0 +1,47 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for BiGraph.compute()V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  GetOSSAInstruction:	O2_1= O1_1< eNodes>   \l" [ ]
+   "BB2\n2  O3_1 = < Application, LNode, elements()Ljava/util/Enumeration; >( O2_1 )\l" [ ]
+   "BB3\n" [ ]
+   "BB4\n5  O4_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_1 )\l" [ ]
+   "BB5\n7   conditional branch(eq) v7,v8:#0          \l" [ ]
+   "BB6\n9  O2_1 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O3_1 )\l" [ ]
+   "BB7\n10   v11 = checkcast <Application,LNode>v10  \l" [ ]
+   "BB8\n13  < Application, LNode, computeNewValue()V >( O2_1 )\l" [ ]
+   "BB9\n14   goto                                    \l" [ ]
+   "BB10\n16  GetOSSAInstruction:	O2_1= O1_1< hNodes>  \l" [ ]
+   "BB11\n17  O3_2 = < Application, LNode, elements()Ljava/util/Enumeration; >( O2_1 )\l" [ ]
+   "BB12\n" [ ]
+   "BB13\n20  O4_2 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_2 )\l" [ ]
+   "BB14\n22   conditional branch(eq) v17,v8:#0        \l" [ ]
+   "BB15\n24  O2_2 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O3_2 )\l" [ ]
+   "BB16\n25   v20 = checkcast <Application,LNode>v19  \l" [ ]
+   "BB17\n28  < Application, LNode, computeNewValue()V >( O2_2 )\l" [ ]
+   "BB18\n29   goto                                    \l" [ ]
+   "BB19\n30  return                                   \l" [ ]
+   "BB20 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  GetOSSAInstruction:	O2_1= O1_1< eNodes>   \l" 
+ "BB1\n1  GetOSSAInstruction:	O2_1= O1_1< eNodes>   \l" -> "BB2\n2  O3_1 = < Application, LNode, elements()Ljava/util/Enumeration; >( O2_1 )\l" 
+ "BB2\n2  O3_1 = < Application, LNode, elements()Ljava/util/Enumeration; >( O2_1 )\l" -> "BB3\n" 
+ "BB3\n" -> "BB4\n5  O4_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_1 )\l" 
+ "BB4\n5  O4_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_1 )\l" -> "BB5\n7   conditional branch(eq) v7,v8:#0          \l" 
+ "BB5\n7   conditional branch(eq) v7,v8:#0          \l" -> "BB6\n9  O2_1 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O3_1 )\l" 
+ "BB5\n7   conditional branch(eq) v7,v8:#0          \l" -> "BB10\n16  GetOSSAInstruction:	O2_1= O1_1< hNodes>  \l" 
+ "BB6\n9  O2_1 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O3_1 )\l" -> "BB7\n10   v11 = checkcast <Application,LNode>v10  \l" 
+ "BB7\n10   v11 = checkcast <Application,LNode>v10  \l" -> "BB8\n13  < Application, LNode, computeNewValue()V >( O2_1 )\l" 
+ "BB8\n13  < Application, LNode, computeNewValue()V >( O2_1 )\l" -> "BB9\n14   goto                                    \l" 
+ "BB9\n14   goto                                    \l" -> "BB4\n5  O4_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_1 )\l" 
+ "BB10\n16  GetOSSAInstruction:	O2_1= O1_1< hNodes>  \l" -> "BB11\n17  O3_2 = < Application, LNode, elements()Ljava/util/Enumeration; >( O2_1 )\l" 
+ "BB11\n17  O3_2 = < Application, LNode, elements()Ljava/util/Enumeration; >( O2_1 )\l" -> "BB12\n" 
+ "BB12\n" -> "BB13\n20  O4_2 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_2 )\l" 
+ "BB13\n20  O4_2 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_2 )\l" -> "BB14\n22   conditional branch(eq) v17,v8:#0        \l" 
+ "BB14\n22   conditional branch(eq) v17,v8:#0        \l" -> "BB15\n24  O2_2 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O3_2 )\l" 
+ "BB14\n22   conditional branch(eq) v17,v8:#0        \l" -> "BB19\n30  return                                   \l" 
+ "BB15\n24  O2_2 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O3_2 )\l" -> "BB16\n25   v20 = checkcast <Application,LNode>v19  \l" 
+ "BB16\n25   v20 = checkcast <Application,LNode>v19  \l" -> "BB17\n28  < Application, LNode, computeNewValue()V >( O2_2 )\l" 
+ "BB17\n28  < Application, LNode, computeNewValue()V >( O2_2 )\l" -> "BB18\n29   goto                                    \l" 
+ "BB18\n29   goto                                    \l" -> "BB13\n20  O4_2 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O3_2 )\l" 
+ "BB19\n30  return                                   \l" -> "BB20 (ex)\n\n" 
+
+}

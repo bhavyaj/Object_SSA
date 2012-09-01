@@ -1,0 +1,137 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Health.parseCmdLine([Ljava-lang-String;)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n" [ ]
+   "BB2\n           v22 = phi  v17,v28,v38,v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1                      \l" [ ]
+   "BB3\n5   conditional branch(ge) v22,v4            \l" [ ]
+   "BB4\n8   v5 = arrayload v1[v22]                   \l" [ ]
+   "BB5\n10  O2_1 = < Application, Ljava/lang/String, startsWith(Ljava/lang/String;)Z >( V5, V6 )\l" [ ]
+   "BB6\n12   conditional branch(eq) v8,v3:#0         \l" [ ]
+   "BB7\n17   v10 = binaryop(add) v22 , v9:#1         \l19   v11 = arrayload v1[v22]                 \l" [ ]
+   "BB8\n23  O2_2 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V12 )\l" [ ]
+   "BB9\n25   conditional branch(eq) v14,v3:#0        \l" [ ]
+   "BB10\n28   v15 = arraylength v1                    \l" [ ]
+   "BB11\n29   conditional branch(ge) v10,v15          \l" [ ]
+   "BB12\n30  Create O3_1                              \l" [ ]
+   "BB13\n36   v17 = binaryop(add) v10 , v9:#1         \l38   v18 = arrayload v1[v10]                 \l" [ ]
+   "BB14\n39  < Application, Ljava/lang/Integer, <init>(Ljava/lang/String;)V >( O3_1, V18 )\l" [ ]
+   "BB15\n40  O2_3 = < Application, Ljava/lang/Integer, intValue()I >( O3_1 )\l" [ ]
+   "BB16\n41   putstatic v21 < Application, LHealth, maxLevel, <Primordial,I> >\l42   goto                                    \l" [ ]
+   "BB17\n43  Create O4_1                              \l" [ ]
+   "BB18\n46  < Application, Ljava/lang/Error, <init>(Ljava/lang/String;)V >( O4_1, V64 )\l" [ ]
+   "BB19\n47   throw v63                               \l" [ ]
+   "BB20\n50  O2_4 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V23 )\l" [ ]
+   "BB21\n52   conditional branch(eq) v25,v3:#0        \l" [ ]
+   "BB22\n55   v26 = arraylength v1                    \l" [ ]
+   "BB23\n56   conditional branch(ge) v10,v26          \l" [ ]
+   "BB24\n57  Create O5_1                              \l" [ ]
+   "BB25\n63   v28 = binaryop(add) v10 , v9:#1         \l65   v29 = arrayload v1[v10]                 \l" [ ]
+   "BB26\n66  < Application, Ljava/lang/Integer, <init>(Ljava/lang/String;)V >( O5_1, V29 )\l" [ ]
+   "BB27\n67  O2_5 = < Application, Ljava/lang/Integer, intValue()I >( O5_1 )\l" [ ]
+   "BB28\n68   putstatic v32 < Application, LHealth, maxTime, <Primordial,I> >\l69   goto                                    \l" [ ]
+   "BB29\n70  Create O6_1                              \l" [ ]
+   "BB30\n73  < Application, Ljava/lang/Error, <init>(Ljava/lang/String;)V >( O6_1, V61 )\l" [ ]
+   "BB31\n74   throw v60                               \l" [ ]
+   "BB32\n77  O2_6 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V33 )\l" [ ]
+   "BB33\n79   conditional branch(eq) v35,v3:#0        \l" [ ]
+   "BB34\n82   v36 = arraylength v1                    \l" [ ]
+   "BB35\n83   conditional branch(ge) v10,v36          \l" [ ]
+   "BB36\n84  Create O7_1                              \l" [ ]
+   "BB37\n90   v38 = binaryop(add) v10 , v9:#1         \l92   v39 = arrayload v1[v10]                 \l" [ ]
+   "BB38\n93  < Application, Ljava/lang/Integer, <init>(Ljava/lang/String;)V >( O7_1, V39 )\l" [ ]
+   "BB39\n94  O2_7 = < Application, Ljava/lang/Integer, intValue()I >( O7_1 )\l" [ ]
+   "BB40\n95   putstatic v42 < Application, LHealth, seed, <Primordial,I> >\l96   goto                                    \l" [ ]
+   "BB41\n97  Create O8_1                              \l" [ ]
+   "BB42\n100  < Application, Ljava/lang/Error, <init>(Ljava/lang/String;)V >( O8_1, V58 )\l" [ ]
+   "BB43\n101   throw v57                              \l" [ ]
+   "BB44\n104  O2_8 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V43 )\l" [ ]
+   "BB45\n106   conditional branch(eq) v45,v3:#0       \l" [ ]
+   "BB46\n108   putstatic v9:#1 < Application, LHealth, printResult, <Primordial,Z> >\l109   goto                                   \l" [ ]
+   "BB47\n112  O2_9 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V46 )\l" [ ]
+   "BB48\n114   conditional branch(eq) v48,v3:#0       \l" [ ]
+   "BB49\n116   putstatic v9:#1 < Application, LHealth, printMsgs, <Primordial,Z> >\l117   goto                                   \l" [ ]
+   "BB50\n120  O2_10 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V49 )\l" [ ]
+   "BB51\n122   conditional branch(eq) v51,v3:#0       \l" [ ]
+   "BB52\n123  < Application, LHealth, usage()V > )    \l" [ ]
+   "BB53\n124   goto                                   \l" [ ]
+   "BB54\n125  nonreference field get instrctn: 53 = getstatic < Application, LHealth, maxTime, <Primordial,I> >\l127   conditional branch(eq) v53,v3:#0       \l" [ ]
+   "BB55\n128  nonreference field get instrctn: 54 = getstatic < Application, LHealth, maxLevel, <Primordial,I> >\l130   conditional branch(eq) v54,v3:#0       \l" [ ]
+   "BB56\n131  nonreference field get instrctn: 55 = getstatic < Application, LHealth, seed, <Primordial,I> >\l133   conditional branch(ne) v55,v3:#0       \l" [ ]
+   "BB57\n134  < Application, LHealth, usage()V > )    \l" [ ]
+   "BB58\n135  return                                  \l" [ ]
+   "BB59 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n" 
+ "BB1\n" -> "BB2\n           v22 = phi  v17,v28,v38,v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1                      \l" 
+ "BB2\n           v22 = phi  v17,v28,v38,v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1                      \l" -> "BB3\n5   conditional branch(ge) v22,v4            \l" 
+ "BB3\n5   conditional branch(ge) v22,v4            \l" -> "BB4\n8   v5 = arrayload v1[v22]                   \l" 
+ "BB3\n5   conditional branch(ge) v22,v4            \l" -> "BB54\n125  nonreference field get instrctn: 53 = getstatic < Application, LHealth, maxTime, <Primordial,I> >\l127   conditional branch(eq) v53,v3:#0       \l" 
+ "BB4\n8   v5 = arrayload v1[v22]                   \l" -> "BB5\n10  O2_1 = < Application, Ljava/lang/String, startsWith(Ljava/lang/String;)Z >( V5, V6 )\l" 
+ "BB5\n10  O2_1 = < Application, Ljava/lang/String, startsWith(Ljava/lang/String;)Z >( V5, V6 )\l" -> "BB6\n12   conditional branch(eq) v8,v3:#0         \l" 
+ "BB6\n12   conditional branch(eq) v8,v3:#0         \l" -> "BB7\n17   v10 = binaryop(add) v22 , v9:#1         \l19   v11 = arrayload v1[v22]                 \l" 
+ "BB6\n12   conditional branch(eq) v8,v3:#0         \l" -> "BB54\n125  nonreference field get instrctn: 53 = getstatic < Application, LHealth, maxTime, <Primordial,I> >\l127   conditional branch(eq) v53,v3:#0       \l" 
+ "BB7\n17   v10 = binaryop(add) v22 , v9:#1         \l19   v11 = arrayload v1[v22]                 \l" -> "BB8\n23  O2_2 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V12 )\l" 
+ "BB8\n23  O2_2 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V12 )\l" -> "BB9\n25   conditional branch(eq) v14,v3:#0        \l" 
+ "BB9\n25   conditional branch(eq) v14,v3:#0        \l" -> "BB10\n28   v15 = arraylength v1                    \l" 
+ "BB9\n25   conditional branch(eq) v14,v3:#0        \l" -> "BB20\n50  O2_4 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V23 )\l" 
+ "BB10\n28   v15 = arraylength v1                    \l" -> "BB11\n29   conditional branch(ge) v10,v15          \l" 
+ "BB11\n29   conditional branch(ge) v10,v15          \l" -> "BB12\n30  Create O3_1                              \l" 
+ "BB11\n29   conditional branch(ge) v10,v15          \l" -> "BB17\n43  Create O4_1                              \l" 
+ "BB12\n30  Create O3_1                              \l" -> "BB13\n36   v17 = binaryop(add) v10 , v9:#1         \l38   v18 = arrayload v1[v10]                 \l" 
+ "BB13\n36   v17 = binaryop(add) v10 , v9:#1         \l38   v18 = arrayload v1[v10]                 \l" -> "BB14\n39  < Application, Ljava/lang/Integer, <init>(Ljava/lang/String;)V >( O3_1, V18 )\l" 
+ "BB14\n39  < Application, Ljava/lang/Integer, <init>(Ljava/lang/String;)V >( O3_1, V18 )\l" -> "BB15\n40  O2_3 = < Application, Ljava/lang/Integer, intValue()I >( O3_1 )\l" 
+ "BB15\n40  O2_3 = < Application, Ljava/lang/Integer, intValue()I >( O3_1 )\l" -> "BB16\n41   putstatic v21 < Application, LHealth, maxLevel, <Primordial,I> >\l42   goto                                    \l" 
+ "BB16\n41   putstatic v21 < Application, LHealth, maxLevel, <Primordial,I> >\l42   goto                                    \l" -> "BB2\n           v22 = phi  v17,v28,v38,v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1                      \l" 
+ "BB17\n43  Create O4_1                              \l" -> "BB18\n46  < Application, Ljava/lang/Error, <init>(Ljava/lang/String;)V >( O4_1, V64 )\l" 
+ "BB18\n46  < Application, Ljava/lang/Error, <init>(Ljava/lang/String;)V >( O4_1, V64 )\l" -> "BB19\n47   throw v63                               \l" 
+ "BB19\n47   throw v63                               \l" -> "BB59 (ex)\n\n" 
+ "BB20\n50  O2_4 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V23 )\l" -> "BB21\n52   conditional branch(eq) v25,v3:#0        \l" 
+ "BB21\n52   conditional branch(eq) v25,v3:#0        \l" -> "BB22\n55   v26 = arraylength v1                    \l" 
+ "BB21\n52   conditional branch(eq) v25,v3:#0        \l" -> "BB32\n77  O2_6 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V33 )\l" 
+ "BB22\n55   v26 = arraylength v1                    \l" -> "BB23\n56   conditional branch(ge) v10,v26          \l" 
+ "BB23\n56   conditional branch(ge) v10,v26          \l" -> "BB24\n57  Create O5_1                              \l" 
+ "BB23\n56   conditional branch(ge) v10,v26          \l" -> "BB29\n70  Create O6_1                              \l" 
+ "BB24\n57  Create O5_1                              \l" -> "BB25\n63   v28 = binaryop(add) v10 , v9:#1         \l65   v29 = arrayload v1[v10]                 \l" 
+ "BB25\n63   v28 = binaryop(add) v10 , v9:#1         \l65   v29 = arrayload v1[v10]                 \l" -> "BB26\n66  < Application, Ljava/lang/Integer, <init>(Ljava/lang/String;)V >( O5_1, V29 )\l" 
+ "BB26\n66  < Application, Ljava/lang/Integer, <init>(Ljava/lang/String;)V >( O5_1, V29 )\l" -> "BB27\n67  O2_5 = < Application, Ljava/lang/Integer, intValue()I >( O5_1 )\l" 
+ "BB27\n67  O2_5 = < Application, Ljava/lang/Integer, intValue()I >( O5_1 )\l" -> "BB28\n68   putstatic v32 < Application, LHealth, maxTime, <Primordial,I> >\l69   goto                                    \l" 
+ "BB28\n68   putstatic v32 < Application, LHealth, maxTime, <Primordial,I> >\l69   goto                                    \l" -> "BB2\n           v22 = phi  v17,v28,v38,v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1                      \l" 
+ "BB29\n70  Create O6_1                              \l" -> "BB30\n73  < Application, Ljava/lang/Error, <init>(Ljava/lang/String;)V >( O6_1, V61 )\l" 
+ "BB30\n73  < Application, Ljava/lang/Error, <init>(Ljava/lang/String;)V >( O6_1, V61 )\l" -> "BB31\n74   throw v60                               \l" 
+ "BB31\n74   throw v60                               \l" -> "BB59 (ex)\n\n" 
+ "BB32\n77  O2_6 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V33 )\l" -> "BB33\n79   conditional branch(eq) v35,v3:#0        \l" 
+ "BB33\n79   conditional branch(eq) v35,v3:#0        \l" -> "BB34\n82   v36 = arraylength v1                    \l" 
+ "BB33\n79   conditional branch(eq) v35,v3:#0        \l" -> "BB44\n104  O2_8 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V43 )\l" 
+ "BB34\n82   v36 = arraylength v1                    \l" -> "BB35\n83   conditional branch(ge) v10,v36          \l" 
+ "BB35\n83   conditional branch(ge) v10,v36          \l" -> "BB36\n84  Create O7_1                              \l" 
+ "BB35\n83   conditional branch(ge) v10,v36          \l" -> "BB41\n97  Create O8_1                              \l" 
+ "BB36\n84  Create O7_1                              \l" -> "BB37\n90   v38 = binaryop(add) v10 , v9:#1         \l92   v39 = arrayload v1[v10]                 \l" 
+ "BB37\n90   v38 = binaryop(add) v10 , v9:#1         \l92   v39 = arrayload v1[v10]                 \l" -> "BB38\n93  < Application, Ljava/lang/Integer, <init>(Ljava/lang/String;)V >( O7_1, V39 )\l" 
+ "BB38\n93  < Application, Ljava/lang/Integer, <init>(Ljava/lang/String;)V >( O7_1, V39 )\l" -> "BB39\n94  O2_7 = < Application, Ljava/lang/Integer, intValue()I >( O7_1 )\l" 
+ "BB39\n94  O2_7 = < Application, Ljava/lang/Integer, intValue()I >( O7_1 )\l" -> "BB40\n95   putstatic v42 < Application, LHealth, seed, <Primordial,I> >\l96   goto                                    \l" 
+ "BB40\n95   putstatic v42 < Application, LHealth, seed, <Primordial,I> >\l96   goto                                    \l" -> "BB2\n           v22 = phi  v17,v28,v38,v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1                      \l" 
+ "BB41\n97  Create O8_1                              \l" -> "BB42\n100  < Application, Ljava/lang/Error, <init>(Ljava/lang/String;)V >( O8_1, V58 )\l" 
+ "BB42\n100  < Application, Ljava/lang/Error, <init>(Ljava/lang/String;)V >( O8_1, V58 )\l" -> "BB43\n101   throw v57                              \l" 
+ "BB43\n101   throw v57                              \l" -> "BB59 (ex)\n\n" 
+ "BB44\n104  O2_8 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V43 )\l" -> "BB45\n106   conditional branch(eq) v45,v3:#0       \l" 
+ "BB45\n106   conditional branch(eq) v45,v3:#0       \l" -> "BB46\n108   putstatic v9:#1 < Application, LHealth, printResult, <Primordial,Z> >\l109   goto                                   \l" 
+ "BB45\n106   conditional branch(eq) v45,v3:#0       \l" -> "BB47\n112  O2_9 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V46 )\l" 
+ "BB46\n108   putstatic v9:#1 < Application, LHealth, printResult, <Primordial,Z> >\l109   goto                                   \l" -> "BB2\n           v22 = phi  v17,v28,v38,v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1                      \l" 
+ "BB47\n112  O2_9 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V46 )\l" -> "BB48\n114   conditional branch(eq) v48,v3:#0       \l" 
+ "BB48\n114   conditional branch(eq) v48,v3:#0       \l" -> "BB49\n116   putstatic v9:#1 < Application, LHealth, printMsgs, <Primordial,Z> >\l117   goto                                   \l" 
+ "BB48\n114   conditional branch(eq) v48,v3:#0       \l" -> "BB50\n120  O2_10 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V49 )\l" 
+ "BB49\n116   putstatic v9:#1 < Application, LHealth, printMsgs, <Primordial,Z> >\l117   goto                                   \l" -> "BB2\n           v22 = phi  v17,v28,v38,v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1                      \l" 
+ "BB50\n120  O2_10 = < Application, Ljava/lang/String, equals(Ljava/lang/Object;)Z >( V11, V49 )\l" -> "BB51\n122   conditional branch(eq) v51,v3:#0       \l" 
+ "BB51\n122   conditional branch(eq) v51,v3:#0       \l" -> "BB2\n           v22 = phi  v17,v28,v38,v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1                      \l" 
+ "BB51\n122   conditional branch(eq) v51,v3:#0       \l" -> "BB52\n123  < Application, LHealth, usage()V > )    \l" 
+ "BB52\n123  < Application, LHealth, usage()V > )    \l" -> "BB53\n124   goto                                   \l" 
+ "BB53\n124   goto                                   \l" -> "BB2\n           v22 = phi  v17,v28,v38,v10,v10,v10,v10,v3:#0\l4   v4 = arraylength v1                      \l" 
+ "BB54\n125  nonreference field get instrctn: 53 = getstatic < Application, LHealth, maxTime, <Primordial,I> >\l127   conditional branch(eq) v53,v3:#0       \l" -> "BB55\n128  nonreference field get instrctn: 54 = getstatic < Application, LHealth, maxLevel, <Primordial,I> >\l130   conditional branch(eq) v54,v3:#0       \l" 
+ "BB54\n125  nonreference field get instrctn: 53 = getstatic < Application, LHealth, maxTime, <Primordial,I> >\l127   conditional branch(eq) v53,v3:#0       \l" -> "BB57\n134  < Application, LHealth, usage()V > )    \l" 
+ "BB55\n128  nonreference field get instrctn: 54 = getstatic < Application, LHealth, maxLevel, <Primordial,I> >\l130   conditional branch(eq) v54,v3:#0       \l" -> "BB56\n131  nonreference field get instrctn: 55 = getstatic < Application, LHealth, seed, <Primordial,I> >\l133   conditional branch(ne) v55,v3:#0       \l" 
+ "BB55\n128  nonreference field get instrctn: 54 = getstatic < Application, LHealth, maxLevel, <Primordial,I> >\l130   conditional branch(eq) v54,v3:#0       \l" -> "BB57\n134  < Application, LHealth, usage()V > )    \l" 
+ "BB56\n131  nonreference field get instrctn: 55 = getstatic < Application, LHealth, seed, <Primordial,I> >\l133   conditional branch(ne) v55,v3:#0       \l" -> "BB57\n134  < Application, LHealth, usage()V > )    \l" 
+ "BB56\n131  nonreference field get instrctn: 55 = getstatic < Application, LHealth, seed, <Primordial,I> >\l133   conditional branch(ne) v55,v3:#0       \l" -> "BB58\n135  return                                  \l" 
+ "BB57\n134  < Application, LHealth, usage()V > )    \l" -> "BB58\n135  return                                  \l" 
+ "BB58\n135  return                                  \l" -> "BB59 (ex)\n\n" 
+
+}

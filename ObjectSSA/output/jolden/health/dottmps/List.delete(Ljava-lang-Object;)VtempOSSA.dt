@@ -1,0 +1,66 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for List.delete(Ljava-lang-Object;)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  GetOSSAInstruction:	O3_1= O1_1< head>     \l" [ ]
+   "BB2\n3   conditional branch(ne) v4,v5:#null       \l" [ ]
+   "BB3\n4  return                                    \l" [ ]
+   "BB4\n6  GetOSSAInstruction:	O3_1= O1_1< tail>     \l" [ ]
+   "BB5\n7  GetOSSAInstruction:	O2_1= O3_1< object>   \l" [ ]
+   "BB6\n9   conditional branch(ne) v7,v2             \l" [ ]
+   "BB7\n12  PutOSSAInstruction:	O1_2< tail > = O1_1<V5>\l" [ ]
+   "BB8\n           O1_3 = Object-Phi(O1_1, O1_2 )\l14  GetOSSAInstruction:	O3_1= O1_3< head>    \l" [ ]
+   "BB9\n15  GetOSSAInstruction:	O2_1= O3_1< object>  \l" [ ]
+   "BB10\n17   conditional branch(ne) v9,v2            \l" [ ]
+   "BB11\n20  GetOSSAInstruction:	O3_1= O1_3< head>    \l" [ ]
+   "BB12\n21  GetOSSAInstruction:	O3_1= O3_1< next>    \l" [ ]
+   "BB13\n22  PutOSSAInstruction:	O1_4< head > = O1_3<refO3_1>\l" [ ]
+   "BB14\n23  return                                   \l" [ ]
+   "BB15\n25  GetOSSAInstruction:	O3_1= O1_3< head>    \l" [ ]
+   "BB16\n28  GetOSSAInstruction:	O3_1= O1_3< head>    \l" [ ]
+   "BB17\n29  GetOSSAInstruction:	O3_1= O3_1< next>    \l" [ ]
+   "BB18\n" [ ]
+   "BB19\n           v15 = phi  v16,v10\l           v16 = phi  v14,v12\l33   conditional branch(eq) v16,v5:#null     \l" [ ]
+   "BB20\n35  GetOSSAInstruction:	O2_1= O3_1< object>  \l" [ ]
+   "BB21\n37   conditional branch(ne) v13,v2           \l" [ ]
+   "BB22\n40  GetOSSAInstruction:	O3_1= O3_1< next>    \l" [ ]
+   "BB23\n41  PutOSSAInstruction:	O3_1< next > = O3_1<refO3_1>\l" [ ]
+   "BB24\n42  return                                   \l" [ ]
+   "BB25\n46  GetOSSAInstruction:	O3_1= O3_1< next>    \l" [ ]
+   "BB26\n48   goto                                    \l" [ ]
+   "BB27\n49  return                                   \l" [ ]
+   "BB28 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  GetOSSAInstruction:	O3_1= O1_1< head>     \l" 
+ "BB1\n1  GetOSSAInstruction:	O3_1= O1_1< head>     \l" -> "BB2\n3   conditional branch(ne) v4,v5:#null       \l" 
+ "BB2\n3   conditional branch(ne) v4,v5:#null       \l" -> "BB3\n4  return                                    \l" 
+ "BB2\n3   conditional branch(ne) v4,v5:#null       \l" -> "BB4\n6  GetOSSAInstruction:	O3_1= O1_1< tail>     \l" 
+ "BB3\n4  return                                    \l" -> "BB28 (ex)\n\n" 
+ "BB4\n6  GetOSSAInstruction:	O3_1= O1_1< tail>     \l" -> "BB5\n7  GetOSSAInstruction:	O2_1= O3_1< object>   \l" 
+ "BB5\n7  GetOSSAInstruction:	O2_1= O3_1< object>   \l" -> "BB6\n9   conditional branch(ne) v7,v2             \l" 
+ "BB6\n9   conditional branch(ne) v7,v2             \l" -> "BB7\n12  PutOSSAInstruction:	O1_2< tail > = O1_1<V5>\l" 
+ "BB6\n9   conditional branch(ne) v7,v2             \l" -> "BB8\n           O1_3 = Object-Phi(O1_1, O1_2 )\l14  GetOSSAInstruction:	O3_1= O1_3< head>    \l" 
+ "BB7\n12  PutOSSAInstruction:	O1_2< tail > = O1_1<V5>\l" -> "BB8\n           O1_3 = Object-Phi(O1_1, O1_2 )\l14  GetOSSAInstruction:	O3_1= O1_3< head>    \l" 
+ "BB8\n           O1_3 = Object-Phi(O1_1, O1_2 )\l14  GetOSSAInstruction:	O3_1= O1_3< head>    \l" -> "BB9\n15  GetOSSAInstruction:	O2_1= O3_1< object>  \l" 
+ "BB9\n15  GetOSSAInstruction:	O2_1= O3_1< object>  \l" -> "BB10\n17   conditional branch(ne) v9,v2            \l" 
+ "BB10\n17   conditional branch(ne) v9,v2            \l" -> "BB11\n20  GetOSSAInstruction:	O3_1= O1_3< head>    \l" 
+ "BB10\n17   conditional branch(ne) v9,v2            \l" -> "BB15\n25  GetOSSAInstruction:	O3_1= O1_3< head>    \l" 
+ "BB11\n20  GetOSSAInstruction:	O3_1= O1_3< head>    \l" -> "BB12\n21  GetOSSAInstruction:	O3_1= O3_1< next>    \l" 
+ "BB12\n21  GetOSSAInstruction:	O3_1= O3_1< next>    \l" -> "BB13\n22  PutOSSAInstruction:	O1_4< head > = O1_3<refO3_1>\l" 
+ "BB13\n22  PutOSSAInstruction:	O1_4< head > = O1_3<refO3_1>\l" -> "BB14\n23  return                                   \l" 
+ "BB14\n23  return                                   \l" -> "BB28 (ex)\n\n" 
+ "BB15\n25  GetOSSAInstruction:	O3_1= O1_3< head>    \l" -> "BB16\n28  GetOSSAInstruction:	O3_1= O1_3< head>    \l" 
+ "BB16\n28  GetOSSAInstruction:	O3_1= O1_3< head>    \l" -> "BB17\n29  GetOSSAInstruction:	O3_1= O3_1< next>    \l" 
+ "BB17\n29  GetOSSAInstruction:	O3_1= O3_1< next>    \l" -> "BB18\n" 
+ "BB18\n" -> "BB19\n           v15 = phi  v16,v10\l           v16 = phi  v14,v12\l33   conditional branch(eq) v16,v5:#null     \l" 
+ "BB19\n           v15 = phi  v16,v10\l           v16 = phi  v14,v12\l33   conditional branch(eq) v16,v5:#null     \l" -> "BB20\n35  GetOSSAInstruction:	O2_1= O3_1< object>  \l" 
+ "BB19\n           v15 = phi  v16,v10\l           v16 = phi  v14,v12\l33   conditional branch(eq) v16,v5:#null     \l" -> "BB27\n49  return                                   \l" 
+ "BB20\n35  GetOSSAInstruction:	O2_1= O3_1< object>  \l" -> "BB21\n37   conditional branch(ne) v13,v2           \l" 
+ "BB21\n37   conditional branch(ne) v13,v2           \l" -> "BB22\n40  GetOSSAInstruction:	O3_1= O3_1< next>    \l" 
+ "BB21\n37   conditional branch(ne) v13,v2           \l" -> "BB25\n46  GetOSSAInstruction:	O3_1= O3_1< next>    \l" 
+ "BB22\n40  GetOSSAInstruction:	O3_1= O3_1< next>    \l" -> "BB23\n41  PutOSSAInstruction:	O3_1< next > = O3_1<refO3_1>\l" 
+ "BB23\n41  PutOSSAInstruction:	O3_1< next > = O3_1<refO3_1>\l" -> "BB24\n42  return                                   \l" 
+ "BB24\n42  return                                   \l" -> "BB28 (ex)\n\n" 
+ "BB25\n46  GetOSSAInstruction:	O3_1= O3_1< next>    \l" -> "BB26\n48   goto                                    \l" 
+ "BB26\n48   goto                                    \l" -> "BB19\n           v15 = phi  v16,v10\l           v16 = phi  v14,v12\l33   conditional branch(eq) v16,v5:#null     \l" 
+ "BB27\n49  return                                   \l" -> "BB28 (ex)\n\n" 
+
+}

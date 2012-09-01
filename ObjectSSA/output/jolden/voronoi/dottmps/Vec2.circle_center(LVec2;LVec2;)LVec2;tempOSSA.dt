@@ -1,0 +1,38 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Vec2.circle_center(LVec2;LVec2;)LVec2;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2  O4_1 = < Application, LVec2, sub(LVec2;)LVec2; >( O2_1, O2_1 )\l" [ ]
+   "BB2\n5  O5_1 = < Application, LVec2, magn()D >( O4_1 )\l" [ ]
+   "BB3\n9  O6_1 = < Application, LVec2, sum(LVec2;)LVec2; >( O2_1, O2_1 )\l" [ ]
+   "BB4\n13  O7_1 = < Application, LVec2, times(D)LVec2; >( O6_1, V11 )\l" [ ]
+   "BB5\n17   v15 = compare v8,v14:#0.0 opcode=cmpg   \l19   conditional branch(ge) v15,v16:#0       \l" [ ]
+   "BB6\n21  Return O7_1                              \l" [ ]
+   "BB7\n24  O4_2 = < Application, LVec2, sub(LVec2;)LVec2; >( O2_1, O2_1 )\l" [ ]
+   "BB8\n28  O4_3 = < Application, LVec2, sub(LVec2;)LVec2; >( O2_1, O2_1 )\l" [ ]
+   "BB9\n32  O5_2 = < Application, LVec2, cprod(LVec2;)D >( O4_3, O4_3 )\l" [ ]
+   "BB10\n36   v24 = binaryop(mul) v23:#-2.0 , v22     \l40  O4_4 = < Application, LVec2, sub(LVec2;)LVec2; >( O2_1, O2_1 )\l" [ ]
+   "BB11\n44  O5_3 = < Application, LVec2, dot(LVec2;)D >( O4_4, O4_4 )\l" [ ]
+   "BB12\n47  O8_1 = < Application, LVec2, cross()LVec2; >( O4_4 )\l" [ ]
+   "BB13\n52   v31 = binaryop(div) v28 , v24           \l53  O7_2 = < Application, LVec2, times(D)LVec2; >( O8_1, V31 )\l" [ ]
+   "BB14\n57  O6_2 = < Application, LVec2, sum(LVec2;)LVec2; >( O7_2, O7_2 )\l" [ ]
+   "BB15\n58  Return O6_2                              \l" [ ]
+   "BB16 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2  O4_1 = < Application, LVec2, sub(LVec2;)LVec2; >( O2_1, O2_1 )\l" 
+ "BB1\n2  O4_1 = < Application, LVec2, sub(LVec2;)LVec2; >( O2_1, O2_1 )\l" -> "BB2\n5  O5_1 = < Application, LVec2, magn()D >( O4_1 )\l" 
+ "BB2\n5  O5_1 = < Application, LVec2, magn()D >( O4_1 )\l" -> "BB3\n9  O6_1 = < Application, LVec2, sum(LVec2;)LVec2; >( O2_1, O2_1 )\l" 
+ "BB3\n9  O6_1 = < Application, LVec2, sum(LVec2;)LVec2; >( O2_1, O2_1 )\l" -> "BB4\n13  O7_1 = < Application, LVec2, times(D)LVec2; >( O6_1, V11 )\l" 
+ "BB4\n13  O7_1 = < Application, LVec2, times(D)LVec2; >( O6_1, V11 )\l" -> "BB5\n17   v15 = compare v8,v14:#0.0 opcode=cmpg   \l19   conditional branch(ge) v15,v16:#0       \l" 
+ "BB5\n17   v15 = compare v8,v14:#0.0 opcode=cmpg   \l19   conditional branch(ge) v15,v16:#0       \l" -> "BB6\n21  Return O7_1                              \l" 
+ "BB5\n17   v15 = compare v8,v14:#0.0 opcode=cmpg   \l19   conditional branch(ge) v15,v16:#0       \l" -> "BB7\n24  O4_2 = < Application, LVec2, sub(LVec2;)LVec2; >( O2_1, O2_1 )\l" 
+ "BB6\n21  Return O7_1                              \l" -> "BB16 (ex)\n\n" 
+ "BB7\n24  O4_2 = < Application, LVec2, sub(LVec2;)LVec2; >( O2_1, O2_1 )\l" -> "BB8\n28  O4_3 = < Application, LVec2, sub(LVec2;)LVec2; >( O2_1, O2_1 )\l" 
+ "BB8\n28  O4_3 = < Application, LVec2, sub(LVec2;)LVec2; >( O2_1, O2_1 )\l" -> "BB9\n32  O5_2 = < Application, LVec2, cprod(LVec2;)D >( O4_3, O4_3 )\l" 
+ "BB9\n32  O5_2 = < Application, LVec2, cprod(LVec2;)D >( O4_3, O4_3 )\l" -> "BB10\n36   v24 = binaryop(mul) v23:#-2.0 , v22     \l40  O4_4 = < Application, LVec2, sub(LVec2;)LVec2; >( O2_1, O2_1 )\l" 
+ "BB10\n36   v24 = binaryop(mul) v23:#-2.0 , v22     \l40  O4_4 = < Application, LVec2, sub(LVec2;)LVec2; >( O2_1, O2_1 )\l" -> "BB11\n44  O5_3 = < Application, LVec2, dot(LVec2;)D >( O4_4, O4_4 )\l" 
+ "BB11\n44  O5_3 = < Application, LVec2, dot(LVec2;)D >( O4_4, O4_4 )\l" -> "BB12\n47  O8_1 = < Application, LVec2, cross()LVec2; >( O4_4 )\l" 
+ "BB12\n47  O8_1 = < Application, LVec2, cross()LVec2; >( O4_4 )\l" -> "BB13\n52   v31 = binaryop(div) v28 , v24           \l53  O7_2 = < Application, LVec2, times(D)LVec2; >( O8_1, V31 )\l" 
+ "BB13\n52   v31 = binaryop(div) v28 , v24           \l53  O7_2 = < Application, LVec2, times(D)LVec2; >( O8_1, V31 )\l" -> "BB14\n57  O6_2 = < Application, LVec2, sum(LVec2;)LVec2; >( O7_2, O7_2 )\l" 
+ "BB14\n57  O6_2 = < Application, LVec2, sum(LVec2;)LVec2; >( O7_2, O7_2 )\l" -> "BB15\n58  Return O6_2                              \l" 
+ "BB15\n58  Return O6_2                              \l" -> "BB16 (ex)\n\n" 
+
+}

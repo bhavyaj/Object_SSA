@@ -1,0 +1,28 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v4 = getfield < Application, LTree, sz, <Primordial,I> > v1\l" [ ]
+   "BB2\n3   conditional branch(gt) v4,v2   \l" [ ]
+   "BB3\n5   v14 = invokevirtual < Application, LTree, conquer()LTree; > v1 @9 exception:v13\l" [ ]
+   "BB4\n6   return v14                     \l" [ ]
+   "BB5\n8   v5 = getfield < Application, LTree, left, <Application,LTree> > v1\l" [ ]
+   "BB6\n10   v7 = invokevirtual < Application, LTree, tsp(I)LTree; > v5,v2 @18 exception:v6\l" [ ]
+   "BB7\n13   v8 = getfield < Application, LTree, right, <Application,LTree> > v1\l" [ ]
+   "BB8\n15   v10 = invokevirtual < Application, LTree, tsp(I)LTree; > v8,v2 @27 exception:v9\l" [ ]
+   "BB9\n20   v12 = invokevirtual < Application, LTree, merge(LTree;LTree;)LTree; > v1,v7,v10 @34 exception:v11\l" [ ]
+   "BB10\n21   return v12                    \l" [ ]
+   "BB11 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v4 = getfield < Application, LTree, sz, <Primordial,I> > v1\l" 
+ "BB1\n1   v4 = getfield < Application, LTree, sz, <Primordial,I> > v1\l" -> "BB2\n3   conditional branch(gt) v4,v2   \l" 
+ "BB2\n3   conditional branch(gt) v4,v2   \l" -> "BB3\n5   v14 = invokevirtual < Application, LTree, conquer()LTree; > v1 @9 exception:v13\l" 
+ "BB2\n3   conditional branch(gt) v4,v2   \l" -> "BB5\n8   v5 = getfield < Application, LTree, left, <Application,LTree> > v1\l" 
+ "BB3\n5   v14 = invokevirtual < Application, LTree, conquer()LTree; > v1 @9 exception:v13\l" -> "BB4\n6   return v14                     \l" 
+ "BB4\n6   return v14                     \l" -> "BB11 (ex)\n\n" 
+ "BB5\n8   v5 = getfield < Application, LTree, left, <Application,LTree> > v1\l" -> "BB6\n10   v7 = invokevirtual < Application, LTree, tsp(I)LTree; > v5,v2 @18 exception:v6\l" 
+ "BB6\n10   v7 = invokevirtual < Application, LTree, tsp(I)LTree; > v5,v2 @18 exception:v6\l" -> "BB7\n13   v8 = getfield < Application, LTree, right, <Application,LTree> > v1\l" 
+ "BB7\n13   v8 = getfield < Application, LTree, right, <Application,LTree> > v1\l" -> "BB8\n15   v10 = invokevirtual < Application, LTree, tsp(I)LTree; > v8,v2 @27 exception:v9\l" 
+ "BB8\n15   v10 = invokevirtual < Application, LTree, tsp(I)LTree; > v8,v2 @27 exception:v9\l" -> "BB9\n20   v12 = invokevirtual < Application, LTree, merge(LTree;LTree;)LTree; > v1,v7,v10 @34 exception:v11\l" 
+ "BB9\n20   v12 = invokevirtual < Application, LTree, merge(LTree;LTree;)LTree; > v1,v7,v10 @34 exception:v11\l" -> "BB10\n21   return v12                    \l" 
+ "BB10\n21   return v12                    \l" -> "BB11 (ex)\n\n" 
+
+}

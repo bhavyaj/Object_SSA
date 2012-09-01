@@ -1,0 +1,46 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Graph.addEdges(I)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n3  GetOSSAInstruction:	O2_1= O1_1< nodes>    \l" [ ]
+   "BB2\n5   v6 = arrayload v5[v4:#0]                 \l" [ ]
+   "BB3\n" [ ]
+   "BB4\n           O3_1 = diff-Object-Phi(O3_1, O3_2 )\l           v23 = phi  v20,v4:#0\l           v24 = phi  v22,v6\l9   conditional branch(eq) v24,v7:#null      \l" [ ]
+   "BB5\n11  O4_1 = < Application, LVertex, neighbors()LHashtable; >( O3_1 )\l" [ ]
+   "BB6\n" [ ]
+   "BB7\n           v25 = phi  v25,v23\l           v26 = phi  v26,v24\l           v19 = phi  v18,v4:#0\l17   conditional branch(ge) v19,v2           \l" [ ]
+   "BB8\n20   conditional branch(eq) v19,v25          \l" [ ]
+   "BB9\n25  O5_1 = < Application, LGraph, computeDist(III)I >( O1_1, V19, V25, V2 )\l" [ ]
+   "BB10\n29  GetOSSAInstruction:	O2_1= O1_1< nodes>   \l" [ ]
+   "BB11\n31   v13 = arrayload v12[v19]                \l" [ ]
+   "BB12\n32  Create O6_1                              \l" [ ]
+   "BB13\n35  < Application, Ljava/lang/Integer, <init>(I)V >( O6_1, V11 )\l" [ ]
+   "BB14\n36  < Application, LHashtable, put(Ljava/lang/Object;Ljava/lang/Object;)V >( O4_1, O3_1, O6_1 )\l" [ ]
+   "BB15\n39   v18 = binaryop(add) v19 , v17:#1        \l41   goto                                    \l" [ ]
+   "BB16\n44   v20 = binaryop(add) v25 , v17:#1        \l47  O3_2 = < Application, LVertex, next()LVertex; >( O3_1 )\l" [ ]
+   "BB17\n49   goto                                    \l" [ ]
+   "BB18\n50  return                                   \l" [ ]
+   "BB19 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n3  GetOSSAInstruction:	O2_1= O1_1< nodes>    \l" 
+ "BB1\n3  GetOSSAInstruction:	O2_1= O1_1< nodes>    \l" -> "BB2\n5   v6 = arrayload v5[v4:#0]                 \l" 
+ "BB2\n5   v6 = arrayload v5[v4:#0]                 \l" -> "BB3\n" 
+ "BB3\n" -> "BB4\n           O3_1 = diff-Object-Phi(O3_1, O3_2 )\l           v23 = phi  v20,v4:#0\l           v24 = phi  v22,v6\l9   conditional branch(eq) v24,v7:#null      \l" 
+ "BB4\n           O3_1 = diff-Object-Phi(O3_1, O3_2 )\l           v23 = phi  v20,v4:#0\l           v24 = phi  v22,v6\l9   conditional branch(eq) v24,v7:#null      \l" -> "BB5\n11  O4_1 = < Application, LVertex, neighbors()LHashtable; >( O3_1 )\l" 
+ "BB4\n           O3_1 = diff-Object-Phi(O3_1, O3_2 )\l           v23 = phi  v20,v4:#0\l           v24 = phi  v22,v6\l9   conditional branch(eq) v24,v7:#null      \l" -> "BB18\n50  return                                   \l" 
+ "BB5\n11  O4_1 = < Application, LVertex, neighbors()LHashtable; >( O3_1 )\l" -> "BB6\n" 
+ "BB6\n" -> "BB7\n           v25 = phi  v25,v23\l           v26 = phi  v26,v24\l           v19 = phi  v18,v4:#0\l17   conditional branch(ge) v19,v2           \l" 
+ "BB7\n           v25 = phi  v25,v23\l           v26 = phi  v26,v24\l           v19 = phi  v18,v4:#0\l17   conditional branch(ge) v19,v2           \l" -> "BB8\n20   conditional branch(eq) v19,v25          \l" 
+ "BB7\n           v25 = phi  v25,v23\l           v26 = phi  v26,v24\l           v19 = phi  v18,v4:#0\l17   conditional branch(ge) v19,v2           \l" -> "BB16\n44   v20 = binaryop(add) v25 , v17:#1        \l47  O3_2 = < Application, LVertex, next()LVertex; >( O3_1 )\l" 
+ "BB8\n20   conditional branch(eq) v19,v25          \l" -> "BB9\n25  O5_1 = < Application, LGraph, computeDist(III)I >( O1_1, V19, V25, V2 )\l" 
+ "BB8\n20   conditional branch(eq) v19,v25          \l" -> "BB15\n39   v18 = binaryop(add) v19 , v17:#1        \l41   goto                                    \l" 
+ "BB9\n25  O5_1 = < Application, LGraph, computeDist(III)I >( O1_1, V19, V25, V2 )\l" -> "BB10\n29  GetOSSAInstruction:	O2_1= O1_1< nodes>   \l" 
+ "BB10\n29  GetOSSAInstruction:	O2_1= O1_1< nodes>   \l" -> "BB11\n31   v13 = arrayload v12[v19]                \l" 
+ "BB11\n31   v13 = arrayload v12[v19]                \l" -> "BB12\n32  Create O6_1                              \l" 
+ "BB12\n32  Create O6_1                              \l" -> "BB13\n35  < Application, Ljava/lang/Integer, <init>(I)V >( O6_1, V11 )\l" 
+ "BB13\n35  < Application, Ljava/lang/Integer, <init>(I)V >( O6_1, V11 )\l" -> "BB14\n36  < Application, LHashtable, put(Ljava/lang/Object;Ljava/lang/Object;)V >( O4_1, O3_1, O6_1 )\l" 
+ "BB14\n36  < Application, LHashtable, put(Ljava/lang/Object;Ljava/lang/Object;)V >( O4_1, O3_1, O6_1 )\l" -> "BB15\n39   v18 = binaryop(add) v19 , v17:#1        \l41   goto                                    \l" 
+ "BB15\n39   v18 = binaryop(add) v19 , v17:#1        \l41   goto                                    \l" -> "BB7\n           v25 = phi  v25,v23\l           v26 = phi  v26,v24\l           v19 = phi  v18,v4:#0\l17   conditional branch(ge) v19,v2           \l" 
+ "BB16\n44   v20 = binaryop(add) v25 , v17:#1        \l47  O3_2 = < Application, LVertex, next()LVertex; >( O3_1 )\l" -> "BB17\n49   goto                                    \l" 
+ "BB17\n49   goto                                    \l" -> "BB4\n           O3_1 = diff-Object-Phi(O3_1, O3_2 )\l           v23 = phi  v20,v4:#0\l           v24 = phi  v22,v6\l9   conditional branch(eq) v24,v7:#null      \l" 
+ "BB18\n50  return                                   \l" -> "BB19 (ex)\n\n" 
+
+}

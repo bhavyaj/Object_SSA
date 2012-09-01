@@ -1,0 +1,32 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v4 = new <Application,[LNode>@1v1 \l" [ ]
+   "BB2\n3   v5 = new <Application,LNode>@5 \l" [ ]
+   "BB3\n6   invokespecial < Application, LNode, <init>(I)V > v5,v2 @10 exception:v6\l" [ ]
+   "BB4\n11   arraystore v4[v7:#0] = v5     \l" [ ]
+   "BB5\n" [ ]
+   "BB6\n           v12 = phi  v9,v5\l           v13 = phi  v11,v8:#1\l16   conditional branch(ge) v13,v1 \l" [ ]
+   "BB7\n17   v9 = new <Application,LNode>@27\l" [ ]
+   "BB8\n20   invokespecial < Application, LNode, <init>(I)V > v9,v2 @32 exception:v10\l" [ ]
+   "BB9\n25   arraystore v4[v13] = v9       \l" [ ]
+   "BB10\n28   putfield v12 = v9 < Application, LNode, next, <Application,LNode> >\l" [ ]
+   "BB11\n33   v11 = binaryop(add) v13 , v8:#1\l35   goto                          \l" [ ]
+   "BB12\n37   return v4                     \l" [ ]
+   "BB13 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v4 = new <Application,[LNode>@1v1 \l" 
+ "BB1\n1   v4 = new <Application,[LNode>@1v1 \l" -> "BB2\n3   v5 = new <Application,LNode>@5 \l" 
+ "BB2\n3   v5 = new <Application,LNode>@5 \l" -> "BB3\n6   invokespecial < Application, LNode, <init>(I)V > v5,v2 @10 exception:v6\l" 
+ "BB3\n6   invokespecial < Application, LNode, <init>(I)V > v5,v2 @10 exception:v6\l" -> "BB4\n11   arraystore v4[v7:#0] = v5     \l" 
+ "BB4\n11   arraystore v4[v7:#0] = v5     \l" -> "BB5\n" 
+ "BB5\n" -> "BB6\n           v12 = phi  v9,v5\l           v13 = phi  v11,v8:#1\l16   conditional branch(ge) v13,v1 \l" 
+ "BB6\n           v12 = phi  v9,v5\l           v13 = phi  v11,v8:#1\l16   conditional branch(ge) v13,v1 \l" -> "BB7\n17   v9 = new <Application,LNode>@27\l" 
+ "BB6\n           v12 = phi  v9,v5\l           v13 = phi  v11,v8:#1\l16   conditional branch(ge) v13,v1 \l" -> "BB12\n37   return v4                     \l" 
+ "BB7\n17   v9 = new <Application,LNode>@27\l" -> "BB8\n20   invokespecial < Application, LNode, <init>(I)V > v9,v2 @32 exception:v10\l" 
+ "BB8\n20   invokespecial < Application, LNode, <init>(I)V > v9,v2 @32 exception:v10\l" -> "BB9\n25   arraystore v4[v13] = v9       \l" 
+ "BB9\n25   arraystore v4[v13] = v9       \l" -> "BB10\n28   putfield v12 = v9 < Application, LNode, next, <Application,LNode> >\l" 
+ "BB10\n28   putfield v12 = v9 < Application, LNode, next, <Application,LNode> >\l" -> "BB11\n33   v11 = binaryop(add) v13 , v8:#1\l35   goto                          \l" 
+ "BB11\n33   v11 = binaryop(add) v13 , v8:#1\l35   goto                          \l" -> "BB6\n           v12 = phi  v9,v5\l           v13 = phi  v11,v8:#1\l16   conditional branch(ge) v13,v1 \l" 
+ "BB12\n37   return v4                     \l" -> "BB13 (ex)\n\n" 
+
+}

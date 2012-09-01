@@ -1,0 +1,9 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for BH.<clinit>()V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   putstatic v2:#0 < Application, LBH, nbody, <Primordial,I> >\l3   putstatic v3:#10 < Application, LBH, nsteps, <Primordial,I> >\l5   putstatic v2:#0 < Application, LBH, printMsgs, <Primordial,Z> >\l7   putstatic v2:#0 < Application, LBH, printResults, <Primordial,Z> >\l9   putstatic v4:#0.0125 < Application, LBH, DTIME, <Primordial,D> >\l11   putstatic v5:#2.0 < Application, LBH, TSTOP, <Primordial,D> >\l12  return                                   \l" [ ]
+   "BB2 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   putstatic v2:#0 < Application, LBH, nbody, <Primordial,I> >\l3   putstatic v3:#10 < Application, LBH, nsteps, <Primordial,I> >\l5   putstatic v2:#0 < Application, LBH, printMsgs, <Primordial,Z> >\l7   putstatic v2:#0 < Application, LBH, printResults, <Primordial,Z> >\l9   putstatic v4:#0.0125 < Application, LBH, DTIME, <Primordial,D> >\l11   putstatic v5:#2.0 < Application, LBH, TSTOP, <Primordial,D> >\l12  return                                   \l" 
+ "BB1\n1   putstatic v2:#0 < Application, LBH, nbody, <Primordial,I> >\l3   putstatic v3:#10 < Application, LBH, nsteps, <Primordial,I> >\l5   putstatic v2:#0 < Application, LBH, printMsgs, <Primordial,Z> >\l7   putstatic v2:#0 < Application, LBH, printResults, <Primordial,Z> >\l9   putstatic v4:#0.0125 < Application, LBH, DTIME, <Primordial,D> >\l11   putstatic v5:#2.0 < Application, LBH, TSTOP, <Primordial,D> >\l12  return                                   \l" -> "BB2 (ex)\n\n" 
+
+}

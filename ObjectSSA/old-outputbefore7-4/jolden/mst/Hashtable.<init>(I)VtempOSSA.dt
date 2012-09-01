@@ -1,0 +1,32 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Hashtable.<init>(I)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v4\l" [ ]
+   "BB2\n4  PutOSSAInstruction:	O1_1< size > = O1_1<V2>\l" [ ]
+   "BB3\n7  GetOSSAInstruction:	5= O1_1< size>        \l" [ ]
+   "BB4\n8  Create O2_1                               \l" [ ]
+   "BB5\n9  PutOSSAInstruction:	O1_2< array > = O1_1<refO2_1>\l" [ ]
+   "BB6\n" [ ]
+   "BB7\n           v13 = phi  v12,v7:#0\l14  GetOSSAInstruction:	8= O1_2< size>       \l" [ ]
+   "BB8\n15   conditional branch(ge) v13,v8           \l" [ ]
+   "BB9\n17  GetOSSAInstruction:	O2_1= O1_2< array>   \l" [ ]
+   "BB10\n20   arraystore v9[v13] = v10:#null          \l" [ ]
+   "BB11\n23   v12 = binaryop(add) v13 , v11:#1        \l25   goto                                    \l" [ ]
+   "BB12\n26  return                                   \l" [ ]
+   "BB13 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v4\l" 
+ "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v4\l" -> "BB2\n4  PutOSSAInstruction:	O1_1< size > = O1_1<V2>\l" 
+ "BB2\n4  PutOSSAInstruction:	O1_1< size > = O1_1<V2>\l" -> "BB3\n7  GetOSSAInstruction:	5= O1_1< size>        \l" 
+ "BB3\n7  GetOSSAInstruction:	5= O1_1< size>        \l" -> "BB4\n8  Create O2_1                               \l" 
+ "BB4\n8  Create O2_1                               \l" -> "BB5\n9  PutOSSAInstruction:	O1_2< array > = O1_1<refO2_1>\l" 
+ "BB5\n9  PutOSSAInstruction:	O1_2< array > = O1_1<refO2_1>\l" -> "BB6\n" 
+ "BB6\n" -> "BB7\n           v13 = phi  v12,v7:#0\l14  GetOSSAInstruction:	8= O1_2< size>       \l" 
+ "BB7\n           v13 = phi  v12,v7:#0\l14  GetOSSAInstruction:	8= O1_2< size>       \l" -> "BB8\n15   conditional branch(ge) v13,v8           \l" 
+ "BB8\n15   conditional branch(ge) v13,v8           \l" -> "BB9\n17  GetOSSAInstruction:	O2_1= O1_2< array>   \l" 
+ "BB8\n15   conditional branch(ge) v13,v8           \l" -> "BB12\n26  return                                   \l" 
+ "BB9\n17  GetOSSAInstruction:	O2_1= O1_2< array>   \l" -> "BB10\n20   arraystore v9[v13] = v10:#null          \l" 
+ "BB10\n20   arraystore v9[v13] = v10:#null          \l" -> "BB11\n23   v12 = binaryop(add) v13 , v11:#1        \l25   goto                                    \l" 
+ "BB11\n23   v12 = binaryop(add) v13 , v11:#1        \l25   goto                                    \l" -> "BB7\n           v13 = phi  v12,v7:#0\l14  GetOSSAInstruction:	8= O1_2< size>       \l" 
+ "BB12\n26  return                                   \l" -> "BB13 (ex)\n\n" 
+
+}

@@ -1,0 +1,69 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Body.subindex(LTree;I)I", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0  Create O3_1                               \l" [ ]
+   "BB2\n2   invokespecial < Application, LMathVector, <init>()V > v5 @4 exception:v6\l" [ ]
+   "BB3\n5  GetOSSAInstruction:	O4_1= O1_1< pos>      \l" [ ]
+   "BB4\n7   v10 = invokevirtual < Application, LMathVector, value(I)D > v7,v8:#0 @13 exception:v9\l" [ ]
+   "BB5\n9  GetOSSAInstruction:	O5_1= O2_1< rmin>     \l" [ ]
+   "BB6\n11   v13 = invokevirtual < Application, LMathVector, value(I)D > v11,v8:#0 @21 exception:v12\l" [ ]
+   "BB7\n12   v14 = binaryop(sub) v10 , v13           \l14  GetOSSAInstruction:	15= O2_1< rsize>     \l" [ ]
+   "BB8\n15   v16 = binaryop(div) v14 , v15           \l21   v18 = binaryop(mul) v17:#1.073741824E9 , v16\l22   v20 = invokestatic < Application, Ljava/lang/Math, floor(D)D > v18 @40 exception:v19\l" [ ]
+   "BB9\n23   invokevirtual < Application, LMathVector, value(ID)V > v5,v8:#0,v20 @43 exception:v21\l" [ ]
+   "BB10\n25  GetOSSAInstruction:	O4_1= O1_1< pos>     \l" [ ]
+   "BB11\n27   v25 = invokevirtual < Application, LMathVector, value(I)D > v22,v23:#1 @51 exception:v24\l" [ ]
+   "BB12\n29  GetOSSAInstruction:	O5_1= O2_1< rmin>    \l" [ ]
+   "BB13\n31   v28 = invokevirtual < Application, LMathVector, value(I)D > v26,v23:#1 @59 exception:v27\l" [ ]
+   "BB14\n32   v29 = binaryop(sub) v25 , v28           \l34  GetOSSAInstruction:	30= O2_1< rsize>     \l" [ ]
+   "BB15\n35   v31 = binaryop(div) v29 , v30           \l41   v32 = binaryop(mul) v17:#1.073741824E9 , v31\l42   v34 = invokestatic < Application, Ljava/lang/Math, floor(D)D > v32 @78 exception:v33\l" [ ]
+   "BB16\n43   invokevirtual < Application, LMathVector, value(ID)V > v5,v23:#1,v34 @81 exception:v35\l" [ ]
+   "BB17\n45  GetOSSAInstruction:	O4_1= O1_1< pos>     \l" [ ]
+   "BB18\n47   v39 = invokevirtual < Application, LMathVector, value(I)D > v36,v37:#2 @89 exception:v38\l" [ ]
+   "BB19\n49  GetOSSAInstruction:	O5_1= O2_1< rmin>    \l" [ ]
+   "BB20\n51   v42 = invokevirtual < Application, LMathVector, value(I)D > v40,v37:#2 @97 exception:v41\l" [ ]
+   "BB21\n52   v43 = binaryop(sub) v39 , v42           \l54  GetOSSAInstruction:	44= O2_1< rsize>     \l" [ ]
+   "BB22\n55   v45 = binaryop(div) v43 , v44           \l61   v46 = binaryop(mul) v17:#1.073741824E9 , v45\l62   v48 = invokestatic < Application, Ljava/lang/Math, floor(D)D > v46 @116 exception:v47\l" [ ]
+   "BB23\n63   invokevirtual < Application, LMathVector, value(ID)V > v5,v37:#2,v48 @119 exception:v49\l" [ ]
+   "BB24\n" [ ]
+   "BB25\n           v61 = phi  v59,v8:#0\l           v62 = phi  v60,v8:#0\l70   conditional branch(ge) v62,v50:#3       \l" [ ]
+   "BB26\n73   v52 = invokevirtual < Application, LMathVector, value(I)D > v5,v62 @137 exception:v51\l" [ ]
+   "BB27\n74   v53 = conversion(I) v52                 \l76   v54 = binaryop(and) v53 , v3            \l78   conditional branch(eq) v54,v8:#0        \l" [ ]
+   "BB28\n83   v56 = binaryop(add) v62 , v23:#1        \l84   v57 = binaryop(SHR) v55:#8 , v56        \l85   v58 = binaryop(add) v61 , v57           \l" [ ]
+   "BB29\n           v59 = phi  v61,v58\l89   v60 = binaryop(add) v62 , v23:#1        \l91   goto                                    \l" [ ]
+   "BB30\n93   return v61                              \l" [ ]
+   "BB31 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0  Create O3_1                               \l" 
+ "BB1\n0  Create O3_1                               \l" -> "BB2\n2   invokespecial < Application, LMathVector, <init>()V > v5 @4 exception:v6\l" 
+ "BB2\n2   invokespecial < Application, LMathVector, <init>()V > v5 @4 exception:v6\l" -> "BB3\n5  GetOSSAInstruction:	O4_1= O1_1< pos>      \l" 
+ "BB3\n5  GetOSSAInstruction:	O4_1= O1_1< pos>      \l" -> "BB4\n7   v10 = invokevirtual < Application, LMathVector, value(I)D > v7,v8:#0 @13 exception:v9\l" 
+ "BB4\n7   v10 = invokevirtual < Application, LMathVector, value(I)D > v7,v8:#0 @13 exception:v9\l" -> "BB5\n9  GetOSSAInstruction:	O5_1= O2_1< rmin>     \l" 
+ "BB5\n9  GetOSSAInstruction:	O5_1= O2_1< rmin>     \l" -> "BB6\n11   v13 = invokevirtual < Application, LMathVector, value(I)D > v11,v8:#0 @21 exception:v12\l" 
+ "BB6\n11   v13 = invokevirtual < Application, LMathVector, value(I)D > v11,v8:#0 @21 exception:v12\l" -> "BB7\n12   v14 = binaryop(sub) v10 , v13           \l14  GetOSSAInstruction:	15= O2_1< rsize>     \l" 
+ "BB7\n12   v14 = binaryop(sub) v10 , v13           \l14  GetOSSAInstruction:	15= O2_1< rsize>     \l" -> "BB8\n15   v16 = binaryop(div) v14 , v15           \l21   v18 = binaryop(mul) v17:#1.073741824E9 , v16\l22   v20 = invokestatic < Application, Ljava/lang/Math, floor(D)D > v18 @40 exception:v19\l" 
+ "BB8\n15   v16 = binaryop(div) v14 , v15           \l21   v18 = binaryop(mul) v17:#1.073741824E9 , v16\l22   v20 = invokestatic < Application, Ljava/lang/Math, floor(D)D > v18 @40 exception:v19\l" -> "BB9\n23   invokevirtual < Application, LMathVector, value(ID)V > v5,v8:#0,v20 @43 exception:v21\l" 
+ "BB9\n23   invokevirtual < Application, LMathVector, value(ID)V > v5,v8:#0,v20 @43 exception:v21\l" -> "BB10\n25  GetOSSAInstruction:	O4_1= O1_1< pos>     \l" 
+ "BB10\n25  GetOSSAInstruction:	O4_1= O1_1< pos>     \l" -> "BB11\n27   v25 = invokevirtual < Application, LMathVector, value(I)D > v22,v23:#1 @51 exception:v24\l" 
+ "BB11\n27   v25 = invokevirtual < Application, LMathVector, value(I)D > v22,v23:#1 @51 exception:v24\l" -> "BB12\n29  GetOSSAInstruction:	O5_1= O2_1< rmin>    \l" 
+ "BB12\n29  GetOSSAInstruction:	O5_1= O2_1< rmin>    \l" -> "BB13\n31   v28 = invokevirtual < Application, LMathVector, value(I)D > v26,v23:#1 @59 exception:v27\l" 
+ "BB13\n31   v28 = invokevirtual < Application, LMathVector, value(I)D > v26,v23:#1 @59 exception:v27\l" -> "BB14\n32   v29 = binaryop(sub) v25 , v28           \l34  GetOSSAInstruction:	30= O2_1< rsize>     \l" 
+ "BB14\n32   v29 = binaryop(sub) v25 , v28           \l34  GetOSSAInstruction:	30= O2_1< rsize>     \l" -> "BB15\n35   v31 = binaryop(div) v29 , v30           \l41   v32 = binaryop(mul) v17:#1.073741824E9 , v31\l42   v34 = invokestatic < Application, Ljava/lang/Math, floor(D)D > v32 @78 exception:v33\l" 
+ "BB15\n35   v31 = binaryop(div) v29 , v30           \l41   v32 = binaryop(mul) v17:#1.073741824E9 , v31\l42   v34 = invokestatic < Application, Ljava/lang/Math, floor(D)D > v32 @78 exception:v33\l" -> "BB16\n43   invokevirtual < Application, LMathVector, value(ID)V > v5,v23:#1,v34 @81 exception:v35\l" 
+ "BB16\n43   invokevirtual < Application, LMathVector, value(ID)V > v5,v23:#1,v34 @81 exception:v35\l" -> "BB17\n45  GetOSSAInstruction:	O4_1= O1_1< pos>     \l" 
+ "BB17\n45  GetOSSAInstruction:	O4_1= O1_1< pos>     \l" -> "BB18\n47   v39 = invokevirtual < Application, LMathVector, value(I)D > v36,v37:#2 @89 exception:v38\l" 
+ "BB18\n47   v39 = invokevirtual < Application, LMathVector, value(I)D > v36,v37:#2 @89 exception:v38\l" -> "BB19\n49  GetOSSAInstruction:	O5_1= O2_1< rmin>    \l" 
+ "BB19\n49  GetOSSAInstruction:	O5_1= O2_1< rmin>    \l" -> "BB20\n51   v42 = invokevirtual < Application, LMathVector, value(I)D > v40,v37:#2 @97 exception:v41\l" 
+ "BB20\n51   v42 = invokevirtual < Application, LMathVector, value(I)D > v40,v37:#2 @97 exception:v41\l" -> "BB21\n52   v43 = binaryop(sub) v39 , v42           \l54  GetOSSAInstruction:	44= O2_1< rsize>     \l" 
+ "BB21\n52   v43 = binaryop(sub) v39 , v42           \l54  GetOSSAInstruction:	44= O2_1< rsize>     \l" -> "BB22\n55   v45 = binaryop(div) v43 , v44           \l61   v46 = binaryop(mul) v17:#1.073741824E9 , v45\l62   v48 = invokestatic < Application, Ljava/lang/Math, floor(D)D > v46 @116 exception:v47\l" 
+ "BB22\n55   v45 = binaryop(div) v43 , v44           \l61   v46 = binaryop(mul) v17:#1.073741824E9 , v45\l62   v48 = invokestatic < Application, Ljava/lang/Math, floor(D)D > v46 @116 exception:v47\l" -> "BB23\n63   invokevirtual < Application, LMathVector, value(ID)V > v5,v37:#2,v48 @119 exception:v49\l" 
+ "BB23\n63   invokevirtual < Application, LMathVector, value(ID)V > v5,v37:#2,v48 @119 exception:v49\l" -> "BB24\n" 
+ "BB24\n" -> "BB25\n           v61 = phi  v59,v8:#0\l           v62 = phi  v60,v8:#0\l70   conditional branch(ge) v62,v50:#3       \l" 
+ "BB25\n           v61 = phi  v59,v8:#0\l           v62 = phi  v60,v8:#0\l70   conditional branch(ge) v62,v50:#3       \l" -> "BB26\n73   v52 = invokevirtual < Application, LMathVector, value(I)D > v5,v62 @137 exception:v51\l" 
+ "BB25\n           v61 = phi  v59,v8:#0\l           v62 = phi  v60,v8:#0\l70   conditional branch(ge) v62,v50:#3       \l" -> "BB30\n93   return v61                              \l" 
+ "BB26\n73   v52 = invokevirtual < Application, LMathVector, value(I)D > v5,v62 @137 exception:v51\l" -> "BB27\n74   v53 = conversion(I) v52                 \l76   v54 = binaryop(and) v53 , v3            \l78   conditional branch(eq) v54,v8:#0        \l" 
+ "BB27\n74   v53 = conversion(I) v52                 \l76   v54 = binaryop(and) v53 , v3            \l78   conditional branch(eq) v54,v8:#0        \l" -> "BB28\n83   v56 = binaryop(add) v62 , v23:#1        \l84   v57 = binaryop(SHR) v55:#8 , v56        \l85   v58 = binaryop(add) v61 , v57           \l" 
+ "BB27\n74   v53 = conversion(I) v52                 \l76   v54 = binaryop(and) v53 , v3            \l78   conditional branch(eq) v54,v8:#0        \l" -> "BB29\n           v59 = phi  v61,v58\l89   v60 = binaryop(add) v62 , v23:#1        \l91   goto                                    \l" 
+ "BB28\n83   v56 = binaryop(add) v62 , v23:#1        \l84   v57 = binaryop(SHR) v55:#8 , v56        \l85   v58 = binaryop(add) v61 , v57           \l" -> "BB29\n           v59 = phi  v61,v58\l89   v60 = binaryop(add) v62 , v23:#1        \l91   goto                                    \l" 
+ "BB29\n           v59 = phi  v61,v58\l89   v60 = binaryop(add) v62 , v23:#1        \l91   goto                                    \l" -> "BB25\n           v61 = phi  v59,v8:#0\l           v62 = phi  v60,v8:#0\l70   conditional branch(ge) v62,v50:#3       \l" 
+ "BB30\n93   return v61                              \l" -> "BB31 (ex)\n\n" 
+
+}

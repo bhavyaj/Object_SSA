@@ -1,0 +1,155 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0   v4 = new <Application,LMathVector>@0\l" [ ]
+   "BB2\n2   invokespecial < Application, LMathVector, <init>()V > v4 @4 exception:v5\l" [ ]
+   "BB3\n4   v6 = new <Application,LMathVector>@8\l" [ ]
+   "BB4\n6   invokespecial < Application, LMathVector, <init>()V > v6 @12 exception:v7\l" [ ]
+   "BB5\n8   v8 = new <Application,LBody>@16\l" [ ]
+   "BB6\n10   invokespecial < Application, LBody, <init>()V > v8 @20 exception:v9\l" [ ]
+   "BB7\n18   v12 = binaryop(div) v11:#1.0 , v10:#0.5890486225480862\l19   v14 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v12 @38 exception:v13\l" [ ]
+   "BB8\n" [ ]
+   "BB9\n           v104 = phi  v17,v8\l           v105 = phi  v89,v15:#123.0\l           v106 = phi  v103,v16:#0\l27   conditional branch(ge) v106,v2\l" [ ]
+   "BB10\n28   v17 = new <Application,LBody>@57\l" [ ]
+   "BB11\n30   invokespecial < Application, LBody, <init>()V > v17 @61 exception:v18\l" [ ]
+   "BB12\n34   invokevirtual < Application, LBody, setNext(LBody;)V > v104,v17 @70 exception:v19\l" [ ]
+   "BB13\n40   v20 = conversion(D) v2        \l41   v21 = binaryop(div) v11:#1.0 , v20\l42   putfield v17 = v21 < Application, LBody, mass, <Primordial,D> >\l" [ ]
+   "BB14\n44   v23 = invokestatic < Application, LBH, myRand(D)D > v105 @88 exception:v22\l" [ ]
+   "BB15\n49   v27 = invokestatic < Application, LBH, xRand(DDD)D > v24:#0.0,v25:#0.999,v23 @99 exception:v26\l" [ ]
+   "BB16\n53   v30 = invokestatic < Application, Ljava/lang/Math, pow(DD)D > v27,v28:#-0.6666666666666666 @109 exception:v29\l" [ ]
+   "BB17\n55   v31 = binaryop(sub) v30 , v11:#1.0\l59   v33 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v31 @119 exception:v32\l" [ ]
+   "BB18\n60   v34 = binaryop(div) v11:#1.0 , v33\l" [ ]
+   "BB19\n           v46 = phi  v38,v23\l           v107 = phi  v107,v106\l           v47 = phi  v40,v34\l           v48 = phi  v45,v16:#0\l68   conditional branch(ge) v48,v36:#3\l" [ ]
+   "BB20\n70   v38 = invokestatic < Application, LBH, myRand(D)D > v46 @141 exception:v37\l" [ ]
+   "BB21\n75   v40 = invokestatic < Application, LBH, xRand(DDD)D > v24:#0.0,v25:#0.999,v38 @152 exception:v39\l" [ ]
+   "BB22\n78   v41 = getfield < Application, LBody, pos, <Application,LMathVector> > v17\l" [ ]
+   "BB23\n82   v42 = binaryop(mul) v35:#4.0 , v40\l83   invokevirtual < Application, LMathVector, value(ID)V > v41,v48,v42 @169 exception:v43\l" [ ]
+   "BB24\n86   v45 = binaryop(add) v48 , v44:#1\l88   goto                          \l" [ ]
+   "BB25\n91   v49 = getfield < Application, LBody, pos, <Application,LMathVector> > v17\l" [ ]
+   "BB26\n92   invokevirtual < Application, LMathVector, addition(LMathVector;)V > v4,v49 @184 exception:v50\l" [ ]
+   "BB27\n           v68 = phi  v56,v46\l           v108 = phi  v108,v107\l94   v52 = invokestatic < Application, LBH, myRand(D)D > v68 @189 exception:v51\l" [ ]
+   "BB28\n99   v54 = invokestatic < Application, LBH, xRand(DDD)D > v24:#0.0,v11:#1.0,v52 @198 exception:v53\l" [ ]
+   "BB29\n102   v56 = invokestatic < Application, LBH, myRand(D)D > v52 @205 exception:v55\l" [ ]
+   "BB30\n107   v59 = invokestatic < Application, LBH, xRand(DDD)D > v24:#0.0,v57:#0.1,v56 @216 exception:v58\l" [ ]
+   "BB31\n112   v60 = binaryop(mul) v54 , v54\l116   v61 = binaryop(mul) v54 , v54\l117   v62 = binaryop(sub) v11:#1.0 , v61\l119   v65 = invokestatic < Application, Ljava/lang/Math, pow(DD)D > v62,v63:#3.5 @238 exception:v64\l" [ ]
+   "BB32\n120   v66 = binaryop(mul) v60 , v65\l121   v67 = compare v59,v66 opcode=cmpl\l123   conditional branch(gt) v67,v16:#0\l" [ ]
+   "BB33\n125   v72 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v70:#2.0 @249 exception:v71\l" [ ]
+   "BB34\n127   v73 = binaryop(mul) v72 , v54\l131   v74 = binaryop(mul) v47 , v47\l132   v75 = binaryop(add) v11:#1.0 , v74\l134   v78 = invokestatic < Application, Ljava/lang/Math, pow(DD)D > v75,v76:#0.25 @265 exception:v77\l" [ ]
+   "BB35\n135   v79 = binaryop(div) v73 , v78\l139   v80 = binaryop(mul) v14 , v79\l" [ ]
+   "BB36\n           v95 = phi  v89,v56\l           v109 = phi  v110,v108\l" [ ]
+   "BB37\n           v89 = phi  v82,v95\l           v110 = phi  v110,v109\l           v90 = phi  v88,v16:#0\l145   conditional branch(ge) v90,v36:#3\l" [ ]
+   "BB38\n147   v82 = invokestatic < Application, LBH, myRand(D)D > v89 @289 exception:v81\l" [ ]
+   "BB39\n150   v83 = getfield < Application, LBody, vel, <Application,LMathVector> > v17\l" [ ]
+   "BB40\n155   v86 = invokestatic < Application, LBH, xRand(DDD)D > v84:#-1.0,v11:#1.0,v82 @307 exception:v85\l" [ ]
+   "BB41\n156   invokevirtual < Application, LMathVector, value(ID)V > v83,v90,v86 @310 exception:v87\l" [ ]
+   "BB42\n159   v88 = binaryop(add) v90 , v44:#1\l161   goto                         \l" [ ]
+   "BB43\n163   v91 = getfield < Application, LBody, vel, <Application,LMathVector> > v17\l" [ ]
+   "BB44\n164   v93 = invokevirtual < Application, LMathVector, dotProduct()D > v91 @324 exception:v92\l" [ ]
+   "BB45\n168   v94 = compare v93,v11:#1.0 opcode=cmpl\l170   conditional branch(gt) v94,v16:#0\l" [ ]
+   "BB46\n173   v97 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v93 @340 exception:v96\l" [ ]
+   "BB47\n174   v98 = binaryop(div) v80 , v97\l177   v99 = getfield < Application, LBody, vel, <Application,LMathVector> > v17\l" [ ]
+   "BB48\n179   invokevirtual < Application, LMathVector, multScalar(D)V > v99,v98 @353 exception:v100\l" [ ]
+   "BB49\n182   v101 = getfield < Application, LBody, vel, <Application,LMathVector> > v17\l" [ ]
+   "BB50\n183   invokevirtual < Application, LMathVector, addition(LMathVector;)V > v6,v101 @362 exception:v102\l" [ ]
+   "BB51\n186   v103 = binaryop(add) v110 , v44:#1\l188   goto                         \l" [ ]
+   "BB52\n191   invokevirtual < Application, LBody, setNext(LBody;)V > v104,v111:#null @374 exception:v112\l" [ ]
+   "BB53\n194   v114 = invokevirtual < Application, LBody, getNext()LBody; > v8 @380 exception:v113\l" [ ]
+   "BB54\n195   putfield v1 = v114 < Application, LTree, bodyTab, <Application,LBody> >\l" [ ]
+   "BB55\n198   v115 = conversion(D) v2      \l199   invokevirtual < Application, LMathVector, divScalar(D)V > v4,v115 @389 exception:v116\l" [ ]
+   "BB56\n202   v117 = conversion(D) v2      \l203   invokevirtual < Application, LMathVector, divScalar(D)V > v6,v117 @395 exception:v118\l" [ ]
+   "BB57\n207   v119 = getfield < Application, LTree, bodyTab, <Application,LBody> > v1\l" [ ]
+   "BB58\n208   v121 = invokevirtual < Application, LBody, elements()Ljava/util/Enumeration; > v119 @405 exception:v120\l" [ ]
+   "BB59\n" [ ]
+   "BB60\n           v132 = phi  v126,v111:#null\l211   v123 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v121 @412 exception:v122\l" [ ]
+   "BB61\n213   conditional branch(eq) v123,v16:#0\l" [ ]
+   "BB62\n215   v125 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v121 @422 exception:v124\l" [ ]
+   "BB63\n216   v126 = checkcast <Application,LBody>v125\l" [ ]
+   "BB64\n219   v127 = getfield < Application, LBody, pos, <Application,LMathVector> > v126\l" [ ]
+   "BB65\n221   invokevirtual < Application, LMathVector, subtraction(LMathVector;)V > v127,v4 @438 exception:v128\l" [ ]
+   "BB66\n223   v129 = getfield < Application, LBody, vel, <Application,LMathVector> > v126\l" [ ]
+   "BB67\n225   invokevirtual < Application, LMathVector, subtraction(LMathVector;)V > v129,v6 @447 exception:v130\l" [ ]
+   "BB68\n228   invokevirtual < Application, LBody, setProcNext(LBody;)V > v126,v132 @454 exception:v131\l" [ ]
+   "BB69\n231   goto                         \l" [ ]
+   "BB70\n234   putfield v1 = v132 < Application, LTree, bodyTabRev, <Application,LBody> >\l" [ ]
+   "BB71\n235   return                       \l" [ ]
+   "BB72 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0   v4 = new <Application,LMathVector>@0\l" 
+ "BB1\n0   v4 = new <Application,LMathVector>@0\l" -> "BB2\n2   invokespecial < Application, LMathVector, <init>()V > v4 @4 exception:v5\l" 
+ "BB2\n2   invokespecial < Application, LMathVector, <init>()V > v4 @4 exception:v5\l" -> "BB3\n4   v6 = new <Application,LMathVector>@8\l" 
+ "BB3\n4   v6 = new <Application,LMathVector>@8\l" -> "BB4\n6   invokespecial < Application, LMathVector, <init>()V > v6 @12 exception:v7\l" 
+ "BB4\n6   invokespecial < Application, LMathVector, <init>()V > v6 @12 exception:v7\l" -> "BB5\n8   v8 = new <Application,LBody>@16\l" 
+ "BB5\n8   v8 = new <Application,LBody>@16\l" -> "BB6\n10   invokespecial < Application, LBody, <init>()V > v8 @20 exception:v9\l" 
+ "BB6\n10   invokespecial < Application, LBody, <init>()V > v8 @20 exception:v9\l" -> "BB7\n18   v12 = binaryop(div) v11:#1.0 , v10:#0.5890486225480862\l19   v14 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v12 @38 exception:v13\l" 
+ "BB7\n18   v12 = binaryop(div) v11:#1.0 , v10:#0.5890486225480862\l19   v14 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v12 @38 exception:v13\l" -> "BB8\n" 
+ "BB8\n" -> "BB9\n           v104 = phi  v17,v8\l           v105 = phi  v89,v15:#123.0\l           v106 = phi  v103,v16:#0\l27   conditional branch(ge) v106,v2\l" 
+ "BB9\n           v104 = phi  v17,v8\l           v105 = phi  v89,v15:#123.0\l           v106 = phi  v103,v16:#0\l27   conditional branch(ge) v106,v2\l" -> "BB10\n28   v17 = new <Application,LBody>@57\l" 
+ "BB9\n           v104 = phi  v17,v8\l           v105 = phi  v89,v15:#123.0\l           v106 = phi  v103,v16:#0\l27   conditional branch(ge) v106,v2\l" -> "BB52\n191   invokevirtual < Application, LBody, setNext(LBody;)V > v104,v111:#null @374 exception:v112\l" 
+ "BB10\n28   v17 = new <Application,LBody>@57\l" -> "BB11\n30   invokespecial < Application, LBody, <init>()V > v17 @61 exception:v18\l" 
+ "BB11\n30   invokespecial < Application, LBody, <init>()V > v17 @61 exception:v18\l" -> "BB12\n34   invokevirtual < Application, LBody, setNext(LBody;)V > v104,v17 @70 exception:v19\l" 
+ "BB12\n34   invokevirtual < Application, LBody, setNext(LBody;)V > v104,v17 @70 exception:v19\l" -> "BB13\n40   v20 = conversion(D) v2        \l41   v21 = binaryop(div) v11:#1.0 , v20\l42   putfield v17 = v21 < Application, LBody, mass, <Primordial,D> >\l" 
+ "BB13\n40   v20 = conversion(D) v2        \l41   v21 = binaryop(div) v11:#1.0 , v20\l42   putfield v17 = v21 < Application, LBody, mass, <Primordial,D> >\l" -> "BB14\n44   v23 = invokestatic < Application, LBH, myRand(D)D > v105 @88 exception:v22\l" 
+ "BB14\n44   v23 = invokestatic < Application, LBH, myRand(D)D > v105 @88 exception:v22\l" -> "BB15\n49   v27 = invokestatic < Application, LBH, xRand(DDD)D > v24:#0.0,v25:#0.999,v23 @99 exception:v26\l" 
+ "BB15\n49   v27 = invokestatic < Application, LBH, xRand(DDD)D > v24:#0.0,v25:#0.999,v23 @99 exception:v26\l" -> "BB16\n53   v30 = invokestatic < Application, Ljava/lang/Math, pow(DD)D > v27,v28:#-0.6666666666666666 @109 exception:v29\l" 
+ "BB16\n53   v30 = invokestatic < Application, Ljava/lang/Math, pow(DD)D > v27,v28:#-0.6666666666666666 @109 exception:v29\l" -> "BB17\n55   v31 = binaryop(sub) v30 , v11:#1.0\l59   v33 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v31 @119 exception:v32\l" 
+ "BB17\n55   v31 = binaryop(sub) v30 , v11:#1.0\l59   v33 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v31 @119 exception:v32\l" -> "BB18\n60   v34 = binaryop(div) v11:#1.0 , v33\l" 
+ "BB18\n60   v34 = binaryop(div) v11:#1.0 , v33\l" -> "BB19\n           v46 = phi  v38,v23\l           v107 = phi  v107,v106\l           v47 = phi  v40,v34\l           v48 = phi  v45,v16:#0\l68   conditional branch(ge) v48,v36:#3\l" 
+ "BB19\n           v46 = phi  v38,v23\l           v107 = phi  v107,v106\l           v47 = phi  v40,v34\l           v48 = phi  v45,v16:#0\l68   conditional branch(ge) v48,v36:#3\l" -> "BB20\n70   v38 = invokestatic < Application, LBH, myRand(D)D > v46 @141 exception:v37\l" 
+ "BB19\n           v46 = phi  v38,v23\l           v107 = phi  v107,v106\l           v47 = phi  v40,v34\l           v48 = phi  v45,v16:#0\l68   conditional branch(ge) v48,v36:#3\l" -> "BB25\n91   v49 = getfield < Application, LBody, pos, <Application,LMathVector> > v17\l" 
+ "BB20\n70   v38 = invokestatic < Application, LBH, myRand(D)D > v46 @141 exception:v37\l" -> "BB21\n75   v40 = invokestatic < Application, LBH, xRand(DDD)D > v24:#0.0,v25:#0.999,v38 @152 exception:v39\l" 
+ "BB21\n75   v40 = invokestatic < Application, LBH, xRand(DDD)D > v24:#0.0,v25:#0.999,v38 @152 exception:v39\l" -> "BB22\n78   v41 = getfield < Application, LBody, pos, <Application,LMathVector> > v17\l" 
+ "BB22\n78   v41 = getfield < Application, LBody, pos, <Application,LMathVector> > v17\l" -> "BB23\n82   v42 = binaryop(mul) v35:#4.0 , v40\l83   invokevirtual < Application, LMathVector, value(ID)V > v41,v48,v42 @169 exception:v43\l" 
+ "BB23\n82   v42 = binaryop(mul) v35:#4.0 , v40\l83   invokevirtual < Application, LMathVector, value(ID)V > v41,v48,v42 @169 exception:v43\l" -> "BB24\n86   v45 = binaryop(add) v48 , v44:#1\l88   goto                          \l" 
+ "BB24\n86   v45 = binaryop(add) v48 , v44:#1\l88   goto                          \l" -> "BB19\n           v46 = phi  v38,v23\l           v107 = phi  v107,v106\l           v47 = phi  v40,v34\l           v48 = phi  v45,v16:#0\l68   conditional branch(ge) v48,v36:#3\l" 
+ "BB25\n91   v49 = getfield < Application, LBody, pos, <Application,LMathVector> > v17\l" -> "BB26\n92   invokevirtual < Application, LMathVector, addition(LMathVector;)V > v4,v49 @184 exception:v50\l" 
+ "BB26\n92   invokevirtual < Application, LMathVector, addition(LMathVector;)V > v4,v49 @184 exception:v50\l" -> "BB27\n           v68 = phi  v56,v46\l           v108 = phi  v108,v107\l94   v52 = invokestatic < Application, LBH, myRand(D)D > v68 @189 exception:v51\l" 
+ "BB27\n           v68 = phi  v56,v46\l           v108 = phi  v108,v107\l94   v52 = invokestatic < Application, LBH, myRand(D)D > v68 @189 exception:v51\l" -> "BB28\n99   v54 = invokestatic < Application, LBH, xRand(DDD)D > v24:#0.0,v11:#1.0,v52 @198 exception:v53\l" 
+ "BB28\n99   v54 = invokestatic < Application, LBH, xRand(DDD)D > v24:#0.0,v11:#1.0,v52 @198 exception:v53\l" -> "BB29\n102   v56 = invokestatic < Application, LBH, myRand(D)D > v52 @205 exception:v55\l" 
+ "BB29\n102   v56 = invokestatic < Application, LBH, myRand(D)D > v52 @205 exception:v55\l" -> "BB30\n107   v59 = invokestatic < Application, LBH, xRand(DDD)D > v24:#0.0,v57:#0.1,v56 @216 exception:v58\l" 
+ "BB30\n107   v59 = invokestatic < Application, LBH, xRand(DDD)D > v24:#0.0,v57:#0.1,v56 @216 exception:v58\l" -> "BB31\n112   v60 = binaryop(mul) v54 , v54\l116   v61 = binaryop(mul) v54 , v54\l117   v62 = binaryop(sub) v11:#1.0 , v61\l119   v65 = invokestatic < Application, Ljava/lang/Math, pow(DD)D > v62,v63:#3.5 @238 exception:v64\l" 
+ "BB31\n112   v60 = binaryop(mul) v54 , v54\l116   v61 = binaryop(mul) v54 , v54\l117   v62 = binaryop(sub) v11:#1.0 , v61\l119   v65 = invokestatic < Application, Ljava/lang/Math, pow(DD)D > v62,v63:#3.5 @238 exception:v64\l" -> "BB32\n120   v66 = binaryop(mul) v60 , v65\l121   v67 = compare v59,v66 opcode=cmpl\l123   conditional branch(gt) v67,v16:#0\l" 
+ "BB32\n120   v66 = binaryop(mul) v60 , v65\l121   v67 = compare v59,v66 opcode=cmpl\l123   conditional branch(gt) v67,v16:#0\l" -> "BB27\n           v68 = phi  v56,v46\l           v108 = phi  v108,v107\l94   v52 = invokestatic < Application, LBH, myRand(D)D > v68 @189 exception:v51\l" 
+ "BB32\n120   v66 = binaryop(mul) v60 , v65\l121   v67 = compare v59,v66 opcode=cmpl\l123   conditional branch(gt) v67,v16:#0\l" -> "BB33\n125   v72 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v70:#2.0 @249 exception:v71\l" 
+ "BB33\n125   v72 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v70:#2.0 @249 exception:v71\l" -> "BB34\n127   v73 = binaryop(mul) v72 , v54\l131   v74 = binaryop(mul) v47 , v47\l132   v75 = binaryop(add) v11:#1.0 , v74\l134   v78 = invokestatic < Application, Ljava/lang/Math, pow(DD)D > v75,v76:#0.25 @265 exception:v77\l" 
+ "BB34\n127   v73 = binaryop(mul) v72 , v54\l131   v74 = binaryop(mul) v47 , v47\l132   v75 = binaryop(add) v11:#1.0 , v74\l134   v78 = invokestatic < Application, Ljava/lang/Math, pow(DD)D > v75,v76:#0.25 @265 exception:v77\l" -> "BB35\n135   v79 = binaryop(div) v73 , v78\l139   v80 = binaryop(mul) v14 , v79\l" 
+ "BB35\n135   v79 = binaryop(div) v73 , v78\l139   v80 = binaryop(mul) v14 , v79\l" -> "BB36\n           v95 = phi  v89,v56\l           v109 = phi  v110,v108\l" 
+ "BB36\n           v95 = phi  v89,v56\l           v109 = phi  v110,v108\l" -> "BB37\n           v89 = phi  v82,v95\l           v110 = phi  v110,v109\l           v90 = phi  v88,v16:#0\l145   conditional branch(ge) v90,v36:#3\l" 
+ "BB37\n           v89 = phi  v82,v95\l           v110 = phi  v110,v109\l           v90 = phi  v88,v16:#0\l145   conditional branch(ge) v90,v36:#3\l" -> "BB38\n147   v82 = invokestatic < Application, LBH, myRand(D)D > v89 @289 exception:v81\l" 
+ "BB37\n           v89 = phi  v82,v95\l           v110 = phi  v110,v109\l           v90 = phi  v88,v16:#0\l145   conditional branch(ge) v90,v36:#3\l" -> "BB43\n163   v91 = getfield < Application, LBody, vel, <Application,LMathVector> > v17\l" 
+ "BB38\n147   v82 = invokestatic < Application, LBH, myRand(D)D > v89 @289 exception:v81\l" -> "BB39\n150   v83 = getfield < Application, LBody, vel, <Application,LMathVector> > v17\l" 
+ "BB39\n150   v83 = getfield < Application, LBody, vel, <Application,LMathVector> > v17\l" -> "BB40\n155   v86 = invokestatic < Application, LBH, xRand(DDD)D > v84:#-1.0,v11:#1.0,v82 @307 exception:v85\l" 
+ "BB40\n155   v86 = invokestatic < Application, LBH, xRand(DDD)D > v84:#-1.0,v11:#1.0,v82 @307 exception:v85\l" -> "BB41\n156   invokevirtual < Application, LMathVector, value(ID)V > v83,v90,v86 @310 exception:v87\l" 
+ "BB41\n156   invokevirtual < Application, LMathVector, value(ID)V > v83,v90,v86 @310 exception:v87\l" -> "BB42\n159   v88 = binaryop(add) v90 , v44:#1\l161   goto                         \l" 
+ "BB42\n159   v88 = binaryop(add) v90 , v44:#1\l161   goto                         \l" -> "BB37\n           v89 = phi  v82,v95\l           v110 = phi  v110,v109\l           v90 = phi  v88,v16:#0\l145   conditional branch(ge) v90,v36:#3\l" 
+ "BB43\n163   v91 = getfield < Application, LBody, vel, <Application,LMathVector> > v17\l" -> "BB44\n164   v93 = invokevirtual < Application, LMathVector, dotProduct()D > v91 @324 exception:v92\l" 
+ "BB44\n164   v93 = invokevirtual < Application, LMathVector, dotProduct()D > v91 @324 exception:v92\l" -> "BB45\n168   v94 = compare v93,v11:#1.0 opcode=cmpl\l170   conditional branch(gt) v94,v16:#0\l" 
+ "BB45\n168   v94 = compare v93,v11:#1.0 opcode=cmpl\l170   conditional branch(gt) v94,v16:#0\l" -> "BB36\n           v95 = phi  v89,v56\l           v109 = phi  v110,v108\l" 
+ "BB45\n168   v94 = compare v93,v11:#1.0 opcode=cmpl\l170   conditional branch(gt) v94,v16:#0\l" -> "BB46\n173   v97 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v93 @340 exception:v96\l" 
+ "BB46\n173   v97 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v93 @340 exception:v96\l" -> "BB47\n174   v98 = binaryop(div) v80 , v97\l177   v99 = getfield < Application, LBody, vel, <Application,LMathVector> > v17\l" 
+ "BB47\n174   v98 = binaryop(div) v80 , v97\l177   v99 = getfield < Application, LBody, vel, <Application,LMathVector> > v17\l" -> "BB48\n179   invokevirtual < Application, LMathVector, multScalar(D)V > v99,v98 @353 exception:v100\l" 
+ "BB48\n179   invokevirtual < Application, LMathVector, multScalar(D)V > v99,v98 @353 exception:v100\l" -> "BB49\n182   v101 = getfield < Application, LBody, vel, <Application,LMathVector> > v17\l" 
+ "BB49\n182   v101 = getfield < Application, LBody, vel, <Application,LMathVector> > v17\l" -> "BB50\n183   invokevirtual < Application, LMathVector, addition(LMathVector;)V > v6,v101 @362 exception:v102\l" 
+ "BB50\n183   invokevirtual < Application, LMathVector, addition(LMathVector;)V > v6,v101 @362 exception:v102\l" -> "BB51\n186   v103 = binaryop(add) v110 , v44:#1\l188   goto                         \l" 
+ "BB51\n186   v103 = binaryop(add) v110 , v44:#1\l188   goto                         \l" -> "BB9\n           v104 = phi  v17,v8\l           v105 = phi  v89,v15:#123.0\l           v106 = phi  v103,v16:#0\l27   conditional branch(ge) v106,v2\l" 
+ "BB52\n191   invokevirtual < Application, LBody, setNext(LBody;)V > v104,v111:#null @374 exception:v112\l" -> "BB53\n194   v114 = invokevirtual < Application, LBody, getNext()LBody; > v8 @380 exception:v113\l" 
+ "BB53\n194   v114 = invokevirtual < Application, LBody, getNext()LBody; > v8 @380 exception:v113\l" -> "BB54\n195   putfield v1 = v114 < Application, LTree, bodyTab, <Application,LBody> >\l" 
+ "BB54\n195   putfield v1 = v114 < Application, LTree, bodyTab, <Application,LBody> >\l" -> "BB55\n198   v115 = conversion(D) v2      \l199   invokevirtual < Application, LMathVector, divScalar(D)V > v4,v115 @389 exception:v116\l" 
+ "BB55\n198   v115 = conversion(D) v2      \l199   invokevirtual < Application, LMathVector, divScalar(D)V > v4,v115 @389 exception:v116\l" -> "BB56\n202   v117 = conversion(D) v2      \l203   invokevirtual < Application, LMathVector, divScalar(D)V > v6,v117 @395 exception:v118\l" 
+ "BB56\n202   v117 = conversion(D) v2      \l203   invokevirtual < Application, LMathVector, divScalar(D)V > v6,v117 @395 exception:v118\l" -> "BB57\n207   v119 = getfield < Application, LTree, bodyTab, <Application,LBody> > v1\l" 
+ "BB57\n207   v119 = getfield < Application, LTree, bodyTab, <Application,LBody> > v1\l" -> "BB58\n208   v121 = invokevirtual < Application, LBody, elements()Ljava/util/Enumeration; > v119 @405 exception:v120\l" 
+ "BB58\n208   v121 = invokevirtual < Application, LBody, elements()Ljava/util/Enumeration; > v119 @405 exception:v120\l" -> "BB59\n" 
+ "BB59\n" -> "BB60\n           v132 = phi  v126,v111:#null\l211   v123 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v121 @412 exception:v122\l" 
+ "BB60\n           v132 = phi  v126,v111:#null\l211   v123 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v121 @412 exception:v122\l" -> "BB61\n213   conditional branch(eq) v123,v16:#0\l" 
+ "BB61\n213   conditional branch(eq) v123,v16:#0\l" -> "BB62\n215   v125 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v121 @422 exception:v124\l" 
+ "BB61\n213   conditional branch(eq) v123,v16:#0\l" -> "BB70\n234   putfield v1 = v132 < Application, LTree, bodyTabRev, <Application,LBody> >\l" 
+ "BB62\n215   v125 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v121 @422 exception:v124\l" -> "BB63\n216   v126 = checkcast <Application,LBody>v125\l" 
+ "BB63\n216   v126 = checkcast <Application,LBody>v125\l" -> "BB64\n219   v127 = getfield < Application, LBody, pos, <Application,LMathVector> > v126\l" 
+ "BB64\n219   v127 = getfield < Application, LBody, pos, <Application,LMathVector> > v126\l" -> "BB65\n221   invokevirtual < Application, LMathVector, subtraction(LMathVector;)V > v127,v4 @438 exception:v128\l" 
+ "BB65\n221   invokevirtual < Application, LMathVector, subtraction(LMathVector;)V > v127,v4 @438 exception:v128\l" -> "BB66\n223   v129 = getfield < Application, LBody, vel, <Application,LMathVector> > v126\l" 
+ "BB66\n223   v129 = getfield < Application, LBody, vel, <Application,LMathVector> > v126\l" -> "BB67\n225   invokevirtual < Application, LMathVector, subtraction(LMathVector;)V > v129,v6 @447 exception:v130\l" 
+ "BB67\n225   invokevirtual < Application, LMathVector, subtraction(LMathVector;)V > v129,v6 @447 exception:v130\l" -> "BB68\n228   invokevirtual < Application, LBody, setProcNext(LBody;)V > v126,v132 @454 exception:v131\l" 
+ "BB68\n228   invokevirtual < Application, LBody, setProcNext(LBody;)V > v126,v132 @454 exception:v131\l" -> "BB69\n231   goto                         \l" 
+ "BB69\n231   goto                         \l" -> "BB60\n           v132 = phi  v126,v111:#null\l211   v123 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v121 @412 exception:v122\l" 
+ "BB70\n234   putfield v1 = v132 < Application, LTree, bodyTabRev, <Application,LBody> >\l" -> "BB71\n235   return                       \l" 
+ "BB71\n235   return                       \l" -> "BB72 (ex)\n\n" 
+
+}

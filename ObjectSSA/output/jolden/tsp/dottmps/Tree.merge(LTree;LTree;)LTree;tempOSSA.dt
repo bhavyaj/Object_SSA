@@ -1,0 +1,174 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Tree.merge(LTree;LTree;)LTree;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n4  O4_1 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" [ ]
+   "BB2\n9  GetOSSAInstruction:	O2_1= O2_1< next>     \l" [ ]
+   "BB3\n" [ ]
+   "BB4\n           v15 = phi  v14,v7\l           v16 = phi  v12,v2\l           v17 = phi  v13,v6\l13   conditional branch(eq) v15,v2           \l" [ ]
+   "BB5\n16  O4_2 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" [ ]
+   "BB6\n20   v10 = compare v9,v17 opcode=cmpg        \l22   conditional branch(ge) v10,v11:#0       \l" [ ]
+   "BB7\n" [ ]
+   "BB8\n           v12 = phi  v16,v15\l           v13 = phi  v17,v9\l28  GetOSSAInstruction:	O1_1= O2_1< next>    \l" [ ]
+   "BB9\n30   goto                                    \l" [ ]
+   "BB10\n32  GetOSSAInstruction:	O1_1= O2_1< next>    \l" [ ]
+   "BB11\n35  GetOSSAInstruction:	O1_1= O2_1< prev>    \l" [ ]
+   "BB12\n39  O4_3 = < Application, LTree, distance(LTree;)D >( O1_1, O1_1 )\l" [ ]
+   "BB13\n43  O4_4 = < Application, LTree, distance(LTree;)D >( O1_1, O1_1 )\l" [ ]
+   "BB14\n47  O4_5 = < Application, LTree, distance(LTree;)D >( O1_1, O1_1 )\l" [ ]
+   "BB15\n51  O4_6 = < Application, LTree, distance(LTree;)D >( O1_1, O1_1 )\l" [ ]
+   "BB16\n55   v28 = binaryop(sub) v27 , v23           \l58   v29 = binaryop(sub) v25 , v21           \l59   v30 = compare v28,v29 opcode=cmpg       \l61   conditional branch(ge) v30,v11:#0       \l" [ ]
+   "BB17\n70   goto                                    \l" [ ]
+   "BB18\n" [ ]
+   "BB19\n           v31 = phi  v19,v16\l           v32 = phi  v16,v18\l           v33 = phi  v17,v25\l           v34 = phi  v27,v17\l83  O4_7 = < Application, LTree, distance(LTree;)D >( O1_1, O1_1 )\l" [ ]
+   "BB20\n88  GetOSSAInstruction:	O1_1= O3_1< next>    \l" [ ]
+   "BB21\n" [ ]
+   "BB22\n           v44 = phi  v43,v37\l           v45 = phi  v41,v3\l           v46 = phi  v42,v36\l92   conditional branch(eq) v44,v3           \l" [ ]
+   "BB23\n95  O4_8 = < Application, LTree, distance(LTree;)D >( O1_1, O1_1 )\l" [ ]
+   "BB24\n99   v40 = compare v39,v46 opcode=cmpg       \l101   conditional branch(ge) v40,v11:#0      \l" [ ]
+   "BB25\n" [ ]
+   "BB26\n           v41 = phi  v45,v44\l           v42 = phi  v46,v39\l107  GetOSSAInstruction:	O2_1= O1_1< next>   \l" [ ]
+   "BB27\n109   goto                                   \l" [ ]
+   "BB28\n111  GetOSSAInstruction:	O2_1= O1_1< next>   \l" [ ]
+   "BB29\n114  GetOSSAInstruction:	O2_1= O1_1< prev>   \l" [ ]
+   "BB30\n118  O4_9 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" [ ]
+   "BB31\n122  O4_10 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" [ ]
+   "BB32\n126  O4_11 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" [ ]
+   "BB33\n130  O4_12 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" [ ]
+   "BB34\n134   v57 = binaryop(sub) v56 , v52          \l137   v58 = binaryop(sub) v54 , v50          \l138   v59 = compare v57,v58 opcode=cmpg      \l140   conditional branch(ge) v59,v11:#0      \l" [ ]
+   "BB35\n149   goto                                   \l" [ ]
+   "BB36\n" [ ]
+   "BB37\n           v60 = phi  v48,v45\l           v61 = phi  v45,v47\l           v62 = phi  v46,v54\l           v63 = phi  v56,v46\l160  O4_13 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" [ ]
+   "BB38\n164  O4_14 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" [ ]
+   "BB39\n168  O4_15 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" [ ]
+   "BB40\n172  O4_16 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" [ ]
+   "BB41\n176   v72 = binaryop(add) v34 , v63          \l178   v73 = binaryop(add) v72 , v65          \l184   v75 = binaryop(add) v34 , v62          \l186   v76 = binaryop(add) v75 , v67          \l190   v77 = compare v76,v73 opcode=cmpg      \l192   conditional branch(ge) v77,v11:#0      \l" [ ]
+   "BB42\n" [ ]
+   "BB43\n           v79 = phi  v73,v76\l           v80 = phi  v74:#1,v78:#2\l199   v81 = binaryop(add) v33 , v63          \l201   v82 = binaryop(add) v81 , v69          \l205   v83 = compare v82,v79 opcode=cmpg      \l207   conditional branch(ge) v83,v11:#0      \l" [ ]
+   "BB44\n" [ ]
+   "BB45\n           v85 = phi  v79,v82\l           v86 = phi  v80,v84:#3\l214   v87 = binaryop(add) v33 , v62          \l216   v88 = binaryop(add) v87 , v71          \l220   v89 = compare v88,v85 opcode=cmpg      \l222   conditional branch(ge) v89,v11:#0      \l" [ ]
+   "BB46\n" [ ]
+   "BB47\n           v91 = phi  v86,v90:#4\l226   switch v91 [1->227,2->248,3->267,4->286]\l" [ ]
+   "BB48\n228  < Application, LTree, reverse()V >( O2_1 )\l" [ ]
+   "BB49\n231  PutOSSAInstruction:	O1_2< next > = O1_1<refO1_1>\l" [ ]
+   "BB50\n234  PutOSSAInstruction:	O1_3< prev > = O1_2<refO1_2>\l" [ ]
+   "BB51\n237  PutOSSAInstruction:	O1_4< next > = O1_3<refO2_1>\l" [ ]
+   "BB52\n240  PutOSSAInstruction:	O2_2< prev > = O2_1<refO1_4>\l" [ ]
+   "BB53\n243  PutOSSAInstruction:	O2_3< next > = O2_2<refO1_4>\l" [ ]
+   "BB54\n246  PutOSSAInstruction:	O1_5< prev > = O1_4<refO2_3>\l" [ ]
+   "BB55\n247   goto                                   \l" [ ]
+   "BB56\n250  PutOSSAInstruction:	O1_6< next > = O1_1<refO1_1>\l" [ ]
+   "BB57\n253  PutOSSAInstruction:	O1_7< prev > = O1_6<refO1_6>\l" [ ]
+   "BB58\n256  PutOSSAInstruction:	O1_8< next > = O1_7<refO2_1>\l" [ ]
+   "BB59\n259  PutOSSAInstruction:	O2_4< prev > = O2_1<refO1_8>\l" [ ]
+   "BB60\n262  PutOSSAInstruction:	O2_5< next > = O2_4<refO1_8>\l" [ ]
+   "BB61\n265  PutOSSAInstruction:	O1_9< prev > = O1_8<refO2_5>\l" [ ]
+   "BB62\n266   goto                                   \l" [ ]
+   "BB63\n269  PutOSSAInstruction:	O2_6< next > = O2_1<refO1_1>\l" [ ]
+   "BB64\n272  PutOSSAInstruction:	O1_10< prev > = O1_1<refO2_6>\l" [ ]
+   "BB65\n275  PutOSSAInstruction:	O1_11< next > = O1_10<refO1_10>\l" [ ]
+   "BB66\n278  PutOSSAInstruction:	O1_12< prev > = O1_11<refO1_11>\l" [ ]
+   "BB67\n281  PutOSSAInstruction:	O1_13< next > = O1_12<refO2_6>\l" [ ]
+   "BB68\n284  PutOSSAInstruction:	O2_7< prev > = O2_6<refO1_13>\l" [ ]
+   "BB69\n285   goto                                   \l" [ ]
+   "BB70\n287  < Application, LTree, reverse()V >( O2_1 )\l" [ ]
+   "BB71\n290  PutOSSAInstruction:	O1_14< next > = O1_1<refO1_1>\l" [ ]
+   "BB72\n293  PutOSSAInstruction:	O1_15< prev > = O1_14<refO1_14>\l" [ ]
+   "BB73\n296  PutOSSAInstruction:	O1_16< next > = O1_15<refO2_1>\l" [ ]
+   "BB74\n299  PutOSSAInstruction:	O2_8< prev > = O2_1<refO1_16>\l" [ ]
+   "BB75\n302  PutOSSAInstruction:	O2_9< next > = O2_8<refO1_16>\l" [ ]
+   "BB76\n305  PutOSSAInstruction:	O1_17< prev > = O1_16<refO2_9>\l" [ ]
+   "BB77\n           O2_10 = Object-Phi(O2_1, O2_3, O2_5, O2_7, O2_9 )\l           O1_18 = Object-Phi(O1_17, O1_1, O1_5, O1_9, O1_13 )\l307  Return O2_10                            \l" [ ]
+   "BB78 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n4  O4_1 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" 
+ "BB1\n4  O4_1 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" -> "BB2\n9  GetOSSAInstruction:	O2_1= O2_1< next>     \l" 
+ "BB2\n9  GetOSSAInstruction:	O2_1= O2_1< next>     \l" -> "BB3\n" 
+ "BB3\n" -> "BB4\n           v15 = phi  v14,v7\l           v16 = phi  v12,v2\l           v17 = phi  v13,v6\l13   conditional branch(eq) v15,v2           \l" 
+ "BB4\n           v15 = phi  v14,v7\l           v16 = phi  v12,v2\l           v17 = phi  v13,v6\l13   conditional branch(eq) v15,v2           \l" -> "BB5\n16  O4_2 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" 
+ "BB4\n           v15 = phi  v14,v7\l           v16 = phi  v12,v2\l           v17 = phi  v13,v6\l13   conditional branch(eq) v15,v2           \l" -> "BB10\n32  GetOSSAInstruction:	O1_1= O2_1< next>    \l" 
+ "BB5\n16  O4_2 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" -> "BB6\n20   v10 = compare v9,v17 opcode=cmpg        \l22   conditional branch(ge) v10,v11:#0       \l" 
+ "BB6\n20   v10 = compare v9,v17 opcode=cmpg        \l22   conditional branch(ge) v10,v11:#0       \l" -> "BB7\n" 
+ "BB6\n20   v10 = compare v9,v17 opcode=cmpg        \l22   conditional branch(ge) v10,v11:#0       \l" -> "BB8\n           v12 = phi  v16,v15\l           v13 = phi  v17,v9\l28  GetOSSAInstruction:	O1_1= O2_1< next>    \l" 
+ "BB7\n" -> "BB8\n           v12 = phi  v16,v15\l           v13 = phi  v17,v9\l28  GetOSSAInstruction:	O1_1= O2_1< next>    \l" 
+ "BB8\n           v12 = phi  v16,v15\l           v13 = phi  v17,v9\l28  GetOSSAInstruction:	O1_1= O2_1< next>    \l" -> "BB9\n30   goto                                    \l" 
+ "BB9\n30   goto                                    \l" -> "BB4\n           v15 = phi  v14,v7\l           v16 = phi  v12,v2\l           v17 = phi  v13,v6\l13   conditional branch(eq) v15,v2           \l" 
+ "BB10\n32  GetOSSAInstruction:	O1_1= O2_1< next>    \l" -> "BB11\n35  GetOSSAInstruction:	O1_1= O2_1< prev>    \l" 
+ "BB11\n35  GetOSSAInstruction:	O1_1= O2_1< prev>    \l" -> "BB12\n39  O4_3 = < Application, LTree, distance(LTree;)D >( O1_1, O1_1 )\l" 
+ "BB12\n39  O4_3 = < Application, LTree, distance(LTree;)D >( O1_1, O1_1 )\l" -> "BB13\n43  O4_4 = < Application, LTree, distance(LTree;)D >( O1_1, O1_1 )\l" 
+ "BB13\n43  O4_4 = < Application, LTree, distance(LTree;)D >( O1_1, O1_1 )\l" -> "BB14\n47  O4_5 = < Application, LTree, distance(LTree;)D >( O1_1, O1_1 )\l" 
+ "BB14\n47  O4_5 = < Application, LTree, distance(LTree;)D >( O1_1, O1_1 )\l" -> "BB15\n51  O4_6 = < Application, LTree, distance(LTree;)D >( O1_1, O1_1 )\l" 
+ "BB15\n51  O4_6 = < Application, LTree, distance(LTree;)D >( O1_1, O1_1 )\l" -> "BB16\n55   v28 = binaryop(sub) v27 , v23           \l58   v29 = binaryop(sub) v25 , v21           \l59   v30 = compare v28,v29 opcode=cmpg       \l61   conditional branch(ge) v30,v11:#0       \l" 
+ "BB16\n55   v28 = binaryop(sub) v27 , v23           \l58   v29 = binaryop(sub) v25 , v21           \l59   v30 = compare v28,v29 opcode=cmpg       \l61   conditional branch(ge) v30,v11:#0       \l" -> "BB17\n70   goto                                    \l" 
+ "BB16\n55   v28 = binaryop(sub) v27 , v23           \l58   v29 = binaryop(sub) v25 , v21           \l59   v30 = compare v28,v29 opcode=cmpg       \l61   conditional branch(ge) v30,v11:#0       \l" -> "BB18\n" 
+ "BB17\n70   goto                                    \l" -> "BB19\n           v31 = phi  v19,v16\l           v32 = phi  v16,v18\l           v33 = phi  v17,v25\l           v34 = phi  v27,v17\l83  O4_7 = < Application, LTree, distance(LTree;)D >( O1_1, O1_1 )\l" 
+ "BB18\n" -> "BB19\n           v31 = phi  v19,v16\l           v32 = phi  v16,v18\l           v33 = phi  v17,v25\l           v34 = phi  v27,v17\l83  O4_7 = < Application, LTree, distance(LTree;)D >( O1_1, O1_1 )\l" 
+ "BB19\n           v31 = phi  v19,v16\l           v32 = phi  v16,v18\l           v33 = phi  v17,v25\l           v34 = phi  v27,v17\l83  O4_7 = < Application, LTree, distance(LTree;)D >( O1_1, O1_1 )\l" -> "BB20\n88  GetOSSAInstruction:	O1_1= O3_1< next>    \l" 
+ "BB20\n88  GetOSSAInstruction:	O1_1= O3_1< next>    \l" -> "BB21\n" 
+ "BB21\n" -> "BB22\n           v44 = phi  v43,v37\l           v45 = phi  v41,v3\l           v46 = phi  v42,v36\l92   conditional branch(eq) v44,v3           \l" 
+ "BB22\n           v44 = phi  v43,v37\l           v45 = phi  v41,v3\l           v46 = phi  v42,v36\l92   conditional branch(eq) v44,v3           \l" -> "BB23\n95  O4_8 = < Application, LTree, distance(LTree;)D >( O1_1, O1_1 )\l" 
+ "BB22\n           v44 = phi  v43,v37\l           v45 = phi  v41,v3\l           v46 = phi  v42,v36\l92   conditional branch(eq) v44,v3           \l" -> "BB28\n111  GetOSSAInstruction:	O2_1= O1_1< next>   \l" 
+ "BB23\n95  O4_8 = < Application, LTree, distance(LTree;)D >( O1_1, O1_1 )\l" -> "BB24\n99   v40 = compare v39,v46 opcode=cmpg       \l101   conditional branch(ge) v40,v11:#0      \l" 
+ "BB24\n99   v40 = compare v39,v46 opcode=cmpg       \l101   conditional branch(ge) v40,v11:#0      \l" -> "BB25\n" 
+ "BB24\n99   v40 = compare v39,v46 opcode=cmpg       \l101   conditional branch(ge) v40,v11:#0      \l" -> "BB26\n           v41 = phi  v45,v44\l           v42 = phi  v46,v39\l107  GetOSSAInstruction:	O2_1= O1_1< next>   \l" 
+ "BB25\n" -> "BB26\n           v41 = phi  v45,v44\l           v42 = phi  v46,v39\l107  GetOSSAInstruction:	O2_1= O1_1< next>   \l" 
+ "BB26\n           v41 = phi  v45,v44\l           v42 = phi  v46,v39\l107  GetOSSAInstruction:	O2_1= O1_1< next>   \l" -> "BB27\n109   goto                                   \l" 
+ "BB27\n109   goto                                   \l" -> "BB22\n           v44 = phi  v43,v37\l           v45 = phi  v41,v3\l           v46 = phi  v42,v36\l92   conditional branch(eq) v44,v3           \l" 
+ "BB28\n111  GetOSSAInstruction:	O2_1= O1_1< next>   \l" -> "BB29\n114  GetOSSAInstruction:	O2_1= O1_1< prev>   \l" 
+ "BB29\n114  GetOSSAInstruction:	O2_1= O1_1< prev>   \l" -> "BB30\n118  O4_9 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" 
+ "BB30\n118  O4_9 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" -> "BB31\n122  O4_10 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" 
+ "BB31\n122  O4_10 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" -> "BB32\n126  O4_11 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" 
+ "BB32\n126  O4_11 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" -> "BB33\n130  O4_12 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" 
+ "BB33\n130  O4_12 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" -> "BB34\n134   v57 = binaryop(sub) v56 , v52          \l137   v58 = binaryop(sub) v54 , v50          \l138   v59 = compare v57,v58 opcode=cmpg      \l140   conditional branch(ge) v59,v11:#0      \l" 
+ "BB34\n134   v57 = binaryop(sub) v56 , v52          \l137   v58 = binaryop(sub) v54 , v50          \l138   v59 = compare v57,v58 opcode=cmpg      \l140   conditional branch(ge) v59,v11:#0      \l" -> "BB35\n149   goto                                   \l" 
+ "BB34\n134   v57 = binaryop(sub) v56 , v52          \l137   v58 = binaryop(sub) v54 , v50          \l138   v59 = compare v57,v58 opcode=cmpg      \l140   conditional branch(ge) v59,v11:#0      \l" -> "BB36\n" 
+ "BB35\n149   goto                                   \l" -> "BB37\n           v60 = phi  v48,v45\l           v61 = phi  v45,v47\l           v62 = phi  v46,v54\l           v63 = phi  v56,v46\l160  O4_13 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" 
+ "BB36\n" -> "BB37\n           v60 = phi  v48,v45\l           v61 = phi  v45,v47\l           v62 = phi  v46,v54\l           v63 = phi  v56,v46\l160  O4_13 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" 
+ "BB37\n           v60 = phi  v48,v45\l           v61 = phi  v45,v47\l           v62 = phi  v46,v54\l           v63 = phi  v56,v46\l160  O4_13 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" -> "BB38\n164  O4_14 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" 
+ "BB38\n164  O4_14 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" -> "BB39\n168  O4_15 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" 
+ "BB39\n168  O4_15 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" -> "BB40\n172  O4_16 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" 
+ "BB40\n172  O4_16 = < Application, LTree, distance(LTree;)D >( O2_1, O2_1 )\l" -> "BB41\n176   v72 = binaryop(add) v34 , v63          \l178   v73 = binaryop(add) v72 , v65          \l184   v75 = binaryop(add) v34 , v62          \l186   v76 = binaryop(add) v75 , v67          \l190   v77 = compare v76,v73 opcode=cmpg      \l192   conditional branch(ge) v77,v11:#0      \l" 
+ "BB41\n176   v72 = binaryop(add) v34 , v63          \l178   v73 = binaryop(add) v72 , v65          \l184   v75 = binaryop(add) v34 , v62          \l186   v76 = binaryop(add) v75 , v67          \l190   v77 = compare v76,v73 opcode=cmpg      \l192   conditional branch(ge) v77,v11:#0      \l" -> "BB42\n" 
+ "BB41\n176   v72 = binaryop(add) v34 , v63          \l178   v73 = binaryop(add) v72 , v65          \l184   v75 = binaryop(add) v34 , v62          \l186   v76 = binaryop(add) v75 , v67          \l190   v77 = compare v76,v73 opcode=cmpg      \l192   conditional branch(ge) v77,v11:#0      \l" -> "BB43\n           v79 = phi  v73,v76\l           v80 = phi  v74:#1,v78:#2\l199   v81 = binaryop(add) v33 , v63          \l201   v82 = binaryop(add) v81 , v69          \l205   v83 = compare v82,v79 opcode=cmpg      \l207   conditional branch(ge) v83,v11:#0      \l" 
+ "BB42\n" -> "BB43\n           v79 = phi  v73,v76\l           v80 = phi  v74:#1,v78:#2\l199   v81 = binaryop(add) v33 , v63          \l201   v82 = binaryop(add) v81 , v69          \l205   v83 = compare v82,v79 opcode=cmpg      \l207   conditional branch(ge) v83,v11:#0      \l" 
+ "BB43\n           v79 = phi  v73,v76\l           v80 = phi  v74:#1,v78:#2\l199   v81 = binaryop(add) v33 , v63          \l201   v82 = binaryop(add) v81 , v69          \l205   v83 = compare v82,v79 opcode=cmpg      \l207   conditional branch(ge) v83,v11:#0      \l" -> "BB44\n" 
+ "BB43\n           v79 = phi  v73,v76\l           v80 = phi  v74:#1,v78:#2\l199   v81 = binaryop(add) v33 , v63          \l201   v82 = binaryop(add) v81 , v69          \l205   v83 = compare v82,v79 opcode=cmpg      \l207   conditional branch(ge) v83,v11:#0      \l" -> "BB45\n           v85 = phi  v79,v82\l           v86 = phi  v80,v84:#3\l214   v87 = binaryop(add) v33 , v62          \l216   v88 = binaryop(add) v87 , v71          \l220   v89 = compare v88,v85 opcode=cmpg      \l222   conditional branch(ge) v89,v11:#0      \l" 
+ "BB44\n" -> "BB45\n           v85 = phi  v79,v82\l           v86 = phi  v80,v84:#3\l214   v87 = binaryop(add) v33 , v62          \l216   v88 = binaryop(add) v87 , v71          \l220   v89 = compare v88,v85 opcode=cmpg      \l222   conditional branch(ge) v89,v11:#0      \l" 
+ "BB45\n           v85 = phi  v79,v82\l           v86 = phi  v80,v84:#3\l214   v87 = binaryop(add) v33 , v62          \l216   v88 = binaryop(add) v87 , v71          \l220   v89 = compare v88,v85 opcode=cmpg      \l222   conditional branch(ge) v89,v11:#0      \l" -> "BB46\n" 
+ "BB45\n           v85 = phi  v79,v82\l           v86 = phi  v80,v84:#3\l214   v87 = binaryop(add) v33 , v62          \l216   v88 = binaryop(add) v87 , v71          \l220   v89 = compare v88,v85 opcode=cmpg      \l222   conditional branch(ge) v89,v11:#0      \l" -> "BB47\n           v91 = phi  v86,v90:#4\l226   switch v91 [1->227,2->248,3->267,4->286]\l" 
+ "BB46\n" -> "BB47\n           v91 = phi  v86,v90:#4\l226   switch v91 [1->227,2->248,3->267,4->286]\l" 
+ "BB47\n           v91 = phi  v86,v90:#4\l226   switch v91 [1->227,2->248,3->267,4->286]\l" -> "BB48\n228  < Application, LTree, reverse()V >( O2_1 )\l" 
+ "BB47\n           v91 = phi  v86,v90:#4\l226   switch v91 [1->227,2->248,3->267,4->286]\l" -> "BB56\n250  PutOSSAInstruction:	O1_6< next > = O1_1<refO1_1>\l" 
+ "BB47\n           v91 = phi  v86,v90:#4\l226   switch v91 [1->227,2->248,3->267,4->286]\l" -> "BB63\n269  PutOSSAInstruction:	O2_6< next > = O2_1<refO1_1>\l" 
+ "BB47\n           v91 = phi  v86,v90:#4\l226   switch v91 [1->227,2->248,3->267,4->286]\l" -> "BB70\n287  < Application, LTree, reverse()V >( O2_1 )\l" 
+ "BB47\n           v91 = phi  v86,v90:#4\l226   switch v91 [1->227,2->248,3->267,4->286]\l" -> "BB77\n           O2_10 = Object-Phi(O2_1, O2_3, O2_5, O2_7, O2_9 )\l           O1_18 = Object-Phi(O1_17, O1_1, O1_5, O1_9, O1_13 )\l307  Return O2_10                            \l" 
+ "BB48\n228  < Application, LTree, reverse()V >( O2_1 )\l" -> "BB49\n231  PutOSSAInstruction:	O1_2< next > = O1_1<refO1_1>\l" 
+ "BB49\n231  PutOSSAInstruction:	O1_2< next > = O1_1<refO1_1>\l" -> "BB50\n234  PutOSSAInstruction:	O1_3< prev > = O1_2<refO1_2>\l" 
+ "BB50\n234  PutOSSAInstruction:	O1_3< prev > = O1_2<refO1_2>\l" -> "BB51\n237  PutOSSAInstruction:	O1_4< next > = O1_3<refO2_1>\l" 
+ "BB51\n237  PutOSSAInstruction:	O1_4< next > = O1_3<refO2_1>\l" -> "BB52\n240  PutOSSAInstruction:	O2_2< prev > = O2_1<refO1_4>\l" 
+ "BB52\n240  PutOSSAInstruction:	O2_2< prev > = O2_1<refO1_4>\l" -> "BB53\n243  PutOSSAInstruction:	O2_3< next > = O2_2<refO1_4>\l" 
+ "BB53\n243  PutOSSAInstruction:	O2_3< next > = O2_2<refO1_4>\l" -> "BB54\n246  PutOSSAInstruction:	O1_5< prev > = O1_4<refO2_3>\l" 
+ "BB54\n246  PutOSSAInstruction:	O1_5< prev > = O1_4<refO2_3>\l" -> "BB55\n247   goto                                   \l" 
+ "BB55\n247   goto                                   \l" -> "BB77\n           O2_10 = Object-Phi(O2_1, O2_3, O2_5, O2_7, O2_9 )\l           O1_18 = Object-Phi(O1_17, O1_1, O1_5, O1_9, O1_13 )\l307  Return O2_10                            \l" 
+ "BB56\n250  PutOSSAInstruction:	O1_6< next > = O1_1<refO1_1>\l" -> "BB57\n253  PutOSSAInstruction:	O1_7< prev > = O1_6<refO1_6>\l" 
+ "BB57\n253  PutOSSAInstruction:	O1_7< prev > = O1_6<refO1_6>\l" -> "BB58\n256  PutOSSAInstruction:	O1_8< next > = O1_7<refO2_1>\l" 
+ "BB58\n256  PutOSSAInstruction:	O1_8< next > = O1_7<refO2_1>\l" -> "BB59\n259  PutOSSAInstruction:	O2_4< prev > = O2_1<refO1_8>\l" 
+ "BB59\n259  PutOSSAInstruction:	O2_4< prev > = O2_1<refO1_8>\l" -> "BB60\n262  PutOSSAInstruction:	O2_5< next > = O2_4<refO1_8>\l" 
+ "BB60\n262  PutOSSAInstruction:	O2_5< next > = O2_4<refO1_8>\l" -> "BB61\n265  PutOSSAInstruction:	O1_9< prev > = O1_8<refO2_5>\l" 
+ "BB61\n265  PutOSSAInstruction:	O1_9< prev > = O1_8<refO2_5>\l" -> "BB62\n266   goto                                   \l" 
+ "BB62\n266   goto                                   \l" -> "BB77\n           O2_10 = Object-Phi(O2_1, O2_3, O2_5, O2_7, O2_9 )\l           O1_18 = Object-Phi(O1_17, O1_1, O1_5, O1_9, O1_13 )\l307  Return O2_10                            \l" 
+ "BB63\n269  PutOSSAInstruction:	O2_6< next > = O2_1<refO1_1>\l" -> "BB64\n272  PutOSSAInstruction:	O1_10< prev > = O1_1<refO2_6>\l" 
+ "BB64\n272  PutOSSAInstruction:	O1_10< prev > = O1_1<refO2_6>\l" -> "BB65\n275  PutOSSAInstruction:	O1_11< next > = O1_10<refO1_10>\l" 
+ "BB65\n275  PutOSSAInstruction:	O1_11< next > = O1_10<refO1_10>\l" -> "BB66\n278  PutOSSAInstruction:	O1_12< prev > = O1_11<refO1_11>\l" 
+ "BB66\n278  PutOSSAInstruction:	O1_12< prev > = O1_11<refO1_11>\l" -> "BB67\n281  PutOSSAInstruction:	O1_13< next > = O1_12<refO2_6>\l" 
+ "BB67\n281  PutOSSAInstruction:	O1_13< next > = O1_12<refO2_6>\l" -> "BB68\n284  PutOSSAInstruction:	O2_7< prev > = O2_6<refO1_13>\l" 
+ "BB68\n284  PutOSSAInstruction:	O2_7< prev > = O2_6<refO1_13>\l" -> "BB69\n285   goto                                   \l" 
+ "BB69\n285   goto                                   \l" -> "BB77\n           O2_10 = Object-Phi(O2_1, O2_3, O2_5, O2_7, O2_9 )\l           O1_18 = Object-Phi(O1_17, O1_1, O1_5, O1_9, O1_13 )\l307  Return O2_10                            \l" 
+ "BB70\n287  < Application, LTree, reverse()V >( O2_1 )\l" -> "BB71\n290  PutOSSAInstruction:	O1_14< next > = O1_1<refO1_1>\l" 
+ "BB71\n290  PutOSSAInstruction:	O1_14< next > = O1_1<refO1_1>\l" -> "BB72\n293  PutOSSAInstruction:	O1_15< prev > = O1_14<refO1_14>\l" 
+ "BB72\n293  PutOSSAInstruction:	O1_15< prev > = O1_14<refO1_14>\l" -> "BB73\n296  PutOSSAInstruction:	O1_16< next > = O1_15<refO2_1>\l" 
+ "BB73\n296  PutOSSAInstruction:	O1_16< next > = O1_15<refO2_1>\l" -> "BB74\n299  PutOSSAInstruction:	O2_8< prev > = O2_1<refO1_16>\l" 
+ "BB74\n299  PutOSSAInstruction:	O2_8< prev > = O2_1<refO1_16>\l" -> "BB75\n302  PutOSSAInstruction:	O2_9< next > = O2_8<refO1_16>\l" 
+ "BB75\n302  PutOSSAInstruction:	O2_9< next > = O2_8<refO1_16>\l" -> "BB76\n305  PutOSSAInstruction:	O1_17< prev > = O1_16<refO2_9>\l" 
+ "BB76\n305  PutOSSAInstruction:	O1_17< prev > = O1_16<refO2_9>\l" -> "BB77\n           O2_10 = Object-Phi(O2_1, O2_3, O2_5, O2_7, O2_9 )\l           O1_18 = Object-Phi(O1_17, O1_1, O1_5, O1_9, O1_13 )\l307  Return O2_10                            \l" 
+ "BB77\n           O2_10 = Object-Phi(O2_1, O2_3, O2_5, O2_7, O2_9 )\l           O1_18 = Object-Phi(O1_17, O1_1, O1_5, O1_9, O1_13 )\l307  Return O2_10                            \l" -> "BB78 (ex)\n\n" 
+
+}

@@ -1,0 +1,19 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2   v7 = invokeinterface < Application, LQuadrant, child(LQuadTreeNode;)LQuadTreeNode; > v2,v1 @2 exception:v6\l" [ ]
+   "BB2\n6   v9 = invokeinterface < Application, LQuadrant, child(LQuadTreeNode;)LQuadTreeNode; > v3,v1 @11 exception:v8\l" [ ]
+   "BB3\n10   v11 = binaryop(div) v4 , v10:#2\l" [ ]
+   "BB4\n16   v13 = invokevirtual < Application, LQuadTreeNode, sumAdjacent(LQuadrant;LQuadrant;I)I > v7,v2,v3,v11 @27 exception:v12\l" [ ]
+   "BB5\n21   v15 = invokevirtual < Application, LQuadTreeNode, sumAdjacent(LQuadrant;LQuadrant;I)I > v9,v2,v3,v11 @35 exception:v14\l" [ ]
+   "BB6\n22   v16 = binaryop(add) v13 , v15 \l23   return v16                    \l" [ ]
+   "BB7 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2   v7 = invokeinterface < Application, LQuadrant, child(LQuadTreeNode;)LQuadTreeNode; > v2,v1 @2 exception:v6\l" 
+ "BB1\n2   v7 = invokeinterface < Application, LQuadrant, child(LQuadTreeNode;)LQuadTreeNode; > v2,v1 @2 exception:v6\l" -> "BB2\n6   v9 = invokeinterface < Application, LQuadrant, child(LQuadTreeNode;)LQuadTreeNode; > v3,v1 @11 exception:v8\l" 
+ "BB2\n6   v9 = invokeinterface < Application, LQuadrant, child(LQuadTreeNode;)LQuadTreeNode; > v3,v1 @11 exception:v8\l" -> "BB3\n10   v11 = binaryop(div) v4 , v10:#2\l" 
+ "BB3\n10   v11 = binaryop(div) v4 , v10:#2\l" -> "BB4\n16   v13 = invokevirtual < Application, LQuadTreeNode, sumAdjacent(LQuadrant;LQuadrant;I)I > v7,v2,v3,v11 @27 exception:v12\l" 
+ "BB4\n16   v13 = invokevirtual < Application, LQuadTreeNode, sumAdjacent(LQuadrant;LQuadrant;I)I > v7,v2,v3,v11 @27 exception:v12\l" -> "BB5\n21   v15 = invokevirtual < Application, LQuadTreeNode, sumAdjacent(LQuadrant;LQuadrant;I)I > v9,v2,v3,v11 @35 exception:v14\l" 
+ "BB5\n21   v15 = invokevirtual < Application, LQuadTreeNode, sumAdjacent(LQuadrant;LQuadrant;I)I > v9,v2,v3,v11 @35 exception:v14\l" -> "BB6\n22   v16 = binaryop(add) v13 , v15 \l23   return v16                    \l" 
+ "BB6\n22   v16 = binaryop(add) v13 , v15 \l23   return v16                    \l" -> "BB7 (ex)\n\n" 
+
+}

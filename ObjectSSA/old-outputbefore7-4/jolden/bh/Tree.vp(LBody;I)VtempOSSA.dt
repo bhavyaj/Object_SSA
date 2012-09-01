@@ -1,0 +1,99 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Tree.vp(LBody;I)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0  Create O2_1                               \l" [ ]
+   "BB2\n2   invokespecial < Application, LMathVector, <init>()V > v4 @4 exception:v5\l" [ ]
+   "BB3\n4  Create O3_1                               \l" [ ]
+   "BB4\n6   invokespecial < Application, LMathVector, <init>()V > v6 @12 exception:v7\l" [ ]
+   "BB5\n9  nonreference field get instrctn: 9 = getstatic < Application, LBH, DTIME, <Primordial,D> >\l10   v10 = binaryop(mul) v8:#0.5 , v9        \l13   v12 = invokevirtual < Application, LBody, elementsRev()Ljava/util/Enumeration; > v1 @26 exception:v11\l" [ ]
+   "BB6\n" [ ]
+   "BB7\n16   v14 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v12 @33 exception:v13\l" [ ]
+   "BB8\n18   conditional branch(eq) v14,v15:#0       \l" [ ]
+   "BB9\n20   v17 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v12 @43 exception:v16\l" [ ]
+   "BB10\n21   v18 = checkcast <Application,LBody>v17  \l" [ ]
+   "BB11\n24  nonreference field get instrctn: 19 = getfield < Application, LBody, newAcc, <Application,LMathVector> > 18\l" [ ]
+   "BB12\n25   v21 = invokevirtual < Application, LMathVector, clone()Ljava/lang/Object; > v19 @58 exception:v20\l" [ ]
+   "BB13\n26   v22 = checkcast <Application,LMathVector>v21\l" [ ]
+   "BB14\n30   conditional branch(le) v2,v15:#0        \l" [ ]
+   "BB15\n34  nonreference field get instrctn: 23 = getfield < Application, LBody, acc, <Application,LMathVector> > 18\l" [ ]
+   "BB16\n35   invokevirtual < Application, LMathVector, subtraction(LMathVector;LMathVector;)V > v4,v22,v23 @78 exception:v24\l" [ ]
+   "BB17\n39   invokevirtual < Application, LMathVector, multScalar(LMathVector;D)V > v6,v4,v10 @85 exception:v25\l" [ ]
+   "BB18\n42  nonreference field get instrctn: 26 = getfield < Application, LBody, vel, <Application,LMathVector> > 18\l" [ ]
+   "BB19\n43   invokevirtual < Application, LMathVector, addition(LMathVector;)V > v6,v26 @94 exception:v27\l" [ ]
+   "BB20\n46   v29 = invokevirtual < Application, LMathVector, clone()Ljava/lang/Object; > v6 @100 exception:v28\l" [ ]
+   "BB21\n47   v30 = checkcast <Application,LMathVector>v29\l" [ ]
+   "BB22\n48   putfield v18 = v30 < Application, LBody, vel, <Application,LMathVector> >\l" [ ]
+   "BB23\n51   v32 = invokevirtual < Application, LMathVector, clone()Ljava/lang/Object; > v22 @113 exception:v31\l" [ ]
+   "BB24\n52   v33 = checkcast <Application,LMathVector>v32\l" [ ]
+   "BB25\n53   putfield v18 = v33 < Application, LBody, acc, <Application,LMathVector> >\l" [ ]
+   "BB26\n56  nonreference field get instrctn: 34 = getfield < Application, LBody, acc, <Application,LMathVector> > 18\l" [ ]
+   "BB27\n58   invokevirtual < Application, LMathVector, multScalar(LMathVector;D)V > v6,v34,v10 @130 exception:v35\l" [ ]
+   "BB28\n60  nonreference field get instrctn: 36 = getfield < Application, LBody, vel, <Application,LMathVector> > 18\l" [ ]
+   "BB29\n61   v38 = invokevirtual < Application, LMathVector, clone()Ljava/lang/Object; > v36 @138 exception:v37\l" [ ]
+   "BB30\n62   v39 = checkcast <Application,LMathVector>v38\l" [ ]
+   "BB31\n66   invokevirtual < Application, LMathVector, addition(LMathVector;)V > v39,v6 @149 exception:v40\l" [ ]
+   "BB32\n68   v42 = invokevirtual < Application, LMathVector, clone()Ljava/lang/Object; > v39 @154 exception:v41\l" [ ]
+   "BB33\n69   v43 = checkcast <Application,LMathVector>v42\l" [ ]
+   "BB34\n72  nonreference field get instrctn: 44 = getstatic < Application, LBH, DTIME, <Primordial,D> >\l73   invokevirtual < Application, LMathVector, multScalar(D)V > v43,v44 @167 exception:v45\l" [ ]
+   "BB35\n76  nonreference field get instrctn: 46 = getfield < Application, LBody, pos, <Application,LMathVector> > 18\l" [ ]
+   "BB36\n77   invokevirtual < Application, LMathVector, addition(LMathVector;)V > v43,v46 @177 exception:v47\l" [ ]
+   "BB37\n80   v49 = invokevirtual < Application, LMathVector, clone()Ljava/lang/Object; > v43 @184 exception:v48\l" [ ]
+   "BB38\n81   v50 = checkcast <Application,LMathVector>v49\l" [ ]
+   "BB39\n82   putfield v18 = v50 < Application, LBody, pos, <Application,LMathVector> >\l" [ ]
+   "BB40\n85   invokevirtual < Application, LMathVector, addition(LMathVector;)V > v39,v6 @196 exception:v51\l" [ ]
+   "BB41\n88   v53 = invokevirtual < Application, LMathVector, clone()Ljava/lang/Object; > v39 @203 exception:v52\l" [ ]
+   "BB42\n89   v54 = checkcast <Application,LMathVector>v53\l" [ ]
+   "BB43\n90   putfield v18 = v54 < Application, LBody, vel, <Application,LMathVector> >\l" [ ]
+   "BB44\n91   goto                                    \l" [ ]
+   "BB45\n92  return                                   \l" [ ]
+   "BB46 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0  Create O2_1                               \l" 
+ "BB1\n0  Create O2_1                               \l" -> "BB2\n2   invokespecial < Application, LMathVector, <init>()V > v4 @4 exception:v5\l" 
+ "BB2\n2   invokespecial < Application, LMathVector, <init>()V > v4 @4 exception:v5\l" -> "BB3\n4  Create O3_1                               \l" 
+ "BB3\n4  Create O3_1                               \l" -> "BB4\n6   invokespecial < Application, LMathVector, <init>()V > v6 @12 exception:v7\l" 
+ "BB4\n6   invokespecial < Application, LMathVector, <init>()V > v6 @12 exception:v7\l" -> "BB5\n9  nonreference field get instrctn: 9 = getstatic < Application, LBH, DTIME, <Primordial,D> >\l10   v10 = binaryop(mul) v8:#0.5 , v9        \l13   v12 = invokevirtual < Application, LBody, elementsRev()Ljava/util/Enumeration; > v1 @26 exception:v11\l" 
+ "BB5\n9  nonreference field get instrctn: 9 = getstatic < Application, LBH, DTIME, <Primordial,D> >\l10   v10 = binaryop(mul) v8:#0.5 , v9        \l13   v12 = invokevirtual < Application, LBody, elementsRev()Ljava/util/Enumeration; > v1 @26 exception:v11\l" -> "BB6\n" 
+ "BB6\n" -> "BB7\n16   v14 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v12 @33 exception:v13\l" 
+ "BB7\n16   v14 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v12 @33 exception:v13\l" -> "BB8\n18   conditional branch(eq) v14,v15:#0       \l" 
+ "BB8\n18   conditional branch(eq) v14,v15:#0       \l" -> "BB9\n20   v17 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v12 @43 exception:v16\l" 
+ "BB8\n18   conditional branch(eq) v14,v15:#0       \l" -> "BB45\n92  return                                   \l" 
+ "BB9\n20   v17 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v12 @43 exception:v16\l" -> "BB10\n21   v18 = checkcast <Application,LBody>v17  \l" 
+ "BB10\n21   v18 = checkcast <Application,LBody>v17  \l" -> "BB11\n24  nonreference field get instrctn: 19 = getfield < Application, LBody, newAcc, <Application,LMathVector> > 18\l" 
+ "BB11\n24  nonreference field get instrctn: 19 = getfield < Application, LBody, newAcc, <Application,LMathVector> > 18\l" -> "BB12\n25   v21 = invokevirtual < Application, LMathVector, clone()Ljava/lang/Object; > v19 @58 exception:v20\l" 
+ "BB12\n25   v21 = invokevirtual < Application, LMathVector, clone()Ljava/lang/Object; > v19 @58 exception:v20\l" -> "BB13\n26   v22 = checkcast <Application,LMathVector>v21\l" 
+ "BB13\n26   v22 = checkcast <Application,LMathVector>v21\l" -> "BB14\n30   conditional branch(le) v2,v15:#0        \l" 
+ "BB14\n30   conditional branch(le) v2,v15:#0        \l" -> "BB15\n34  nonreference field get instrctn: 23 = getfield < Application, LBody, acc, <Application,LMathVector> > 18\l" 
+ "BB14\n30   conditional branch(le) v2,v15:#0        \l" -> "BB23\n51   v32 = invokevirtual < Application, LMathVector, clone()Ljava/lang/Object; > v22 @113 exception:v31\l" 
+ "BB15\n34  nonreference field get instrctn: 23 = getfield < Application, LBody, acc, <Application,LMathVector> > 18\l" -> "BB16\n35   invokevirtual < Application, LMathVector, subtraction(LMathVector;LMathVector;)V > v4,v22,v23 @78 exception:v24\l" 
+ "BB16\n35   invokevirtual < Application, LMathVector, subtraction(LMathVector;LMathVector;)V > v4,v22,v23 @78 exception:v24\l" -> "BB17\n39   invokevirtual < Application, LMathVector, multScalar(LMathVector;D)V > v6,v4,v10 @85 exception:v25\l" 
+ "BB17\n39   invokevirtual < Application, LMathVector, multScalar(LMathVector;D)V > v6,v4,v10 @85 exception:v25\l" -> "BB18\n42  nonreference field get instrctn: 26 = getfield < Application, LBody, vel, <Application,LMathVector> > 18\l" 
+ "BB18\n42  nonreference field get instrctn: 26 = getfield < Application, LBody, vel, <Application,LMathVector> > 18\l" -> "BB19\n43   invokevirtual < Application, LMathVector, addition(LMathVector;)V > v6,v26 @94 exception:v27\l" 
+ "BB19\n43   invokevirtual < Application, LMathVector, addition(LMathVector;)V > v6,v26 @94 exception:v27\l" -> "BB20\n46   v29 = invokevirtual < Application, LMathVector, clone()Ljava/lang/Object; > v6 @100 exception:v28\l" 
+ "BB20\n46   v29 = invokevirtual < Application, LMathVector, clone()Ljava/lang/Object; > v6 @100 exception:v28\l" -> "BB21\n47   v30 = checkcast <Application,LMathVector>v29\l" 
+ "BB21\n47   v30 = checkcast <Application,LMathVector>v29\l" -> "BB22\n48   putfield v18 = v30 < Application, LBody, vel, <Application,LMathVector> >\l" 
+ "BB22\n48   putfield v18 = v30 < Application, LBody, vel, <Application,LMathVector> >\l" -> "BB23\n51   v32 = invokevirtual < Application, LMathVector, clone()Ljava/lang/Object; > v22 @113 exception:v31\l" 
+ "BB23\n51   v32 = invokevirtual < Application, LMathVector, clone()Ljava/lang/Object; > v22 @113 exception:v31\l" -> "BB24\n52   v33 = checkcast <Application,LMathVector>v32\l" 
+ "BB24\n52   v33 = checkcast <Application,LMathVector>v32\l" -> "BB25\n53   putfield v18 = v33 < Application, LBody, acc, <Application,LMathVector> >\l" 
+ "BB25\n53   putfield v18 = v33 < Application, LBody, acc, <Application,LMathVector> >\l" -> "BB26\n56  nonreference field get instrctn: 34 = getfield < Application, LBody, acc, <Application,LMathVector> > 18\l" 
+ "BB26\n56  nonreference field get instrctn: 34 = getfield < Application, LBody, acc, <Application,LMathVector> > 18\l" -> "BB27\n58   invokevirtual < Application, LMathVector, multScalar(LMathVector;D)V > v6,v34,v10 @130 exception:v35\l" 
+ "BB27\n58   invokevirtual < Application, LMathVector, multScalar(LMathVector;D)V > v6,v34,v10 @130 exception:v35\l" -> "BB28\n60  nonreference field get instrctn: 36 = getfield < Application, LBody, vel, <Application,LMathVector> > 18\l" 
+ "BB28\n60  nonreference field get instrctn: 36 = getfield < Application, LBody, vel, <Application,LMathVector> > 18\l" -> "BB29\n61   v38 = invokevirtual < Application, LMathVector, clone()Ljava/lang/Object; > v36 @138 exception:v37\l" 
+ "BB29\n61   v38 = invokevirtual < Application, LMathVector, clone()Ljava/lang/Object; > v36 @138 exception:v37\l" -> "BB30\n62   v39 = checkcast <Application,LMathVector>v38\l" 
+ "BB30\n62   v39 = checkcast <Application,LMathVector>v38\l" -> "BB31\n66   invokevirtual < Application, LMathVector, addition(LMathVector;)V > v39,v6 @149 exception:v40\l" 
+ "BB31\n66   invokevirtual < Application, LMathVector, addition(LMathVector;)V > v39,v6 @149 exception:v40\l" -> "BB32\n68   v42 = invokevirtual < Application, LMathVector, clone()Ljava/lang/Object; > v39 @154 exception:v41\l" 
+ "BB32\n68   v42 = invokevirtual < Application, LMathVector, clone()Ljava/lang/Object; > v39 @154 exception:v41\l" -> "BB33\n69   v43 = checkcast <Application,LMathVector>v42\l" 
+ "BB33\n69   v43 = checkcast <Application,LMathVector>v42\l" -> "BB34\n72  nonreference field get instrctn: 44 = getstatic < Application, LBH, DTIME, <Primordial,D> >\l73   invokevirtual < Application, LMathVector, multScalar(D)V > v43,v44 @167 exception:v45\l" 
+ "BB34\n72  nonreference field get instrctn: 44 = getstatic < Application, LBH, DTIME, <Primordial,D> >\l73   invokevirtual < Application, LMathVector, multScalar(D)V > v43,v44 @167 exception:v45\l" -> "BB35\n76  nonreference field get instrctn: 46 = getfield < Application, LBody, pos, <Application,LMathVector> > 18\l" 
+ "BB35\n76  nonreference field get instrctn: 46 = getfield < Application, LBody, pos, <Application,LMathVector> > 18\l" -> "BB36\n77   invokevirtual < Application, LMathVector, addition(LMathVector;)V > v43,v46 @177 exception:v47\l" 
+ "BB36\n77   invokevirtual < Application, LMathVector, addition(LMathVector;)V > v43,v46 @177 exception:v47\l" -> "BB37\n80   v49 = invokevirtual < Application, LMathVector, clone()Ljava/lang/Object; > v43 @184 exception:v48\l" 
+ "BB37\n80   v49 = invokevirtual < Application, LMathVector, clone()Ljava/lang/Object; > v43 @184 exception:v48\l" -> "BB38\n81   v50 = checkcast <Application,LMathVector>v49\l" 
+ "BB38\n81   v50 = checkcast <Application,LMathVector>v49\l" -> "BB39\n82   putfield v18 = v50 < Application, LBody, pos, <Application,LMathVector> >\l" 
+ "BB39\n82   putfield v18 = v50 < Application, LBody, pos, <Application,LMathVector> >\l" -> "BB40\n85   invokevirtual < Application, LMathVector, addition(LMathVector;)V > v39,v6 @196 exception:v51\l" 
+ "BB40\n85   invokevirtual < Application, LMathVector, addition(LMathVector;)V > v39,v6 @196 exception:v51\l" -> "BB41\n88   v53 = invokevirtual < Application, LMathVector, clone()Ljava/lang/Object; > v39 @203 exception:v52\l" 
+ "BB41\n88   v53 = invokevirtual < Application, LMathVector, clone()Ljava/lang/Object; > v39 @203 exception:v52\l" -> "BB42\n89   v54 = checkcast <Application,LMathVector>v53\l" 
+ "BB42\n89   v54 = checkcast <Application,LMathVector>v53\l" -> "BB43\n90   putfield v18 = v54 < Application, LBody, vel, <Application,LMathVector> >\l" 
+ "BB43\n90   putfield v18 = v54 < Application, LBody, vel, <Application,LMathVector> >\l" -> "BB44\n91   goto                                    \l" 
+ "BB44\n91   goto                                    \l" -> "BB7\n16   v14 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v12 @33 exception:v13\l" 
+ "BB45\n92  return                                   \l" -> "BB46 (ex)\n\n" 
+
+}

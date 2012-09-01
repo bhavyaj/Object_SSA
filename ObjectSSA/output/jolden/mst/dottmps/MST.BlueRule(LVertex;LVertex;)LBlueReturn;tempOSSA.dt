@@ -1,0 +1,103 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for MST.BlueRule(LVertex;LVertex;)LBlueReturn;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0  Create O3_1                               \l" [ ]
+   "BB2\n2  < Application, LBlueReturn, <init>()V >( O3_1 )\l" [ ]
+   "BB3\n6   conditional branch(ne) v2,v6:#null       \l" [ ]
+   "BB4\n9  < Application, LBlueReturn, setDist(I)V >( O3_1, V61 )\l" [ ]
+   "BB5\n11  Return O3_1                              \l" [ ]
+   "BB6\n16  < Application, LBlueReturn, setVert(LVertex;)V >( O3_1, O2_1 )\l" [ ]
+   "BB7\n19  O4_1 = < Application, LVertex, mindist()I >( O2_1 )\l" [ ]
+   "BB8\n20  < Application, LBlueReturn, setDist(I)V >( O3_1, V9 )\l" [ ]
+   "BB9\n22  O5_1 = < Application, LVertex, neighbors()LHashtable; >( O2_1 )\l" [ ]
+   "BB10\n26  O6_1 = < Application, LHashtable, get(Ljava/lang/Object;)Ljava/lang/Object; >( O5_1, O2_1 )\l" [ ]
+   "BB11\n30   conditional branch(eq) v14,v6:#null     \l" [ ]
+   "BB12\n32   v18 = checkcast <Application,Ljava/lang/Integer>v14\l" [ ]
+   "BB13\n33  O4_2 = < Application, Ljava/lang/Integer, intValue()I >( O6_1 )\l" [ ]
+   "BB14\n37  O4_3 = < Application, LBlueReturn, dist()I >( O3_1 )\l" [ ]
+   "BB15\n38   conditional branch(ge) v20,v22          \l" [ ]
+   "BB16\n41  < Application, LVertex, setMindist(I)V >( O2_1, V20 )\l" [ ]
+   "BB17\n44  < Application, LBlueReturn, setDist(I)V >( O3_1, V20 )\l" [ ]
+   "BB18\n45   goto                                    \l" [ ]
+   "BB19\n46  nonreference field get instrctn: 15 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l48  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O7_1, V16 )\l" [ ]
+   "BB20\n52  O2_2 = < Application, LVertex, next()LVertex; >( O2_1 )\l" [ ]
+   "BB21\n" [ ]
+   "BB22\n           v56 = phi  v60,v2\l           v59 = phi  v29,v25:#0\l           v60 = phi  v55,v27\l56   conditional branch(eq) v60,v6:#null     \l" [ ]
+   "BB23\n59   v29 = binaryop(add) v59 , v28:#1        \l63   conditional branch(ne) v60,v1           \l" [ ]
+   "BB24\n65  O1_2 = < Application, LVertex, next()LVertex; >( O1_1 )\l" [ ]
+   "BB25\n69  < Application, LVertex, setNext(LVertex;)V >( O1_2, O1_2 )\l" [ ]
+   "BB26\n70   goto                                    \l" [ ]
+   "BB27\n72  O5_2 = < Application, LVertex, neighbors()LHashtable; >( O1_1 )\l" [ ]
+   "BB28\n75  O4_4 = < Application, LVertex, mindist()I >( O1_1 )\l" [ ]
+   "BB29\n79  O6_2 = < Application, LHashtable, get(Ljava/lang/Object;)Ljava/lang/Object; >( O5_2, O1_1 )\l" [ ]
+   "BB30\n83   conditional branch(eq) v35,v6:#null     \l" [ ]
+   "BB31\n85   v36 = checkcast <Application,Ljava/lang/Integer>v35\l" [ ]
+   "BB32\n86  O4_5 = < Application, Ljava/lang/Integer, intValue()I >( O6_2 )\l" [ ]
+   "BB33\n90   conditional branch(ge) v38,v33          \l" [ ]
+   "BB34\n93  < Application, LVertex, setMindist(I)V >( O1_1, V38 )\l" [ ]
+   "BB35\n" [ ]
+   "BB36\n           v40 = phi  v33,v38\l96   goto                                    \l" [ ]
+   "BB37\n97  nonreference field get instrctn: 41 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l99  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O7_1, V16 )\l" [ ]
+   "BB38\n           v43 = phi  v40,v33\l102  O4_6 = < Application, LBlueReturn, dist()I >( O3_1 )\l" [ ]
+   "BB39\n103   conditional branch(ge) v43,v45         \l" [ ]
+   "BB40\n106  < Application, LBlueReturn, setVert(LVertex;)V >( O3_1, O1_1 )\l" [ ]
+   "BB41\n109  < Application, LBlueReturn, setDist(I)V >( O3_1, V43 )\l" [ ]
+   "BB42\n113  O1_3 = < Application, LVertex, next()LVertex; >( O1_1 )\l" [ ]
+   "BB43\n115   goto                                   \l" [ ]
+   "BB44\n117  Return O3_1                             \l" [ ]
+   "BB45 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0  Create O3_1                               \l" 
+ "BB1\n0  Create O3_1                               \l" -> "BB2\n2  < Application, LBlueReturn, <init>()V >( O3_1 )\l" 
+ "BB2\n2  < Application, LBlueReturn, <init>()V >( O3_1 )\l" -> "BB3\n6   conditional branch(ne) v2,v6:#null       \l" 
+ "BB3\n6   conditional branch(ne) v2,v6:#null       \l" -> "BB4\n9  < Application, LBlueReturn, setDist(I)V >( O3_1, V61 )\l" 
+ "BB3\n6   conditional branch(ne) v2,v6:#null       \l" -> "BB6\n16  < Application, LBlueReturn, setVert(LVertex;)V >( O3_1, O2_1 )\l" 
+ "BB4\n9  < Application, LBlueReturn, setDist(I)V >( O3_1, V61 )\l" -> "BB5\n11  Return O3_1                              \l" 
+ "BB5\n11  Return O3_1                              \l" -> "BB45 (ex)\n\n" 
+ "BB6\n16  < Application, LBlueReturn, setVert(LVertex;)V >( O3_1, O2_1 )\l" -> "BB7\n19  O4_1 = < Application, LVertex, mindist()I >( O2_1 )\l" 
+ "BB7\n19  O4_1 = < Application, LVertex, mindist()I >( O2_1 )\l" -> "BB8\n20  < Application, LBlueReturn, setDist(I)V >( O3_1, V9 )\l" 
+ "BB8\n20  < Application, LBlueReturn, setDist(I)V >( O3_1, V9 )\l" -> "BB9\n22  O5_1 = < Application, LVertex, neighbors()LHashtable; >( O2_1 )\l" 
+ "BB9\n22  O5_1 = < Application, LVertex, neighbors()LHashtable; >( O2_1 )\l" -> "BB10\n26  O6_1 = < Application, LHashtable, get(Ljava/lang/Object;)Ljava/lang/Object; >( O5_1, O2_1 )\l" 
+ "BB10\n26  O6_1 = < Application, LHashtable, get(Ljava/lang/Object;)Ljava/lang/Object; >( O5_1, O2_1 )\l" -> "BB11\n30   conditional branch(eq) v14,v6:#null     \l" 
+ "BB11\n30   conditional branch(eq) v14,v6:#null     \l" -> "BB12\n32   v18 = checkcast <Application,Ljava/lang/Integer>v14\l" 
+ "BB11\n30   conditional branch(eq) v14,v6:#null     \l" -> "BB19\n46  nonreference field get instrctn: 15 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l48  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O7_1, V16 )\l" 
+ "BB12\n32   v18 = checkcast <Application,Ljava/lang/Integer>v14\l" -> "BB13\n33  O4_2 = < Application, Ljava/lang/Integer, intValue()I >( O6_1 )\l" 
+ "BB13\n33  O4_2 = < Application, Ljava/lang/Integer, intValue()I >( O6_1 )\l" -> "BB14\n37  O4_3 = < Application, LBlueReturn, dist()I >( O3_1 )\l" 
+ "BB14\n37  O4_3 = < Application, LBlueReturn, dist()I >( O3_1 )\l" -> "BB15\n38   conditional branch(ge) v20,v22          \l" 
+ "BB15\n38   conditional branch(ge) v20,v22          \l" -> "BB16\n41  < Application, LVertex, setMindist(I)V >( O2_1, V20 )\l" 
+ "BB15\n38   conditional branch(ge) v20,v22          \l" -> "BB18\n45   goto                                    \l" 
+ "BB16\n41  < Application, LVertex, setMindist(I)V >( O2_1, V20 )\l" -> "BB17\n44  < Application, LBlueReturn, setDist(I)V >( O3_1, V20 )\l" 
+ "BB17\n44  < Application, LBlueReturn, setDist(I)V >( O3_1, V20 )\l" -> "BB18\n45   goto                                    \l" 
+ "BB18\n45   goto                                    \l" -> "BB20\n52  O2_2 = < Application, LVertex, next()LVertex; >( O2_1 )\l" 
+ "BB19\n46  nonreference field get instrctn: 15 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l48  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O7_1, V16 )\l" -> "BB20\n52  O2_2 = < Application, LVertex, next()LVertex; >( O2_1 )\l" 
+ "BB20\n52  O2_2 = < Application, LVertex, next()LVertex; >( O2_1 )\l" -> "BB21\n" 
+ "BB21\n" -> "BB22\n           v56 = phi  v60,v2\l           v59 = phi  v29,v25:#0\l           v60 = phi  v55,v27\l56   conditional branch(eq) v60,v6:#null     \l" 
+ "BB22\n           v56 = phi  v60,v2\l           v59 = phi  v29,v25:#0\l           v60 = phi  v55,v27\l56   conditional branch(eq) v60,v6:#null     \l" -> "BB23\n59   v29 = binaryop(add) v59 , v28:#1        \l63   conditional branch(ne) v60,v1           \l" 
+ "BB22\n           v56 = phi  v60,v2\l           v59 = phi  v29,v25:#0\l           v60 = phi  v55,v27\l56   conditional branch(eq) v60,v6:#null     \l" -> "BB44\n117  Return O3_1                             \l" 
+ "BB23\n59   v29 = binaryop(add) v59 , v28:#1        \l63   conditional branch(ne) v60,v1           \l" -> "BB24\n65  O1_2 = < Application, LVertex, next()LVertex; >( O1_1 )\l" 
+ "BB23\n59   v29 = binaryop(add) v59 , v28:#1        \l63   conditional branch(ne) v60,v1           \l" -> "BB27\n72  O5_2 = < Application, LVertex, neighbors()LHashtable; >( O1_1 )\l" 
+ "BB24\n65  O1_2 = < Application, LVertex, next()LVertex; >( O1_1 )\l" -> "BB25\n69  < Application, LVertex, setNext(LVertex;)V >( O1_2, O1_2 )\l" 
+ "BB25\n69  < Application, LVertex, setNext(LVertex;)V >( O1_2, O1_2 )\l" -> "BB26\n70   goto                                    \l" 
+ "BB26\n70   goto                                    \l" -> "BB42\n113  O1_3 = < Application, LVertex, next()LVertex; >( O1_1 )\l" 
+ "BB27\n72  O5_2 = < Application, LVertex, neighbors()LHashtable; >( O1_1 )\l" -> "BB28\n75  O4_4 = < Application, LVertex, mindist()I >( O1_1 )\l" 
+ "BB28\n75  O4_4 = < Application, LVertex, mindist()I >( O1_1 )\l" -> "BB29\n79  O6_2 = < Application, LHashtable, get(Ljava/lang/Object;)Ljava/lang/Object; >( O5_2, O1_1 )\l" 
+ "BB29\n79  O6_2 = < Application, LHashtable, get(Ljava/lang/Object;)Ljava/lang/Object; >( O5_2, O1_1 )\l" -> "BB30\n83   conditional branch(eq) v35,v6:#null     \l" 
+ "BB30\n83   conditional branch(eq) v35,v6:#null     \l" -> "BB31\n85   v36 = checkcast <Application,Ljava/lang/Integer>v35\l" 
+ "BB30\n83   conditional branch(eq) v35,v6:#null     \l" -> "BB37\n97  nonreference field get instrctn: 41 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l99  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O7_1, V16 )\l" 
+ "BB31\n85   v36 = checkcast <Application,Ljava/lang/Integer>v35\l" -> "BB32\n86  O4_5 = < Application, Ljava/lang/Integer, intValue()I >( O6_2 )\l" 
+ "BB32\n86  O4_5 = < Application, Ljava/lang/Integer, intValue()I >( O6_2 )\l" -> "BB33\n90   conditional branch(ge) v38,v33          \l" 
+ "BB33\n90   conditional branch(ge) v38,v33          \l" -> "BB34\n93  < Application, LVertex, setMindist(I)V >( O1_1, V38 )\l" 
+ "BB33\n90   conditional branch(ge) v38,v33          \l" -> "BB36\n           v40 = phi  v33,v38\l96   goto                                    \l" 
+ "BB34\n93  < Application, LVertex, setMindist(I)V >( O1_1, V38 )\l" -> "BB35\n" 
+ "BB35\n" -> "BB36\n           v40 = phi  v33,v38\l96   goto                                    \l" 
+ "BB36\n           v40 = phi  v33,v38\l96   goto                                    \l" -> "BB38\n           v43 = phi  v40,v33\l102  O4_6 = < Application, LBlueReturn, dist()I >( O3_1 )\l" 
+ "BB37\n97  nonreference field get instrctn: 41 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l99  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O7_1, V16 )\l" -> "BB38\n           v43 = phi  v40,v33\l102  O4_6 = < Application, LBlueReturn, dist()I >( O3_1 )\l" 
+ "BB38\n           v43 = phi  v40,v33\l102  O4_6 = < Application, LBlueReturn, dist()I >( O3_1 )\l" -> "BB39\n103   conditional branch(ge) v43,v45         \l" 
+ "BB39\n103   conditional branch(ge) v43,v45         \l" -> "BB40\n106  < Application, LBlueReturn, setVert(LVertex;)V >( O3_1, O1_1 )\l" 
+ "BB39\n103   conditional branch(ge) v43,v45         \l" -> "BB42\n113  O1_3 = < Application, LVertex, next()LVertex; >( O1_1 )\l" 
+ "BB40\n106  < Application, LBlueReturn, setVert(LVertex;)V >( O3_1, O1_1 )\l" -> "BB41\n109  < Application, LBlueReturn, setDist(I)V >( O3_1, V43 )\l" 
+ "BB41\n109  < Application, LBlueReturn, setDist(I)V >( O3_1, V43 )\l" -> "BB42\n113  O1_3 = < Application, LVertex, next()LVertex; >( O1_1 )\l" 
+ "BB42\n113  O1_3 = < Application, LVertex, next()LVertex; >( O1_1 )\l" -> "BB43\n115   goto                                   \l" 
+ "BB43\n115   goto                                   \l" -> "BB22\n           v56 = phi  v60,v2\l           v59 = phi  v29,v25:#0\l           v60 = phi  v55,v27\l56   conditional branch(eq) v60,v6:#null     \l" 
+ "BB44\n117  Return O3_1                             \l" -> "BB45 (ex)\n\n" 
+
+}

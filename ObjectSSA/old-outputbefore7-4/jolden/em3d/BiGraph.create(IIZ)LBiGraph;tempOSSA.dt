@@ -1,0 +1,152 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for BiGraph.create(IIZ)LBiGraph;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   invokestatic < Application, LNode, initSeed(J)V > v5:#783 @3 exception:v6\l" [ ]
+   "BB2\n4   conditional branch(eq) v3,v7:#0          \l" [ ]
+   "BB3\n5  nonreference field get instrctn: 8 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l7   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v8,v9:#making nodes (tables in orig. version) @15 exception:v10\l" [ ]
+   "BB4\n10   v12 = invokestatic < Application, LNode, fillTable(II)[LNode; > v1,v2 @20 exception:v11\l" [ ]
+   "BB5\n14   v14 = invokestatic < Application, LNode, fillTable(II)[LNode; > v1,v2 @26 exception:v13\l" [ ]
+   "BB6\n18   conditional branch(eq) v3,v7:#0         \l" [ ]
+   "BB7\n19  nonreference field get instrctn: 15 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l21   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v15,v16:#updating from and coeffs @40 exception:v17\l" [ ]
+   "BB8\n24   v18 = arrayload v12[v7:#0]              \l" [ ]
+   "BB9\n25   v20 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v18 @46 exception:v19\l" [ ]
+   "BB10\n" [ ]
+   "BB11\n28   v22 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v20 @53 exception:v21\l" [ ]
+   "BB12\n30   conditional branch(eq) v22,v7:#0        \l" [ ]
+   "BB13\n32   v24 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v20 @63 exception:v23\l" [ ]
+   "BB14\n33   v25 = checkcast <Application,LNode>v24  \l" [ ]
+   "BB15\n37   invokevirtual < Application, LNode, makeUniqueNeighbors([LNode;)V > v25,v14 @77 exception:v26\l" [ ]
+   "BB16\n38   goto                                    \l" [ ]
+   "BB17\n41   v27 = arrayload v14[v7:#0]              \l" [ ]
+   "BB18\n42   v29 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v27 @87 exception:v28\l" [ ]
+   "BB19\n" [ ]
+   "BB20\n45   v31 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v29 @94 exception:v30\l" [ ]
+   "BB21\n47   conditional branch(eq) v31,v7:#0        \l" [ ]
+   "BB22\n49   v33 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v29 @104 exception:v32\l" [ ]
+   "BB23\n50   v34 = checkcast <Application,LNode>v33  \l" [ ]
+   "BB24\n54   invokevirtual < Application, LNode, makeUniqueNeighbors([LNode;)V > v34,v12 @117 exception:v35\l" [ ]
+   "BB25\n55   goto                                    \l" [ ]
+   "BB26\n58   conditional branch(eq) v3,v7:#0         \l" [ ]
+   "BB27\n59  nonreference field get instrctn: 37 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l61   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v37,v38:#filling from fields @132 exception:v39\l" [ ]
+   "BB28\n64   v40 = arrayload v12[v7:#0]              \l" [ ]
+   "BB29\n65   v42 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v40 @138 exception:v41\l" [ ]
+   "BB30\n" [ ]
+   "BB31\n68   v44 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v42 @145 exception:v43\l" [ ]
+   "BB32\n70   conditional branch(eq) v44,v7:#0        \l" [ ]
+   "BB33\n72   v46 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v42 @155 exception:v45\l" [ ]
+   "BB34\n73   v47 = checkcast <Application,LNode>v46  \l" [ ]
+   "BB35\n76   invokevirtual < Application, LNode, makeFromNodes()V > v47 @167 exception:v48\l" [ ]
+   "BB36\n77   goto                                    \l" [ ]
+   "BB37\n80   v50 = arrayload v14[v7:#0]              \l" [ ]
+   "BB38\n81   v52 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v50 @177 exception:v51\l" [ ]
+   "BB39\n" [ ]
+   "BB40\n84   v54 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v52 @184 exception:v53\l" [ ]
+   "BB41\n86   conditional branch(eq) v54,v7:#0        \l" [ ]
+   "BB42\n88   v56 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v52 @194 exception:v55\l" [ ]
+   "BB43\n89   v57 = checkcast <Application,LNode>v56  \l" [ ]
+   "BB44\n92   invokevirtual < Application, LNode, makeFromNodes()V > v57 @206 exception:v58\l" [ ]
+   "BB45\n93   goto                                    \l" [ ]
+   "BB46\n96   v60 = arrayload v12[v7:#0]              \l" [ ]
+   "BB47\n97   v62 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v60 @215 exception:v61\l" [ ]
+   "BB48\n" [ ]
+   "BB49\n100   v64 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v62 @222 exception:v63\l" [ ]
+   "BB50\n102   conditional branch(eq) v64,v7:#0       \l" [ ]
+   "BB51\n104   v66 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v62 @232 exception:v65\l" [ ]
+   "BB52\n105   v67 = checkcast <Application,LNode>v66 \l" [ ]
+   "BB53\n108   invokevirtual < Application, LNode, updateFromNodes()V > v67 @244 exception:v68\l" [ ]
+   "BB54\n109   goto                                   \l" [ ]
+   "BB55\n112   v70 = arrayload v14[v7:#0]             \l" [ ]
+   "BB56\n113   v72 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v70 @254 exception:v71\l" [ ]
+   "BB57\n" [ ]
+   "BB58\n116   v74 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v72 @261 exception:v73\l" [ ]
+   "BB59\n118   conditional branch(eq) v74,v7:#0       \l" [ ]
+   "BB60\n120   v76 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v72 @271 exception:v75\l" [ ]
+   "BB61\n121   v77 = checkcast <Application,LNode>v76 \l" [ ]
+   "BB62\n124   invokevirtual < Application, LNode, updateFromNodes()V > v77 @283 exception:v78\l" [ ]
+   "BB63\n125   goto                                   \l" [ ]
+   "BB64\n126  Create O2_1                             \l" [ ]
+   "BB65\n130   v81 = arrayload v14[v7:#0]             \l" [ ]
+   "BB66\n133   v82 = arrayload v12[v7:#0]             \l" [ ]
+   "BB67\n134   invokespecial < Application, LBiGraph, <init>(LNode;LNode;)V > v80,v81,v82 @300 exception:v83\l" [ ]
+   "BB68\n137   return v80                             \l" [ ]
+   "BB69 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   invokestatic < Application, LNode, initSeed(J)V > v5:#783 @3 exception:v6\l" 
+ "BB1\n1   invokestatic < Application, LNode, initSeed(J)V > v5:#783 @3 exception:v6\l" -> "BB2\n4   conditional branch(eq) v3,v7:#0          \l" 
+ "BB2\n4   conditional branch(eq) v3,v7:#0          \l" -> "BB3\n5  nonreference field get instrctn: 8 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l7   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v8,v9:#making nodes (tables in orig. version) @15 exception:v10\l" 
+ "BB2\n4   conditional branch(eq) v3,v7:#0          \l" -> "BB4\n10   v12 = invokestatic < Application, LNode, fillTable(II)[LNode; > v1,v2 @20 exception:v11\l" 
+ "BB3\n5  nonreference field get instrctn: 8 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l7   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v8,v9:#making nodes (tables in orig. version) @15 exception:v10\l" -> "BB4\n10   v12 = invokestatic < Application, LNode, fillTable(II)[LNode; > v1,v2 @20 exception:v11\l" 
+ "BB4\n10   v12 = invokestatic < Application, LNode, fillTable(II)[LNode; > v1,v2 @20 exception:v11\l" -> "BB5\n14   v14 = invokestatic < Application, LNode, fillTable(II)[LNode; > v1,v2 @26 exception:v13\l" 
+ "BB5\n14   v14 = invokestatic < Application, LNode, fillTable(II)[LNode; > v1,v2 @26 exception:v13\l" -> "BB6\n18   conditional branch(eq) v3,v7:#0         \l" 
+ "BB6\n18   conditional branch(eq) v3,v7:#0         \l" -> "BB7\n19  nonreference field get instrctn: 15 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l21   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v15,v16:#updating from and coeffs @40 exception:v17\l" 
+ "BB6\n18   conditional branch(eq) v3,v7:#0         \l" -> "BB8\n24   v18 = arrayload v12[v7:#0]              \l" 
+ "BB7\n19  nonreference field get instrctn: 15 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l21   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v15,v16:#updating from and coeffs @40 exception:v17\l" -> "BB8\n24   v18 = arrayload v12[v7:#0]              \l" 
+ "BB8\n24   v18 = arrayload v12[v7:#0]              \l" -> "BB9\n25   v20 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v18 @46 exception:v19\l" 
+ "BB9\n25   v20 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v18 @46 exception:v19\l" -> "BB10\n" 
+ "BB10\n" -> "BB11\n28   v22 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v20 @53 exception:v21\l" 
+ "BB11\n28   v22 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v20 @53 exception:v21\l" -> "BB12\n30   conditional branch(eq) v22,v7:#0        \l" 
+ "BB12\n30   conditional branch(eq) v22,v7:#0        \l" -> "BB13\n32   v24 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v20 @63 exception:v23\l" 
+ "BB12\n30   conditional branch(eq) v22,v7:#0        \l" -> "BB17\n41   v27 = arrayload v14[v7:#0]              \l" 
+ "BB13\n32   v24 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v20 @63 exception:v23\l" -> "BB14\n33   v25 = checkcast <Application,LNode>v24  \l" 
+ "BB14\n33   v25 = checkcast <Application,LNode>v24  \l" -> "BB15\n37   invokevirtual < Application, LNode, makeUniqueNeighbors([LNode;)V > v25,v14 @77 exception:v26\l" 
+ "BB15\n37   invokevirtual < Application, LNode, makeUniqueNeighbors([LNode;)V > v25,v14 @77 exception:v26\l" -> "BB16\n38   goto                                    \l" 
+ "BB16\n38   goto                                    \l" -> "BB11\n28   v22 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v20 @53 exception:v21\l" 
+ "BB17\n41   v27 = arrayload v14[v7:#0]              \l" -> "BB18\n42   v29 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v27 @87 exception:v28\l" 
+ "BB18\n42   v29 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v27 @87 exception:v28\l" -> "BB19\n" 
+ "BB19\n" -> "BB20\n45   v31 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v29 @94 exception:v30\l" 
+ "BB20\n45   v31 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v29 @94 exception:v30\l" -> "BB21\n47   conditional branch(eq) v31,v7:#0        \l" 
+ "BB21\n47   conditional branch(eq) v31,v7:#0        \l" -> "BB22\n49   v33 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v29 @104 exception:v32\l" 
+ "BB21\n47   conditional branch(eq) v31,v7:#0        \l" -> "BB26\n58   conditional branch(eq) v3,v7:#0         \l" 
+ "BB22\n49   v33 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v29 @104 exception:v32\l" -> "BB23\n50   v34 = checkcast <Application,LNode>v33  \l" 
+ "BB23\n50   v34 = checkcast <Application,LNode>v33  \l" -> "BB24\n54   invokevirtual < Application, LNode, makeUniqueNeighbors([LNode;)V > v34,v12 @117 exception:v35\l" 
+ "BB24\n54   invokevirtual < Application, LNode, makeUniqueNeighbors([LNode;)V > v34,v12 @117 exception:v35\l" -> "BB25\n55   goto                                    \l" 
+ "BB25\n55   goto                                    \l" -> "BB20\n45   v31 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v29 @94 exception:v30\l" 
+ "BB26\n58   conditional branch(eq) v3,v7:#0         \l" -> "BB27\n59  nonreference field get instrctn: 37 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l61   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v37,v38:#filling from fields @132 exception:v39\l" 
+ "BB26\n58   conditional branch(eq) v3,v7:#0         \l" -> "BB28\n64   v40 = arrayload v12[v7:#0]              \l" 
+ "BB27\n59  nonreference field get instrctn: 37 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l61   invokevirtual < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V > v37,v38:#filling from fields @132 exception:v39\l" -> "BB28\n64   v40 = arrayload v12[v7:#0]              \l" 
+ "BB28\n64   v40 = arrayload v12[v7:#0]              \l" -> "BB29\n65   v42 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v40 @138 exception:v41\l" 
+ "BB29\n65   v42 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v40 @138 exception:v41\l" -> "BB30\n" 
+ "BB30\n" -> "BB31\n68   v44 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v42 @145 exception:v43\l" 
+ "BB31\n68   v44 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v42 @145 exception:v43\l" -> "BB32\n70   conditional branch(eq) v44,v7:#0        \l" 
+ "BB32\n70   conditional branch(eq) v44,v7:#0        \l" -> "BB33\n72   v46 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v42 @155 exception:v45\l" 
+ "BB32\n70   conditional branch(eq) v44,v7:#0        \l" -> "BB37\n80   v50 = arrayload v14[v7:#0]              \l" 
+ "BB33\n72   v46 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v42 @155 exception:v45\l" -> "BB34\n73   v47 = checkcast <Application,LNode>v46  \l" 
+ "BB34\n73   v47 = checkcast <Application,LNode>v46  \l" -> "BB35\n76   invokevirtual < Application, LNode, makeFromNodes()V > v47 @167 exception:v48\l" 
+ "BB35\n76   invokevirtual < Application, LNode, makeFromNodes()V > v47 @167 exception:v48\l" -> "BB36\n77   goto                                    \l" 
+ "BB36\n77   goto                                    \l" -> "BB31\n68   v44 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v42 @145 exception:v43\l" 
+ "BB37\n80   v50 = arrayload v14[v7:#0]              \l" -> "BB38\n81   v52 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v50 @177 exception:v51\l" 
+ "BB38\n81   v52 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v50 @177 exception:v51\l" -> "BB39\n" 
+ "BB39\n" -> "BB40\n84   v54 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v52 @184 exception:v53\l" 
+ "BB40\n84   v54 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v52 @184 exception:v53\l" -> "BB41\n86   conditional branch(eq) v54,v7:#0        \l" 
+ "BB41\n86   conditional branch(eq) v54,v7:#0        \l" -> "BB42\n88   v56 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v52 @194 exception:v55\l" 
+ "BB41\n86   conditional branch(eq) v54,v7:#0        \l" -> "BB46\n96   v60 = arrayload v12[v7:#0]              \l" 
+ "BB42\n88   v56 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v52 @194 exception:v55\l" -> "BB43\n89   v57 = checkcast <Application,LNode>v56  \l" 
+ "BB43\n89   v57 = checkcast <Application,LNode>v56  \l" -> "BB44\n92   invokevirtual < Application, LNode, makeFromNodes()V > v57 @206 exception:v58\l" 
+ "BB44\n92   invokevirtual < Application, LNode, makeFromNodes()V > v57 @206 exception:v58\l" -> "BB45\n93   goto                                    \l" 
+ "BB45\n93   goto                                    \l" -> "BB40\n84   v54 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v52 @184 exception:v53\l" 
+ "BB46\n96   v60 = arrayload v12[v7:#0]              \l" -> "BB47\n97   v62 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v60 @215 exception:v61\l" 
+ "BB47\n97   v62 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v60 @215 exception:v61\l" -> "BB48\n" 
+ "BB48\n" -> "BB49\n100   v64 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v62 @222 exception:v63\l" 
+ "BB49\n100   v64 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v62 @222 exception:v63\l" -> "BB50\n102   conditional branch(eq) v64,v7:#0       \l" 
+ "BB50\n102   conditional branch(eq) v64,v7:#0       \l" -> "BB51\n104   v66 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v62 @232 exception:v65\l" 
+ "BB50\n102   conditional branch(eq) v64,v7:#0       \l" -> "BB55\n112   v70 = arrayload v14[v7:#0]             \l" 
+ "BB51\n104   v66 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v62 @232 exception:v65\l" -> "BB52\n105   v67 = checkcast <Application,LNode>v66 \l" 
+ "BB52\n105   v67 = checkcast <Application,LNode>v66 \l" -> "BB53\n108   invokevirtual < Application, LNode, updateFromNodes()V > v67 @244 exception:v68\l" 
+ "BB53\n108   invokevirtual < Application, LNode, updateFromNodes()V > v67 @244 exception:v68\l" -> "BB54\n109   goto                                   \l" 
+ "BB54\n109   goto                                   \l" -> "BB49\n100   v64 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v62 @222 exception:v63\l" 
+ "BB55\n112   v70 = arrayload v14[v7:#0]             \l" -> "BB56\n113   v72 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v70 @254 exception:v71\l" 
+ "BB56\n113   v72 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v70 @254 exception:v71\l" -> "BB57\n" 
+ "BB57\n" -> "BB58\n116   v74 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v72 @261 exception:v73\l" 
+ "BB58\n116   v74 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v72 @261 exception:v73\l" -> "BB59\n118   conditional branch(eq) v74,v7:#0       \l" 
+ "BB59\n118   conditional branch(eq) v74,v7:#0       \l" -> "BB60\n120   v76 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v72 @271 exception:v75\l" 
+ "BB59\n118   conditional branch(eq) v74,v7:#0       \l" -> "BB64\n126  Create O2_1                             \l" 
+ "BB60\n120   v76 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v72 @271 exception:v75\l" -> "BB61\n121   v77 = checkcast <Application,LNode>v76 \l" 
+ "BB61\n121   v77 = checkcast <Application,LNode>v76 \l" -> "BB62\n124   invokevirtual < Application, LNode, updateFromNodes()V > v77 @283 exception:v78\l" 
+ "BB62\n124   invokevirtual < Application, LNode, updateFromNodes()V > v77 @283 exception:v78\l" -> "BB63\n125   goto                                   \l" 
+ "BB63\n125   goto                                   \l" -> "BB58\n116   v74 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v72 @261 exception:v73\l" 
+ "BB64\n126  Create O2_1                             \l" -> "BB65\n130   v81 = arrayload v14[v7:#0]             \l" 
+ "BB65\n130   v81 = arrayload v14[v7:#0]             \l" -> "BB66\n133   v82 = arrayload v12[v7:#0]             \l" 
+ "BB66\n133   v82 = arrayload v12[v7:#0]             \l" -> "BB67\n134   invokespecial < Application, LBiGraph, <init>(LNode;LNode;)V > v80,v81,v82 @300 exception:v83\l" 
+ "BB67\n134   invokespecial < Application, LBiGraph, <init>(LNode;LNode;)V > v80,v81,v82 @300 exception:v83\l" -> "BB68\n137   return v80                             \l" 
+ "BB68\n137   return v80                             \l" -> "BB69 (ex)\n\n" 
+
+}

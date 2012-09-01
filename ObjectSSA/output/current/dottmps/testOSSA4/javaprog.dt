@@ -1,0 +1,61 @@
+digraph "DirectedGraph" {
+center=true;
+node [ color=blue,shape="box",];
+   "BB0 (en)\n\n" [ ]
+   BB1[label="Sample a = new Sample();\l"]
+/* "BB2\n2   invokespecial < Application, LOSSATestCases/Sample, <init>()V > v2 @4 exception:v3\l" [ ]*/
+   "BB3\n4   Sample b = new Sample();\l" [ ]
+/* "BB4\n6   invokespecial < Application, LOSSATestCases/Sample, <init>()V > v4 @12 exception:v5\l" [ ]*/
+   "BB5\n8   Sample c = new Sample();\l" [ ]
+/*   "BB6\n10   invokespecial < Application, LOSSATestCases/Sample, <init>()V > v6 @20 exception:v7\l" [ ]*/
+   "BB7\n17   int p1=a.x;\l" [ ]
+   "BB8\n20   int p2=b.x;\l" [ ]
+   "BB9\n23   int p3=c.x;\l" [ ]
+   "BB10\n27   if(p1>10) {\l" [ ]
+   "BB11\n30   if(p2>5) {\l" [ ]
+   "BB12\n35   d=a;\l a.x=3;\l" [ ]
+   "BB13\n36   goto                          \l" [ ]
+   "BB14\n     d=b;\l" [ ]
+   "BB15\n            /*v18 = phi  v2,v4\l41*/   a.x=4;\l" [ ]
+   "BB16\n44   d.x=2;\l" [ ]
+   "BB17\n45   goto                          \l" [ ]
+   "BB18\n48   if(p3>1) {\l" [ ]
+   "BB19\n51   e=b\l   goto                          \l" [ ]
+   "BB20\n     e=c\l" [ ]
+   "BB21\n           /*v14 = phi  v4,v6\l56 */  e.x=20;\l" [ ]
+   "BB22\n          /* v21 = phi  v18,v8:#null\l           v22 = phi  v8:#null,v14\l59 */  d.next=c;\l" [ ]
+   "BB23\n62   e.x=2;\l" [ ]
+   "BB24\n64   p1=d.x;\l" [ ]
+   "BB25\n68   b.x=a.x;\l" [ ]
+/*   "BB26\n69   putfield v4 = v24 < Application, LOSSATestCases/Sample, x, <Primordial,I> >\l" [ ]*/
+   "BB27\n70   return                        \l" [ ]
+   "BB28 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0   Sample a = new Sample();\l" 
+ "BB1\n0   Sample a = new Sample();\l" -> "BB3\n4   Sample b = new Sample();\l" 
+ "BB3\n4   Sample b = new Sample();\l" -> "BB5\n8   Sample c = new Sample();\l" 
+ "BB5\n8   Sample c = new Sample();\l" -> "BB7\n17   int p1=a.x;\l" 
+ "BB7\n17   int p1=a.x;\l" -> "BB8\n20   int p2=b.x;\l" 
+ "BB8\n20   int p2=b.x;\l" -> "BB9\n23   int p3=c.x;\l" 
+ "BB9\n23   int p3=c.x;\l" -> "BB10\n27   if(p1>10) {\l" 
+ "BB10\n27   if(p1>10) {\l" -> "BB11\n30   if(p2>5) {\l" 
+ "BB10\n27   if(p1>10) {\l" -> "BB18\n48   if(p3>1) {\l" 
+ "BB11\n30   if(p2>5) {\l" -> "BB12\n35   d=a;\l a.x=3;\l" 
+ "BB11\n30   if(p2>5) {\l" -> "BB14\n     d=b;\l" 
+ "BB12\n35   d=a;\l a.x=3;\l" -> "BB13\n36   goto                          \l" 
+ "BB13\n36   goto                          \l" -> "BB15\n            /*v18 = phi  v2,v4\l41*/   a.x=4;\l" 
+ "BB14\n     d=b;\l" -> "BB15\n            /*v18 = phi  v2,v4\l41*/   a.x=4;\l" 
+ "BB15\n            /*v18 = phi  v2,v4\l41*/   a.x=4;\l" -> "BB16\n44   d.x=2;\l" 
+ "BB16\n44   d.x=2;\l" -> "BB17\n45   goto                          \l" 
+ "BB17\n45   goto                          \l" -> "BB22\n          /* v21 = phi  v18,v8:#null\l           v22 = phi  v8:#null,v14\l59 */  d.next=c;\l" 
+ "BB18\n48   if(p3>1) {\l" -> "BB19\n51   e=b\l   goto                          \l" 
+ "BB18\n48   if(p3>1) {\l" -> "BB20\n     e=c\l" 
+ "BB19\n51   e=b\l   goto                          \l" -> "BB21\n           /*v14 = phi  v4,v6\l56 */  e.x=20;\l" 
+ "BB20\n     e=c\l" -> "BB21\n           /*v14 = phi  v4,v6\l56 */  e.x=20;\l" 
+ "BB21\n           /*v14 = phi  v4,v6\l56 */  e.x=20;\l" -> "BB22\n          /* v21 = phi  v18,v8:#null\l           v22 = phi  v8:#null,v14\l59 */  d.next=c;\l" 
+ "BB22\n          /* v21 = phi  v18,v8:#null\l           v22 = phi  v8:#null,v14\l59 */  d.next=c;\l" -> "BB23\n62   e.x=2;\l" 
+ "BB23\n62   e.x=2;\l" -> "BB24\n64   p1=d.x;\l" 
+ "BB24\n64   p1=d.x;\l" -> "BB25\n68   b.x=a.x;\l" 
+ "BB25\n68   b.x=a.x;\l" -> "BB27\n70   return                        \l" 
+ "BB27\n70   return                        \l" -> "BB28 (ex)\n\n" 
+
+}

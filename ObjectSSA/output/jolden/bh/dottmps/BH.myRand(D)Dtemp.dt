@@ -1,0 +1,11 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2   v4 = binaryop(mul) v3:#16807.0 , v1\l4   v6 = binaryop(add) v4 , v5:#1.0\l10   v8 = binaryop(div) v6 , v7:#2.147483647E9\l11   v10 = invokestatic < Application, Ljava/lang/Math, floor(D)D > v8 @17 exception:v9\l" [ ]
+   "BB2\n12   v11 = binaryop(mul) v7:#2.147483647E9 , v10\l13   v12 = binaryop(sub) v6 , v11  \l16   return v12                    \l" [ ]
+   "BB3 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2   v4 = binaryop(mul) v3:#16807.0 , v1\l4   v6 = binaryop(add) v4 , v5:#1.0\l10   v8 = binaryop(div) v6 , v7:#2.147483647E9\l11   v10 = invokestatic < Application, Ljava/lang/Math, floor(D)D > v8 @17 exception:v9\l" 
+ "BB1\n2   v4 = binaryop(mul) v3:#16807.0 , v1\l4   v6 = binaryop(add) v4 , v5:#1.0\l10   v8 = binaryop(div) v6 , v7:#2.147483647E9\l11   v10 = invokestatic < Application, Ljava/lang/Math, floor(D)D > v8 @17 exception:v9\l" -> "BB2\n12   v11 = binaryop(mul) v7:#2.147483647E9 , v10\l13   v12 = binaryop(sub) v6 , v11  \l16   return v12                    \l" 
+ "BB2\n12   v11 = binaryop(mul) v7:#2.147483647E9 , v10\l13   v12 = binaryop(sub) v6 , v11  \l16   return v12                    \l" -> "BB3 (ex)\n\n" 
+
+}

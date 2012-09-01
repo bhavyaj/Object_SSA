@@ -1,0 +1,45 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Value.inOrder()V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  GetOSSAInstruction:	O1_1= O1_1< left>     \l" [ ]
+   "BB2\n3   conditional branch(eq) v3,v4:#null       \l" [ ]
+   "BB3\n5  GetOSSAInstruction:	O1_1= O1_1< left>     \l" [ ]
+   "BB4\n6  < Application, LValue, inOrder()V >( O1_1 )\l" [ ]
+   "BB5\n7  nonreference field get instrctn: 7 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l8  Create O3_1                               \l" [ ]
+   "BB6\n10  < Application, Ljava/lang/StringBuilder, <init>()V >( O3_1 )\l" [ ]
+   "BB7\n12  GetOSSAInstruction:	10= O1_1< value>     \l" [ ]
+   "BB8\n13  O4_1 = < Application, Ljava/lang/StringBuilder, append(I)Ljava/lang/StringBuilder; >( O3_1, V10 )\l" [ ]
+   "BB9\n15  O4_2 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O4_1, V13 )\l" [ ]
+   "BB10\n17  O5_1 = < Application, Ljava/lang/Object, hashCode()I >( O1_1 )\l" [ ]
+   "BB11\n18  O4_3 = < Application, Ljava/lang/StringBuilder, append(I)Ljava/lang/StringBuilder; >( O4_2, V17 )\l" [ ]
+   "BB12\n19  O6_1 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O4_3 )\l" [ ]
+   "BB13\n20  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O2_1, O6_1 )\l" [ ]
+   "BB14\n22  GetOSSAInstruction:	O1_1= O1_1< right>   \l" [ ]
+   "BB15\n24   conditional branch(eq) v23,v4:#null     \l" [ ]
+   "BB16\n26  GetOSSAInstruction:	O1_1= O1_1< right>   \l" [ ]
+   "BB17\n27  < Application, LValue, inOrder()V >( O1_1 )\l" [ ]
+   "BB18\n28  return                                   \l" [ ]
+   "BB19 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  GetOSSAInstruction:	O1_1= O1_1< left>     \l" 
+ "BB1\n1  GetOSSAInstruction:	O1_1= O1_1< left>     \l" -> "BB2\n3   conditional branch(eq) v3,v4:#null       \l" 
+ "BB2\n3   conditional branch(eq) v3,v4:#null       \l" -> "BB3\n5  GetOSSAInstruction:	O1_1= O1_1< left>     \l" 
+ "BB2\n3   conditional branch(eq) v3,v4:#null       \l" -> "BB5\n7  nonreference field get instrctn: 7 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l8  Create O3_1                               \l" 
+ "BB3\n5  GetOSSAInstruction:	O1_1= O1_1< left>     \l" -> "BB4\n6  < Application, LValue, inOrder()V >( O1_1 )\l" 
+ "BB4\n6  < Application, LValue, inOrder()V >( O1_1 )\l" -> "BB5\n7  nonreference field get instrctn: 7 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l8  Create O3_1                               \l" 
+ "BB5\n7  nonreference field get instrctn: 7 = getstatic < Application, Ljava/lang/System, out, <Application,Ljava/io/PrintStream> >\l8  Create O3_1                               \l" -> "BB6\n10  < Application, Ljava/lang/StringBuilder, <init>()V >( O3_1 )\l" 
+ "BB6\n10  < Application, Ljava/lang/StringBuilder, <init>()V >( O3_1 )\l" -> "BB7\n12  GetOSSAInstruction:	10= O1_1< value>     \l" 
+ "BB7\n12  GetOSSAInstruction:	10= O1_1< value>     \l" -> "BB8\n13  O4_1 = < Application, Ljava/lang/StringBuilder, append(I)Ljava/lang/StringBuilder; >( O3_1, V10 )\l" 
+ "BB8\n13  O4_1 = < Application, Ljava/lang/StringBuilder, append(I)Ljava/lang/StringBuilder; >( O3_1, V10 )\l" -> "BB9\n15  O4_2 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O4_1, V13 )\l" 
+ "BB9\n15  O4_2 = < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; >( O4_1, V13 )\l" -> "BB10\n17  O5_1 = < Application, Ljava/lang/Object, hashCode()I >( O1_1 )\l" 
+ "BB10\n17  O5_1 = < Application, Ljava/lang/Object, hashCode()I >( O1_1 )\l" -> "BB11\n18  O4_3 = < Application, Ljava/lang/StringBuilder, append(I)Ljava/lang/StringBuilder; >( O4_2, V17 )\l" 
+ "BB11\n18  O4_3 = < Application, Ljava/lang/StringBuilder, append(I)Ljava/lang/StringBuilder; >( O4_2, V17 )\l" -> "BB12\n19  O6_1 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O4_3 )\l" 
+ "BB12\n19  O6_1 = < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; >( O4_3 )\l" -> "BB13\n20  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O2_1, O6_1 )\l" 
+ "BB13\n20  < Application, Ljava/io/PrintStream, println(Ljava/lang/String;)V >( O2_1, O6_1 )\l" -> "BB14\n22  GetOSSAInstruction:	O1_1= O1_1< right>   \l" 
+ "BB14\n22  GetOSSAInstruction:	O1_1= O1_1< right>   \l" -> "BB15\n24   conditional branch(eq) v23,v4:#null     \l" 
+ "BB15\n24   conditional branch(eq) v23,v4:#null     \l" -> "BB16\n26  GetOSSAInstruction:	O1_1= O1_1< right>   \l" 
+ "BB15\n24   conditional branch(eq) v23,v4:#null     \l" -> "BB18\n28  return                                   \l" 
+ "BB16\n26  GetOSSAInstruction:	O1_1= O1_1< right>   \l" -> "BB17\n27  < Application, LValue, inOrder()V >( O1_1 )\l" 
+ "BB17\n27  < Application, LValue, inOrder()V >( O1_1 )\l" -> "BB18\n28  return                                   \l" 
+ "BB18\n28  return                                   \l" -> "BB19 (ex)\n\n" 
+
+}

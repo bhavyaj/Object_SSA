@@ -1,0 +1,17 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v6\l" [ ]
+   "BB2\n4   putfield v1 = v2 < Application, LHashEntry, key, <Application,Ljava/lang/Object> >\l" [ ]
+   "BB3\n7   putfield v1 = v3 < Application, LHashEntry, entry, <Application,Ljava/lang/Object> >\l" [ ]
+   "BB4\n10   putfield v1 = v4 < Application, LHashEntry, next, <Application,LHashEntry> >\l" [ ]
+   "BB5\n11   return                        \l" [ ]
+   "BB6 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v6\l" 
+ "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v6\l" -> "BB2\n4   putfield v1 = v2 < Application, LHashEntry, key, <Application,Ljava/lang/Object> >\l" 
+ "BB2\n4   putfield v1 = v2 < Application, LHashEntry, key, <Application,Ljava/lang/Object> >\l" -> "BB3\n7   putfield v1 = v3 < Application, LHashEntry, entry, <Application,Ljava/lang/Object> >\l" 
+ "BB3\n7   putfield v1 = v3 < Application, LHashEntry, entry, <Application,Ljava/lang/Object> >\l" -> "BB4\n10   putfield v1 = v4 < Application, LHashEntry, next, <Application,LHashEntry> >\l" 
+ "BB4\n10   putfield v1 = v4 < Application, LHashEntry, next, <Application,LHashEntry> >\l" -> "BB5\n11   return                        \l" 
+ "BB5\n11   return                        \l" -> "BB6 (ex)\n\n" 
+
+}

@@ -1,0 +1,13 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Node.initSeed(J)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0  Create O1_1                               \l" [ ]
+   "BB2\n3  < Application, Ljava/util/Random, <init>(J)V >( O1_1, V1 )\l" [ ]
+   "BB3\n4  PutOSSAInstruction:	O1_2< rand > = O1_1<refO1_1>\l5  return                                    \l" [ ]
+   "BB4 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0  Create O1_1                               \l" 
+ "BB1\n0  Create O1_1                               \l" -> "BB2\n3  < Application, Ljava/util/Random, <init>(J)V >( O1_1, V1 )\l" 
+ "BB2\n3  < Application, Ljava/util/Random, <init>(J)V >( O1_1, V1 )\l" -> "BB3\n4  PutOSSAInstruction:	O1_2< rand > = O1_1<refO1_1>\l5  return                                    \l" 
+ "BB3\n4  PutOSSAInstruction:	O1_2< rand > = O1_1<refO1_1>\l5  return                                    \l" -> "BB4 (ex)\n\n" 
+
+}

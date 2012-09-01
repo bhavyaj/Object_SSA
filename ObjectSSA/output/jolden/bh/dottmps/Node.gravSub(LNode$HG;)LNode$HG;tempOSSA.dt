@@ -1,0 +1,35 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Node.gravSub(LNode$HG;)LNode$HG;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0  Create O3_1                               \l" [ ]
+   "BB2\n2  < Application, LMathVector, <init>()V >( O3_1 )\l" [ ]
+   "BB3\n6  GetOSSAInstruction:	O4_1= O1_1< pos>      \l" [ ]
+   "BB4\n8  GetOSSAInstruction:	O5_1= O2_1< pos0>     \l" [ ]
+   "BB5\n9  < Application, LMathVector, subtraction(LMathVector;LMathVector;)V >( O3_1, O4_1, O5_1 )\l" [ ]
+   "BB6\n11  O6_1 = < Application, LMathVector, dotProduct()D >( O3_1 )\l" [ ]
+   "BB7\n13   v12 = binaryop(add) v10 , v11:#0.0025000000000000005\l16  O6_2 = < Application, Ljava/lang/Math, sqrt(D)D >( V12 )\l" [ ]
+   "BB8\n19  GetOSSAInstruction:	15= O1_1< mass>      \l" [ ]
+   "BB9\n21   v16 = binaryop(div) v15 , v14           \l25  GetOSSAInstruction:	17= O2_1< phi0>      \l" [ ]
+   "BB10\n27   v18 = binaryop(sub) v17 , v16           \l28  PutOSSAInstruction:	O2_2< phi0 > = O2_1<V18>\l" [ ]
+   "BB11\n31   v19 = binaryop(div) v16 , v12           \l35  < Application, LMathVector, multScalar(D)V >( O3_1, V19 )\l" [ ]
+   "BB12\n37  GetOSSAInstruction:	O7_1= O2_2< acc0>    \l" [ ]
+   "BB13\n39  < Application, LMathVector, addition(LMathVector;)V >( O7_1, O3_1 )\l" [ ]
+   "BB14\n41  Return O2_2                              \l" [ ]
+   "BB15 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0  Create O3_1                               \l" 
+ "BB1\n0  Create O3_1                               \l" -> "BB2\n2  < Application, LMathVector, <init>()V >( O3_1 )\l" 
+ "BB2\n2  < Application, LMathVector, <init>()V >( O3_1 )\l" -> "BB3\n6  GetOSSAInstruction:	O4_1= O1_1< pos>      \l" 
+ "BB3\n6  GetOSSAInstruction:	O4_1= O1_1< pos>      \l" -> "BB4\n8  GetOSSAInstruction:	O5_1= O2_1< pos0>     \l" 
+ "BB4\n8  GetOSSAInstruction:	O5_1= O2_1< pos0>     \l" -> "BB5\n9  < Application, LMathVector, subtraction(LMathVector;LMathVector;)V >( O3_1, O4_1, O5_1 )\l" 
+ "BB5\n9  < Application, LMathVector, subtraction(LMathVector;LMathVector;)V >( O3_1, O4_1, O5_1 )\l" -> "BB6\n11  O6_1 = < Application, LMathVector, dotProduct()D >( O3_1 )\l" 
+ "BB6\n11  O6_1 = < Application, LMathVector, dotProduct()D >( O3_1 )\l" -> "BB7\n13   v12 = binaryop(add) v10 , v11:#0.0025000000000000005\l16  O6_2 = < Application, Ljava/lang/Math, sqrt(D)D >( V12 )\l" 
+ "BB7\n13   v12 = binaryop(add) v10 , v11:#0.0025000000000000005\l16  O6_2 = < Application, Ljava/lang/Math, sqrt(D)D >( V12 )\l" -> "BB8\n19  GetOSSAInstruction:	15= O1_1< mass>      \l" 
+ "BB8\n19  GetOSSAInstruction:	15= O1_1< mass>      \l" -> "BB9\n21   v16 = binaryop(div) v15 , v14           \l25  GetOSSAInstruction:	17= O2_1< phi0>      \l" 
+ "BB9\n21   v16 = binaryop(div) v15 , v14           \l25  GetOSSAInstruction:	17= O2_1< phi0>      \l" -> "BB10\n27   v18 = binaryop(sub) v17 , v16           \l28  PutOSSAInstruction:	O2_2< phi0 > = O2_1<V18>\l" 
+ "BB10\n27   v18 = binaryop(sub) v17 , v16           \l28  PutOSSAInstruction:	O2_2< phi0 > = O2_1<V18>\l" -> "BB11\n31   v19 = binaryop(div) v16 , v12           \l35  < Application, LMathVector, multScalar(D)V >( O3_1, V19 )\l" 
+ "BB11\n31   v19 = binaryop(div) v16 , v12           \l35  < Application, LMathVector, multScalar(D)V >( O3_1, V19 )\l" -> "BB12\n37  GetOSSAInstruction:	O7_1= O2_2< acc0>    \l" 
+ "BB12\n37  GetOSSAInstruction:	O7_1= O2_2< acc0>    \l" -> "BB13\n39  < Application, LMathVector, addition(LMathVector;)V >( O7_1, O3_1 )\l" 
+ "BB13\n39  < Application, LMathVector, addition(LMathVector;)V >( O7_1, O3_1 )\l" -> "BB14\n41  Return O2_2                              \l" 
+ "BB14\n41  Return O2_2                              \l" -> "BB15 (ex)\n\n" 
+
+}

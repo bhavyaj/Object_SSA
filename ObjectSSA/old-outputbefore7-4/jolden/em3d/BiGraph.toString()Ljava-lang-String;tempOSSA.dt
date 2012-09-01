@@ -1,0 +1,83 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for BiGraph.toString()Ljava-lang-String;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0  Create O2_1                               \l" [ ]
+   "BB2\n2   invokespecial < Application, Ljava/lang/StringBuffer, <init>()V > v3 @4 exception:v4\l" [ ]
+   "BB3\n5  GetOSSAInstruction:	O3_1= O1_1< eNodes>   \l" [ ]
+   "BB4\n6   v7 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v5 @12 exception:v6\l" [ ]
+   "BB5\n" [ ]
+   "BB6\n9   v9 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v7 @17 exception:v8\l" [ ]
+   "BB7\n11   conditional branch(eq) v9,v10:#0        \l" [ ]
+   "BB8\n13   v12 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v7 @26 exception:v11\l" [ ]
+   "BB9\n14   v13 = checkcast <Application,LNode>v12  \l" [ ]
+   "BB10\n17  Create O4_1                              \l" [ ]
+   "BB11\n19   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v14 @40 exception:v15\l" [ ]
+   "BB12\n21   v18 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v14,v16:#E:  @45 exception:v17\l" [ ]
+   "BB13\n23   v20 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/Object;)Ljava/lang/StringBuilder; > v18,v13 @49 exception:v19\l" [ ]
+   "BB14\n25   v23 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v20,v21:#
+ @54 exception:v22\l" [ ]
+   "BB15\n26   v25 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v23 @57 exception:v24\l" [ ]
+   "BB16\n27   v27 = invokevirtual < Application, Ljava/lang/StringBuffer, append(Ljava/lang/String;)Ljava/lang/StringBuffer; > v3,v25 @60 exception:v26\l" [ ]
+   "BB17\n29   goto                                    \l" [ ]
+   "BB18\n31  GetOSSAInstruction:	O3_1= O1_1< hNodes>  \l" [ ]
+   "BB19\n32   v30 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v28 @71 exception:v29\l" [ ]
+   "BB20\n" [ ]
+   "BB21\n35   v32 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v30 @76 exception:v31\l" [ ]
+   "BB22\n37   conditional branch(eq) v32,v10:#0       \l" [ ]
+   "BB23\n39   v34 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v30 @85 exception:v33\l" [ ]
+   "BB24\n40   v35 = checkcast <Application,LNode>v34  \l" [ ]
+   "BB25\n43  Create O5_1                              \l" [ ]
+   "BB26\n45   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v36 @99 exception:v37\l" [ ]
+   "BB27\n47   v40 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v36,v38:#H:  @104 exception:v39\l" [ ]
+   "BB28\n49   v42 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/Object;)Ljava/lang/StringBuilder; > v40,v35 @108 exception:v41\l" [ ]
+   "BB29\n51   v44 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v42,v21:#
+ @113 exception:v43\l" [ ]
+   "BB30\n52   v46 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v44 @116 exception:v45\l" [ ]
+   "BB31\n53   v48 = invokevirtual < Application, Ljava/lang/StringBuffer, append(Ljava/lang/String;)Ljava/lang/StringBuffer; > v3,v46 @119 exception:v47\l" [ ]
+   "BB32\n55   goto                                    \l" [ ]
+   "BB33\n57   v51 = invokevirtual < Application, Ljava/lang/StringBuffer, toString()Ljava/lang/String; > v3 @127 exception:v50\l" [ ]
+   "BB34\n58   return v51                              \l" [ ]
+   "BB35 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0  Create O2_1                               \l" 
+ "BB1\n0  Create O2_1                               \l" -> "BB2\n2   invokespecial < Application, Ljava/lang/StringBuffer, <init>()V > v3 @4 exception:v4\l" 
+ "BB2\n2   invokespecial < Application, Ljava/lang/StringBuffer, <init>()V > v3 @4 exception:v4\l" -> "BB3\n5  GetOSSAInstruction:	O3_1= O1_1< eNodes>   \l" 
+ "BB3\n5  GetOSSAInstruction:	O3_1= O1_1< eNodes>   \l" -> "BB4\n6   v7 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v5 @12 exception:v6\l" 
+ "BB4\n6   v7 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v5 @12 exception:v6\l" -> "BB5\n" 
+ "BB5\n" -> "BB6\n9   v9 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v7 @17 exception:v8\l" 
+ "BB6\n9   v9 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v7 @17 exception:v8\l" -> "BB7\n11   conditional branch(eq) v9,v10:#0        \l" 
+ "BB7\n11   conditional branch(eq) v9,v10:#0        \l" -> "BB8\n13   v12 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v7 @26 exception:v11\l" 
+ "BB7\n11   conditional branch(eq) v9,v10:#0        \l" -> "BB18\n31  GetOSSAInstruction:	O3_1= O1_1< hNodes>  \l" 
+ "BB8\n13   v12 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v7 @26 exception:v11\l" -> "BB9\n14   v13 = checkcast <Application,LNode>v12  \l" 
+ "BB9\n14   v13 = checkcast <Application,LNode>v12  \l" -> "BB10\n17  Create O4_1                              \l" 
+ "BB10\n17  Create O4_1                              \l" -> "BB11\n19   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v14 @40 exception:v15\l" 
+ "BB11\n19   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v14 @40 exception:v15\l" -> "BB12\n21   v18 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v14,v16:#E:  @45 exception:v17\l" 
+ "BB12\n21   v18 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v14,v16:#E:  @45 exception:v17\l" -> "BB13\n23   v20 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/Object;)Ljava/lang/StringBuilder; > v18,v13 @49 exception:v19\l" 
+ "BB13\n23   v20 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/Object;)Ljava/lang/StringBuilder; > v18,v13 @49 exception:v19\l" -> "BB14\n25   v23 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v20,v21:#
+ @54 exception:v22\l" 
+ "BB14\n25   v23 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v20,v21:#
+ @54 exception:v22\l" -> "BB15\n26   v25 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v23 @57 exception:v24\l" 
+ "BB15\n26   v25 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v23 @57 exception:v24\l" -> "BB16\n27   v27 = invokevirtual < Application, Ljava/lang/StringBuffer, append(Ljava/lang/String;)Ljava/lang/StringBuffer; > v3,v25 @60 exception:v26\l" 
+ "BB16\n27   v27 = invokevirtual < Application, Ljava/lang/StringBuffer, append(Ljava/lang/String;)Ljava/lang/StringBuffer; > v3,v25 @60 exception:v26\l" -> "BB17\n29   goto                                    \l" 
+ "BB17\n29   goto                                    \l" -> "BB6\n9   v9 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v7 @17 exception:v8\l" 
+ "BB18\n31  GetOSSAInstruction:	O3_1= O1_1< hNodes>  \l" -> "BB19\n32   v30 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v28 @71 exception:v29\l" 
+ "BB19\n32   v30 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v28 @71 exception:v29\l" -> "BB20\n" 
+ "BB20\n" -> "BB21\n35   v32 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v30 @76 exception:v31\l" 
+ "BB21\n35   v32 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v30 @76 exception:v31\l" -> "BB22\n37   conditional branch(eq) v32,v10:#0       \l" 
+ "BB22\n37   conditional branch(eq) v32,v10:#0       \l" -> "BB23\n39   v34 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v30 @85 exception:v33\l" 
+ "BB22\n37   conditional branch(eq) v32,v10:#0       \l" -> "BB33\n57   v51 = invokevirtual < Application, Ljava/lang/StringBuffer, toString()Ljava/lang/String; > v3 @127 exception:v50\l" 
+ "BB23\n39   v34 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v30 @85 exception:v33\l" -> "BB24\n40   v35 = checkcast <Application,LNode>v34  \l" 
+ "BB24\n40   v35 = checkcast <Application,LNode>v34  \l" -> "BB25\n43  Create O5_1                              \l" 
+ "BB25\n43  Create O5_1                              \l" -> "BB26\n45   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v36 @99 exception:v37\l" 
+ "BB26\n45   invokespecial < Application, Ljava/lang/StringBuilder, <init>()V > v36 @99 exception:v37\l" -> "BB27\n47   v40 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v36,v38:#H:  @104 exception:v39\l" 
+ "BB27\n47   v40 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v36,v38:#H:  @104 exception:v39\l" -> "BB28\n49   v42 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/Object;)Ljava/lang/StringBuilder; > v40,v35 @108 exception:v41\l" 
+ "BB28\n49   v42 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/Object;)Ljava/lang/StringBuilder; > v40,v35 @108 exception:v41\l" -> "BB29\n51   v44 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v42,v21:#
+ @113 exception:v43\l" 
+ "BB29\n51   v44 = invokevirtual < Application, Ljava/lang/StringBuilder, append(Ljava/lang/String;)Ljava/lang/StringBuilder; > v42,v21:#
+ @113 exception:v43\l" -> "BB30\n52   v46 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v44 @116 exception:v45\l" 
+ "BB30\n52   v46 = invokevirtual < Application, Ljava/lang/StringBuilder, toString()Ljava/lang/String; > v44 @116 exception:v45\l" -> "BB31\n53   v48 = invokevirtual < Application, Ljava/lang/StringBuffer, append(Ljava/lang/String;)Ljava/lang/StringBuffer; > v3,v46 @119 exception:v47\l" 
+ "BB31\n53   v48 = invokevirtual < Application, Ljava/lang/StringBuffer, append(Ljava/lang/String;)Ljava/lang/StringBuffer; > v3,v46 @119 exception:v47\l" -> "BB32\n55   goto                                    \l" 
+ "BB32\n55   goto                                    \l" -> "BB21\n35   v32 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v30 @76 exception:v31\l" 
+ "BB33\n57   v51 = invokevirtual < Application, Ljava/lang/StringBuffer, toString()Ljava/lang/String; > v3 @127 exception:v50\l" -> "BB34\n58   return v51                              \l" 
+ "BB34\n58   return v51                              \l" -> "BB35 (ex)\n\n" 
+
+}

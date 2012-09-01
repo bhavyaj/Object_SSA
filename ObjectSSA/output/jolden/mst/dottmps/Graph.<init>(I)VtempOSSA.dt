@@ -1,0 +1,32 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Graph.<init>(I)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  < Application, Ljava/lang/Object, <init>()V >( O1_1 )\l" [ ]
+   "BB2\n4  Create O2_1                               \l" [ ]
+   "BB3\n5  PutOSSAInstruction:	O1_2< nodes > = O1_1<refO2_1>\l" [ ]
+   "BB4\n10   v8 = binaryop(sub) v2 , v7:#1           \l" [ ]
+   "BB5\n           O3_1 = diff-Object-Phi(O3_1, nullobject_6 )\l           v15 = phi  v11,v6:#null\l           v16 = phi  v14,v8\l14   conditional branch(lt) v16,v9:#0        \l" [ ]
+   "BB6\n16  GetOSSAInstruction:	O2_1= O1_2< nodes>   \l" [ ]
+   "BB7\n18  Create O4_1                              \l" [ ]
+   "BB8\n22  < Application, LVertex, <init>(LVertex;I)V >( O4_1, O4_1, V2 )\l" [ ]
+   "BB9\n24   arraystore v10[v16] = v11               \l" [ ]
+   "BB10\n30   v14 = binaryop(add) v16 , v13:#-1       \l32   goto                                    \l" [ ]
+   "BB11\n35  < Application, LGraph, addEdges(I)V >( O1_2, V2 )\l" [ ]
+   "BB12\n36  return                                   \l" [ ]
+   "BB13 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  < Application, Ljava/lang/Object, <init>()V >( O1_1 )\l" 
+ "BB1\n1  < Application, Ljava/lang/Object, <init>()V >( O1_1 )\l" -> "BB2\n4  Create O2_1                               \l" 
+ "BB2\n4  Create O2_1                               \l" -> "BB3\n5  PutOSSAInstruction:	O1_2< nodes > = O1_1<refO2_1>\l" 
+ "BB3\n5  PutOSSAInstruction:	O1_2< nodes > = O1_1<refO2_1>\l" -> "BB4\n10   v8 = binaryop(sub) v2 , v7:#1           \l" 
+ "BB4\n10   v8 = binaryop(sub) v2 , v7:#1           \l" -> "BB5\n           O3_1 = diff-Object-Phi(O3_1, nullobject_6 )\l           v15 = phi  v11,v6:#null\l           v16 = phi  v14,v8\l14   conditional branch(lt) v16,v9:#0        \l" 
+ "BB5\n           O3_1 = diff-Object-Phi(O3_1, nullobject_6 )\l           v15 = phi  v11,v6:#null\l           v16 = phi  v14,v8\l14   conditional branch(lt) v16,v9:#0        \l" -> "BB6\n16  GetOSSAInstruction:	O2_1= O1_2< nodes>   \l" 
+ "BB5\n           O3_1 = diff-Object-Phi(O3_1, nullobject_6 )\l           v15 = phi  v11,v6:#null\l           v16 = phi  v14,v8\l14   conditional branch(lt) v16,v9:#0        \l" -> "BB11\n35  < Application, LGraph, addEdges(I)V >( O1_2, V2 )\l" 
+ "BB6\n16  GetOSSAInstruction:	O2_1= O1_2< nodes>   \l" -> "BB7\n18  Create O4_1                              \l" 
+ "BB7\n18  Create O4_1                              \l" -> "BB8\n22  < Application, LVertex, <init>(LVertex;I)V >( O4_1, O4_1, V2 )\l" 
+ "BB8\n22  < Application, LVertex, <init>(LVertex;I)V >( O4_1, O4_1, V2 )\l" -> "BB9\n24   arraystore v10[v16] = v11               \l" 
+ "BB9\n24   arraystore v10[v16] = v11               \l" -> "BB10\n30   v14 = binaryop(add) v16 , v13:#-1       \l32   goto                                    \l" 
+ "BB10\n30   v14 = binaryop(add) v16 , v13:#-1       \l32   goto                                    \l" -> "BB5\n           O3_1 = diff-Object-Phi(O3_1, nullobject_6 )\l           v15 = phi  v11,v6:#null\l           v16 = phi  v14,v8\l14   conditional branch(lt) v16,v9:#0        \l" 
+ "BB11\n35  < Application, LGraph, addEdges(I)V >( O1_2, V2 )\l" -> "BB12\n36  return                                   \l" 
+ "BB12\n36  return                                   \l" -> "BB13 (ex)\n\n" 
+
+}

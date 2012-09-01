@@ -1,0 +1,37 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Sample.a()I", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n4  Create O1_1                               \l" [ ]
+   "BB2\n6   invokespecial < Application, LSample, <init>()V > v4 @9 exception:v5\l" [ ]
+   "BB3\n8  Create O2_1                               \l" [ ]
+   "BB4\n10   invokespecial < Application, LSample, <init>()V > v6 @17 exception:v7\l" [ ]
+   "BB5\n14   conditional branch(le) v2:#10,v3:#5     \l" [ ]
+   "BB6\n19   goto                                    \l" [ ]
+   "BB7\n" [ ]
+   "BB8\n           v12 = phi  v3:#5,v10:#2\l           v13 = phi  v11:#6,v8:#7\l28   goto                                    \l" [ ]
+   "BB9\n31   v16 = binaryop(add) v19 , v15:#-2       \l35   v18 = binaryop(add) v20 , v17:#-1       \l" [ ]
+   "BB10\n           v19 = phi  v9:#4,v16\l           v20 = phi  v8:#7,v18\l39   conditional branch(gt) v20,v14:#1       \l" [ ]
+   "BB11\n42   v21 = binaryop(add) v13 , v12           \l44   v22 = binaryop(sub) v21 , v19           \l47  Create O3_1                              \l" [ ]
+   "BB12\n52   arraystore v23[v24:#0] = v3:#5          \l" [ ]
+   "BB13\n55   v25 = arrayload v23[v24:#0]             \l" [ ]
+   "BB14\n58   return v25                              \l" [ ]
+   "BB15 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n4  Create O1_1                               \l" 
+ "BB1\n4  Create O1_1                               \l" -> "BB2\n6   invokespecial < Application, LSample, <init>()V > v4 @9 exception:v5\l" 
+ "BB2\n6   invokespecial < Application, LSample, <init>()V > v4 @9 exception:v5\l" -> "BB3\n8  Create O2_1                               \l" 
+ "BB3\n8  Create O2_1                               \l" -> "BB4\n10   invokespecial < Application, LSample, <init>()V > v6 @17 exception:v7\l" 
+ "BB4\n10   invokespecial < Application, LSample, <init>()V > v6 @17 exception:v7\l" -> "BB5\n14   conditional branch(le) v2:#10,v3:#5     \l" 
+ "BB5\n14   conditional branch(le) v2:#10,v3:#5     \l" -> "BB6\n19   goto                                    \l" 
+ "BB5\n14   conditional branch(le) v2:#10,v3:#5     \l" -> "BB7\n" 
+ "BB6\n19   goto                                    \l" -> "BB8\n           v12 = phi  v3:#5,v10:#2\l           v13 = phi  v11:#6,v8:#7\l28   goto                                    \l" 
+ "BB7\n" -> "BB8\n           v12 = phi  v3:#5,v10:#2\l           v13 = phi  v11:#6,v8:#7\l28   goto                                    \l" 
+ "BB8\n           v12 = phi  v3:#5,v10:#2\l           v13 = phi  v11:#6,v8:#7\l28   goto                                    \l" -> "BB10\n           v19 = phi  v9:#4,v16\l           v20 = phi  v8:#7,v18\l39   conditional branch(gt) v20,v14:#1       \l" 
+ "BB9\n31   v16 = binaryop(add) v19 , v15:#-2       \l35   v18 = binaryop(add) v20 , v17:#-1       \l" -> "BB10\n           v19 = phi  v9:#4,v16\l           v20 = phi  v8:#7,v18\l39   conditional branch(gt) v20,v14:#1       \l" 
+ "BB10\n           v19 = phi  v9:#4,v16\l           v20 = phi  v8:#7,v18\l39   conditional branch(gt) v20,v14:#1       \l" -> "BB9\n31   v16 = binaryop(add) v19 , v15:#-2       \l35   v18 = binaryop(add) v20 , v17:#-1       \l" 
+ "BB10\n           v19 = phi  v9:#4,v16\l           v20 = phi  v8:#7,v18\l39   conditional branch(gt) v20,v14:#1       \l" -> "BB11\n42   v21 = binaryop(add) v13 , v12           \l44   v22 = binaryop(sub) v21 , v19           \l47  Create O3_1                              \l" 
+ "BB11\n42   v21 = binaryop(add) v13 , v12           \l44   v22 = binaryop(sub) v21 , v19           \l47  Create O3_1                              \l" -> "BB12\n52   arraystore v23[v24:#0] = v3:#5          \l" 
+ "BB12\n52   arraystore v23[v24:#0] = v3:#5          \l" -> "BB13\n55   v25 = arrayload v23[v24:#0]             \l" 
+ "BB13\n55   v25 = arrayload v23[v24:#0]             \l" -> "BB14\n58   return v25                              \l" 
+ "BB14\n58   return v25                              \l" -> "BB15 (ex)\n\n" 
+
+}

@@ -1,0 +1,17 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v3 = getfield < Application, LEdge, quadList, <Application,[LEdge> > v1\l" [ ]
+   "BB2\n3   v4 = getfield < Application, LEdge, listPos, <Primordial,I> > v1\l" [ ]
+   "BB3\n5   v6 = binaryop(add) v4 , v5:#2  \l7   v8 = binaryop(rem) v6 , v7:#4  \l" [ ]
+   "BB4\n8   v9 = arrayload v3[v8]          \l" [ ]
+   "BB5\n9   return v9                      \l" [ ]
+   "BB6 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v3 = getfield < Application, LEdge, quadList, <Application,[LEdge> > v1\l" 
+ "BB1\n1   v3 = getfield < Application, LEdge, quadList, <Application,[LEdge> > v1\l" -> "BB2\n3   v4 = getfield < Application, LEdge, listPos, <Primordial,I> > v1\l" 
+ "BB2\n3   v4 = getfield < Application, LEdge, listPos, <Primordial,I> > v1\l" -> "BB3\n5   v6 = binaryop(add) v4 , v5:#2  \l7   v8 = binaryop(rem) v6 , v7:#4  \l" 
+ "BB3\n5   v6 = binaryop(add) v4 , v5:#2  \l7   v8 = binaryop(rem) v6 , v7:#4  \l" -> "BB4\n8   v9 = arrayload v3[v8]          \l" 
+ "BB4\n8   v9 = arrayload v3[v8]          \l" -> "BB5\n9   return v9                      \l" 
+ "BB5\n9   return v9                      \l" -> "BB6 (ex)\n\n" 
+
+}

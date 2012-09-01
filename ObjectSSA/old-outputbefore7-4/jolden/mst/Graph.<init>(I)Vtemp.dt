@@ -1,0 +1,32 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v4\l" [ ]
+   "BB2\n4   v5 = new <Application,[LVertex>@6v2 \l" [ ]
+   "BB3\n5   putfield v1 = v5 < Application, LGraph, nodes, <Application,[LVertex> >\l" [ ]
+   "BB4\n10   v8 = binaryop(sub) v2 , v7:#1 \l" [ ]
+   "BB5\n           v15 = phi  v11,v6:#null\l           v16 = phi  v14,v8\l14   conditional branch(lt) v16,v9:#0\l" [ ]
+   "BB6\n16   v10 = getfield < Application, LGraph, nodes, <Application,[LVertex> > v1\l" [ ]
+   "BB7\n18   v11 = new <Application,LVertex>@27\l" [ ]
+   "BB8\n22   invokespecial < Application, LVertex, <init>(LVertex;I)V > v11,v15,v2 @33 exception:v12\l" [ ]
+   "BB9\n24   arraystore v10[v16] = v11     \l" [ ]
+   "BB10\n30   v14 = binaryop(add) v16 , v13:#-1\l32   goto                          \l" [ ]
+   "BB11\n35   invokespecial < Application, LGraph, addEdges(I)V > v1,v2 @51 exception:v17\l" [ ]
+   "BB12\n36   return                        \l" [ ]
+   "BB13 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v4\l" 
+ "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v4\l" -> "BB2\n4   v5 = new <Application,[LVertex>@6v2 \l" 
+ "BB2\n4   v5 = new <Application,[LVertex>@6v2 \l" -> "BB3\n5   putfield v1 = v5 < Application, LGraph, nodes, <Application,[LVertex> >\l" 
+ "BB3\n5   putfield v1 = v5 < Application, LGraph, nodes, <Application,[LVertex> >\l" -> "BB4\n10   v8 = binaryop(sub) v2 , v7:#1 \l" 
+ "BB4\n10   v8 = binaryop(sub) v2 , v7:#1 \l" -> "BB5\n           v15 = phi  v11,v6:#null\l           v16 = phi  v14,v8\l14   conditional branch(lt) v16,v9:#0\l" 
+ "BB5\n           v15 = phi  v11,v6:#null\l           v16 = phi  v14,v8\l14   conditional branch(lt) v16,v9:#0\l" -> "BB6\n16   v10 = getfield < Application, LGraph, nodes, <Application,[LVertex> > v1\l" 
+ "BB5\n           v15 = phi  v11,v6:#null\l           v16 = phi  v14,v8\l14   conditional branch(lt) v16,v9:#0\l" -> "BB11\n35   invokespecial < Application, LGraph, addEdges(I)V > v1,v2 @51 exception:v17\l" 
+ "BB6\n16   v10 = getfield < Application, LGraph, nodes, <Application,[LVertex> > v1\l" -> "BB7\n18   v11 = new <Application,LVertex>@27\l" 
+ "BB7\n18   v11 = new <Application,LVertex>@27\l" -> "BB8\n22   invokespecial < Application, LVertex, <init>(LVertex;I)V > v11,v15,v2 @33 exception:v12\l" 
+ "BB8\n22   invokespecial < Application, LVertex, <init>(LVertex;I)V > v11,v15,v2 @33 exception:v12\l" -> "BB9\n24   arraystore v10[v16] = v11     \l" 
+ "BB9\n24   arraystore v10[v16] = v11     \l" -> "BB10\n30   v14 = binaryop(add) v16 , v13:#-1\l32   goto                          \l" 
+ "BB10\n30   v14 = binaryop(add) v16 , v13:#-1\l32   goto                          \l" -> "BB5\n           v15 = phi  v11,v6:#null\l           v16 = phi  v14,v8\l14   conditional branch(lt) v16,v9:#0\l" 
+ "BB11\n35   invokespecial < Application, LGraph, addEdges(I)V > v1,v2 @51 exception:v17\l" -> "BB12\n36   return                        \l" 
+ "BB12\n36   return                        \l" -> "BB13 (ex)\n\n" 
+
+}

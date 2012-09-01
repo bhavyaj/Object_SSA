@@ -1,0 +1,40 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for CreateObjects.func()V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0  Create O1_1                               \l" [ ]
+   "BB2\n2   invokespecial < Application, LSample, <init>()V > v2 @4 exception:v3\l" [ ]
+   "BB3\n5  Create O2_1                               \l" [ ]
+   "BB4\n7   invokespecial < Application, LSample, <init>()V > v4 @13 exception:v5\l" [ ]
+   "BB5\n8  PutOSSAInstruction:	O1_2< next > = O1_1<refO2_1>\l" [ ]
+   "BB6\n12  GetOSSAInstruction:	6= O1_2< x>          \l" [ ]
+   "BB7\n16   conditional branch(ge) v6,v7:#10        \l" [ ]
+   "BB8\n18  GetOSSAInstruction:	O3_1= O1_2< next>    \l" [ ]
+   "BB9\n20  Create O4_1                              \l" [ ]
+   "BB10\n22   invokespecial < Application, LSample, <init>()V > v9 @41 exception:v10\l" [ ]
+   "BB11\n26  PutOSSAInstruction:	O1_3< next > = O1_2<refO4_1>\l" [ ]
+   "BB12\n" [ ]
+   "BB13\n           O1_4 = Object-Phi(O1_2, O1_3 )\l           O5_1 = diff-Object-Phi(O1_2, O3_1 )\l           v12 = phi  v2,v8\l           v13 = phi  v6,v11:#5\l31  PutOSSAInstruction:	O1_5< x > = O1_4<V13>\l" [ ]
+   "BB14\n33  GetOSSAInstruction:	O3_1= O1_5< next>    \l" [ ]
+   "BB15\n35  PutOSSAInstruction:	O3_1< next > = O3_1<refO5_1>\l" [ ]
+   "BB16\n36  return                                   \l" [ ]
+   "BB17 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0  Create O1_1                               \l" 
+ "BB1\n0  Create O1_1                               \l" -> "BB2\n2   invokespecial < Application, LSample, <init>()V > v2 @4 exception:v3\l" 
+ "BB2\n2   invokespecial < Application, LSample, <init>()V > v2 @4 exception:v3\l" -> "BB3\n5  Create O2_1                               \l" 
+ "BB3\n5  Create O2_1                               \l" -> "BB4\n7   invokespecial < Application, LSample, <init>()V > v4 @13 exception:v5\l" 
+ "BB4\n7   invokespecial < Application, LSample, <init>()V > v4 @13 exception:v5\l" -> "BB5\n8  PutOSSAInstruction:	O1_2< next > = O1_1<refO2_1>\l" 
+ "BB5\n8  PutOSSAInstruction:	O1_2< next > = O1_1<refO2_1>\l" -> "BB6\n12  GetOSSAInstruction:	6= O1_2< x>          \l" 
+ "BB6\n12  GetOSSAInstruction:	6= O1_2< x>          \l" -> "BB7\n16   conditional branch(ge) v6,v7:#10        \l" 
+ "BB7\n16   conditional branch(ge) v6,v7:#10        \l" -> "BB8\n18  GetOSSAInstruction:	O3_1= O1_2< next>    \l" 
+ "BB7\n16   conditional branch(ge) v6,v7:#10        \l" -> "BB13\n           O1_4 = Object-Phi(O1_2, O1_3 )\l           O5_1 = diff-Object-Phi(O1_2, O3_1 )\l           v12 = phi  v2,v8\l           v13 = phi  v6,v11:#5\l31  PutOSSAInstruction:	O1_5< x > = O1_4<V13>\l" 
+ "BB8\n18  GetOSSAInstruction:	O3_1= O1_2< next>    \l" -> "BB9\n20  Create O4_1                              \l" 
+ "BB9\n20  Create O4_1                              \l" -> "BB10\n22   invokespecial < Application, LSample, <init>()V > v9 @41 exception:v10\l" 
+ "BB10\n22   invokespecial < Application, LSample, <init>()V > v9 @41 exception:v10\l" -> "BB11\n26  PutOSSAInstruction:	O1_3< next > = O1_2<refO4_1>\l" 
+ "BB11\n26  PutOSSAInstruction:	O1_3< next > = O1_2<refO4_1>\l" -> "BB12\n" 
+ "BB12\n" -> "BB13\n           O1_4 = Object-Phi(O1_2, O1_3 )\l           O5_1 = diff-Object-Phi(O1_2, O3_1 )\l           v12 = phi  v2,v8\l           v13 = phi  v6,v11:#5\l31  PutOSSAInstruction:	O1_5< x > = O1_4<V13>\l" 
+ "BB13\n           O1_4 = Object-Phi(O1_2, O1_3 )\l           O5_1 = diff-Object-Phi(O1_2, O3_1 )\l           v12 = phi  v2,v8\l           v13 = phi  v6,v11:#5\l31  PutOSSAInstruction:	O1_5< x > = O1_4<V13>\l" -> "BB14\n33  GetOSSAInstruction:	O3_1= O1_5< next>    \l" 
+ "BB14\n33  GetOSSAInstruction:	O3_1= O1_5< next>    \l" -> "BB15\n35  PutOSSAInstruction:	O3_1< next > = O3_1<refO5_1>\l" 
+ "BB15\n35  PutOSSAInstruction:	O3_1< next > = O3_1<refO5_1>\l" -> "BB16\n36  return                                   \l" 
+ "BB16\n36  return                                   \l" -> "BB17 (ex)\n\n" 
+
+}

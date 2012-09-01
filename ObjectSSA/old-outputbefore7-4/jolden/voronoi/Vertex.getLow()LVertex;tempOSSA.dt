@@ -1,0 +1,18 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Vertex.getLow()LVertex;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n" [ ]
+   "BB2\n           O2_1 = diff-Object-Phi(nullobject_4, O1_1 )\l           v6 = phi  v4,v1\l3   v4 = invokevirtual < Application, LVertex, getLeft()LVertex; > v6 @3 exception:v3\l" [ ]
+   "BB3\n7   conditional branch(eq) v4,v5:#null       \l" [ ]
+   "BB4\n10   goto                                    \l" [ ]
+   "BB5\n12   return v6                               \l" [ ]
+   "BB6 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n" 
+ "BB1\n" -> "BB2\n           O2_1 = diff-Object-Phi(nullobject_4, O1_1 )\l           v6 = phi  v4,v1\l3   v4 = invokevirtual < Application, LVertex, getLeft()LVertex; > v6 @3 exception:v3\l" 
+ "BB2\n           O2_1 = diff-Object-Phi(nullobject_4, O1_1 )\l           v6 = phi  v4,v1\l3   v4 = invokevirtual < Application, LVertex, getLeft()LVertex; > v6 @3 exception:v3\l" -> "BB3\n7   conditional branch(eq) v4,v5:#null       \l" 
+ "BB3\n7   conditional branch(eq) v4,v5:#null       \l" -> "BB4\n10   goto                                    \l" 
+ "BB3\n7   conditional branch(eq) v4,v5:#null       \l" -> "BB5\n12   return v6                               \l" 
+ "BB4\n10   goto                                    \l" -> "BB2\n           O2_1 = diff-Object-Phi(nullobject_4, O1_1 )\l           v6 = phi  v4,v1\l3   v4 = invokevirtual < Application, LVertex, getLeft()LVertex; > v6 @3 exception:v3\l" 
+ "BB5\n12   return v6                               \l" -> "BB6 (ex)\n\n" 
+
+}

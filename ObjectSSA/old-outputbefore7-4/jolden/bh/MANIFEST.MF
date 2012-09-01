@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.7.1
+Created-By: 19.0-b09 (Sun Microsystems Inc.)
+Built-By: ${yash}
+Main-Class: BH
+Implementation-Version: 1.00-b0
+

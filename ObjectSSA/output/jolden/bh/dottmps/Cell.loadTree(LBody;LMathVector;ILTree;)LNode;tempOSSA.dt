@@ -1,0 +1,30 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Cell.loadTree(LBody;LMathVector;ILTree;)LNode;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2  O5_1 = < Application, LCell, oldSubindex(LMathVector;I)I >( O3_1, V4 )\l" [ ]
+   "BB2\n5  GetOSSAInstruction:	O6_1= O1_1< subp>     \l" [ ]
+   "BB3\n7   v10 = arrayload v9[v8]                   \l" [ ]
+   "BB4\n11   conditional branch(eq) v10,v11:#null    \l" [ ]
+   "BB5\n13  GetOSSAInstruction:	O6_1= O1_1< subp>    \l" [ ]
+   "BB6\n20   v15 = binaryop(SHR) v4 , v14:#1         \l22  O1_2 = < Application, LNode, loadTree(LBody;LMathVector;ILTree;)LNode; >( V10, O2_1, O3_1, V15, O4_1 )\l" [ ]
+   "BB7\n23   arraystore v13[v8] = v17                \l" [ ]
+   "BB8\n24   goto                                    \l" [ ]
+   "BB9\n26  GetOSSAInstruction:	O6_1= O1_1< subp>    \l" [ ]
+   "BB10\n29   arraystore v12[v8] = v2                 \l" [ ]
+   "BB11\n31  Return O1_1                              \l" [ ]
+   "BB12 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2  O5_1 = < Application, LCell, oldSubindex(LMathVector;I)I >( O3_1, V4 )\l" 
+ "BB1\n2  O5_1 = < Application, LCell, oldSubindex(LMathVector;I)I >( O3_1, V4 )\l" -> "BB2\n5  GetOSSAInstruction:	O6_1= O1_1< subp>     \l" 
+ "BB2\n5  GetOSSAInstruction:	O6_1= O1_1< subp>     \l" -> "BB3\n7   v10 = arrayload v9[v8]                   \l" 
+ "BB3\n7   v10 = arrayload v9[v8]                   \l" -> "BB4\n11   conditional branch(eq) v10,v11:#null    \l" 
+ "BB4\n11   conditional branch(eq) v10,v11:#null    \l" -> "BB5\n13  GetOSSAInstruction:	O6_1= O1_1< subp>    \l" 
+ "BB4\n11   conditional branch(eq) v10,v11:#null    \l" -> "BB9\n26  GetOSSAInstruction:	O6_1= O1_1< subp>    \l" 
+ "BB5\n13  GetOSSAInstruction:	O6_1= O1_1< subp>    \l" -> "BB6\n20   v15 = binaryop(SHR) v4 , v14:#1         \l22  O1_2 = < Application, LNode, loadTree(LBody;LMathVector;ILTree;)LNode; >( V10, O2_1, O3_1, V15, O4_1 )\l" 
+ "BB6\n20   v15 = binaryop(SHR) v4 , v14:#1         \l22  O1_2 = < Application, LNode, loadTree(LBody;LMathVector;ILTree;)LNode; >( V10, O2_1, O3_1, V15, O4_1 )\l" -> "BB7\n23   arraystore v13[v8] = v17                \l" 
+ "BB7\n23   arraystore v13[v8] = v17                \l" -> "BB8\n24   goto                                    \l" 
+ "BB8\n24   goto                                    \l" -> "BB11\n31  Return O1_1                              \l" 
+ "BB9\n26  GetOSSAInstruction:	O6_1= O1_1< subp>    \l" -> "BB10\n29   arraystore v12[v8] = v2                 \l" 
+ "BB10\n29   arraystore v12[v8] = v2                 \l" -> "BB11\n31  Return O1_1                              \l" 
+ "BB11\n31  Return O1_1                              \l" -> "BB12 (ex)\n\n" 
+
+}

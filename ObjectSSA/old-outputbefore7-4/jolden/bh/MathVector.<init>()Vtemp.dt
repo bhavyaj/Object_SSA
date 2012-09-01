@@ -1,0 +1,26 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v3\l" [ ]
+   "BB2\n4   v5 = new <Primordial,[D>@6v4:#3 \l" [ ]
+   "BB3\n5   putfield v1 = v5 < Application, LMathVector, data, <Primordial,[D> >\l" [ ]
+   "BB4\n" [ ]
+   "BB5\n           v11 = phi  v10,v6:#0\l10   conditional branch(ge) v11,v4:#3\l" [ ]
+   "BB6\n12   v7 = getfield < Application, LMathVector, data, <Primordial,[D> > v1\l" [ ]
+   "BB7\n15   arraystore v7[v11] = v8:#0.0  \l" [ ]
+   "BB8\n18   v10 = binaryop(add) v11 , v9:#1\l20   goto                          \l" [ ]
+   "BB9\n21   return                        \l" [ ]
+   "BB10 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v3\l" 
+ "BB1\n1   invokespecial < Application, Ljava/lang/Object, <init>()V > v1 @1 exception:v3\l" -> "BB2\n4   v5 = new <Primordial,[D>@6v4:#3 \l" 
+ "BB2\n4   v5 = new <Primordial,[D>@6v4:#3 \l" -> "BB3\n5   putfield v1 = v5 < Application, LMathVector, data, <Primordial,[D> >\l" 
+ "BB3\n5   putfield v1 = v5 < Application, LMathVector, data, <Primordial,[D> >\l" -> "BB4\n" 
+ "BB4\n" -> "BB5\n           v11 = phi  v10,v6:#0\l10   conditional branch(ge) v11,v4:#3\l" 
+ "BB5\n           v11 = phi  v10,v6:#0\l10   conditional branch(ge) v11,v4:#3\l" -> "BB6\n12   v7 = getfield < Application, LMathVector, data, <Primordial,[D> > v1\l" 
+ "BB5\n           v11 = phi  v10,v6:#0\l10   conditional branch(ge) v11,v4:#3\l" -> "BB9\n21   return                        \l" 
+ "BB6\n12   v7 = getfield < Application, LMathVector, data, <Primordial,[D> > v1\l" -> "BB7\n15   arraystore v7[v11] = v8:#0.0  \l" 
+ "BB7\n15   arraystore v7[v11] = v8:#0.0  \l" -> "BB8\n18   v10 = binaryop(add) v11 , v9:#1\l20   goto                          \l" 
+ "BB8\n18   v10 = binaryop(add) v11 , v9:#1\l20   goto                          \l" -> "BB5\n           v11 = phi  v10,v6:#0\l10   conditional branch(ge) v11,v4:#3\l" 
+ "BB9\n21   return                        \l" -> "BB10 (ex)\n\n" 
+
+}

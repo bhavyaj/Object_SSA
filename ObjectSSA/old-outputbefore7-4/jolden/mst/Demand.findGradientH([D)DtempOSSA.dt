@@ -1,0 +1,37 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Demand.findGradientH([D)D", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n3   arraystore v2[v4:#0] = v5:#1.0           \l" [ ]
+   "BB2\n7   arraystore v2[v6:#1] = v7:#-5.0          \l" [ ]
+   "BB3\n" [ ]
+   "BB4\n           v15 = phi  v13,v8:#0.0\l           v16 = phi  v14,v4:#0\l14   conditional branch(ge) v16,v9:#2        \l" [ ]
+   "BB5\n18   v10 = arrayload v2[v16]                 \l" [ ]
+   "BB6\n21   v11 = arrayload v2[v16]                 \l" [ ]
+   "BB7\n22   v12 = binaryop(mul) v10 , v11           \l23   v13 = binaryop(add) v15 , v12           \l27   v14 = binaryop(add) v16 , v6:#1         \l29   goto                                    \l" [ ]
+   "BB8\n31   v18 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v15 @40 exception:v17\l" [ ]
+   "BB9\n" [ ]
+   "BB10\n           v22 = phi  v21,v4:#0\l37   conditional branch(ge) v22,v9:#2        \l" [ ]
+   "BB11\n41   v19 = arrayload v2[v22]                 \l" [ ]
+   "BB12\n43   v20 = binaryop(div) v19 , v18           \l44   arraystore v2[v22] = v20                \l" [ ]
+   "BB13\n47   v21 = binaryop(add) v22 , v6:#1         \l49   goto                                    \l" [ ]
+   "BB14\n51   return v18                              \l" [ ]
+   "BB15 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n3   arraystore v2[v4:#0] = v5:#1.0           \l" 
+ "BB1\n3   arraystore v2[v4:#0] = v5:#1.0           \l" -> "BB2\n7   arraystore v2[v6:#1] = v7:#-5.0          \l" 
+ "BB2\n7   arraystore v2[v6:#1] = v7:#-5.0          \l" -> "BB3\n" 
+ "BB3\n" -> "BB4\n           v15 = phi  v13,v8:#0.0\l           v16 = phi  v14,v4:#0\l14   conditional branch(ge) v16,v9:#2        \l" 
+ "BB4\n           v15 = phi  v13,v8:#0.0\l           v16 = phi  v14,v4:#0\l14   conditional branch(ge) v16,v9:#2        \l" -> "BB5\n18   v10 = arrayload v2[v16]                 \l" 
+ "BB4\n           v15 = phi  v13,v8:#0.0\l           v16 = phi  v14,v4:#0\l14   conditional branch(ge) v16,v9:#2        \l" -> "BB8\n31   v18 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v15 @40 exception:v17\l" 
+ "BB5\n18   v10 = arrayload v2[v16]                 \l" -> "BB6\n21   v11 = arrayload v2[v16]                 \l" 
+ "BB6\n21   v11 = arrayload v2[v16]                 \l" -> "BB7\n22   v12 = binaryop(mul) v10 , v11           \l23   v13 = binaryop(add) v15 , v12           \l27   v14 = binaryop(add) v16 , v6:#1         \l29   goto                                    \l" 
+ "BB7\n22   v12 = binaryop(mul) v10 , v11           \l23   v13 = binaryop(add) v15 , v12           \l27   v14 = binaryop(add) v16 , v6:#1         \l29   goto                                    \l" -> "BB4\n           v15 = phi  v13,v8:#0.0\l           v16 = phi  v14,v4:#0\l14   conditional branch(ge) v16,v9:#2        \l" 
+ "BB8\n31   v18 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v15 @40 exception:v17\l" -> "BB9\n" 
+ "BB9\n" -> "BB10\n           v22 = phi  v21,v4:#0\l37   conditional branch(ge) v22,v9:#2        \l" 
+ "BB10\n           v22 = phi  v21,v4:#0\l37   conditional branch(ge) v22,v9:#2        \l" -> "BB11\n41   v19 = arrayload v2[v22]                 \l" 
+ "BB10\n           v22 = phi  v21,v4:#0\l37   conditional branch(ge) v22,v9:#2        \l" -> "BB14\n51   return v18                              \l" 
+ "BB11\n41   v19 = arrayload v2[v22]                 \l" -> "BB12\n43   v20 = binaryop(div) v19 , v18           \l44   arraystore v2[v22] = v20                \l" 
+ "BB12\n43   v20 = binaryop(div) v19 , v18           \l44   arraystore v2[v22] = v20                \l" -> "BB13\n47   v21 = binaryop(add) v22 , v6:#1         \l49   goto                                    \l" 
+ "BB13\n47   v21 = binaryop(add) v22 , v6:#1         \l49   goto                                    \l" -> "BB10\n           v22 = phi  v21,v4:#0\l37   conditional branch(ge) v22,v9:#2        \l" 
+ "BB14\n51   return v18                              \l" -> "BB15 (ex)\n\n" 
+
+}

@@ -1,0 +1,150 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2   v7 = getfield < Application, LBranch, alpha, <Primordial,D> > v1\l" [ ]
+   "BB2\n6   v8 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" [ ]
+   "BB3\n7   v9 = binaryop(mul) v3 , v8     \l9   v10 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" [ ]
+   "BB4\n10   v11 = binaryop(div) v9 , v10  \l11   v12 = binaryop(add) v2 , v11  \l12   v13 = binaryop(mul) v7 , v12  \l13   v14 = binaryop(add) v4 , v13  \l17   v15 = getfield < Application, LBranch, beta, <Primordial,D> > v1\l" [ ]
+   "BB5\n21   v16 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" [ ]
+   "BB6\n22   v17 = binaryop(mul) v2 , v16  \l24   v18 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" [ ]
+   "BB7\n25   v19 = binaryop(div) v17 , v18 \l26   v20 = binaryop(add) v3 , v19  \l27   v21 = binaryop(mul) v15 , v20 \l28   v22 = binaryop(add) v5 , v21  \l33   v24 = getfield < Application, LBranch, nextBranch, <Application,LBranch> > v1\l" [ ]
+   "BB8\n35   conditional branch(eq) v24,v23:#null\l" [ ]
+   "BB9\n37   v25 = getfield < Application, LBranch, nextBranch, <Application,LBranch> > v1\l" [ ]
+   "BB10\n42   v27 = invokevirtual < Application, LBranch, compute(DDDD)LDemand; > v25,v2,v3,v14,v22 @66 exception:v26\l" [ ]
+   "BB11\n" [ ]
+   "BB12\n           v28 = phi  v23:#null,v27\l45   v29 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" [ ]
+   "BB13\n46   invokevirtual < Application, LDemand, reset()V > v29 @75 exception:v30\l" [ ]
+   "BB14\n" [ ]
+   "BB15\n           v42 = phi  v41,v31:#0\l51   v32 = getfield < Application, LBranch, leaves, <Application,[LLeaf> > v1\l" [ ]
+   "BB16\n52   v33 = arraylength v32         \l" [ ]
+   "BB17\n53   conditional branch(ge) v42,v33\l" [ ]
+   "BB18\n55   v34 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" [ ]
+   "BB19\n57   v35 = getfield < Application, LBranch, leaves, <Application,[LLeaf> > v1\l" [ ]
+   "BB20\n59   v36 = arrayload v35[v42]      \l" [ ]
+   "BB21\n62   v38 = invokevirtual < Application, LLeaf, compute(DD)LDemand; > v36,v14,v22 @106 exception:v37\l" [ ]
+   "BB22\n63   invokevirtual < Application, LDemand, increment(LDemand;)V > v34,v38 @109 exception:v39\l" [ ]
+   "BB23\n66   v41 = binaryop(add) v42 , v40:#1\l68   goto                          \l" [ ]
+   "BB24\n70   v43 = getfield < Application, LBranch, nextBranch, <Application,LBranch> > v1\l" [ ]
+   "BB25\n72   conditional branch(eq) v43,v23:#null\l" [ ]
+   "BB26\n74   v44 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" [ ]
+   "BB27\n76   invokevirtual < Application, LDemand, increment(LDemand;)V > v44,v28 @131 exception:v45\l" [ ]
+   "BB28\n78   v46 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" [ ]
+   "BB29\n80   v47 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" [ ]
+   "BB30\n81   v48 = binaryop(mul) v46 , v47 \l83   v49 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" [ ]
+   "BB31\n85   v50 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" [ ]
+   "BB32\n86   v51 = binaryop(mul) v49 , v50 \l87   v52 = binaryop(add) v48 , v51 \l91   v54 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" [ ]
+   "BB33\n92   v55 = binaryop(mul) v53:#2.0 , v54\l94   v56 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" [ ]
+   "BB34\n95   v57 = binaryop(mul) v55 , v56 \l97   v58 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" [ ]
+   "BB35\n98   v59 = getfield < Application, LDemand, Q, <Primordial,D> > v58\l" [ ]
+   "BB36\n99   v60 = binaryop(mul) v57 , v59 \l102   v61 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" [ ]
+   "BB37\n103   v62 = binaryop(mul) v53:#2.0 , v61\l105   v63 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" [ ]
+   "BB38\n106   v64 = binaryop(mul) v62 , v63\l108   v65 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" [ ]
+   "BB39\n109   v66 = getfield < Application, LDemand, P, <Primordial,D> > v65\l" [ ]
+   "BB40\n110   v67 = binaryop(mul) v64 , v66\l111   v68 = binaryop(sub) v60 , v67\l113   v69 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" [ ]
+   "BB41\n114   v70 = binaryop(sub) v68 , v69\l117   v71 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" [ ]
+   "BB42\n119   v72 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" [ ]
+   "BB43\n120   v73 = getfield < Application, LDemand, Q, <Primordial,D> > v72\l" [ ]
+   "BB44\n121   v74 = binaryop(mul) v71 , v73\l123   v75 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" [ ]
+   "BB45\n125   v76 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" [ ]
+   "BB46\n126   v77 = getfield < Application, LDemand, P, <Primordial,D> > v76\l" [ ]
+   "BB47\n127   v78 = binaryop(mul) v75 , v77\l128   v79 = binaryop(sub) v74 , v78\l132   v80 = binaryop(mul) v79 , v79\l134   v81 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" [ ]
+   "BB48\n136   v82 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" [ ]
+   "BB49\n137   v83 = getfield < Application, LDemand, P, <Primordial,D> > v82\l" [ ]
+   "BB50\n138   v84 = binaryop(mul) v81 , v83\l139   v85 = binaryop(add) v80 , v84\l142   v86 = neg v70                \l145   v87 = binaryop(mul) v70 , v70\l148   v89 = binaryop(mul) v88:#4.0 , v52\l150   v90 = binaryop(mul) v89 , v85\l151   v91 = binaryop(sub) v87 , v90\l152   v93 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v91 @270 exception:v92\l" [ ]
+   "BB51\n153   v94 = binaryop(sub) v86 , v93\l156   v95 = binaryop(mul) v53:#2.0 , v52\l157   v96 = binaryop(div) v94 , v95\l160   v97 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" [ ]
+   "BB52\n162   v98 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" [ ]
+   "BB53\n163   v99 = getfield < Application, LDemand, Q, <Primordial,D> > v98\l" [ ]
+   "BB54\n166   v100 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" [ ]
+   "BB55\n167   v101 = getfield < Application, LDemand, P, <Primordial,D> > v100\l" [ ]
+   "BB56\n168   v102 = binaryop(sub) v96 , v101\l170   v103 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" [ ]
+   "BB57\n171   v104 = binaryop(mul) v102 , v103\l173   v105 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" [ ]
+   "BB58\n174   v106 = binaryop(div) v104 , v105\l175   v107 = binaryop(add) v99 , v106\l176   putfield v97 = v107 < Application, LDemand, Q, <Primordial,D> >\l" [ ]
+   "BB59\n178   v108 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" [ ]
+   "BB60\n180   putfield v108 = v96 < Application, LDemand, P, <Primordial,D> >\l" [ ]
+   "BB61\n183   v109 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" [ ]
+   "BB62\n184   v110 = binaryop(mul) v53:#2.0 , v109\l186   v111 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" [ ]
+   "BB63\n187   v112 = getfield < Application, LDemand, P, <Primordial,D> > v111\l" [ ]
+   "BB64\n188   v113 = binaryop(mul) v110 , v112\l192   v114 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" [ ]
+   "BB65\n193   v115 = binaryop(mul) v53:#2.0 , v114\l195   v116 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" [ ]
+   "BB66\n196   v117 = getfield < Application, LDemand, Q, <Primordial,D> > v116\l" [ ]
+   "BB67\n197   v118 = binaryop(mul) v115 , v117\l203   v120 = binaryop(sub) v119:#1.0 , v113\l205   v121 = binaryop(sub) v120 , v118\l206   v122 = binaryop(div) v113 , v121\l207   putfield v1 = v122 < Application, LBranch, alpha, <Primordial,D> >\l" [ ]
+   "BB68\n212   v123 = binaryop(sub) v119:#1.0 , v113\l214   v124 = binaryop(sub) v123 , v118\l215   v125 = binaryop(div) v118 , v124\l216   putfield v1 = v125 < Application, LBranch, beta, <Primordial,D> >\l" [ ]
+   "BB69\n218   v126 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" [ ]
+   "BB70\n219   return v126                  \l" [ ]
+   "BB71 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2   v7 = getfield < Application, LBranch, alpha, <Primordial,D> > v1\l" 
+ "BB1\n2   v7 = getfield < Application, LBranch, alpha, <Primordial,D> > v1\l" -> "BB2\n6   v8 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" 
+ "BB2\n6   v8 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" -> "BB3\n7   v9 = binaryop(mul) v3 , v8     \l9   v10 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" 
+ "BB3\n7   v9 = binaryop(mul) v3 , v8     \l9   v10 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" -> "BB4\n10   v11 = binaryop(div) v9 , v10  \l11   v12 = binaryop(add) v2 , v11  \l12   v13 = binaryop(mul) v7 , v12  \l13   v14 = binaryop(add) v4 , v13  \l17   v15 = getfield < Application, LBranch, beta, <Primordial,D> > v1\l" 
+ "BB4\n10   v11 = binaryop(div) v9 , v10  \l11   v12 = binaryop(add) v2 , v11  \l12   v13 = binaryop(mul) v7 , v12  \l13   v14 = binaryop(add) v4 , v13  \l17   v15 = getfield < Application, LBranch, beta, <Primordial,D> > v1\l" -> "BB5\n21   v16 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" 
+ "BB5\n21   v16 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" -> "BB6\n22   v17 = binaryop(mul) v2 , v16  \l24   v18 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" 
+ "BB6\n22   v17 = binaryop(mul) v2 , v16  \l24   v18 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" -> "BB7\n25   v19 = binaryop(div) v17 , v18 \l26   v20 = binaryop(add) v3 , v19  \l27   v21 = binaryop(mul) v15 , v20 \l28   v22 = binaryop(add) v5 , v21  \l33   v24 = getfield < Application, LBranch, nextBranch, <Application,LBranch> > v1\l" 
+ "BB7\n25   v19 = binaryop(div) v17 , v18 \l26   v20 = binaryop(add) v3 , v19  \l27   v21 = binaryop(mul) v15 , v20 \l28   v22 = binaryop(add) v5 , v21  \l33   v24 = getfield < Application, LBranch, nextBranch, <Application,LBranch> > v1\l" -> "BB8\n35   conditional branch(eq) v24,v23:#null\l" 
+ "BB8\n35   conditional branch(eq) v24,v23:#null\l" -> "BB9\n37   v25 = getfield < Application, LBranch, nextBranch, <Application,LBranch> > v1\l" 
+ "BB8\n35   conditional branch(eq) v24,v23:#null\l" -> "BB12\n           v28 = phi  v23:#null,v27\l45   v29 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" 
+ "BB9\n37   v25 = getfield < Application, LBranch, nextBranch, <Application,LBranch> > v1\l" -> "BB10\n42   v27 = invokevirtual < Application, LBranch, compute(DDDD)LDemand; > v25,v2,v3,v14,v22 @66 exception:v26\l" 
+ "BB10\n42   v27 = invokevirtual < Application, LBranch, compute(DDDD)LDemand; > v25,v2,v3,v14,v22 @66 exception:v26\l" -> "BB11\n" 
+ "BB11\n" -> "BB12\n           v28 = phi  v23:#null,v27\l45   v29 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" 
+ "BB12\n           v28 = phi  v23:#null,v27\l45   v29 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" -> "BB13\n46   invokevirtual < Application, LDemand, reset()V > v29 @75 exception:v30\l" 
+ "BB13\n46   invokevirtual < Application, LDemand, reset()V > v29 @75 exception:v30\l" -> "BB14\n" 
+ "BB14\n" -> "BB15\n           v42 = phi  v41,v31:#0\l51   v32 = getfield < Application, LBranch, leaves, <Application,[LLeaf> > v1\l" 
+ "BB15\n           v42 = phi  v41,v31:#0\l51   v32 = getfield < Application, LBranch, leaves, <Application,[LLeaf> > v1\l" -> "BB16\n52   v33 = arraylength v32         \l" 
+ "BB16\n52   v33 = arraylength v32         \l" -> "BB17\n53   conditional branch(ge) v42,v33\l" 
+ "BB17\n53   conditional branch(ge) v42,v33\l" -> "BB18\n55   v34 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" 
+ "BB17\n53   conditional branch(ge) v42,v33\l" -> "BB24\n70   v43 = getfield < Application, LBranch, nextBranch, <Application,LBranch> > v1\l" 
+ "BB18\n55   v34 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" -> "BB19\n57   v35 = getfield < Application, LBranch, leaves, <Application,[LLeaf> > v1\l" 
+ "BB19\n57   v35 = getfield < Application, LBranch, leaves, <Application,[LLeaf> > v1\l" -> "BB20\n59   v36 = arrayload v35[v42]      \l" 
+ "BB20\n59   v36 = arrayload v35[v42]      \l" -> "BB21\n62   v38 = invokevirtual < Application, LLeaf, compute(DD)LDemand; > v36,v14,v22 @106 exception:v37\l" 
+ "BB21\n62   v38 = invokevirtual < Application, LLeaf, compute(DD)LDemand; > v36,v14,v22 @106 exception:v37\l" -> "BB22\n63   invokevirtual < Application, LDemand, increment(LDemand;)V > v34,v38 @109 exception:v39\l" 
+ "BB22\n63   invokevirtual < Application, LDemand, increment(LDemand;)V > v34,v38 @109 exception:v39\l" -> "BB23\n66   v41 = binaryop(add) v42 , v40:#1\l68   goto                          \l" 
+ "BB23\n66   v41 = binaryop(add) v42 , v40:#1\l68   goto                          \l" -> "BB15\n           v42 = phi  v41,v31:#0\l51   v32 = getfield < Application, LBranch, leaves, <Application,[LLeaf> > v1\l" 
+ "BB24\n70   v43 = getfield < Application, LBranch, nextBranch, <Application,LBranch> > v1\l" -> "BB25\n72   conditional branch(eq) v43,v23:#null\l" 
+ "BB25\n72   conditional branch(eq) v43,v23:#null\l" -> "BB26\n74   v44 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" 
+ "BB25\n72   conditional branch(eq) v43,v23:#null\l" -> "BB28\n78   v46 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" 
+ "BB26\n74   v44 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" -> "BB27\n76   invokevirtual < Application, LDemand, increment(LDemand;)V > v44,v28 @131 exception:v45\l" 
+ "BB27\n76   invokevirtual < Application, LDemand, increment(LDemand;)V > v44,v28 @131 exception:v45\l" -> "BB28\n78   v46 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" 
+ "BB28\n78   v46 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" -> "BB29\n80   v47 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" 
+ "BB29\n80   v47 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" -> "BB30\n81   v48 = binaryop(mul) v46 , v47 \l83   v49 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" 
+ "BB30\n81   v48 = binaryop(mul) v46 , v47 \l83   v49 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" -> "BB31\n85   v50 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" 
+ "BB31\n85   v50 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" -> "BB32\n86   v51 = binaryop(mul) v49 , v50 \l87   v52 = binaryop(add) v48 , v51 \l91   v54 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" 
+ "BB32\n86   v51 = binaryop(mul) v49 , v50 \l87   v52 = binaryop(add) v48 , v51 \l91   v54 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" -> "BB33\n92   v55 = binaryop(mul) v53:#2.0 , v54\l94   v56 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" 
+ "BB33\n92   v55 = binaryop(mul) v53:#2.0 , v54\l94   v56 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" -> "BB34\n95   v57 = binaryop(mul) v55 , v56 \l97   v58 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" 
+ "BB34\n95   v57 = binaryop(mul) v55 , v56 \l97   v58 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" -> "BB35\n98   v59 = getfield < Application, LDemand, Q, <Primordial,D> > v58\l" 
+ "BB35\n98   v59 = getfield < Application, LDemand, Q, <Primordial,D> > v58\l" -> "BB36\n99   v60 = binaryop(mul) v57 , v59 \l102   v61 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" 
+ "BB36\n99   v60 = binaryop(mul) v57 , v59 \l102   v61 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" -> "BB37\n103   v62 = binaryop(mul) v53:#2.0 , v61\l105   v63 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" 
+ "BB37\n103   v62 = binaryop(mul) v53:#2.0 , v61\l105   v63 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" -> "BB38\n106   v64 = binaryop(mul) v62 , v63\l108   v65 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" 
+ "BB38\n106   v64 = binaryop(mul) v62 , v63\l108   v65 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" -> "BB39\n109   v66 = getfield < Application, LDemand, P, <Primordial,D> > v65\l" 
+ "BB39\n109   v66 = getfield < Application, LDemand, P, <Primordial,D> > v65\l" -> "BB40\n110   v67 = binaryop(mul) v64 , v66\l111   v68 = binaryop(sub) v60 , v67\l113   v69 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" 
+ "BB40\n110   v67 = binaryop(mul) v64 , v66\l111   v68 = binaryop(sub) v60 , v67\l113   v69 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" -> "BB41\n114   v70 = binaryop(sub) v68 , v69\l117   v71 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" 
+ "BB41\n114   v70 = binaryop(sub) v68 , v69\l117   v71 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" -> "BB42\n119   v72 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" 
+ "BB42\n119   v72 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" -> "BB43\n120   v73 = getfield < Application, LDemand, Q, <Primordial,D> > v72\l" 
+ "BB43\n120   v73 = getfield < Application, LDemand, Q, <Primordial,D> > v72\l" -> "BB44\n121   v74 = binaryop(mul) v71 , v73\l123   v75 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" 
+ "BB44\n121   v74 = binaryop(mul) v71 , v73\l123   v75 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" -> "BB45\n125   v76 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" 
+ "BB45\n125   v76 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" -> "BB46\n126   v77 = getfield < Application, LDemand, P, <Primordial,D> > v76\l" 
+ "BB46\n126   v77 = getfield < Application, LDemand, P, <Primordial,D> > v76\l" -> "BB47\n127   v78 = binaryop(mul) v75 , v77\l128   v79 = binaryop(sub) v74 , v78\l132   v80 = binaryop(mul) v79 , v79\l134   v81 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" 
+ "BB47\n127   v78 = binaryop(mul) v75 , v77\l128   v79 = binaryop(sub) v74 , v78\l132   v80 = binaryop(mul) v79 , v79\l134   v81 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" -> "BB48\n136   v82 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" 
+ "BB48\n136   v82 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" -> "BB49\n137   v83 = getfield < Application, LDemand, P, <Primordial,D> > v82\l" 
+ "BB49\n137   v83 = getfield < Application, LDemand, P, <Primordial,D> > v82\l" -> "BB50\n138   v84 = binaryop(mul) v81 , v83\l139   v85 = binaryop(add) v80 , v84\l142   v86 = neg v70                \l145   v87 = binaryop(mul) v70 , v70\l148   v89 = binaryop(mul) v88:#4.0 , v52\l150   v90 = binaryop(mul) v89 , v85\l151   v91 = binaryop(sub) v87 , v90\l152   v93 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v91 @270 exception:v92\l" 
+ "BB50\n138   v84 = binaryop(mul) v81 , v83\l139   v85 = binaryop(add) v80 , v84\l142   v86 = neg v70                \l145   v87 = binaryop(mul) v70 , v70\l148   v89 = binaryop(mul) v88:#4.0 , v52\l150   v90 = binaryop(mul) v89 , v85\l151   v91 = binaryop(sub) v87 , v90\l152   v93 = invokestatic < Application, Ljava/lang/Math, sqrt(D)D > v91 @270 exception:v92\l" -> "BB51\n153   v94 = binaryop(sub) v86 , v93\l156   v95 = binaryop(mul) v53:#2.0 , v52\l157   v96 = binaryop(div) v94 , v95\l160   v97 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" 
+ "BB51\n153   v94 = binaryop(sub) v86 , v93\l156   v95 = binaryop(mul) v53:#2.0 , v52\l157   v96 = binaryop(div) v94 , v95\l160   v97 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" -> "BB52\n162   v98 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" 
+ "BB52\n162   v98 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" -> "BB53\n163   v99 = getfield < Application, LDemand, Q, <Primordial,D> > v98\l" 
+ "BB53\n163   v99 = getfield < Application, LDemand, Q, <Primordial,D> > v98\l" -> "BB54\n166   v100 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" 
+ "BB54\n166   v100 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" -> "BB55\n167   v101 = getfield < Application, LDemand, P, <Primordial,D> > v100\l" 
+ "BB55\n167   v101 = getfield < Application, LDemand, P, <Primordial,D> > v100\l" -> "BB56\n168   v102 = binaryop(sub) v96 , v101\l170   v103 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" 
+ "BB56\n168   v102 = binaryop(sub) v96 , v101\l170   v103 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" -> "BB57\n171   v104 = binaryop(mul) v102 , v103\l173   v105 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" 
+ "BB57\n171   v104 = binaryop(mul) v102 , v103\l173   v105 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" -> "BB58\n174   v106 = binaryop(div) v104 , v105\l175   v107 = binaryop(add) v99 , v106\l176   putfield v97 = v107 < Application, LDemand, Q, <Primordial,D> >\l" 
+ "BB58\n174   v106 = binaryop(div) v104 , v105\l175   v107 = binaryop(add) v99 , v106\l176   putfield v97 = v107 < Application, LDemand, Q, <Primordial,D> >\l" -> "BB59\n178   v108 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" 
+ "BB59\n178   v108 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" -> "BB60\n180   putfield v108 = v96 < Application, LDemand, P, <Primordial,D> >\l" 
+ "BB60\n180   putfield v108 = v96 < Application, LDemand, P, <Primordial,D> >\l" -> "BB61\n183   v109 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" 
+ "BB61\n183   v109 = getfield < Application, LBranch, R, <Primordial,D> > v1\l" -> "BB62\n184   v110 = binaryop(mul) v53:#2.0 , v109\l186   v111 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" 
+ "BB62\n184   v110 = binaryop(mul) v53:#2.0 , v109\l186   v111 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" -> "BB63\n187   v112 = getfield < Application, LDemand, P, <Primordial,D> > v111\l" 
+ "BB63\n187   v112 = getfield < Application, LDemand, P, <Primordial,D> > v111\l" -> "BB64\n188   v113 = binaryop(mul) v110 , v112\l192   v114 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" 
+ "BB64\n188   v113 = binaryop(mul) v110 , v112\l192   v114 = getfield < Application, LBranch, X, <Primordial,D> > v1\l" -> "BB65\n193   v115 = binaryop(mul) v53:#2.0 , v114\l195   v116 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" 
+ "BB65\n193   v115 = binaryop(mul) v53:#2.0 , v114\l195   v116 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" -> "BB66\n196   v117 = getfield < Application, LDemand, Q, <Primordial,D> > v116\l" 
+ "BB66\n196   v117 = getfield < Application, LDemand, Q, <Primordial,D> > v116\l" -> "BB67\n197   v118 = binaryop(mul) v115 , v117\l203   v120 = binaryop(sub) v119:#1.0 , v113\l205   v121 = binaryop(sub) v120 , v118\l206   v122 = binaryop(div) v113 , v121\l207   putfield v1 = v122 < Application, LBranch, alpha, <Primordial,D> >\l" 
+ "BB67\n197   v118 = binaryop(mul) v115 , v117\l203   v120 = binaryop(sub) v119:#1.0 , v113\l205   v121 = binaryop(sub) v120 , v118\l206   v122 = binaryop(div) v113 , v121\l207   putfield v1 = v122 < Application, LBranch, alpha, <Primordial,D> >\l" -> "BB68\n212   v123 = binaryop(sub) v119:#1.0 , v113\l214   v124 = binaryop(sub) v123 , v118\l215   v125 = binaryop(div) v118 , v124\l216   putfield v1 = v125 < Application, LBranch, beta, <Primordial,D> >\l" 
+ "BB68\n212   v123 = binaryop(sub) v119:#1.0 , v113\l214   v124 = binaryop(sub) v123 , v118\l215   v125 = binaryop(div) v118 , v124\l216   putfield v1 = v125 < Application, LBranch, beta, <Primordial,D> >\l" -> "BB69\n218   v126 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" 
+ "BB69\n218   v126 = getfield < Application, LBranch, D, <Application,LDemand> > v1\l" -> "BB70\n219   return v126                  \l" 
+ "BB70\n219   return v126                  \l" -> "BB71 (ex)\n\n" 
+
+}

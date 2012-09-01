@@ -1,0 +1,37 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v6 = getfield < Application, LRoot, last, <Application,LDemand> > v1\l" [ ]
+   "BB2\n3   v7 = getfield < Application, LRoot, D, <Application,LDemand> > v1\l" [ ]
+   "BB3\n4   v8 = getfield < Application, LDemand, P, <Primordial,D> > v7\l" [ ]
+   "BB4\n5   putfield v6 = v8 < Application, LDemand, P, <Primordial,D> >\l" [ ]
+   "BB5\n7   v9 = getfield < Application, LRoot, last, <Application,LDemand> > v1\l" [ ]
+   "BB6\n9   v10 = getfield < Application, LRoot, D, <Application,LDemand> > v1\l" [ ]
+   "BB7\n10   v11 = getfield < Application, LDemand, Q, <Primordial,D> > v10\l" [ ]
+   "BB8\n11   putfield v9 = v11 < Application, LDemand, Q, <Primordial,D> >\l" [ ]
+   "BB9\n14   v12 = getfield < Application, LRoot, theta_R, <Primordial,D> > v1\l" [ ]
+   "BB10\n15   putfield v1 = v12 < Application, LRoot, last_theta_R, <Primordial,D> >\l" [ ]
+   "BB11\n18   v13 = getfield < Application, LRoot, theta_I, <Primordial,D> > v1\l" [ ]
+   "BB12\n19   putfield v1 = v13 < Application, LRoot, last_theta_I, <Primordial,D> >\l" [ ]
+   "BB13\n22   putfield v1 = v3 < Application, LRoot, theta_R, <Primordial,D> >\l" [ ]
+   "BB14\n25   putfield v1 = v4 < Application, LRoot, theta_I, <Primordial,D> >\l" [ ]
+   "BB15\n26   return                        \l" [ ]
+   "BB16 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v6 = getfield < Application, LRoot, last, <Application,LDemand> > v1\l" 
+ "BB1\n1   v6 = getfield < Application, LRoot, last, <Application,LDemand> > v1\l" -> "BB2\n3   v7 = getfield < Application, LRoot, D, <Application,LDemand> > v1\l" 
+ "BB2\n3   v7 = getfield < Application, LRoot, D, <Application,LDemand> > v1\l" -> "BB3\n4   v8 = getfield < Application, LDemand, P, <Primordial,D> > v7\l" 
+ "BB3\n4   v8 = getfield < Application, LDemand, P, <Primordial,D> > v7\l" -> "BB4\n5   putfield v6 = v8 < Application, LDemand, P, <Primordial,D> >\l" 
+ "BB4\n5   putfield v6 = v8 < Application, LDemand, P, <Primordial,D> >\l" -> "BB5\n7   v9 = getfield < Application, LRoot, last, <Application,LDemand> > v1\l" 
+ "BB5\n7   v9 = getfield < Application, LRoot, last, <Application,LDemand> > v1\l" -> "BB6\n9   v10 = getfield < Application, LRoot, D, <Application,LDemand> > v1\l" 
+ "BB6\n9   v10 = getfield < Application, LRoot, D, <Application,LDemand> > v1\l" -> "BB7\n10   v11 = getfield < Application, LDemand, Q, <Primordial,D> > v10\l" 
+ "BB7\n10   v11 = getfield < Application, LDemand, Q, <Primordial,D> > v10\l" -> "BB8\n11   putfield v9 = v11 < Application, LDemand, Q, <Primordial,D> >\l" 
+ "BB8\n11   putfield v9 = v11 < Application, LDemand, Q, <Primordial,D> >\l" -> "BB9\n14   v12 = getfield < Application, LRoot, theta_R, <Primordial,D> > v1\l" 
+ "BB9\n14   v12 = getfield < Application, LRoot, theta_R, <Primordial,D> > v1\l" -> "BB10\n15   putfield v1 = v12 < Application, LRoot, last_theta_R, <Primordial,D> >\l" 
+ "BB10\n15   putfield v1 = v12 < Application, LRoot, last_theta_R, <Primordial,D> >\l" -> "BB11\n18   v13 = getfield < Application, LRoot, theta_I, <Primordial,D> > v1\l" 
+ "BB11\n18   v13 = getfield < Application, LRoot, theta_I, <Primordial,D> > v1\l" -> "BB12\n19   putfield v1 = v13 < Application, LRoot, last_theta_I, <Primordial,D> >\l" 
+ "BB12\n19   putfield v1 = v13 < Application, LRoot, last_theta_I, <Primordial,D> >\l" -> "BB13\n22   putfield v1 = v3 < Application, LRoot, theta_R, <Primordial,D> >\l" 
+ "BB13\n22   putfield v1 = v3 < Application, LRoot, theta_R, <Primordial,D> >\l" -> "BB14\n25   putfield v1 = v4 < Application, LRoot, theta_I, <Primordial,D> >\l" 
+ "BB14\n25   putfield v1 = v4 < Application, LRoot, theta_I, <Primordial,D> >\l" -> "BB15\n26   return                        \l" 
+ "BB15\n26   return                        \l" -> "BB16 (ex)\n\n" 
+
+}

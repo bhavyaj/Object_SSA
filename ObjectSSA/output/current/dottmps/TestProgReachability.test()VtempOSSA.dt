@@ -1,0 +1,21 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for TestProgReachability.test()V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0  Create O1_1                               \l" [ ]
+   "BB2\n2  < Application, LSample, <init>()V >( O1_1 )\l" [ ]
+   "BB3\n4  Create O2_1                               \l" [ ]
+   "BB4\n6  < Application, LSample, <init>()V >( O2_1 )\l" [ ]
+   "BB5\n9  < Application, LSample, check(I)V >( V6 ) \l" [ ]
+   "BB6\n14  PutOSSAInstruction:	O1_2< x > = O1_1<V8> \l" [ ]
+   "BB7\n15  return                                   \l" [ ]
+   "BB8 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0  Create O1_1                               \l" 
+ "BB1\n0  Create O1_1                               \l" -> "BB2\n2  < Application, LSample, <init>()V >( O1_1 )\l" 
+ "BB2\n2  < Application, LSample, <init>()V >( O1_1 )\l" -> "BB3\n4  Create O2_1                               \l" 
+ "BB3\n4  Create O2_1                               \l" -> "BB4\n6  < Application, LSample, <init>()V >( O2_1 )\l" 
+ "BB4\n6  < Application, LSample, <init>()V >( O2_1 )\l" -> "BB5\n9  < Application, LSample, check(I)V >( V6 ) \l" 
+ "BB5\n9  < Application, LSample, check(I)V >( V6 ) \l" -> "BB6\n14  PutOSSAInstruction:	O1_2< x > = O1_1<V8> \l" 
+ "BB6\n14  PutOSSAInstruction:	O1_2< x > = O1_1<V8> \l" -> "BB7\n15  return                                   \l" 
+ "BB7\n15  return                                   \l" -> "BB8 (ex)\n\n" 
+
+}

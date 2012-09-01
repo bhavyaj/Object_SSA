@@ -1,0 +1,93 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v5 = getfield < Application, LValue, value, <Primordial,I> > v1\l" [ ]
+   "BB2\n4   v6 = getfield < Application, LValue, left, <Application,LValue> > v1\l" [ ]
+   "BB3\n7   v7 = getfield < Application, LValue, right, <Application,LValue> > v1\l" [ ]
+   "BB4\n11   conditional branch(le) v5,v2  \l" [ ]
+   "BB5\n13   goto                          \l" [ ]
+   "BB6\n" [ ]
+   "BB7\n           v10 = phi  v9:#1,v8:#0\l16   v11 = binaryop(xor) v10 , v3  \l20   conditional branch(eq) v11,v8:#0\l" [ ]
+   "BB8\n23   putfield v1 = v2 < Application, LValue, value, <Primordial,I> >\l" [ ]
+   "BB9\n" [ ]
+   "BB10\n           v12 = phi  v2,v12,v5\l           v27 = phi  v6,v24,v6\l           v28 = phi  v7,v25,v7\l28   conditional branch(eq) v27,v13:#null\l" [ ]
+   "BB11\n30   v14 = getfield < Application, LValue, value, <Primordial,I> > v27\l" [ ]
+   "BB12\n33   v15 = getfield < Application, LValue, left, <Application,LValue> > v27\l" [ ]
+   "BB13\n36   v16 = getfield < Application, LValue, right, <Application,LValue> > v27\l" [ ]
+   "BB14\n39   v17 = getfield < Application, LValue, value, <Primordial,I> > v28\l" [ ]
+   "BB15\n42   v18 = getfield < Application, LValue, left, <Application,LValue> > v28\l" [ ]
+   "BB16\n45   v19 = getfield < Application, LValue, right, <Application,LValue> > v28\l" [ ]
+   "BB17\n49   conditional branch(le) v14,v17\l" [ ]
+   "BB18\n51   goto                          \l" [ ]
+   "BB19\n" [ ]
+   "BB20\n           v20 = phi  v9:#1,v8:#0\l54   v21 = binaryop(xor) v20 , v3  \l58   conditional branch(eq) v11,v8:#0\l" [ ]
+   "BB21\n61   conditional branch(eq) v21,v8:#0\l" [ ]
+   "BB22\n64   invokevirtual < Application, LValue, swapValRight(LValue;)V > v27,v28 @118 exception:v22\l" [ ]
+   "BB23\n69   goto                          \l" [ ]
+   "BB24\n74   goto                          \l" [ ]
+   "BB25\n77   conditional branch(eq) v21,v8:#0\l" [ ]
+   "BB26\n80   invokevirtual < Application, LValue, swapValLeft(LValue;)V > v27,v28 @152 exception:v23\l" [ ]
+   "BB27\n85   goto                          \l" [ ]
+   "BB28\n" [ ]
+   "BB29\n           v24 = phi  v15,v16,v16,v15\l           v25 = phi  v18,v19,v19,v18\l90   goto                          \l" [ ]
+   "BB30\n92   v29 = getfield < Application, LValue, left, <Application,LValue> > v1\l" [ ]
+   "BB31\n94   conditional branch(eq) v29,v13:#null\l" [ ]
+   "BB32\n97   v30 = getfield < Application, LValue, left, <Application,LValue> > v1\l" [ ]
+   "BB33\n99   v31 = getfield < Application, LValue, value, <Primordial,I> > v1\l" [ ]
+   "BB34\n101   v33 = invokevirtual < Application, LValue, bimerge(IZ)I > v30,v31,v3 @194 exception:v32\l" [ ]
+   "BB35\n102   putfield v1 = v33 < Application, LValue, value, <Primordial,I> >\l" [ ]
+   "BB36\n104   v34 = getfield < Application, LValue, right, <Application,LValue> > v1\l" [ ]
+   "BB37\n107   v36 = invokevirtual < Application, LValue, bimerge(IZ)I > v34,v12,v3 @206 exception:v35\l" [ ]
+   "BB38\n" [ ]
+   "BB39\n           v37 = phi  v12,v36\l110   return v37                   \l" [ ]
+   "BB40 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v5 = getfield < Application, LValue, value, <Primordial,I> > v1\l" 
+ "BB1\n1   v5 = getfield < Application, LValue, value, <Primordial,I> > v1\l" -> "BB2\n4   v6 = getfield < Application, LValue, left, <Application,LValue> > v1\l" 
+ "BB2\n4   v6 = getfield < Application, LValue, left, <Application,LValue> > v1\l" -> "BB3\n7   v7 = getfield < Application, LValue, right, <Application,LValue> > v1\l" 
+ "BB3\n7   v7 = getfield < Application, LValue, right, <Application,LValue> > v1\l" -> "BB4\n11   conditional branch(le) v5,v2  \l" 
+ "BB4\n11   conditional branch(le) v5,v2  \l" -> "BB5\n13   goto                          \l" 
+ "BB4\n11   conditional branch(le) v5,v2  \l" -> "BB6\n" 
+ "BB5\n13   goto                          \l" -> "BB7\n           v10 = phi  v9:#1,v8:#0\l16   v11 = binaryop(xor) v10 , v3  \l20   conditional branch(eq) v11,v8:#0\l" 
+ "BB6\n" -> "BB7\n           v10 = phi  v9:#1,v8:#0\l16   v11 = binaryop(xor) v10 , v3  \l20   conditional branch(eq) v11,v8:#0\l" 
+ "BB7\n           v10 = phi  v9:#1,v8:#0\l16   v11 = binaryop(xor) v10 , v3  \l20   conditional branch(eq) v11,v8:#0\l" -> "BB8\n23   putfield v1 = v2 < Application, LValue, value, <Primordial,I> >\l" 
+ "BB7\n           v10 = phi  v9:#1,v8:#0\l16   v11 = binaryop(xor) v10 , v3  \l20   conditional branch(eq) v11,v8:#0\l" -> "BB10\n           v12 = phi  v2,v12,v5\l           v27 = phi  v6,v24,v6\l           v28 = phi  v7,v25,v7\l28   conditional branch(eq) v27,v13:#null\l" 
+ "BB8\n23   putfield v1 = v2 < Application, LValue, value, <Primordial,I> >\l" -> "BB9\n" 
+ "BB9\n" -> "BB10\n           v12 = phi  v2,v12,v5\l           v27 = phi  v6,v24,v6\l           v28 = phi  v7,v25,v7\l28   conditional branch(eq) v27,v13:#null\l" 
+ "BB10\n           v12 = phi  v2,v12,v5\l           v27 = phi  v6,v24,v6\l           v28 = phi  v7,v25,v7\l28   conditional branch(eq) v27,v13:#null\l" -> "BB11\n30   v14 = getfield < Application, LValue, value, <Primordial,I> > v27\l" 
+ "BB10\n           v12 = phi  v2,v12,v5\l           v27 = phi  v6,v24,v6\l           v28 = phi  v7,v25,v7\l28   conditional branch(eq) v27,v13:#null\l" -> "BB30\n92   v29 = getfield < Application, LValue, left, <Application,LValue> > v1\l" 
+ "BB11\n30   v14 = getfield < Application, LValue, value, <Primordial,I> > v27\l" -> "BB12\n33   v15 = getfield < Application, LValue, left, <Application,LValue> > v27\l" 
+ "BB12\n33   v15 = getfield < Application, LValue, left, <Application,LValue> > v27\l" -> "BB13\n36   v16 = getfield < Application, LValue, right, <Application,LValue> > v27\l" 
+ "BB13\n36   v16 = getfield < Application, LValue, right, <Application,LValue> > v27\l" -> "BB14\n39   v17 = getfield < Application, LValue, value, <Primordial,I> > v28\l" 
+ "BB14\n39   v17 = getfield < Application, LValue, value, <Primordial,I> > v28\l" -> "BB15\n42   v18 = getfield < Application, LValue, left, <Application,LValue> > v28\l" 
+ "BB15\n42   v18 = getfield < Application, LValue, left, <Application,LValue> > v28\l" -> "BB16\n45   v19 = getfield < Application, LValue, right, <Application,LValue> > v28\l" 
+ "BB16\n45   v19 = getfield < Application, LValue, right, <Application,LValue> > v28\l" -> "BB17\n49   conditional branch(le) v14,v17\l" 
+ "BB17\n49   conditional branch(le) v14,v17\l" -> "BB18\n51   goto                          \l" 
+ "BB17\n49   conditional branch(le) v14,v17\l" -> "BB19\n" 
+ "BB18\n51   goto                          \l" -> "BB20\n           v20 = phi  v9:#1,v8:#0\l54   v21 = binaryop(xor) v20 , v3  \l58   conditional branch(eq) v11,v8:#0\l" 
+ "BB19\n" -> "BB20\n           v20 = phi  v9:#1,v8:#0\l54   v21 = binaryop(xor) v20 , v3  \l58   conditional branch(eq) v11,v8:#0\l" 
+ "BB20\n           v20 = phi  v9:#1,v8:#0\l54   v21 = binaryop(xor) v20 , v3  \l58   conditional branch(eq) v11,v8:#0\l" -> "BB21\n61   conditional branch(eq) v21,v8:#0\l" 
+ "BB20\n           v20 = phi  v9:#1,v8:#0\l54   v21 = binaryop(xor) v20 , v3  \l58   conditional branch(eq) v11,v8:#0\l" -> "BB25\n77   conditional branch(eq) v21,v8:#0\l" 
+ "BB21\n61   conditional branch(eq) v21,v8:#0\l" -> "BB22\n64   invokevirtual < Application, LValue, swapValRight(LValue;)V > v27,v28 @118 exception:v22\l" 
+ "BB21\n61   conditional branch(eq) v21,v8:#0\l" -> "BB24\n74   goto                          \l" 
+ "BB22\n64   invokevirtual < Application, LValue, swapValRight(LValue;)V > v27,v28 @118 exception:v22\l" -> "BB23\n69   goto                          \l" 
+ "BB23\n69   goto                          \l" -> "BB29\n           v24 = phi  v15,v16,v16,v15\l           v25 = phi  v18,v19,v19,v18\l90   goto                          \l" 
+ "BB24\n74   goto                          \l" -> "BB29\n           v24 = phi  v15,v16,v16,v15\l           v25 = phi  v18,v19,v19,v18\l90   goto                          \l" 
+ "BB25\n77   conditional branch(eq) v21,v8:#0\l" -> "BB26\n80   invokevirtual < Application, LValue, swapValLeft(LValue;)V > v27,v28 @152 exception:v23\l" 
+ "BB25\n77   conditional branch(eq) v21,v8:#0\l" -> "BB28\n" 
+ "BB26\n80   invokevirtual < Application, LValue, swapValLeft(LValue;)V > v27,v28 @152 exception:v23\l" -> "BB27\n85   goto                          \l" 
+ "BB27\n85   goto                          \l" -> "BB29\n           v24 = phi  v15,v16,v16,v15\l           v25 = phi  v18,v19,v19,v18\l90   goto                          \l" 
+ "BB28\n" -> "BB29\n           v24 = phi  v15,v16,v16,v15\l           v25 = phi  v18,v19,v19,v18\l90   goto                          \l" 
+ "BB29\n           v24 = phi  v15,v16,v16,v15\l           v25 = phi  v18,v19,v19,v18\l90   goto                          \l" -> "BB10\n           v12 = phi  v2,v12,v5\l           v27 = phi  v6,v24,v6\l           v28 = phi  v7,v25,v7\l28   conditional branch(eq) v27,v13:#null\l" 
+ "BB30\n92   v29 = getfield < Application, LValue, left, <Application,LValue> > v1\l" -> "BB31\n94   conditional branch(eq) v29,v13:#null\l" 
+ "BB31\n94   conditional branch(eq) v29,v13:#null\l" -> "BB32\n97   v30 = getfield < Application, LValue, left, <Application,LValue> > v1\l" 
+ "BB31\n94   conditional branch(eq) v29,v13:#null\l" -> "BB39\n           v37 = phi  v12,v36\l110   return v37                   \l" 
+ "BB32\n97   v30 = getfield < Application, LValue, left, <Application,LValue> > v1\l" -> "BB33\n99   v31 = getfield < Application, LValue, value, <Primordial,I> > v1\l" 
+ "BB33\n99   v31 = getfield < Application, LValue, value, <Primordial,I> > v1\l" -> "BB34\n101   v33 = invokevirtual < Application, LValue, bimerge(IZ)I > v30,v31,v3 @194 exception:v32\l" 
+ "BB34\n101   v33 = invokevirtual < Application, LValue, bimerge(IZ)I > v30,v31,v3 @194 exception:v32\l" -> "BB35\n102   putfield v1 = v33 < Application, LValue, value, <Primordial,I> >\l" 
+ "BB35\n102   putfield v1 = v33 < Application, LValue, value, <Primordial,I> >\l" -> "BB36\n104   v34 = getfield < Application, LValue, right, <Application,LValue> > v1\l" 
+ "BB36\n104   v34 = getfield < Application, LValue, right, <Application,LValue> > v1\l" -> "BB37\n107   v36 = invokevirtual < Application, LValue, bimerge(IZ)I > v34,v12,v3 @206 exception:v35\l" 
+ "BB37\n107   v36 = invokevirtual < Application, LValue, bimerge(IZ)I > v34,v12,v3 @206 exception:v35\l" -> "BB38\n" 
+ "BB38\n" -> "BB39\n           v37 = phi  v12,v36\l110   return v37                   \l" 
+ "BB39\n           v37 = phi  v12,v36\l110   return v37                   \l" -> "BB40 (ex)\n\n" 
+
+}

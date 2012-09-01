@@ -1,0 +1,35 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Body.<init>()V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   invokespecial < Application, LNode, <init>()V > v1 @1 exception:v3\l" [ ]
+   "BB2\n3  Create O2_1                               \l" [ ]
+   "BB3\n5   invokespecial < Application, LMathVector, <init>()V > v4 @9 exception:v5\l" [ ]
+   "BB4\n6  PutOSSAInstruction:	O1_1< vel > = O1_1<refO2_1>\l" [ ]
+   "BB5\n8  Create O3_1                               \l" [ ]
+   "BB6\n10   invokespecial < Application, LMathVector, <init>()V > v6 @20 exception:v7\l" [ ]
+   "BB7\n11  PutOSSAInstruction:	O1_2< acc > = O1_1<refO3_1>\l" [ ]
+   "BB8\n13  Create O4_1                              \l" [ ]
+   "BB9\n15   invokespecial < Application, LMathVector, <init>()V > v8 @31 exception:v9\l" [ ]
+   "BB10\n16  PutOSSAInstruction:	O1_3< newAcc > = O1_2<refO4_1>\l" [ ]
+   "BB11\n19  PutOSSAInstruction:	O1_4< phi > = O1_3<V10>\l" [ ]
+   "BB12\n22  PutOSSAInstruction:	O1_5< next > = O1_4<V11>\l" [ ]
+   "BB13\n25  PutOSSAInstruction:	O1_6< procNext > = O1_5<V11>\l" [ ]
+   "BB14\n26  return                                   \l" [ ]
+   "BB15 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   invokespecial < Application, LNode, <init>()V > v1 @1 exception:v3\l" 
+ "BB1\n1   invokespecial < Application, LNode, <init>()V > v1 @1 exception:v3\l" -> "BB2\n3  Create O2_1                               \l" 
+ "BB2\n3  Create O2_1                               \l" -> "BB3\n5   invokespecial < Application, LMathVector, <init>()V > v4 @9 exception:v5\l" 
+ "BB3\n5   invokespecial < Application, LMathVector, <init>()V > v4 @9 exception:v5\l" -> "BB4\n6  PutOSSAInstruction:	O1_1< vel > = O1_1<refO2_1>\l" 
+ "BB4\n6  PutOSSAInstruction:	O1_1< vel > = O1_1<refO2_1>\l" -> "BB5\n8  Create O3_1                               \l" 
+ "BB5\n8  Create O3_1                               \l" -> "BB6\n10   invokespecial < Application, LMathVector, <init>()V > v6 @20 exception:v7\l" 
+ "BB6\n10   invokespecial < Application, LMathVector, <init>()V > v6 @20 exception:v7\l" -> "BB7\n11  PutOSSAInstruction:	O1_2< acc > = O1_1<refO3_1>\l" 
+ "BB7\n11  PutOSSAInstruction:	O1_2< acc > = O1_1<refO3_1>\l" -> "BB8\n13  Create O4_1                              \l" 
+ "BB8\n13  Create O4_1                              \l" -> "BB9\n15   invokespecial < Application, LMathVector, <init>()V > v8 @31 exception:v9\l" 
+ "BB9\n15   invokespecial < Application, LMathVector, <init>()V > v8 @31 exception:v9\l" -> "BB10\n16  PutOSSAInstruction:	O1_3< newAcc > = O1_2<refO4_1>\l" 
+ "BB10\n16  PutOSSAInstruction:	O1_3< newAcc > = O1_2<refO4_1>\l" -> "BB11\n19  PutOSSAInstruction:	O1_4< phi > = O1_3<V10>\l" 
+ "BB11\n19  PutOSSAInstruction:	O1_4< phi > = O1_3<V10>\l" -> "BB12\n22  PutOSSAInstruction:	O1_5< next > = O1_4<V11>\l" 
+ "BB12\n22  PutOSSAInstruction:	O1_5< next > = O1_4<V11>\l" -> "BB13\n25  PutOSSAInstruction:	O1_6< procNext > = O1_5<V11>\l" 
+ "BB13\n25  PutOSSAInstruction:	O1_6< procNext > = O1_5<V11>\l" -> "BB14\n26  return                                   \l" 
+ "BB14\n26  return                                   \l" -> "BB15 (ex)\n\n" 
+
+}

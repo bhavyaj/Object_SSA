@@ -1,0 +1,11 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Vec2.X()D", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  GetOSSAInstruction:	3= O1_1< x>           \l" [ ]
+   "BB2\n2   return v3                                \l" [ ]
+   "BB3 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  GetOSSAInstruction:	3= O1_1< x>           \l" 
+ "BB1\n1  GetOSSAInstruction:	3= O1_1< x>           \l" -> "BB2\n2   return v3                                \l" 
+ "BB2\n2   return v3                                \l" -> "BB3 (ex)\n\n" 
+
+}

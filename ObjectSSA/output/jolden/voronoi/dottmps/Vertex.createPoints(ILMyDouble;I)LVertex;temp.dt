@@ -1,0 +1,60 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n2   conditional branch(ge) v1,v5:#1\l" [ ]
+   "BB2\n4   return v39:#null               \l" [ ]
+   "BB3\n5   v6 = new <Application,LVertex>@7\l" [ ]
+   "BB4\n7   invokespecial < Application, LVertex, <init>()V > v6 @11 exception:v7\l" [ ]
+   "BB5\n11   v9 = binaryop(div) v1 , v8:#2 \l" [ ]
+   "BB6\n14   v11 = invokestatic < Application, LVertex, createPoints(ILMyDouble;I)LVertex; > v9,v2,v3 @20 exception:v10\l" [ ]
+   "BB7\n19   v12 = binaryop(div) v1 , v8:#2\l" [ ]
+   "BB8\n20   v13 = binaryop(sub) v3 , v12  \l24   v14 = getfield < Application, LMyDouble, value, <Primordial,D> > v2\l" [ ]
+   "BB9\n25   v16 = invokestatic < Application, LVertex, drand()D > @36 exception:v15\l" [ ]
+   "BB10\n26   v18 = invokestatic < Application, Ljava/lang/Math, log(D)D > v16 @39 exception:v17\l" [ ]
+   "BB11\n28   v19 = conversion(D) v13       \l29   v20 = binaryop(div) v18 , v19 \l30   v22 = invokestatic < Application, Ljava/lang/Math, exp(D)D > v20 @45 exception:v21\l" [ ]
+   "BB12\n31   v23 = binaryop(mul) v14 , v22 \l32   putfield v6 = v23 < Application, LVertex, x, <Primordial,D> >\l" [ ]
+   "BB13\n34   v25 = invokestatic < Application, LVertex, drand()D > @53 exception:v24\l" [ ]
+   "BB14\n35   putfield v6 = v25 < Application, LVertex, y, <Primordial,D> >\l" [ ]
+   "BB15\n38   v26 = getfield < Application, LVertex, x, <Primordial,D> > v6\l" [ ]
+   "BB16\n40   v27 = getfield < Application, LVertex, x, <Primordial,D> > v6\l" [ ]
+   "BB17\n41   v28 = binaryop(mul) v26 , v27 \l43   v29 = getfield < Application, LVertex, y, <Primordial,D> > v6\l" [ ]
+   "BB18\n45   v30 = getfield < Application, LVertex, y, <Primordial,D> > v6\l" [ ]
+   "BB19\n46   v31 = binaryop(mul) v29 , v30 \l47   v32 = binaryop(add) v28 , v31 \l48   putfield v6 = v32 < Application, LVertex, norm, <Primordial,D> >\l" [ ]
+   "BB20\n51   putfield v6 = v11 < Application, LVertex, right, <Application,LVertex> >\l" [ ]
+   "BB21\n54   v34 = invokevirtual < Application, LVertex, X()D > v6 @90 exception:v33\l" [ ]
+   "BB22\n55   putfield v2 = v34 < Application, LMyDouble, value, <Primordial,D> >\l" [ ]
+   "BB23\n58   v35 = binaryop(div) v1 , v8:#2\l" [ ]
+   "BB24\n62   v36 = binaryop(sub) v13 , v5:#1\l63   v38 = invokestatic < Application, LVertex, createPoints(ILMyDouble;I)LVertex; > v35,v2,v36 @103 exception:v37\l" [ ]
+   "BB25\n67   putfield v6 = v38 < Application, LVertex, left, <Application,LVertex> >\l" [ ]
+   "BB26\n69   return v6                     \l" [ ]
+   "BB27 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n2   conditional branch(ge) v1,v5:#1\l" 
+ "BB1\n2   conditional branch(ge) v1,v5:#1\l" -> "BB2\n4   return v39:#null               \l" 
+ "BB1\n2   conditional branch(ge) v1,v5:#1\l" -> "BB3\n5   v6 = new <Application,LVertex>@7\l" 
+ "BB2\n4   return v39:#null               \l" -> "BB27 (ex)\n\n" 
+ "BB3\n5   v6 = new <Application,LVertex>@7\l" -> "BB4\n7   invokespecial < Application, LVertex, <init>()V > v6 @11 exception:v7\l" 
+ "BB4\n7   invokespecial < Application, LVertex, <init>()V > v6 @11 exception:v7\l" -> "BB5\n11   v9 = binaryop(div) v1 , v8:#2 \l" 
+ "BB5\n11   v9 = binaryop(div) v1 , v8:#2 \l" -> "BB6\n14   v11 = invokestatic < Application, LVertex, createPoints(ILMyDouble;I)LVertex; > v9,v2,v3 @20 exception:v10\l" 
+ "BB6\n14   v11 = invokestatic < Application, LVertex, createPoints(ILMyDouble;I)LVertex; > v9,v2,v3 @20 exception:v10\l" -> "BB7\n19   v12 = binaryop(div) v1 , v8:#2\l" 
+ "BB7\n19   v12 = binaryop(div) v1 , v8:#2\l" -> "BB8\n20   v13 = binaryop(sub) v3 , v12  \l24   v14 = getfield < Application, LMyDouble, value, <Primordial,D> > v2\l" 
+ "BB8\n20   v13 = binaryop(sub) v3 , v12  \l24   v14 = getfield < Application, LMyDouble, value, <Primordial,D> > v2\l" -> "BB9\n25   v16 = invokestatic < Application, LVertex, drand()D > @36 exception:v15\l" 
+ "BB9\n25   v16 = invokestatic < Application, LVertex, drand()D > @36 exception:v15\l" -> "BB10\n26   v18 = invokestatic < Application, Ljava/lang/Math, log(D)D > v16 @39 exception:v17\l" 
+ "BB10\n26   v18 = invokestatic < Application, Ljava/lang/Math, log(D)D > v16 @39 exception:v17\l" -> "BB11\n28   v19 = conversion(D) v13       \l29   v20 = binaryop(div) v18 , v19 \l30   v22 = invokestatic < Application, Ljava/lang/Math, exp(D)D > v20 @45 exception:v21\l" 
+ "BB11\n28   v19 = conversion(D) v13       \l29   v20 = binaryop(div) v18 , v19 \l30   v22 = invokestatic < Application, Ljava/lang/Math, exp(D)D > v20 @45 exception:v21\l" -> "BB12\n31   v23 = binaryop(mul) v14 , v22 \l32   putfield v6 = v23 < Application, LVertex, x, <Primordial,D> >\l" 
+ "BB12\n31   v23 = binaryop(mul) v14 , v22 \l32   putfield v6 = v23 < Application, LVertex, x, <Primordial,D> >\l" -> "BB13\n34   v25 = invokestatic < Application, LVertex, drand()D > @53 exception:v24\l" 
+ "BB13\n34   v25 = invokestatic < Application, LVertex, drand()D > @53 exception:v24\l" -> "BB14\n35   putfield v6 = v25 < Application, LVertex, y, <Primordial,D> >\l" 
+ "BB14\n35   putfield v6 = v25 < Application, LVertex, y, <Primordial,D> >\l" -> "BB15\n38   v26 = getfield < Application, LVertex, x, <Primordial,D> > v6\l" 
+ "BB15\n38   v26 = getfield < Application, LVertex, x, <Primordial,D> > v6\l" -> "BB16\n40   v27 = getfield < Application, LVertex, x, <Primordial,D> > v6\l" 
+ "BB16\n40   v27 = getfield < Application, LVertex, x, <Primordial,D> > v6\l" -> "BB17\n41   v28 = binaryop(mul) v26 , v27 \l43   v29 = getfield < Application, LVertex, y, <Primordial,D> > v6\l" 
+ "BB17\n41   v28 = binaryop(mul) v26 , v27 \l43   v29 = getfield < Application, LVertex, y, <Primordial,D> > v6\l" -> "BB18\n45   v30 = getfield < Application, LVertex, y, <Primordial,D> > v6\l" 
+ "BB18\n45   v30 = getfield < Application, LVertex, y, <Primordial,D> > v6\l" -> "BB19\n46   v31 = binaryop(mul) v29 , v30 \l47   v32 = binaryop(add) v28 , v31 \l48   putfield v6 = v32 < Application, LVertex, norm, <Primordial,D> >\l" 
+ "BB19\n46   v31 = binaryop(mul) v29 , v30 \l47   v32 = binaryop(add) v28 , v31 \l48   putfield v6 = v32 < Application, LVertex, norm, <Primordial,D> >\l" -> "BB20\n51   putfield v6 = v11 < Application, LVertex, right, <Application,LVertex> >\l" 
+ "BB20\n51   putfield v6 = v11 < Application, LVertex, right, <Application,LVertex> >\l" -> "BB21\n54   v34 = invokevirtual < Application, LVertex, X()D > v6 @90 exception:v33\l" 
+ "BB21\n54   v34 = invokevirtual < Application, LVertex, X()D > v6 @90 exception:v33\l" -> "BB22\n55   putfield v2 = v34 < Application, LMyDouble, value, <Primordial,D> >\l" 
+ "BB22\n55   putfield v2 = v34 < Application, LMyDouble, value, <Primordial,D> >\l" -> "BB23\n58   v35 = binaryop(div) v1 , v8:#2\l" 
+ "BB23\n58   v35 = binaryop(div) v1 , v8:#2\l" -> "BB24\n62   v36 = binaryop(sub) v13 , v5:#1\l63   v38 = invokestatic < Application, LVertex, createPoints(ILMyDouble;I)LVertex; > v35,v2,v36 @103 exception:v37\l" 
+ "BB24\n62   v36 = binaryop(sub) v13 , v5:#1\l63   v38 = invokestatic < Application, LVertex, createPoints(ILMyDouble;I)LVertex; > v35,v2,v36 @103 exception:v37\l" -> "BB25\n67   putfield v6 = v38 < Application, LVertex, left, <Application,LVertex> >\l" 
+ "BB25\n67   putfield v6 = v38 < Application, LVertex, left, <Application,LVertex> >\l" -> "BB26\n69   return v6                     \l" 
+ "BB26\n69   return v6                     \l" -> "BB27 (ex)\n\n" 
+
+}

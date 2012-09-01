@@ -1,0 +1,35 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Village.<init>(IILVillage;I)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  < Application, Ljava/lang/Object, <init>()V >( O1_1 )\l" [ ]
+   "BB2\n4  PutOSSAInstruction:	O1_2< back > = O1_1<refO2_1>\l" [ ]
+   "BB3\n7  PutOSSAInstruction:	O1_3< label > = O1_2<V3>\l" [ ]
+   "BB4\n10  Create O3_1                              \l" [ ]
+   "BB5\n11  PutOSSAInstruction:	O1_4< forward > = O1_3<refO3_1>\l" [ ]
+   "BB6\n14  GetOSSAInstruction:	10= O1_4< label>     \l" [ ]
+   "BB7\n17   v12 = binaryop(add) v11:#127773 , v5    \l18   v13 = binaryop(mul) v10 , v12           \l19  PutOSSAInstruction:	O1_5< seed > = O1_4<V13>\l" [ ]
+   "BB8\n21  Create O4_1                              \l" [ ]
+   "BB9\n24  < Application, LHospital, <init>(I)V >( O4_1, V2 )\l" [ ]
+   "BB10\n25  PutOSSAInstruction:	O1_6< hospital > = O1_5<refO4_1>\l" [ ]
+   "BB11\n27  Create O5_1                              \l" [ ]
+   "BB12\n29  < Application, LList, <init>()V >( O5_1 )\l" [ ]
+   "BB13\n30  PutOSSAInstruction:	O1_7< returned > = O1_6<refO5_1>\l" [ ]
+   "BB14\n31  return                                   \l" [ ]
+   "BB15 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  < Application, Ljava/lang/Object, <init>()V >( O1_1 )\l" 
+ "BB1\n1  < Application, Ljava/lang/Object, <init>()V >( O1_1 )\l" -> "BB2\n4  PutOSSAInstruction:	O1_2< back > = O1_1<refO2_1>\l" 
+ "BB2\n4  PutOSSAInstruction:	O1_2< back > = O1_1<refO2_1>\l" -> "BB3\n7  PutOSSAInstruction:	O1_3< label > = O1_2<V3>\l" 
+ "BB3\n7  PutOSSAInstruction:	O1_3< label > = O1_2<V3>\l" -> "BB4\n10  Create O3_1                              \l" 
+ "BB4\n10  Create O3_1                              \l" -> "BB5\n11  PutOSSAInstruction:	O1_4< forward > = O1_3<refO3_1>\l" 
+ "BB5\n11  PutOSSAInstruction:	O1_4< forward > = O1_3<refO3_1>\l" -> "BB6\n14  GetOSSAInstruction:	10= O1_4< label>     \l" 
+ "BB6\n14  GetOSSAInstruction:	10= O1_4< label>     \l" -> "BB7\n17   v12 = binaryop(add) v11:#127773 , v5    \l18   v13 = binaryop(mul) v10 , v12           \l19  PutOSSAInstruction:	O1_5< seed > = O1_4<V13>\l" 
+ "BB7\n17   v12 = binaryop(add) v11:#127773 , v5    \l18   v13 = binaryop(mul) v10 , v12           \l19  PutOSSAInstruction:	O1_5< seed > = O1_4<V13>\l" -> "BB8\n21  Create O4_1                              \l" 
+ "BB8\n21  Create O4_1                              \l" -> "BB9\n24  < Application, LHospital, <init>(I)V >( O4_1, V2 )\l" 
+ "BB9\n24  < Application, LHospital, <init>(I)V >( O4_1, V2 )\l" -> "BB10\n25  PutOSSAInstruction:	O1_6< hospital > = O1_5<refO4_1>\l" 
+ "BB10\n25  PutOSSAInstruction:	O1_6< hospital > = O1_5<refO4_1>\l" -> "BB11\n27  Create O5_1                              \l" 
+ "BB11\n27  Create O5_1                              \l" -> "BB12\n29  < Application, LList, <init>()V >( O5_1 )\l" 
+ "BB12\n29  < Application, LList, <init>()V >( O5_1 )\l" -> "BB13\n30  PutOSSAInstruction:	O1_7< returned > = O1_6<refO5_1>\l" 
+ "BB13\n30  PutOSSAInstruction:	O1_7< returned > = O1_6<refO5_1>\l" -> "BB14\n31  return                                   \l" 
+ "BB14\n31  return                                   \l" -> "BB15 (ex)\n\n" 
+
+}

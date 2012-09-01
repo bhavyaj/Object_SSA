@@ -1,0 +1,83 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Village.simulate()LList;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  Create O2_1                               \l" [ ]
+   "BB2\n" [ ]
+   "BB3\n           v14 = phi  v13,v5:#3\l7   conditional branch(lt) v14,v6:#0         \l" [ ]
+   "BB4\n9  GetOSSAInstruction:	O3_1= O1_1< forward>  \l" [ ]
+   "BB5\n11   v8 = arrayload v7[v14]                  \l" [ ]
+   "BB6\n15   conditional branch(eq) v8,v9:#null      \l" [ ]
+   "BB7\n19  O4_1 = < Application, LVillage, simulate()LList; >( O1_1 )\l" [ ]
+   "BB8\n20   arraystore v4[v14] = v11                \l" [ ]
+   "BB9\n23   v13 = binaryop(add) v14 , v12:#-1       \l25   goto                                    \l" [ ]
+   "BB10\n" [ ]
+   "BB11\n           v26 = phi  v25,v5:#3\l30   conditional branch(lt) v26,v6:#0        \l" [ ]
+   "BB12\n33   v15 = arrayload v4[v26]                 \l" [ ]
+   "BB13\n37   conditional branch(eq) v15,v9:#null     \l" [ ]
+   "BB14\n39  O5_1 = < Application, LList, elements()Ljava/util/Enumeration; >( O4_1 )\l" [ ]
+   "BB15\n" [ ]
+   "BB16\n           v28 = phi  v28,v26\l42  O6_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O5_1 )\l" [ ]
+   "BB17\n44   conditional branch(eq) v19,v6:#0        \l" [ ]
+   "BB18\n46  O7_1 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O5_1 )\l" [ ]
+   "BB19\n47   v22 = checkcast <Application,LPatient>v21\l" [ ]
+   "BB20\n50  GetOSSAInstruction:	O8_1= O1_1< hospital>\l" [ ]
+   "BB21\n52  < Application, LHospital, putInHospital(LPatient;)V >( O8_1, O7_1 )\l" [ ]
+   "BB22\n53   goto                                    \l" [ ]
+   "BB23\n           v29 = phi  v26,v28\l56   v25 = binaryop(add) v29 , v12:#-1       \l58   goto                                    \l" [ ]
+   "BB24\n60  GetOSSAInstruction:	O8_1= O1_1< hospital>\l" [ ]
+   "BB25\n62  GetOSSAInstruction:	O9_1= O1_1< returned>\l" [ ]
+   "BB26\n63  < Application, LHospital, checkPatientsInside(LList;)V >( O8_1, O9_1 )\l" [ ]
+   "BB27\n65  GetOSSAInstruction:	O8_1= O1_1< hospital>\l" [ ]
+   "BB28\n67  O4_2 = < Application, LHospital, checkPatientsAssess(LVillage;)LList; >( O8_1, O1_1 )\l" [ ]
+   "BB29\n70  GetOSSAInstruction:	O8_1= O1_1< hospital>\l" [ ]
+   "BB30\n71  < Application, LHospital, checkPatientsWaiting()V >( O8_1 )\l" [ ]
+   "BB31\n73  O7_2 = < Application, LVillage, generatePatient()LPatient; >( O1_1 )\l" [ ]
+   "BB32\n77   conditional branch(eq) v39,v9:#null     \l" [ ]
+   "BB33\n79  GetOSSAInstruction:	O8_1= O1_1< hospital>\l" [ ]
+   "BB34\n81  < Application, LHospital, putInHospital(LPatient;)V >( O8_1, O7_2 )\l" [ ]
+   "BB35\n83  Return O4_2                              \l" [ ]
+   "BB36 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  Create O2_1                               \l" 
+ "BB1\n1  Create O2_1                               \l" -> "BB2\n" 
+ "BB2\n" -> "BB3\n           v14 = phi  v13,v5:#3\l7   conditional branch(lt) v14,v6:#0         \l" 
+ "BB3\n           v14 = phi  v13,v5:#3\l7   conditional branch(lt) v14,v6:#0         \l" -> "BB4\n9  GetOSSAInstruction:	O3_1= O1_1< forward>  \l" 
+ "BB3\n           v14 = phi  v13,v5:#3\l7   conditional branch(lt) v14,v6:#0         \l" -> "BB10\n" 
+ "BB4\n9  GetOSSAInstruction:	O3_1= O1_1< forward>  \l" -> "BB5\n11   v8 = arrayload v7[v14]                  \l" 
+ "BB5\n11   v8 = arrayload v7[v14]                  \l" -> "BB6\n15   conditional branch(eq) v8,v9:#null      \l" 
+ "BB6\n15   conditional branch(eq) v8,v9:#null      \l" -> "BB7\n19  O4_1 = < Application, LVillage, simulate()LList; >( O1_1 )\l" 
+ "BB6\n15   conditional branch(eq) v8,v9:#null      \l" -> "BB9\n23   v13 = binaryop(add) v14 , v12:#-1       \l25   goto                                    \l" 
+ "BB7\n19  O4_1 = < Application, LVillage, simulate()LList; >( O1_1 )\l" -> "BB8\n20   arraystore v4[v14] = v11                \l" 
+ "BB8\n20   arraystore v4[v14] = v11                \l" -> "BB9\n23   v13 = binaryop(add) v14 , v12:#-1       \l25   goto                                    \l" 
+ "BB9\n23   v13 = binaryop(add) v14 , v12:#-1       \l25   goto                                    \l" -> "BB3\n           v14 = phi  v13,v5:#3\l7   conditional branch(lt) v14,v6:#0         \l" 
+ "BB10\n" -> "BB11\n           v26 = phi  v25,v5:#3\l30   conditional branch(lt) v26,v6:#0        \l" 
+ "BB11\n           v26 = phi  v25,v5:#3\l30   conditional branch(lt) v26,v6:#0        \l" -> "BB12\n33   v15 = arrayload v4[v26]                 \l" 
+ "BB11\n           v26 = phi  v25,v5:#3\l30   conditional branch(lt) v26,v6:#0        \l" -> "BB24\n60  GetOSSAInstruction:	O8_1= O1_1< hospital>\l" 
+ "BB12\n33   v15 = arrayload v4[v26]                 \l" -> "BB13\n37   conditional branch(eq) v15,v9:#null     \l" 
+ "BB13\n37   conditional branch(eq) v15,v9:#null     \l" -> "BB14\n39  O5_1 = < Application, LList, elements()Ljava/util/Enumeration; >( O4_1 )\l" 
+ "BB13\n37   conditional branch(eq) v15,v9:#null     \l" -> "BB23\n           v29 = phi  v26,v28\l56   v25 = binaryop(add) v29 , v12:#-1       \l58   goto                                    \l" 
+ "BB14\n39  O5_1 = < Application, LList, elements()Ljava/util/Enumeration; >( O4_1 )\l" -> "BB15\n" 
+ "BB15\n" -> "BB16\n           v28 = phi  v28,v26\l42  O6_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O5_1 )\l" 
+ "BB16\n           v28 = phi  v28,v26\l42  O6_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O5_1 )\l" -> "BB17\n44   conditional branch(eq) v19,v6:#0        \l" 
+ "BB17\n44   conditional branch(eq) v19,v6:#0        \l" -> "BB18\n46  O7_1 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O5_1 )\l" 
+ "BB17\n44   conditional branch(eq) v19,v6:#0        \l" -> "BB23\n           v29 = phi  v26,v28\l56   v25 = binaryop(add) v29 , v12:#-1       \l58   goto                                    \l" 
+ "BB18\n46  O7_1 = < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; >( O5_1 )\l" -> "BB19\n47   v22 = checkcast <Application,LPatient>v21\l" 
+ "BB19\n47   v22 = checkcast <Application,LPatient>v21\l" -> "BB20\n50  GetOSSAInstruction:	O8_1= O1_1< hospital>\l" 
+ "BB20\n50  GetOSSAInstruction:	O8_1= O1_1< hospital>\l" -> "BB21\n52  < Application, LHospital, putInHospital(LPatient;)V >( O8_1, O7_1 )\l" 
+ "BB21\n52  < Application, LHospital, putInHospital(LPatient;)V >( O8_1, O7_1 )\l" -> "BB22\n53   goto                                    \l" 
+ "BB22\n53   goto                                    \l" -> "BB16\n           v28 = phi  v28,v26\l42  O6_1 = < Application, Ljava/util/Enumeration, hasMoreElements()Z >( O5_1 )\l" 
+ "BB23\n           v29 = phi  v26,v28\l56   v25 = binaryop(add) v29 , v12:#-1       \l58   goto                                    \l" -> "BB11\n           v26 = phi  v25,v5:#3\l30   conditional branch(lt) v26,v6:#0        \l" 
+ "BB24\n60  GetOSSAInstruction:	O8_1= O1_1< hospital>\l" -> "BB25\n62  GetOSSAInstruction:	O9_1= O1_1< returned>\l" 
+ "BB25\n62  GetOSSAInstruction:	O9_1= O1_1< returned>\l" -> "BB26\n63  < Application, LHospital, checkPatientsInside(LList;)V >( O8_1, O9_1 )\l" 
+ "BB26\n63  < Application, LHospital, checkPatientsInside(LList;)V >( O8_1, O9_1 )\l" -> "BB27\n65  GetOSSAInstruction:	O8_1= O1_1< hospital>\l" 
+ "BB27\n65  GetOSSAInstruction:	O8_1= O1_1< hospital>\l" -> "BB28\n67  O4_2 = < Application, LHospital, checkPatientsAssess(LVillage;)LList; >( O8_1, O1_1 )\l" 
+ "BB28\n67  O4_2 = < Application, LHospital, checkPatientsAssess(LVillage;)LList; >( O8_1, O1_1 )\l" -> "BB29\n70  GetOSSAInstruction:	O8_1= O1_1< hospital>\l" 
+ "BB29\n70  GetOSSAInstruction:	O8_1= O1_1< hospital>\l" -> "BB30\n71  < Application, LHospital, checkPatientsWaiting()V >( O8_1 )\l" 
+ "BB30\n71  < Application, LHospital, checkPatientsWaiting()V >( O8_1 )\l" -> "BB31\n73  O7_2 = < Application, LVillage, generatePatient()LPatient; >( O1_1 )\l" 
+ "BB31\n73  O7_2 = < Application, LVillage, generatePatient()LPatient; >( O1_1 )\l" -> "BB32\n77   conditional branch(eq) v39,v9:#null     \l" 
+ "BB32\n77   conditional branch(eq) v39,v9:#null     \l" -> "BB33\n79  GetOSSAInstruction:	O8_1= O1_1< hospital>\l" 
+ "BB32\n77   conditional branch(eq) v39,v9:#null     \l" -> "BB35\n83  Return O4_2                              \l" 
+ "BB33\n79  GetOSSAInstruction:	O8_1= O1_1< hospital>\l" -> "BB34\n81  < Application, LHospital, putInHospital(LPatient;)V >( O8_1, O7_2 )\l" 
+ "BB34\n81  < Application, LHospital, putInHospital(LPatient;)V >( O8_1, O7_2 )\l" -> "BB35\n83  Return O4_2                              \l" 
+ "BB35\n83  Return O4_2                              \l" -> "BB36 (ex)\n\n" 
+
+}

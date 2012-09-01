@@ -1,0 +1,46 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Root.compute()V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  GetOSSAInstruction:	O2_1= O1_1< D>        \l" [ ]
+   "BB2\n3  PutOSSAInstruction:	O2_1< P > = O2_1<V4>  \l" [ ]
+   "BB3\n5  GetOSSAInstruction:	O2_1= O1_1< D>        \l" [ ]
+   "BB4\n7  PutOSSAInstruction:	O2_2< Q > = O2_1<V4>  \l" [ ]
+   "BB5\n" [ ]
+   "BB6\n           v21 = phi  v20,v6:#0\l12  GetOSSAInstruction:	O3_1= O1_1< feeders> \l" [ ]
+   "BB7\n13   v8 = arraylength v7                     \l" [ ]
+   "BB8\n14   conditional branch(ge) v21,v8           \l" [ ]
+   "BB9\n16  GetOSSAInstruction:	O2_2= O1_1< D>       \l" [ ]
+   "BB10\n18  GetOSSAInstruction:	O3_1= O1_1< feeders> \l" [ ]
+   "BB11\n20   v11 = arrayload v10[v21]                \l" [ ]
+   "BB12\n22  GetOSSAInstruction:	12= O1_1< theta_R>   \l" [ ]
+   "BB13\n24  GetOSSAInstruction:	13= O1_1< theta_I>   \l" [ ]
+   "BB14\n26  GetOSSAInstruction:	14= O1_1< theta_R>   \l" [ ]
+   "BB15\n28  GetOSSAInstruction:	15= O1_1< theta_I>   \l" [ ]
+   "BB16\n29   v17 = invokevirtual < Application, LLateral, compute(DDDD)LDemand; > v11,v12,v13,v14,v15 @53 exception:v16\l" [ ]
+   "BB17\n30   invokevirtual < Application, LDemand, increment(LDemand;)V > v9,v17 @56 exception:v18\l" [ ]
+   "BB18\n33   v20 = binaryop(add) v21 , v19:#1        \l35   goto                                    \l" [ ]
+   "BB19\n36  return                                   \l" [ ]
+   "BB20 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  GetOSSAInstruction:	O2_1= O1_1< D>        \l" 
+ "BB1\n1  GetOSSAInstruction:	O2_1= O1_1< D>        \l" -> "BB2\n3  PutOSSAInstruction:	O2_1< P > = O2_1<V4>  \l" 
+ "BB2\n3  PutOSSAInstruction:	O2_1< P > = O2_1<V4>  \l" -> "BB3\n5  GetOSSAInstruction:	O2_1= O1_1< D>        \l" 
+ "BB3\n5  GetOSSAInstruction:	O2_1= O1_1< D>        \l" -> "BB4\n7  PutOSSAInstruction:	O2_2< Q > = O2_1<V4>  \l" 
+ "BB4\n7  PutOSSAInstruction:	O2_2< Q > = O2_1<V4>  \l" -> "BB5\n" 
+ "BB5\n" -> "BB6\n           v21 = phi  v20,v6:#0\l12  GetOSSAInstruction:	O3_1= O1_1< feeders> \l" 
+ "BB6\n           v21 = phi  v20,v6:#0\l12  GetOSSAInstruction:	O3_1= O1_1< feeders> \l" -> "BB7\n13   v8 = arraylength v7                     \l" 
+ "BB7\n13   v8 = arraylength v7                     \l" -> "BB8\n14   conditional branch(ge) v21,v8           \l" 
+ "BB8\n14   conditional branch(ge) v21,v8           \l" -> "BB9\n16  GetOSSAInstruction:	O2_2= O1_1< D>       \l" 
+ "BB8\n14   conditional branch(ge) v21,v8           \l" -> "BB19\n36  return                                   \l" 
+ "BB9\n16  GetOSSAInstruction:	O2_2= O1_1< D>       \l" -> "BB10\n18  GetOSSAInstruction:	O3_1= O1_1< feeders> \l" 
+ "BB10\n18  GetOSSAInstruction:	O3_1= O1_1< feeders> \l" -> "BB11\n20   v11 = arrayload v10[v21]                \l" 
+ "BB11\n20   v11 = arrayload v10[v21]                \l" -> "BB12\n22  GetOSSAInstruction:	12= O1_1< theta_R>   \l" 
+ "BB12\n22  GetOSSAInstruction:	12= O1_1< theta_R>   \l" -> "BB13\n24  GetOSSAInstruction:	13= O1_1< theta_I>   \l" 
+ "BB13\n24  GetOSSAInstruction:	13= O1_1< theta_I>   \l" -> "BB14\n26  GetOSSAInstruction:	14= O1_1< theta_R>   \l" 
+ "BB14\n26  GetOSSAInstruction:	14= O1_1< theta_R>   \l" -> "BB15\n28  GetOSSAInstruction:	15= O1_1< theta_I>   \l" 
+ "BB15\n28  GetOSSAInstruction:	15= O1_1< theta_I>   \l" -> "BB16\n29   v17 = invokevirtual < Application, LLateral, compute(DDDD)LDemand; > v11,v12,v13,v14,v15 @53 exception:v16\l" 
+ "BB16\n29   v17 = invokevirtual < Application, LLateral, compute(DDDD)LDemand; > v11,v12,v13,v14,v15 @53 exception:v16\l" -> "BB17\n30   invokevirtual < Application, LDemand, increment(LDemand;)V > v9,v17 @56 exception:v18\l" 
+ "BB17\n30   invokevirtual < Application, LDemand, increment(LDemand;)V > v9,v17 @56 exception:v18\l" -> "BB18\n33   v20 = binaryop(add) v21 , v19:#1        \l35   goto                                    \l" 
+ "BB18\n33   v20 = binaryop(add) v21 , v19:#1        \l35   goto                                    \l" -> "BB6\n           v21 = phi  v20,v6:#0\l12  GetOSSAInstruction:	O3_1= O1_1< feeders> \l" 
+ "BB19\n36  return                                   \l" -> "BB20 (ex)\n\n" 
+
+}

@@ -1,0 +1,25 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Tree.<init>(IDDLTree;LTree;)V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  < Application, Ljava/lang/Object, <init>()V >( O3_1 )\l" [ ]
+   "BB2\n4  PutOSSAInstruction:	O1_2< sz > = O1_1<V2> \l" [ ]
+   "BB3\n7  PutOSSAInstruction:	O1_3< x > = O1_2<V3>  \l" [ ]
+   "BB4\n10  PutOSSAInstruction:	O1_4< y > = O1_3<V4> \l" [ ]
+   "BB5\n13  PutOSSAInstruction:	O1_5< left > = O1_4<refO2_1>\l" [ ]
+   "BB6\n16  PutOSSAInstruction:	O1_6< right > = O1_5<refO3_1>\l" [ ]
+   "BB7\n19  PutOSSAInstruction:	O1_7< next > = O1_6<V9>\l" [ ]
+   "BB8\n22  PutOSSAInstruction:	O1_8< prev > = O1_7<V9>\l" [ ]
+   "BB9\n23  return                                   \l" [ ]
+   "BB10 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  < Application, Ljava/lang/Object, <init>()V >( O3_1 )\l" 
+ "BB1\n1  < Application, Ljava/lang/Object, <init>()V >( O3_1 )\l" -> "BB2\n4  PutOSSAInstruction:	O1_2< sz > = O1_1<V2> \l" 
+ "BB2\n4  PutOSSAInstruction:	O1_2< sz > = O1_1<V2> \l" -> "BB3\n7  PutOSSAInstruction:	O1_3< x > = O1_2<V3>  \l" 
+ "BB3\n7  PutOSSAInstruction:	O1_3< x > = O1_2<V3>  \l" -> "BB4\n10  PutOSSAInstruction:	O1_4< y > = O1_3<V4> \l" 
+ "BB4\n10  PutOSSAInstruction:	O1_4< y > = O1_3<V4> \l" -> "BB5\n13  PutOSSAInstruction:	O1_5< left > = O1_4<refO2_1>\l" 
+ "BB5\n13  PutOSSAInstruction:	O1_5< left > = O1_4<refO2_1>\l" -> "BB6\n16  PutOSSAInstruction:	O1_6< right > = O1_5<refO3_1>\l" 
+ "BB6\n16  PutOSSAInstruction:	O1_6< right > = O1_5<refO3_1>\l" -> "BB7\n19  PutOSSAInstruction:	O1_7< next > = O1_6<V9>\l" 
+ "BB7\n19  PutOSSAInstruction:	O1_7< next > = O1_6<V9>\l" -> "BB8\n22  PutOSSAInstruction:	O1_8< prev > = O1_7<V9>\l" 
+ "BB8\n22  PutOSSAInstruction:	O1_8< prev > = O1_7<V9>\l" -> "BB9\n23  return                                   \l" 
+ "BB9\n23  return                                   \l" -> "BB10 (ex)\n\n" 
+
+}

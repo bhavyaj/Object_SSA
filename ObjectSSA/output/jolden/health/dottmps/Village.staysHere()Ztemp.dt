@@ -1,0 +1,27 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1   v3 = getfield < Application, LVillage, seed, <Primordial,I> > v1\l" [ ]
+   "BB2\n2   v5 = invokestatic < Application, LVillage, myRand(I)F > v3 @4 exception:v4\l" [ ]
+   "BB3\n7   v7 = binaryop(mul) v5 , v6:#2.14748365E9\l8   v8 = conversion(I) v7          \l9   putfield v1 = v8 < Application, LVillage, seed, <Primordial,I> >\l" [ ]
+   "BB4\n11   v9 = conversion(D) v5         \l13   v11 = compare v9,v10:#0.1 opcode=cmpl\l15   conditional branch(gt) v11,v12:#0\l" [ ]
+   "BB5\n17   v13 = getfield < Application, LVillage, back, <Application,LVillage> > v1\l" [ ]
+   "BB6\n19   conditional branch(ne) v13,v14:#null\l" [ ]
+   "BB7\n21   goto                          \l" [ ]
+   "BB8\n" [ ]
+   "BB9\n           v16 = phi  v15:#1,v12:#0\l23   return v16                    \l" [ ]
+   "BB10 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1   v3 = getfield < Application, LVillage, seed, <Primordial,I> > v1\l" 
+ "BB1\n1   v3 = getfield < Application, LVillage, seed, <Primordial,I> > v1\l" -> "BB2\n2   v5 = invokestatic < Application, LVillage, myRand(I)F > v3 @4 exception:v4\l" 
+ "BB2\n2   v5 = invokestatic < Application, LVillage, myRand(I)F > v3 @4 exception:v4\l" -> "BB3\n7   v7 = binaryop(mul) v5 , v6:#2.14748365E9\l8   v8 = conversion(I) v7          \l9   putfield v1 = v8 < Application, LVillage, seed, <Primordial,I> >\l" 
+ "BB3\n7   v7 = binaryop(mul) v5 , v6:#2.14748365E9\l8   v8 = conversion(I) v7          \l9   putfield v1 = v8 < Application, LVillage, seed, <Primordial,I> >\l" -> "BB4\n11   v9 = conversion(D) v5         \l13   v11 = compare v9,v10:#0.1 opcode=cmpl\l15   conditional branch(gt) v11,v12:#0\l" 
+ "BB4\n11   v9 = conversion(D) v5         \l13   v11 = compare v9,v10:#0.1 opcode=cmpl\l15   conditional branch(gt) v11,v12:#0\l" -> "BB5\n17   v13 = getfield < Application, LVillage, back, <Application,LVillage> > v1\l" 
+ "BB4\n11   v9 = conversion(D) v5         \l13   v11 = compare v9,v10:#0.1 opcode=cmpl\l15   conditional branch(gt) v11,v12:#0\l" -> "BB7\n21   goto                          \l" 
+ "BB5\n17   v13 = getfield < Application, LVillage, back, <Application,LVillage> > v1\l" -> "BB6\n19   conditional branch(ne) v13,v14:#null\l" 
+ "BB6\n19   conditional branch(ne) v13,v14:#null\l" -> "BB7\n21   goto                          \l" 
+ "BB6\n19   conditional branch(ne) v13,v14:#null\l" -> "BB8\n" 
+ "BB7\n21   goto                          \l" -> "BB9\n           v16 = phi  v15:#1,v12:#0\l23   return v16                    \l" 
+ "BB8\n" -> "BB9\n           v16 = phi  v15:#1,v12:#0\l23   return v16                    \l" 
+ "BB9\n           v16 = phi  v15:#1,v12:#0\l23   return v16                    \l" -> "BB10 (ex)\n\n" 
+
+}

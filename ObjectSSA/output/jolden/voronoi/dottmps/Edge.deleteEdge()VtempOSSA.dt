@@ -1,0 +1,21 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for Edge.deleteEdge()V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  O1_2 = < Application, LEdge, oPrev()LEdge; >( O1_1 )\l" [ ]
+   "BB2\n5  < Application, LEdge, splice(LEdge;)V >( O1_2, O1_2 )\l" [ ]
+   "BB3\n7  O1_3 = < Application, LEdge, symmetric()LEdge; >( O1_2 )\l" [ ]
+   "BB4\n8  O1_4 = < Application, LEdge, oPrev()LEdge; >( O1_3 )\l" [ ]
+   "BB5\n11  O1_5 = < Application, LEdge, symmetric()LEdge; >( O1_4 )\l" [ ]
+   "BB6\n13  < Application, LEdge, splice(LEdge;)V >( O1_5, O1_5 )\l" [ ]
+   "BB7\n14  return                                   \l" [ ]
+   "BB8 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  O1_2 = < Application, LEdge, oPrev()LEdge; >( O1_1 )\l" 
+ "BB1\n1  O1_2 = < Application, LEdge, oPrev()LEdge; >( O1_1 )\l" -> "BB2\n5  < Application, LEdge, splice(LEdge;)V >( O1_2, O1_2 )\l" 
+ "BB2\n5  < Application, LEdge, splice(LEdge;)V >( O1_2, O1_2 )\l" -> "BB3\n7  O1_3 = < Application, LEdge, symmetric()LEdge; >( O1_2 )\l" 
+ "BB3\n7  O1_3 = < Application, LEdge, symmetric()LEdge; >( O1_2 )\l" -> "BB4\n8  O1_4 = < Application, LEdge, oPrev()LEdge; >( O1_3 )\l" 
+ "BB4\n8  O1_4 = < Application, LEdge, oPrev()LEdge; >( O1_3 )\l" -> "BB5\n11  O1_5 = < Application, LEdge, symmetric()LEdge; >( O1_4 )\l" 
+ "BB5\n11  O1_5 = < Application, LEdge, symmetric()LEdge; >( O1_4 )\l" -> "BB6\n13  < Application, LEdge, splice(LEdge;)V >( O1_5, O1_5 )\l" 
+ "BB6\n13  < Application, LEdge, splice(LEdge;)V >( O1_5, O1_5 )\l" -> "BB7\n14  return                                   \l" 
+ "BB7\n14  return                                   \l" -> "BB8 (ex)\n\n" 
+
+}

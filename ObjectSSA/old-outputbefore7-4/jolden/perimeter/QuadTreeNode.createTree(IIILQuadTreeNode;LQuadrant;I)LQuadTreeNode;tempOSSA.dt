@@ -1,0 +1,57 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for QuadTreeNode.createTree(IIILQuadTreeNode;LQuadrant;I)LQuadTreeNode;", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n3   v9 = invokestatic < Application, LQuadTreeNode, checkIntersect(III)I > v2,v3,v1 @3 exception:v8\l" [ ]
+   "BB2\n7   v11 = binaryop(div) v1 , v10:#2          \l" [ ]
+   "BB3\n11   conditional branch(ne) v9,v12:#0        \l" [ ]
+   "BB4\n14   conditional branch(ge) v11,v13:#512     \l" [ ]
+   "BB5\n15  Create O3_1                              \l" [ ]
+   "BB6\n19   invokespecial < Application, LWhiteNode, <init>(LQuadrant;LQuadTreeNode;)V > v46,v5,v4 @31 exception:v47\l" [ ]
+   "BB7\n21   goto                                    \l" [ ]
+   "BB8\n24   conditional branch(ne) v9,v10:#2        \l" [ ]
+   "BB9\n25  Create O4_1                              \l" [ ]
+   "BB10\n29   invokespecial < Application, LBlackNode, <init>(LQuadrant;LQuadTreeNode;)V > v44,v5,v4 @52 exception:v45\l" [ ]
+   "BB11\n31   goto                                    \l" [ ]
+   "BB12\n34   conditional branch(ne) v6,v12:#0        \l" [ ]
+   "BB13\n35  Create O5_1                              \l" [ ]
+   "BB14\n39   invokespecial < Application, LBlackNode, <init>(LQuadrant;LQuadTreeNode;)V > v42,v5,v4 @72 exception:v43\l" [ ]
+   "BB15\n41   goto                                    \l" [ ]
+   "BB16\n42  Create O6_1                              \l" [ ]
+   "BB17\n46   invokespecial < Application, LGreyNode, <init>(LQuadrant;LQuadTreeNode;)V > v14,v5,v4 @87 exception:v15\l" [ ]
+   "BB18\n51   v16 = binaryop(sub) v2 , v11            \l54   v17 = binaryop(sub) v3 , v11            \l56  nonreference field get instrctn: 18 = getstatic < Application, LQuadrant, cSouthWest, <Application,LQuadrant> >\l59   v20 = binaryop(sub) v6 , v19:#1         \l60   v22 = invokestatic < Application, LQuadTreeNode, createTree(IIILQuadTreeNode;LQuadrant;I)LQuadTreeNode; > v11,v16,v17,v14,v18,v20 @108 exception:v21\l" [ ]
+   "BB19\n65   v23 = binaryop(add) v2 , v11            \l68   v24 = binaryop(sub) v3 , v11            \l70  nonreference field get instrctn: 25 = getstatic < Application, LQuadrant, cSouthEast, <Application,LQuadrant> >\l73   v26 = binaryop(sub) v6 , v19:#1         \l74   v28 = invokestatic < Application, LQuadTreeNode, createTree(IIILQuadTreeNode;LQuadrant;I)LQuadTreeNode; > v11,v23,v24,v14,v25,v26 @129 exception:v27\l" [ ]
+   "BB20\n79   v29 = binaryop(add) v2 , v11            \l82   v30 = binaryop(add) v3 , v11            \l84  nonreference field get instrctn: 31 = getstatic < Application, LQuadrant, cNorthEast, <Application,LQuadrant> >\l87   v32 = binaryop(sub) v6 , v19:#1         \l88   v34 = invokestatic < Application, LQuadTreeNode, createTree(IIILQuadTreeNode;LQuadrant;I)LQuadTreeNode; > v11,v29,v30,v14,v31,v32 @150 exception:v33\l" [ ]
+   "BB21\n93   v35 = binaryop(sub) v2 , v11            \l96   v36 = binaryop(add) v3 , v11            \l98  nonreference field get instrctn: 37 = getstatic < Application, LQuadrant, cNorthWest, <Application,LQuadrant> >\l101   v38 = binaryop(sub) v6 , v19:#1        \l102   v40 = invokestatic < Application, LQuadTreeNode, createTree(IIILQuadTreeNode;LQuadrant;I)LQuadTreeNode; > v11,v35,v36,v14,v37,v38 @171 exception:v39\l" [ ]
+   "BB22\n109   invokevirtual < Application, LQuadTreeNode, setChildren(LQuadTreeNode;LQuadTreeNode;LQuadTreeNode;LQuadTreeNode;)V > v14,v40,v34,v22,v28 @186 exception:v41\l" [ ]
+   "BB23\n           O11_1 = diff-Object-Phi(O3_1, O4_1, O5_1, O6_1 )\l           v48 = phi  v46,v44,v42,v14\l111   return v48                             \l" [ ]
+   "BB24 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n3   v9 = invokestatic < Application, LQuadTreeNode, checkIntersect(III)I > v2,v3,v1 @3 exception:v8\l" 
+ "BB1\n3   v9 = invokestatic < Application, LQuadTreeNode, checkIntersect(III)I > v2,v3,v1 @3 exception:v8\l" -> "BB2\n7   v11 = binaryop(div) v1 , v10:#2          \l" 
+ "BB2\n7   v11 = binaryop(div) v1 , v10:#2          \l" -> "BB3\n11   conditional branch(ne) v9,v12:#0        \l" 
+ "BB3\n11   conditional branch(ne) v9,v12:#0        \l" -> "BB4\n14   conditional branch(ge) v11,v13:#512     \l" 
+ "BB3\n11   conditional branch(ne) v9,v12:#0        \l" -> "BB8\n24   conditional branch(ne) v9,v10:#2        \l" 
+ "BB4\n14   conditional branch(ge) v11,v13:#512     \l" -> "BB5\n15  Create O3_1                              \l" 
+ "BB4\n14   conditional branch(ge) v11,v13:#512     \l" -> "BB8\n24   conditional branch(ne) v9,v10:#2        \l" 
+ "BB5\n15  Create O3_1                              \l" -> "BB6\n19   invokespecial < Application, LWhiteNode, <init>(LQuadrant;LQuadTreeNode;)V > v46,v5,v4 @31 exception:v47\l" 
+ "BB6\n19   invokespecial < Application, LWhiteNode, <init>(LQuadrant;LQuadTreeNode;)V > v46,v5,v4 @31 exception:v47\l" -> "BB7\n21   goto                                    \l" 
+ "BB7\n21   goto                                    \l" -> "BB23\n           O11_1 = diff-Object-Phi(O3_1, O4_1, O5_1, O6_1 )\l           v48 = phi  v46,v44,v42,v14\l111   return v48                             \l" 
+ "BB8\n24   conditional branch(ne) v9,v10:#2        \l" -> "BB9\n25  Create O4_1                              \l" 
+ "BB8\n24   conditional branch(ne) v9,v10:#2        \l" -> "BB12\n34   conditional branch(ne) v6,v12:#0        \l" 
+ "BB9\n25  Create O4_1                              \l" -> "BB10\n29   invokespecial < Application, LBlackNode, <init>(LQuadrant;LQuadTreeNode;)V > v44,v5,v4 @52 exception:v45\l" 
+ "BB10\n29   invokespecial < Application, LBlackNode, <init>(LQuadrant;LQuadTreeNode;)V > v44,v5,v4 @52 exception:v45\l" -> "BB11\n31   goto                                    \l" 
+ "BB11\n31   goto                                    \l" -> "BB23\n           O11_1 = diff-Object-Phi(O3_1, O4_1, O5_1, O6_1 )\l           v48 = phi  v46,v44,v42,v14\l111   return v48                             \l" 
+ "BB12\n34   conditional branch(ne) v6,v12:#0        \l" -> "BB13\n35  Create O5_1                              \l" 
+ "BB12\n34   conditional branch(ne) v6,v12:#0        \l" -> "BB16\n42  Create O6_1                              \l" 
+ "BB13\n35  Create O5_1                              \l" -> "BB14\n39   invokespecial < Application, LBlackNode, <init>(LQuadrant;LQuadTreeNode;)V > v42,v5,v4 @72 exception:v43\l" 
+ "BB14\n39   invokespecial < Application, LBlackNode, <init>(LQuadrant;LQuadTreeNode;)V > v42,v5,v4 @72 exception:v43\l" -> "BB15\n41   goto                                    \l" 
+ "BB15\n41   goto                                    \l" -> "BB23\n           O11_1 = diff-Object-Phi(O3_1, O4_1, O5_1, O6_1 )\l           v48 = phi  v46,v44,v42,v14\l111   return v48                             \l" 
+ "BB16\n42  Create O6_1                              \l" -> "BB17\n46   invokespecial < Application, LGreyNode, <init>(LQuadrant;LQuadTreeNode;)V > v14,v5,v4 @87 exception:v15\l" 
+ "BB17\n46   invokespecial < Application, LGreyNode, <init>(LQuadrant;LQuadTreeNode;)V > v14,v5,v4 @87 exception:v15\l" -> "BB18\n51   v16 = binaryop(sub) v2 , v11            \l54   v17 = binaryop(sub) v3 , v11            \l56  nonreference field get instrctn: 18 = getstatic < Application, LQuadrant, cSouthWest, <Application,LQuadrant> >\l59   v20 = binaryop(sub) v6 , v19:#1         \l60   v22 = invokestatic < Application, LQuadTreeNode, createTree(IIILQuadTreeNode;LQuadrant;I)LQuadTreeNode; > v11,v16,v17,v14,v18,v20 @108 exception:v21\l" 
+ "BB18\n51   v16 = binaryop(sub) v2 , v11            \l54   v17 = binaryop(sub) v3 , v11            \l56  nonreference field get instrctn: 18 = getstatic < Application, LQuadrant, cSouthWest, <Application,LQuadrant> >\l59   v20 = binaryop(sub) v6 , v19:#1         \l60   v22 = invokestatic < Application, LQuadTreeNode, createTree(IIILQuadTreeNode;LQuadrant;I)LQuadTreeNode; > v11,v16,v17,v14,v18,v20 @108 exception:v21\l" -> "BB19\n65   v23 = binaryop(add) v2 , v11            \l68   v24 = binaryop(sub) v3 , v11            \l70  nonreference field get instrctn: 25 = getstatic < Application, LQuadrant, cSouthEast, <Application,LQuadrant> >\l73   v26 = binaryop(sub) v6 , v19:#1         \l74   v28 = invokestatic < Application, LQuadTreeNode, createTree(IIILQuadTreeNode;LQuadrant;I)LQuadTreeNode; > v11,v23,v24,v14,v25,v26 @129 exception:v27\l" 
+ "BB19\n65   v23 = binaryop(add) v2 , v11            \l68   v24 = binaryop(sub) v3 , v11            \l70  nonreference field get instrctn: 25 = getstatic < Application, LQuadrant, cSouthEast, <Application,LQuadrant> >\l73   v26 = binaryop(sub) v6 , v19:#1         \l74   v28 = invokestatic < Application, LQuadTreeNode, createTree(IIILQuadTreeNode;LQuadrant;I)LQuadTreeNode; > v11,v23,v24,v14,v25,v26 @129 exception:v27\l" -> "BB20\n79   v29 = binaryop(add) v2 , v11            \l82   v30 = binaryop(add) v3 , v11            \l84  nonreference field get instrctn: 31 = getstatic < Application, LQuadrant, cNorthEast, <Application,LQuadrant> >\l87   v32 = binaryop(sub) v6 , v19:#1         \l88   v34 = invokestatic < Application, LQuadTreeNode, createTree(IIILQuadTreeNode;LQuadrant;I)LQuadTreeNode; > v11,v29,v30,v14,v31,v32 @150 exception:v33\l" 
+ "BB20\n79   v29 = binaryop(add) v2 , v11            \l82   v30 = binaryop(add) v3 , v11            \l84  nonreference field get instrctn: 31 = getstatic < Application, LQuadrant, cNorthEast, <Application,LQuadrant> >\l87   v32 = binaryop(sub) v6 , v19:#1         \l88   v34 = invokestatic < Application, LQuadTreeNode, createTree(IIILQuadTreeNode;LQuadrant;I)LQuadTreeNode; > v11,v29,v30,v14,v31,v32 @150 exception:v33\l" -> "BB21\n93   v35 = binaryop(sub) v2 , v11            \l96   v36 = binaryop(add) v3 , v11            \l98  nonreference field get instrctn: 37 = getstatic < Application, LQuadrant, cNorthWest, <Application,LQuadrant> >\l101   v38 = binaryop(sub) v6 , v19:#1        \l102   v40 = invokestatic < Application, LQuadTreeNode, createTree(IIILQuadTreeNode;LQuadrant;I)LQuadTreeNode; > v11,v35,v36,v14,v37,v38 @171 exception:v39\l" 
+ "BB21\n93   v35 = binaryop(sub) v2 , v11            \l96   v36 = binaryop(add) v3 , v11            \l98  nonreference field get instrctn: 37 = getstatic < Application, LQuadrant, cNorthWest, <Application,LQuadrant> >\l101   v38 = binaryop(sub) v6 , v19:#1        \l102   v40 = invokestatic < Application, LQuadTreeNode, createTree(IIILQuadTreeNode;LQuadrant;I)LQuadTreeNode; > v11,v35,v36,v14,v37,v38 @171 exception:v39\l" -> "BB22\n109   invokevirtual < Application, LQuadTreeNode, setChildren(LQuadTreeNode;LQuadTreeNode;LQuadTreeNode;LQuadTreeNode;)V > v14,v40,v34,v22,v28 @186 exception:v41\l" 
+ "BB22\n109   invokevirtual < Application, LQuadTreeNode, setChildren(LQuadTreeNode;LQuadTreeNode;LQuadTreeNode;LQuadTreeNode;)V > v14,v40,v34,v22,v28 @186 exception:v41\l" -> "BB23\n           O11_1 = diff-Object-Phi(O3_1, O4_1, O5_1, O6_1 )\l           v48 = phi  v46,v44,v42,v14\l111   return v48                             \l" 
+ "BB23\n           O11_1 = diff-Object-Phi(O3_1, O4_1, O5_1, O6_1 )\l           v48 = phi  v46,v44,v42,v14\l111   return v48                             \l" -> "BB24 (ex)\n\n" 
+
+}

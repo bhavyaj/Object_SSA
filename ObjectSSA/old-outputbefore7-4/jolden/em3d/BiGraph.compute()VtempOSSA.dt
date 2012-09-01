@@ -1,0 +1,47 @@
+digraph "DirectedGraph" {
+graph [label = "Object SSA for BiGraph.compute()V", labelloc=t, concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n1  GetOSSAInstruction:	O2_1= O1_1< eNodes>   \l" [ ]
+   "BB2\n2   v5 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v3 @4 exception:v4\l" [ ]
+   "BB3\n" [ ]
+   "BB4\n5   v7 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v5 @9 exception:v6\l" [ ]
+   "BB5\n7   conditional branch(eq) v7,v8:#0          \l" [ ]
+   "BB6\n9   v10 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v5 @18 exception:v9\l" [ ]
+   "BB7\n10   v11 = checkcast <Application,LNode>v10  \l" [ ]
+   "BB8\n13   invokevirtual < Application, LNode, computeNewValue()V > v11 @28 exception:v12\l" [ ]
+   "BB9\n14   goto                                    \l" [ ]
+   "BB10\n16  GetOSSAInstruction:	O2_1= O1_1< hNodes>  \l" [ ]
+   "BB11\n17   v15 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v13 @38 exception:v14\l" [ ]
+   "BB12\n" [ ]
+   "BB13\n20   v17 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v15 @43 exception:v16\l" [ ]
+   "BB14\n22   conditional branch(eq) v17,v8:#0        \l" [ ]
+   "BB15\n24   v19 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v15 @52 exception:v18\l" [ ]
+   "BB16\n25   v20 = checkcast <Application,LNode>v19  \l" [ ]
+   "BB17\n28   invokevirtual < Application, LNode, computeNewValue()V > v20 @62 exception:v21\l" [ ]
+   "BB18\n29   goto                                    \l" [ ]
+   "BB19\n30  return                                   \l" [ ]
+   "BB20 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n1  GetOSSAInstruction:	O2_1= O1_1< eNodes>   \l" 
+ "BB1\n1  GetOSSAInstruction:	O2_1= O1_1< eNodes>   \l" -> "BB2\n2   v5 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v3 @4 exception:v4\l" 
+ "BB2\n2   v5 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v3 @4 exception:v4\l" -> "BB3\n" 
+ "BB3\n" -> "BB4\n5   v7 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v5 @9 exception:v6\l" 
+ "BB4\n5   v7 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v5 @9 exception:v6\l" -> "BB5\n7   conditional branch(eq) v7,v8:#0          \l" 
+ "BB5\n7   conditional branch(eq) v7,v8:#0          \l" -> "BB6\n9   v10 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v5 @18 exception:v9\l" 
+ "BB5\n7   conditional branch(eq) v7,v8:#0          \l" -> "BB10\n16  GetOSSAInstruction:	O2_1= O1_1< hNodes>  \l" 
+ "BB6\n9   v10 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v5 @18 exception:v9\l" -> "BB7\n10   v11 = checkcast <Application,LNode>v10  \l" 
+ "BB7\n10   v11 = checkcast <Application,LNode>v10  \l" -> "BB8\n13   invokevirtual < Application, LNode, computeNewValue()V > v11 @28 exception:v12\l" 
+ "BB8\n13   invokevirtual < Application, LNode, computeNewValue()V > v11 @28 exception:v12\l" -> "BB9\n14   goto                                    \l" 
+ "BB9\n14   goto                                    \l" -> "BB4\n5   v7 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v5 @9 exception:v6\l" 
+ "BB10\n16  GetOSSAInstruction:	O2_1= O1_1< hNodes>  \l" -> "BB11\n17   v15 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v13 @38 exception:v14\l" 
+ "BB11\n17   v15 = invokevirtual < Application, LNode, elements()Ljava/util/Enumeration; > v13 @38 exception:v14\l" -> "BB12\n" 
+ "BB12\n" -> "BB13\n20   v17 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v15 @43 exception:v16\l" 
+ "BB13\n20   v17 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v15 @43 exception:v16\l" -> "BB14\n22   conditional branch(eq) v17,v8:#0        \l" 
+ "BB14\n22   conditional branch(eq) v17,v8:#0        \l" -> "BB15\n24   v19 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v15 @52 exception:v18\l" 
+ "BB14\n22   conditional branch(eq) v17,v8:#0        \l" -> "BB19\n30  return                                   \l" 
+ "BB15\n24   v19 = invokeinterface < Application, Ljava/util/Enumeration, nextElement()Ljava/lang/Object; > v15 @52 exception:v18\l" -> "BB16\n25   v20 = checkcast <Application,LNode>v19  \l" 
+ "BB16\n25   v20 = checkcast <Application,LNode>v19  \l" -> "BB17\n28   invokevirtual < Application, LNode, computeNewValue()V > v20 @62 exception:v21\l" 
+ "BB17\n28   invokevirtual < Application, LNode, computeNewValue()V > v20 @62 exception:v21\l" -> "BB18\n29   goto                                    \l" 
+ "BB18\n29   goto                                    \l" -> "BB13\n20   v17 = invokeinterface < Application, Ljava/util/Enumeration, hasMoreElements()Z > v15 @43 exception:v16\l" 
+ "BB19\n30  return                                   \l" -> "BB20 (ex)\n\n" 
+
+}
