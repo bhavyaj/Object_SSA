@@ -11,27 +11,48 @@ public class TestOSSA0 {
 	}
 	
 	public static void test(){
-		Sample x = new Sample();
-		Sample y = new Sample();
-		Sample z;
-		int a =x.x;
+		Sample a = new Sample();
+		Sample b = new Sample();
+		Sample c = new Sample();
+		Sample d;
+		Sample e;
 		
-		if(a>5){
-			z = x;
+		int p =a.x;
+		int q =b.x;
+		int r =c.x;
+		
+		if(p>10){
+			if(q>5){
+				d=a;
+				a.x=3;
+			}
+			else{
+				d=b;
+			}
+			a.x=4;
+			d.x=2;
 		}
-		else
-			z=y;
-		Sample t;
-		if(a<4)
-			t = x;
-		else 
-			t =y;
 		
-		if(t.x==z.x)
-			t=z;
-		
+		else{
+			if(r>1){
+				e=b;
+			}
+			else
+			{
+				e=c;
+			}
+			a.x=5;
+			e.x=20;
+		}
+			
+		a.next=c;
+		b.x=2;
+		p=b.x;
+		b.x=a.x;
+		return;
 	
 		
 	}
 
 }
+

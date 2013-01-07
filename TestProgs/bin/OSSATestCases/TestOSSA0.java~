@@ -1,0 +1,56 @@
+package OSSATestCases;
+
+public class TestOSSA0 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		test();
+	}
+	
+	public static void test(){
+		Sample a = new Sample();
+		Sample b = new Sample();
+		Sample c = new Sample();
+
+		int p =a.y;
+		int q =b.y;
+		int r =c.y;
+		
+		if(p>10){
+			if(q>5){
+				d=a;
+				a.y=3;
+			}
+			else{
+				d=b;
+			}
+			a.y=4;
+			d.y=2;
+		}
+		
+		else{
+			if(r>1){
+				e=b
+			}
+			else
+			{
+				e=c
+			}
+			a.y=5;
+			e.y=20;
+		}
+			
+		d.next=c;
+		e.y=2;
+		p=d.y;
+		b.y=a.y;
+		return;
+	
+		
+	}
+
+}
+

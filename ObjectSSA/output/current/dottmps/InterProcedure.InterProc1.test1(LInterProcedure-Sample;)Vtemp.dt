@@ -4,12 +4,16 @@ graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"f
    "BB1\n1   v3 = new <Application,LInterProcedure/Sample>@1\l" [ ]
    "BB2\n3   invokespecial < Application, LInterProcedure/Sample, <init>()V > v3 @5 exception:v4\l" [ ]
    "BB3\n4   putfield v1 = v3 < Application, LInterProcedure/Sample, next, <Application,LInterProcedure/Sample> >\l" [ ]
-   "BB4\n5   return                         \l" [ ]
-   "BB5 (ex)\n\n" [ ]
+   "BB4\n6   v5 = getfield < Application, LInterProcedure/Sample, next, <Application,LInterProcedure/Sample> > v1\l" [ ]
+   "BB5\n8   putfield v5 = v6:#2 < Application, LInterProcedure/Sample, x, <Primordial,I> >\l" [ ]
+   "BB6\n9   return                         \l" [ ]
+   "BB7 (ex)\n\n" [ ]
  "BB0 (en)\n\n" -> "BB1\n1   v3 = new <Application,LInterProcedure/Sample>@1\l" 
  "BB1\n1   v3 = new <Application,LInterProcedure/Sample>@1\l" -> "BB2\n3   invokespecial < Application, LInterProcedure/Sample, <init>()V > v3 @5 exception:v4\l" 
  "BB2\n3   invokespecial < Application, LInterProcedure/Sample, <init>()V > v3 @5 exception:v4\l" -> "BB3\n4   putfield v1 = v3 < Application, LInterProcedure/Sample, next, <Application,LInterProcedure/Sample> >\l" 
- "BB3\n4   putfield v1 = v3 < Application, LInterProcedure/Sample, next, <Application,LInterProcedure/Sample> >\l" -> "BB4\n5   return                         \l" 
- "BB4\n5   return                         \l" -> "BB5 (ex)\n\n" 
+ "BB3\n4   putfield v1 = v3 < Application, LInterProcedure/Sample, next, <Application,LInterProcedure/Sample> >\l" -> "BB4\n6   v5 = getfield < Application, LInterProcedure/Sample, next, <Application,LInterProcedure/Sample> > v1\l" 
+ "BB4\n6   v5 = getfield < Application, LInterProcedure/Sample, next, <Application,LInterProcedure/Sample> > v1\l" -> "BB5\n8   putfield v5 = v6:#2 < Application, LInterProcedure/Sample, x, <Primordial,I> >\l" 
+ "BB5\n8   putfield v5 = v6:#2 < Application, LInterProcedure/Sample, x, <Primordial,I> >\l" -> "BB6\n9   return                         \l" 
+ "BB6\n9   return                         \l" -> "BB7 (ex)\n\n" 
 
 }

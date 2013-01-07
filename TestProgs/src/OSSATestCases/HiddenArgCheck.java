@@ -7,14 +7,15 @@ public class HiddenArgCheck {
 		// TODO Auto-generated method stub
 		
 		Sample a = new Sample();
-		Sample b = new Sample();
-		a.next = b;
+		Sample b = a.next;
+		
 		test(a);
+		b.x=5;
+		System.out.println(b.x);
 	}
 	
 	public static void test(Sample a) {
-		Sample b = a.next;
-		b.x=4;
+		a.next=new Sample();
 	
 	}
 	

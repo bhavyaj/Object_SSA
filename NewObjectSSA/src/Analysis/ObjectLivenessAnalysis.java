@@ -52,13 +52,13 @@ public class ObjectLivenessAnalysis {
 	/**
 	 * folder in which output files are to be stored
 	 */
-	public static  StringBuffer outputFiles = new StringBuffer("/home/yash/Workspaces/workspace/ObjectSSA/output/current/");
+	public static  StringBuffer outputFiles = new StringBuffer("/home/bhavya/Acads/btp/NewObjectSSA/ObjectSSA/output/current/");
 //	public static  StringBuffer outputFiles = new StringBuffer("/home/yash/Workspaces/workspace/ObjectSSA/output/jolden/bh/");
 	/**
 	 * jar file whose functions are to be analysed.
 	 */
 //	public static String jarFile = "/home/yash/Workspaces/workspace/ObjectSSA/output/TestProgs/the.jar";
-	public static String jarFile = "/home/yash/Workspaces/workspace/ObjectSSA/output/jolden/voronoi/the.jar";
+	public static String jarFile = "/home/bhavya/Acads/btp/NewObjectSSA/ObjectSSA/output/jolden/tsp/the.jar";
 
 	/*
 	 * minimum number of instructions in SSA of method for it to be analyzed.3
@@ -135,6 +135,9 @@ public class ObjectLivenessAnalysis {
 			System.out.println("NO of d-phis: "+totaldphis);
 			System.out.println("NO of ossac-phis: "+totalossacphis);
 			System.out.println("NO of ssac-phis: "+totalssacphis);
+			System.out.println("NO of arg-phis: "+totalargphis);
+			System.out.println("No of returns : "+totalreturn);
+			System.out.println("NO of retPhis: "+totalreturnHidden);
 			
 		}catch (Exception e) {
 			e.printStackTrace();
@@ -377,6 +380,9 @@ public class ObjectLivenessAnalysis {
 	public static int totaldphis=0;
 	public static int totalossacphis=0;
 	public static int totalssacphis=0;
+	public static int totalargphis=0;
+	public static int totalreturnHidden=0;
+	public static int totalreturn=0;
 	/*
 	 * Method signatures of method having more than 30 ssa instrctns. 
 	 * Func calls to these methods will be instrumented with checks for argument objects
@@ -402,7 +408,8 @@ public class ObjectLivenessAnalysis {
 			//if(classname==null)
 			//	findMethodSig(cha);
 			//else
-				findMethodSigforclass(cha);
+			ArraySet<String> methodSignSet = new ArraySet<String>();	
+			methodSignSet=findMethodSigforclass(cha);
 			// //
 			// build the call graph
 			
@@ -429,12 +436,15 @@ public class ObjectLivenessAnalysis {
 //					System.err.println("\nCreating OSSA for method:- "+methodsign+"\n\n");
 					IR ir = node.getIR();
 					System.out.println("\nCreating OSSA for method:- "+methodsign+"\n\n");
-					ObjectSSA ossa = new ObjectSSA(cha, cg,  pa, hm, m, ir);
+					ObjectSSA ossa = new ObjectSSA(cha, cg,  pa, hm, m, ir, methodSignSet);
 					ossas.put(methodsign, ossa);
 					totalputphis += ossa.noOfPutPhis;
 					totaldphis += ossa.noOfDPhis;
 					totalossacphis += ossa.noOfCtrPhisinOSSA;
 					totalssacphis += ossa.noOfCtrPhisinSSA;
+					totalargphis += ossa.noOfArgPhis;
+					totalreturnHidden += ossa.noOfRetPhis;
+					totalreturn += ossa.noOfReturns;
 					if(ossa.ir.getInstructions().length>noofinstructionbound)
 						instrumentedfunccalls.add(methodsign);
 					System.out.println(ossa.toString());
@@ -454,7 +464,7 @@ public class ObjectLivenessAnalysis {
 	 * 
 	 * @param cha
 	 */	
-	public static void findMethodSigforclass(ClassHierarchy cha){
+	public static ArraySet<String> findMethodSigforclass(ClassHierarchy cha){
 		ArraySet<String> methodsigns = new ArraySet<String>();
 		// String methodSig;
 		for (IClass klass : cha) {
@@ -495,7 +505,7 @@ public class ObjectLivenessAnalysis {
 		}
 		System.out.println("Printing all the methods from ObjReachabilityAnalysis.findMethodSig():-\n\n"+methodsigns+"\n\n");
 		ObjectLivenessAnalysis.methodsigns=methodsigns;
-
+		return methodsigns;
 	}
 	
 	

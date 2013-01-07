@@ -1,7 +1,5 @@
 package InterProcedure;
 
-
-
 public class InterProc1 {
 
 	/**
@@ -15,12 +13,17 @@ public class InterProc1 {
 	public static void test(){
 		Sample a = new Sample();
 		test1(a);
-		Sample.check(1);
-		test1(a);
 	}
 	
-	public static void test1(Sample a){
-		a.next = new Sample();
-		
+	public static Sample test1(Sample p){
+		Sample q = new Sample();
+		int x=1;
+		int y=1;
+		int z=1;
+		p.next = q;
+		return p;
 	}
+	public static void test2(){
+	}
+	
 }

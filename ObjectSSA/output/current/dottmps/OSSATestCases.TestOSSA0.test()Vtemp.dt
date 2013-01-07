@@ -1,0 +1,66 @@
+digraph "DirectedGraph" {
+graph [concentrate = true];center=true;fontsize=6;node [ color=blue,shape="box"fontsize=6,fontcolor=black,fontname=Arial];edge [ color=black,fontsize=6,fontcolor=black,fontname=Arial]; 
+   "BB0 (en)\n\n" [ ]
+   "BB1\n0   v2 = new <Application,LOSSATestCases/Sample>@0\l" [ ]
+   "BB2\n2   invokespecial < Application, LOSSATestCases/Sample, <init>()V > v2 @4 exception:v3\l" [ ]
+   "BB3\n4   v4 = new <Application,LOSSATestCases/Sample>@8\l" [ ]
+   "BB4\n6   invokespecial < Application, LOSSATestCases/Sample, <init>()V > v4 @12 exception:v5\l" [ ]
+   "BB5\n8   v6 = new <Application,LOSSATestCases/Sample>@16\l" [ ]
+   "BB6\n10   invokespecial < Application, LOSSATestCases/Sample, <init>()V > v6 @20 exception:v7\l" [ ]
+   "BB7\n13   v8 = getfield < Application, LOSSATestCases/Sample, x, <Primordial,I> > v2\l" [ ]
+   "BB8\n16   v9 = getfield < Application, LOSSATestCases/Sample, x, <Primordial,I> > v4\l" [ ]
+   "BB9\n19   v10 = getfield < Application, LOSSATestCases/Sample, x, <Primordial,I> > v6\l" [ ]
+   "BB10\n23   conditional branch(le) v8,v11:#10\l" [ ]
+   "BB11\n26   conditional branch(le) v9,v14:#5\l" [ ]
+   "BB12\n31   putfield v2 = v16:#3 < Application, LOSSATestCases/Sample, x, <Primordial,I> >\l" [ ]
+   "BB13\n32   goto                          \l" [ ]
+   "BB14\n" [ ]
+   "BB15\n           v17 = phi  v2,v4\l37   putfield v2 = v18:#4 < Application, LOSSATestCases/Sample, x, <Primordial,I> >\l" [ ]
+   "BB16\n40   putfield v17 = v19:#2 < Application, LOSSATestCases/Sample, x, <Primordial,I> >\l" [ ]
+   "BB17\n41   goto                          \l" [ ]
+   "BB18\n44   conditional branch(le) v10,v12:#1\l" [ ]
+   "BB19\n47   goto                          \l" [ ]
+   "BB20\n" [ ]
+   "BB21\n           v13 = phi  v4,v6\l52   putfield v2 = v14:#5 < Application, LOSSATestCases/Sample, x, <Primordial,I> >\l" [ ]
+   "BB22\n55   putfield v13 = v15:#20 < Application, LOSSATestCases/Sample, x, <Primordial,I> >\l" [ ]
+   "BB23\n58   putfield v2 = v6 < Application, LOSSATestCases/Sample, next, <Application,LOSSATestCases/Sample> >\l" [ ]
+   "BB24\n61   putfield v4 = v19:#2 < Application, LOSSATestCases/Sample, x, <Primordial,I> >\l" [ ]
+   "BB25\n63   v20 = getfield < Application, LOSSATestCases/Sample, x, <Primordial,I> > v4\l" [ ]
+   "BB26\n67   v21 = getfield < Application, LOSSATestCases/Sample, x, <Primordial,I> > v2\l" [ ]
+   "BB27\n68   putfield v4 = v21 < Application, LOSSATestCases/Sample, x, <Primordial,I> >\l" [ ]
+   "BB28\n69   return                        \l" [ ]
+   "BB29 (ex)\n\n" [ ]
+ "BB0 (en)\n\n" -> "BB1\n0   v2 = new <Application,LOSSATestCases/Sample>@0\l" 
+ "BB1\n0   v2 = new <Application,LOSSATestCases/Sample>@0\l" -> "BB2\n2   invokespecial < Application, LOSSATestCases/Sample, <init>()V > v2 @4 exception:v3\l" 
+ "BB2\n2   invokespecial < Application, LOSSATestCases/Sample, <init>()V > v2 @4 exception:v3\l" -> "BB3\n4   v4 = new <Application,LOSSATestCases/Sample>@8\l" 
+ "BB3\n4   v4 = new <Application,LOSSATestCases/Sample>@8\l" -> "BB4\n6   invokespecial < Application, LOSSATestCases/Sample, <init>()V > v4 @12 exception:v5\l" 
+ "BB4\n6   invokespecial < Application, LOSSATestCases/Sample, <init>()V > v4 @12 exception:v5\l" -> "BB5\n8   v6 = new <Application,LOSSATestCases/Sample>@16\l" 
+ "BB5\n8   v6 = new <Application,LOSSATestCases/Sample>@16\l" -> "BB6\n10   invokespecial < Application, LOSSATestCases/Sample, <init>()V > v6 @20 exception:v7\l" 
+ "BB6\n10   invokespecial < Application, LOSSATestCases/Sample, <init>()V > v6 @20 exception:v7\l" -> "BB7\n13   v8 = getfield < Application, LOSSATestCases/Sample, x, <Primordial,I> > v2\l" 
+ "BB7\n13   v8 = getfield < Application, LOSSATestCases/Sample, x, <Primordial,I> > v2\l" -> "BB8\n16   v9 = getfield < Application, LOSSATestCases/Sample, x, <Primordial,I> > v4\l" 
+ "BB8\n16   v9 = getfield < Application, LOSSATestCases/Sample, x, <Primordial,I> > v4\l" -> "BB9\n19   v10 = getfield < Application, LOSSATestCases/Sample, x, <Primordial,I> > v6\l" 
+ "BB9\n19   v10 = getfield < Application, LOSSATestCases/Sample, x, <Primordial,I> > v6\l" -> "BB10\n23   conditional branch(le) v8,v11:#10\l" 
+ "BB10\n23   conditional branch(le) v8,v11:#10\l" -> "BB11\n26   conditional branch(le) v9,v14:#5\l" 
+ "BB10\n23   conditional branch(le) v8,v11:#10\l" -> "BB18\n44   conditional branch(le) v10,v12:#1\l" 
+ "BB11\n26   conditional branch(le) v9,v14:#5\l" -> "BB12\n31   putfield v2 = v16:#3 < Application, LOSSATestCases/Sample, x, <Primordial,I> >\l" 
+ "BB11\n26   conditional branch(le) v9,v14:#5\l" -> "BB14\n" 
+ "BB12\n31   putfield v2 = v16:#3 < Application, LOSSATestCases/Sample, x, <Primordial,I> >\l" -> "BB13\n32   goto                          \l" 
+ "BB13\n32   goto                          \l" -> "BB15\n           v17 = phi  v2,v4\l37   putfield v2 = v18:#4 < Application, LOSSATestCases/Sample, x, <Primordial,I> >\l" 
+ "BB14\n" -> "BB15\n           v17 = phi  v2,v4\l37   putfield v2 = v18:#4 < Application, LOSSATestCases/Sample, x, <Primordial,I> >\l" 
+ "BB15\n           v17 = phi  v2,v4\l37   putfield v2 = v18:#4 < Application, LOSSATestCases/Sample, x, <Primordial,I> >\l" -> "BB16\n40   putfield v17 = v19:#2 < Application, LOSSATestCases/Sample, x, <Primordial,I> >\l" 
+ "BB16\n40   putfield v17 = v19:#2 < Application, LOSSATestCases/Sample, x, <Primordial,I> >\l" -> "BB17\n41   goto                          \l" 
+ "BB17\n41   goto                          \l" -> "BB23\n58   putfield v2 = v6 < Application, LOSSATestCases/Sample, next, <Application,LOSSATestCases/Sample> >\l" 
+ "BB18\n44   conditional branch(le) v10,v12:#1\l" -> "BB19\n47   goto                          \l" 
+ "BB18\n44   conditional branch(le) v10,v12:#1\l" -> "BB20\n" 
+ "BB19\n47   goto                          \l" -> "BB21\n           v13 = phi  v4,v6\l52   putfield v2 = v14:#5 < Application, LOSSATestCases/Sample, x, <Primordial,I> >\l" 
+ "BB20\n" -> "BB21\n           v13 = phi  v4,v6\l52   putfield v2 = v14:#5 < Application, LOSSATestCases/Sample, x, <Primordial,I> >\l" 
+ "BB21\n           v13 = phi  v4,v6\l52   putfield v2 = v14:#5 < Application, LOSSATestCases/Sample, x, <Primordial,I> >\l" -> "BB22\n55   putfield v13 = v15:#20 < Application, LOSSATestCases/Sample, x, <Primordial,I> >\l" 
+ "BB22\n55   putfield v13 = v15:#20 < Application, LOSSATestCases/Sample, x, <Primordial,I> >\l" -> "BB23\n58   putfield v2 = v6 < Application, LOSSATestCases/Sample, next, <Application,LOSSATestCases/Sample> >\l" 
+ "BB23\n58   putfield v2 = v6 < Application, LOSSATestCases/Sample, next, <Application,LOSSATestCases/Sample> >\l" -> "BB24\n61   putfield v4 = v19:#2 < Application, LOSSATestCases/Sample, x, <Primordial,I> >\l" 
+ "BB24\n61   putfield v4 = v19:#2 < Application, LOSSATestCases/Sample, x, <Primordial,I> >\l" -> "BB25\n63   v20 = getfield < Application, LOSSATestCases/Sample, x, <Primordial,I> > v4\l" 
+ "BB25\n63   v20 = getfield < Application, LOSSATestCases/Sample, x, <Primordial,I> > v4\l" -> "BB26\n67   v21 = getfield < Application, LOSSATestCases/Sample, x, <Primordial,I> > v2\l" 
+ "BB26\n67   v21 = getfield < Application, LOSSATestCases/Sample, x, <Primordial,I> > v2\l" -> "BB27\n68   putfield v4 = v21 < Application, LOSSATestCases/Sample, x, <Primordial,I> >\l" 
+ "BB27\n68   putfield v4 = v21 < Application, LOSSATestCases/Sample, x, <Primordial,I> >\l" -> "BB28\n69   return                        \l" 
+ "BB28\n69   return                        \l" -> "BB29 (ex)\n\n" 
+
+}

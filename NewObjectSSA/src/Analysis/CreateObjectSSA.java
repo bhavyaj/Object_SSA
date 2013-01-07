@@ -2,8 +2,12 @@ package Analysis;
 
 import OSSA.CopyOfObjectSSA;
 import OSSA.ObjectSSA;
+import OSSAInstructions.ArgPhiOSSAInstruction;
+import OSSAInstructions.GetFieldOSSAInstruction;
 
 import com.ibm.wala.analysis.pointers.BasicHeapGraph;
+import com.ibm.wala.analysis.typeInference.TypeAbstraction;
+import com.ibm.wala.analysis.typeInference.TypeInference;
 import com.ibm.wala.classLoader.IClass;
 import com.ibm.wala.classLoader.IMethod;
 import com.ibm.wala.ipa.callgraph.AnalysisCache;
@@ -15,20 +19,36 @@ import com.ibm.wala.ipa.callgraph.Entrypoint;
 import com.ibm.wala.ipa.callgraph.impl.Everywhere;
 import com.ibm.wala.ipa.callgraph.impl.Util;
 import com.ibm.wala.ipa.callgraph.propagation.HeapModel;
+import com.ibm.wala.ipa.callgraph.propagation.InstanceKey;
 import com.ibm.wala.ipa.callgraph.propagation.PointerAnalysis;
+import com.ibm.wala.ipa.callgraph.propagation.PointerKey;
 import com.ibm.wala.ipa.cha.ClassHierarchy;
 import com.ibm.wala.ssa.IR;
+import com.ibm.wala.ssa.SSACFG;
+import com.ibm.wala.ssa.SSAGetInstruction;
+import com.ibm.wala.ssa.SSAInstruction;
+import com.ibm.wala.ssa.SSACFG.BasicBlock;
+import com.ibm.wala.ssa.SSACFG.ExceptionHandlerBasicBlock;
+import com.ibm.wala.ssa.SSAInvokeInstruction;
+import com.ibm.wala.types.FieldReference;
 import com.ibm.wala.types.MethodReference;
+import com.ibm.wala.types.TypeReference;
 import com.ibm.wala.util.collections.ArraySet;
 import com.ibm.wala.util.config.AnalysisScopeReader;
+import com.ibm.wala.util.intset.OrdinalSet;
 import com.ibm.wala.util.io.FileProvider;
 import com.ibm.wala.util.strings.StringStuff;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 
 public class CreateObjectSSA {
 
 //	public static String methodsign = "OSSATestCases.HiddenArgCheck.test(LOSSATestCases/Sample;)V;";
-	public static String methodsign = "TestProg4.test()V;";
+//	public static String methodsign = "OSSATestCases.HiddenArgCheck.test(LOSSATestCases/Sample;)V";
 //	public static String methodsign = "QuadTreeNode.gtEqualAdjNeighbor(I)LQuadTreeNode;";
+
+	public static String methodsign = "InterProcedure.InterProc1.test1(LInterProcedure/Sample;)LInterProcedure/Sample;";
 	/**
 	 * folder in which output files are to be stored
 	 */
@@ -37,10 +57,12 @@ public class CreateObjectSSA {
 	/**
 	 * jar file whose functions are to be analysed.
 	 */
-	public static String jarFile = "/home/bhavya/Acads/btp/NewObjectSSA/testprog.jar";
+	public static String jarFile = "/home/bhavya/Acads/btp/NewObjectSSA/interproc.jar";
 //	public static String jarFile = "/home/bhavya/Acads/btp/NewObjectSSA/ObjectSSA/output/jolden/perimeter/the.jar";
 	
 	public static ObjectSSA ossa;
+	
+	
 	
 	public static void main(String[] args) {
 	try {
@@ -52,9 +74,7 @@ public class CreateObjectSSA {
 		ClassHierarchy cha = ClassHierarchy.make(scope);
 		Iterable<Entrypoint> e = Util.makeMainEntrypoints(scope, cha);
 		AnalysisOptions options = new AnalysisOptions(scope, e);
-
-//		findMethodSig(cha);
-
+		
 		// build the call graph
 
 		com.ibm.wala.ipa.callgraph.CallGraphBuilder builder = Util
@@ -68,6 +88,14 @@ public class CreateObjectSSA {
 														// runtime stack
 														// overflow error
 		HeapModel hm = g.getHeapModel();
+		
+		ArraySet<String> methodsignSet = new ArraySet<String>();
+		methodsignSet = findMethodSig(cha);
+		
+		
+		
+		//populateHiddenArgs(cha, cg, hm, pa, methodsignSet, HiddenargToAsi, HiddenargToInstruction,SSAInvokeToMethodList);
+
 		MethodReference mr0 = StringStuff.makeMethodReference(methodsign);
 		IMethod m = cha.resolveMethod(mr0);
 		CGNode node = cg.getNode(m, Everywhere.EVERYWHERE);
@@ -75,13 +103,17 @@ public class CreateObjectSSA {
 		IR ir = node.getIR();
 		String psFiles = outputFiles.toString();
 		String dotFiles = outputFiles.append("dottmps/").toString();
-		(new pdfIr()).printIr(cha, ir, methodsign, psFiles, dotFiles);
+//		(new pdfIr()).printIr(cha, ir, methodsign, psFiles, dotFiles);
 //		CopyOfObjectSSA ossadummy = new CopyOfObjectSSA(cha, cg, pa, hm, m, ir);
-		ossa = new ObjectSSA(cha, cg,  pa, hm, m, ir);//,psFiles, dotFiles);
-		ossa.toString();
+		
+		
+		
+		ossa = new ObjectSSA(cha, cg,  pa, hm, m, ir,methodsignSet); // methodsignSet IS AN ARRAYSET OF ALL METHODSIGN IN jar FILE
+		//, HiddenargToAsi, HiddenargToInstruction);//,psFiles, dotFiles);
+//		ossa.toString();
 //		ossadummy.toString();
 		System.out.println("Ossa:"+ossa);
-		
+		(new pdfIr()).printIr(cha, ir, methodsign, psFiles, dotFiles);
 //		System.out.println("\n\ndefuses"+ossa.DefUse.toString());
 //		if(objectReachabilityAnalysisIntraProcedural(methodsign)==true)
 //			System.out.println("Object is live!!");
@@ -96,7 +128,11 @@ public class CreateObjectSSA {
 	 * called only if uncommented in main function
 	 * @param cha
 	 */
-	public static void findMethodSig(ClassHierarchy cha) {
+	
+	
+	
+	
+		public static ArraySet<String> findMethodSig(ClassHierarchy cha) {
 		ArraySet<String> methodsigns = new ArraySet<String>();
 		// String methodSig;
 		for (IClass klass : cha) {
@@ -124,6 +160,7 @@ public class CreateObjectSSA {
 		}
 		System.out.println("Printing all the methods from ObjReachabilityAnalysis.findMethodSig():-\n\n"+methodsigns+"\n\n");
 //		ObjReachabilityAnalysis.methodsigns=methodsigns;
+		return methodsigns;
 	}
 	
 	

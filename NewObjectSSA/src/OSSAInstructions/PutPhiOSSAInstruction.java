@@ -46,7 +46,9 @@ public class PutPhiOSSAInstruction extends SSAInstruction{
 	 */
 	public TypeReference concreteType;
 	
+	// not useful//
 	public Boolean isCreatePhi = false;
+	
 	/**
 	 * 
 	 * @param ptsTo

@@ -16,7 +16,7 @@ public class Sample {
 		Sample y = new Sample();
 		
 		if(a>b){
-			
+			c=6;
 			a=4+b;
 		}
 		else{ 

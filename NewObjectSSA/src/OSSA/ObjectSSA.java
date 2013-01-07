@@ -1,12 +1,16 @@
 package OSSA;
 
 import java.util.ArrayList;
+
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.NoSuchElementException;
+import java.util.Set;
 import java.util.Stack;
 
 import OBJS.OSSAObject;
@@ -34,6 +38,7 @@ import com.ibm.wala.ipa.callgraph.propagation.InstanceKey;
 import com.ibm.wala.ipa.callgraph.propagation.PointerAnalysis;
 import com.ibm.wala.ipa.callgraph.propagation.PointerKey;
 import com.ibm.wala.ipa.cha.ClassHierarchy;
+import com.ibm.wala.model.java.lang.reflect.Array;
 import com.ibm.wala.shrikeBT.NewInstruction;
 import com.ibm.wala.ssa.IR;
 import com.ibm.wala.ssa.ISSABasicBlock;
@@ -52,9 +57,14 @@ import com.ibm.wala.ssa.SSAReturnInstruction;
 import com.ibm.wala.ssa.SSACFG.BasicBlock;
 import com.ibm.wala.ssa.SSACFG.ExceptionHandlerBasicBlock;
 import com.ibm.wala.types.FieldReference;
+import com.ibm.wala.types.MethodReference;
 import com.ibm.wala.types.TypeReference;
+import com.ibm.wala.util.collections.ArraySet;
 import com.ibm.wala.util.graph.dominators.DominanceFrontiers;
+import com.ibm.wala.util.intset.IntSet;
+import com.ibm.wala.util.intset.MutableMapping;
 import com.ibm.wala.util.intset.OrdinalSet;
+import com.ibm.wala.util.intset.OrdinalSetMapping;
 import com.ibm.wala.util.strings.StringStuff;
 
 public class ObjectSSA {
@@ -109,6 +119,14 @@ public class ObjectSSA {
 	public  DominanceFrontiers<BasicBlock> RDF;
 	public  String methodName;
 	public IMethod method;
+	public static String methodNameStatic;
+	public static ArraySet<String> methodSignSetStatic;
+	
+	public static HashMap<String,ArrayList<InstanceKey>> HiddenargToAsi = new HashMap<String,ArrayList<InstanceKey>>(); 
+	public static HashMap<String,ArrayList<SSAInstruction>> HiddenargToInstruction = new HashMap<String,ArrayList<SSAInstruction>>();
+	public static HashMap<SSAInvokeInstruction, ArraySet<String>> SSAInvokeToMethodList = new HashMap<SSAInvokeInstruction, ArraySet<String>>();
+	public static HashMap<String,ArrayList<InstanceKey>> HiddenReturnToAsi = new HashMap<String,ArrayList<InstanceKey>>(); 
+	
 	/**
 	 * Constructor for ObjectSSA. Generates separate OSSA for separate methods
 	 * @param cha {@link ClassHierarchy}
@@ -118,7 +136,7 @@ public class ObjectSSA {
 	 * @param cg {@link CallGraph}
 	 * @param m {@link IMethod}
 	 */
-	public ObjectSSA(ClassHierarchy cha, CallGraph cg, PointerAnalysis pa, HeapModel hm, IMethod m, IR ir){//, String psFiles, String dotFiles){
+	public ObjectSSA(ClassHierarchy cha, CallGraph cg, PointerAnalysis pa, HeapModel hm, IMethod m, IR ir, ArraySet<String> methodsignSet){//, String psFiles, String dotFiles){
 		try{
 			this.cha = cha;
 			this.cfg= ir.getControlFlowGraph();
@@ -128,6 +146,8 @@ public class ObjectSSA {
 			this.method = m;
 			this.methodName = method.getSignature();
 			this.node = cg.getNode(method, Everywhere.EVERYWHERE);
+			methodNameStatic = method.getSignature();
+			methodSignSetStatic = methodsignSet;
 //			this.psFiles = psFiles;
 //			this.dotFiles = dotFiles;
 			instrMap = new HashMap<SSAInstruction, SSAInstruction>();
@@ -147,6 +167,10 @@ public class ObjectSSA {
 			}
 			noOfPutPhis = 0 ;
 			noOfDPhis = 0;
+			noOfRetPhis = 0;
+			noOfReturns = 0;
+			noOfArgPhis = 0;
+			populateHiddenArgsandReturns(cha, cg, hm, pa, methodsignSet); // populating hidden arguments and hidden returns
 			insertPutPhi();
 			rename();
 			populateOSSAInstructions();
@@ -186,6 +210,469 @@ public class ObjectSSA {
 	public int noOfDPhis;
 	public int noOfCtrPhisinOSSA;
 	public int noOfCtrPhisinSSA;
+	public int noOfArgPhis;
+	public static int noOfRetPhis;
+	public static int noOfReturns;
+	
+	
+	public static void populateHiddenArgsandReturns(ClassHierarchy cha, CallGraph cg, HeapModel hm, PointerAnalysis pa, ArraySet<String> methodsignSet)
+	{
+
+		//populate hiddenargtoasi and hiddenargtoinstruction
+		
+		for(Iterator<String> methodSignIter = methodsignSet.iterator();methodSignIter.hasNext();){
+			 String methodSignElems = methodSignIter.next();
+			 MethodReference mr0 = StringStuff.makeMethodReference(methodSignElems);
+			 IMethod m = cha.resolveMethod(mr0);
+			 CGNode node = cg.getNode(m, Everywhere.EVERYWHERE);
+			 if(node != null)
+			 {
+				 IR ir = node.getIR();
+				 
+				 SSACFG cfg= ir.getControlFlowGraph();
+				 SSAInstruction [] instructions = ir.getInstructions();
+				 if(HiddenargToAsi.get(methodSignElems)==null){
+					 HiddenargToAsi.put(methodSignElems, new ArrayList<InstanceKey>());
+				 }
+				 if(HiddenargToInstruction.get(methodSignElems)==null){
+					 HiddenargToInstruction.put(methodSignElems, new ArrayList<SSAInstruction>());	 
+				 }
+				 
+				 for (int i = 0; i <= cfg.getMaxNumber(); i++) {
+					 BasicBlock bb_1 = cfg.getNode(i);
+					 int start_1 = bb_1.getFirstInstructionIndex();
+					 int end_1 = bb_1.getLastInstructionIndex();
+					 if (bb_1 instanceof ExceptionHandlerBasicBlock) {
+						 continue;
+					 }
+				    
+					 for (int j = start_1; j <= end_1; j++) {
+				        
+						 if (instructions[j] != null) {
+							 SSAInstruction instructn_1 = instructions[j];
+							 if(instructn_1 instanceof SSAInvokeInstruction){
+								 SSAInvokeInstruction invokeinstructn = (SSAInvokeInstruction) instructn_1;
+								 if(invokeinstructn.getDeclaredTarget().getName().toString().contains("println"))
+										continue;
+								 String temp_methodsign =  invokeinstructn.getDeclaredTarget().getSignature();
+								 // check here for noofuses and noofparams
+								 int no_of_params = invokeinstructn.getNumberOfUses();
+								 for(int k=0;k<no_of_params;k++){
+									 int parameter = invokeinstructn.getUse(k);
+										TypeReference tr_1 = findTypeParameter(ir, parameter).getTypeReference();
+										if(tr_1!=null&&!tr_1.isPrimitiveType()){
+											PointerKey pointerKey = hm.getPointerKeyForLocal(node, parameter);
+											OrdinalSet<InstanceKey> pointsTo = pa.getPointsToSet(pointerKey);
+											for(Iterator<InstanceKey> instanceIter = pointsTo.iterator(); instanceIter.hasNext();){
+												InstanceKey instanceElems = instanceIter.next();
+												if(HiddenargToAsi.get(temp_methodsign) == null){
+													HiddenargToAsi.put(temp_methodsign,new ArrayList<InstanceKey>());
+													HiddenargToInstruction.put(temp_methodsign,new ArrayList<SSAInstruction>());
+												}
+												//if(!HiddenargToAsi.get(temp_methodsign).contains(instanceElems)){
+													HiddenargToAsi.get(temp_methodsign).add(instanceElems);
+													
+													HiddenargToInstruction.get(temp_methodsign).add(invokeinstructn);
+												//}
+											}
+										}
+								 }
+							 }
+						 }
+						 
+					 }
+				 }
+			 }
+				 //added for inserting arguments in hashmap in 1st phase
+			}
+			
+			{
+				 String methodSignElems = methodNameStatic;
+				 MethodReference mr0 = StringStuff.makeMethodReference(methodSignElems);
+				 IMethod m = cha.resolveMethod(mr0);
+				 CGNode node = cg.getNode(m, Everywhere.EVERYWHERE);
+				 if(node != null)
+				 {
+					 IR ir = node.getIR();
+					 
+					 SSACFG cfg= ir.getControlFlowGraph();
+					 SSAInstruction [] instructions = ir.getInstructions();
+					 
+					 
+					 for (int i = 0; i <= cfg.getMaxNumber(); i++) {
+						 BasicBlock bb_1 = cfg.getNode(i);
+						 int start_1 = bb_1.getFirstInstructionIndex();
+						 int end_1 = bb_1.getLastInstructionIndex();
+						 if (bb_1 instanceof ExceptionHandlerBasicBlock) {
+							 continue;
+						 }
+					    
+						 for (int j = start_1; j <= end_1; j++) {
+					        
+							 if (instructions[j] != null) {
+								 SSAInstruction instructn_1 = instructions[j];
+								 if(instructn_1 instanceof SSAInvokeInstruction){
+									 SSAInvokeInstruction invokeinstructn = (SSAInvokeInstruction) instructn_1;
+									 if(invokeinstructn.getDeclaredTarget().getName().toString().contains("println"))
+											continue;
+									 String temp_methodsign =  invokeinstructn.getDeclaredTarget().getSignature();
+									 ArraySet<String> worklistMethodsign = new ArraySet<String>();
+									 
+									 if(methodsignSet.contains(temp_methodsign))
+									 {
+										 //worklistMethodsign.add(temp_methodsign);
+										 //worklistHiddenArgs(cha, cg, hm, pa, temp_methodsign, worklistMethodsign, methodsignSet);
+										 ArrayList<String> visitedMethod = new ArrayList<String>();
+										 //dfsHiddenArgs(cha,cg,hm,pa,temp_methodsign,temp_methodsign,methodsignSet, visitedMethod);
+										 //SSAInvokeToMethodList.put(invokeinstructn, worklistMethodsign);
+										 ArrayList<String> visitedReturnMethod = new ArrayList<String>();
+										 HiddenReturnToAsi.put(temp_methodsign,new ArrayList<InstanceKey>());
+										 dfsHiddenReturns(cha,cg,hm,pa,temp_methodsign,temp_methodsign,methodsignSet, visitedReturnMethod);
+								     }
+								}
+							 }
+						 }
+					 }
+				 }
+			}
+			
+	}
+	
+	
+	public static void dfsHiddenArgs(ClassHierarchy cha, CallGraph cg, HeapModel hm, PointerAnalysis pa,String rootMethodSign, String methodsign, ArraySet<String> methodsignSet, ArrayList<String> visitedMethod)
+	{
+		 visitedMethod.add(methodsign);
+		 ArrayList<String> tempWorklistMethodsign = new ArrayList<String>();
+		 MethodReference mr0 = StringStuff.makeMethodReference(methodsign);
+		 IMethod m = cha.resolveMethod(mr0);
+		 CGNode node = cg.getNode(m, Everywhere.EVERYWHERE);
+		 if(node != null)
+		 {
+			 IR ir = node.getIR();
+			 
+			 SSACFG cfg= ir.getControlFlowGraph();
+			 SSAInstruction [] instructions = ir.getInstructions();
+			 
+			 for (int i = 0; i <= cfg.getMaxNumber(); i++) {
+				 BasicBlock bb_1 = cfg.getNode(i);
+				 int start_1 = bb_1.getFirstInstructionIndex();
+				 int end_1 = bb_1.getLastInstructionIndex();
+				 if (bb_1 instanceof ExceptionHandlerBasicBlock) {
+					 continue;
+				 }
+			    
+				 for (int j = start_1; j <= end_1; j++) {
+					 if (instructions[j] != null) {
+						 SSAInstruction instructn_1 = instructions[j];
+						 if(instructn_1 instanceof SSAInvokeInstruction){
+							 SSAInvokeInstruction invokeinstructn = (SSAInvokeInstruction) instructn_1;
+							 if(invokeinstructn.getDeclaredTarget().getName().toString().contains("println"))
+									continue;
+							 else
+							 {
+								 String temp_methodsign =  invokeinstructn.getDeclaredTarget().getSignature();
+								 if(methodsignSet.contains(temp_methodsign))
+								 {
+									 tempWorklistMethodsign.add(temp_methodsign);
+								 }
+							 }
+						 }
+						 if(instructn_1 instanceof SSAGetInstruction)
+						 {
+							 SSAGetInstruction getFieldInstrct = (SSAGetInstruction) instructn_1;
+							 ////// check //////
+							 if(!getFieldInstrct.isStatic())
+							 {
+								 //OrdinalSet<InstanceKey> containerPtsTo = pa.getPointsToSet(containerPtrKey);
+								 FieldReference field = getFieldInstrct.getDeclaredField();
+								 if(field.getFieldType().isReferenceType()) {
+									 int fieldValueNumber = getFieldInstrct.getDef();
+									 PointerKey fieldPtrKey = hm.getPointerKeyForLocal(node,fieldValueNumber);
+									 OrdinalSet<InstanceKey> fieldPtsTo = pa.getPointsToSet(fieldPtrKey);
+									 int getvariableValueNo = getFieldInstrct.getUse(1);
+									 ////check here..,.needs to be confirmed for getUse(1)
+									 if(getvariableValueNo <= 0)
+									 {
+										 System.out.println("instruction is "+getFieldInstrct.toString()+" and methodsignature is "+methodsign);
+									 }
+									 PointerKey varibalePtrKey = hm.getPointerKeyForLocal(node, getvariableValueNo);
+									 OrdinalSet<InstanceKey> variablePtsTo = pa.getPointsToSet(varibalePtrKey);
+									 boolean flag = false;
+									 for(Iterator<InstanceKey> variablePointsToIter= variablePtsTo.iterator();variablePointsToIter.hasNext();){
+										 InstanceKey variablePointsToIterElems = variablePointsToIter.next();
+										 if(HiddenargToAsi.get(rootMethodSign).contains(variablePointsToIterElems)){
+											 flag = true;
+										 }
+										 
+									 }
+									 //// iterator on field asi....check
+									 if(flag){
+										 for(Iterator<InstanceKey> fieldPointsToIterator = fieldPtsTo.iterator();fieldPointsToIterator.hasNext();){
+											 InstanceKey fieldPointsToElems = fieldPointsToIterator.next();
+											 HiddenargToAsi.get(rootMethodSign).add(fieldPointsToElems);
+											 HiddenargToInstruction.get(rootMethodSign).add(getFieldInstrct);
+										 }
+										 
+									 }
+								 }
+							 }
+						 }
+					 }
+				 }
+			 }
+		 
+			 if(!tempWorklistMethodsign.isEmpty())
+			 {
+				 for(Iterator<String> workListMethodIter = tempWorklistMethodsign.iterator(); workListMethodIter.hasNext();)
+				 {
+					 String workListMethodElem = workListMethodIter.next();
+					 if(!visitedMethod.contains(workListMethodElem))
+					 {
+						 dfsHiddenArgs(cha,cg,hm,pa,rootMethodSign,workListMethodElem,methodsignSet,visitedMethod);
+					 }
+				 }
+			 }
+		 }
+		 
+	}
+	
+	
+	
+	
+	public static void dfsHiddenReturns(ClassHierarchy cha, CallGraph cg, HeapModel hm, PointerAnalysis pa,String rootMethodSign, String methodsign, ArraySet<String> methodsignSet, ArrayList<String> visitedReturnMethod)
+	{
+		 visitedReturnMethod.add(methodsign);
+		 ArrayList<InstanceKey> tempHiddenReturn = new ArrayList<InstanceKey>();
+		 ArrayList<String> tempWorklistMethodsign = new ArrayList<String>();
+		 MethodReference mr0 = StringStuff.makeMethodReference(methodsign);
+		 IMethod m = cha.resolveMethod(mr0);
+		 CGNode node = cg.getNode(m, Everywhere.EVERYWHERE);
+		 if(node != null)
+		 {
+			 IR ir = node.getIR();
+			 
+			 SSACFG cfg= ir.getControlFlowGraph();
+			 SSAInstruction [] instructions = ir.getInstructions();
+			 
+			 for (int i = 0; i <= cfg.getMaxNumber(); i++) {
+				 BasicBlock bb_1 = cfg.getNode(i);
+				 int start_1 = bb_1.getFirstInstructionIndex();
+				 int end_1 = bb_1.getLastInstructionIndex();
+				 if (bb_1 instanceof ExceptionHandlerBasicBlock) {
+					 continue;
+				 }
+			    
+				 for (int j = start_1; j <= end_1; j++) {
+			        
+					 if (instructions[j] != null) {
+						 SSAInstruction instructn_1 = instructions[j];
+						 if(instructn_1 instanceof SSANewInstruction){
+							 SSANewInstruction invokeinstructn = (SSANewInstruction) instructn_1;
+							 //if(invokeinstructn.getDeclaredTarget().getName().toString().contains("println"))
+							//		continue;
+							 //if(invokeinstructn.getDeclaredTarget().getName().toString().contains("init"))
+							 //{
+								 int newVal = invokeinstructn.getDef();
+								 PointerKey point_key = hm.getPointerKeyForLocal(node, newVal);
+								 OrdinalSet<InstanceKey> ptsTo_Def = pa.getPointsToSet(point_key);
+								 tempHiddenReturn.addAll(OrdinalSet.toCollection(ptsTo_Def));
+								 /*
+								 int no_of_uses = invokeinstructn.getNumberOfUses();
+								 if(no_of_uses<1)
+								 {
+								 	 continue;
+								 }
+								 int parameter = invokeinstructn.getUse(0);
+								 TypeReference tr_1 = findTypeParameter(ir, parameter).getTypeReference();
+								 if(tr_1!=null&&!tr_1.isPrimitiveType()){
+									PointerKey pointerKey = hm.getPointerKeyForLocal(node, parameter);
+									OrdinalSet<InstanceKey> pointsTo = pa.getPointsToSet(pointerKey);
+									boolean flag = false;
+									for(Iterator<InstanceKey> instanceIter = pointsTo.iterator(); instanceIter.hasNext();){
+										InstanceKey instanceElems = instanceIter.next();
+										if(flag) continue;
+										if(HiddenargToAsi.get(rootMethodSign).contains(instanceElems) || HiddenReturnToAsi.get(rootMethodSign).contains(instanceElems)){
+											for(Iterator<InstanceKey> defIter = ptsTo_Def.iterator(); defIter.hasNext();)
+											{
+												InstanceKey defIterElem = defIter.next();
+												HiddenReturnToAsi.get(rootMethodSign).add(defIterElem);	
+											}
+											flag = true;
+											break;
+										}
+									}
+								 }
+								 */
+							 }
+							 if(instructn_1 instanceof SSAInvokeInstruction)
+							 {
+								 SSAInvokeInstruction invokeinstructn_1 = (SSAInvokeInstruction) instructn_1;
+								 String temp_methodsign =  invokeinstructn_1.getDeclaredTarget().getSignature();
+								 if(invokeinstructn_1.getDeclaredTarget().getName().toString().contains("println"))
+										continue;
+								 if(methodsignSet.contains(temp_methodsign))
+								 {
+									 tempWorklistMethodsign.add(temp_methodsign);
+								 }
+							 }
+						}
+					 }
+				 }
+		 
+			 for (int i = 0; i <= cfg.getMaxNumber(); i++) {
+				 BasicBlock bb_1 = cfg.getNode(i);
+				 int start_1 = bb_1.getFirstInstructionIndex();
+				 int end_1 = bb_1.getLastInstructionIndex();
+				 if (bb_1 instanceof ExceptionHandlerBasicBlock) {
+					 continue;
+				 }
+			    
+				 for (int j = start_1; j <= end_1; j++) {
+			        
+					 if (instructions[j] != null)
+					 {
+						 SSAInstruction instructn_1 = instructions[j];
+						 if(instructn_1 instanceof SSAPutInstruction)
+						 {
+							 SSAPutInstruction invokeinstructn = (SSAPutInstruction) instructn_1;
+							 if(!invokeinstructn.isStatic())
+							 {
+								 int tempVar0 = invokeinstructn.getUse(0);
+								 int tempVar1 = invokeinstructn.getUse(1);
+								 PointerKey point_key1 = hm.getPointerKeyForLocal(node, tempVar1);
+								 OrdinalSet<InstanceKey> ptsTo_Def1 = pa.getPointsToSet(point_key1);
+								 int tempVar2 = invokeinstructn.getUse(2);
+								 PointerKey point_key2 = hm.getPointerKeyForLocal(node, tempVar2);
+								 OrdinalSet<InstanceKey> ptsTo_Def2 = pa.getPointsToSet(point_key2);
+								 boolean flag1 =false;
+								 boolean flag2 = false;
+								 for(Iterator<InstanceKey> pointsToIter2 = ptsTo_Def2.iterator();pointsToIter2.hasNext();)
+								 {
+									 InstanceKey pointsToElems2 = pointsToIter2.next();
+									 if(tempHiddenReturn.contains(pointsToElems2)){
+										 flag1 =true;
+										 break;
+									 }
+								 }
+								 if(flag1)
+								 {
+									 
+									 PointerKey point_key0 = hm.getPointerKeyForLocal(node, tempVar0);
+									 OrdinalSet<InstanceKey> ptsTo_Def0 = pa.getPointsToSet(point_key0);
+									 for(Iterator<InstanceKey> ptsToDefIter0 = ptsTo_Def0.iterator();ptsToDefIter0.hasNext();)
+									 {
+										 InstanceKey ptsToDefElem0 = ptsToDefIter0.next();
+										 if(HiddenargToAsi.get(rootMethodSign).contains(ptsToDefElem0) )
+										 {
+											 flag2 = true;
+											 break;
+										 }
+										 else if(!HiddenReturnToAsi.get(rootMethodSign).isEmpty())
+										 {
+											 if(HiddenReturnToAsi.get(rootMethodSign).contains(ptsToDefElem0))
+											 {
+												 flag2=true;
+												 break;
+											 }
+										 }						 
+									 }
+									 if(flag2)
+									 {
+										 for(Iterator<InstanceKey> pts_To_Iter1 = ptsTo_Def1.iterator();pts_To_Iter1.hasNext();){
+											 InstanceKey pts_To_Elem = pts_To_Iter1.next();
+											 HiddenReturnToAsi.get(rootMethodSign).add(pts_To_Elem);
+											 noOfRetPhis++;
+										 }
+										 //HiddenReturnToAsi.get(rootMethodSign).addAll(OrdinalSet.toCollection(ptsTo_Def1));
+										 
+									 }
+								 }
+								 
+							 }
+							 
+							 
+						 }
+					 }
+				 }
+			 }
+			 if(!tempWorklistMethodsign.isEmpty())
+			 {
+				 for(Iterator<String> workListMethodIter = tempWorklistMethodsign.iterator(); workListMethodIter.hasNext();)
+				 {
+					 String workListMethodElem = workListMethodIter.next();
+					 if(!visitedReturnMethod.contains(workListMethodElem))
+					 {
+						 dfsHiddenReturns(cha,cg,hm,pa,rootMethodSign,workListMethodElem,methodsignSet,visitedReturnMethod);
+				 	 }
+				 }
+				 
+			 }
+		 }
+	}
+			 
+									 
+							
+	
+	public static void worklistHiddenArgs(ClassHierarchy cha, CallGraph cg, HeapModel hm, PointerAnalysis pa, String methodsign,ArraySet<String> worklistMethodsign, ArraySet<String> methodsignSet){
+		ArraySet<String> tempWorklistMethodsign = new ArraySet<String>();
+		MethodReference mr0 = StringStuff.makeMethodReference(methodsign);
+		 IMethod m = cha.resolveMethod(mr0);
+		 CGNode node = cg.getNode(m, Everywhere.EVERYWHERE);
+		 if(node != null)
+		 {
+			 IR ir = node.getIR();
+			 
+			 SSACFG cfg= ir.getControlFlowGraph();
+			 SSAInstruction [] instructions = ir.getInstructions();
+			 
+			 for (int i = 0; i <= cfg.getMaxNumber(); i++) {
+				 BasicBlock bb_1 = cfg.getNode(i);
+				 int start_1 = bb_1.getFirstInstructionIndex();
+				 int end_1 = bb_1.getLastInstructionIndex();
+				 if (bb_1 instanceof ExceptionHandlerBasicBlock) {
+					 continue;
+				 }
+			    
+				 for (int j = start_1; j <= end_1; j++) {
+			        
+					 if (instructions[j] != null) {
+						 SSAInstruction instructn_1 = instructions[j];
+						 if(instructn_1 instanceof SSAInvokeInstruction){
+							 SSAInvokeInstruction invokeinstructn = (SSAInvokeInstruction) instructn_1;
+							 if(invokeinstructn.getDeclaredTarget().getName().toString().contains("println"))
+									continue;
+							 
+							 String temp_methodsign =  invokeinstructn.getDeclaredTarget().getSignature();
+							 if(methodsignSet.contains(temp_methodsign))
+							 {
+								 tempWorklistMethodsign.add(temp_methodsign);
+							 }
+						 }
+					 }
+				 }
+							 
+			 }
+			 if(!tempWorklistMethodsign.isEmpty()){
+				 worklistMethodsign.addAll(tempWorklistMethodsign);
+				 for(Iterator<String> methodsignIter = tempWorklistMethodsign.iterator();methodsignIter.hasNext();){
+					 String methodsignElems = methodsignIter.next();
+					 worklistHiddenArgs(cha,cg, hm, pa, methodsignElems ,worklistMethodsign, methodsignSet);
+				 }
+			 }
+			 
+			 
+		 }
+	}
+		
+	
+	
+	public static TypeAbstraction findTypeParameter (IR ir, int valueNumber){
+		boolean doPrimitives = true; // infer types for primitive vars?
+	    TypeInference ti = TypeInference.make(ir, doPrimitives);
+	    TypeAbstraction type = ti.getType(valueNumber);
+	    return type;
+	}
+	
 	
 	/**
 	 * First part of algorithm
@@ -280,10 +767,92 @@ public class ObjectSSA {
 							continue;
 						if(!handledPhisMap.containsKey(d))
 							handledPhisMap.put(d, new HashMap<SSAInstruction, OrdinalSet<InstanceKey>>());
-						for(Iterator<OrdinalSet<InstanceKey>>handledPhiElems = handledPhisMap.get(d).values().iterator(); handledPhiElems.hasNext();){
+						HashMap<BasicBlock, HashMap<SSAInstruction, OrdinalSet<InstanceKey>>> handledPhisMapTemp =  new HashMap<BasicBlock, HashMap<SSAInstruction,OrdinalSet<InstanceKey>>>();
+						for(Iterator<BasicBlock> block = handledPhisMap.keySet().iterator();block.hasNext();)
+						{
+							BasicBlock basicblock = block.next();
+							HashMap<SSAInstruction, OrdinalSet<InstanceKey>> tempHashMap = new HashMap<SSAInstruction, OrdinalSet<InstanceKey>>();
+							for(Iterator<SSAInstruction> instructIter = handledPhisMap.get(basicblock).keySet().iterator();instructIter.hasNext();)
+							{
+								SSAInstruction instruct = instructIter.next();
+								//OrdinalSet<InstanceKey> asi = handledPhisMap.get(block).get(instruct);
+								
+								tempHashMap.put(instruct,handledPhisMap.get(basicblock).get(instruct) );
+							}
+							handledPhisMapTemp.put(basicblock, tempHashMap);
+						}
+						for(Iterator<OrdinalSet<InstanceKey>>handledPhiElems = handledPhisMapTemp.get(d).values().iterator(); handledPhiElems.hasNext();)
+						{	
 							OrdinalSet<InstanceKey>handledPhi = handledPhiElems.next();
-							if(equateASIs(ptsToDef, handledPhi))
-								continue;
+							//search for each elements in ptsdef that it exists in handledphi....
+							
+							OrdinalSet<InstanceKey> handledIntersect = OrdinalSet.intersect(ptsToDef , handledPhi);
+							//if ptsdef and handledphi has common element, then scan for the instruction that has common element and remove the corresponding argument from the instruction
+							if(!handledIntersect.isEmpty())	{
+								Set<SSAInstruction> handledPhisMapSet=handledPhisMapTemp.get(d).keySet();
+								SSAInstruction instruction ;
+								Iterator<SSAInstruction> SSAInstructionTemp = handledPhisMapSet.iterator();
+								instruction = SSAInstructionTemp.next();
+								
+								
+								for(Iterator<SSAInstruction> SSAInstructionElems = handledPhisMapSet.iterator();SSAInstructionElems.hasNext();){
+									SSAInstruction SSAInstructionElemsNext=SSAInstructionElems.next();
+									
+									if(handledPhisMapTemp.get(d).get(SSAInstructionElemsNext) == handledPhi){
+										instruction = SSAInstructionElemsNext;
+										break;
+									}
+								}
+								
+								
+								Collection<InstanceKey> handledIntersectCollection = OrdinalSet.toCollection(handledIntersect);
+								Collection<InstanceKey> handledPhiCollection = OrdinalSet.toCollection(handledPhi);
+								Collection<InstanceKey> handledPhiRemaining = handledPhiCollection;
+								for(Iterator<InstanceKey> handledPhiCollectionElems = handledIntersectCollection.iterator(); handledPhiCollectionElems.hasNext(); ){
+									InstanceKey handledPhiCollectionElemsNext= handledPhiCollectionElems.next();
+									handledPhiRemaining.remove(handledPhiCollectionElemsNext);
+								}
+								//modified handledphi by creating handledphitemp which is modified version of handledphi and then removing the instruction and handledphi from handledphimap hash map and then inserting instruction and handledphitemp in the hashmap 
+								
+								
+								OrdinalSet<InstanceKey> handledPhiTemp = OrdinalSet.toOrdinalSet(handledPhiRemaining, handledPhi.getMapping());
+								//handledPhisMap.get(d).remove(instruction);
+												
+								
+								//PutPhiOSSAInstruction phInstruction = (PutPhiOSSAInstruction) instruction;
+								for(Iterator<InstanceKey> phInstrIter= handledIntersect.iterator(); phInstrIter.hasNext();)
+								{
+									InstanceKey phInstrASI = phInstrIter.next();	
+									((PutPhiOSSAInstruction)instruction).putPhiArgs.remove(phInstrASI);
+								}
+								
+								((PutPhiOSSAInstruction)instruction).ptsTo = handledPhiTemp;
+								
+								handledPhisMap.get(d).put(instruction, handledPhiTemp);
+								
+								for(Iterator<InstanceKey> AllocationElems = handledIntersect.iterator() ; AllocationElems.hasNext();){
+									InstanceKey AllocationElemsNext = AllocationElems.next();
+									allocationPhiMap.get(d).remove(AllocationElemsNext);
+								}
+								
+								for(Iterator<InstanceKey> allocationElemsIter = handledPhiTemp.iterator() ; allocationElemsIter.hasNext();){
+									InstanceKey allocationElemsIterNext = allocationElemsIter.next();
+									allocationPhiMap.get(d).put(allocationElemsIterNext,((PutPhiOSSAInstruction)instruction) );
+								}
+
+								
+								
+								if(handledPhiRemaining.isEmpty()){
+									this.noOfPutPhis--;	
+									handledPhisMap.get(d).remove(instruction);
+									objectPutPhiInstructions.get(d).remove(instruction);
+								}
+								
+							}
+							//}
+						
+						//	if(equateASIs(ptsToDef, handledPhi))
+						//		continue;
 						}
 						
 						PutPhiOSSAInstruction putPhiOSSAInstrctn ;
@@ -298,7 +867,6 @@ public class ObjectSSA {
 						if(!objectPutPhiInstructions.containsKey(d))
 							objectPutPhiInstructions.put(d, new LinkedList<PutPhiOSSAInstruction>());
 						objectPutPhiInstructions.get(d).add(putPhiOSSAInstrctn);
-						
 						if(!allocationPhiMap.containsKey(d))
 							allocationPhiMap.put(d, new HashMap<InstanceKey, SSAInstruction>());
 						for(Iterator<InstanceKey> ASIs = ptsToDef.iterator();ASIs.hasNext();){
@@ -341,7 +909,7 @@ public class ObjectSSA {
 	}
 	public FuncOSSAInstruction funcossainstrctn;
 	/**
-	 * Cretes Objects for arguments to the function
+	 * Creates Objects for arguments to the function
 	 */
 	public void renameArgs() {
 		int noofparams = ir.getNumberOfParameters();
@@ -406,12 +974,16 @@ public class ObjectSSA {
 		/**
 		 * DONE Iterate through putphis before other instructions in basicblock. 
 		 */
-		if(objectPutPhiInstructions.containsKey(bb))
+		if(objectPutPhiInstructions.containsKey(bb)){
 			for(Iterator<PutPhiOSSAInstruction>putphiinstrctns = objectPutPhiInstructions.get(bb).iterator();putphiinstrctns.hasNext();) {
 				PutPhiOSSAInstruction putphiinstrctn = putphiinstrctns.next();
 				for(Iterator<InstanceKey>ASIs = putphiinstrctn.putPhiArgs.keySet().iterator();ASIs.hasNext();) {
 					InstanceKey asi = ASIs.next();
 					if(putphiinstrctn.putPhiArgs.get(asi).isEmpty()) {
+						if(objStack.get(asi).isEmpty())
+						{
+							System.out.println("error");
+						}
 						putphiinstrctn.putPhiArgs.get(asi).put(bb,objStack.get(asi).peek());
 						DefUse.storeUse(objStack.get(asi).peek(), putphiinstrctn);
 					}
@@ -421,7 +993,7 @@ public class ObjectSSA {
 				DefUse.storeDef(newPutPhiObj, putphiinstrctn);
 				
 			}
-		
+		}
 			
 		/*
 		 * for(Iterator<ObjectPhiInstruction> objphiinstrctns = iterateObjPhis(bb);objphiinstrctns.hasNext();){
@@ -452,7 +1024,8 @@ public class ObjectSSA {
 	        	if (instructn instanceof SSANewInstruction) {
 					SSANewInstruction new_instrctn = (SSANewInstruction) instructn;
 					int new_valueNumber = new_instrctn.getDef();
-					
+					int temp = new_instrctn.getNumberOfUses();
+					int temp2 = new_instrctn.getNumberOfDefs();
 					PointerKey ptrKey = hm.getPointerKeyForLocal(node,
 							new_valueNumber);
 					OrdinalSet<InstanceKey> ptsTo = pa.getPointsToSet(ptrKey);
@@ -640,6 +1213,7 @@ public class ObjectSSA {
 					PointerKey containerPtrKey = hm.getPointerKeyForLocal(node,
 							containerValueNumber);
 					OrdinalSet<InstanceKey> containerPtsTo = pa.getPointsToSet(containerPtrKey);
+					////loook hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 					
 					FieldReference field = getFieldInstrctn.getDeclaredField();
 					
@@ -672,6 +1246,8 @@ public class ObjectSSA {
 	        		
 	        		if(valueNumber == -1||findType(ir, valueNumber)==TypeAbstraction.TOP){
 	        			instrMap.put(retInstrctn, retInstrctn);
+	        			noOfReturns++;
+	        			noOfRetPhis++;
 	        			continue;
 	        		}
 	        		// objnumbers++;
@@ -692,8 +1268,162 @@ public class ObjectSSA {
 	        		}
 	        		continue;
 	        	}
+	        	
 	        	//TODO check the invoke ossa instruction logic.MUST****
 	        	if(instructn instanceof SSAInvokeInstruction ){
+					
+					SSAInvokeInstruction ivinstrctn = (SSAInvokeInstruction) instructn;
+					String mthdSignTarget = ivinstrctn.getDeclaredTarget().getSignature();
+					if(!methodSignSetStatic.contains(mthdSignTarget) || ivinstrctn.getDeclaredTarget().getName().toString().contains("println"))
+						continue;
+					//args of function call
+					
+					int noofparameters = ivinstrctn.getNumberOfUses();
+					ArrayList<HashMap<InstanceKey, OSSAObject>> args = new ArrayList<HashMap<InstanceKey,OSSAObject>>();
+					ArrayList<OSSAObject> changedArgs = new ArrayList<OSSAObject>();
+					ArrayList<ArgPhiOSSAInstruction> argPhiInstrctns = new ArrayList<ArgPhiOSSAInstruction>();
+//					InvokeOSSAInstruction invokeOSSAInstrctn = new InvokeOSSAInstruction(ivinstrctn, defObj, args, changedArgs);
+					//ArraySet<String> tempWorkList = new ArraySet<String>();
+					//tempWorkList.addAll(SSAInvokeToMethodList.get(ivinstrctn));
+					
+					ArrayList<InstanceKey> argsList = new ArrayList<InstanceKey>();
+					argsList.addAll(HiddenargToAsi.get(mthdSignTarget));
+					/*
+					for(Iterator<String> methdsignIter = tempWorkList.iterator();methdsignIter.hasNext();)
+					{
+						String methdsignElems = methdsignIter.next();
+						argsList.addAll(HiddenargToAsi.get(methdsignElems));
+					}
+					*/
+					ArrayList<InstanceKey> argsListTemp = new ArrayList<InstanceKey>();
+					argsListTemp.addAll(argsList);
+	        	
+					for(Iterator<InstanceKey> asiIter = argsListTemp.iterator(); asiIter.hasNext();)
+					{
+						InstanceKey asiElems = asiIter.next();
+						
+						if(!objStack.containsKey(asiElems) || objStack.get(asiElems).isEmpty() || objStack.get(asiElems) == null) //// check here whether objstack.get(asiElems) can be empty or not
+						{
+							argsList.remove(asiElems);
+						}
+						else
+						{
+							//this.noOfArgPhis++;
+						}
+						
+					}
+					
+					//ArraySet<InstanceKey> ArgPhiAsi = new ArraySet<InstanceKey>();
+					ArraySet<ArraySet<InstanceKey>> ArgsAsiSet = new ArraySet<ArraySet<InstanceKey>>();
+					for(Iterator<InstanceKey> asiIterator = argsList.iterator(); asiIterator.hasNext();)
+					{
+						InstanceKey asiElement = asiIterator.next();
+						ArraySet<InstanceKey> tempArray = new ArraySet<InstanceKey>();
+						tempArray.add(asiElement);
+						ArgsAsiSet.add(tempArray);
+					}
+					for(Iterator<InstanceKey> asiIter1 = argsList.iterator(); asiIter1.hasNext();)
+					{
+						InstanceKey asiElems1 = asiIter1.next();
+						for(Iterator<InstanceKey> asiIter2 = argsList.iterator(); asiIter2.hasNext();)
+						{
+							InstanceKey asiElems2 = asiIter2.next();
+							if(objStack.get(asiElems1).peek() == objStack.get(asiElems2).peek())
+							{
+								ArraySet<InstanceKey> tempArrayAsi1 = new ArraySet<InstanceKey>();
+								ArraySet<InstanceKey> tempArrayAsi2 = new ArraySet<InstanceKey>();
+								for(Iterator<ArraySet<InstanceKey>> arrayAsiIter = ArgsAsiSet.iterator(); arrayAsiIter.hasNext();)
+								{
+									ArraySet<InstanceKey> arrayAsiELems = arrayAsiIter.next();
+									if(arrayAsiELems.contains(asiElems1))
+									{
+										tempArrayAsi1 = arrayAsiELems;
+									}
+									if(arrayAsiELems.contains(asiElems2))
+									{
+										tempArrayAsi2 = arrayAsiELems;
+									}
+								}
+								if(tempArrayAsi1 != tempArrayAsi2)
+								{
+									ArgsAsiSet.remove(tempArrayAsi2);
+									ArgsAsiSet.remove(tempArrayAsi1);
+									tempArrayAsi1.addAll(tempArrayAsi2);
+									ArgsAsiSet.add(tempArrayAsi1);
+								}
+							}
+						}
+					}
+						
+					for(Iterator<ArraySet<InstanceKey>> argsAsiSetIterator = ArgsAsiSet.iterator(); argsAsiSetIterator.hasNext();)
+					{
+						ArraySet<InstanceKey> argsAsiSetElem = argsAsiSetIterator.next();
+						OSSAObject tempObject = objStack.get(argsAsiSetElem.get(0)).peek();
+						TypeReference tr = tempObject.classType;
+						
+						//Collection<InstanceKey> ptsToCollection = OrdinalSet.toCollection(tempObject.allocationSites);
+						//ptsToCollection.removeAll(ptsToCollection);
+						//OrdinalSet<InstanceKey> tempOrdinalSet = OrdinalSet.toOrdinalSet(ptsToCollection, tempObject.allocationSites.getMapping());
+						//OrdinalSet<InstanceKey> tempOrdinalSet = OrdinalSet.empty();
+						//MutableMapping<InstanceKey> mut_mapping = (MutableMapping<InstanceKey>) tempObject.allocationSites.getMapping();
+						//OrdinalSetMapping<InstanceKey> newMapping = tempOrdinalSet.getMapping();
+						//OrdinalSetMapping<InstanceKey> newMapping;
+						/*
+						OrdinalSet<InstanceKey> ptsTo = null;
+						boolean initial = true;
+						for(Iterator<InstanceKey> inkeyIter = argsAsiSetElem.iterator();inkeyIter.hasNext();)
+						{
+							InstanceKey inkeyElem = inkeyIter.next();
+							for(int i = objStack.get(inkeyElem).size()-1 ; i>=0; i--)
+							{
+								OSSAObject currentObj = objStack.get(inkeyElem).elementAt(i);
+								if(currentObj.ptsTo != null)
+								{
+									if(initial)
+									{
+										mut_mapping = (MutableMapping<InstanceKey>) currentObj.allocationSites.getMapping();
+										int tempIndex = mut_mapping.getMappedIndex(inkeyElem);
+										ptsTo = mut_mapping.makeSingleton(tempIndex);
+										initial = false;
+									}
+									else
+									{
+										mut_mapping = (MutableMapping<InstanceKey>) currentObj.allocationSites.getMapping();
+										int tempIndex = mut_mapping.getMappedIndex(inkeyElem);
+										OrdinalSet<InstanceKey> tempINkey = mut_mapping.makeSingleton(tempIndex);
+										ptsTo = OrdinalSet.unify(ptsTo, tempINkey);
+									}
+									break;
+								}
+							}
+							//ptsToCollection.add(inkeyElem);
+							//newMapping.add(inkeyElem);
+						}
+						
+						//OrdinalSet<InstanceKey> ptsTo = OrdinalSet.toOrdinalSet(ptsToCollection, newMapping);
+						*/
+						OrdinalSet<InstanceKey> ptsTo = tempObject.allocationSites;
+						if(tempObject.outSideObj != null && tempObject.outSideObj == true)
+						{
+							System.out.print(" ");
+							noOfArgPhis++;
+							continue;
+						}
+						if(ptsTo == null)
+						{
+							System.out.print(" ");
+							noOfArgPhis++;
+							continue;
+						}
+						HashMap<InstanceKey, OSSAObject> argsObjs = getUseObjs(ptsTo);
+						args.add(argsObjs);
+						ArgPhiOSSAInstruction nwArgPhi = createArgPhi(tr, ptsTo, argsObjs);
+						changedArgs.add(nwArgPhi.defObj);
+						argPhiInstrctns.add(nwArgPhi);
+						this.noOfArgPhis++;
+					}
+					/*
+					if(instructn instanceof SSAInvokeInstruction ){
 					
 					SSAInvokeInstruction ivinstrctn = (SSAInvokeInstruction) instructn;
 					if(ivinstrctn.getDeclaredTarget().getName().toString().contains("println"))
@@ -727,7 +1457,33 @@ public class ObjectSSA {
 							argPhiInstrctns.add(null);
 						}
 					}
+
 					
+					/*
+					for(int k=0;k<noofparameters;k++){
+						int param = ivinstrctn.getUse(k);
+						TypeReference tr = findType(ir, param).getTypeReference();
+						if(tr!=null&&!tr.isPrimitiveType()){
+							PointerKey ptrKey = hm.getPointerKeyForLocal(node, param);
+							OrdinalSet<InstanceKey> ptsTo = pa.getPointsToSet(ptrKey);
+							boolean temphiddenarg=hiddenArgAccess;
+							args.add(getUseObjs(ptsTo));
+							if(!temphiddenarg&&hiddenArgAccess)
+								hiddenArgAccess=false;
+//							OSSAObject retObj = createObj(tr, ptsTo);
+							//TODO Check Insert argphis()
+							ArgPhiOSSAInstruction nwArgPhi = createArgPhi(tr, ptsTo, args.get(k));
+							argPhiInstrctns.add(nwArgPhi);
+							changedArgs.add(nwArgPhi.defObj);
+//							invokeOSSAInstrctn.argsarray[k] = 
+						}
+						else {
+							args.add(null);
+							changedArgs.add(null);
+							argPhiInstrctns.add(null);
+						}
+					}
+					*/
 					// function call returns some value or object.
 					OSSAObject defObj = null;
 					LinkedList<OutsideObjOSSAInstruction> outsideObjInstructions = new LinkedList<OutsideObjOSSAInstruction>();
@@ -802,6 +1558,8 @@ public class ObjectSSA {
 							if(insertRetPhi) {
 								retPhi = createRetPhi(tr, ptsTo,outsideObjInstructions);
 								defObj = retPhi.defObj;
+								noOfRetPhis++;
+								noOfReturns++;
 							}
 							else {
 								defObj =  createObj(tr, ptsTo);
@@ -812,8 +1570,20 @@ public class ObjectSSA {
 					
 					InvokeOSSAInstruction invokeOSSAInstrctn = new InvokeOSSAInstruction(ivinstrctn, defObj, args, changedArgs, argPhiInstrctns, outsideObjInstructions, retPhi);
 					DefUse.storeDef(defObj, invokeOSSAInstrctn);
+					ArrayList<HashMap<InstanceKey, OSSAObject>> args_original = new ArrayList<HashMap<InstanceKey,OSSAObject>>();
+					int count_params = 0;
 					for(int i=0;i<noofparameters;i++) {
-						HashMap<InstanceKey, OSSAObject>arg = args.get(i);
+						int param = ivinstrctn.getUse(i);
+						TypeReference tr = findType(ir, param).getTypeReference();
+						if(tr!=null&&!tr.isPrimitiveType()){
+							PointerKey ptrKey = hm.getPointerKeyForLocal(node, param);
+							OrdinalSet<InstanceKey> ptsTo = pa.getPointsToSet(ptrKey);
+							args_original.add(getUseObjs(ptsTo));
+							count_params ++;
+						}
+					}
+					for(int i=0;i<count_params;i++) {
+						HashMap<InstanceKey, OSSAObject>arg = args_original.get(i);
 						if(arg!=null) {
 							for(Iterator<OSSAObject>objs = arg.values().iterator();objs.hasNext();) {
 								DefUse.storeUse(objs.next(), invokeOSSAInstrctn);
@@ -825,6 +1595,7 @@ public class ObjectSSA {
 					
 					
 					instrMap.put(ivinstrctn,invokeOSSAInstrctn);
+					
 					
 	        	}//if(instructn instanceof SSAInvokeInstruction ){
 	        		        	
@@ -1111,6 +1882,11 @@ public class ObjectSSA {
 		if(instrctn.toString().contentEquals(funcossainstrctn.toString()))
 			cfg.entry();
 //			return (BasicBlock)ir.getBasicBlockForInstruction(ir.getInstructions()[1]);
+		
+		if(ossainstructions==null)
+		{
+			System.out.println("null error: "+ ossainstructions);
+		}
 		for(i =0; i<ossainstructions.length;i++) {
 			if(ossainstructions[i]==instrctn)
 				break;
